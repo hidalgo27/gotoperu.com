@@ -81,4 +81,54 @@ class HomeController extends Controller
     {
         //
     }
+
+    public function packages()
+    {
+        return view('page.packages');
+    }
+
+    public function itinerary()
+    {
+        return view('page.itinerary');
+    }
+
+    public function destinations()
+    {
+        return view('page.destinations');
+    }
+
+    public function destinations_country($title)
+    {
+        return view('page.destinations-country');
+    }
+
+    public function destinations_country_show($title, $city)
+    {
+        return view('page.destinations-country-show');
+    }
+
+    public function about()
+    {
+        return view('page.about');
+    }
+
+    public function getting()
+    {
+        return view('page.getting');
+    }
+
+    public function testimonials()
+    {
+        return view('page.testimonials');
+    }
+
+    public function faq()
+    {
+        return view('page.faq');
+    }
+
+    public function agents()
+    {
+        return view('page.agents');
+    }
 }
