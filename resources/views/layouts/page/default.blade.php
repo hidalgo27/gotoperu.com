@@ -196,7 +196,7 @@
 @yield('content')
 
 
-<section class="my-5">
+<section class="">
     <div class="jumbotron jumbotron-divider-1 rounded-0">
         <div class="container">
             <div class="row justify-content-center no-gutters">
@@ -243,7 +243,7 @@
     </div>
 </section>
 
-<section>
+<section class="my-5">
     <div class="container">
         <div class="row my-4">
             <div class="col text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
