@@ -18,6 +18,7 @@ mix.scripts([
     'resources/assets/js/vendors/jquery-migrate-3.0.0.min.js',
     'resources/assets/js/vendors/viedolightbox/video.js',
     'resources/assets/js/vendors/jquery.waypoints.min.js',
+    'resources/assets/js/vendors/smooth-scroll.js',
     //Customized
     'resources/assets/js/vendors/function-admin.js',
     'resources/assets/js/vendors/function.js',

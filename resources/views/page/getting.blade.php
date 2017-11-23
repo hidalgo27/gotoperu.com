@@ -34,16 +34,16 @@
                         <div class="col">
                             <h4 class="text-g-yellow">Airlines From North America, Central America & Caribbean To Peru</h4>
                             <ul>
-                                <li><i class="fa fa-angle-right"></i> Aero Mexico</li>
-                                <li><i class="fa fa-angle-right"></i> Air Canada</li>
-                                <li><i class="fa fa-angle-right"></i> American Airlines</li>
-                                <li><i class="fa fa-angle-right"></i> Continental Airlines</li>
-                                <li><i class="fa fa-angle-right"></i> Copa Airlines</li>
-                                <li><i class="fa fa-angle-right"></i> Delta Airlines</li>
-                                <li><i class="fa fa-angle-right"></i> Lecsa</li>
-                                <li><i class="fa fa-angle-right"></i> LAN</li>
-                                <li><i class="fa fa-angle-right"></i> Spirit Airlines</li>
-                                <li><i class="fa fa-angle-right"></i> TACA</li>
+                                <li>Aero Mexico</li>
+                                <li>Air Canada</li>
+                                <li>American Airlines</li>
+                                <li>Continental Airlines</li>
+                                <li>Copa Airlines</li>
+                                <li>Delta Airlines</li>
+                                <li>Lecsa</li>
+                                <li>LAN</li>
+                                <li>Spirit Airlines</li>
+                                <li>TACA</li>
                             </ul>
                         </div>
                     </div>
@@ -52,14 +52,14 @@
                         <div class="col">
                             <h4 class="text-g-yellow">Airlines From Europe To Peru</h4>
                             <ul>
-                                <li><i class="fa fa-angle-right"></i> Air Europa</li>
-                                <li><i class="fa fa-angle-right"></i> Air France</li>
-                                <li><i class="fa fa-angle-right"></i> Alitalia</li>
-                                <li><i class="fa fa-angle-right"></i> British Airways</li>
-                                <li><i class="fa fa-angle-right"></i> Iberia</li>
-                                <li><i class="fa fa-angle-right"></i> KLM</li>
-                                <li><i class="fa fa-angle-right"></i> LAN</li>
-                                <li><i class="fa fa-angle-right"></i> Lufthansa</li>
+                                <li>Air Europa</li>
+                                <li>Air France</li>
+                                <li>Alitalia</li>
+                                <li>British Airways</li>
+                                <li>Iberia</li>
+                                <li>KLM</li>
+                                <li>LAN</li>
+                                <li>Lufthansa</li>
                             </ul>
                         </div>
                     </div>
@@ -68,13 +68,13 @@
                         <div class="col">
                             <h4 class="text-g-yellow">Airlines From South America To Peru</h4>
                             <ul>
-                                <li><i class="fa fa-angle-right"></i> Aerolineas Argentina</li>
-                                <li><i class="fa fa-angle-right"></i> Avianca</li>
-                                <li><i class="fa fa-angle-right"></i> Copa Airlines</li>
-                                <li><i class="fa fa-angle-right"></i> LAN</li>
-                                <li><i class="fa fa-angle-right"></i> Sky Airlines</li>
-                                <li><i class="fa fa-angle-right"></i> TACA</li>
-                                <li><i class="fa fa-angle-right"></i> TAM</li>
+                                <li>Aerolineas Argentina</li>
+                                <li>Avianca</li>
+                                <li>Copa Airlines</li>
+                                <li>LAN</li>
+                                <li>Sky Airlines</li>
+                                <li>TACA</li>
+                                <li>TAM</li>
                             </ul>
                         </div>
                     </div>

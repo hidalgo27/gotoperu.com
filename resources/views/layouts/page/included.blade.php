@@ -1,7 +1,7 @@
 <section>
     <div class="container">
         <div class="col">
-            <div class="row os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s"><!--.row -->
+            <div class="row"><!--.row -->
                 <div class="col"><a href="https://www.facebook.com/GOTOPERUcom/" target="_blank"><img src="https://gotoperu.com/img/logos/logo-facebook.png" title="gotoperu facebook 30k like" alt="gotoperu facebook 30k like" class="w-100"></a></div>
                 <div class="col"><a href="http://www.asta.org/MemberServices/MemberDirectoryIndivdualDisplayASTA.cfm?navItemNumber=11304&amp;id=900235751" target="_blank"><img src="https://gotoperu.com/img/logos/logo-asta.png" title="asta" alt="logo asta" class="w-100"></a></div>
                 <div class="col"><a href="http://investors.nytco.com/press/press-releases/press-release-details/2014/The-New-York-Times-Travel-Show-Announces-Special-Travel-Discounts-for-Show-Attendees/default.aspx" target="_blank"><img src="https://gotoperu.com/img/logos/logo-newyorktimes.png" title="the new york times" alt="the new york times" class="w-100"></a></div>

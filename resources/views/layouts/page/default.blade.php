@@ -11,47 +11,70 @@
 
     <link rel="stylesheet" href="{{mix("css/app.css")}}">
 
+    <style>
+        body {
+            position: relative;
+        }
+    </style>
 </head>
-<body>
+<body data-spy="scroll" data-target="#menu">
 
-<section>
-    <div class="container">
-        <div class="row no-gutters">
-            <div class="col-3">
-                <a href="/"><img src="https://gotoperu.com/img/logos/logo-gotoperu.png" alt="" class="img-fluid mt-4"></a>
-            </div>
-            <div class="col-2">
-                <img src="https://gotoperu.com/img/logos/asta-logo.png" alt="" class="img-fluid">
-            </div>
-            <div class="col-4 text-center">
-                <h6 class="font-weight-bold mt-4">BEST TESTIMONIALS & LOCAL CONNECTIONS</h6>
+{{--<section>--}}
+    {{--<div class="container">--}}
+        {{--<div class="row no-gutters">--}}
+            {{--<div class="col-3">--}}
+                {{--<a href="/"><img src="https://gotoperu.com/img/logos/logo-gotoperu.png" alt="" class="img-fluid mt-4"></a>--}}
+
+            {{--</div>--}}
+            {{--<div class="col-2">--}}
+                {{--<img src="https://gotoperu.com/img/logos/asta-logo.png" alt="" class="img-fluid">--}}
+            {{--</div>--}}
+            {{--<div class="col-4 text-center">--}}
+                {{--<h6 class="font-weight-bold mt-4">BEST TESTIMONIALS & LOCAL CONNECTIONS</h6>--}}
                 {{--<a href="">(813) 454-9707</a> |--}}
                 {{--<a href="https://m.me/GOTOPERUcom/" class="btn btn-primary btn-sm mb-2" target="_blank"><i class="fa fa-facebook"></i> Messenger</a> |--}}
                 {{--<a href="https://api.whatsapp.com/send?phone=51992051190" class="btn btn-success mb-2 btn-sm" target="_blank"><i class="fa fa-whatsapp"></i> Whatsapp</a>--}}
 
-                <div class="row">
-                    <div class="col">
-                        <a href="" class="btn btn-g-green btn-sm d-none d-sm-inline-block"><i class="fa fa-commenting"></i> Chat</a>
-                        <span class="mx-2">|</span>
-                        <button type="button" class="btn btn-g-yellow btn-sm d-none d-sm-inline-block" data-toggle="modal" data-target="#contant_m">
-                            Design
-                        </button>
-                        <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline text-dark mx-1" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="https://twitter.com/GOTOPERUCOM" class="d-inline text-dark mx-1" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/gotoperucom/" class="d-inline text-dark mx-1" target="_blank"><i class="fa fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline text-dark mx-1" target="_blank"><i class="fa fa-youtube-play"></i></a>
-                    </div>
-                </div>
+                {{--<div class="row">--}}
+                    {{--<div class="col">--}}
+                        {{--<a href="" class="btn btn-g-green btn-sm d-none d-sm-inline-block"><i class="fa fa-commenting"></i> Chat</a>--}}
+                        {{--<span class="mx-2">|</span>--}}
+                        {{--<button type="button" class="btn btn-g-yellow btn-sm d-none d-sm-inline-block" data-toggle="modal" data-target="#contant_m">--}}
+                            {{--Design--}}
+                        {{--</button>--}}
+                        {{--<a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline text-dark mx-1" target="_blank"><i class="fa fa-facebook"></i></a>--}}
+                        {{--<a href="https://twitter.com/GOTOPERUCOM" class="d-inline text-dark mx-1" target="_blank"><i class="fa fa-twitter"></i></a>--}}
+                        {{--<a href="https://www.instagram.com/gotoperucom/" class="d-inline text-dark mx-1" target="_blank"><i class="fa fa-instagram"></i></a>--}}
+                        {{--<a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline text-dark mx-1" target="_blank"><i class="fa fa-youtube-play"></i></a>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col text-center">--}}
+                {{--<button type="button" class="btn btn-link mt-4 font-weight-bold">(813) 454-9707</button>--}}
+                {{--<button type="button" class="btn btn-g-dark mt-4">Contact Us</button>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</section>--}}
+
+<section>
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col">
+                <a href="/"><img src="https://gotoperu.com/img/logos/logo-gotoperu.png" alt="" class="img-fluid"></a>
             </div>
-            <div class="col text-center">
-                <button type="button" class="btn btn-link mt-4 font-weight-bold">(813) 454-9707</button>
-                <button type="button" class="btn btn-g-dark mt-4">Contact Us</button>
+            <div class="col text-center pt-2">
+                <i class="h4">... a new adventure every day!</i>
+            </div>
+            <div class="col text-right pt-2">
+                <a href="" class="font-weight-bold mx-3">(202) 996-3000</a>
+                <button type="button" class="btn btn-g-yellow">Chat</button>
+                <button type="button" class="btn btn-g-green">Inquire Now</button>
+
             </div>
         </div>
     </div>
 </section>
-
-
 
 <section class="sticky-top bg-g-dark mt-2">
     <div class="container">
@@ -161,7 +184,7 @@
             {{--</div>--}}
         {{--</nav>--}}
 
-        <ul class="nav justify-content-center">
+        <ul class="nav justify-content-center nav-pills nav-fill">
             <li class="nav-item">
                 <a class="nav-link text-g-yellow" href="#">Peru & latin america specials</a>
             </li>
@@ -453,8 +476,26 @@
     </div>
 </section>
 
-<footer class="mt-5">
+<footer class="mt-5 bg-g-dark">
     <img src="https://gotoperu.com/img/footer.jpg" alt="" class="w-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-5">
+                <img src="https://gotoperu.com/img/logos/logo-gotoperu.png" alt="" class="img-fluid">
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col text-white">
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae cumque deleniti dignissimos distinctio, ducimus enim ex excepturi facere id molestiae nihil non officia pariatur quae quam repellendus soluta veritatis.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae cumque deleniti dignissimos distinctio, ducimus enim ex excepturi facere id molestiae nihil non officia pariatur quae quam repellendus soluta veritatis.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae cumque deleniti dignissimos distinctio, ducimus enim ex excepturi facere id molestiae nihil non officia pariatur quae quam repellendus soluta veritatis.</li>
+                </ul>
+                <p>Lorem ipsum dolor sit <span class="text-g-yellow">amet, consectetur adipisicing elit. Aliquid aspernatur blanditiis</span> cupiditate eligendi enim eos, exercitationem illo inventore, libero nam placeat voluptas voluptatibus? Autem, id itaque maiores quaerat quod similique.</p>
+            </div>
+        </div>
+    </div>
 </footer>
 
 <script src="{{asset("js/app.js")}}"></script>
@@ -470,6 +511,32 @@
     $(window).scroll(function(e){
         parallax();
     });
+
+
+    var scroll = new SmoothScroll();
+
+    var smoothScrollWithoutHash = function (selector, settings) {
+        /**
+         * If smooth scroll element clicked, animate scroll
+         */
+        var clickHandler = function (event) {
+            var toggle = event.target.closest( selector );
+            console.log(toggle);
+            if ( !toggle || toggle.tagName.toLowerCase() !== 'a' ) return;
+            console.log(toggle.hash);
+            var anchor = document.querySelector( toggle.hash );
+            if ( !anchor ) return;
+
+            event.preventDefault(); // Prevent default click event
+            scroll.animateScroll( anchor, toggle, settings || {} ); // Animate scroll
+        };
+
+        window.addEventListener('click', clickHandler, false );
+    };
+
+    // Run our function
+    smoothScrollWithoutHash( 'a[href*="#"]' );
+
 </script>
 </body>
 </html>

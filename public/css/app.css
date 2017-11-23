@@ -16793,6 +16793,29 @@ a.text-g-dark:hover {
   height: 250px;
 }
 
+.sticky-top-50 {
+  top: 50px;
+  z-index: 0;
+}
+
+.nav-goto-side {
+  border-left: 1px solid #f9a825;
+}
+
+.nav-goto-side a {
+  color: #333333;
+  font-size: 18px;
+}
+
+.nav-goto-side a.active {
+  background-color: #f6f7f7 !important;
+  display: block;
+  border-left: 3px solid #f9a825;
+  border-radius: 0;
+  font-weight: bold;
+  color: #333333 !important;
+}
+
 .font-montserrat {
   font-family: 'Montserrat', sans-serif;
 }
