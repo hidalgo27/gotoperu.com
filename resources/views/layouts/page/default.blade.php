@@ -11,13 +11,8 @@
 
     <link rel="stylesheet" href="{{mix("css/app.css")}}">
 
-    <style>
-        body {
-            position: relative;
-        }
-    </style>
 </head>
-<body data-spy="scroll" data-target="#menu">
+<body data-spy="scroll" data-target="#menu" class="position-relative">
 
 {{--<section>--}}
     {{--<div class="container">--}}
@@ -478,21 +473,127 @@
 
 <footer class="mt-5 bg-g-dark">
     <img src="https://gotoperu.com/img/footer.jpg" alt="" class="w-100">
-    <div class="container">
-        <div class="row justify-content-center">
+    <div class="container-fluid">
+        <div class="row justify-content-start">
             <div class="col-5">
                 <img src="https://gotoperu.com/img/logos/logo-gotoperu.png" alt="" class="img-fluid">
             </div>
         </div>
 
-        <div class="row mt-4">
+        <div class="row">
+            <div class="col-6">
+                <div class="alert bg-rgba-dark my-4 text-white text-center" role="alert">
+                    The <strong class="text-g-yellow">ONLY Peruvian Travel Operator</strong> with direct Sales Offices in the USA
+                </div>
+            </div>
+        </div>
+
+        <div class="row py-4">
             <div class="col text-white">
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae cumque deleniti dignissimos distinctio, ducimus enim ex excepturi facere id molestiae nihil non officia pariatur quae quam repellendus soluta veritatis.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae cumque deleniti dignissimos distinctio, ducimus enim ex excepturi facere id molestiae nihil non officia pariatur quae quam repellendus soluta veritatis.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae cumque deleniti dignissimos distinctio, ducimus enim ex excepturi facere id molestiae nihil non officia pariatur quae quam repellendus soluta veritatis.</li>
+                <h3 class="h6 text-g-yellow">Specials</h3>
+                <ul class="m-0 text-g-yellow list-unstyled">
+                    <li><a href="" class="text-white">Programs</a></li>
                 </ul>
-                <p>Lorem ipsum dolor sit <span class="text-g-yellow">amet, consectetur adipisicing elit. Aliquid aspernatur blanditiis</span> cupiditate eligendi enim eos, exercitationem illo inventore, libero nam placeat voluptas voluptatibus? Autem, id itaque maiores quaerat quod similique.</p>
+            </div>
+            <div class="col text-white">
+                <h3 class="h6 text-g-yellow">Tour Packages</h3>
+                <ul class="m-0 text-g-yellow list-unstyled">
+                    <li><a href="" class="text-white">1-3 Days</a></li>
+                    <li><a href="" class="text-white">4-6 Days</a></li>
+                    <li><a href="" class="text-white">6-9 Days</a></li>
+                    <li><a href="" class="text-white">10-11 Days</a></li>
+                    <li><a href="" class="text-white">12-14 Days</a></li>
+                    <li><a href="" class="text-white">15+ Days</a></li>
+                </ul>
+            </div>
+            <div class="col text-white">
+                <h3 class="h6 text-g-yellow">Destinations</h3>
+                <ul class="m-0 text-g-yellow list-unstyled">
+                    <li><a href="" class="text-white">Peru</a></li>
+                    <li><a href="" class="text-white">Brasil</a></li>
+                    <li><a href="" class="text-white">Argentina</a></li>
+                    <li><a href="" class="text-white">Chile</a></li>
+                    <li><a href="" class="text-white">Bolivia</a></li>
+                    <li><a href="" class="text-white">Ecuador</a></li>
+                </ul>
+            </div>
+            <div class="col text-white">
+                <h3 class="h6 text-g-yellow">Hotels</h3>
+                <ul class="m-0 text-g-yellow list-unstyled">
+                    <li><a href="" class="text-white">2 Stars</a></li>
+                    <li><a href="" class="text-white">3 Stars</a></li>
+                    <li><a href="" class="text-white">4 Stars</a></li>
+                    <li><a href="" class="text-white">5 Stars</a></li>
+                </ul>
+            </div>
+            <div class="col text-white">
+                <h3 class="h6 text-g-yellow">About Us</h3>
+                <ul class="m-0 text-g-yellow list-unstyled">
+                    <li><a href="" class="text-white">Social Responsibility</a></li>
+                    <li><a href="" class="text-white">Headquarters</a></li>
+                    <li><a href="" class="text-white">Join Our Team</a></li>
+                </ul>
+            </div>
+            <div class="col text-white">
+                <h3 class="h6 text-g-yellow">Offices</h3>
+                <ul class="m-0 text-g-yellow list-unstyled">
+                    <li><a href="" class="text-white">Peru</a></li>
+                    <li><a href="" class="text-white">USA</a></li>
+                </ul>
+            </div>
+            <div class="col text-white">
+                <h3 class="h6 text-g-yellow">FAQ</h3>
+                <ul class="m-0 text-g-yellow list-unstyled">
+                    <li><a href="" class="text-white">Getting To Peru</a></li>
+                    <li><a href="" class="text-white">MAP</a></li>
+                </ul>
+            </div>
+            <div class="col text-white">
+                <h3 class="h6 text-g-yellow">Testimonials</h3>
+                <ul class="m-0 text-g-yellow list-unstyled">
+                    <li><a href="" class="text-white">Reviews</a></li>
+                    <li><a href="" class="text-white">Tripadvisor</a></li>
+                    <li><a href="" class="text-white">Yelp</a></li>
+                    <li><a href="" class="text-white">Trustpilot</a></li>
+                    <li><a href="" class="text-white">Write a review</a></li>
+                </ul>
+            </div>
+            <div class="col text-white">
+                <h3 class="h6 text-g-yellow">Contact Us</h3>
+                <ul class="m-0 text-g-yellow list-unstyled">
+                    <li><a href="" class="text-white">Email</a></li>
+                    <li><a href="" class="text-white">Phone</a></li>
+                    <li><a href="" class="text-white">Address</a></li>
+                </ul>
+            </div>
+            <div class="col text-white">
+                <h3 class="h6 text-g-yellow">Travel Agents</h3>
+                <ul class="m-0 text-g-yellow list-unstyled">
+                    <li><a href="" class="text-white">Registration</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row bg-light py-3">
+            <div class="col">
+                <h6>GOTOPERU GROUP:</h6>
+            </div>
+            <div class="col">
+                <img src="https://gotoperu.com/img/logos/logo-gotoperu.png" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <img src="http://www.andesviagens.com/images/logos/logo-andes.png" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <img src="http://www.gotolatinamerica.com/img/logos/logo-latinamerica-2.png" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <img src="http://www.machupicchu-galapagos.com/img/logo-machupicchu-ecuador.png" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <small>PERU LOCAL TIME: 7:38PM</small>
+            </div>
+            <div class="col">
+                <a href=""><small>Services Terms & Conditions</small></a>
             </div>
         </div>
     </div>
@@ -536,6 +637,10 @@
 
     // Run our function
     smoothScrollWithoutHash( 'a[href*="#"]' );
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
 
 </script>
 </body>

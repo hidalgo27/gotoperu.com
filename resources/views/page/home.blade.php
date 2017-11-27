@@ -6,47 +6,84 @@
         <div class="jumbotron jumbotron-slider rounded-0">
             <div class="container-fluid">
                 <div class="row justify-content-between">
-                    <div class="col-4 text-white text-center">
-                        <div class="row justify-content-start">
-                            <div class="col-6">
-                                <img src="https://gotoperu.com/img/logos/tripadvisor_logo.png" alt="" class="w-100">
-                            </div>
-                        </div>
+                    <div class="col-4  text-center">
 
-                        <div class="row mt-5">
-                            <div class="col">
-                                <img src="https://gotoperu.com/img/ico/include/assistances.png" alt="" class="w-100">
-                                <span>Assistances</span>
+                        <div class="card bg-rgba-white mb-3">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col">
+                                        <img src="https://gotoperu.com/img/ico/include/assistances.png" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Assistances">
+                                        {{--<span>Assistances</span>--}}
+                                    </div>
+
+                                    <div class="col">
+                                        <img src="https://gotoperu.com/img/ico/include/entrances.png" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                        {{--<span>Entrances</span>--}}
+                                    </div>
+                                    <div class="col">
+                                        <img src="https://gotoperu.com/img/ico/include/transfers.png" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                        {{--<span>Transfers</span>--}}
+                                    </div>
+
+                                    <div class="col">
+                                        <img src="https://gotoperu.com/img/ico/include/hotels.png" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Hotels">
+                                        {{--<span>Hotels</span>--}}
+                                    </div>
+                                    <div class="col">
+                                        <img src="https://gotoperu.com/img/ico/include/tours.png" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Tours">
+                                        {{--<span>Tours</span>--}}
+                                    </div>
+                                    <div class="col">
+                                        <img src="https://gotoperu.com/img/ico/include/trains.png" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Trains">
+                                        {{--<span>Trains</span>--}}
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col">
-                                <img src="https://gotoperu.com/img/ico/include/breakfast.png" alt="" class="w-100">
-                                <span>Breakfast</span>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <ul class="list-unstyled text-left m-0">
+                                            <li>Dia 1: Lima City Tour</li>
+                                            <li>Dia 2: Pachacamac</li>
+                                            <li>Dia 3: Cusco City</li>
+                                            <li>Dia 4: Sacred Valley</li>
+                                            <li>Dia 5: Machu Picchu</li>
+                                            <li>Dia 6: Maras & Maras</li>
+                                            <li>Dia 7: South Valley</li>
+                                            <li>Dia 8: Sun Road Tour</li>
+                                            <li>Dia 9: Lake Titicaca</li>
+                                            <li>Dia 10: Farewell</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col border border-top-0 border-bottom-0 border-right-0 border-secondary">
+                                        <div class="">
+                                            <h2 class="font-pompiere font-weight-bold h1">Amazing Peru</h2>
+                                        </div>
+                                        <div class="h1 text-g-yellow my-4">
+                                            10 <span>days</span>
+                                        </div>
+                                        <div class="">
+                                            <small class="d-block">starting from</small>
+                                            <span class="h1"><sup>$</sup>1499</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col">
-                                <img src="https://gotoperu.com/img/ico/include/entrances.png" alt="" class="w-100">
-                                <span>Entrances</span>
-                            </div>
-                            <div class="col">
-                                <img src="https://gotoperu.com/img/ico/include/flight.png" alt="" class="w-100">
-                                <span>Flight</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <img src="https://gotoperu.com/img/ico/include/hotels.png" alt="" class="w-100">
-                                <span>Hotels</span>
-                            </div>
-                            <div class="col">
-                                <img src="https://gotoperu.com/img/ico/include/tours.png" alt="" class="w-100">
-                                <span>Tours</span>
-                            </div>
-                            <div class="col">
-                                <img src="https://gotoperu.com/img/ico/include/trains.png" alt="" class="w-100">
-                                <span>Trains</span>
-                            </div>
-                            <div class="col">
-                                <img src="https://gotoperu.com/img/ico/include/transfers.png" alt="" class="w-100">
-                                <span>Transfers</span>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="" class="text-white btn btn-block btn-g-yellow">8 days</a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="" class="text-white btn btn-block btn-g-green">12 days</a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="" class="text-white btn btn-block btn-g-dark">14 days</a>
+                                    </div>
+                                </div>
+                                {{--<div class="col text-right my-3">--}}
+                                    {{--<a href="" class="text-white">View all Specialy</a>--}}
+                                {{--</div>--}}
                             </div>
                         </div>
 
