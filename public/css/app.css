@@ -16820,6 +16820,10 @@ a.text-g-dark:hover {
   color: #333333 !important;
 }
 
+.footer-logo {
+  margin-top: -15%;
+}
+
 .font-montserrat {
   font-family: 'Montserrat', sans-serif;
 }

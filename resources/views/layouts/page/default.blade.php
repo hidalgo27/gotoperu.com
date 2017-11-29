@@ -54,14 +54,14 @@
 
 <section>
     <div class="container">
-        <div class="row mt-2">
-            <div class="col">
-                <a href="/"><img src="https://gotoperu.com/img/logos/logo-gotoperu.png" alt="" class="img-fluid"></a>
+        <div class="row">
+            <div class="col mt-1">
+                <a href="/"><img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="img-fluid"></a>
             </div>
-            <div class="col text-center pt-2">
-                <i class="h4">... a new adventure every day!</i>
+            <div class="col text-center pt-4">
+                <i class="h4">... a <span class="text-g-yellow">new</span> adventure every day!</i>
             </div>
-            <div class="col text-right pt-2">
+            <div class="col text-right pt-4">
                 <a href="" class="font-weight-bold mx-3">(202) 996-3000</a>
                 <button type="button" class="btn btn-g-yellow">Chat</button>
                 <button type="button" class="btn btn-g-green">Inquire Now</button>
@@ -181,7 +181,7 @@
 
         <ul class="nav justify-content-center nav-pills nav-fill">
             <li class="nav-item">
-                <a class="nav-link text-g-yellow" href="#">Peru & latin america specials</a>
+                <a class="nav-link text-g-yellow" href="#">Travel Deals</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-secondary" href="{{route('packages_path')}}">Tour Packages</a>
@@ -473,21 +473,26 @@
 
 <footer class="mt-5 bg-g-dark">
     <img src="https://gotoperu.com/img/footer.jpg" alt="" class="w-100">
-    <div class="container-fluid">
-        <div class="row justify-content-start">
-            <div class="col-5">
-                <img src="https://gotoperu.com/img/logos/logo-gotoperu.png" alt="" class="img-fluid">
+    <div class="container footer-logo">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col">
+                        <img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="w-100">
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-6">
+        <div class="row justify-content-center">
+            <div class="col-8">
                 <div class="alert bg-rgba-dark my-4 text-white text-center" role="alert">
                     The <strong class="text-g-yellow">ONLY Peruvian Travel Operator</strong> with direct Sales Offices in the USA
                 </div>
             </div>
         </div>
-
+    </div>
+    <div class="container-fluid">
         <div class="row py-4">
             <div class="col text-white">
                 <h3 class="h6 text-g-yellow">Specials</h3>
@@ -636,7 +641,7 @@
     };
 
     // Run our function
-    smoothScrollWithoutHash( 'a[href*="#"]' );
+//    smoothScrollWithoutHash( 'a[href*="#"]' );
 
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()

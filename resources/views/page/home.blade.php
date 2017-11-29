@@ -6,7 +6,7 @@
         <div class="jumbotron jumbotron-slider rounded-0">
             <div class="container-fluid">
                 <div class="row justify-content-between">
-                    <div class="col-4  text-center">
+                    <div class="col-4 text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
 
                         <div class="card bg-rgba-white mb-3">
                             <div class="card-header">
@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div class="row">
+                                <div class="row no-gutters">
                                     <div class="col">
                                         <ul class="list-unstyled text-left m-0">
                                             <li>Dia 1: Lima City Tour</li>
@@ -56,15 +56,14 @@
                                         </ul>
                                     </div>
                                     <div class="col border border-top-0 border-bottom-0 border-right-0 border-secondary">
-                                        <div class="">
+                                        <div>
                                             <h2 class="font-pompiere font-weight-bold h1">Amazing Peru</h2>
                                         </div>
                                         <div class="h1 text-g-yellow my-4">
                                             10 <span>days</span>
                                         </div>
-                                        <div class="">
-                                            <small class="d-block">starting from</small>
-                                            <span class="h1"><sup>$</sup>1499</span>
+                                        <div>
+                                            <span class="h1"><sup class="h5 text-secondary">from</sup>$1499</span>
                                         </div>
                                     </div>
                                 </div>
@@ -88,6 +87,11 @@
                         </div>
 
                     </div>
+
+                    <div class="col-3">
+                        <h2 class="text-white text-center mt-5">Top recommend Travel Operator to Peru and <strong>Machu Picchu</strong></h2>
+                    </div>
+
                     <div class="col-3 os-animation bg-rgba-dark py-2 rounded" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                         <h5 class="text-white font-weight-bold text-center">GET A FREE QUOTE</h5>
                         <form>
@@ -185,7 +189,8 @@
             <div class="row">
                 <div class="col text-center">
                     <h1 class="text-secondary h5"><strong>PERU TRAVEL PACKAGES</strong></h1>
-                    <h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    <h2 class="text-g-green">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>
                     <p class="lead">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>customized travel packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>machu picchu</strong> and the rest of our  homeland… peru!</p>
                 </div>
             </div>
@@ -380,22 +385,34 @@
     <section class="my-5">
         <div class="container">
             <div class="row pt-3">
-                <div class="col d-flex">
+
+
+                @foreach($paquetes->take(6) as $paquete)
+                <div class="col-4 d-flex mb-4">
                     <div class="card">
                         {{--<div class="card-header">--}}
                         {{--<h4 class="card-title">City tour em cusco</h4>--}}
                         {{--</div>--}}
-                        <a href="{{route('itinerary_path', 'peru-magico')}}"><img class="card-img-top " src="http://www.andesviagens.com/images/packages/AV700.jpg" alt="Card image cap"></a>
+                        <a href="{{route('itinerary_path', str_replace(' ','-',strtolower($paquete->titulo)))}}"><img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="Card image cap"></a>
                         <div class="card-img-overlay p-1">
-                            <h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">7 Days</span> <a href="" class="btn btn-sm btn-dark float-right"><i class="fa fa-search-plus"></i> View Map and Itinerary</a></h5>
+                            <h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">{{$paquete->duracion}} Days</span> <a href="" class="btn btn-sm btn-dark float-right"><i class="fa fa-search-plus"></i> View Map and Itinerary</a></h5>
                             {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
                             {{--<p class="card-text">Last updated 3 mins ago</p>--}}
                         </div>
                         <div class="card-body p-2 text-center">
-                            <h4 class="card-title m-0"><a href="{{route('itinerary_path', 'peru-magico')}}" class="text-dark">Perú Magico</a></h4>
+                            <h2 class="card-title m-0 font-pompiere font-weight-bold h4"><a href="{{route('itinerary_path', 'peru-magico')}}" class="text-dark">{{$paquete->titulo}}</a></h2>
                             {{--<p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Días</p>--}}
                             <p class="text-left card-text"><i class="fa fa-map-marker text-g-yellow" aria-hidden="true"></i>
-                                Lima, Cusco, Sacred Valley, Machu Picchu
+                                @php
+                                    $i = 1;
+                                    $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
+                                @endphp
+                                @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
+                                    @if(isset($paquete_destino->destinos->nombre))
+                                    {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
+                                    @php $i++; @endphp
+                                    @endif
+                                @endforeach
                             </p>
                             {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
                         </div>
@@ -403,73 +420,23 @@
                             <div class="row">
                                 <div class="col text-left">From</div>
                                 <div class="col text-right font-weight-bold text-primary font-montserrat">
-                                    <sup>$</sup> 898 <small>USD</small>
-
+                                    @foreach($paquete->precio_paquetes as $precio)
+                                        @if($precio->estrellas == 2)
+                                            @if($precio->precio_d > 0)
+                                                <sup>$</sup> {{$precio->precio_d}} <small>USD</small>
+                                            @else
+                                                <span class="text-danger">Inquire</span>
+                                            @endif
+                                        @endif
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col d-flex">
-                    <div class="card">
-                        {{--<div class="card-header">--}}
-                        {{--<h4 class="card-title">City tour em cusco</h4>--}}
-                        {{--</div>--}}
-                        <a href="{{route('itinerary_path', 'peru-magico')}}"><img class="card-img-top " src="https://gotoperu.com/img/fotos/GTPE1005.jpg" alt="Card image cap"></a>
-                        <div class="card-img-overlay p-1">
-                            <h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">7 Days</span> <a href="" class="btn btn-sm btn-dark float-right"><i class="fa fa-search-plus"></i> View Map and Itinerary</a></h5>
-                            {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
-                            {{--<p class="card-text">Last updated 3 mins ago</p>--}}
-                        </div>
-                        <div class="card-body p-2 text-center">
-                            <h4 class="card-title m-0"><a href="{{route('itinerary_path', 'peru-magico')}}" class="text-dark">Perú Magico</a></h4>
-                            {{--<p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Días</p>--}}
-                            <p class="text-left card-text"><i class="fa fa-map-marker text-g-yellow" aria-hidden="true"></i>
-                                Lima, Cusco, Sacred Valley, Machu Picchu
-                            </p>
-                            {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
-                        </div>
-                        <div class="card-footer text-muted p-2">
-                            <div class="row">
-                                <div class="col text-left">From</div>
-                                <div class="col text-right font-weight-bold text-primary font-montserrat">
-                                    <sup>$</sup> 898 <small>USD</small>
+                @endforeach
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex">
-                    <div class="card">
-                        {{--<div class="card-header">--}}
-                        {{--<h4 class="card-title">City tour em cusco</h4>--}}
-                        {{--</div>--}}
-                        <a href="{{route('itinerary_path', 'peru-magico')}}"><img class="card-img-top " src="https://gotoperu.com/img/fotos/GTLM3000.jpg" alt="Card image cap"></a>
-                        <div class="card-img-overlay p-1">
-                            <h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">7 Days</span> <a href="" class="btn btn-sm btn-dark float-right"><i class="fa fa-search-plus"></i> View Map and Itinerary</a></h5>
-                            {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
-                            {{--<p class="card-text">Last updated 3 mins ago</p>--}}
-                        </div>
-                        <div class="card-body p-2 text-center">
-                            <h4 class="card-title m-0"><a href="{{route('itinerary_path', 'peru-magico')}}" class="text-dark">Perú Magico</a></h4>
-                            {{--<p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Días</p>--}}
-                            <p class="text-left card-text"><i class="fa fa-map-marker text-g-yellow" aria-hidden="true"></i>
-                                Lima, Cusco, Sacred Valley, Machu Picchu
-                            </p>
-                            {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
-                        </div>
-                        <div class="card-footer text-muted p-2">
-                            <div class="row">
-                                <div class="col text-left">From</div>
-                                <div class="col text-right font-weight-bold text-primary font-montserrat">
-                                    <sup>$</sup> 898 <small>USD</small>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

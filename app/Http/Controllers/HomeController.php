@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\TCategoria;
+use App\TDestino;
+use App\TPaquete;
+use App\TPaqueteDestino;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +17,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('page.home');
+
+        $paquetes = TPaquete::with('precio_paquetes')->get();
+        $paquetes_r = TPaquete::with('precio_paquetes')->get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+//        dd($paquete_destinos);
+        return view('page.home',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r]);
     }
 
     /**
@@ -84,7 +93,35 @@ class HomeController extends Controller
 
     public function packages()
     {
-        return view('page.packages');
+        $paquetes = TPaquete::with('precio_paquetes')->get();
+        $paquetes_r = TPaquete::with('precio_paquetes')->get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        return view('page.packages',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r]);
+    }
+
+    public function packages_durations($duration)
+    {
+        $paquetes = TPaquete::with('precio_paquetes')->where('duracion', $duration)->get();
+        $paquetes_r = TPaquete::with('precio_paquetes')->get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        return view('page.packages-durations',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r]);
+    }
+
+
+    public function packages_list()
+    {
+
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->get();
+        $categoria = TCategoria::get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+
+
+        return view('page.packages-list', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria]);
+
+//        $paquetes = TPaquete::with('precio_paquetes')->get();
+//        $paquetes_r = TPaquete::with('precio_paquetes')->get();
+//        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+//        return view('page.packages-list',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r]);
     }
 
     public function itinerary()
@@ -99,12 +136,35 @@ class HomeController extends Controller
 
     public function destinations_country($title)
     {
-        return view('page.destinations-country');
+        $pais = explode('-', $title);
+        $pais = $pais[0];
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->get();
+        $categoria = TCategoria::get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        $destinos = TDestino::get();
+        $destinos_p = TDestino::where('pais', $pais)->get();
+        return view('page.destinations-country', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos, 'destinos_p'=>$destinos_p, 'pais'=>$pais]);
+
+//        return view('page.destinations-country');
     }
 
     public function destinations_country_show($title, $city)
     {
-        return view('page.destinations-country-show');
+        $pais = explode('-travel', $title);
+        $pais = $pais[0];
+        $ciudad = explode('-tours', $city);
+        $ciudad = $ciudad[0];
+        $ciudad = str_replace('-', ' ', $ciudad);
+        $destinations = str_replace('-', ' ', ucwords(strtolower($title)));
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->get();
+        $categoria = TCategoria::get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        $destinos = TDestino::get();
+        $destinos_p = TDestino::where('pais', $pais)->get();
+
+        $paquetes_de = TPaqueteDestino::with(['destinos'=>function($query) use ($ciudad) { $query->where('nombre', $ciudad);}])->get();
+
+        return view('page.destinations-country-show', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos, 'destinos_p'=>$destinos_p, 'pais'=>$pais, 'paquetes_de'=>$paquetes_de]);
     }
 
     public function about()

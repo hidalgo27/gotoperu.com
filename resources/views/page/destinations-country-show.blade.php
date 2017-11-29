@@ -37,112 +37,89 @@
         <div class="container">
             <div class="row">
                 <div class="col-3">
-                    <h3 class="font-weight-bold text-g-green">Peruvian Destinations</h3>
-                    <h5 class="text-g-yellow font-pompiere font-weight-bold"><b>Region:</b> Sur</h5>
-                    <div class="card p-1">
-                        <a href="" class="bg-dark p-2 border rounded"><i class="fa fa-chevron-right"></i>Arequipa <span class="badge badge-g-yellow float-right mt-1">4</span></a>
-                        </a>
-                        <a href=""><i class="fa fa-chevron-right mb-2"></i>Puno and Lake Titicaca <span class="badge badge-g-yellow float-right mt-1">4</span></a>
-                        </a>
-                        <a href=""><i class="fa fa-chevron-right mb-2"></i>Machu Picchu <span class="badge badge-g-yellow float-right mt-1">17</span></a>
-                        </a>
+                    <div class="row">
+                        @php $pais_e= explode('-', $pais) @endphp
+                        @foreach($destinos->unique('pais') as $destino)
+                            <div class="col-12 @if($destino->pais == $pais) {{'order-first'}} @endif">
+                                <h3 class="font-weight-bold text-g-green text-capitalize">{{$destino->pais}} Destinations</h3>
+                                @foreach($destinos->where('pais', $destino->pais)->unique('region') as $region)
+                                    @if(isset($region->region))
+                                        <h5 class="text-g-yellow font-pompiere font-weight-bold"><b>Region:</b> {{$region->region}}</h5>
+                                        <div class="card p-2 mb-3">
+                                            @foreach($destinos->where('pais', $destino->pais)->where('region', $region->region) as $city)
+                                                @php $j=0 @endphp
+                                                @foreach($paquete_destinos->where('iddestinos', $city->id) as $paquete_destino)
+                                                    @php $j++ @endphp
+                                                @endforeach
+
+                                                <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($city->nombre))])}}-tours"><i class="fa fa-chevron-right my-2"></i>{{ucwords(strtolower($city->nombre))}} <span class="badge badge-g-yellow float-right mt-1">{{$j}}</span></a>
+
+                                            @endforeach
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col">
-                    <h3 class="font-weight-bold text-g-green">Peru travel packages</h3>
+                    <h3 class="font-weight-bold text-g-green text-capitalize">{{$pais}} travel packages</h3>
                     <h5 class="text-secondary font-pompiere font-weight-bold"><b>Incluye:</b> hoteles, transporte, guia.</h5>
                     <div class="">
                         <div class="row">
-                            <div class="col d-flex">
-                                <div class="card">
-                                    {{--<div class="card-header">--}}
-                                    {{--<h4 class="card-title">City tour em cusco</h4>--}}
-                                    {{--</div>--}}
-                                    <a href="http://gotoperu.com.pe/paquete/peru-magico"><img class="card-img-top " src="http://www.andesviagens.com/images/packages/AV700.jpg" alt="Card image cap"></a>
-                                    <div class="card-img-overlay p-1">
-                                        <h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">7 Days</span> <a href="" class="btn btn-sm btn-dark float-right"><i class="fa fa-search-plus"></i> Map and Itinerary</a></h5>
-                                        {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
-                                        {{--<p class="card-text">Last updated 3 mins ago</p>--}}
-                                    </div>
-                                    <div class="card-body p-2 text-center">
-                                        <h4 class="card-title m-0"><a href="http://gotoperu.com.pe/paquete/peru-magico" class="text-dark">Perú Magico</a></h4>
-                                        {{--<p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Días</p>--}}
-                                        <p class="text-left card-text"><i class="fa fa-map-marker text-g-yellow" aria-hidden="true"></i>
-                                            Lima, Cusco, Sacred Valley, Machu Picchu
-                                        </p>
-                                        {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
-                                    </div>
-                                    <div class="card-footer text-muted p-2">
-                                        <div class="row">
-                                            <div class="col text-left">From</div>
-                                            <div class="col text-right font-weight-bold text-primary font-montserrat">
-                                                <sup>$</sup> 898 <small>USD</small>
+                            @foreach($paquetes_de as $paquetes_des)
+                                @if(isset($paquetes_des->destinos))
+                                    @foreach($paquete->where('id',$paquetes_des->paquetes->id)->sortBy("duracion") as $paquetes)
 
+                                        <div class="col-4 d-flex mb-4">
+                                            <div class="card">
+                                                {{--<div class="card-header">--}}
+                                                {{--<h4 class="card-title">City tour em cusco</h4>--}}
+                                                {{--</div>--}}
+                                                <a href="{{route('itinerary_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}"><img class="card-img-top " src="{{asset('images/packages/'.$paquetes->codigo.'.jpg')}}" alt="Card image cap"></a>
+                                                <div class="card-img-overlay p-1">
+                                                    <h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">{{$paquetes->duracion}} Days</span> <a href="" class="btn btn-sm btn-dark float-right"><i class="fa fa-search-plus"></i> Map and Itinerary</a></h5>
+                                                    {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
+                                                    {{--<p class="card-text">Last updated 3 mins ago</p>--}}
+                                                </div>
+                                                <div class="card-body p-2 text-center">
+                                                    <h2 class="card-title m-0 font-pompiere font-weight-bold h4"><a href="{{route('itinerary_path', 'peru-magico')}}" class="text-dark">{{$paquetes->titulo}}</a></h2>
+                                                    {{--<p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Días</p>--}}
+                                                    <p class="text-left card-text"><i class="fa fa-map-marker text-g-yellow" aria-hidden="true"></i>
+                                                        @php
+                                                            $i = 1;
+                                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
+                                                        @endphp
+                                                        @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
+                                                            @if(isset($paquete_destino->destinos->nombre))
+                                                                {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
+                                                                @php $i++; @endphp
+                                                            @endif
+                                                        @endforeach
+                                                    </p>
+                                                    {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
+                                                </div>
+                                                <div class="card-footer text-muted p-2">
+                                                    <div class="row">
+                                                        <div class="col text-left">From</div>
+                                                        <div class="col text-right font-weight-bold text-primary font-montserrat">
+                                                            @foreach($paquetes->precio_paquetes as $precio)
+                                                                @if($precio->estrellas == 2)
+                                                                    @if($precio->precio_d > 0)
+                                                                        <sup>$</sup> {{$precio->precio_d}} <small>USD</small>
+                                                                    @else
+                                                                        <span class="text-danger">Inquire</span>
+                                                                    @endif
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col d-flex">
-                                <div class="card">
-                                    {{--<div class="card-header">--}}
-                                    {{--<h4 class="card-title">City tour em cusco</h4>--}}
-                                    {{--</div>--}}
-                                    <a href="http://gotoperu.com.pe/paquete/peru-magico"><img class="card-img-top " src="https://gotoperu.com/img/fotos/GTPE1005.jpg" alt="Card image cap"></a>
-                                    <div class="card-img-overlay p-1">
-                                        <h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">7 Days</span> <a href="" class="btn btn-sm btn-dark float-right"><i class="fa fa-search-plus"></i> Map and Itinerary</a></h5>
-                                        {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
-                                        {{--<p class="card-text">Last updated 3 mins ago</p>--}}
-                                    </div>
-                                    <div class="card-body p-2 text-center">
-                                        <h4 class="card-title m-0"><a href="http://gotoperu.com.pe/paquete/peru-magico" class="text-dark">Perú Magico</a></h4>
-                                        {{--<p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Días</p>--}}
-                                        <p class="text-left card-text"><i class="fa fa-map-marker text-g-yellow" aria-hidden="true"></i>
-                                            Lima, Cusco, Sacred Valley, Machu Picchu
-                                        </p>
-                                        {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
-                                    </div>
-                                    <div class="card-footer text-muted p-2">
-                                        <div class="row">
-                                            <div class="col text-left">From</div>
-                                            <div class="col text-right font-weight-bold text-primary font-montserrat">
-                                                <sup>$</sup> 898 <small>USD</small>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col d-flex">
-                                <div class="card">
-                                    {{--<div class="card-header">--}}
-                                    {{--<h4 class="card-title">City tour em cusco</h4>--}}
-                                    {{--</div>--}}
-                                    <a href="http://gotoperu.com.pe/paquete/peru-magico"><img class="card-img-top " src="https://gotoperu.com/img/fotos/GTLM3000.jpg" alt="Card image cap"></a>
-                                    <div class="card-img-overlay p-1">
-                                        <h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">7 Days</span> <a href="" class="btn btn-sm btn-dark float-right"><i class="fa fa-search-plus"></i> Map and Itinerary</a></h5>
-                                        {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
-                                        {{--<p class="card-text">Last updated 3 mins ago</p>--}}
-                                    </div>
-                                    <div class="card-body p-2 text-center">
-                                        <h4 class="card-title m-0"><a href="http://gotoperu.com.pe/paquete/peru-magico" class="text-dark">Perú Magico</a></h4>
-                                        {{--<p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Días</p>--}}
-                                        <p class="text-left card-text"><i class="fa fa-map-marker text-g-yellow" aria-hidden="true"></i>
-                                            Lima, Cusco, Sacred Valley, Machu Picchu
-                                        </p>
-                                        {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
-                                    </div>
-                                    <div class="card-footer text-muted p-2">
-                                        <div class="row">
-                                            <div class="col text-left">From</div>
-                                            <div class="col text-right font-weight-bold text-primary font-montserrat">
-                                                <sup>$</sup> 898 <small>USD</small>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    @endforeach
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>

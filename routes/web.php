@@ -26,6 +26,16 @@ Route::get('/packages', [
     'as' => 'packages_path',
 ]);
 
+Route::get('/packages/{duration}-days', [
+    'uses' => 'HomeController@packages_durations',
+    'as' => 'packages_durations_path',
+]);
+
+Route::get('/tours-packages', [
+    'uses' => 'HomeController@packages_list',
+    'as' => 'packages_list_path',
+]);
+
 //itinerary
 Route::get('/packages/{title}', [
     'uses' => 'HomeController@itinerary',
