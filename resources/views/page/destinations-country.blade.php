@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-3">
                     <div class="row">
-                        @php $pais_e= explode('-', $pais) @endphp
+
                         @foreach($destinos->unique('pais') as $destino)
                             <div class="col-12 @if($destino->pais == $pais) {{'order-first'}} @endif">
                                 <h3 class="font-weight-bold text-g-green text-capitalize">{{$destino->pais}} Destinations</h3>
@@ -67,9 +67,9 @@
                     <h5 class="text-secondary font-pompiere font-weight-bold"><b>Incluye:</b> hoteles, transporte, guia.</h5>
                     <div class="">
                         <div class="row">
-                            @foreach($destinos_p as $destino_p)
-                                @foreach($paquete as $paquetes)
-                                    @foreach($paquetes->paquetes_destinos->where('iddestinos', $destino_p->id)->where('idpaquetes', $paquetes->id) as $paquete_destino)
+                            @foreach($paquetes_de->unique('idpaquetes') as $paquetes_des)
+                                @if(isset($paquetes_des->destinos))
+                                    @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
                                     <div class="col-4 d-flex mb-4">
                                         <div class="card">
                                             {{--<div class="card-header">--}}
@@ -117,7 +117,7 @@
                                         </div>
                                     </div>
                                     @endforeach
-                                @endforeach
+                                @endif
                             @endforeach
                         </div>
                     </div>

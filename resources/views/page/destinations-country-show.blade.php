@@ -69,8 +69,7 @@
                         <div class="row">
                             @foreach($paquetes_de as $paquetes_des)
                                 @if(isset($paquetes_des->destinos))
-                                    @foreach($paquete->where('id',$paquetes_des->paquetes->id)->sortBy("duracion") as $paquetes)
-
+                                    @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
                                         <div class="col-4 d-flex mb-4">
                                             <div class="card">
                                                 {{--<div class="card-header">--}}
