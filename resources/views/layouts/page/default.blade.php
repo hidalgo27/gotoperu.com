@@ -181,7 +181,7 @@
 
         <ul class="nav justify-content-center nav-pills nav-fill">
             <li class="nav-item">
-                <a class="nav-link text-g-yellow" href="#">Travel Deals</a>
+                <a class="nav-link text-g-yellow" href="{{route('deals_path')}}">Travel Deals</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-secondary" href="{{route('packages_path')}}">Tour Packages</a>

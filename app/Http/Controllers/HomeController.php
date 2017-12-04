@@ -199,4 +199,14 @@ class HomeController extends Controller
     {
         return view('page.agents');
     }
+
+    public function deals()
+    {
+        $paquetes = TPaquete::with('precio_paquetes')->get();
+        $paquetes_r = TPaquete::with('precio_paquetes')->get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        return view('page.travel-deals',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r]);
+//        return view('page.travel-deals');
+    }
+
 }

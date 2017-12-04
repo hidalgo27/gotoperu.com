@@ -16824,6 +16824,15 @@ a.text-g-dark:hover {
   margin-top: -15%;
 }
 
+.p-medalla {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: -13%;
+  width: 40%;
+}
+
 .font-montserrat {
   font-family: 'Montserrat', sans-serif;
 }

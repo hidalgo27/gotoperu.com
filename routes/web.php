@@ -85,3 +85,9 @@ Route::get('/travel-agents', [
     'uses' => 'HomeController@agents',
     'as' => 'agents_path',
 ]);
+
+//travel deals
+Route::get('/travel-deals', [
+    'uses' => 'HomeController@deals',
+    'as' => 'deals_path',
+]);
