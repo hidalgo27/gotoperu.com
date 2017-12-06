@@ -7,6 +7,7 @@ use App\TDestino;
 use App\TPaquete;
 use App\TPaqueteDestino;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -207,6 +208,78 @@ class HomeController extends Controller
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         return view('page.travel-deals',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r]);
 //        return view('page.travel-deals');
+    }
+
+    public function inquire()
+    {
+        $from = 'hidalgochpnce@gmail';
+        $from2 = 'paul@gotoperu.com';
+
+        $accommodation = $_POST['txt_accommodation'];
+        $number = $_POST['txt_number'];
+
+        $date = $_POST['txt_date'];
+        $tel = $_POST['txt_tel'];
+        $name = $_POST['txt_name'];
+        $email = $_POST['txt_email'];
+        $package = $_POST['txt_package'];
+
+        $comment = $_POST['txt_comment'];
+
+
+        try {
+            Mail::send(['html' => 'notifications.page.client-form-design'], ['name' => $name], function ($messaje) use ($email, $name) {
+                $messaje->to($email, $name)
+                    ->subject('GotoPeru')
+                    /*->attach('ruta')*/
+                    ->from('hidalgochpnce@gmail', 'GotoPeru');
+            });
+
+
+            Mail::send(['html' => 'notifications.page.admin-form-inquire'], [
+                'accommodation' => $accommodation,
+                'number' => $number,
+
+                'date' => $date,
+                'tel' => $tel,
+                'name' => $name,
+                'email' => $email,
+                'package' => $package,
+                'comment' => $comment
+            ], function ($messaje) use ($from) {
+                $messaje->to($from, 'GotoPeru')
+                    ->subject('GOTOPERU')
+                    /*->attach('ruta')*/
+                    ->from('hidalgochpnce@gmail', 'GotoPeru');
+            });
+
+
+//            Mail::send(['html' => 'notifications.page.admin-form-inquire'], [
+//                'accommodation' => $accommodation,
+//                'number' => $number,
+//
+//                'date' => $date,
+//                'tel' => $tel,
+//                'name' => $name,
+//                'email' => $email,
+//                'package' => $package,
+//                'comment' => $comment
+//            ], function ($messaje) use ($from2) {
+//                $messaje->to($from2, 'GotoPeru')
+//                    ->subject('GOTOPERU')
+//                    /*->attach('ruta')*/
+//                    ->from('hidalgochpnce@gmail', 'GotoPeru');
+//            });
+
+
+            return 'Thank you.';
+
+        }
+        catch (Exception $e){
+            return $e;
+        }
+
+//        return view('page.itinerary', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos]);
     }
 
 }

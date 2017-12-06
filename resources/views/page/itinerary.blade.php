@@ -258,4 +258,251 @@
             </div>
         </div>
     </section>
+
+    <section class="mt-5 py-5 bg-light" id="book-now">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-9 col-md-9 col-lg-8 text-center">
+                    <span class="text-secondary font-weight-bold">TRAVEL PACKAGES</span>
+                    <h2 class="text-g-green font-weight-bold">{{$paquetes->titulo}} {{$paquetes->duracion}} DIAS</h2>
+                    {{--<h5 class="text-secondary">{{$paquetes->duracion}} Days</h5>--}}
+                    <hr>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-7 col-md-7 col-lg-7">
+                    <form id="d_form" role="form">
+                        {{csrf_field()}}
+                        <h3 class="text-secondary mt-4">HOTEL QUALITY</h3>
+
+                        <div class="row">
+                            <div class="col-6 col-sm" data-toggle="buttons">
+                                <label class="btn btn-outline-g-green btn-block">
+                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> Badget
+                                    <div class="d-block text-warning">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-6 col-sm" data-toggle="buttons">
+                                <label class="btn btn-outline-g-green btn-block">
+                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Turista"> Best Value
+                                    <div class="d-block text-warning">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-6 col-sm" data-toggle="buttons">
+                                <label class="btn btn-outline-g-green btn-block">
+                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Superior"> Superior
+                                    <div class="d-block text-warning">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-6 col-sm" data-toggle="buttons">
+                                <label class="btn btn-outline-g-green btn-block">
+                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Luxo"> Luxury
+                                    <div class="d-block text-warning">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <h3 class="text-secondary mt-4">NUMBER OF TRAVELERS</h3>
+
+                        <div class="row no-gutters" data-toggle="buttons">
+                            <label class="btn col btn-outline-g-green">
+                                <input type="radio" name="number" class="number" autocomplete="off" value="1" checked> 1 <i class="fa fa-male"></i>
+                            </label>
+                            <label class="btn col mx-2 btn-outline-g-green">
+                                <input type="radio" name="number" class="number" autocomplete="off" value="2"> 2 <i class="fa fa-male"></i>
+                            </label>
+                            <label class="btn col btn-outline-g-green">
+                                <input type="radio" name="number" class="number" autocomplete="off" value="3"> 3 <i class="fa fa-male"></i>
+                            </label>
+                            <label class="btn col mx-2 btn-outline-g-green">
+                                <input type="radio" name="number" class="number" autocomplete="off" value="4"> 4 <i class="fa fa-male"></i>
+                            </label>
+                            <label class="btn col btn-outline-g-green">
+                                <input type="radio" name="number" class="number" autocomplete="off" value="5+"> 5+ <i class="fa fa-male"></i>
+                            </label>
+                            <label class="btn col ml-2 btn-outline-g-green">
+                                <input type="radio" name="number" class="number" autocomplete="off" value="Undecided"><small>Undecided</small>
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <h3 class="text-secondary mt-4">Traveling Date</h3>
+                                <input type="text" class="form-control" id="d_date" placeholder="Fecha de Viaje">
+                                <input type="hidden" id="d_package" value="{{$paquetes->codigo}}: {{$paquetes->titulo}} {{$paquetes->duracion}} DAYS">
+                            </div>
+                            <div class="col">
+                                <h3 class="text-secondary mt-4">Phone Number</h3>
+                                <input type="tel" class="form-control" id="d_tel" placeholder="Phone number">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <h3 class="text-secondary mt-4">Name*</h3>
+                                <input type="text" class="form-control" id="d_name" placeholder="Full Name">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <h3 class="text-secondary mt-4">Email*</h3>
+                                <input type="email" class="form-control" id="d_email" placeholder="Email">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <h3 class="text-secondary mt-4">Comments?</h3>
+                                <textarea class="form-control" id="d_comment" rows="3" placeholder="How do you imagine a perfect trip to Peru, Special Requests, Questions, Comments"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col my-3">
+
+                                <button class="btn btn-g-yellow btn-block btn-lg btn-next" id="d_send" type="button" onclick="inquire()">Send
+                                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                </button>
+                                <ul class="fa-ul pull-right d-none" id="loader2">
+                                    <li><i class="fa-li fa fa-spinner fa-spin"></i> <i>Sending...</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="alert alert-success alert-dismissible fade d-none" id="d_alert" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <strong>THANK YOU FOR CONTACT US</strong>, YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS, GURANTEED. :)
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @push('scripts')
+        <script>
+            function inquire(){
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('[name="_token"]').val()
+                    }
+                });
+
+                $("#d_send").attr("disabled", true);
+
+                var filter=/^[A-Za-z][A-Za-z0-9_]*@[A-Za-z0-9_]+.[A-Za-z0-9_.]+[A-za-z]$/;
+
+
+
+                var s_accommodation = document.getElementsByName('accommodation[]');
+                var $accommodation = "";
+                for (var i = 0, l = s_accommodation.length; i < l; i++) {
+                    if (s_accommodation[i].checked) {
+                        $accommodation += s_accommodation[i].value+' , ';
+                    }
+                }
+                s_accommodation = $accommodation.substring(0,$accommodation.length-3);
+
+
+                var s_number = $(".number:checked").val();
+
+                var s_date = $('#d_date').val();
+                var s_tel = $('#d_tel').val();
+                var s_name = $('#d_name').val();
+                var s_email = $('#d_email').val();
+                var s_package = $('#d_package').val();
+
+
+                var s_comment = $('#d_comment').val();
+
+
+                if (filter.test(s_email)){
+                    sendMail = "true";
+                } else{
+                    $('#d_email').css("border-bottom", "2px solid #FF0000");
+                    sendMail = "false";
+                }
+                if (s_name.length == 0 ){
+                    $('#d_name').css("border-bottom", "2px solid #FF0000");
+                    var sendMail = "false";
+                }
+
+                if(sendMail == "true"){
+                    var datos = {
+
+                        "txt_accommodation" : s_accommodation,
+                        "txt_number" : s_number,
+
+                        "txt_date" : s_date,
+                        "txt_tel" : s_tel,
+                        "txt_name" : s_name,
+                        "txt_email" : s_email,
+                        "txt_package" : s_package,
+                        "txt_comment" : s_comment
+
+                    };
+                    $.ajax({
+                        data:  datos,
+                        url:   "{{route('inquire_path')}}",
+                        type:  'post',
+
+                        beforeSend: function () {
+
+                            $('#d_send').removeClass('show');
+                            $("#d_send").addClass('d-none');
+
+                            $("#loader2").removeClass('d-none');
+                            $("#loader2").addClass('show');
+                        },
+                        success:  function (response) {
+                            $('#d_form')[0].reset();
+                            $('#d_send').removeClass('d-none');
+                            $('#d_send').addClass('show');
+                            $("#loader2").removeClass('show');
+                            $("#loader2").addClass('d-none');
+                            $('#d_alert').removeClass('d-none');
+                            $("#d_alert").addClass('show');
+                            $("#d_alert b").html(response);
+                            $("#d_alert").fadeIn('slow');
+                            $("#d_send").removeAttr("disabled");
+                        }
+                    });
+                } else{
+                    $("#d_send").removeAttr("disabled");
+                }
+            }
+
+            $('#d_date').datepicker({
+                dateFormat: 'yy-mm-dd',
+                changeMonth: true,
+                changeYear: true
+            });
+
+        </script>
+    @endpush
+
 @stop

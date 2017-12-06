@@ -91,3 +91,9 @@ Route::get('/travel-deals', [
     'uses' => 'HomeController@deals',
     'as' => 'deals_path',
 ]);
+
+//formularios
+Route::post('/inquire', [
+    'uses' => 'HomeController@inquire',
+    'as' => 'inquire_path',
+]);

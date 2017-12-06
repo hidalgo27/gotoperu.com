@@ -64,12 +64,71 @@
             <div class="col text-right pt-4">
                 <a href="" class="font-weight-bold mx-3">(202) 996-3000</a>
                 <button type="button" class="btn btn-g-yellow">Chat</button>
-                <button type="button" class="btn btn-g-green">Inquire Now</button>
+                <button type="button" class="btn btn-g-green" data-toggle="modal" data-target="#modal-contact">Inquire Now</button>
 
             </div>
         </div>
     </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Contact Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><i>Email us at <a href="">info@gotoperu.com</a> or please fill the following form:</i></p>
+                <form id="c_form">
+                    {{csrf_field()}}
+                    <div class="form-group">
+                        <label for="c_nombre">Name</label>
+                        <input type="text" class="form-control" id="c_nombre" placeholder="Full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="c_email">Email</label>
+                        <input type="email" class="form-control" id="c_email" placeholder="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="c_email">Phone</label>
+                        <input type="tel" class="form-control" id="c_email" placeholder="Phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="c_comentario">Comentario</label>
+                        <textarea id="c_comentario" class="form-control" cols="10" rows="3" placeholder="What can we do for you?"></textarea>
+                    </div>
+
+                    <div class="alert alert-success alert-dismissible fade d-none" id="c_alert" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Muchas</strong> por contactar con GOTOPERU, un agente de viajes se pondrá en contacto con usted en las próximas 24 horas para ayudarle con la planificación de su viaje. :)
+                    </div>
+
+                </form>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn btn-g-green" id="c_send" type="button" onclick="contact()">Enviar
+                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                </button>
+                <ul class="fa-ul pull-right d-none" id="loader3">
+                    <li><i class="fa-li fa fa-spinner fa-spin"></i> <i>Enviando...</i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 <section class="sticky-top bg-g-dark mt-2">
     <div class="container">
