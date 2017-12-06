@@ -212,7 +212,7 @@ class HomeController extends Controller
 
     public function inquire()
     {
-        $from = 'hidalgochpnce@gmail';
+        $from = 'hidalgochpnce@gmail.com';
         $from2 = 'paul@gotoperu.com';
 
         $accommodation = $_POST['txt_accommodation'];
@@ -232,7 +232,7 @@ class HomeController extends Controller
                 $messaje->to($email, $name)
                     ->subject('GotoPeru')
                     /*->attach('ruta')*/
-                    ->from('hidalgochpnce@gmail', 'GotoPeru');
+                    ->from('hidalgochpnce@gmail.com', 'GotoPeru');
             });
 
 
@@ -250,7 +250,7 @@ class HomeController extends Controller
                 $messaje->to($from, 'GotoPeru')
                     ->subject('GOTOPERU')
                     /*->attach('ruta')*/
-                    ->from('hidalgochpnce@gmail', 'GotoPeru');
+                    ->from('hidalgochpnce@gmail.com', 'GotoPeru');
             });
 
 
@@ -268,7 +268,7 @@ class HomeController extends Controller
 //                $messaje->to($from2, 'GotoPeru')
 //                    ->subject('GOTOPERU')
 //                    /*->attach('ruta')*/
-//                    ->from('hidalgochpnce@gmail', 'GotoPeru');
+//                    ->from('hidalgochpnce@gmail.com', 'GotoPeru');
 //            });
 
 
