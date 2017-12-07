@@ -94,31 +94,33 @@
 
                     <div class="col-3 os-animation bg-rgba-dark py-2 rounded" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                         <h5 class="text-white font-weight-bold text-center">GET A FREE QUOTE</h5>
-                        <form>
+
+                        <form id="de_form" role="form">
+                            {{csrf_field()}}
                             <div class="row">
                                 <div class="col input-group-sm mb-1">
-                                    <input type="text" class="form-control" placeholder="Full Name*">
+                                    <input type="text" class="form-control" id="de_name" placeholder="Full Name*">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col input-group-sm mb-1">
-                                    <input type="text" class="form-control" placeholder="Email*">
+                                    <input type="text" class="form-control" id="de_email" placeholder="Email*">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col input-group-sm mb-1">
-                                    <input type="text" class="form-control" placeholder="Country">
+                                    <input type="text" class="form-control" id="de_country" placeholder="Country">
                                 </div>
                                 <div class="col input-group-sm mb-1">
-                                    <input type="text" class="form-control" placeholder="Traveling Date">
+                                    <input type="text" class="form-control" id="de_date" placeholder="Traveling Date">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col input-group-sm mb-1">
-                                    <input type="text" class="form-control" placeholder="Travelers">
+                                    <input type="number" min="1" class="form-control" id="de_numero" placeholder="Travelers">
                                 </div>
                                 <div class="col input-group-sm mb-1">
-                                    <input type="text" class="form-control" placeholder="Days">
+                                    <input type="number" min="1" class="form-control" id="de_duration" placeholder="Days">
                                 </div>
                             </div>
                             <div class="row">
@@ -130,36 +132,37 @@
                             <div class="row">
                                 <div class="col-6 col-sm-6 col-md-6 col-lg" data-toggle="buttons">
                                     <label class="btn btn-outline-g-green btn-block btn-sm">
-                                        <input type="checkbox"  autocomplete="off" name="destinations[]" value="Machu Picchu"> Machu Picchu
+                                        <input type="checkbox"  autocomplete="off" name="destinations[]" value="Cusco & Machu Picchu"> Cusco & Machu Picchu
                                     </label>
                                 </div>
-                                <div class="col-6 col-sm-6 col-md-6 col-lg" data-toggle="buttons">
-                                    <label class="btn btn-outline-g-green btn-block btn-sm">
-                                        <input type="checkbox" autocomplete="off" name="destinations[]" value="Cusco"> Colca Canyon
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6 col-sm-6 col-md-6 col-lg" data-toggle="buttons">
-                                    <label class="btn btn-outline-g-green btn-block btn-sm">
-                                        <input type="checkbox" autocomplete="off" name="destinations[]" value="Lago Titicaca"> Puno & Lago titicaca
-                                    </label>
-                                </div>
-                                <div class="col-6 col-sm-6 col-md-6 col-lg" data-toggle="buttons">
-                                    <label class="btn btn-outline-g-green btn-block btn-sm">
-                                        <input type="checkbox" autocomplete="off" name="destinations[]" value="Puno"> Amazon
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="row">
+
                                 <div class="col-6 col-sm-6 col-md-6 col-lg" data-toggle="buttons">
                                     <label class="btn btn-outline-g-green btn-block btn-sm">
                                         <input type="checkbox" autocomplete="off" name="destinations[]" value="Lima"> Lima
                                     </label>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-6 col-sm-6 col-md-6 col-lg" data-toggle="buttons">
                                     <label class="btn btn-outline-g-green btn-block btn-sm">
-                                        <input type="checkbox" autocomplete="off" name="destinations[]" value="Lineas de Nazca"> Linhas de Nazca
+                                        <input type="checkbox" autocomplete="off" name="destinations[]" value="Puno & Lago Titicaca"> Puno & Lago titicaca
+                                    </label>
+                                </div>
+                                <div class="col-6 col-sm-6 col-md-6 col-lg" data-toggle="buttons">
+                                    <label class="btn btn-outline-g-green btn-block btn-sm">
+                                        <input type="checkbox" autocomplete="off" name="destinations[]" value="Amazon"> Amazon
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-sm-6 col-md-6 col-lg" data-toggle="buttons">
+                                    <label class="btn btn-outline-g-green btn-block btn-sm">
+                                        <input type="checkbox" autocomplete="off" name="destinations[]" value="Colca Canyon"> Colca Canyon
+                                    </label>
+                                </div>
+                                <div class="col-6 col-sm-6 col-md-6 col-lg" data-toggle="buttons">
+                                    <label class="btn btn-outline-g-green btn-block btn-sm">
+                                        <input type="checkbox" autocomplete="off" name="destinations[]" value="Lineas de Nazca"> Nazca Lines
                                     </label>
                                 </div>
                             </div>
@@ -167,13 +170,36 @@
 
                             {{--<div class="input-group input-group-sm mb-2">--}}
                                 {{--<span class="input-group-addon" id="">Outros</span>--}}
-                                {{--<input type="text" class="form-control" id="d_otros" aria-describedby="basic-addon3">--}}
+                                {{--<input type="text" class="form-control" id="de_otros" aria-describedby="basic-addon3">--}}
                             {{--</div>--}}
 
                             <div class="form-group input-group-sm ">
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="How do you imagine a perfect trip to Peru, Special Requests, Questions, Comments"></textarea>
+                                <textarea class="form-control" id="de_comment" rows="2" placeholder="How do you imagine a perfect trip to Peru, Special Requests, Questions, Comments"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-g-green btn-block">Send</button>
+                            {{--<button type="submit" class="btn btn-g-green btn-block">Send</button>--}}
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="alert alert-success alert-dismissible fade d-none" id="de_alert" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <strong>THANK YOU FOR CONTACT US</strong>, YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS, GURANTEED. :)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <button class="btn btn-g-green btn-block btn-next" id="de_send" type="button" onclick="design()">Send
+                                        {{--<i class="fa fa-paper-plane" aria-hidden="true"></i>--}}
+                                    </button>
+                                    <ul class="fa-ul pull-right d-none text-white" id="loader5">
+                                        <li><i class="fa-li fa fa-spinner fa-spin"></i> <i>Sending...</i></li>
+                                    </ul>
+                                </div>
+                            </div>
+
                         </form>
                     </div>
                 </div>
@@ -204,8 +230,8 @@
                 <div class="col-7">
                     <div class="row py-1 no-gutters">
                         <div class="col">
-                            <h2 class="h5"><a href="packages/the-best-of-peru-express-9-day-tour/" class="text-dark">THE HIGHLIHTS OF PERU IN 9 DAYS!</a>
-                                <a href="" class="float-right btn btn-g-yellow btn-sm font-weight-bold">Check Availability</a></h2>
+                            <h2 class="h5"><a href="packages/the-best-of-peru-express" class="text-dark">THE HIGHLIHTS OF PERU IN 9 DAYS!</a>
+                                <a href="packages/the-best-of-peru-express#book-now" class="float-right btn btn-g-yellow btn-sm font-weight-bold">Check Availability</a></h2>
                         </div>
                     </div>
                     <div class="row">
@@ -696,4 +722,107 @@
             </div>
         </div>
     </section>
+
+    @push('scripts')
+        <script>
+            //form
+            function design(){
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('[name="_token"]').val()
+                    }
+                });
+
+                $("#de_send").attr("disabled", true);
+
+                var filter=/^[A-Za-z][A-Za-z0-9_.]*@[A-Za-z0-9_]+.[A-Za-z0-9_.]+[A-za-z]$/;
+
+
+                var s_destinations = document.getElementsByName('destinations[]');
+                var $destinations = "";
+                for (var i = 0, l = s_destinations.length; i < l; i++) {
+                    if (s_destinations[i].checked) {
+                        $destinations += s_destinations[i].value+' , ';
+                    }
+                }
+                s_destinations = $destinations.substring(0,$destinations.length-3);
+
+//                alert(s_destinations);
+
+                var s_name = $('#de_name').val();
+                var s_email = $('#de_email').val();
+                var s_country = $('#de_country').val();
+                var s_date = $('#de_date').val();
+                var s_number = $('#de_numero').val();
+                var s_duration = $('#de_duration').val();
+//                var s_other = $('#de_otros').val();
+                var s_comment = $('#de_comment').val();
+
+
+                if (filter.test(s_email)){
+                    sendMail = "true";
+                } else{
+                    $('#de_email').css("border-bottom", "2px solid #FF0000");
+                    sendMail = "false";
+                }
+                if (s_name.length == 0 ){
+                    $('#de_name').css("border-bottom", "2px solid #FF0000");
+                    var sendMail = "false";
+                }
+
+                if(sendMail == "true"){
+                    var datos = {
+
+                        "txt_destinations" : s_destinations,
+
+                        "txt_name" : s_name,
+                        "txt_email" : s_email,
+                        "txt_country" : s_country,
+                        "txt_date" : s_date,
+                        "txt_number" : s_number,
+                        "txt_duration" : s_duration,
+                        "txt_comment" : s_comment,
+
+                    };
+                    $.ajax({
+                        data:  datos,
+                        url:   "{{route('design_path')}}",
+                        type:  'post',
+
+                        beforeSend: function () {
+
+                            $('#de_send').removeClass('show');
+                            $("#de_send").addClass('d-none');
+
+                            $("#loader5").removeClass('d-none');
+                            $("#loader5").addClass('show');
+                        },
+                        success:  function (response) {
+                            $('#de_form')[0].reset();
+                            $('#de_send').removeClass('d-none');
+                            $('#de_send').addClass('show');
+                            $("#loader5").removeClass('show');
+                            $("#loader5").addClass('d-none');
+                            $('#de_alert').removeClass('d-none');
+                            $("#de_alert").addClass('show');
+                            $("#de_alert b").html(response);
+                            $("#de_alert").fadeIn('slow');
+                            $("#de_send").removeAttr("disabled");
+                        }
+
+
+                    });
+                } else{
+                    $("#de_send").removeAttr("disabled");
+                }
+            }
+
+            $('#de_date').datepicker({
+                dateFormat: 'yy-mm-dd',
+                changeMonth: true,
+                changeYear: true
+            });
+        </script>
+    @endpush
+
 @stop

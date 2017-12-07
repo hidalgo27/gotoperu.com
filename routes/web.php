@@ -97,3 +97,13 @@ Route::post('/inquire', [
     'uses' => 'HomeController@inquire',
     'as' => 'inquire_path',
 ]);
+
+Route::post('/contact', [
+    'uses' => 'HomeController@contact',
+    'as' => 'contact_path',
+]);
+
+Route::post('/design', [
+    'uses' => 'HomeController@design',
+    'as' => 'design_path',
+]);

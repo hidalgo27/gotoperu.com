@@ -23,15 +23,22 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-6">
-                    <div class="row">
+                    @foreach($testimonials as $testimonial)
+                    <div class="row mb-5">
                         <div class="col">
                             <p>
                                 <i class="fa fa-quote-left fa-2x float-left text-secondary pr-2"></i>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae consequatur, dolor dolores eum explicabo facilis ipsum laboriosam modi nesciunt perferendis quaerat recusandae repellat repellendus sit sunt unde velit vitae!
+                                    {{$testimonial->contenido}}
                                 <i class="fa fa-quote-right fa-2x float-right text-secondary pl-2"></i>
                             </p>
-                            <i class="float-right">Jhonatan K Washington DC</i>
+                            <i class="float-right">{{$testimonial->nombre}} {{$testimonial->ciudad}}</i>
                         </div>
+                    </div>
+                    @endforeach
+                    <div class="row">
+                        <nav aria-label="Page navigation example">
+                        {{ $testimonials->links() }}
+                        </nav>
                     </div>
                 </div>
             </div>

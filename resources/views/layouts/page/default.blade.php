@@ -96,8 +96,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="c_email">Phone</label>
-                        <input type="tel" class="form-control" id="c_email" placeholder="Phone">
+                        <label for="c_phone">Phone</label>
+                        <input type="tel" class="form-control" id="c_phone" placeholder="Phone">
                     </div>
 
                     <div class="form-group">
@@ -109,7 +109,7 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        <strong>Muchas</strong> por contactar con GOTOPERU, un agente de viajes se pondrá en contacto con usted en las próximas 24 horas para ayudarle con la planificación de su viaje. :)
+                        <strong>THANK YOU FOR CONTACT US</strong>, YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS, GURANTEED. :)
                     </div>
 
                 </form>
@@ -119,11 +119,11 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button class="btn btn-g-green" id="c_send" type="button" onclick="contact()">Enviar
+                <button class="btn btn-g-green" id="c_send" type="button" onclick="contact()">Send
                     <i class="fa fa-paper-plane" aria-hidden="true"></i>
                 </button>
                 <ul class="fa-ul pull-right d-none" id="loader3">
-                    <li><i class="fa-li fa fa-spinner fa-spin"></i> <i>Enviando...</i></li>
+                    <li><i class="fa-li fa fa-spinner fa-spin"></i> <i>Sending...</i></li>
                 </ul>
             </div>
         </div>
@@ -666,6 +666,81 @@
 <script src="{{asset("js/app.js")}}"></script>
 <script src="{{asset("js/plugins.js")}}"></script>
 @stack('scripts')
+<script>
+    function contact(){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('[name="_token"]').val()
+            }
+        });
+
+        $("#c_send").attr("disabled", true);
+
+        var filter=/^[A-Za-z][A-Za-z0-9_.]*@[A-Za-z0-9_]+.[A-Za-z0-9_.]+[A-za-z]$/;
+
+
+//                alert(s_destinations);
+
+        var s_name = $('#c_nombre').val();
+        var s_email = $('#c_email').val();
+        var s_phone = $('#c_phone').val();
+        var s_comentario = $('#c_comentario').val();
+
+
+//                var s_comment = $('#d_comment').val();
+
+
+        if (filter.test(s_email)){
+            sendMail = "true";
+        } else{
+            $('#c_email').css("border-bottom", "2px solid #FF0000");
+            sendMail = "false";
+        }
+        if (s_name.length == 0 ){
+            $('#c_nombre').css("border-bottom", "2px solid #FF0000");
+            var sendMail = "false";
+        }
+
+        if(sendMail == "true"){
+            var datos = {
+
+
+                "txt_name" : s_name,
+                "txt_email" : s_email,
+                "txt_phone" : s_phone,
+                "txt_comentario" : s_comentario,
+            };
+            $.ajax({
+                data:  datos,
+                url:   "{{route('contact_path')}}",
+                type:  'post',
+
+                beforeSend: function () {
+
+                    $('#c_send').removeClass('show');
+                    $("#c_send").addClass('d-none');
+
+                    $("#loader3").removeClass('d-none');
+                    $("#loader3").addClass('show');
+                },
+                success:  function (response) {
+                    $('#c_form')[0].reset();
+                    $('#c_send').removeClass('d-none');
+                    $('#c_send').addClass('show');
+                    $("#loader3").removeClass('show');
+                    $("#loader3").addClass('d-none');
+                    $('#c_alert').removeClass('d-none');
+                    $("#c_alert").addClass('show');
+                    $("#c_alert b").html(response);
+                    $("#c_alert").fadeIn('slow');
+                    $("#c_send").removeAttr("disabled");
+                }
+            });
+        } else{
+            $("#c_send").removeAttr("disabled");
+        }
+    }
+</script>
 <script>
     var jumboHeight = $('.jumbotron').outerHeight();
     function parallax(){
