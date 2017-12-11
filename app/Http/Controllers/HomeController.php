@@ -126,10 +126,10 @@ class HomeController extends Controller
 //        return view('page.packages-list',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r]);
     }
 
-    public function itinerary($titulo)
+    public function itinerary($titulo, $days)
     {
         $title = str_replace('-', ' ', strtoupper($titulo));
-
+//        dd($title);
         $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->where('estado', 0)->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         $paquete_iti = TPaquete::with('itinerario','paquetes_destinos', 'precio_paquetes')->where('titulo', $title)->get();

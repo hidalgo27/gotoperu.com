@@ -38,14 +38,14 @@
                             {{--<div class="card-header">--}}
                             {{--<h4 class="card-title">City tour em cusco</h4>--}}
                             {{--</div>--}}
-                            <a href="{{route('itinerary_path', str_replace(' ','-',strtolower($paquete->titulo)))}}"><img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="Card image cap"></a>
+                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}"><img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="Card image cap"></a>
                             {{--<div class="card-img-overlay p-1">--}}
                                 {{--<h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">{{$paquete->duracion}} Days</span> <a href="" class="btn btn-sm btn-dark float-right"><i class="fa fa-search-plus"></i> Map and Itinerary</a></h5>--}}
                                 {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
                                 {{--<p class="card-text">Last updated 3 mins ago</p>--}}
                             {{--</div>--}}
                             <div class="card-body p-2 text-center">
-                                <h2 class="card-title m-0 font-pompiere font-weight-bold h4"><a href="{{route('itinerary_path', 'peru-magico')}}" class="text-dark">{{$paquete->titulo}}</a></h2>
+                                <h2 class="card-title m-0 font-pompiere font-weight-bold h4"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>
                                 {{--<p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Días</p>--}}
                                 <p class="text-left card-text mt-2"><i class="fa fa-clock-o text-g-yellow" aria-hidden="true"></i> <span class="badge badge-g-dark">{{$paquete->duracion}} Days</span></p>
                                 <p class="text-left card-text"><i class="fa fa-map-marker text-g-yellow" aria-hidden="true"></i>

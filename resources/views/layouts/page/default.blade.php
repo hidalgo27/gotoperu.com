@@ -280,36 +280,36 @@
                 <div class="col-9 text-white text-center rounded">
                     <div class="row">
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/assistances.png" alt="" class="w-100">
+                            <img src="https://gotoperu.com/img/ico/include/assistances.png" alt="assistances" class="w-100">
                             <span>Assistances</span>
                         </div>
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/breakfast.png" alt="" class="w-100">
+                            <img src="https://gotoperu.com/img/ico/include/breakfast.png" alt="breakfast" class="w-100">
                             <span>Breakfast</span>
                         </div>
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/entrances.png" alt="" class="w-100">
+                            <img src="https://gotoperu.com/img/ico/include/entrances.png" alt="entrances" class="w-100">
                             <span>Entrances</span>
                         </div>
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/flight.png" alt="" class="w-100">
+                            <img src="https://gotoperu.com/img/ico/include/flight.png" alt="flight" class="w-100">
                             <span>Flight</span>
                         </div>
 
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/hotels.png" alt="" class="w-100">
+                            <img src="https://gotoperu.com/img/ico/include/hotels.png" alt="hotels" class="w-100">
                             <span>Hotels</span>
                         </div>
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/tours.png" alt="" class="w-100">
+                            <img src="https://gotoperu.com/img/ico/include/tours.png" alt="tours" class="w-100">
                             <span>Tours</span>
                         </div>
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/trains.png" alt="" class="w-100">
+                            <img src="https://gotoperu.com/img/ico/include/trains.png" alt="trains" class="w-100">
                             <span>Trains</span>
                         </div>
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/transfers.png" alt="" class="w-100">
+                            <img src="https://gotoperu.com/img/ico/include/transfers.png" alt="transfers" class="w-100">
                             <span>Transfers</span>
                         </div>
                     </div>
@@ -331,19 +331,19 @@
 
         <div class="row">
             <div class="col text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
-                <img src="https://gotoperu.com/images/charity/feature-icon-4.png" alt="icon contact">
+                <img src="{{asset('images/icons/icon-contact.png')}}" alt="icon contact">
                 <h6>Contact</h6>
-                <p>Chat with us, give us a call (813)600-3042, send us an <a href="mailto:info@gotoperu.com" class="btn-link">e-mail</a> or fill out our <a href="#" data-toggle="modal" data-target="#contact-us" class="btn-link">online form</a>. Share with us your <strong>travel</strong> preferences! If you already have an outline, an idea, any questions… we will be more than happy to assist your needs.</p>
+                <p>Chat with us, give us a call (813)600-3042, send us an <a href="mailto:info@gotoperu.com" class="btn-link">e-mail</a> or fill out our <a href="#" data-toggle="modal" data-target="#modal-contact" class="btn-link">online form</a>. Share with us your <strong>travel</strong> preferences! If you already have an outline, an idea, any questions… we will be more than happy to assist your needs.</p>
             </div><!-- /.col-md-4 col -->
 
             <div class="col text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.2s">
-                <img src="https://gotoperu.com/images/charity/feature-icon-5.png" alt="icon design">
+                <img src="{{asset('images/icons/icon-design.png')}}" alt="icon design">
                 <h6>Design</h6>
                 <p>We will craft out a first <strong>travel</strong> proposal according to the outline or idea that you shared with us. From then on we will customize it until you are satisfied with the planning! We will then send you a day by day itinerary and leave the rest to you!</p>
             </div><!-- /.col-md-4 col -->
 
             <div class="col text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.1s">
-                <img src="https://gotoperu.com/images/charity/feature-icon-6.png" alt="icon vacation">
+                <img src="{{asset('images/icons/icon-vacations.png')}}" alt="icon vacation">
                 <h6><strong>Vacation</strong></h6>
                 <p>Be ready for an unforgettable vacation to the land of the Incas, with promptly transfers at every point (airports, hotels, buses,trains) with knowledgable local Guides on each destination plus the best hotel locations and perks...GOTOPERU team will be always with you</p>
             </div><!-- /.col-md-4 col -->
@@ -356,7 +356,7 @@
 
         <div class="row pb-5 justify-content-center">
             <div class="col-12 col-sm-8 col-md-8 col-lg-4">
-                <img src="{{asset('images/logo-gotoperu.png')}}" alt="" class="img-fluid">
+                <img src="{{asset('images/logo-gotoperu.png')}}" alt="logo gotoperu" class="img-fluid">
             </div>
         </div>
 
@@ -364,7 +364,7 @@
             <div class="col-12 col-sm-4 mb-5">
                 <div class="row justify-content-center">
                     <div class="col-6 col-sm-4 col-md-6 col-lg-4">
-                        <img src="{{asset('images/icons/group.png')}}" alt="" class="img-fluid">
+                        <img src="{{asset('images/icons/group.png')}}" alt="groups gotoperu" class="img-fluid">
                     </div>
                 </div>
                 <div class="row text-center">
@@ -376,7 +376,7 @@
             <div class="col-12 col-sm-4 mb-5">
                 <div class="row justify-content-center">
                     <div class="col-6 col-sm-4 col-md-6 col-lg-4">
-                        <img src="{{asset('images/icons/assistance.png')}}" alt="" class="img-fluid">
+                        <img src="{{asset('images/icons/assistance.png')}}" alt="assistance" class="img-fluid">
                     </div>
                 </div>
                 <div class="row text-center">
@@ -388,7 +388,7 @@
             <div class="col-12 col-sm-4 mb-5">
                 <div class="row justify-content-center">
                     <div class="col-6 col-sm-4 col-md-6 col-lg-4">
-                        <img src="{{asset('images/icons/customize.png')}}" alt="" class="img-fluid">
+                        <img src="{{asset('images/icons/customize.png')}}" alt="customize" class="img-fluid">
                     </div>
                 </div>
                 <div class="row text-center">
@@ -402,7 +402,7 @@
             <div class="col-12 col-sm-4 mb-5">
                 <div class="row justify-content-center">
                     <div class="col-6 col-sm-4 col-md-6 col-lg-4">
-                        <img src="{{asset('images/icons/location.png')}}" alt="" class="img-fluid">
+                        <img src="{{asset('images/icons/location.png')}}" alt="location" class="img-fluid">
                     </div>
                 </div>
                 <div class="row text-center">
@@ -414,7 +414,7 @@
             <div class="col-12 col-sm-4 mb-5">
                 <div class="row justify-content-center">
                     <div class="col-6 col-sm-4 col-md-6 col-lg-4">
-                        <img src="{{asset('images/icons/trip.png')}}" alt="" class="img-fluid">
+                        <img src="{{asset('images/icons/trip.png')}}" alt="trip" class="img-fluid">
                     </div>
                 </div>
                 <div class="row text-center">
@@ -426,7 +426,7 @@
             <div class="col-12 col-sm-4 mb-5">
                 <div class="row justify-content-center">
                     <div class="col-6 col-sm-4 col-md-6 col-lg-4">
-                        <img src="{{asset('images/icons/departure.png')}}" alt="" class="img-fluid">
+                        <img src="{{asset('images/icons/departure.png')}}" alt="departure" class="img-fluid">
                     </div>
                 </div>
                 <div class="row text-center">
@@ -537,7 +537,7 @@
             <div class="col-6">
                 <div class="row">
                     <div class="col">
-                        <img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="w-100">
+                        <img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="logo gotoperu" class="w-100">
                     </div>
                 </div>
             </div>
@@ -642,22 +642,22 @@
                 <h6>GOTOPERU GROUP:</h6>
             </div>
             <div class="col">
-                <img src="https://gotoperu.com/img/logos/logo-gotoperu.png" alt="" class="img-fluid">
+                <img src="{{asset('images/logo-gotoperu.png')}}" alt="logo gotoperu" class="img-fluid">
             </div>
             <div class="col">
-                <img src="http://www.andesviagens.com/images/logos/logo-andes.png" alt="" class="img-fluid">
+                <img src="http://www.andesviagens.com/images/logos/logo-andes.png" alt="logo andes viagens" class="img-fluid">
             </div>
             <div class="col">
-                <img src="http://www.gotolatinamerica.com/img/logos/logo-latinamerica-2.png" alt="" class="img-fluid">
+                <img src="http://www.gotolatinamerica.com/img/logos/logo-latinamerica-2.png" alt="logo gotolatinamerica" class="img-fluid">
             </div>
             <div class="col">
-                <img src="http://www.machupicchu-galapagos.com/img/logo-machupicchu-ecuador.png" alt="" class="img-fluid">
+                <img src="http://www.machupicchu-galapagos.com/img/logo-machupicchu-ecuador.png" alt="logo machupicchu galapagos" class="img-fluid">
             </div>
             <div class="col">
                 <small>PERU LOCAL TIME: 7:38PM</small>
             </div>
             <div class="col">
-                <a href=""><small>Services Terms & Conditions</small></a>
+                <a href="{{asset('pdf/terms-conditions.pdf')}}" target="_blank"><small>Services Terms & Conditions</small></a>
             </div>
         </div>
     </div>

@@ -37,7 +37,7 @@ Route::get('/tours-packages', [
 ]);
 
 //itinerary
-Route::get('/packages/{title}', [
+Route::get('/packages/{title}/{days}-days-tours', [
     'uses' => 'HomeController@itinerary',
     'as' => 'itinerary_path',
 ]);

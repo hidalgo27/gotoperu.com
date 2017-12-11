@@ -35,7 +35,7 @@
                 <div class="col-3">
                     <div class="sticky-top sticky-top-50">
                         <h3 class="font-weight-bold text-g-green">Order By</h3>
-                        <div class="card p-1">
+                        <div class="list-group">
                             @foreach($paquetes_r->unique('duracion')->sortBy('duracion') as $paquete)
                                 @php
                                     $j = 0;
@@ -44,13 +44,15 @@
                                     @php $j++ @endphp
                                 @endforeach
 
-                                <a href="{{route('packages_durations_path', $paquete->duracion)}}" class="row">
-                                    <div class="col">{{$paquete->duracion}} days</div>
-                                    <div class="col"><img src="{{asset('images/divider.png')}}" alt="" class="w-100"></div>
-                                    <div class="col"><span class="badge badge-g-yellow float-right mt-1">{{$j}}</span></div>
+                                <a href="{{route('packages_durations_path', $paquete->duracion)}}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center p-2">
+                                    <h6 class="text-secondary">{{$paquete->duracion}} days</h6>
+                                    <span class="badge badge-primary badge-pill">{{$j}}</span>
                                 </a>
+
                             @endforeach
                         </div>
+
+
                     </div>
                 </div>
                 <div class="col">
@@ -63,14 +65,14 @@
                                         {{--<div class="card-header">--}}
                                         {{--<h4 class="card-title">City tour em cusco</h4>--}}
                                         {{--</div>--}}
-                                        <a href="{{route('itinerary_path', str_replace(' ','-',strtolower($paquete->titulo)))}}"><img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="Card image cap"></a>
+                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}"><img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{strtolower($paquete->titulo)}}"></a>
                                         <div class="card-img-overlay p-1">
                                             <h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">{{$paquete->duracion}} Days</span> <a href="" class="btn btn-sm btn-dark float-right"><i class="fa fa-search-plus"></i> Map and Itinerary</a></h5>
                                             {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
                                             {{--<p class="card-text">Last updated 3 mins ago</p>--}}
                                         </div>
                                         <div class="card-body p-2 text-center">
-                                            <h2 class="card-title m-0 font-pompiere font-weight-bold h4"><a href="{{route('itinerary_path', 'peru-magico')}}" class="text-dark">{{$paquete->titulo}}</a></h2>
+                                            <h2 class="card-title m-0 font-pompiere font-weight-bold h4"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>
                                             {{--<p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Días</p>--}}
                                             <p class="text-left card-text"><i class="fa fa-map-marker text-g-yellow" aria-hidden="true"></i>
                                                 @php

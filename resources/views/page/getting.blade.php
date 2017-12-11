@@ -17,7 +17,7 @@
         </div>
     </section>
 
-    <img src="https://gotoperu.com/img/slider/flights.jpg" alt="" class="img-fluid os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="0s" style="animation-delay: 0s;">
+    <img src="{{asset('images/slider/flights.jpg')}}" alt="getting to peru" class="img-fluid w-100 os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="0s" style="animation-delay: 0s;">
 
     <div class="section my-5">
         <div class="container">

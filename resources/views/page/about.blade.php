@@ -98,12 +98,12 @@
                             <p>We help our travelers choose the perfect trip to the land of the Incas, providing them with the most authentic life-changing adventure possible. We go out of our way to ensure a travel experience unlike anything you’ve seen.</p>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <img src="https://gotoperu.com/img/about/team-meetup.jpg" alt="" class="w-100">
+                                    <img src="{{asset('images/team-meetup.jpg')}}" alt="team meetup gotoperu" class="w-100">
                                 </div>
                                 <div class="col">
                                     <h4>For Example:</h4>
                                     <p>We handled different organization trips</p>
-                                    <img src="https://gotoperu.com/img/logos/meetup.png" alt="" class="w-100">
+                                    <img src="{{asset('images/logos/meetup.png')}}" alt="logo meetup" class="w-100">
                                 </div>
                             </div>
                         </div>
@@ -283,16 +283,16 @@
                 </div>
 
                 <div class="col-2">
-                    <img src="https://gotoperu.com/img/IMG_4480.jpg" alt="gotoperu team" class="img-fluid">
+                    <img src="{{asset('images/social/responsability-1.jpg')}}" alt="gotoperu team" class="img-fluid">
                 </div>
                 <div class="col-3">
-                    <img src="https://gotoperu.com/img/social/responsability.jpg" alt="children of the community of Cusco chaullacohca" class="img-fluid">
+                    <img src="{{asset('images/social/responsability.jpg')}}" alt="children of the community of Cusco chaullacohca" class="img-fluid">
                 </div>
                 <div class="col-2">
-                    <img src="https://gotoperu.com/img/social/responsability-2.jpg" alt="GotoPeru social responibility" class="img-fluid">
+                    <img src="{{asset('images/social/responsability-2.jpg')}}" alt="GotoPeru social responibility" class="img-fluid">
                 </div>
                 <div class="col-2">
-                    <img src="https://gotoperu.com/img/social/responsability-3.jpg" alt="children of the community of Cusco chaullacohca" class="img-fluid">
+                    <img src="{{asset('images/social/responsability-3.jpg')}}" alt="children of the community of Cusco chaullacohca" class="img-fluid">
                 </div>
                 <div class="col-12">
                     <p class="text-justify">At GOTOPERU we are committed to doing business in a way that actually give back to our communities specially the one located in remote places.  Our planning and execution of one of our trips involves a long supply chain: from local guides and operators to transportation providers to hotels and restaurants, we interact with a lot of different organizations on the ground, but we also know that some communities specially located on top of the Andes at 15,000+feet that due to the difficult access, dont receive the assistance they deserve, is for that reason that we organize periodically trips to this far far away communities to bring them specially sweaters and toys for children.</p>
@@ -311,7 +311,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <img src="https://gotoperu.com/img/team/team-10b.jpg" alt="" class="img-fluid rounded">
+                    <img src="{{asset('images/team/team-10b.jpg')}}" alt="team gotoperu" class="img-fluid rounded">
                 </div>
                 <div class="col">
                     <h3 class="text-g-yellow">Problem-Free Travel</h3>

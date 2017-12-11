@@ -72,7 +72,7 @@
                                                         </thead>
                                                         <tbody>
                                                         @foreach($paquete->where('duracion', $paquetes->duracion) as $paquetes)
-                                                            <tr onClick="CrearEnlace('{{route('itinerary_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
+                                                            <tr onClick="CrearEnlace('{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}');" class="clickable">
                                                                 <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
                                                                 <td>
                                                                     @php

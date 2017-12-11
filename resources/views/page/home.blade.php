@@ -12,29 +12,29 @@
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col">
-                                        <img src="https://gotoperu.com/img/ico/include/assistances.png" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Assistances">
+                                        <img src="{{asset('images/icons/include/assistances.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Assistances">
                                         {{--<span>Assistances</span>--}}
                                     </div>
 
                                     <div class="col">
-                                        <img src="https://gotoperu.com/img/ico/include/entrances.png" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                        <img src="{{asset('images/icons/include/entrances.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Entrances">
                                         {{--<span>Entrances</span>--}}
                                     </div>
                                     <div class="col">
-                                        <img src="https://gotoperu.com/img/ico/include/transfers.png" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                        <img src="{{asset('images/icons/include/transfers.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Transfers">
                                         {{--<span>Transfers</span>--}}
                                     </div>
 
                                     <div class="col">
-                                        <img src="https://gotoperu.com/img/ico/include/hotels.png" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Hotels">
+                                        <img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Hotels">
                                         {{--<span>Hotels</span>--}}
                                     </div>
                                     <div class="col">
-                                        <img src="https://gotoperu.com/img/ico/include/tours.png" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Tours">
+                                        <img src="{{asset('images/icons/include/tours.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Tours">
                                         {{--<span>Tours</span>--}}
                                     </div>
                                     <div class="col">
-                                        <img src="https://gotoperu.com/img/ico/include/trains.png" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Trains">
+                                        <img src="{{asset('images/icons/include/trains.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="Trains">
                                         {{--<span>Trains</span>--}}
                                     </div>
                                 </div>
@@ -247,42 +247,42 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="d-block w-100" src="{{asset('images/banners/cusco.jpg')}}" alt="First slide">
+                                        <img class="d-block w-100" src="{{asset('images/banners/cusco.jpg')}}" alt="cusco">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h3>Cusco</h3>
                                             {{--<p>...</p>--}}
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{asset('images/banners/lake-titicaca.jpg')}}" alt="First slide">
+                                        <img class="d-block w-100" src="{{asset('images/banners/lake-titicaca.jpg')}}" alt="titicaca lake">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h3>Lake Titicaca</h3>
                                             {{--<p>...</p>--}}
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{asset('images/banners/lima.jpg')}}" alt="First slide">
+                                        <img class="d-block w-100" src="{{asset('images/banners/lima.jpg')}}" alt="lima">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h3>Lima</h3>
                                             {{--<p>...</p>--}}
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{asset('images/banners/machupicchu.jpg')}}" alt="First slide">
+                                        <img class="d-block w-100" src="{{asset('images/banners/machupicchu.jpg')}}" alt="machu picchu">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h3>Machu Picchu</h3>
                                             {{--<p>...</p>--}}
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{asset('images/banners/nazca-lines.jpg')}}" alt="First slide">
+                                        <img class="d-block w-100" src="{{asset('images/banners/nazca-lines.jpg')}}" alt="nazca lines">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h3>Nazca Lines</h3>
                                             {{--<p>...</p>--}}
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{asset('images/banners/sacred-valley.jpg')}}" alt="First slide">
+                                        <img class="d-block w-100" src="{{asset('images/banners/sacred-valley.jpg')}}" alt="sacred valley">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h3>Sacred Valley</h3>
                                             {{--<p>...</p>--}}
@@ -325,7 +325,7 @@
                                 <div class="col text-center">
                                     <div itemscope itemtype="http://data-vocabulary.org/Persona" class="vcard">
                                         <div itemscope itemtype="http://data-vocabulary.org/Persona" class="vcard">
-                                            <img src="https://gotoperu.com/img/firma-martin.jpg" alt="martin" class="img-fluid">
+                                            <img src="{{asset('images/firma-martin.jpg')}}" alt="martin" class="img-fluid">
                                             <span itemprop="name" class="text-8 d-block">MARTIN CATANO</span>
                                             <span itemprop="title" class="text-8 d-block">MANAGER</span>
                                         </div>
@@ -336,7 +336,7 @@
                                 <div class="col text-center">
                                     <div itemscope itemtype="http://data-vocabulary.org/Persona" class="vcard">
                                         <div itemscope itemtype="http://data-vocabulary.org/Persona" class="vcard">
-                                            <img src="https://gotoperu.com/img/firma-paul.jpg" alt="paul" class="img-fluid">
+                                            <img src="{{asset('images/firma-paul.jpg')}}" alt="paul" class="img-fluid">
                                             <span itemprop="name" class="fn text-8 d-block">PAUL CATANO</span>
                                             <span itemprop="title" class="ceo text-8 d-block">CEO</span>
                                         </div>
@@ -356,7 +356,7 @@
                         <div class="col">
                             <div class="content-area-3">
                                 <div class="position-relative">
-                                    <img src="https://gotoperu.com/img/video/prom-peru.jpg" alt="video promperu" class="img-fluid">
+                                    <img src="{{asset('images/video/prom-peru.jpg')}}" alt="video promperu" class="img-fluid">
                                     <div class="video-btn-1">
                                         <a href="https://www.youtube.com/embed/gGq_U1DYUCs" title=""><i class="fa fa-play-circle text-g-dark"></i></a>
                                     </div>
@@ -368,7 +368,7 @@
                         <div class="col">
 
                             <div class="position-relative">
-                                <img src="https://gotoperu.com/img/video/gotoperu-group.jpg" alt="gotoperu group" class="img-fluid">
+                                <img src="{{asset('images/video/gotoperu-group.jpg')}}" alt="gotoperu group" class="img-fluid">
                                 <div class="video-btn-1">
                                     <a href="https://www.youtube.com/embed/AOa1ygLiapc" title=""><i class="fa fa-play-circle text-g-dark"></i></a>
                                 </div>
@@ -419,14 +419,14 @@
                         {{--<div class="card-header">--}}
                         {{--<h4 class="card-title">City tour em cusco</h4>--}}
                         {{--</div>--}}
-                        <a href="{{route('itinerary_path', str_replace(' ','-',strtolower($paquete->titulo)))}}"><img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="Card image cap"></a>
+                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}"><img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}"></a>
                         <div class="card-img-overlay p-1">
                             <h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">{{$paquete->duracion}} Days</span> <a href="" class="btn btn-sm btn-dark float-right"><i class="fa fa-search-plus"></i> View Map and Itinerary</a></h5>
                             {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
                             {{--<p class="card-text">Last updated 3 mins ago</p>--}}
                         </div>
                         <div class="card-body p-2 text-center">
-                            <h2 class="card-title m-0 font-pompiere font-weight-bold h4"><a href="{{route('itinerary_path', 'peru-magico')}}" class="text-dark">{{$paquete->titulo}}</a></h2>
+                            <h2 class="card-title m-0 font-pompiere font-weight-bold h4"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>
                             {{--<p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Días</p>--}}
                             <p class="text-left card-text"><i class="fa fa-map-marker text-g-yellow" aria-hidden="true"></i>
                                 @php
@@ -472,7 +472,7 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <a href="" class="btn btn-lg btn-primary">VIEW FEATURED PROGRAMS</a>
+                    <a href="{{route('packages_path')}}" class="btn btn-lg btn-primary">VIEW FEATURED PROGRAMS</a>
                 </div>
             </div>
         </div>
@@ -493,22 +493,22 @@
                         <h3 class="text-g-yellow pt-5">Currency</h3>
                         <p>The official currency of Peru is Nuevo Sol (S/.). Banknotes are in denominations of 10, 20, 50, 100 and 200 nuevos soles. Coins are in 1,5,10,20 and 50 centimos (cents) and 1,2 and 5 nuevos soles. US currency is accepted at most places.</p>
                         <div class="row">
-                            <div class="col"><img src="https://gotoperu.com/img/guia/10-soles.jpg" class="img-fluid" title="10 soles" alt="10 soles"></div>
-                            <div class="col"><img src="https://gotoperu.com/img/guia/20-soles.jpg" class="img-fluid" title="20 soles" alt="20 soles"></div>
-                            <div class="col"><img src="https://gotoperu.com/img/guia/50-soles.jpg" class="img-fluid" title="50 soles" alt="50 soles"></div>
-                            <div class="col"><img src="https://gotoperu.com/img/guia/100-soles.jpg" class="img-fluid" title="100 soles" alt="100 soles"></div>
-                            <div class="col"><img src="https://gotoperu.com/img/guia/200-soles.jpg" class="img-fluid" title="200 soles" alt="200 soles"></div>
+                            <div class="col"><img src="{{asset('images/guia/10-soles.jpg')}}" class="img-fluid" title="10 soles" alt="10 soles"></div>
+                            <div class="col"><img src="{{asset('images/guia/20-soles.jpg')}}" class="img-fluid" title="20 soles" alt="20 soles"></div>
+                            <div class="col"><img src="{{asset('images/guia/50-soles.jpg')}}" class="img-fluid" title="50 soles" alt="50 soles"></div>
+                            <div class="col"><img src="{{asset('images/guia/100-soles.jpg')}}" class="img-fluid" title="100 soles" alt="100 soles"></div>
+                            <div class="col"><img src="{{asset('images/guia/200-soles.jpg')}}" class="img-fluid" title="200 soles" alt="200 soles"></div>
                         </div>
                     </div>
                     <div id="about-peru">
                         <h3 class="text-g-yellow pt-5">About Peru</h3>
-                        <img src="https://gotoperu.com/img/guia/amazon.jpg" alt="" class="img-fluid">
+                        <img src="{{asset('images/guia/amazon.jpg')}}" alt="amazon" class="img-fluid">
                     </div>
                     <div id="passport-visas">
                         <h3 class="text-g-yellow pt-5">Passport & Visas</h3>
                         <div class="row">
                             <div class="col">
-                                <img src="https://gotoperu.com/img/guia/passport.jpg" alt="" class="img-fluid rounded">
+                                <img src="{{asset('images/guia/passport.jpg')}}" alt="passport to peru" class="img-fluid rounded">
                             </div>
                             <div class="col">
                                 <p>A passport must be valid for 6 months before departure. Tourists are permitted a 30-90 day stay stamped into passports and on a tourist card called Tarjeta Andina de Migracion (Andean Immigration Card). This card NEEDS to be returned upon exiting the country. Passports must be carried on you at all times. Be sure to make copies of your passport and immigration card and keep them in a separate place from the originals.</p>
@@ -532,7 +532,7 @@
                                 </ul>
                             </div>
                             <div class="col">
-                                <img src="https://gotoperu.com/img/guia/credit-card.jpg" alt="" class="img-fluid rounded">
+                                <img src="{{asset('images/guia/credit-card.jpg')}}" alt="credit card" class="img-fluid rounded">
                             </div>
                         </div>
                     </div>
@@ -577,10 +577,10 @@
 
                         <div class="row">
                             <div class="col">
-                                <img src="https://gotoperu.com/img/guia/cusco-1.jpg" alt="" class="img-fluid rounded">
+                                <img src="{{asset('images/guia/cusco-1.jpg')}}" alt="cusco" class="img-fluid rounded">
                             </div>
                             <div class="col">
-                                <img src="https://gotoperu.com/img/guia/cusco-2.jpg" alt="" class="img-fluid rounded">
+                                <img src="{{asset('images/guia/cusco-2.jpg')}}" alt="cusco" class="img-fluid rounded">
                             </div>
                         </div>
                     </div>
@@ -679,13 +679,13 @@
                         <p>Popular Peruvian beers include Cusquena, Arequipena and Pilsen. A more traditional drink is Pisco, a white grape brandy derived from an indigenous recipes. A popular non-alcoholic drink is chica morada made from blue corn.</p>
                         <div class="row">
                             <div class="col">
-                                <img src="https://gotoperu.com/img/guia/cebiche-gotoperu.jpg" alt="" class="img-fluid rounded">
+                                <img src="{{asset('images/guia/cebiche-gotoperu.jpg')}}" alt="cebiche peru" class="img-fluid rounded">
                             </div>
                             <div class="col">
-                                <img src="https://gotoperu.com/img/guia/pisco-sour-gotoperu.jpg" alt="" class="img-fluid rounded">
+                                <img src="{{asset('images/guia/pisco-sour-gotoperu.jpg')}}" alt="pisco sour peru" class="img-fluid rounded">
                             </div>
                             <div class="col">
-                                <img src="https://gotoperu.com/img/guia/aji-de-gallina-gotoperu.jpg" alt="" class="img-fluid rounded">
+                                <img src="{{asset('images/guia/aji-de-gallina-gotoperu.jpg')}}" alt="aji de gallina peru" class="img-fluid rounded">
                             </div>
 
                         </div>
