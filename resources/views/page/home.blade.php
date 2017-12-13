@@ -230,8 +230,8 @@
                 <div class="col-7">
                     <div class="row py-1 no-gutters">
                         <div class="col">
-                            <h2 class="h5"><a href="packages/the-best-of-peru-express" class="text-dark">THE HIGHLIHTS OF PERU IN 9 DAYS!</a>
-                                <a href="packages/the-best-of-peru-express#book-now" class="float-right btn btn-g-yellow btn-sm font-weight-bold">Check Availability</a></h2>
+                            <h2 class="h5"><a href="packages/the-best-of-peru-express/9-days-tours" class="text-dark">THE HIGHLIHTS OF PERU IN 9 DAYS!</a>
+                                <a href="packages/the-best-of-peru-express/9-days-tours#book-now" class="float-right btn btn-g-yellow btn-sm font-weight-bold">Check Availability</a></h2>
                         </div>
                     </div>
                     <div class="row">
@@ -421,7 +421,7 @@
                         {{--</div>--}}
                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}"><img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}"></a>
                         <div class="card-img-overlay p-1">
-                            <h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">{{$paquete->duracion}} Days</span> <a href="" class="btn btn-sm btn-dark float-right"><i class="fa fa-search-plus"></i> View Map and Itinerary</a></h5>
+                            <h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">{{$paquete->duracion}} Days</span> <a href="" class="btn btn-sm btn-dark float-right" data-toggle="modal" data-target="#{{$paquete->codigo}}-modal"><i class="fa fa-search-plus"></i> View Map and Itinerary</a></h5>
                             {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
                             {{--<p class="card-text">Last updated 3 mins ago</p>--}}
                         </div>
@@ -460,6 +460,38 @@
                         </div>
                     </div>
                 </div>
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="{{$paquete->codigo}}-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">{{$paquete->titulo}} | {{$paquete->duracion}} DAYS TOURS</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="{{asset('images/maps/'.$paquete->codigo.'.jpg')}}" alt="map {{strtolower($paquete->titulo)}}" class="img-fluid rounded">
+                                    <div class="border box-route-ininerary mt-3 rounded p-3">
+                                        @foreach($paquete->itinerario->sortBy('dia') as $itinerario)
+                                            <p>
+                                                <strong>Day {{$itinerario->dia}}: </strong> {{ucwords(strtolower($itinerario->titulo))}}
+                                            </p>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    {{--<button type="button" class="btn btn-primary">View Packages</button>--}}
+                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="btn btn-g-yellow">View Trip</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 @endforeach
 
 

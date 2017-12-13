@@ -81,7 +81,7 @@
                                             {{--</div>--}}
                                             <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}"><img class="card-img-top " src="{{asset('images/packages/'.$paquetes->codigo.'.jpg')}}" alt="{{strtolower($paquetes->titulo)}}"></a>
                                             <div class="card-img-overlay p-1">
-                                                <h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">{{$paquetes->duracion}} Days</span> <a href="" class="btn btn-sm btn-dark float-right"><i class="fa fa-search-plus"></i> Map and Itinerary</a></h5>
+                                                <h5 class="card-title rounded text-dark p-2"><span class="badge badge-g-yellow mt-1">{{$paquetes->duracion}} Days</span> <a href="" class="btn btn-sm btn-dark float-right" data-toggle="modal" data-target="#{{$paquetes->codigo}}-modal"><i class="fa fa-search-plus"></i> Map and Itinerary</a></h5>
                                                 {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
                                                 {{--<p class="card-text">Last updated 3 mins ago</p>--}}
                                             </div>
@@ -120,6 +120,36 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="{{$paquetes->codigo}}-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">{{$paquetes->titulo}} | {{$paquetes->duracion}} DAYS TOURS</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <img src="{{asset('images/maps/'.$paquetes->codigo.'.jpg')}}" alt="map {{strtolower($paquetes->titulo)}}" class="img-fluid rounded">
+                                                        <div class="border box-route-ininerary mt-3 rounded p-3">
+                                                            @foreach($paquetes->itinerario->sortBy('dia') as $itinerario)
+                                                                <p>
+                                                                    <strong>Day {{$itinerario->dia}}: </strong> {{ucwords(strtolower($itinerario->titulo))}}
+                                                                </p>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        {{--<button type="button" class="btn btn-primary">View Packages</button>--}}
+                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="btn btn-g-yellow">View Trip</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     @endforeach
                                 @endif
                             @endforeach

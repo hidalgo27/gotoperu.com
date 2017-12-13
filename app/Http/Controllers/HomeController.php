@@ -7,6 +7,8 @@ use App\TDestino;
 use App\TPaquete;
 use App\TPaqueteDestino;
 use App\TTestimonio;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -19,6 +21,24 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        SEOMeta::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        SEOMeta::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
+        SEOMeta::setCanonical('https://gotoperu.com/');
+        SEOMeta::addKeyword(['peru travel packages', 'travel packages to peru', 'Go To Peru', 'machu picchu travel', 'peru vacations', 'peru vacation packages', 'machu picchu deals', 'peru travel offers', 'machu picchu travel offers', 'Machu Picchu packages', 'customize peru travel packages', 'tour packages to machu picchu']);
+
+        OpenGraph::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
+        OpenGraph::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        OpenGraph::setUrl('https://gotoperu.com/');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto-peru');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
 
         $paquetes = TPaquete::with('precio_paquetes')->get();
         $paquetes_r = TPaquete::with('precio_paquetes')->get();
@@ -95,6 +115,23 @@ class HomeController extends Controller
 
     public function packages()
     {
+        SEOMeta::setTitle('Machu Picchu Tour Packages | Machu Picchu Vacation Packages | Machu Picchu Deals | Peru Honeymoon Travel Packages');
+        SEOMeta::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
+        SEOMeta::setCanonical('https://gotoperu.com/packages');
+        SEOMeta::addKeyword(['Machu Picchu Tour Packages', 'Machu Picchu Packages', 'Machu Picchu Vacation Packages', 'Machu Picchu Deals', 'Peru Honeymoon Travel Packages']);
+
+        OpenGraph::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
+        OpenGraph::setTitle('Machu Picchu Tour Packages | Machu Picchu Vacation Packages | Machu Picchu Deals | Peru Honeymoon Travel Packages');
+        OpenGraph::setUrl('https://gotoperu.com/packages');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto-peru');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
         $paquetes = TPaquete::with('precio_paquetes')->get();
         $paquetes_r = TPaquete::with('precio_paquetes')->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
@@ -106,12 +143,51 @@ class HomeController extends Controller
         $paquetes = TPaquete::with('precio_paquetes')->where('duracion', $duration)->get();
         $paquetes_r = TPaquete::with('precio_paquetes')->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+
+
+        SEOMeta::setTitle('Travel Packages '.$duration.' days - Peru Travel Packages | Machu Picchu Tour Packages');
+        SEOMeta::setDescription('Travel Packages '.$duration.' days. Discover Peru with Gotoperu Tour & Travel Packages. We offer amazing deals on Machu Picchu Vacation Packages.  Give us call @ (202) 996-3000 for more info.');
+        SEOMeta::setCanonical('https://gotoperu.com/packages');
+        SEOMeta::addKeyword(['Machu Picchu Tour Packages', 'Machu Picchu Packages', 'Machu Picchu Vacation Packages', 'Machu Picchu Deals', 'Peru Honeymoon Travel Packages']);
+
+        OpenGraph::setDescription('Travel Packages '.$duration.' days. Discover Peru with Gotoperu Tour & Travel Packages. We offer amazing deals on Machu Picchu Vacation Packages.  Give us call @ (202) 996-3000 for more info.');
+        OpenGraph::setTitle('Machu Picchu Tour Packages | Machu Picchu Vacation Packages | Machu Picchu Deals | Peru Honeymoon Travel Packages');
+        OpenGraph::setUrl('https://gotoperu.com/packages');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto-peru');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Travel Packages '.$duration.' days - Peru Travel Packages | Machu Picchu Tour Packages');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
+
+
         return view('page.packages-durations',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r]);
     }
 
 
     public function packages_list()
     {
+
+        SEOMeta::setTitle('Machu Picchu Tour Packages | Machu Picchu Vacation Packages | Machu Picchu Deals | Peru Honeymoon Travel Packages');
+        SEOMeta::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
+        SEOMeta::setCanonical('https://gotoperu.com/packages');
+        SEOMeta::addKeyword(['Machu Picchu Tour Packages', 'Machu Picchu Packages', 'Machu Picchu Vacation Packages', 'Machu Picchu Deals', 'Peru Honeymoon Travel Packages']);
+
+        OpenGraph::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
+        OpenGraph::setTitle('Machu Picchu Tour Packages | Machu Picchu Vacation Packages | Machu Picchu Deals | Peru Honeymoon Travel Packages');
+        OpenGraph::setUrl('https://gotoperu.com/packages');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto-peru');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
 
         $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->get();
         $categoria = TCategoria::get();
@@ -134,12 +210,67 @@ class HomeController extends Controller
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         $paquete_iti = TPaquete::with('itinerario','paquetes_destinos', 'precio_paquetes')->where('titulo', $title)->get();
 
+//        foreach ($paquete_iti as $paq_i) {
+//
+//            SEOMeta::setTitle($paq_i->s_title);
+//            SEOMeta::setDescription($paq_i->s_description);
+////            SEOMeta::setCanonical('https://gotoperu.com/packages');
+//            SEOMeta::addKeyword([$paq_i->s_keyword]);
+//
+//            OpenGraph::setDescription($paq_i->s_description);
+//            OpenGraph::setTitle($paq_i->s_titile);
+////            OpenGraph::setUrl('http://new-goto.nu/packages/inca-trail-to-machu-picchu/4-days-tours');
+//            OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+//            OpenGraph::setSiteName('goto-peru');
+//            OpenGraph::addProperty('type', 'website');
+//
+//            \Twitter::setType('summary');
+//            \Twitter::setTitle($paq_i->s_twtitle);
+//            \Twitter::setSite($paq_i->s_twsite);
+//            \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+//        }
+
+        SEOMeta::setTitle('Travel Packages: '.ucwords(strtolower($title)).' | GotoPeru');
+        SEOMeta::setDescription('Our team has many years of experience in travel organization and our main goal is providing an unforgettable experience.');
+        SEOMeta::setCanonical('https://gotoperu.com/about-us');
+//        SEOMeta::addKeyword(['Best Peru Trip Packages', 'Peru Machu Picchu Tours']);
+
+        OpenGraph::setDescription('Our team has many years of experience in travel organization and our main goal is providing an unforgettable experience.');
+        OpenGraph::setTitle('About Us | GotoPeru');
+        OpenGraph::setUrl('https://gotoperu.com/about-us');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto peru');
+        OpenGraph::addProperty('type', 'website');
+        OpenGraph::addProperty('locale', 'en_US');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('About Us | GotoPeru');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
         return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete]);
 
     }
 
     public function destinations()
     {
+        SEOMeta::setTitle('South America Travel Destinations | Customized Travel Packages');
+        SEOMeta::setDescription('Discover beautiful places to visit in south america tours with gotoperu. Experience best places in south america - peru, bolivia, ecuador, brasil.');
+        SEOMeta::setCanonical('https://gotoperu.com/destinations');
+        SEOMeta::addKeyword(['Customized travel Packages', 'South America Travel', 'South America Travel Destinations', 'Peru Travel Packages']);
+
+        OpenGraph::setDescription('Discover beautiful places to visit in south america tours with gotoperu. Experience best places in south america - peru, bolivia, ecuador, brasil.');
+        OpenGraph::setTitle('South America Travel Destinations | Customized Travel Packages');
+        OpenGraph::setUrl('https://gotoperu.com/destinations');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto-peru');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('South America Travel Destinations | Customized Travel Packages');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
         return view('page.destinations');
     }
 
@@ -153,6 +284,26 @@ class HomeController extends Controller
         $paquetes_de = TPaqueteDestino::with(['destinos'=>function($query) use ($pais) { $query->where('pais', $pais);}])->get();
         $destinos = TDestino::get();
         $destinos_p = TDestino::where('pais', $pais)->get();
+
+
+        SEOMeta::setTitle(''.ucwords($pais).' Travel Destinations | Customized '.ucwords($pais).' Travel Packages');
+        SEOMeta::setDescription('Discover beautiful places to visit in '.ucwords($pais).' with GotoPeru..');
+        SEOMeta::setCanonical('https://gotoperu.com/destinations/'.$pais.'-travel');
+        SEOMeta::addKeyword([''.ucwords($pais).' travel Packages', 'South America Travel', 'South America Travel Destinations']);
+
+        OpenGraph::setDescription('Discover beautiful places to visit in '.ucwords($pais).' with GotoPeru..');
+        OpenGraph::setTitle(''.ucwords($pais).' Travel Destinations | Customized '.ucwords($pais).' Travel Packages');
+        OpenGraph::setUrl('https://gotoperu.com/destinations/'.$pais.'-travel');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto-peru');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle(''.ucwords($pais).' Travel Destinations | Customized '.ucwords($pais).' Travel Packages');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
+
         return view('page.destinations-country', ['paquete'=>$paquete, 'paquetes_de'=>$paquetes_de, 'categoria'=>$categoria, 'destinos'=>$destinos, 'destinos_p'=>$destinos_p, 'pais'=>$pais, 'paquete_destinos'=>$paquete_destinos]);
 
 //        return view('page.destinations-country');
@@ -174,21 +325,97 @@ class HomeController extends Controller
 
         $paquetes_de = TPaqueteDestino::with(['destinos'=>function($query) use ($ciudad) { $query->where('nombre', $ciudad);}])->get();
 
+
+
+        SEOMeta::setTitle(''.ucwords($ciudad).' Tours | '.ucwords($ciudad).' Travel Offers | Cheap '.ucwords($ciudad).' Deals');
+        SEOMeta::setDescription('Plan your vacations in '.ucwords($ciudad).' with our affordable tour packages and enjoy the astounding structures, stunning beaches, lush landscapes and much more!');
+        SEOMeta::setCanonical('https://gotoperu.com/destinations/'.$pais.'-travel/'.$city.'');
+        SEOMeta::addKeyword([''.ucwords($ciudad).' Tours', ''.ucwords($ciudad).' Travel Offers', 'Cheap '.ucwords($ciudad).' Deals']);
+
+        OpenGraph::setDescription('Plan your vacations in '.ucwords($ciudad).' with our affordable tour packages and enjoy the astounding structures, stunning beaches, lush landscapes and much more!');
+        OpenGraph::setTitle(''.ucwords($ciudad).' Tours | '.ucwords($ciudad).' Travel Offers | Cheap '.ucwords($ciudad).' Deals');
+        OpenGraph::setUrl(['url'=>'https://gotoperu.com/destinations/'.$pais.'-travel/'.$city.'']);
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto-peru');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle(''.ucwords($ciudad).' Tours | '.ucwords($ciudad).' Travel Offers | Cheap '.ucwords($ciudad).' Deals');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
+
+
         return view('page.destinations-country-show', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos, 'destinos_p'=>$destinos_p, 'pais'=>$pais, 'paquetes_de'=>$paquetes_de]);
     }
 
     public function about()
     {
+
+        SEOMeta::setTitle('About Us | GotoPeru');
+        SEOMeta::setDescription('Our team has many years of experience in travel organization and our main goal is providing an unforgettable experience.');
+        SEOMeta::setCanonical('https://gotoperu.com/about-us');
+//        SEOMeta::addKeyword(['Best Peru Trip Packages', 'Peru Machu Picchu Tours']);
+
+        OpenGraph::setDescription('Our team has many years of experience in travel organization and our main goal is providing an unforgettable experience.');
+        OpenGraph::setTitle('About Us | GotoPeru');
+        OpenGraph::setUrl('https://gotoperu.com/about-us');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto peru');
+        OpenGraph::addProperty('type', 'website');
+        OpenGraph::addProperty('locale', 'en_US');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('About Us | GotoPeru');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
         return view('page.about');
     }
 
     public function getting()
     {
+        SEOMeta::setTitle('Getting To Peru | GotoPeru');
+        SEOMeta::setDescription('Call our destination specialist today @ (202) 996-3000 & Book a tour in South America. Our specialist will provide you best knowledge about various air travel packages to Peru.');
+        SEOMeta::setCanonical('https://gotoperu.com/getting-to-peru');
+//        SEOMeta::addKeyword(['Best Peru Trip Packages', 'Peru Machu Picchu Tours']);
+
+        OpenGraph::setDescription('Call our destination specialist today @ (202) 996-3000 & Book a tour in South America. Our specialist will provide you best knowledge about various air travel packages to Peru.');
+        OpenGraph::setTitle('Getting To Peru | GotoPeru');
+        OpenGraph::setUrl('https://gotoperu.com/getting-to-peru');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto peru');
+        OpenGraph::addProperty('type', 'website');
+        OpenGraph::addProperty('locale', 'en_US');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Getting To Peru | GotoPeru');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
         return view('page.getting');
     }
 
     public function testimonials()
     {
+        SEOMeta::setTitle('Goto Peru Reviews & Testimonials | Goto Peru');
+        SEOMeta::setDescription('If you are looking for a travel agency located in Peru, read our travelers testimonials and find out why they loved travelling with GOTOPERU!');
+        SEOMeta::setCanonical('https://gotoperu.com/testimonials');
+//        SEOMeta::addKeyword(['Best Peru Trip Packages', 'Peru Machu Picchu Tours']);
+
+        OpenGraph::setDescription('If you are looking for a travel agency located in Peru, read our travelers testimonials and find out why they loved travelling with GOTOPERU!');
+        OpenGraph::setTitle('Goto Peru Reviews & Testimonials | Goto Peru');
+        OpenGraph::setUrl('https://gotoperu.com/testimonials');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto peru');
+        OpenGraph::addProperty('type', 'website');
+        OpenGraph::addProperty('locale', 'en_US');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Goto Peru Reviews & Testimonials | Goto Peru');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
 //        $users = DB::table('users')->paginate(15);
         $testimonials = TTestimonio::paginate(5);
 //        $testimonials->withPath('custom/url');
@@ -198,6 +425,24 @@ class HomeController extends Controller
 
     public function faq()
     {
+        SEOMeta::setTitle('Frequently Asked Questions | GoTo Peru');
+        SEOMeta::setDescription('Call our destination specialist today @ (202) 996-3000 & Book a tour in South America. Our specialist will provide you best knowledge about various air travel packages to Peru.');
+        SEOMeta::setCanonical('https://gotoperu.com/faq');
+//        SEOMeta::addKeyword(['Best Peru Trip Packages', 'Peru Machu Picchu Tours']);
+
+        OpenGraph::setDescription('Call our destination specialist today @ (202) 996-3000 & Book a tour in South America. Our specialist will provide you best knowledge about various air travel packages to Peru.');
+        OpenGraph::setTitle('Frequently Asked Questions | GoTo Peru');
+        OpenGraph::setUrl('https://gotoperu.com/faq');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto peru');
+        OpenGraph::addProperty('type', 'website');
+        OpenGraph::addProperty('locale', 'en_US');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Frequently Asked Questions | GoTo Peru');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
         return view('page.faq');
     }
 
@@ -208,6 +453,23 @@ class HomeController extends Controller
 
     public function deals()
     {
+        SEOMeta::setTitle('Travel Deals Peru | Machu Picchu Vacation Packages | Machu Picchu Deals');
+        SEOMeta::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
+        SEOMeta::setCanonical('https://gotoperu.com/packages');
+        SEOMeta::addKeyword(['Travel Deals Peru', 'Machu Picchu Packages', 'Machu Picchu Vacation Packages', 'Machu Picchu Deals', 'Peru Honeymoon Travel Packages']);
+
+        OpenGraph::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
+        OpenGraph::setTitle('Travel Deals Peru | Machu Picchu Vacation Packages | Machu Picchu Deals');
+        OpenGraph::setUrl('https://gotoperu.com/packages');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto-peru');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Travel Deals Peru | Machu Picchu Vacation Packages | Machu Picchu Deals');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
         $paquetes = TPaquete::with('precio_paquetes')->get();
         $paquetes_r = TPaquete::with('precio_paquetes')->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
