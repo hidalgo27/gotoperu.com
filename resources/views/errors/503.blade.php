@@ -36,7 +36,7 @@
 
                     <p>Lo sentimos, la página que intentabas alcanzar no se puede encontrar.</p>
 
-                    <p>Visite Peru For Less para conocer más acerca de nuestros Especiales en Perú , nuestros Peru Trekking Tours o Contáctenos para ayudarlo a construir un viaje completamente personalizable.</p>
+                    <p>Visite <a href="/">GotoPeru</a> para conocer más acerca de nuestros Especiales en Perú , nuestros Peru Trekking Tours o Contáctenos para ayudarlo a construir un viaje completamente personalizable.</p>
 
                     <p><b>Es posible que su página no pueda ser encontrada por las siguientes razones:</b></p>
                     <ul>
@@ -48,7 +48,7 @@
                     </ul>
                     <p><b>Soluciones posibles:</b></p>
                     <ul>
-                        <li>Visite la página de inicio de Peru For Less .</li>
+                        <li>Visite la página de inicio de <a href="/">GotoPeru</a> .</li>
                         <li>Acceda al mapa del sitio .</li>
                         <li>Si lo desea, póngase en contacto con el administrador del sitio web con su problema en: webmaster@peruforless.com</li>
                     </ul>
