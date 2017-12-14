@@ -677,6 +677,7 @@ class HomeController extends Controller
 
     public function pagenotfound()
     {
+        SEOMeta::setTitle('404');
         return view('errors.503');
     }
 }
