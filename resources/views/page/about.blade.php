@@ -35,7 +35,7 @@
             <div class="row justify-content-center">
                 <div class="col-8">
 
-                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
+                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
                         <div class="col-2 text-center">
                             <span class="display-3 font-weight-bold">1</span>
                         </div>
@@ -44,7 +44,7 @@
                             <p>We promise to do the right thing all the time, every time, for our team, travelers, people and places we visit.</p>
                         </div>
                     </div>
-                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
+                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
                         <div class="col-2 text-center">
                             <span class="display-3 font-weight-bold">2</span>
                         </div>
@@ -53,7 +53,7 @@
                             <p>You will find GoToPeru offices in Lima, Arequipa, Cusco and satellite branches in Quito and La Paz.</p>
                         </div>
                     </div>
-                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
+                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
                         <div class="col-2 text-center">
                             <span class="display-3 font-weight-bold">3</span>
                         </div>
@@ -62,7 +62,7 @@
                             <p>Our expert locals make the difference. They come from all regions across Peru and bring with them unique information and a vast knowledge of main destinations.</p>
                         </div>
                     </div>
-                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
+                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
                         <div class="col-2 text-center">
                             <span class="display-3 font-weight-bold">4</span>
                         </div>
@@ -71,7 +71,7 @@
                             <p>We are rated as a high quality Travel Operator on TripAdvisor with impeccable testimonials. We are proud members of Promperu, the National Tourism Board, fully licensed and authorized by the government.</p>
                         </div>
                     </div>
-                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
+                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
                         <div class="col-2 text-center">
                             <span class="display-3 font-weight-bold">5</span>
                         </div>
@@ -80,7 +80,7 @@
                             <p>We aim to make positive differences in the communities where we work and live. We look for ways to improve the standards of living. It is our priority to hire local people, develop their communities and work with local supply chains.</p>
                         </div>
                     </div>
-                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
+                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
                         <div class="col-2 text-center">
                             <span class="display-3 font-weight-bold">6</span>
                         </div>
@@ -89,7 +89,7 @@
                             <p>We are aware that surprises, both good and bad, occur while traveling. We are always on top of it and ready to give reliable travel solutions to our customers.</p>
                         </div>
                     </div>
-                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
+                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
                         <div class="col-2 text-center">
                             <span class="display-3 font-weight-bold">7</span>
                         </div>
@@ -108,7 +108,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
+                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
                         <div class="col-2 text-center">
                             <span class="display-3 font-weight-bold">8</span>
                         </div>
@@ -117,7 +117,7 @@
                             <p>We offer alternative extensions to the main South American destinations in Ecuador, Bolivia, Chile, Argentina, Brasil, Uruguay and Columbia. In December, 2015 we will be opening a physical travel office in the USA.</p>
                         </div>
                     </div>
-                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
+                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
                         <div class="col-2 text-center">
                             <span class="display-3 font-weight-bold">9</span>
                         </div>
@@ -126,7 +126,7 @@
                             <p>We have glowing testimonials on our website and other acclaimed travel websites. We have set a standard of excellence for our customers by giving them the best Peruvian resources for a memorable journey.</p>
                         </div>
                     </div>
-                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
+                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
                         <div class="col-2 text-center">
                             <span class="display-3 font-weight-bold">10</span>
                         </div>

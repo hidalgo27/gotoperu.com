@@ -266,7 +266,7 @@
                 <a class="nav-link text-secondary" href="{{route('faq_path')}}">FAQ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-secondary" href="{{route('agents_path')}}">Travel Agents</a>
+                <a class="nav-link text-secondary" href="#">Travel Agents</a>
             </li>
             {{--<li class="nav-item">--}}
                 {{--<a class="nav-link disabled" href="#">Disabled</a>--}}
