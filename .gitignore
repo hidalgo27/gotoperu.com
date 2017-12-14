@@ -5,6 +5,7 @@
 /vendor
 /.idea
 /.vagrant
+vendor.zip
 vendor2.zip
 Homestead.json
 Homestead.yaml
