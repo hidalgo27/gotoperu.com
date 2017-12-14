@@ -59,7 +59,7 @@
     <div class="container">
         <div class="row">
             <div class="col mt-1">
-                <a href="/"><img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="img-fluid"></a>
+                <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="img-fluid"></a>
             </div>
             <div class="col text-center pt-4">
                 <i class="h4">... a <span class="text-g-yellow">new</span> adventure every day!</i>
