@@ -107,3 +107,9 @@ Route::post('/design', [
     'uses' => 'HomeController@design',
     'as' => 'design_path',
 ]);
+
+//page not found
+Route::get('/pagenotfound', [
+    'uses' => 'HomeController@pagenotfound',
+    'as' => 'notfound_path',
+]);

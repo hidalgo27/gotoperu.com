@@ -675,4 +675,8 @@ class HomeController extends Controller
 //        return view('page.itinerary', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos]);
     }
 
+    public function pagenotfound()
+    {
+        return view('errors.503');
+    }
 }
