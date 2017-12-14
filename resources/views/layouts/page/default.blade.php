@@ -6,6 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="google-site-verification" content="Ihh0sYh7n0k-jfaQTWAlQUpg1fpT7aTD4Qf6k8gbD3Y" />
+    <meta name="p:domain_verify" content="96cde57c8c54dbd171bf7de5d9564e89"/>
     {{--<title>Agencia de Viajes en Peru | Tours Machu Picchu</title>--}}
     {{--<meta name="description" content="Paquetes de viaje a Perú con un auténtico operador peruano, oficinas en Lima, Cusco, Arequipa y Puno. Ofrecemos salidas diarias a Machu Picchu.">--}}
     {!! SEOMeta::generate() !!}
@@ -784,6 +786,31 @@
         $('[data-toggle="tooltip"]').tooltip()
     })
 
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-57960909-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "name" : "GotoPeru",
+  "url" : "https://gotoperu.com/",
+  "sameAs" : [
+    "https://twitter.com/GOTOPERUCOM",
+    "https://plus.google.com/+Gotoperu",
+    "https://www.facebook.com/GOTOPERUcom/",
+    "https://www.pinterest.com/gotoperucom/",
+    "https://www.instagram.com/gotoperucom/",
+    "https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg"
+ ]
+}
 </script>
 </body>
 </html>
