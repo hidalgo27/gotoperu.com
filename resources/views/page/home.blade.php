@@ -46,15 +46,15 @@
                                     <div class="col">
                                         <ul class="list-unstyled text-left m-0">
                                             <li>Dia 1: Lima City Tour</li>
-                                            <li>Dia 2: Pachacamac</li>
+                                            <li>Dia 2: Half Day Excursion</li>
                                             <li>Dia 3: Cusco City</li>
                                             <li>Dia 4: Sacred Valley</li>
                                             <li>Dia 5: Machu Picchu</li>
                                             <li>Dia 6: Maras & Maras</li>
-                                            <li>Dia 7: South Valley</li>
+                                            <li>Dia 7: Free Day Cusco</li>
                                             <li>Dia 8: Sun Road Tour</li>
                                             <li>Dia 9: Lake Titicaca</li>
-                                            <li>Dia 10: Farewell</li>
+                                            <li>Dia 10: Transfer Out</li>
                                         </ul>
                                     </div>
                                     <div class="col border border-top-0 border-bottom-0 border-right-0 border-secondary">
@@ -65,7 +65,7 @@
                                             10 <span>days</span>
                                         </div>
                                         <div>
-                                            <span class="h1"><sup class="h5 text-secondary">from</sup>$1499</span>
+                                            <span class="h1"><sup class="h5 text-secondary">from</sup>$1449</span>
                                         </div>
                                     </div>
                                 </div>
@@ -73,13 +73,13 @@
                             <div class="card-footer">
                                 <div class="row">
                                     <div class="col">
-                                        <a href="" class="text-white btn btn-block btn-g-yellow">8 days</a>
+                                        {{--<a href="" class="text-white btn btn-block btn-g-yellow">8 days</a>--}}
                                     </div>
                                     <div class="col">
-                                        <a href="" class="text-white btn btn-block btn-g-green">12 days</a>
+                                        {{--<a href="" class="text-white btn btn-block btn-g-green">12 days</a>--}}
                                     </div>
                                     <div class="col">
-                                        <a href="" class="text-white btn btn-block btn-g-dark">14 days</a>
+                                        <a href="packages/expedition-to-peru-peru-/10-days-tours" class="text-white btn btn-block btn-g-dark">10 days</a>
                                     </div>
                                 </div>
                                 {{--<div class="col text-right my-3">--}}
