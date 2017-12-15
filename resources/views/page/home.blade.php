@@ -1,8 +1,10 @@
 @extends('layouts.page.default')
 
 @section('content')
-
-    <section>
+    <div class="d-sm-none">
+        <img src="{{asset('images/slider/machupicchu.jpg')}}" alt="" class="w-100">
+    </div>
+    <section class="d-none d-sm-block">
         <div class="jumbotron jumbotron-slider rounded-0">
             <div class="container-fluid">
                 <div class="row justify-content-between">
@@ -227,7 +229,7 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-7">
+                <div class="col-12 col-sm-7">
                     <div class="row py-1 no-gutters">
                         <div class="col">
                             <h2 class="h5"><a href="packages/the-best-of-peru-express/9-days-tours" class="text-dark">THE HIGHLIHTS OF PERU IN 9 DAYS!</a>
@@ -302,24 +304,24 @@
                     </div>
 
                     <div class="row no-gutters text-center">
-                        <div class="col bg-g-yellow">
+                        <div class="col-6 col-sm bg-g-yellow">
                             <p class="h2">9 Days <span class="d-block h5">8 Night</span></p>
                         </div>
-                        <div class="col bg-g-green text-white">
+                        <div class="col-6 col-sm bg-g-green text-white">
                             <p class="h2 mt-2"><small class="d-block h6 m-0">starting from</small> $1449</p>
                         </div>
-                        <div class="col bg-g-dark text-white">
+                        <div class="col-12 col-sm bg-g-dark text-white">
                             <p class="m-0">All Included</p>
                             <small>Hotels, Tours, Entrances, Nazca Overflight, Transfers.</small>
                         </div>
                     </div>
 
                     <div class="row mt-4">
-                        <div class="col-9">
+                        <div class="col-12 col-sm-9">
                             <h5 class="text-g-yellow"><strong>PERU</strong> EXPERTS ARRANGING YOUR SOON-TO-BE FAVORITE <strong>VACATION</strong></h5>
                             <p>From the moment you arrive to <strong>Peru</strong>, we will be pleased to share our passion, knowledge and experiences that we, the GOTOPERU team, have for our beloved country with you! We will make sure to make your <strong>Peru trip</strong> fulfill all the wanderlust in you…</p>
                         </div>
-                        <div class="col">
+                        <div class="col-12 col-sm d-none d-sm-block">
                             <div class="row">
                                 <!-- <img src="img/martin-paul.jpg" title="martin and paul" alt="go to peru team"> -->
                                 <div class="col text-center">
@@ -351,7 +353,7 @@
                     </div>
 
                 </div>
-                <div class="col">
+                <div class="col-12 col-sm">
                     <div class="row">
                         <div class="col">
                             <div class="content-area-3">
@@ -381,7 +383,7 @@
         </div>
     </section>
 
-    <section class="my-5">
+    <section class="my-5 d-none d-sm-block">
         {{--<div class="">--}}
         {{--<a href="" class="">--}}
         {{--<div class="row">--}}
@@ -408,13 +410,28 @@
         </div>
     </section>
 
+    <section class="my-5 d-sm-none">
+
+            <div class="container">
+                <div class="row justify-content-between no-gutters">
+                    <div class="col text-white text-center bg-rgba-dark rounded p-4">
+                        <h5 class="text-g-yellow"><strong>PERU TRAVEL OFFERS</strong></h5>
+                        <!-- <div class="sec-title-div-4"></div> -->
+                        <p class="m-0">Various <strong>packages</strong> for all budgets with great discounts! we're all about savings, check our <strong>best packages</strong> below!</p>
+                    </div>
+                </div>
+
+            </div>
+
+    </section>
+
     <section class="my-5">
         <div class="container">
             <div class="row pt-3">
 
 
                 @foreach($paquetes->take(6) as $paquete)
-                <div class="col-4 d-flex mb-4">
+                <div class="col-12 col-sm-4 d-flex mb-4">
                     <div class="card">
                         {{--<div class="card-header">--}}
                         {{--<h4 class="card-title">City tour em cusco</h4>--}}
@@ -524,7 +541,7 @@
                     <div id="currency">
                         <h3 class="text-g-yellow pt-5">Currency</h3>
                         <p>The official currency of Peru is Nuevo Sol (S/.). Banknotes are in denominations of 10, 20, 50, 100 and 200 nuevos soles. Coins are in 1,5,10,20 and 50 centimos (cents) and 1,2 and 5 nuevos soles. US currency is accepted at most places.</p>
-                        <div class="row">
+                        <div class="row d-none d-sm-flex">
                             <div class="col"><img src="{{asset('images/guia/10-soles.jpg')}}" class="img-fluid" title="10 soles" alt="10 soles"></div>
                             <div class="col"><img src="{{asset('images/guia/20-soles.jpg')}}" class="img-fluid" title="20 soles" alt="20 soles"></div>
                             <div class="col"><img src="{{asset('images/guia/50-soles.jpg')}}" class="img-fluid" title="50 soles" alt="50 soles"></div>
@@ -539,7 +556,7 @@
                     <div id="passport-visas">
                         <h3 class="text-g-yellow pt-5">Passport & Visas</h3>
                         <div class="row">
-                            <div class="col">
+                            <div class="col d-none d-sm-block">
                                 <img src="{{asset('images/guia/passport.jpg')}}" alt="passport to peru" class="img-fluid rounded">
                             </div>
                             <div class="col">
@@ -552,7 +569,7 @@
                         <h3 class="text-g-yellow pt-5">Credit Cards</h3>
                         <p>Visa cards are the most widely accepted credit card. Although there are an abundance of ATMs available, many credit and debit cards do not work in Latin America. Check with your bank before departing to see if your card is compatible with local ATMs. When you purchase products or services on a credit card, a fee of 5%-10% is applied. It is best to use cash for purchases whenever possible.</p>
                         <div class="row">
-                            <div class="col-8">
+                            <div class="col col-sm-8">
                                 <h4>Tips</h4>
                                 <ul>
                                     <li>When receiving local currency ask for billetes pequenos (small bills) as it is difficult to change large bills in smaller towns. Carry as much small change as possible for small purchases and public restroom fees.</li>
@@ -563,7 +580,7 @@
                                     <li>Do not exchange money on the street as counterfeits are a problem.</li>
                                 </ul>
                             </div>
-                            <div class="col">
+                            <div class="col d-none d-sm-block">
                                 <img src="{{asset('images/guia/credit-card.jpg')}}" alt="credit card" class="img-fluid rounded">
                             </div>
                         </div>
@@ -725,7 +742,7 @@
 
                 </div>
 
-                <div class="col-3">
+                <div class="col-3 d-none d-sm-block">
                     <div class="sticky-top sticky-top-50">
                         <nav id="menu" class="navbar navbar-light nav-goto-side w-100">
                             <nav class="nav nav-pills flex-column w-100">

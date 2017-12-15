@@ -164,7 +164,7 @@ class HomeController extends Controller
 
 
 
-        return view('page.packages-durations',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r]);
+        return view('page.packages-durations',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'duration'=>$duration]);
     }
 
 
@@ -346,7 +346,7 @@ class HomeController extends Controller
 
 
 
-        return view('page.destinations-country-show', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos, 'destinos_p'=>$destinos_p, 'pais'=>$pais, 'paquetes_de'=>$paquetes_de]);
+        return view('page.destinations-country-show', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos, 'destinos_p'=>$destinos_p, 'pais'=>$pais, 'paquetes_de'=>$paquetes_de, 'ciudad'=>$ciudad]);
     }
 
     public function about()
@@ -470,7 +470,7 @@ class HomeController extends Controller
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
-        $paquetes = TPaquete::with('precio_paquetes')->get();
+        $paquetes = TPaquete::with('precio_paquetes')->where('descuento', 1)->get();
         $paquetes_r = TPaquete::with('precio_paquetes')->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         return view('page.travel-deals',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r]);

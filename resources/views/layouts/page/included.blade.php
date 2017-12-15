@@ -1,4 +1,4 @@
-<section>
+<section class="d-none d-sm-block">
     <div class="container-fluid">
         <div class="col">
             <div class="row"><!--.row -->

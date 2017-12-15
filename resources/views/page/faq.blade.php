@@ -1,6 +1,6 @@
 @extends('layouts.page.default')
 @section('content')
-    <section>
+    <section class="d-none d-sm-block">
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
                 <h2 class="text-white my-5 h1">Frequently Asked Questions</h2>
@@ -32,7 +32,7 @@
     <section class="bg-light py-5">
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col-12 col-sm-6">
                     <ul class="list-unstyled card p-3">
                         <li><a href="#faq1" class="page-scroll"><i class="fa fa-angle-right"></i> When Is the Best Time to Travel to Peru?</a></li>
                         <li><a href="#faq2" class="page-scroll"><i class="fa fa-angle-right"></i> Are There Any Tips for Staying Healthy During My Trip?</a></li>
@@ -41,7 +41,7 @@
                         <li><a href="#faq5" class="page-scroll"><i class="fa fa-angle-right"></i> What Should I Do to Stay Safe in Peru?</a></li>
                     </ul>
                 </div>
-                <div class="col">
+                <div class="col-12 col-sm-6">
                     <ul class="list-unstyled card p-3">
                         <li><a href="#faq6" class="page-scroll"><i class="fa fa-angle-right"></i> What Currency Do I Need in Peru?</a></li>
                         <li><a href="#faq7" class="page-scroll"><i class="fa fa-angle-right"></i> Do I Tip for Services in Peru?</a></li>
@@ -57,7 +57,7 @@
     <section class="my-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-8">
+                <div class="col-12 col-sm-8">
                     <div class="row">
                         <div class="col">
                             <div class="row py-4" id="faq1">

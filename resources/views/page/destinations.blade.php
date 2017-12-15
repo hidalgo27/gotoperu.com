@@ -1,9 +1,9 @@
 @extends('layouts.page.default')
 @section('content')
-    <section>
+    <section class="d-none d-sm-block">
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
-                <h2 class="text-white my-5 h1">Our excursions and packages depart 365 days a year</h2>
+                <h2 class="text-white my-5 h1">South America Travel Destinations</h2>
                 {{--<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>--}}
                 {{--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>--}}
             </div>
@@ -31,9 +31,9 @@
     <section class="my-5">
         <div class="container">
             <div class="row">
-                <div class="col-6 mb-4">
+                <div class="col-12 col-sm-6 mb-4">
                     <div class="row">
-                        <div class="col">
+                        <div class="col d-none d-sm-block">
                             <img src="{{asset('images/maps/peru.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">
                         </div>
                         <div class="col">
@@ -42,9 +42,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 mb-4">
+                <div class="col-12 col-sm-6 mb-4">
                     <div class="row">
-                        <div class="col">
+                        <div class="col d-none d-sm-block">
                             <img src="{{asset('images/maps/ecuador.jpg')}}" alt="ecuador" class="w-100 rounded rounded-circle">
                         </div>
                         <div class="col">
@@ -53,9 +53,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 mb-4">
+                <div class="col-12 col-sm-6 mb-4">
                     <div class="row">
-                        <div class="col">
+                        <div class="col d-none d-sm-block">
                             <img src="{{asset('images/maps/bolivia.jpg')}}" alt="bolivia" class="w-100 rounded rounded-circle">
                         </div>
                         <div class="col">
@@ -64,9 +64,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 mb-4">
+                <div class="col-12 col-sm-6 mb-4">
                     <div class="row">
-                        <div class="col">
+                        <div class="col d-none d-sm-block">
                             <img src="{{asset('images/maps/brasil.jpg')}}" alt="brasil" class="w-100 rounded rounded-circle">
                         </div>
                         <div class="col">
@@ -99,7 +99,7 @@
                         <h3 class="text-g-yellow pt-5">Intro</h3>
                         <div class="row">
                             <div class="col">
-                                <table class="table">
+                                <table class="table table-responsive">
                                     <tbody>
                                     <tr>
                                         <td><b>Elevation: </b></td>
@@ -391,7 +391,7 @@
                         <h5 class="text-secondary">Limo</h5>
                         <p>The Limo overlooks the central plaza of Cusco and features modern décor and dishes served with Cusquenan flare.</p>
 
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Address</b></td>
@@ -424,7 +424,7 @@
                         <h5 class="text-secondary">MAP Caf&eacute;</h5>
                         <p>This caf&eacute; can be found within the Museo de Arte Precolumbino. Its crystal cube décor makes dining here a unique artistic experience.</p>
                         <p>Organic baths, heated floor tiles, Scottish showers, and gracefully detailed marble are just some of the luxuries travelers can expect while staying here. Other amenities available include currency exchange, laundry service, spa, sauna, and a hair salon.</p>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Address</b></td>
@@ -451,7 +451,7 @@
                         <h5 class="text-secondary">Cicciolina</h5>
                         <p>Cicciolina, a Mediterranean/International bakery and Tapas bar, can be found on the second floor of a restored colonial home just around the corner from the Cusco Cathedral. By day the bakery fare tempts passersby and by evening visitors can enjoy a cozy dinner and scrumptious desert.</p>
 
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Address</b></td>
@@ -481,7 +481,7 @@
                         </table>
                         <h5 class="text-secondary">Greens Organic</h5>
                         <p>Greens Organic makes eating healthy a decadent delight. The restaurant makes use of Andean protein-rich grains and legumes as well as local produce to create a menu that tastes as rich as the items it features.</p>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Address</b></td>
@@ -507,7 +507,7 @@
                         </table>
                         <h5 class="text-secondary">Chicha</h5>
                         <p>Located in both Arequipa and Cusco, Chicha offers multiple chances to feast on a combination of Andean and Peruvian specialties. Gaston Acurio, Peru’s most celebrated chef, is responsible for culinary discoveries here as well as his flagship restaurant in Lima, Astrid &amp; Gaston.</p>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Address</b></td>
@@ -537,7 +537,7 @@
                         </table>
                         <h5 class="text-secondary">Pachapapa</h5>
                         <p>Pachapapa features traditional Peruvian cuisine and is best known for two dishes: Cuy Horneado con Huacatay y Ají Panca (a whole guinea pig roasted with special Peruvian herbs and hot yellow pepper), and Pachamanca which consists of various tubers, corn, and meats all baked in a traditional ground oven.</p>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Address</b></td>
@@ -565,7 +565,7 @@
                         <div class="sec-title-div-5"></div>
                         <h5 class="text-secondary">Jack’s Caf&eacute;</h5>
                         <p>Located at the crossroads between the Plaza de Armas and the San Blas neighborhood, Jack’s Café satisfies palates yearning for a taste of home. The serve everything from any style eggs to pancakes, to burgers, and chicken soup.</p>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Website</b></td>
@@ -587,7 +587,7 @@
                         </table>
                         <h5 class="text-secondary">La Bodega 138</h5>
                         <p>Proving that pizza is popular the world over, La Bodega 138 stands out from all the others by serving pizzas made with the freshest, locally grown ingredients. Each pie is made to order so you’re certain to be satisfied.</p>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Phone</b></td>
@@ -609,7 +609,7 @@
                         </table>
                         <h5 class="text-secondary">Fallen Angel</h5>
                         <p>The Fallen Angel is one of Cusco’s hidden surprises. This original dining experience serves an array of taste treats including Mediterranean, Andean, Steak, and vegetarian options.</p>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Website</b></td>
@@ -635,7 +635,7 @@
                         </table>
                         <h5 class="text-secondary">Choco Museo</h5>
                         <p>If you are a chocolate lover, then you’re going to adore Choco Museo. This café/museum/workshop is an expert in all things chocolate and serves a delicious list of items from chocolate treats to coffee to cocoa tea.</p>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Website</b></td>
@@ -663,7 +663,7 @@
                         <div class="sec-title-div-5"></div>
                         <h5 class="text-secondary">Blue Puppy Lounge and Restaurant</h5>
                         <p>(Peruvian fusion cuisine) – Located in the Plaza de Armas, Calle del Horno</p>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Website</b></td>
@@ -689,7 +689,7 @@
                         </table>
                         <h5 class="text-secondary">Mayupata</h5>
                         <p>(Peruvian fusion cuisine) – Located at Jr. Convencion (Opposite of the Templo de Santiago Apostol)</p>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Phone</b></td>
@@ -711,7 +711,7 @@
                         </table>
                         <h5 class="text-secondary">Pachamama (Pizzeria)</h5>
                         <p>Located in the Plaza de Armas</p>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Phone</b></td>
@@ -733,7 +733,7 @@
                         </table>
                         <h5 class="text-secondary">Puka Rumi (Mexican fusion cuisine)</h5>
                         <p>Located in the Calle Ventiderio</p>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Phone</b></td>
@@ -755,7 +755,7 @@
                         </table>
                         <h5 class="text-secondary">Cafe Mayu (Cafe)</h5>
                         <p>Located at the Estacion de Tren Ollantaytambo</p>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Phone</b></td>
@@ -777,7 +777,7 @@
                         </table>
                         <h5 class="text-secondary">Hearts Café (Café)</h5>
                         <p>Located at Avenida Ventiderio</p>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tbody>
                             <tr>
                                 <td><b>Website</b></td>
@@ -952,7 +952,7 @@
                         <p>For those who need or prefer the comforts of lodges versus “roughing it”, there is a way to experience these treks. The Lodge to Lodge Trek is operated by the Mountain Lodges of Peru and follows the same route as the Salkantay Trek. It also adds an extra day so trekkers can behold the wonders of the glaciers and lagoons near the Salkantay peak. As with other treks, this one also ends with a tour of Machu Picchu.</p>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-3 d-none d-sm-block">
                     <div class="sticky-top sticky-top-50">
                         <nav id="menu" class="navbar navbar-light nav-goto-side w-100">
                             <nav class="nav nav-pills flex-column w-100">

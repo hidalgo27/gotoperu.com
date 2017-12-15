@@ -60,14 +60,14 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col mt-1">
+            <div class="col-12 col-sm mt-1">
                 <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="img-fluid"></a>
             </div>
-            <div class="col text-center pt-4">
+            <div class="col-12 col-sm text-center pt-4 d-none d-sm-block">
                 <i class="h4">... a <span class="text-g-yellow">new</span> adventure every day!</i>
             </div>
-            <div class="col text-right pt-4">
-                <a href="" class="font-weight-bold mx-3">(202) 996-3000</a>
+            <div class="col-12 col-sm text-right pt-4 d-none d-sm-block">
+                <a href="tel:+2029963000" class="font-weight-bold mx-3">(202) 996-3000</a>
                 <button type="button" class="btn btn-g-yellow">Chat</button>
                 <button type="button" class="btn btn-g-green" data-toggle="modal" data-target="#modal-contact">Inquire Now</button>
 
@@ -243,7 +243,7 @@
             {{--</div>--}}
         {{--</nav>--}}
 
-        <ul class="nav justify-content-center nav-pills nav-fill">
+        <ul class="nav justify-content-center nav-pills nav-fill d-none d-sm-flex">
             <li class="nav-item">
                 <a class="nav-link text-g-yellow" href="{{route('deals_path')}}">Travel Deals</a>
             </li>
@@ -272,13 +272,51 @@
                 {{--<a class="nav-link disabled" href="#">Disabled</a>--}}
             {{--</li>--}}
         </ul>
+
+        <nav class="navbar navbar-expand-lg navbar-g-dark bg-g-dark d-sm-none">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars text-white"></i>
+            </button>
+            {{--<a class="navbar-brand btn btn-g-green" href="#" data-toggle="modal" data-target="#modal-contact">Inquire Now</a>--}}
+            <a href="tel:+2029963000" class="font-weight-bold">(202)996-3000</a>
+            <button type="button" class="btn btn-g-green" data-toggle="modal" data-target="#modal-contact">Inquire Now</button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-g-yellow" href="{{route('deals_path')}}">Travel Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-secondary" href="{{route('packages_path')}}">Tour Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-secondary" href="{{route('destinations_path')}}">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-secondary" href="{{route('about_path')}}">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-secondary" href="{{route('getting_path')}}">Getting to Peru</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-secondary" href="{{route('testimonials_path')}}">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-secondary" href="{{route('faq_path')}}">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-secondary" href="#">Travel Agents</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
 </section>
 
 @yield('content')
 
 
-<section class="">
+<section class="d-none d-sm-block">
     <div class="jumbotron jumbotron-divider-1 rounded-0">
         <div class="container">
             <div class="row justify-content-center no-gutters">
@@ -335,19 +373,19 @@
         </div>
 
         <div class="row">
-            <div class="col text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+            <div class="col-12 col-sm text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                 <img src="{{asset('images/icons/icon-contact.png')}}" alt="icon contact">
                 <h6>Contact</h6>
-                <p>Chat with us, give us a call (813)600-3042, send us an <a href="mailto:info@gotoperu.com" class="btn-link">e-mail</a> or fill out our <a href="#" data-toggle="modal" data-target="#modal-contact" class="btn-link">online form</a>. Share with us your <strong>travel</strong> preferences! If you already have an outline, an idea, any questions… we will be more than happy to assist your needs.</p>
+                <p>Chat with us, give us a call <a href="tel:+2029963000">(202) 996-3000</a>, send us an <a href="mailto:info@gotoperu.com" class="btn-link">e-mail</a> or fill out our <a href="#" data-toggle="modal" data-target="#modal-contact" class="btn-link">online form</a>. Share with us your <strong>travel</strong> preferences! If you already have an outline, an idea, any questions… we will be more than happy to assist your needs.</p>
             </div><!-- /.col-md-4 col -->
 
-            <div class="col text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.2s">
+            <div class="col-12 col-sm text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.2s">
                 <img src="{{asset('images/icons/icon-design.png')}}" alt="icon design">
                 <h6>Design</h6>
                 <p>We will craft out a first <strong>travel</strong> proposal according to the outline or idea that you shared with us. From then on we will customize it until you are satisfied with the planning! We will then send you a day by day itinerary and leave the rest to you!</p>
             </div><!-- /.col-md-4 col -->
 
-            <div class="col text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.1s">
+            <div class="col-12 col-sm text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.1s">
                 <img src="{{asset('images/icons/icon-vacations.png')}}" alt="icon vacation">
                 <h6><strong>Vacation</strong></h6>
                 <p>Be ready for an unforgettable vacation to the land of the Incas, with promptly transfers at every point (airports, hotels, buses,trains) with knowledgable local Guides on each destination plus the best hotel locations and perks...GOTOPERU team will be always with you</p>
@@ -447,7 +485,7 @@
 <section>
     <div class="container">
 
-        <div class="row pb-5">
+        <div class="row pb-5 ">
             <div class="col text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                 <h4 class="">6 TOP FAQ</h4>
                 <!-- <div class="sec-title-div-4"></div> -->
@@ -455,9 +493,9 @@
         </div>
 
         <div class="row">
-            <div class="col-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+            <div class="col-12 col-sm-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col-1 d-none d-sm-block">
                         <i class="fa fa-angle-right fa-4x"></i>
                     </div>
                     <div class="col-11">
@@ -467,9 +505,9 @@
                 </div>
             </div><!-- /.col-md-6 col -->
 
-            <div class="col-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+            <div class="col-12 col-sm-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col-1 d-none d-sm-block">
                         <i class="fa fa-angle-right fa-4x"></i>
                     </div>
                     <div class="col-11">
@@ -479,9 +517,9 @@
                 </div>
             </div><!-- /.col-md-6 col -->
 
-            <div class="col-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+            <div class="col-12 col-sm-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col-1 d-none d-sm-block">
                         <i class="fa fa-angle-right fa-4x"></i>
                     </div>
                     <div class="col-11">
@@ -493,9 +531,9 @@
 
 
 
-            <div class="col-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+            <div class="col-12 col-sm-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col-1 d-none d-sm-block">
                         <i class="fa fa-angle-right fa-4x"></i>
                     </div>
                     <div class="col-11">
@@ -506,9 +544,9 @@
             </div><!-- /.col-md-6 col -->
 
 
-            <div class="col-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+            <div class="col-12 col-sm-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col-1 d-none d-sm-block">
                         <i class="fa fa-angle-right fa-4x"></i>
                     </div>
                     <div class="col-11">
@@ -518,9 +556,9 @@
                 </div>
             </div><!-- /.col-md-6 col -->
 
-            <div class="col-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+            <div class="col-12 col-sm-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col-1 d-none d-sm-block">
                         <i class="fa fa-angle-right fa-4x"></i>
                     </div>
                     <div class="col-11">
@@ -549,7 +587,7 @@
         </div>
 
         <div class="row justify-content-center">
-            <div class="col-8">
+            <div class="col-12 col-sm-8">
                 <div class="alert bg-rgba-dark my-4 text-white text-center" role="alert">
                     The <strong class="text-g-yellow">ONLY Peruvian Travel Operator</strong> with direct Sales Offices in the USA
                 </div>
@@ -558,111 +596,104 @@
     </div>
     <div class="container-fluid">
         <div class="row py-4">
-            <div class="col text-white">
-                <h3 class="h6 text-g-yellow">Specials</h3>
-                <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="" class="text-white">Programs</a></li>
-                </ul>
-            </div>
-            <div class="col text-white">
+            <div class="col-6 col-sm mb-3 text-white">
                 <h3 class="h6 text-g-yellow">Tour Packages</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="" class="text-white">1-3 Days</a></li>
-                    <li><a href="" class="text-white">4-6 Days</a></li>
-                    <li><a href="" class="text-white">6-9 Days</a></li>
-                    <li><a href="" class="text-white">10-11 Days</a></li>
-                    <li><a href="" class="text-white">12-14 Days</a></li>
-                    <li><a href="" class="text-white">15+ Days</a></li>
+                    <li><a href="{{route('deals_path')}}" class="text-white">Travel Deals</a></li>
+                    <li><a href="{{route('packages_path')}}" class="text-white">Travel Packages</a></li>
                 </ul>
             </div>
-            <div class="col text-white">
+            {{--<div class="col-6 col-sm mb-3 text-white">--}}
+                {{--<h3 class="h6 text-g-yellow">Tour Packages</h3>--}}
+                {{--<ul class="m-0 text-g-yellow list-unstyled">--}}
+                    {{--<li><a href="{{route('destinations_path')}}" class="text-white">1-3 Days</a></li>--}}
+                    {{--<li><a href="{{route('deals_path')}}" class="text-white">4-6 Days</a></li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+            <div class="col-6 col-sm mb-3 text-white">
                 <h3 class="h6 text-g-yellow">Destinations</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="" class="text-white">Peru</a></li>
-                    <li><a href="" class="text-white">Brasil</a></li>
-                    <li><a href="" class="text-white">Argentina</a></li>
-                    <li><a href="" class="text-white">Chile</a></li>
-                    <li><a href="" class="text-white">Bolivia</a></li>
-                    <li><a href="" class="text-white">Ecuador</a></li>
+                    <li><a href="https://gotoperu.com/destinations/peru-travel" class="text-white">Peru</a></li>
+                    <li><a href="https://gotoperu.com/destinations/ecuador-travel" class="text-white">Ecuador</a></li>
+                    <li><a href="https://gotoperu.com/destinations/bolivia-travel" class="text-white">Bolivia</a></li>
+                    <li><a href="https://gotoperu.com/destinations/brasil-travel" class="text-white">Brasil</a></li>
                 </ul>
             </div>
-            <div class="col text-white">
-                <h3 class="h6 text-g-yellow">Hotels</h3>
-                <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="" class="text-white">2 Stars</a></li>
-                    <li><a href="" class="text-white">3 Stars</a></li>
-                    <li><a href="" class="text-white">4 Stars</a></li>
-                    <li><a href="" class="text-white">5 Stars</a></li>
-                </ul>
-            </div>
-            <div class="col text-white">
+            {{--<div class="col-6 col-sm mb-3 text-white">--}}
+                {{--<h3 class="h6 text-g-yellow">Hotels</h3>--}}
+                {{--<ul class="m-0 text-g-yellow list-unstyled">--}}
+                    {{--<li><a href="" class="text-white">2 Stars</a></li>--}}
+                    {{--<li><a href="" class="text-white">3 Stars</a></li>--}}
+                    {{--<li><a href="" class="text-white">4 Stars</a></li>--}}
+                    {{--<li><a href="" class="text-white">5 Stars</a></li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+            <div class="col-6 col-sm mb-3 text-white">
                 <h3 class="h6 text-g-yellow">About Us</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="" class="text-white">Social Responsibility</a></li>
-                    <li><a href="" class="text-white">Headquarters</a></li>
-                    <li><a href="" class="text-white">Join Our Team</a></li>
+                    <li><a href="{{route('about_path')}}" class="text-white">Social Responsibility</a></li>
                 </ul>
             </div>
-            <div class="col text-white">
-                <h3 class="h6 text-g-yellow">Offices</h3>
-                <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="" class="text-white">Peru</a></li>
-                    <li><a href="" class="text-white">USA</a></li>
-                </ul>
-            </div>
-            <div class="col text-white">
+            {{--<div class="col-6 col-sm mb-3 text-white">--}}
+                {{--<h3 class="h6 text-g-yellow">Offices</h3>--}}
+                {{--<ul class="m-0 text-g-yellow list-unstyled">--}}
+                    {{--<li>PERU: Av. Collasuyo 986 Cusco-Peru</li>--}}
+                    {{--<li>USA: 1440 G St NW, Washington DC, 20005</li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+            <div class="col-6 col-sm mb-3 text-white">
                 <h3 class="h6 text-g-yellow">FAQ</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="" class="text-white">Getting To Peru</a></li>
-                    <li><a href="" class="text-white">MAP</a></li>
+                    <li><a href="{{route('getting_path')}}" class="text-white">Getting To Peru</a></li>
+                    <li><a href="{{route('faq_path')}}" class="text-white">Frequently Asked Questions</a></li>
                 </ul>
             </div>
-            <div class="col text-white">
+            <div class="col-6 col-sm mb-3 text-white">
                 <h3 class="h6 text-g-yellow">Testimonials</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="" class="text-white">Reviews</a></li>
-                    <li><a href="" class="text-white">Tripadvisor</a></li>
-                    <li><a href="" class="text-white">Yelp</a></li>
-                    <li><a href="" class="text-white">Trustpilot</a></li>
-                    <li><a href="" class="text-white">Write a review</a></li>
+                    <li><a href="#" class="text-white">Reviews</a></li>
+                    <li><a href="{{route('testimonials_path')}}" class="text-white">Testmonials</a></li>
                 </ul>
             </div>
-            <div class="col text-white">
+            <div class="col-6 col-sm mb-3 text-white">
                 <h3 class="h6 text-g-yellow">Contact Us</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="" class="text-white">Email</a></li>
-                    <li><a href="" class="text-white">Phone</a></li>
-                    <li><a href="" class="text-white">Address</a></li>
+                    <li><a href="" class="text-white" data-toggle="modal" data-target="#modal-contact">Email</a></li>
+                    <li><a href="tel:+2029963000">(202) 996-3000</a></li>
+                    {{--<li><a href="" class="text-white">Address</a></li>--}}
                 </ul>
             </div>
-            <div class="col text-white">
+            <div class="col-6 col-sm mb-3 text-white">
                 <h3 class="h6 text-g-yellow">Travel Agents</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="" class="text-white">Registration</a></li>
+                    <li><a href="#" class="text-white">Registration</a></li>
                 </ul>
             </div>
         </div>
-        <div class="row bg-light py-3">
-            <div class="col">
-                <h6>GOTOPERU GROUP:</h6>
+        <div class="row bg-light pt-3">
+            <div class="col-12 col-sm mb-3">
+                <h6 class="mt-2">GOTOPERU GROUP:</h6>
             </div>
-            <div class="col">
-                <img src="{{asset('images/logo-gotoperu.png')}}" alt="logo gotoperu" class="img-fluid">
+            <div class="col-6 col-sm mb-3">
+                <img src="{{asset('images/logos/logo-gotoperu-footer.png')}}" alt="logo gotoperu" class="img-fluid">
             </div>
-            <div class="col">
-                <img src="http://www.andesviagens.com/images/logos/logo-andes.png" alt="logo andes viagens" class="img-fluid">
+            <div class="col-6 col-sm mb-3">
+                <img src="{{asset('images/logos/logo-andes-footer.png')}}" alt="logo andes viagens" class="img-fluid">
             </div>
-            <div class="col">
-                <img src="http://www.gotolatinamerica.com/img/logos/logo-latinamerica-2.png" alt="logo gotolatinamerica" class="img-fluid">
+            <div class="col-6 col-sm mb-3">
+                <img src="{{asset('images/logos/logo-latinamerica-footer.png')}}" alt="logo gotolatinamerica" class="img-fluid">
             </div>
-            <div class="col">
-                <img src="http://www.machupicchu-galapagos.com/img/logo-machupicchu-ecuador.png" alt="logo machupicchu galapagos" class="img-fluid">
+            <div class="col-6 col-sm mb-3">
+                <img src="{{asset('images/logos/logo-mapi-galapagos-footer.png')}}" alt="logo machupicchu galapagos" class="img-fluid">
             </div>
-            <div class="col">
-                <small>PERU LOCAL TIME: 7:38PM</small>
+            <div class="col-12 col-sm text-center">
+                <b>PERU LOCAL TIME: 7:38PM</b>
+                <a href="{{asset('pdf/terms-conditions.pdf')}}" target="_blank" class="btn btn-link d-block">Services Terms & Conditions</a>
             </div>
-            <div class="col">
-                <a href="{{asset('pdf/terms-conditions.pdf')}}" target="_blank"><small>Services Terms & Conditions</small></a>
+        </div>
+        <div class="row">
+            <div class="col text-center text-white">
+                <small><i><b>PERU:</b> Av. Collasuyo 986 Cusco-Peru | <b>USA:</b> 1440 G St NW, Washington DC, 20005</i></small>
             </div>
         </div>
     </div>
@@ -671,7 +702,26 @@
 <script src="{{asset("js/app.js")}}"></script>
 <script src="{{asset("js/plugins.js")}}"></script>
 @stack('scripts')
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "name" : "GotoPeru",
+  "url" : "https://gotoperu.com/",
+  "sameAs" : [
+    "https://twitter.com/GOTOPERUCOM",
+    "https://plus.google.com/+Gotoperu",
+    "https://www.facebook.com/GOTOPERUcom/",
+    "https://www.pinterest.com/gotoperucom/",
+    "https://www.instagram.com/gotoperucom/",
+    "https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com",
+    "https://www.trustpilot.com/review/gotoperu.com",
+    "https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg"
+ ]
+}
+</script>
 <script>
+    //formilario contac
     function contact(){
         $.ajaxSetup({
             headers: {
@@ -745,72 +795,6 @@
             $("#c_send").removeAttr("disabled");
         }
     }
-</script>
-<script>
-    var jumboHeight = $('.jumbotron').outerHeight();
-    function parallax(){
-        var scrolled = $(window).scrollTop();
-        $('.bg').css('height', (jumboHeight-scrolled) + 'px');
-    }
-
-    $(window).scroll(function(e){
-        parallax();
-    });
-
-
-    var scroll = new SmoothScroll();
-
-    var smoothScrollWithoutHash = function (selector, settings) {
-        /**
-         * If smooth scroll element clicked, animate scroll
-         */
-        var clickHandler = function (event) {
-            var toggle = event.target.closest( selector );
-            console.log(toggle);
-            if ( !toggle || toggle.tagName.toLowerCase() !== 'a' ) return;
-            console.log(toggle.hash);
-            var anchor = document.querySelector( toggle.hash );
-            if ( !anchor ) return;
-
-            event.preventDefault(); // Prevent default click event
-            scroll.animateScroll( anchor, toggle, settings || {} ); // Animate scroll
-        };
-
-        window.addEventListener('click', clickHandler, false );
-    };
-
-    // Run our function
-//    smoothScrollWithoutHash( 'a[href*="#"]' );
-
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-
-</script>
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-57960909-1', 'auto');
-    ga('send', 'pageview');
-</script>
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Organization",
-  "name" : "GotoPeru",
-  "url" : "https://gotoperu.com/",
-  "sameAs" : [
-    "https://twitter.com/GOTOPERUCOM",
-    "https://plus.google.com/+Gotoperu",
-    "https://www.facebook.com/GOTOPERUcom/",
-    "https://www.pinterest.com/gotoperucom/",
-    "https://www.instagram.com/gotoperucom/",
-    "https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg"
- ]
-}
 </script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 @extends('layouts.page.default')
 @section('content')
 
-    <section>
+    <section class="d-none d-sm-block">
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
-                <h2 class="text-white my-5 h1">Our excursions and packages depart 365 days a year</h2>
+                <h2 class="text-white my-5 h1">Peru Travel Featured Packages</h2>
                 {{--<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>--}}
                 {{--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>--}}
             </div>
@@ -74,7 +74,7 @@
                                                         @foreach($paquete->where('duracion', $paquetes->duracion) as $paquetes)
                                                             <tr onClick="CrearEnlace('{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}');" class="clickable">
                                                                 <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
-                                                                <td>
+                                                                <td class="d-none d-sm-block">
                                                                     @php
                                                                         $i = 1;
                                                                         $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
@@ -86,7 +86,7 @@
                                                                         @endif
                                                                     @endforeach
                                                                 </td>
-                                                                <td>Clasico</td>
+                                                                <td class="d-none d-sm-block">Clasico</td>
                                                                 <td class="font-montserrat text-right"><b>
                                                                         @foreach($paquetes->precio_paquetes as $precio)
                                                                             @if($precio->estrellas == 2)

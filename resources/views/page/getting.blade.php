@@ -22,7 +22,7 @@
     <div class="section my-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-7">
+                <div class="col-12 col-sm-7">
                     <div class="row">
                         <div class="col text-justify">
                             <h3>Jorge Chavez International Airport</h3>

@@ -1,10 +1,10 @@
 @extends('layouts.page.default')
 @section('content')
 
-    <section>
+    <section class="d-none d-sm-block">
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
-                <h2 class="text-white my-5 h1">Our excursions and packages depart 365 days a year</h2>
+                <h2 class="text-white my-5 h1">{{ucwords($pais)}} Travel Destinations</h2>
                 {{--<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>--}}
                 {{--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>--}}
             </div>
@@ -18,12 +18,12 @@
             <div class="row">
                 <div class="col text-center">
                     {{--<h1 class="text-secondary h5"><strong>PERU TRAVEL PACKAGES</strong></h1>--}}
-                    <h1 class="text-g-green">Peru Destinations</h1>
-                    <p class="lead">The pride of South America is well known for being a country of congregated lands, culture, and bloods. History has perpetuated in Peru, luckily we have conserved it intact since pre-Hispanic times.</p>
-                    <p class="lead">The Tahuantinsuyo, one of the greatest pre-Columbian civilizations, their wealth of treasures, architecture, elegance and art, particularly impressed the first chroniclers and still impress our visitors till date. Cusco, among other cities, is not only city that reflects the Inca standards but also a Hispanic past.</p>
-                    <p class="lead">A country that portraits in its city and villages the magic of its mestizo culture, its colonial plazas, streets and churches gift us with its beauty and centenarian architecture and invite us to enjoy a hospitality of a great town.</p>
-                    <p class="lead">Peru is a whole other type of adventure, only a few other countries in the world offer virtually the options of adventure sports, under the sun, Peru is ideal to experiment unique sensations. An essential part of Peru’s magical land is in its life mixture of its Andean ancestors, occidental yet Christian traditions, and its folklore – let us not forget about its rich gastronomy; these are a few of the things that make Peru a multicultural country.</p>
-                    <p class="lead">The historic center has been declared by the UNESCO a cultural patrimony of humanity, whoever visits Peru distinguish the virtues of an emerging country and recognize amongst everything the friendly warmth and hospitality that Peruvians offer. The magic, the history, the astounding nature and exquisite culture Peru have waits for you…</p>
+                    <h1 class="text-g-green">{{ucwords($pais)}} Destinations</h1>
+                    {{--<p class="lead">The pride of South America is well known for being a country of congregated lands, culture, and bloods. History has perpetuated in Peru, luckily we have conserved it intact since pre-Hispanic times.</p>--}}
+                    {{--<p class="lead">The Tahuantinsuyo, one of the greatest pre-Columbian civilizations, their wealth of treasures, architecture, elegance and art, particularly impressed the first chroniclers and still impress our visitors till date. Cusco, among other cities, is not only city that reflects the Inca standards but also a Hispanic past.</p>--}}
+                    {{--<p class="lead">A country that portraits in its city and villages the magic of its mestizo culture, its colonial plazas, streets and churches gift us with its beauty and centenarian architecture and invite us to enjoy a hospitality of a great town.</p>--}}
+                    {{--<p class="lead">Peru is a whole other type of adventure, only a few other countries in the world offer virtually the options of adventure sports, under the sun, Peru is ideal to experiment unique sensations. An essential part of Peru’s magical land is in its life mixture of its Andean ancestors, occidental yet Christian traditions, and its folklore – let us not forget about its rich gastronomy; these are a few of the things that make Peru a multicultural country.</p>--}}
+                    {{--<p class="lead">The historic center has been declared by the UNESCO a cultural patrimony of humanity, whoever visits Peru distinguish the virtues of an emerging country and recognize amongst everything the friendly warmth and hospitality that Peruvians offer. The magic, the history, the astounding nature and exquisite culture Peru have waits for you…</p>--}}
 
                     <div class="alert alert-g-yellow" role="alert">
                         <h5>We will work around your schedule and your travel interests to build together the most unique travel plans</h5>
@@ -36,7 +36,7 @@
     <section class="my-5">
         <div class="container">
             <div class="row">
-                <div class="col-3">
+                <div class="col-3 d-none d-sm-block">
                     <div class="row">
 
                         @foreach($destinos->unique('pais') as $destino)
@@ -74,7 +74,7 @@
                             @foreach($paquetes_de->unique('idpaquetes') as $paquetes_des)
                                 @if(isset($paquetes_des->destinos))
                                     @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
-                                    <div class="col-4 d-flex mb-4">
+                                    <div class="col-12 col-sm-4 d-flex mb-4">
                                         <div class="card">
                                             {{--<div class="card-header">--}}
                                             {{--<h4 class="card-title">City tour em cusco</h4>--}}

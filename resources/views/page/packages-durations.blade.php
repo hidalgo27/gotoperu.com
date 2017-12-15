@@ -4,7 +4,7 @@
     <section>
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
-                <h2 class="text-white my-5 h1">Our excursions and packages depart 365 days a year</h2>
+                <h2 class="text-white my-5 h1">{{$duration}} Days Tours</h2>
                 {{--<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>--}}
                 {{--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>--}}
             </div>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <h3 class="font-weight-bold text-g-green">All Packages <span class="float-right"><a href="{{route('packages_list_path')}}" class="text-secondary" data-toggle="tooltip" data-placement="top" title="View as list"><i class="fa fa-th-list"></i></a></span></h3>
+                    <h3 class="font-weight-bold text-g-green">{{$duration}} Days Tours <span class="float-right"><a href="{{route('packages_list_path')}}" class="text-secondary" data-toggle="tooltip" data-placement="top" title="View as list"><i class="fa fa-th-list"></i></a></span></h3>
                     <div class="">
                         <div class="row">
                             @foreach($paquetes->sortBy('duracion') as $paquete)

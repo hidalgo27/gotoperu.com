@@ -1,9 +1,12 @@
 @extends('layouts.page.default')
 @section('content')
-    <section>
+    <section class="d-none d-sm-block">
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
-                <h2 class="text-white my-5 h1">Our excursions and packages depart 365 days a year</h2>
+                @foreach($paquete_iti as $paquetes)
+                    <h2 class="text-white my-5 h1"><strong>{{($paquetes->titulo)}} {{($paquetes->duracion)}} DAYS TOURS</strong></h2>
+                    {{--<h2 class="text-white my-5 h1">Our excursions and packages depart 365 days a year</h2>--}}
+                @endforeach
                 {{--<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>--}}
                 {{--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>--}}
             </div>
@@ -16,10 +19,10 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    @foreach($paquete_iti as $paquetes)
+                    {{--@foreach($paquete_iti as $paquetes)--}}
                     {{--<h1 class="text-secondary h5"><strong>PERU TRAVEL PACKAGES</strong></h1>--}}
                     <h1 class="text-g-green text-uppercase"><span class="d-block h5 text-secondary">Travel Packages:</span>{{strtolower($paquetes->titulo)}}</h1>
-                    @endforeach
+                    {{--@endforeach--}}
                     {{--<div class="alert alert-g-yellow" role="alert">--}}
                         {{--<h4>And even multi countries travel adventures involving Brasil, Ecuador , Argentina.</h4>--}}
                     {{--</div>--}}
@@ -38,16 +41,22 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     <div class="d-block text-left">
-                                        <span class="text-primary h4 font-weight-bold align-bottom">7 Dias</span>
-                                        <img src="{{asset('images/icons/subtitle.png')}}" alt="" class="img-fluid mb-1" width="100">
+                                        <span class="text-g-green h4 font-weight-bold align-bottom">{{$paquetes->duracion}} Dias</span>
                                     </div>
                                     {{--<p class="text-primary h4 font-weight-bold">10 Day</p>--}}
                                     <p class="h3 text-secondary"></p>
-                                    <p class="h1 font-montserrat pt-2 m-0">
-                                        <span class="text-info">10X</span><sup>$</sup>500
+                                    <p class="h1 font-montserrat pt-2 m-0"><small class="text-secondary h5">from
+                                        </small>
+                                        @foreach($paquetes->precio_paquetes as $precio)
+                                            @if($precio->estrellas == 2)
+                                                <sup>$</sup>{{$precio->precio_d}}
+                                            @endif
+                                        @endforeach
+
+
                                         <small>USD</small></p>
-                                    <p class="text-secondary h3 m-0">semjuros</p>
-                                    <a href="#book-now" class="btn btn-warning btn-block btn-lg btn-info mt-3">Choose This Package</a>
+                                    <p class="text-secondary m-0">Package Code: {{$paquetes->codigo}}</p>
+                                    <a href="#book-now" class="btn btn-g-yellow btn-block btn-lg btn-info mt-3 text-white">Choose This Package</a>
 
                                 </div>
                             </div>
@@ -150,6 +159,14 @@
                                 </div>
 
 
+                                <div id="Itinerary" class="d-sm-none">
+                                    <h3 class="h3 py-5">Itinerary</h3>
+
+                                    @foreach($paquetes->itinerario->sortBy('dia') as $itinerario)
+                                        <h5 class="text-g-yellow my-3"><b>DAY {{$itinerario->dia}}:</b> {{ucwords(strtolower($itinerario->titulo))}}</h5>
+                                        @php echo $itinerario->descripcion @endphp
+                                    @endforeach
+                                </div>
 
 
                                 <div id="Optionals" class="pt-4">
@@ -162,7 +179,7 @@
                                     <div class="card my-4 border-g-yellow">
                                         <p class="card-header bg-g-yellow">Price per person based on double accomodation</p>
                                         <div class="card-body p-0">
-                                            <table class="table m-0">
+                                            <table class="table m-0 table-responsive">
                                                 <thead class="thead-inverse">
                                                 <tr>
                                                     <th>2 Estrelas</th>

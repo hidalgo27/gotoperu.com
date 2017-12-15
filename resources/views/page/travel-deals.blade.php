@@ -1,9 +1,9 @@
 @extends('layouts.page.default')
 @section('content')
-    <section>
+    <section class="d-none d-sm-block">
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
-                <h2 class="text-white my-5 h1">Our excursions and packages depart 365 days a year</h2>
+                <h2 class="text-white my-5 h1">Travel Deals</h2>
                 {{--<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>--}}
                 {{--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>--}}
             </div>
@@ -32,9 +32,9 @@
         <div class="container">
             <div class="row">
                 @foreach($paquetes->sortBy('duracion')->take(6) as $paquete)
-                    <div class="col-4 d-flex mb-5">
+                    <div class="col-12 col-sm-4 d-flex my-5">
                         <div class="card">
-                            <img src="{{asset('images/logos/travel-deals.png')}}" alt="" class="position-absolute p-medalla">
+                            <img src="{{asset('images/icons/best-price.png')}}" alt="" class="position-absolute p-medalla">
                             {{--<div class="card-header">--}}
                             {{--<h4 class="card-title">City tour em cusco</h4>--}}
                             {{--</div>--}}

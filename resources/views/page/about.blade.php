@@ -1,9 +1,9 @@
 @extends('layouts.page.default')
 @section('content')
-    <section>
+    <section class="d-none d-sm-block">
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
-                <h2 class="text-white my-5 h1">Our excursions and packages depart 365 days a year</h2>
+                <h2 class="text-white my-5 h1">GotoPeru Team</h2>
                 {{--<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>--}}
                 {{--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>--}}
             </div>
@@ -33,7 +33,7 @@
     <section class="my-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-8">
+                <div class="col col-sm-8">
 
                     <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
                         <div class="col-2 text-center">
@@ -188,9 +188,9 @@
             </div>
 
             <div class="row">
-                <div class="col-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+                <div class="col-12 col-sm-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col-1 d-none d-sm-block">
                             <i class="fa fa-angle-right fa-4x"></i>
                         </div>
                         <div class="col-11">
@@ -200,9 +200,9 @@
                     </div>
                 </div><!-- /.col-md-6 col -->
 
-                <div class="col-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+                <div class="col-12 col-sm-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col-1 d-none d-sm-block">
                             <i class="fa fa-angle-right fa-4x"></i>
                         </div>
                         <div class="col-11">
@@ -212,9 +212,9 @@
                     </div>
                 </div><!-- /.col-md-6 col -->
 
-                <div class="col-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+                <div class="col-12 col-sm-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col-1 d-none d-sm-block">
                             <i class="fa fa-angle-right fa-4x"></i>
                         </div>
                         <div class="col-11">
@@ -226,9 +226,9 @@
 
 
 
-                <div class="col-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+                <div class="col-12 col-sm-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col-1 d-none d-sm-block">
                             <i class="fa fa-angle-right fa-4x"></i>
                         </div>
                         <div class="col-11">
@@ -239,9 +239,9 @@
                 </div><!-- /.col-md-6 col -->
 
 
-                <div class="col-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+                <div class="col-12 col-sm-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col-1 d-none d-sm-block">
                             <i class="fa fa-angle-right fa-4x"></i>
                         </div>
                         <div class="col-11">
@@ -251,9 +251,9 @@
                     </div>
                 </div><!-- /.col-md-6 col -->
 
-                <div class="col-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+                <div class="col-12 col-sm-6 os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col-1 d-none d-sm-block">
                             <i class="fa fa-angle-right fa-4x"></i>
                         </div>
                         <div class="col-11">
@@ -271,7 +271,7 @@
     <section class="my-5">
         <div class="container">
             <div class="row">
-                <div class="col-3">
+                <div class="col-12 col-sm-3">
                     <h2 class="display-4 font-weight-bold">Because we care</h2>
                     <p>We give back to our communities</p>
                     <p class="text-info">
@@ -282,17 +282,17 @@
                     </p>
                 </div>
 
-                <div class="col-2">
-                    <img src="{{asset('images/social/responsability-1.jpg')}}" alt="gotoperu team" class="img-fluid">
+                <div class="col-12 col-sm-2">
+                    <img src="{{asset('images/social/responsability-1.jpg')}}" alt="gotoperu team" class="img-fluid  w-100">
                 </div>
-                <div class="col-3">
-                    <img src="{{asset('images/social/responsability.jpg')}}" alt="children of the community of Cusco chaullacohca" class="img-fluid">
+                <div class="col-12 col-sm-3">
+                    <img src="{{asset('images/social/responsability.jpg')}}" alt="children of the community of Cusco chaullacohca" class="img-fluid  w-100">
                 </div>
-                <div class="col-2">
-                    <img src="{{asset('images/social/responsability-2.jpg')}}" alt="GotoPeru social responibility" class="img-fluid">
+                <div class="col-12 col-sm-2">
+                    <img src="{{asset('images/social/responsability-2.jpg')}}" alt="GotoPeru social responibility" class="img-fluid  w-100">
                 </div>
-                <div class="col-2">
-                    <img src="{{asset('images/social/responsability-3.jpg')}}" alt="children of the community of Cusco chaullacohca" class="img-fluid">
+                <div class="col-12 col-sm-2">
+                    <img src="{{asset('images/social/responsability-3.jpg')}}" alt="children of the community of Cusco chaullacohca" class="img-fluid  w-100">
                 </div>
                 <div class="col-12">
                     <p class="text-justify">At GOTOPERU we are committed to doing business in a way that actually give back to our communities specially the one located in remote places.  Our planning and execution of one of our trips involves a long supply chain: from local guides and operators to transportation providers to hotels and restaurants, we interact with a lot of different organizations on the ground, but we also know that some communities specially located on top of the Andes at 15,000+feet that due to the difficult access, dont receive the assistance they deserve, is for that reason that we organize periodically trips to this far far away communities to bring them specially sweaters and toys for children.</p>
@@ -310,10 +310,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col-12 col-sm">
                     <img src="{{asset('images/team/team-10b.jpg')}}" alt="team gotoperu" class="img-fluid rounded">
                 </div>
-                <div class="col">
+                <div class="col-12 col-sm">
                     <h3 class="text-g-yellow">Problem-Free Travel</h3>
                     <p>The itineraries that GOTOPERU create will work for you and your family. Our staff will work day and night to ensure you get to your destinations without delay.</p>
                     <h3 class="text-g-yellow">Personalized Itineraries</h3>
