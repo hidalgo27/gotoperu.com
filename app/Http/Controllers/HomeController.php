@@ -551,7 +551,7 @@ class HomeController extends Controller
 
     public function contact()
     {
-        $from = 'hidalgochpnce@gmail.com';
+        $from = 'info@gotoperu.com';
         $from2 = 'catanopaul@gmail.com';
 
         $name = $_POST['txt_name'];
