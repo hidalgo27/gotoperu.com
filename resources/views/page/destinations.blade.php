@@ -1,6 +1,6 @@
 @extends('layouts.page.default')
 @section('content')
-    <section class="d-none d-sm-block">
+    <section class="d-none d-lg-block">
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
                 <h2 class="text-white my-5 h1">South America Travel Destinations</h2>
@@ -31,7 +31,7 @@
     <section class="my-5">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-6 mb-4">
+                <div class="col-12 col-lg-6 mb-4">
                     <div class="row">
                         <div class="col d-none d-sm-block">
                             <img src="{{asset('images/maps/peru.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 mb-4">
+                <div class="col-12 col-lg-6 mb-4">
                     <div class="row">
                         <div class="col d-none d-sm-block">
                             <img src="{{asset('images/maps/ecuador.jpg')}}" alt="ecuador" class="w-100 rounded rounded-circle">
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 mb-4">
+                <div class="col-12 col-lg-6 mb-4">
                     <div class="row">
                         <div class="col d-none d-sm-block">
                             <img src="{{asset('images/maps/bolivia.jpg')}}" alt="bolivia" class="w-100 rounded rounded-circle">
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 mb-4">
+                <div class="col-12 col-lg-6 mb-4">
                     <div class="row">
                         <div class="col d-none d-sm-block">
                             <img src="{{asset('images/maps/brasil.jpg')}}" alt="brasil" class="w-100 rounded rounded-circle">

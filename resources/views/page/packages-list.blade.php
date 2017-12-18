@@ -1,7 +1,7 @@
 @extends('layouts.page.default')
 @section('content')
 
-    <section class="d-none d-sm-block">
+    <section class="d-none d-lg-block">
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
                 <h2 class="text-white my-5 h1">Peru Travel Featured Packages</h2>
@@ -74,7 +74,7 @@
                                                         @foreach($paquete->where('duracion', $paquetes->duracion) as $paquetes)
                                                             <tr onClick="CrearEnlace('{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}');" class="clickable">
                                                                 <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
-                                                                <td class="d-none d-sm-block">
+                                                                <td class="d-none d-lg-block">
                                                                     @php
                                                                         $i = 1;
                                                                         $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
@@ -86,7 +86,7 @@
                                                                         @endif
                                                                     @endforeach
                                                                 </td>
-                                                                <td class="d-none d-sm-block">Clasico</td>
+                                                                <td class="d-none d-lg-block">Clasico</td>
                                                                 <td class="font-montserrat text-right"><b>
                                                                         @foreach($paquetes->precio_paquetes as $precio)
                                                                             @if($precio->estrellas == 2)

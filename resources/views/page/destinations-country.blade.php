@@ -1,7 +1,7 @@
 @extends('layouts.page.default')
 @section('content')
 
-    <section class="d-none d-sm-block">
+    <section class="d-none d-lg-block">
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
                 <h2 class="text-white my-5 h1">{{ucwords($pais)}} Travel Destinations</h2>
@@ -36,7 +36,7 @@
     <section class="my-5">
         <div class="container">
             <div class="row">
-                <div class="col-3 d-none d-sm-block">
+                <div class="col-3 d-none d-lg-block">
                     <div class="row">
 
                         @foreach($destinos->unique('pais') as $destino)
@@ -74,7 +74,7 @@
                             @foreach($paquetes_de->unique('idpaquetes') as $paquetes_des)
                                 @if(isset($paquetes_des->destinos))
                                     @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
-                                    <div class="col-12 col-sm-4 d-flex mb-4">
+                                    <div class="col-12 col-md-6 col-lg-4 d-flex mb-4">
                                         <div class="card">
                                             {{--<div class="card-header">--}}
                                             {{--<h4 class="card-title">City tour em cusco</h4>--}}

@@ -63,7 +63,7 @@
             <div class="col-12 col-sm mt-1">
                 <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="img-fluid"></a>
             </div>
-            <div class="col-12 col-sm text-center pt-4 d-none d-sm-block">
+            <div class="col-12 col-sm text-center pt-4 d-none d-lg-block">
                 <i class="h4">... a <span class="text-g-yellow">new</span> adventure every day!</i>
             </div>
             <div class="col-12 col-sm text-right pt-4 d-none d-sm-block">
@@ -257,7 +257,7 @@
                 <a class="nav-link text-secondary" href="{{route('about_path')}}">About us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-secondary" href="{{route('getting_path')}}">Getting to Peru</a>
+                <a class="nav-link text-secondary d-none d-lg-inline-block" href="{{route('getting_path')}}">Getting to Peru</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-secondary" href="{{route('testimonials_path')}}">Testimonials</a>
@@ -266,7 +266,7 @@
                 <a class="nav-link text-secondary" href="{{route('faq_path')}}">FAQ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-secondary" href="#">Travel Agents</a>
+                <a class="nav-link text-secondary d-none d-lg-inline-block" href="#">Travel Agents</a>
             </li>
             {{--<li class="nav-item">--}}
                 {{--<a class="nav-link disabled" href="#">Disabled</a>--}}
@@ -316,7 +316,7 @@
 @yield('content')
 
 
-<section class="d-none d-sm-block">
+<section class="d-none d-lg-block">
     <div class="jumbotron jumbotron-divider-1 rounded-0">
         <div class="container">
             <div class="row justify-content-center no-gutters">

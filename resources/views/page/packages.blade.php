@@ -1,7 +1,7 @@
 @extends('layouts.page.default')
 @section('content')
 
-    <section class="d-none d-sm-block">
+    <section class="d-none d-lg-block">
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
                 <h2 class="text-white my-5 h1">Our excursions and packages depart 365 days a year</h2>
@@ -58,7 +58,7 @@
                     <div class="">
                         <div class="row">
                             @foreach($paquetes->sortBy('duracion') as $paquete)
-                                <div class="col-12 col-sm-4 d-flex mb-4">
+                                <div class="col-12 col-md-6 col-lg-4 d-flex mb-4">
                                     <div class="card">
                                         {{--<div class="card-header">--}}
                                         {{--<h4 class="card-title">City tour em cusco</h4>--}}

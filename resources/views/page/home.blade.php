@@ -8,7 +8,7 @@
         <div class="jumbotron jumbotron-slider rounded-0">
             <div class="container-fluid">
                 <div class="row justify-content-between">
-                    <div class="col-4 text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+                    <div class="col-lg-4 text-center os-animation d-none d-lg-inline-block" data-os-animation="fadeInUp" data-os-animation-delay="0s">
 
                         <div class="card bg-rgba-white mb-3">
                             <div class="card-header">
@@ -90,11 +90,11 @@
 
                     </div>
 
-                    <div class="col-3">
+                    <div class="col col-lg-3">
                         <h2 class="text-white text-center mt-5">Top recommend Travel Operator to Peru and <strong>Machu Picchu</strong></h2>
                     </div>
 
-                    <div class="col-3 os-animation bg-rgba-dark py-2 rounded" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+                    <div class="col col-lg-3 os-animation bg-rgba-dark py-2 rounded" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                         <h5 class="text-white font-weight-bold text-center">GET A FREE QUOTE</h5>
 
                         <form id="de_form" role="form">
@@ -212,7 +212,7 @@
 
     @include('layouts.page.included')
 
-    <section class="my-5">
+    <section class="mt-5 mb-2">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -229,8 +229,8 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-7">
-                    <div class="row py-1 no-gutters">
+                <div class="col-12 col-lg-7">
+                    <div class="row py-1 no-gutters mt-3">
                         <div class="col">
                             <h2 class="h5"><a href="packages/the-best-of-peru-express/9-days-tours" class="text-dark">THE HIGHLIHTS OF PERU IN 9 DAYS!</a>
                                 <a href="packages/the-best-of-peru-express/9-days-tours#book-now" class="float-right btn btn-g-yellow btn-sm font-weight-bold">Check Availability</a></h2>
@@ -355,22 +355,21 @@
                 </div>
                 <div class="col-12 col-sm">
                     <div class="row">
-                        <div class="col">
+                        <div class="col col-lg-12 my-4">
                             <div class="content-area-3">
                                 <div class="position-relative">
-                                    <img src="{{asset('images/video/prom-peru.jpg')}}" alt="video promperu" class="img-fluid">
+                                    <img src="{{asset('images/video/prom-peru.jpg')}}" alt="video promperu" class="img-fluid rounded">
                                     <div class="video-btn-1">
                                         <a href="https://www.youtube.com/embed/gGq_U1DYUCs" title=""><i class="fa fa-play-circle text-g-dark"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col">
+
+                        <div class="col col-lg-12 my-4">
 
                             <div class="position-relative">
-                                <img src="{{asset('images/video/gotoperu-group.jpg')}}" alt="gotoperu group" class="img-fluid">
+                                <img src="{{asset('images/video/gotoperu-group.jpg')}}" alt="gotoperu group" class="img-fluid rounded">
                                 <div class="video-btn-1">
                                     <a href="https://www.youtube.com/embed/AOa1ygLiapc" title=""><i class="fa fa-play-circle text-g-dark"></i></a>
                                 </div>
@@ -383,7 +382,7 @@
         </div>
     </section>
 
-    <section class="my-5 d-none d-sm-block">
+    <section class="my-5 d-none d-lg-block">
         {{--<div class="">--}}
         {{--<a href="" class="">--}}
         {{--<div class="row">--}}
@@ -410,7 +409,7 @@
         </div>
     </section>
 
-    <section class="my-5 d-sm-none">
+    <section class="my-5 d-lg-none">
 
             <div class="container">
                 <div class="row justify-content-between no-gutters">
@@ -431,7 +430,7 @@
 
 
                 @foreach($paquetes->take(6) as $paquete)
-                <div class="col-12 col-sm-4 d-flex mb-4">
+                <div class="col-12 col-md-6 col-lg-4 d-flex mb-4">
                     <div class="card">
                         {{--<div class="card-header">--}}
                         {{--<h4 class="card-title">City tour em cusco</h4>--}}

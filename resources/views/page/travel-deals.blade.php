@@ -1,6 +1,6 @@
 @extends('layouts.page.default')
 @section('content')
-    <section class="d-none d-sm-block">
+    <section class="d-none d-lg-block">
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
                 <h2 class="text-white my-5 h1">Travel Deals</h2>
@@ -31,8 +31,8 @@
     <section class="my-5">
         <div class="container">
             <div class="row">
-                @foreach($paquetes->sortBy('duracion')->take(6) as $paquete)
-                    <div class="col-12 col-sm-4 d-flex my-5">
+                @foreach($paquetes->sortBy('duracion') as $paquete)
+                    <div class="col-12 col-md-6 col-lg-4 d-flex my-5">
                         <div class="card">
                             <img src="{{asset('images/icons/best-price.png')}}" alt="" class="position-absolute p-medalla">
                             {{--<div class="card-header">--}}

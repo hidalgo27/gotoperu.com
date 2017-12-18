@@ -22,7 +22,7 @@
     <section class="my-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col col-sm-6">
+                <div class="col col-md-9 col-lg-6">
                     @foreach($testimonials as $testimonial)
                     <div class="row mb-5">
                         <div class="col">
