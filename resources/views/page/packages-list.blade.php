@@ -86,7 +86,7 @@
                                                                         @endif
                                                                     @endforeach
                                                                 </td>
-                                                                <td class="d-none d-lg-block">Clasico</td>
+                                                                {{--<td class="d-none d-lg-block">Clasico</td>--}}
                                                                 <td class="font-montserrat text-right"><b>
                                                                         @foreach($paquetes->precio_paquetes as $precio)
                                                                             @if($precio->estrellas == 2)
