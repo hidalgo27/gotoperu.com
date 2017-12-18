@@ -1,6 +1,6 @@
 @extends('layouts.page.default')
 @section('content')
-    <section class="d-none d-sm-block">
+    <section class="d-none d-lg-block">
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
                 @foreach($paquete_iti as $paquetes)
@@ -45,16 +45,19 @@
                                     </div>
                                     {{--<p class="text-primary h4 font-weight-bold">10 Day</p>--}}
                                     <p class="h3 text-secondary"></p>
-                                    <p class="h1 font-montserrat pt-2 m-0"><small class="text-secondary h5">from
-                                        </small>
+                                    <p class="h1 font-montserrat pt-2 m-0">
                                         @foreach($paquetes->precio_paquetes as $precio)
                                             @if($precio->estrellas == 2)
-                                                <sup>$</sup>{{$precio->precio_d}}
+                                                @if($precio->precio_d == 0)
+                                                    <span class="text-danger">Inquire</span>
+                                                @else
+                                                    <small class="text-secondary h5">from</small>
+                                                    <sup>$</sup>{{$precio->precio_d}}
+                                                    <small>USD</small>
+                                                @endif
                                             @endif
                                         @endforeach
-
-
-                                        <small>USD</small></p>
+                                    </p>
                                     <p class="text-secondary m-0">Package Code: {{$paquetes->codigo}}</p>
                                     <a href="#book-now" class="btn btn-g-yellow btn-block btn-lg btn-info mt-3 text-white">Choose This Package</a>
 
@@ -279,7 +282,7 @@
     <section class="mt-5 py-5 bg-light" id="book-now">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-sm-9 col-md-9 col-lg-8 text-center">
+                <div class="col-12 col-md-10 col-lg-8 text-center">
                     <span class="text-secondary font-weight-bold">TRAVEL PACKAGES</span>
                     <h2 class="text-g-green font-weight-bold">{{$paquetes->titulo}} {{$paquetes->duracion}} DIAS</h2>
                     {{--<h5 class="text-secondary">{{$paquetes->duracion}} Days</h5>--}}
@@ -287,7 +290,7 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-12 col-sm-7 col-md-7 col-lg-7">
+                <div class="col-12 col-md-10 col-lg-7">
                     <form id="d_form" role="form">
                         {{csrf_field()}}
                         <h3 class="text-secondary mt-4">HOTEL QUALITY</h3>
