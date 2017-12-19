@@ -68,7 +68,7 @@
             </div>
             <div class="col-12 col-sm text-right pt-4 d-none d-sm-block">
                 <a href="tel:+2029963000" class="font-weight-bold mx-3">(202) 996-3000</a>
-                <button type="button" class="btn btn-g-yellow">Chat</button>
+                <button type="button" class="btn btn-g-yellow" onclick="startOlark()">Chat</button>
                 <button type="button" class="btn btn-g-green" data-toggle="modal" data-target="#modal-contact">Inquire Now</button>
 
             </div>
@@ -795,6 +795,10 @@
             $("#c_send").removeAttr("disabled");
         }
     }
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
 </script>
 </body>
 </html>

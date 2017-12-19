@@ -92,3 +92,10 @@ adroll_pix_id = "LVT4USR7UFABDE4LIUXWP3";
     loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
 /* custom configuration goes here (www.olark.com/documentation) */
 olark.identify('8407-174-10-8084');/*]]>*/
+function startOlark() {
+    olark('api.box.expand');
+}
+
+function CrearEnlace(url) {
+    location.href=url;
+}
