@@ -249,7 +249,7 @@
                             <div class="content-video-1 card-img-top">
                                 <div class="content-area-3">
                                     <div class="position-relative">
-                                        <img src="https://gotoperu.com/img/video/prom-peru.jpg" alt="video promperu" class="img-fluid">
+                                        <img src="{{asset('images/video/prom-peru.jpg')}}" alt="video promperu" class="img-fluid">
                                         <div class="video-btn-1">
                                             <a href="https://www.youtube.com/embed/gGq_U1DYUCs" title=""><i class="fa fa-play-circle text-g-dark"></i></a>
                                         </div>

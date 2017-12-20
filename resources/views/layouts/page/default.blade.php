@@ -323,36 +323,36 @@
                 <div class="col-9 text-white text-center rounded">
                     <div class="row">
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/assistances.png" alt="assistances" class="w-100">
+                            <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="w-100">
                             <span>Assistances</span>
                         </div>
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/breakfast.png" alt="breakfast" class="w-100">
+                            <img src="{{asset('images/icons/include/breakfast.png')}}" alt="breakfast" class="w-100">
                             <span>Breakfast</span>
                         </div>
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/entrances.png" alt="entrances" class="w-100">
+                            <img src="{{asset('images/icons/include/entrances.png')}}" alt="entrances" class="w-100">
                             <span>Entrances</span>
                         </div>
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/flight.png" alt="flight" class="w-100">
+                            <img src="{{asset('images/icons/include/flight.png')}}" alt="flight" class="w-100">
                             <span>Flight</span>
                         </div>
 
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/hotels.png" alt="hotels" class="w-100">
+                            <img src="{{asset('images/icons/include/hotels.png')}}" alt="hotels" class="w-100">
                             <span>Hotels</span>
                         </div>
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/tours.png" alt="tours" class="w-100">
+                            <img src="{{asset('images/icons/include/tours.png')}}" alt="tours" class="w-100">
                             <span>Tours</span>
                         </div>
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/trains.png" alt="trains" class="w-100">
+                            <img src="{{asset('images/icons/include/trains.png')}}" alt="trains" class="w-100">
                             <span>Trains</span>
                         </div>
                         <div class="col">
-                            <img src="https://gotoperu.com/img/ico/include/transfers.png" alt="transfers" class="w-100">
+                            <img src="{{asset('images/icons/include/transfers.png')}}" alt="transfers" class="w-100">
                             <span>Transfers</span>
                         </div>
                     </div>
@@ -574,7 +574,7 @@
 </section>
 
 <footer class="mt-5 bg-g-dark">
-    <img src="https://gotoperu.com/img/footer.jpg" alt="" class="w-100">
+    <img src="{{asset('images/footer.jpg')}}" alt="footer gotoperu" class="w-100">
     <div class="container footer-logo">
         <div class="row justify-content-center">
             <div class="col-6">
@@ -583,6 +583,7 @@
                         <img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="logo gotoperu" class="w-100">
                     </div>
                 </div>
+
             </div>
         </div>
 
