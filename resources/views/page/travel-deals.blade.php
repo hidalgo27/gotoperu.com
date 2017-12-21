@@ -34,7 +34,22 @@
                 @foreach($paquetes->sortBy('duracion') as $paquete)
                     <div class="col-12 col-md-6 col-lg-4 d-flex my-5">
                         <div class="card">
-                            <img src="{{asset('images/icons/best-price.png')}}" alt="" class="position-absolute p-medalla">
+                            @switch($paquete->descuento)
+                                @case(1)
+                                <img src="{{asset('images/icons/best-price.png')}}" alt="" class="position-absolute p-medalla">
+                                @break
+
+                                @case(2)
+                                <img src="{{asset('images/icons/new.png')}}" alt="" class="position-absolute p-medalla">
+                                @break
+
+                                @case(3)
+                                <img src="{{asset('images/icons/travel-deals.png')}}" alt="" class="position-absolute p-medalla">
+                                @break
+
+                                @default
+                                <img src="{{asset('images/icons/best-price.png')}}" alt="" class="position-absolute p-medalla">
+                            @endswitch
                             {{--<div class="card-header">--}}
                             {{--<h4 class="card-title">City tour em cusco</h4>--}}
                             {{--</div>--}}
