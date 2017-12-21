@@ -228,7 +228,7 @@
                                 </div>
                                 {{--<p class="text-primary h4 font-weight-bold">10 Day</p>--}}
                                 <p class="h3 text-secondary"></p>
-                                <p class="h1 font-montserrat pt-2 m-0"><small class="text-secondary h5">
+                                <p class="h1 font-montserrat pt-2 m-0">
                                     @foreach($paquetes->precio_paquetes as $precio)
                                             @if($precio->estrellas == 2)
                                                 @if($precio->precio_d == 0)
