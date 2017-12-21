@@ -228,16 +228,18 @@
                                 </div>
                                 {{--<p class="text-primary h4 font-weight-bold">10 Day</p>--}}
                                 <p class="h3 text-secondary"></p>
-                                <p class="h1 font-montserrat pt-2 m-0"><small class="text-secondary h5">from
-                                    </small>
+                                <p class="h1 font-montserrat pt-2 m-0"><small class="text-secondary h5">
                                     @foreach($paquetes->precio_paquetes as $precio)
-                                        @if($precio->estrellas == 2)
-                                            <sup>$</sup>{{$precio->precio_d}}
-                                        @endif
-                                    @endforeach
-
-
-                                    <small>USD</small></p>
+                                            @if($precio->estrellas == 2)
+                                                @if($precio->precio_d == 0)
+                                                    <span class="text-danger">Inquire</span>
+                                                @else
+                                                    <small class="text-secondary h5">from</small>
+                                                    <sup>$</sup>{{$precio->precio_d}}
+                                                    <small>USD</small>
+                                                @endif
+                                            @endif
+                                        @endforeach
                                 <p class="text-secondary m-0">Package Code: {{$paquetes->codigo}}</p>
                                 <a href="#book-now" class="btn btn-g-yellow btn-block btn-lg btn-info mt-3 text-white">Choose This Package</a>
 
