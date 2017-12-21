@@ -470,7 +470,8 @@ class HomeController extends Controller
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
-        $paquetes = TPaquete::with('precio_paquetes')->where('descuento', 1)->get();
+//        $paquetes = TPaquete::with('precio_paquetes')->where('descuento', 1)->get();
+        $paquetes = TPaquete::with('precio_paquetes')->orwhere('descuento', 1)->orwhere('descuento', 2)->orwhere('descuento', 3)->get();
         $paquetes_r = TPaquete::with('precio_paquetes')->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         return view('page.travel-deals',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r]);
