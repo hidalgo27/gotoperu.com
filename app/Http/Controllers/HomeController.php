@@ -231,20 +231,20 @@ class HomeController extends Controller
 //        }
 
         SEOMeta::setTitle('Travel Packages: '.ucwords(strtolower($title)).' | GotoPeru');
-        SEOMeta::setDescription('Our team has many years of experience in travel organization and our main goal is providing an unforgettable experience.');
-        SEOMeta::setCanonical('https://gotoperu.com/about-us');
+        SEOMeta::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
+        SEOMeta::setCanonical('https://gotoperu.com/packages');
 //        SEOMeta::addKeyword(['Best Peru Trip Packages', 'Peru Machu Picchu Tours']);
 
         OpenGraph::setDescription('Our team has many years of experience in travel organization and our main goal is providing an unforgettable experience.');
-        OpenGraph::setTitle('About Us | GotoPeru');
-        OpenGraph::setUrl('https://gotoperu.com/about-us');
+        OpenGraph::setTitle('Travel Packages: '.ucwords(strtolower($title)).' | GotoPeru');
+        OpenGraph::setUrl('https://gotoperu.com/packages');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto peru');
         OpenGraph::addProperty('type', 'website');
         OpenGraph::addProperty('locale', 'en_US');
 
         \Twitter::setType('summary');
-        \Twitter::setTitle('About Us | GotoPeru');
+        \Twitter::setTitle('Travel Packages: '.ucwords(strtolower($title)).' | GotoPeru');
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
