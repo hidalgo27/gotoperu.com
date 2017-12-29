@@ -59,7 +59,7 @@
                                         @endforeach
                                     </p>
                                     <p class="text-secondary m-0">Package Code: {{$paquetes->codigo}}</p>
-                                    <a href="#book-now" class="btn btn-g-yellow btn-block btn-lg btn-info mt-3 text-white">Choose This Package</a>
+                                    <a href="#book-now" class="btn btn-g-yellow btn-block btn-lg btn-info mt-3 text-white">Inquire</a>
 
                                 </div>
                             </div>
@@ -242,7 +242,7 @@
                                         @endforeach
                                 </p>
                                 <p class="text-secondary m-0">Package Code: {{$paquetes->codigo}}</p>
-                                <a href="#book-now" class="btn btn-g-yellow btn-block btn-lg btn-info mt-3 text-white">Choose This Package</a>
+                                <a href="#book-now" class="btn btn-g-yellow btn-block btn-lg btn-info mt-3 text-white">Inquire</a>
 
                             </div>
                         </div>
