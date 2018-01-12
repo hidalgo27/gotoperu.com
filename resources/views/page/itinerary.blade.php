@@ -41,7 +41,7 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     <div class="d-block text-left">
-                                        <span class="text-g-green h4 font-weight-bold align-bottom">{{$paquetes->duracion}} Dias</span>
+                                        <span class="text-g-green h4 font-weight-bold align-bottom">{{$paquetes->duracion}} Days</span>
                                     </div>
                                     {{--<p class="text-primary h4 font-weight-bold">10 Day</p>--}}
                                     <p class="h3 text-secondary"></p>
@@ -185,10 +185,10 @@
                                             <table class="table m-0 table-responsive">
                                                 <thead class="thead-inverse">
                                                 <tr>
-                                                    <th>2 Estrelas</th>
-                                                    <th>3 Estrelas</th>
-                                                    <th>4 Estrelas</th>
-                                                    <th>5 Estrelas</th>
+                                                    <th>2 Stars</th>
+                                                    <th>3 Stars</th>
+                                                    <th>4 Stars</th>
+                                                    <th>5 Stars</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -224,7 +224,7 @@
 
 
                                 <div class="d-block text-left">
-                                    <span class="text-g-green h4 font-weight-bold align-bottom">{{$paquetes->duracion}} Dias</span>
+                                    <span class="text-g-green h4 font-weight-bold align-bottom">{{$paquetes->duracion}} Days</span>
                                 </div>
                                 {{--<p class="text-primary h4 font-weight-bold">10 Day</p>--}}
                                 <p class="h3 text-secondary"></p>
@@ -287,7 +287,7 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-8 text-center">
                     <span class="text-secondary font-weight-bold">TRAVEL PACKAGES</span>
-                    <h2 class="text-g-green font-weight-bold">{{$paquetes->titulo}} {{$paquetes->duracion}} DIAS</h2>
+                    <h2 class="text-g-green font-weight-bold">{{$paquetes->titulo}} {{$paquetes->duracion}} DAYS</h2>
                     {{--<h5 class="text-secondary">{{$paquetes->duracion}} Days</h5>--}}
                     <hr>
                 </div>
@@ -368,7 +368,7 @@
 
                         <div class="row">
                             <div class="col">
-                                <h3 class="text-secondary mt-4">Traveling Date</h3>
+                                <h3 class="text-secondary mt-4">Travel Date</h3>
                                 <input type="text" class="form-control" id="d_date" placeholder="Fecha de Viaje">
                                 <input type="hidden" id="d_package" value="{{$paquetes->codigo}}: {{$paquetes->titulo}} {{$paquetes->duracion}} DAYS">
                             </div>
