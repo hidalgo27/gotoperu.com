@@ -1,4 +1,5 @@
 /node_modules
+/node_modules2
 /public/hot
 /public/storage
 /storage/*.key
@@ -7,6 +8,7 @@
 /.vagrant
 vendor.zip
 vendor2.zip
+node_modules2.zip
 Homestead.json
 Homestead.yaml
 npm-debug.log
