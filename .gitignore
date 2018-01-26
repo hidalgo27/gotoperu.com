@@ -8,7 +8,11 @@
 /.vagrant
 vendor.zip
 vendor2.zip
+<<<<<<< HEAD
 node_modules2.zip
+=======
+node_modules.zip
+>>>>>>> version2
 Homestead.json
 Homestead.yaml
 npm-debug.log
