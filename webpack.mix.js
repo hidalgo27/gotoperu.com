@@ -22,7 +22,8 @@ mix.scripts([
     'resources/assets/js/vendors/jquery-ui.js',
     //Customized
     'resources/assets/js/vendors/function-admin.js',
-    'resources/assets/js/vendors/function.js'
+    'resources/assets/js/vendors/function.js',
+    // 'https://use.fontawesome.com/releases/v5.0.4/js/all.js'
 ], 'public/js/plugins.js');
 
 
