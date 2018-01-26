@@ -233,7 +233,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="carousel-item">
                                 <div class="row">
                                     <div class="col d-none d-sm-block">
