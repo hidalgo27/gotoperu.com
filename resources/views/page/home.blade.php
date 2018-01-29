@@ -187,6 +187,51 @@
         </div>
     </section>
 
+    <section class="bg-white pt-5">
+        <div class="container-fluid">
+            <div class="col">
+                <div class="row"><!--.row -->
+                    <div class="col">
+                        <img src="{{asset('images/logos/apavit.png')}}" alt="logo apavit" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/apotur.png')}}" alt="logo apotur" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/asta.png')}}" alt="logo asta" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/expedia.png')}}" alt="logo expedia" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/facebook.png')}}" alt="logo facebook" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/meetup.png')}}" alt="logo meetup" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/new.png')}}" alt="logo the new york times" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/peru.png')}}" alt="logo marca peru" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/prom-peru.png')}}" alt="logo prom peru" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/tripadvisor.png')}}" alt="logo tripadvisor" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/yelp.png')}}" alt="logo yelp" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/youtube.png')}}" alt="logo youtube" class="img-fluid">
+                    </div>
+                </div><!-- /.row -->
+            </div>
+        </div>
+    </section>
+
     <section class="bg-white">
         <div class="container-fluid">
             <div class="row pt-5 pb-2">
@@ -539,7 +584,7 @@
 
     <section class="bg-light">
         <div class="container-fluid">
-            <div class="row align-items-center no-gutters" style="height: 100%;">
+            <div class="row align-items-center no-gutters">
                 <div class="col">
                     <img src="{{asset('images/we-care.jpg')}}" alt="" class="img-fluid">
                 </div>
@@ -549,30 +594,217 @@
                         <p class="">We give back to our communities</p>
                         <hr>
                         <p class="text-primary"><i>Chaullacota Locates at 15,000 feed (4500 mts) 2 hours Northwest of cusco</i></p>
-                        <p class="text-justify text-22 font-weight-light">At GOTOPERU we are committed to doing business in a way that actually give back to our communities specially the one located in remote places. Our planning and execution of one of our trips involves a long supply chain: from local guides and operators to transportation providers to hotels and restaurants, we interact with a lot of different organizations on the ground, but we also know that some communities specially located on top of the Andes at 15,000+feet that due to the difficult access, dont receive the assistance they deserve, is for that reason that we organize periodically trips to this far far away communities to bring them specially sweaters and toys for children.</p>
+                        <p class="text-justify h5 font-weight-light">At GOTOPERU we are committed to doing business in a way that actually give back to our communities specially the one located in remote places. Our planning and execution of one of our trips involves a long supply chain: from local guides and operators to transportation providers to hotels and restaurants, we interact with a lot of different organizations on the ground, but we also know that some communities specially located on top of the Andes at 15,000+feet that due to the difficult access, dont receive the assistance they deserve, is for that reason that we organize periodically trips to this far far away communities to bring them specially sweaters and toys for children.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-white">
+        <div class="container-fluid">
+            <div class="row pt-5 pb-2">
+                <div class="col">
+                    <h2 class="text-secondary h4"><strong>Getting To Peru</strong></h2>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
+                    <p class=" font-weight-light">A trip to Peru is an exciting adventure! There are a number of common questions first-time travelers to Peru frequently ask.</p>
                 </div>
             </div>
         </div>
     </section>
     <section class="bg-white">
         <div class="container-fluid">
-            <div class="row align-items-center no-gutters" style="height: 100%;">
+            <div class="row">
                 <div class="col">
-                    <div class="px-4">
-                        <h3 class="display-4 font-weight-light">Because we care</h3>
-                        <p class="">We give back to our communities</p>
-                        <hr>
-                        <p class="text-primary"><i>Chaullacota Locates at 15,000 feed (4500 mts) 2 hours Northwest of cusco</i></p>
-                        <p class="text-justify text-22 font-weight-light">At GOTOPERU we are committed to doing business in a way that actually give back to our communities specially the one located in remote places. Our planning and execution of one of our trips involves a long supply chain: from local guides and operators to transportation providers to hotels and restaurants, we interact with a lot of different organizations on the ground, but we also know that some communities specially located on top of the Andes at 15,000+feet that due to the difficult access, dont receive the assistance they deserve, is for that reason that we organize periodically trips to this far far away communities to bring them specially sweaters and toys for children.</p>
+                    <img src="{{asset('images/slider/flights.jpg')}}" alt="" class="w-100">
+                    <a href="#" class="btn-link float-right font-weight-normal my-3" data-toggle="modal" data-target="#exampleModal">More Information <i class="fa fa-chevron-right"></i></a>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Jorge Chavez International Airport</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col text-justify">
+                                            <p>Those unfamiliar with this airport might picture a small, rundown, subpar airport in the middle of nowhere. However, the Jorge Chavez International Airport is actually one of the most famous airports in the world. It is as modern as LAX, Dulles, or any other big-name location on the planet. In fact, it won the 2012 award for the Best Airport in South America, awarded by the World Airport Awards. And this isn’t the first time Jorge Chavez has won this category. In fact, it won four consecutive years.</p>
+                                            <p>Known as LIM, the Jorge Chavez International Airport has every modern amenity you would expect a world-class terminal to have. From great food and ironclad security to an award-winning airport staff, which has also won awards (via Skytrax Research), your experience with this airport will be unique and pleasant.</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h4 class="text-g-yellow">Airlines From North America, Central America & Caribbean To Peru</h4>
+                                            <ul>
+                                                <li>Aero Mexico</li>
+                                                <li>Air Canada</li>
+                                                <li>American Airlines</li>
+                                                <li>Continental Airlines</li>
+                                                <li>Copa Airlines</li>
+                                                <li>Delta Airlines</li>
+                                                <li>Lecsa</li>
+                                                <li>LAN</li>
+                                                <li>Spirit Airlines</li>
+                                                <li>TACA</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <h4 class="text-g-yellow">Airlines From Europe To Peru</h4>
+                                            <ul>
+                                                <li>Air Europa</li>
+                                                <li>Air France</li>
+                                                <li>Alitalia</li>
+                                                <li>British Airways</li>
+                                                <li>Iberia</li>
+                                                <li>KLM</li>
+                                                <li>LAN</li>
+                                                <li>Lufthansa</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <h4 class="text-g-yellow">Airlines From South America To Peru</h4>
+                                            <ul>
+                                                <li>Aerolineas Argentina</li>
+                                                <li>Avianca</li>
+                                                <li>Copa Airlines</li>
+                                                <li>LAN</li>
+                                                <li>Sky Airlines</li>
+                                                <li>TACA</li>
+                                                <li>TAM</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <img src="{{asset('images/we-care.jpg')}}" alt="" class="img-fluid">
+
+
                 </div>
             </div>
         </div>
     </section>
+
+    {{--<section class="bg-light">--}}
+        {{--<div class="container-fluid">--}}
+            {{--<div class="row align-items-center">--}}
+                {{--<div class="col">--}}
+
+                    {{--<h3 class="display-4 font-weight-light">GOTOPERU PROMISES</h3>--}}
+                    {{--<p class="">We take pride of our Promises, for each our travelers from solo travelers to large groups.</p>--}}
+                    {{--<hr>--}}
+                    {{--<h4 class="text-g-yellow">Problem-Free Travel</h4>--}}
+                    {{--<p>The itineraries that GOTOPERU create will work for you and your family. Our staff will work day and night to ensure you get to your destinations without delay.</p>--}}
+                    {{--<h4 class="text-g-yellow">Personalized Itineraries</h4>--}}
+                    {{--<p>We want you to have the trip of a lifetime, so email and call us until it exactly where you want it to be. We will make sure that your trip is exactly as you want it.</p>--}}
+
+                {{--</div>--}}
+                {{--<div class="col">--}}
+                    {{--<img src="http://machupicchu.company/images/contact.png" alt="" class="img-fluid">--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
+
+    <section>
+        <div class="jumbotron jumbotron-divider-1 rounded-0 m-0">
+            <div class="container">
+                <div class="row justify-content-center no-gutters">
+                    <div class="col-9 text-white text-center rounded">
+                        <div class="row">
+                            <div class="col">
+                                <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="w-100">
+                                <small>Assistances</small>
+                            </div>
+                            <div class="col">
+                                <img src="{{asset('images/icons/include/breakfast.png')}}" alt="breakfast" class="w-100">
+                                <small>Breakfast</small>
+                            </div>
+                            <div class="col">
+                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="entrances" class="w-100">
+                                <small>Entrances</small>
+                            </div>
+                            <div class="col">
+                                <img src="{{asset('images/icons/include/flight.png')}}" alt="flight" class="w-100">
+                                <small>Flight</small>
+                            </div>
+
+                            <div class="col">
+                                <img src="{{asset('images/icons/include/hotels.png')}}" alt="hotels" class="w-100">
+                                <small>Hotels</small>
+                            </div>
+                            <div class="col">
+                                <img src="{{asset('images/icons/include/tours.png')}}" alt="tours" class="w-100">
+                                <small>Tours</small>
+                            </div>
+                            <div class="col">
+                                <img src="{{asset('images/icons/include/trains.png')}}" alt="trains" class="w-100">
+                                <small>Trains</small>
+                            </div>
+                            <div class="col">
+                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="transfers" class="w-100">
+                                <small>Transfers</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="container-fluid">
+            <div class="row py-5">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="{{asset('images/icons/contact.png')}}" alt="" class="img-fluid img-circle">
+                        </div>
+                        <div class="col">
+                            <h4>CONTACT</h4>
+                            <p>Chat with us, give us a call (813)600-3042, send us an e-mail or fill out our online form. Share with us your travel preferences! If you already have an outline, an idea, any questions… we will be more than happy to assist your needs.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="{{asset('images/icons/design.png')}}" alt="" class="img-fluid img-circle">
+                        </div>
+                        <div class="col">
+                            <h4>DESIGN</h4>
+                            <p>We will craft out a first travel proposal according to the outline or idea that you shared with us. From then on we will customize it until you are satisfied with the planning! We will then send you a day by day itinerary and leave the rest to you!</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="{{asset('images/icons/vacations.png')}}" alt="" class="img-fluid img-circle">
+                        </div>
+                        <div class="col">
+                            <h4>VACATION</h4>
+                            <p>Be ready for an unforgettable vacation to the land of the Incas, with promptly transfers at every point (airports, hotels, buses,trains) with knowledgable local Guides on each destination plus the best hotel locations and perks...GOTOPERU team will be always with you</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    sd
+                </div>
+
+            </div><!-- /.row -->
+        </div>
+    </section>
+
     @push('scripts')
         <script>
             //form
