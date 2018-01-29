@@ -129,18 +129,27 @@
                         <div class="card mb-3">
                             <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
                                 <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}">
-                                <div class="card-img-overlay bg-rgba-dark-3 p-3">
-                                    <p class="text-white m-0">{{$paquete->duracion}} days <span class="text-g-yellow font-weight-bold float-right">
+
+                                <div class="card-img-overlay bg-rgba-dark-3 p-0">
+                                    <div class="row justify-content-between no-gutters">
+                                        <div class="col-3 p-3">
+                                            <p class="m-0 text-white">{{$paquete->duracion}} Days</p>
+                                        </div>
+                                        <div class="col-3 bg-g-dark py-3 text-white text-center">
                                             @foreach($paquete->precio_paquetes as $precio)
                                                 @if($precio->estrellas == 2)
                                                     @if($precio->precio_d > 0)
-                                                        <small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small>
+                                                        <p class="text-g-yellow font-weight-bold m-0"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
                                                     @else
                                                         <span class="text-danger">Inquire</span>
                                                     @endif
                                                 @endif
                                             @endforeach
-                                        </span></p>
+                                        </div>
+                                    </div>
+                                    {{--<p class="text-white m-0">{{$paquete->duracion}} days <span class="text-g-yellow font-weight-bold float-right bg-danger">--}}
+                                            {{--<small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small>--}}
+                                        {{--</span></p>--}}
                                 </div>
                                 <div class="card-img-overlay-packages">
                                     <h5 class="card-title text-white m-0">{{ucwords(strtolower($paquete->titulo))}}</h5>
@@ -199,77 +208,123 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="row">
-                                    <div class="col d-none d-sm-block">
+                                    <div class="col-4 d-none d-sm-block">
                                         <img src="{{asset('images/maps/peru.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">
                                     </div>
                                     <div class="col">
-                                        <div class="row justify-content-center mt-5">
-                                            <div class="col-6">
+                                        {{--<div class="row justify-content-center mt-5">--}}
+                                            {{--<div class="col-6">--}}
                                                 <h2 class="text-45 font-weight-light mt-5">
                                                     <a href="{{route('destinations_country_path', 'peru-travel')}}" class="text-g-dark">Peru Destinations</a>
                                                 </h2>
                                                 <p class="text-justify text-22 font-weight-light">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>
+
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    </div>
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="list-group position-relative">
+                                                    <a href="#" class="list-group-item list-group-item-action">
+                                                        <div class="media">
+                                                            <img class="align-self-center mr-3 rounded-circle" src="{{asset('images/packages/AV700.jpg')}}" width="70" height="70" alt="Generic placeholder image">
+                                                            <div class="media-body">
+                                                                <h5 class="mt-0">Lima</h5>
+                                                                <p>Peru</p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" class="list-group-item list-group-item-action">
+                                                        <div class="media">
+                                                            <img class="align-self-center mr-3 rounded-circle" src="{{asset('images/packages/AV700.jpg')}}" width="70" height="70" alt="Generic placeholder image">
+                                                            <div class="media-body">
+                                                                <h5 class="mt-0">Lima</h5>
+                                                                <p>Peru</p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" class="list-group-item list-group-item-action">
+                                                        <div class="media">
+                                                            <img class="align-self-center mr-3 rounded-circle" src="{{asset('images/packages/AV700.jpg')}}" width="70" height="70" alt="Generic placeholder image">
+                                                            <div class="media-body">
+                                                                <h5 class="mt-0">Lima</h5>
+                                                                <p>Peru</p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" class="list-group-item list-group-item-action">
+                                                        <div class="media">
+                                                            <img class="align-self-center mr-3 rounded-circle" src="{{asset('images/packages/AV700.jpg')}}" width="70" height="70" alt="Generic placeholder image">
+                                                            <div class="media-body">
+                                                                <h5 class="mt-0">Lima</h5>
+                                                                <p>Peru</p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <div class="gradient-destinations"></div>
+                                                </div>
                                                 <a href="{{route('destinations_country_path', 'peru-travel')}}" class="btn-link float-right font-weight-normal">View Peru packages <i class="fa fa-chevron-right"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col d-none d-sm-block">
-                                        <img src="{{asset('images/maps/ecuador.jpg')}}" alt="ecuador" class="w-100 rounded rounded-circle">
-                                    </div>
-                                    <div class="col">
-                                        <div class="row justify-content-center">
-                                            <div class="col-6">
-                                                <h2 class="text-45 font-weight-light mt-5">
-                                                    <a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="text-g-dark">Ecuador Destinations</a>
-                                                </h2>
-                                                <p class="text-justify text-22 font-weight-light">This amazing country is one of the most bio-diverse countries in the world, its many destinations offer visitors a range of unique beautiful landscapes to explore from the Amazon, Andes, Coast warm beaches and the world famous Galapagos Islands ecological wonder; plus rich history and Culture specially at Colonial Quito City.</p>
-                                                <a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="btn-link float-right font-weight-normal">View Ecuador packages <i class="fa fa-chevron-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="carousel-item">--}}
+                                {{--<div class="row">--}}
+                                    {{--<div class="col d-none d-sm-block">--}}
+                                        {{--<img src="{{asset('images/maps/ecuador.jpg')}}" alt="ecuador" class="w-100 rounded rounded-circle">--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col">--}}
+                                        {{--<div class="row justify-content-center">--}}
+                                            {{--<div class="col-6">--}}
+                                                {{--<h2 class="text-45 font-weight-light mt-5">--}}
+                                                    {{--<a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="text-g-dark">Ecuador Destinations</a>--}}
+                                                {{--</h2>--}}
+                                                {{--<p class="text-justify text-22 font-weight-light">This amazing country is one of the most bio-diverse countries in the world, its many destinations offer visitors a range of unique beautiful landscapes to explore from the Amazon, Andes, Coast warm beaches and the world famous Galapagos Islands ecological wonder; plus rich history and Culture specially at Colonial Quito City.</p>--}}
+                                                {{--<a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="btn-link float-right font-weight-normal">View Ecuador packages <i class="fa fa-chevron-right"></i></a>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col d-none d-sm-block">
-                                        <img src="{{asset('images/maps/bolivia.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">
-                                    </div>
-                                    <div class="col">
-                                        <div class="row justify-content-center">
-                                            <div class="col-6">
-                                                <h2 class="text-45 font-weight-light mt-5">
-                                                    <a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="text-g-dark">Bolivia Destinations</a>
-                                                </h2>
-                                                <p class="text-justify text-22 font-weight-light">Bolivia is s country very diverse , stretching from the majestic icebound peaks and bleak high-altitude deserts of the Andes mountains to the virgin rainforests and vast great savannahs of the Amazon , including the lake titicaca side that include the Tiawanaku templo also stark otherworldly salt pans for instance Uyuni, and ancient Inca trails.</p>
-                                                <a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="btn-link float-right font-weight-normal">View Bolivia packages <i class="fa fa-chevron-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col d-none d-sm-block">
-                                        <img src="{{asset('images/maps/brasil.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">
-                                    </div>
-                                    <div class="col">
-                                        <div class="row justify-content-center mt-5">
-                                            <div class="col-6">
-                                                <h2 class="text-45 font-weight-light mt-5">
-                                                    <a href="{{route('destinations_country_path', 'brasil-travel')}}" class="text-g-dark">Brazil Destinations</a>
-                                                </h2>
-                                                <p class="text-justify text-22 font-weight-light">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>
-                                                <a href="{{route('destinations_country_path', 'brasil-travel')}}" class="btn-link float-right font-weight-normal">View Brazil packages <i class="fa fa-chevron-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="carousel-item">--}}
+                                {{--<div class="row">--}}
+                                    {{--<div class="col d-none d-sm-block">--}}
+                                        {{--<img src="{{asset('images/maps/bolivia.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col">--}}
+                                        {{--<div class="row justify-content-center">--}}
+                                            {{--<div class="col-6">--}}
+                                                {{--<h2 class="text-45 font-weight-light mt-5">--}}
+                                                    {{--<a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="text-g-dark">Bolivia Destinations</a>--}}
+                                                {{--</h2>--}}
+                                                {{--<p class="text-justify text-22 font-weight-light">Bolivia is s country very diverse , stretching from the majestic icebound peaks and bleak high-altitude deserts of the Andes mountains to the virgin rainforests and vast great savannahs of the Amazon , including the lake titicaca side that include the Tiawanaku templo also stark otherworldly salt pans for instance Uyuni, and ancient Inca trails.</p>--}}
+                                                {{--<a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="btn-link float-right font-weight-normal">View Bolivia packages <i class="fa fa-chevron-right"></i></a>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="carousel-item">--}}
+                                {{--<div class="row">--}}
+                                    {{--<div class="col d-none d-sm-block">--}}
+                                        {{--<img src="{{asset('images/maps/brasil.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col">--}}
+                                        {{--<div class="row justify-content-center mt-5">--}}
+                                            {{--<div class="col-6">--}}
+                                                {{--<h2 class="text-45 font-weight-light mt-5">--}}
+                                                    {{--<a href="{{route('destinations_country_path', 'brasil-travel')}}" class="text-g-dark">Brazil Destinations</a>--}}
+                                                {{--</h2>--}}
+                                                {{--<p class="text-justify text-22 font-weight-light">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>--}}
+                                                {{--<a href="{{route('destinations_country_path', 'brasil-travel')}}" class="btn-link float-right font-weight-normal">View Brazil packages <i class="fa fa-chevron-right"></i></a>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -287,12 +342,233 @@
 
     <section class="bg-light">
         <div class="container-fluid">
-            <div class="row py-5">
-                <div class="col-3">
+            <div class="row pt-5 pb-2">
+                <div class="col">
+                    <h1 class="text-secondary h4"><strong>10 Reasons To Let Our Guides Take You On An Unforgettable Adventure!</strong></h1>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
+                    {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="container-fluid">
+            <div class="row pb-5">
+                <div class="col-4 mb-3 d-flex os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
                     <div class="card">
-                        <h2>We Care</h2>
-                        <p>We promise to do the right thing all the time, every time, for our team, travelers, people and places we visit.</p>
+                        <div class="media p-3">
+                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">1</span>
+                            <div class="media-body">
+                                <h5 class="mt-0">We Care</h5>
+                                We promise to do the right thing all the time, every time, for our team, travelers, people and places we visit.
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="col-4 mb-3 d-flex">
+                    <div class="card">
+                        <div class="media p-3">
+                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">2</span>
+                            <div class="media-body">
+                                <h5 class="mt-0">We Are Accessible</h5>
+                                You will find GoToPeru offices in Lima, Arequipa, Cusco and satellite branches in Quito and La Paz.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mb-3 d-flex">
+                    <div class="card">
+                        <div class="media p-3">
+                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">3</span>
+                            <div class="media-body">
+                                <h5 class="mt-0">We Provide The Best Team Of Experts</h5>
+                                Our expert locals make the difference. They come from all regions across Peru and bring with them unique information and a vast knowledge of main destinations.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mb-3 d-flex">
+                    <div class="card">
+                        <div class="media p-3">
+                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">4</span>
+                            <div class="media-body">
+                                <h5 class="mt-0">We Are Internationally Recognized</h5>
+                                We are rated as a high quality Travel Operator on TripAdvisor with impeccable testimonials. We are proud members of Promperu, the National Tourism Board, fully licensed and authorized by the government.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mb-3 d-flex">
+                    <div class="card">
+                        <div class="media p-3">
+                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">5</span>
+                            <div class="media-body">
+                                <h5 class="mt-0">We Help Our Community</h5>
+                                We aim to make positive differences in the communities where we work and live. We look for ways to improve the standards of living. It is our priority to hire local people, develop their communities and work with local supply chains.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mb-3 d-flex">
+                    <div class="card">
+                        <div class="media p-3">
+                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">6</span>
+                            <div class="media-body">
+                                <h5 class="mt-0">We Think Ahead…So You Don’t Have To</h5>
+                                We are aware that surprises, both good and bad, occur while traveling. We are always on top of it and ready to give reliable travel solutions to our customers.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mb-3 d-flex">
+                    <div class="card">
+                        <div class="media p-3">
+                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">7</span>
+                            <div class="media-body">
+                                <h5 class="mt-0">We Turn Good Trips Into Unforgettable Adventures</h5>
+                                We help our travelers choose the perfect trip to the land of the Incas, providing them with the most authentic life-changing adventure possible. We go out of our way to ensure a travel experience unlike anything you’ve seen.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mb-3 d-flex">
+                    <div class="card">
+                        <div class="media p-3">
+                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">8</span>
+                            <div class="media-body">
+                                <h5 class="mt-0">We Aren’t Afraid To Push Our Boundaries</h5>
+                                We offer alternative extensions to the main South American destinations in Ecuador, Bolivia, Chile, Argentina, Brasil, Uruguay and Columbia. In December, 2015 we will be opening a physical travel office in the USA.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mb-3 d-flex">
+                    <div class="card">
+                        <div class="media p-3">
+                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">9</span>
+                            <div class="media-body">
+                                <h5 class="mt-0">We Are Trustworthy</h5>
+                                We have glowing testimonials on our website and other acclaimed travel websites. We have set a standard of excellence for our customers by giving them the best Peruvian resources for a memorable journey.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="container-fluid">
+            <div class="row py-5">
+                <div class="col">
+                    <div class="row mt-5 justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-6 col-lg-3">
+                            <img src="{{asset('images/icons/group.png')}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <i class="font-weight-bold text-secondary">Grupos de 6 a 14 pasajeros y/o paseos privados.</i>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5 justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-6 col-lg-3">
+                            <img src="{{asset('images/icons/assistance.png')}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col text-center">
+                            <i class="font-weight-bold text-secondary">Vivimos en el Peru, ofreciendo asistencia real las 24horas.</i>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-6 col-lg-3">
+                            <img src="{{asset('images/icons/customize.png')}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <i class="font-weight-bold text-secondary">Elija programas prearmados o personalize vuestras vacaciones.</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="{{asset('images/goto.jpg')}}" alt="" class="w-100">
+                </div>
+                <div class="col">
+                    <div class="row mt-5 justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-6 col-lg-3">
+                            <img src="{{asset('images/icons/location.png')}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <i class="font-weight-bold text-secondary">Costos menores al ser una operadora local.</i>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5 justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-6 col-lg-3">
+                            <img src="{{asset('images/icons/trip.png')}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col text-center">
+                            <i class="font-weight-bold text-secondary">Excelentes comentarios en Tripadvisor.</i>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-6 col-lg-3">
+                            <img src="{{asset('images/icons/departure.png')}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <i class="font-weight-bold text-secondary">Salidas Diarias para todos nuestros tours.</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="container-fluid">
+            <div class="row align-items-center no-gutters" style="height: 100%;">
+                <div class="col">
+                    <img src="{{asset('images/we-care.jpg')}}" alt="" class="img-fluid">
+                </div>
+                <div class="col">
+                    <div class="px-4">
+                        <h3 class="display-4 font-weight-light">Because we care</h3>
+                        <p class="">We give back to our communities</p>
+                        <hr>
+                        <p class="text-primary"><i>Chaullacota Locates at 15,000 feed (4500 mts) 2 hours Northwest of cusco</i></p>
+                        <p class="text-justify text-22 font-weight-light">At GOTOPERU we are committed to doing business in a way that actually give back to our communities specially the one located in remote places. Our planning and execution of one of our trips involves a long supply chain: from local guides and operators to transportation providers to hotels and restaurants, we interact with a lot of different organizations on the ground, but we also know that some communities specially located on top of the Andes at 15,000+feet that due to the difficult access, dont receive the assistance they deserve, is for that reason that we organize periodically trips to this far far away communities to bring them specially sweaters and toys for children.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-white">
+        <div class="container-fluid">
+            <div class="row align-items-center no-gutters" style="height: 100%;">
+                <div class="col">
+                    <div class="px-4">
+                        <h3 class="display-4 font-weight-light">Because we care</h3>
+                        <p class="">We give back to our communities</p>
+                        <hr>
+                        <p class="text-primary"><i>Chaullacota Locates at 15,000 feed (4500 mts) 2 hours Northwest of cusco</i></p>
+                        <p class="text-justify text-22 font-weight-light">At GOTOPERU we are committed to doing business in a way that actually give back to our communities specially the one located in remote places. Our planning and execution of one of our trips involves a long supply chain: from local guides and operators to transportation providers to hotels and restaurants, we interact with a lot of different organizations on the ground, but we also know that some communities specially located on top of the Andes at 15,000+feet that due to the difficult access, dont receive the assistance they deserve, is for that reason that we organize periodically trips to this far far away communities to bring them specially sweaters and toys for children.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="{{asset('images/we-care.jpg')}}" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
