@@ -432,3 +432,41 @@ header{
 .carousel-control-prev, .carousel-control-next{
   width: 2% !important;
 }
+.popover-hover:hover, .popover-hover.active{
+  color: #7F8429 !important;
+  background-color: #fff !important;
+  border-color: #7F8429 !important;
+}
+.form-circ{
+  width: 110px;
+  height: 110px;
+}
+.popover-hover.focus, .popover-hover.active:focus{
+  -webkit-box-shadow: 0 0 0 0.05rem rgba(127, 132, 41, 0.5) !important;
+  box-shadow: 0 0 0 0.05rem rgba(127, 132, 41, 0.5) !important;
+}
+.sec-stars{
+  position: absolute;
+  width: 100%;
+  bottom: -1.5em;
+  left: 0;
+  right: 0;
+  color: #6c757d;
+}
+.popover-hover:hover .sec-stars>i, .popover-hover.active .sec-stars>i{
+  color: #ffc107;
+}
+.number-hover:hover, .number-hover.active{
+  color: #ffffff !important;
+  background-color: #f9a825 !important;
+  border-color: #f9a825 !important;
+}
+
+.number-hover:hover i, .number-hover.active i{
+  color: #000000 !important;
+}
+
+.number-hover.focus, .number-hover.active:focus{
+  -webkit-box-shadow: 0 0 0 0.05rem rgba(249, 168, 37, 0.5) !important;
+  box-shadow: 0 0 0 0.05rem rgba(249, 168, 37, 0.5) !important;
+}

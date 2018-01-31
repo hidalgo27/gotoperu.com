@@ -25,6 +25,8 @@
     "font-awesome-5-css": "^1.0.0",
     "font-awesome-sass": "^4.7.0",
     "jquery-ui": "^1.12.1",
-    "popper.js": "^1.12.9"
+    "popper.js": "^1.12.9",
+    "smartwizard": "^4.2.2",
+    "twitter-bootstrap-wizard": "^1.2.0"
   }
 }
