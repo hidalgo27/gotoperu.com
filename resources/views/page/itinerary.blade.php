@@ -1,77 +1,130 @@
 @extends('layouts.page.default')
 @section('content')
-    <section class="d-none d-lg-block">
+    <section class="d-none">
         <div class="jumbotron jumbotron-slider-1 rounded-0">
             <div class="container">
                 @foreach($paquete_iti as $paquetes)
                     <h2 class="text-white my-5 h1"><strong>{{($paquetes->titulo)}} {{($paquetes->duracion)}} DAYS TOURS</strong></h2>
-                    {{--<h2 class="text-white my-5 h1">Our excursions and packages depart 365 days a year</h2>--}}
+                    <h2 class="text-white my-5 h1">Our excursions and packages depart 365 days a year</h2>
                 @endforeach
-                {{--<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>--}}
-                {{--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>--}}
+                <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
             </div>
         </div>
     </section>
 
+    <section class="header-video">
+        <div id="title" class="text-white">
+            <div class="container-fluid">
+                <div class="row justify-content-between">
+                    <div class="col-3 mt-2">
+                        <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
+                    </div>
+                    {{--<div class="col text-center">--}}
+                    {{--<i class="h4"></i>--}}
+                    {{--</div>--}}
+                    <div class="col-3 text-right pt-3 sticky-top">
+                        <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
+                        <a href="tel:+2029963000" class="mx-3 h2"><i class="fa fa-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="overlay">
+            <video class="" id="hero-vid" poster="http://www.markhillard.com/sandbox/media/polina.jpg" autoplay loop muted>
+                <source src="{{asset('media/video6.mp4')}}" />
+                <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
+                <source src="{{asset('media/video6.webm')}}" type="video/webm" />
+                <source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />
+            </video>
+            {{--<div id="state" class=""><span class="fa fa-pause"></span></div>--}}
+            {{--<img id="hero-pic" class="d-none" src="http://www.markhillard.com/sandbox/media/polina.jpg" alt="">--}}
+            {{----}}
+        </div>
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row content-header-row align-items-center no-gutters">
+                    <div class="col-3 bg-rgba-white rounded-right">
+                        <h3 class="text-g-yellow p-2"><i class="fa fa-map-marker"></i> Route</h3>
+
+                        <div class="pb-4 position-relative">
+                            @foreach($paquetes->itinerario->sortBy('dia') as $itinerario)
+                                <p class="m-0 p-2">
+                                    <b class="font-weight-bold">Day {{$itinerario->dia}}: </b> {{ucwords(strtolower($itinerario->titulo))}}
+                                </p>
+                            @endforeach
+                                <div class="gradient-destinations"></div>
+                                <a href="" class="btn-link font-weight-normal b-routes p-2">All Routes <i class="fa fa-chevron-right"></i></a>
+                        </div>
+
+                        {{--<div class="text-right">--}}
+                        {{--<a href="" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>--}}
+                        {{--</div>--}}
+                    </div>
+                    <div class="col">
+                        <div class="row my-4 justify-content-center">
+                            <h2 class="text-g-yellow font-weight-light">
+                             @foreach($paquete_iti as $paquetes)
+                                {{($paquetes->titulo)}} <span class="text-white">{{($paquetes->duracion)}} DAYS TOURS</span>
+                                @endforeach
+                            </h2>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-6 text-center">
+                                <a href="" class="btn btn-lg btn-g-yellow">INQUIRE NOW</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <nav class="nav nav-pills nav-fill nav-goto navbar-expand-lg d-none d-sm-flex">
+        {{--<a class="nav-item nav-link active" href="#">Active</a>--}}
+        <a class="nav-item nav-link text-light active" href="">TOURS PACKAGES</a>
+        <a class="nav-item nav-link text-light" href="">DESTINATIONS</a>
+        <a class="nav-item nav-link text-light" href="">ABOUT US</a>
+        <a class="nav-item nav-link text-light" href="">GETTING TO PERU</a>
+        <a class="nav-item nav-link text-light" href="/#contato">TESTIMONIALS</a>
+        <a class="nav-item nav-link text-light bg-g-yellow rounded-0" href="/#contato">INQUIRE</a>
+        {{--<a class="nav-item nav-link disabled" href="#">Disabled</a>--}}
+    </nav>
     @include('layouts.page.included')
 
-    <section class="my-5">
+
+    <section>
         <div class="container">
             <div class="row">
-                <div class="col text-center">
+
+            </div>
+        </div>
+    </section>
+
+    {{--<section class="py-5 bg-white">--}}
+        {{--<div class="container">--}}
+            {{--<div class="row">--}}
+                {{--<div class="col text-center">--}}
                     {{--@foreach($paquete_iti as $paquetes)--}}
                     {{--<h1 class="text-secondary h5"><strong>PERU TRAVEL PACKAGES</strong></h1>--}}
-                    <h1 class="text-g-green text-uppercase"><span class="d-block h5 text-secondary">Travel Packages:</span>{{strtolower($paquetes->titulo)}}</h1>
+                    {{--<h1 class="text-g-green text-uppercase"><span class="d-block h5 text-secondary">Travel Packages:</span>{{strtolower($paquetes->titulo)}}</h1>--}}
                     {{--@endforeach--}}
                     {{--<div class="alert alert-g-yellow" role="alert">--}}
                         {{--<h4>And even multi countries travel adventures involving Brasil, Ecuador , Argentina.</h4>--}}
                     {{--</div>--}}
-                </div>
-            </div>
-        </div>
-    </section>
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
 
-    <section class="">
-        <div class="container">
+    <section class="bg-white">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-8">
-
-                    <div class="row my-4 d-sm-block d-md-block d-lg-none">
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <div class="d-block text-left">
-                                        <span class="text-g-green h4 font-weight-bold align-bottom">{{$paquetes->duracion}} Days</span>
-                                    </div>
-                                    {{--<p class="text-primary h4 font-weight-bold">10 Day</p>--}}
-                                    <p class="h3 text-secondary"></p>
-                                    <p class="h1 font-montserrat pt-2 m-0">
-                                        @foreach($paquetes->precio_paquetes as $precio)
-                                            @if($precio->estrellas == 2)
-                                                @if($precio->precio_d == 0)
-                                                    <span class="text-danger">Inquire</span>
-                                                @else
-                                                    <small class="text-secondary h5">from</small>
-                                                    <sup>$</sup>{{$precio->precio_d}}
-                                                    <small>USD</small>
-                                                @endif
-                                            @endif
-                                        @endforeach
-                                    </p>
-                                    <p class="text-secondary m-0">Package Code: {{$paquetes->codigo}}</p>
-                                    <a href="#book-now" class="btn btn-g-yellow btn-block btn-lg btn-info mt-3 text-white">Inquire</a>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col">
 
                     <div class="row position-relative">
                         <div class="col">
-                            <ul id="navbar-example" class="nav nav-pills nav-fill bg-light rounded d-none d-sm-flex">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#Overview">Outline</a>
-                                </li>
+                            <ul id="menu" class="nav nav-pills nav-fill bg-light rounded d-none d-sm-flex sticky-top">
                                 <li class="nav-item">
                                     <a class="nav-link" href="#Itinerary">Itinerary</a>
                                 </li>
@@ -83,40 +136,8 @@
                                 </li>
 
                             </ul>
-                            <div data-spy="scroll" data-target="#navbar-example" data-offset="200" class="scrollspy-example">
-                                <div id="Overview" class="pt-4 d-none d-sm-block">
-                                    <h3 class="h3 py-2">Outline</h3>
-                                    <div class="col my-4">
-                                        <div class="row">
-                                            <div class="col-3 text-center align-items-center  card-deck border bg-light m-0">
-                                                <div class="card">
-                                                    <h3>
-                                                        <i class="fa fa-map-marker"></i>
-                                                        Route
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                            <div class="col border box-route-ininerary">
-                                                @foreach($paquetes->itinerario->sortBy('dia') as $itinerario)
-                                                    <p>
-                                                        <strong>Day {{$itinerario->dia}}: </strong> {{ucwords(strtolower($itinerario->titulo))}}
-                                                    </p>
-                                                @endforeach
-                                            </div>
-                                        </div>
 
-                                        <div class="row mt-5">
-                                            <div class="col">
-                                                <h4>Included:</h4>
-                                                @php echo $paquetes->incluye; @endphp
-                                            </div>
-                                            <div class="col">
-                                                <h4>Not Included:</h4>
-                                                @php echo $paquetes->noincluye; @endphp
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                                 <div id="Itinerary" class="d-none d-sm-block">
                                     <h3 class="h3 py-5">Itinerary</h3>
                                     @php
@@ -212,69 +233,72 @@
                                     </div>
                                 </div>
 
-                            </div>
+
                         </div>
                     </div>
 
                 </div>
+
+            </div>
+            <div class="row">
                 <div class="col d-none d-sm-none d-md-none d-lg-inline">
 
-                        <div class="card">
-                            <div class="card-body text-center">
+                    <div class="card">
+                        <div class="card-body text-center">
 
 
-                                <div class="d-block text-left">
-                                    <span class="text-g-green h4 font-weight-bold align-bottom">{{$paquetes->duracion}} Days</span>
-                                </div>
-                                {{--<p class="text-primary h4 font-weight-bold">10 Day</p>--}}
-                                <p class="h3 text-secondary"></p>
-                                <p class="h1 font-montserrat pt-2 m-0">
-                                    @foreach($paquetes->precio_paquetes as $precio)
-                                            @if($precio->estrellas == 2)
-                                                @if($precio->precio_d == 0)
-                                                    <span class="text-danger">Inquire</span>
-                                                @else
-                                                    <small class="text-secondary h5">from</small>
-                                                    <sup>$</sup>{{$precio->precio_d}}
-                                                    <small>USD</small>
-                                                @endif
-                                            @endif
-                                        @endforeach
-                                </p>
-                                <p class="text-secondary m-0">Package Code: {{$paquetes->codigo}}</p>
-                                <a href="#book-now" class="btn btn-g-yellow btn-block btn-lg btn-info mt-3 text-white">Inquire</a>
-
+                            <div class="d-block text-left">
+                                <span class="text-g-green h4 font-weight-bold align-bottom">{{$paquetes->duracion}} Days</span>
                             </div>
-                        </div>
+                            {{--<p class="text-primary h4 font-weight-bold">10 Day</p>--}}
+                            <p class="h3 text-secondary"></p>
+                            <p class="h1 font-montserrat pt-2 m-0">
+                                @foreach($paquetes->precio_paquetes as $precio)
+                                    @if($precio->estrellas == 2)
+                                        @if($precio->precio_d == 0)
+                                            <span class="text-danger">Inquire</span>
+                                        @else
+                                            <small class="text-secondary h5">from</small>
+                                            <sup>$</sup>{{$precio->precio_d}}
+                                            <small>USD</small>
+                                        @endif
+                                    @endif
+                                @endforeach
+                            </p>
+                            <p class="text-secondary m-0">Package Code: {{$paquetes->codigo}}</p>
+                            <a href="#book-now" class="btn btn-g-yellow btn-block btn-lg btn-info mt-3 text-white">Inquire</a>
 
-                        <div class="card bg-light my-4">
-                            {{--<img class="card-img-top" src="..." alt="Card image cap">--}}
-                            <div class="content-video-1 card-img-top">
-                                <div class="content-area-3">
-                                    <div class="position-relative">
-                                        <img src="{{asset('images/video/prom-peru.jpg')}}" alt="video promperu" class="img-fluid">
-                                        <div class="video-btn-1">
-                                            <a href="https://www.youtube.com/embed/gGq_U1DYUCs" title=""><i class="fa fa-play-circle text-g-dark"></i></a>
-                                        </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-light my-4">
+                        {{--<img class="card-img-top" src="..." alt="Card image cap">--}}
+                        <div class="content-video-1 card-img-top">
+                            <div class="content-area-3">
+                                <div class="position-relative">
+                                    <img src="{{asset('images/video/prom-peru.jpg')}}" alt="video promperu" class="img-fluid">
+                                    <div class="video-btn-1">
+                                        <a href="https://www.youtube.com/embed/gGq_U1DYUCs" title=""><i class="fa fa-play-circle text-g-dark"></i></a>
                                     </div>
                                 </div>
                             </div>
-                            {{--<img src="{{asset('images/prom-peru-4.jpg')}}" alt="video" class="img-fluid card-img-top" >--}}
-                            <div class="card-body">
-                                <h4 class="card-title">Destinations</h4>
-                                <div class="box-route-ininerary p-0">
-                                    @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
-                                        <p class="font-weight-bold text-secondary"><i class="fa fa-check"></i> {{ucwords(strtolower($paquete_destino->destinos->nombre))}}</p>
-                                    @endforeach
+                        </div>
+                        {{--<img src="{{asset('images/prom-peru-4.jpg')}}" alt="video" class="img-fluid card-img-top" >--}}
+                        <div class="card-body">
+                            <h4 class="card-title">Destinations</h4>
+                            <div class="box-route-ininerary p-0">
+                                @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
+                                    <p class="font-weight-bold text-secondary"><i class="fa fa-check"></i> {{ucwords(strtolower($paquete_destino->destinos->nombre))}}</p>
+                                @endforeach
 
-                                </div>
                             </div>
                         </div>
+                    </div>
 
 
-                            <div class="sticky-top sticky-top-50">
-                                <img src="{{asset('images/maps/'.$paquetes->codigo.'.jpg')}}" alt="" class="img-fluid rounded">
-                            </div>
+                    <div class="sticky-top sticky-top-50">
+                        <img src="{{asset('images/maps/'.$paquetes->codigo.'.jpg')}}" alt="" class="img-fluid rounded">
+                    </div>
 
 
                 </div>
@@ -523,6 +547,31 @@
                 dateFormat: 'yy-mm-dd',
                 changeMonth: true,
                 changeYear: true
+            });
+
+            $(document).ready(function () {
+                $(window).on('load scroll', function () {
+                    var scrolled = $(this).scrollTop();
+                    $('#title').css({
+                        'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
+                        'opacity': 1 - scrolled / 400 // fade out at 400px from top
+                    });
+                    $('#hero-vid').css('transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)'); // parallax (25% scroll rate)
+                });
+
+                // video controls
+                $('#state').on('click', function () {
+                    var video = $('#hero-vid').get(0);
+                    var icons = $('#state > span');
+                    $('#overlay').toggleClass('fade');
+                    if (video.paused) {
+                        video.play();
+                        icons.removeClass('fa-play').addClass('fa-pause');
+                    } else {
+                        video.pause();
+                        icons.removeClass('fa-pause').addClass('fa-play');
+                    }
+                });
             });
 
         </script>

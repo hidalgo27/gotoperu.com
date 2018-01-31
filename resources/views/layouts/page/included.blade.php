@@ -1,4 +1,4 @@
-<section class="d-none d-lg-block">
+<section class="d-none d-lg-block bg-white py-4">
     <div class="container-fluid">
         <div class="col">
             <div class="row"><!--.row -->

@@ -18978,6 +18978,12 @@ header {
   box-shadow: 0 0 0 0.05rem rgba(249, 168, 37, 0.5) !important;
 }
 
+.b-routes {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 .font-montserrat {
   font-family: 'Montserrat', sans-serif;
 }
