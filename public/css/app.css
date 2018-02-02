@@ -18522,7 +18522,7 @@ a.text-g-dark:focus {
   height: 100%;
   width: 2px;
   background: #d7d7d7;
-  z-index: -99;
+  z-index: 1;
 }
 
 .timeline-f:before {
@@ -18532,15 +18532,26 @@ a.text-g-dark:focus {
 .timeline-title span {
   background-color: #ffdd00;
   padding: 7px 15px 6px;
+  position: relative;
+  z-index: 2;
 }
 
 .timeline-point {
   position: absolute;
   left: 12px;
   top: 50%;
+  width: 20px;
   background-color: #FFF;
   border: 3px solid #FFF;
   margin-top: -8px;
+  z-index: 2;
+}
+
+.timeline-point i {
+  position: absolute;
+  top: -8px;
+  background: white;
+  color: #d7d7d7;
 }
 
 .timeline-point:before {
@@ -18549,13 +18560,12 @@ a.text-g-dark:focus {
   width: 80px;
   position: absolute;
   background-color: #d7d7d7;
-  left: 16px;
-  top: 11px;
-  z-index: -9999;
+  left: 6px;
+  z-index: 0;
 }
 
 .timeline-custom-col {
-  margin: 4rem 0 4rem 4rem;
+  margin: -2.5rem 0 4rem 7rem;
   position: relative;
   min-height: 1px;
   float: left;
@@ -18578,6 +18588,7 @@ a.text-g-dark:focus {
   background-color: #fafafa;
   min-height: 250px;
   border-right: 2px solid #FFF;
+  z-index: 2;
 }
 
 .timeline-location-block .location-name {
@@ -18593,7 +18604,7 @@ a.text-g-dark:focus {
   top: -5px;
   border: 1px solid;
   border-radius: 50%;
-  padding: 1%;
+  padding: 3px;
   width: 32px;
   height: 32px;
   text-align: center;
@@ -18982,6 +18993,29 @@ header {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.nav-itinerary .nav-link.active {
+  opacity: 1;
+  border-bottom: 3px solid #000000;
+}
+
+.modal.left .modal-dialog,
+.modal.right .modal-dialog {
+  position: fixed;
+  margin-right: 0;
+  width: 320px;
+  height: 100%;
+  -webkit-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
+  right: 0;
+  margin: 0;
+}
+
+.modal.left .modal-content,
+.modal.right .modal-content {
+  height: 100%;
+  border-radius: 0;
 }
 
 .font-montserrat {

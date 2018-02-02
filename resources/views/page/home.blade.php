@@ -13,13 +13,16 @@
                     {{--</div>--}}
                     <div class="col-3 text-right pt-3 sticky-top">
                         <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
-                        <a href="tel:+2029963000" class="mx-3 h2"><i class="fa fa-bars"></i></a>
+                        <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
+                        <!-- Button trigger modal -->
+
+
                     </div>
                 </div>
             </div>
         </div>
         <div id="overlay">
-            <video class="" id="hero-vid" poster="http://www.markhillard.com/sandbox/media/polina.jpg" autoplay loop muted>
+            <video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>
                 <source src="{{asset('media/video6.mp4')}}" />
                 <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
                 <source src="{{asset('media/video6.webm')}}" type="video/webm" />
@@ -32,54 +35,8 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row content-header-row align-items-center">
-                    {{--<div class="col-3 col-sm-7 col-md-5 col-lg-4 col-xl-3">--}}
-                        {{--<div class="bg-rgba-white p-2 rounded">--}}
-                            {{--<h2 class="text-center"><b>Machu Picchu</b> <span class="d-block">Vacations</span></h2>--}}
-                            {{--<div class="row no-gutters">--}}
-                                {{--<div class="col">--}}
-                                    {{--<img src="{{asset('images/icons/include/assistances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Assistances">--}}
-                                    {{--<span>Assistances</span>--}}
-                                {{--</div>--}}
 
-                                {{--<div class="col">--}}
-                                    {{--<img src="{{asset('images/icons/include/entrances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Entrances">--}}
-                                    {{--<span>Entrances</span>--}}
-                                {{--</div>--}}
-                                {{--<div class="col">--}}
-                                    {{--<img src="{{asset('images/icons/include/transfers.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Transfers">--}}
-                                    {{--<span>Transfers</span>--}}
-                                {{--</div>--}}
-
-                                {{--<div class="col">--}}
-                                    {{--<img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">--}}
-                                    {{--<span>Hotels</span>--}}
-                                {{--</div>--}}
-                                {{--<div class="col">--}}
-                                    {{--<img src="{{asset('images/icons/include/tours.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Tours">--}}
-                                    {{--<span>Tours</span>--}}
-                                {{--</div>--}}
-                                {{--<div class="col">--}}
-                                    {{--<img src="{{asset('images/icons/include/trains.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Trains">--}}
-                                    {{--<span>Trains</span>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<hr>--}}
-                            {{--<div class="row">--}}
-                                {{--<ol class="text-da">--}}
-                                    {{--<li class="text-g-yellow font-weight-bold">Share your travel plans</li>--}}
-                                    {{--<li>Receive a customize itinerary and qoute</li>--}}
-                                    {{--<li>Discover the best of Peru with GOTOPERU</li>--}}
-                                {{--</ol>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
                     <div class="col">
-                        {{--<div class="row mt-3">--}}
-                            {{--<div class="col text-white text-center">--}}
-                                {{--<h2 class="h2">PERU: OUR HOME, <b>YOUR ADVENTURE</b></h2>--}}
-                                {{--<p class="h5 font-weight-light"><i><b>Peruvian Travel Operator</b> with 10+years of Experience & oustanding reviews</i></p>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
                         <div class="row justify-content-center">
                             <div class="col-4">
                                 <div class="row no-gutters">
@@ -112,12 +69,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row my-4 justify-content-center">
-                            <p class="text-white h4 font-weight-light">1. Share your travel plans | 2. Receive a customize itinerary and qoute | 3. Discover the best of Peru with GOTOPERU</p>
+                        <div class="row mt-2">
+                            <div class="col text-white text-center">
+                                <h4 class="h5 font-weight-light text-g-yellow">Top recommended Peru Travel Company</h4>
+                            </div>
+                        </div>
+                        <div class="row my-3 justify-content-center">
+                            <p class="text-white h4 font-weight-light">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and qoute <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
-                                <a href="" class="btn btn-lg btn-g-yellow">GET STARED NOW</a>
+                                <a href="#Inquire" class="btn btn-lg btn-g-yellow">GET STARED NOW</a>
                             </div>
                         </div>
                     </div>
@@ -129,12 +91,12 @@
 
     <nav class="nav nav-pills nav-fill nav-goto navbar-expand-lg d-none d-sm-flex sticky-top">
         {{--<a class="nav-item nav-link active" href="#">Active</a>--}}
-        <a class="nav-item nav-link text-light active" href="">TOURS PACKAGES</a>
-        <a class="nav-item nav-link text-light" href="">DESTINATIONS</a>
-        <a class="nav-item nav-link text-light" href="">ABOUT US</a>
-        <a class="nav-item nav-link text-light" href="">GETTING TO PERU</a>
-        <a class="nav-item nav-link text-light" href="/#contato">TESTIMONIALS</a>
-        <a class="nav-item nav-link text-light bg-g-yellow rounded-0" href="/#contato">INQUIRE</a>
+        <a class="nav-item nav-link text-light active" href="{{route('packages_path')}}">TOURS PACKAGES</a>
+        <a class="nav-item nav-link text-light" href="{{route('destinations_path')}}">DESTINATIONS</a>
+        <a class="nav-item nav-link text-light" href="{{route('about_path')}}">ABOUT US</a>
+        <a class="nav-item nav-link text-light" href="{{route('getting_path')}}">GETTING TO PERU</a>
+        <a class="nav-item nav-link text-light" href="{{route('testimonials_path')}}">TESTIMONIALS</a>
+        <a class="nav-item nav-link text-light bg-g-yellow rounded-0" href="#Inquire">INQUIRE</a>
         {{--<a class="nav-item nav-link disabled" href="#">Disabled</a>--}}
     </nav>
 
@@ -151,6 +113,68 @@
         </div>
     </section>
 
+
+    <!-- Modal -->
+    <div class="modal right  fade" id="modal-menu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                {{--<div class="modal-header">--}}
+                    {{--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
+                {{--</div>--}}
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="modal-body">
+                    <img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="img-fluid">
+                    <div class="row mt-5">
+                        <div class="col">
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('packages_path')}}" class="text-secondary h5"><strong>Travel Packages</strong></a></li>
+                                <li><a href="#" class="text-secondary h5 popover-focus" data-toggle="popover" data-placement="left" title="<h4 class='text-secondary'>Destinations</h4>" data-content="
+                                <ul class='list-unstyled'>
+                                    <li><a href='{{route('destinations_country_path', 'peru-travel')}}' class='text-secondary h5'>Peru</a></li>
+                                    <li><a href='{{route('destinations_country_path', 'ecuador-travel')}}' class='text-secondary h5'>Ecuador</a></li>
+                                    <li><a href='{{route('destinations_country_path', 'bolivia-travel')}}' class='text-secondary h5'>Bolivia</a></li>
+                                    <li><a href='{{route('destinations_country_path', 'brasil-travel')}}' class='text-secondary h5'>Brazil</a></li>
+                                </ul>
+                                "><strong>Destinations</strong></a></li>
+                                <li><a href="" class="text-secondary h5"><strong>Travel Deals</strong></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <ul class="list-unstyled">
+                                <li><a href="" class="text-secondary h5"><strong>Travel Agents</strong></a></li>
+                                <li><a href="" class="text-secondary h5"><strong>Our Blog</strong></a></li>
+                                <li><a href="" class="text-secondary h5"><strong>Hotels</strong></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <ul class="list-unstyled">
+                                <li><a href="" class="text-primary h5"><strong>Sign In <i class="fa fa-sign-in"></i></strong></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <a href="" class="btn btn-primary">Chat Facebook</a>
+                            <a href="" class="btn btn-success">Chat Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                {{--<div class="modal-footer">--}}
+                    {{--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
+                    {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
+                {{--</div>--}}
+            </div>
+        </div>
+    </div>
     <section class="bg-light">
         <div class="container-fluid">
             <div class="row">
@@ -821,10 +845,10 @@
         </div>
     </section>
 
-    <section class="bg-light">
+    <section class="bg-white">
         <div class="container-fluid">
-            <div class="row py-5 align-items-center">
-                <div class="col">
+            <div class="row py-5 ">
+                <div class="col-6">
                     <div class="row">
                         <div class="col-3">
                             <img src="{{asset('images/icons/contact.png')}}" alt="" class="img-fluid img-circle">
@@ -853,7 +877,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+            </div>
+        </div>
+    </section>
+    <section class="bg-light py-5" id="Inquire">
+        <div class="container-fluid">
+            <div class="row py-5 justify-content-center">
+
+                <div class="col-6">
                     <div class="row justify-content-center pb-2">
                         <div class="col-10">
                             <h2 class="text-secondary h4 text-center"><strong>Create Your Dream Adventure</strong></h2>
@@ -885,7 +916,7 @@
                                                 <div class="form-circ btn-group-toggle" data-toggle="buttons">
                                                     <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel economico">
                                                         <i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>
-                                                        <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> Badget
+                                                        <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> Budget
                                                         <div class="d-block text-center sec-stars">
                                                             <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i>
@@ -1113,7 +1144,14 @@
 
             $('.popover-hover').popover({
                 trigger: 'hover'
-            })
+            });
+
+            $('.popover-focus').popover({
+                trigger: 'focus',
+                html: true
+            });
+
+
 
             $('#d_date').datepicker({
                 dateFormat: 'yy-mm-dd',
