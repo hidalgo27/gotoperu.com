@@ -21,10 +21,10 @@ mix.scripts([
     'resources/assets/js/vendors/smooth-scroll.js',
     'resources/assets/js/vendors/jquery-ui.js',
     'node_modules/twitter-bootstrap-wizard/jquery.bootstrap.wizard.js',
+    // 'resources/assets/js/vendors/all.js',
     //Customized
     'resources/assets/js/vendors/function-admin.js',
-    'resources/assets/js/vendors/function.js',
-    // 'https://use.fontawesome.com/releases/v5.0.4/js/all.js'
+    'resources/assets/js/vendors/function.js'
 ], 'public/js/plugins.js');
 
 

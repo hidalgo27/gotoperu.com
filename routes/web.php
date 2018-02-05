@@ -26,7 +26,7 @@ Route::get('/packages', [
     'as' => 'packages_path',
 ]);
 
-Route::get('/packages/{duration}-days', [
+Route::get('/packages/{from}-{to}-days', [
     'uses' => 'HomeController@packages_durations',
     'as' => 'packages_durations_path',
 ]);
@@ -112,4 +112,10 @@ Route::post('/design', [
 Route::get('/404', [
     'uses' => 'HomeController@pagenotfound',
     'as' => 'notfound_path',
+]);
+
+//hotels
+Route::get('/hotels', [
+    'uses' => 'HomeController@hotels',
+    'as' => 'hotels_path',
 ]);

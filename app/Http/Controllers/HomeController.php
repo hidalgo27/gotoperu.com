@@ -48,6 +48,12 @@ class HomeController extends Controller
             return view('page.home',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'destinos'=>$destinos]);
     }
 
+    public function hotels()
+    {
+        return view('page.hotels');
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -139,19 +145,19 @@ class HomeController extends Controller
         return view('page.packages',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r]);
     }
 
-    public function packages_durations($duration)
+    public function packages_durations($from, $to)
     {
-        $paquetes = TPaquete::with('precio_paquetes')->where('duracion', $duration)->get();
+        $paquetes = TPaquete::with('precio_paquetes')->where('duracion', '>=', $from)->where('duracion', '<=', $to)->get();
         $paquetes_r = TPaquete::with('precio_paquetes')->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
 
 
-        SEOMeta::setTitle('Travel Packages '.$duration.' days - Peru Travel Packages | Machu Picchu Tour Packages');
-        SEOMeta::setDescription('Travel Packages '.$duration.' days. Discover Peru with Gotoperu Tour & Travel Packages. We offer amazing deals on Machu Picchu Vacation Packages.  Give us call @ (202) 996-3000 for more info.');
+        SEOMeta::setTitle('Travel Packages '.$from.'-'.-$to.' days - Peru Travel Packages | Machu Picchu Tour Packages');
+        SEOMeta::setDescription('Travel Packages '.$from.'-'.$to.' days. Discover Peru with Gotoperu Tour & Travel Packages. We offer amazing deals on Machu Picchu Vacation Packages.  Give us call @ (202) 996-3000 for more info.');
         SEOMeta::setCanonical('https://gotoperu.com/packages');
         SEOMeta::addKeyword(['Machu Picchu Tour Packages', 'Machu Picchu Packages', 'Machu Picchu Vacation Packages', 'Machu Picchu Deals', 'Peru Honeymoon Travel Packages']);
 
-        OpenGraph::setDescription('Travel Packages '.$duration.' days. Discover Peru with Gotoperu Tour & Travel Packages. We offer amazing deals on Machu Picchu Vacation Packages.  Give us call @ (202) 996-3000 for more info.');
+        OpenGraph::setDescription('Travel Packages '.$from.'-'.$to.' days. Discover Peru with Gotoperu Tour & Travel Packages. We offer amazing deals on Machu Picchu Vacation Packages.  Give us call @ (202) 996-3000 for more info.');
         OpenGraph::setTitle('Machu Picchu Tour Packages | Machu Picchu Vacation Packages | Machu Picchu Deals | Peru Honeymoon Travel Packages');
         OpenGraph::setUrl('https://gotoperu.com/packages');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
@@ -159,13 +165,13 @@ class HomeController extends Controller
         OpenGraph::addProperty('type', 'website');
 
         \Twitter::setType('summary');
-        \Twitter::setTitle('Travel Packages '.$duration.' days - Peru Travel Packages | Machu Picchu Tour Packages');
+        \Twitter::setTitle('Travel Packages '.$from.'-'.$to.' days - Peru Travel Packages | Machu Picchu Tour Packages');
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
 
 
-        return view('page.packages-durations',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'duration'=>$duration]);
+        return view('page.packages-durations',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'duration'=>$from.'-'.$to]);
     }
 
 

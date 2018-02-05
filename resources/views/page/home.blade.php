@@ -4,19 +4,17 @@
     <section class="header-video">
         <div id="title" class="text-white">
             <div class="container-fluid">
-                <div class="row justify-content-between">
-                    <div class="col-3 mt-2">
+                <div class="row align-items-center mt-2">
+                    <div class="col-3">
                         <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
                     </div>
-                    {{--<div class="col text-center">--}}
-                    {{--<i class="h4"></i>--}}
-                    {{--</div>--}}
-                    <div class="col-3 text-right pt-3 sticky-top">
+                    <div class="col">
+                    <i class="text-g-yellow">Top recommended Peru Travel Operator since 2009</i>
+                    </div>
+                    <div class="col-3 text-right sticky-top">
                         <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
                         <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
                         <!-- Button trigger modal -->
-
-
                     </div>
                 </div>
             </div>
@@ -69,11 +67,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mt-2">
-                            <div class="col text-white text-center">
-                                <h4 class="h5 font-weight-light text-g-yellow">Top recommended Peru Travel Company</h4>
-                            </div>
-                        </div>
+                        {{--<div class="row mt-2">--}}
+                            {{--<div class="col text-white text-center">--}}
+                                {{--<h4 class="h5 font-weight-light text-g-yellow">Top recommended Peru Travel Company</h4>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         <div class="row my-3 justify-content-center">
                             <p class="text-white h4 font-weight-light">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and qoute <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
                         </div>
@@ -91,12 +89,12 @@
 
     <nav class="nav nav-pills nav-fill nav-goto navbar-expand-lg d-none d-sm-flex sticky-top">
         {{--<a class="nav-item nav-link active" href="#">Active</a>--}}
-        <a class="nav-item nav-link text-light active" href="{{route('packages_path')}}">TOURS PACKAGES</a>
-        <a class="nav-item nav-link text-light" href="{{route('destinations_path')}}">DESTINATIONS</a>
-        <a class="nav-item nav-link text-light" href="{{route('about_path')}}">ABOUT US</a>
-        <a class="nav-item nav-link text-light" href="{{route('getting_path')}}">GETTING TO PERU</a>
-        <a class="nav-item nav-link text-light" href="{{route('testimonials_path')}}">TESTIMONIALS</a>
-        <a class="nav-item nav-link text-light bg-g-yellow rounded-0" href="#Inquire">INQUIRE</a>
+        <a class="nav-item nav-link text-light border-primary" href="{{route('packages_path')}}">TOURS PACKAGES</a>
+        <a class="nav-item nav-link text-light border-g-green" href="{{route('destinations_path')}}">DESTINATIONS</a>
+        <a class="nav-item nav-link text-light border-danger" href="{{route('about_path')}}">ABOUT US</a>
+        <a class="nav-item nav-link text-light border-success" href="{{route('getting_path')}}">GETTING TO PERU</a>
+        <a class="nav-item nav-link text-light border-g-yellow" href="{{route('testimonials_path')}}">TESTIMONIALS</a>
+        <a class="nav-item nav-link text-light bg-g-yellow border-g-dark" href="#Inquire">INQUIRE</a>
         {{--<a class="nav-item nav-link disabled" href="#">Disabled</a>--}}
     </nav>
 
@@ -484,7 +482,7 @@
                 <div class="col-4 mb-3 d-flex os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
                     <div class="card">
                         <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">1</span>
+                            <span class="mr-3 rounded-circle px-3 text-white h1 font-weight-light bg-info">1</span>
                             <div class="media-body">
                                 <h5 class="mt-0">We Care</h5>
                                 We promise to do the right thing all the time, every time, for our team, travelers, people and places we visit.
@@ -495,7 +493,7 @@
                 <div class="col-4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">2</span>
+                            <span class="mr-3 rounded-circle bg-g-green px-3 text-white h1 font-weight-light">2</span>
                             <div class="media-body">
                                 <h5 class="mt-0">We Are Accessible</h5>
                                 You will find GoToPeru offices in Lima, Arequipa, Cusco and satellite branches in Quito and La Paz.
@@ -506,7 +504,7 @@
                 <div class="col-4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">3</span>
+                            <span class="mr-3 rounded-circle bg-danger px-3 text-white h1 font-weight-light">3</span>
                             <div class="media-body">
                                 <h5 class="mt-0">We Provide The Best Team Of Experts</h5>
                                 Our expert locals make the difference. They come from all regions across Peru and bring with them unique information and a vast knowledge of main destinations.
@@ -517,7 +515,7 @@
                 <div class="col-4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">4</span>
+                            <span class="mr-3 rounded-circle bg-warning px-3 text-white h1 font-weight-light">4</span>
                             <div class="media-body">
                                 <h5 class="mt-0">We Are Internationally Recognized</h5>
                                 We are rated as a high quality Travel Operator on TripAdvisor with impeccable testimonials. We are proud members of Promperu, the National Tourism Board, fully licensed and authorized by the government.
@@ -539,7 +537,7 @@
                 <div class="col-4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">6</span>
+                            <span class="mr-3 rounded-circle bg-g-yellow px-3 text-white h1 font-weight-light">6</span>
                             <div class="media-body">
                                 <h5 class="mt-0">We Think Ahead…So You Don’t Have To</h5>
                                 We are aware that surprises, both good and bad, occur while traveling. We are always on top of it and ready to give reliable travel solutions to our customers.
@@ -550,7 +548,7 @@
                 <div class="col-4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">7</span>
+                            <span class="mr-3 rounded-circle bg-danger px-3 text-white h1 font-weight-light">7</span>
                             <div class="media-body">
                                 <h5 class="mt-0">We Turn Good Trips Into Unforgettable Adventures</h5>
                                 We help our travelers choose the perfect trip to the land of the Incas, providing them with the most authentic life-changing adventure possible. We go out of our way to ensure a travel experience unlike anything you’ve seen.
@@ -561,7 +559,7 @@
                 <div class="col-4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">8</span>
+                            <span class="mr-3 rounded-circle bg-success px-3 text-white h1 font-weight-light">8</span>
                             <div class="media-body">
                                 <h5 class="mt-0">We Aren’t Afraid To Push Our Boundaries</h5>
                                 We offer alternative extensions to the main South American destinations in Ecuador, Bolivia, Chile, Argentina, Brasil, Uruguay and Columbia. In December, 2015 we will be opening a physical travel office in the USA.
@@ -572,13 +570,40 @@
                 <div class="col-4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">9</span>
+                            <span class="mr-3 rounded-circle bg-secondary px-3 text-white h1 font-weight-light">9</span>
                             <div class="media-body">
                                 <h5 class="mt-0">We Are Trustworthy</h5>
                                 We have glowing testimonials on our website and other acclaimed travel websites. We have set a standard of excellence for our customers by giving them the best Peruvian resources for a memorable journey.
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="container-fluid">
+            <div class="row pt-5 pb-2">
+                <div class="col">
+                    <h1 class="text-secondary h4"><strong>HOTELS</strong></h1>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
+                    {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="container-fluid">
+            <div class="row">
+                <img src="{{asset('images/banner-hotel.jpg')}}" alt="" class="img-fluid">
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <p class="pt-2 lead">From budget accommodations to the most luxury hotels that are a destination itself, we are partners with practically every top quality hotel at every category ( 2 stars. 3 stars, 4 stars, 5 stars ) plus our volume let us offer you great Vacation packages prices as we translate our volume savings to you.</p>
+                    <a href="{{route('hotels_path')}}" class="btn btn-primary btn-lg">Hotels</a>
                 </div>
             </div>
         </div>
@@ -675,6 +700,35 @@
                         <hr>
                         <p class="text-primary"><i>Chaullacota Locates at 15,000 feed (4500 mts) 2 hours Northwest of cusco</i></p>
                         <p class="text-justify h5 font-weight-light">At GOTOPERU we are committed to doing business in a way that actually give back to our communities specially the one located in remote places. Our planning and execution of one of our trips involves a long supply chain: from local guides and operators to transportation providers to hotels and restaurants, we interact with a lot of different organizations on the ground, but we also know that some communities specially located on top of the Andes at 15,000+feet that due to the difficult access, dont receive the assistance they deserve, is for that reason that we organize periodically trips to this far far away communities to bring them specially sweaters and toys for children.</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <img src="{{asset('images/social/niños.jpg')}}" alt="" class="img-fluid pl-4" data-toggle="modal" data-target="#social-1">
+                            <!-- Modal -->
+                            <div class="modal fade" id="social-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body p-0">
+                                            <img src="{{asset('images/social/niños.jpg')}}" alt="" class="img-fluid rounded">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="{{asset('images/social/social.jpg')}}" alt="" class="img-fluid pr-4" data-toggle="modal" data-target="#social-2">
+                            <!-- Modal -->
+                            <div class="modal fade" id="social-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body p-0">
+                                            <img src="{{asset('images/social/social.jpg')}}" alt="" class="img-fluid rounded">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -845,41 +899,42 @@
         </div>
     </section>
 
-    <section class="bg-white">
-        <div class="container-fluid">
-            <div class="row py-5 ">
-                <div class="col-6">
-                    <div class="row">
-                        <div class="col-3">
-                            <img src="{{asset('images/icons/contact.png')}}" alt="" class="img-fluid img-circle">
-                        </div>
-                        <div class="col">
-                            <h4>CONTACT</h4>
-                            <p>Chat with us, give us a call (813)600-3042, send us an e-mail or fill out our online form. Share with us your travel preferences! If you already have an outline, an idea, any questions… we will be more than happy to assist your needs.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <img src="{{asset('images/icons/design.png')}}" alt="" class="img-fluid img-circle">
-                        </div>
-                        <div class="col">
-                            <h4>DESIGN</h4>
-                            <p>We will craft out a first travel proposal according to the outline or idea that you shared with us. From then on we will customize it until you are satisfied with the planning! We will then send you a day by day itinerary and leave the rest to you!</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <img src="{{asset('images/icons/vacations.png')}}" alt="" class="img-fluid img-circle">
-                        </div>
-                        <div class="col">
-                            <h4>VACATION</h4>
-                            <p>Be ready for an unforgettable vacation to the land of the Incas, with promptly transfers at every point (airports, hotels, buses,trains) with knowledgable local Guides on each destination plus the best hotel locations and perks...GOTOPERU team will be always with you</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    {{--<section class="bg-white">--}}
+        {{--<div class="container-fluid">--}}
+            {{--<div class="row py-5 ">--}}
+                {{--<div class="col-6">--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="col-3">--}}
+                            {{--<img src="{{asset('images/icons/contact.png')}}" alt="" class="img-fluid img-circle">--}}
+                        {{--</div>--}}
+                        {{--<div class="col">--}}
+                            {{--<h4>CONTACT</h4>--}}
+                            {{--<p>Chat with us, give us a call (813)600-3042, send us an e-mail or fill out our online form. Share with us your travel preferences! If you already have an outline, an idea, any questions… we will be more than happy to assist your needs.</p>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="col-3">--}}
+                            {{--<img src="{{asset('images/icons/design.png')}}" alt="" class="img-fluid img-circle">--}}
+                        {{--</div>--}}
+                        {{--<div class="col">--}}
+                            {{--<h4>DESIGN</h4>--}}
+                            {{--<p>We will craft out a first travel proposal according to the outline or idea that you shared with us. From then on we will customize it until you are satisfied with the planning! We will then send you a day by day itinerary and leave the rest to you!</p>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="col-3">--}}
+                            {{--<img src="{{asset('images/icons/vacations.png')}}" alt="" class="img-fluid img-circle">--}}
+                        {{--</div>--}}
+                        {{--<div class="col">--}}
+                            {{--<h4>VACATION</h4>--}}
+                            {{--<p>Be ready for an unforgettable vacation to the land of the Incas, with promptly transfers at every point (airports, hotels, buses,trains) with knowledgable local Guides on each destination plus the best hotel locations and perks...GOTOPERU team will be always with you</p>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
+
     <section class="bg-light py-5" id="Inquire">
         <div class="container-fluid">
             <div class="row py-5 justify-content-center">
@@ -1256,33 +1311,6 @@
                 dateFormat: 'yy-mm-dd',
                 changeMonth: true,
                 changeYear: true
-            });
-
-
-
-            $(document).ready(function () {
-                $(window).on('load scroll', function () {
-                    var scrolled = $(this).scrollTop();
-                    $('#title').css({
-                        'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
-                        'opacity': 1 - scrolled / 400 // fade out at 400px from top
-                    });
-                    $('#hero-vid').css('transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)'); // parallax (25% scroll rate)
-                });
-
-                // video controls
-                $('#state').on('click', function () {
-                    var video = $('#hero-vid').get(0);
-                    var icons = $('#state > span');
-                    $('#overlay').toggleClass('fade');
-                    if (video.paused) {
-                        video.play();
-                        icons.removeClass('fa-play').addClass('fa-pause');
-                    } else {
-                        video.pause();
-                        icons.removeClass('fa-pause').addClass('fa-play');
-                    }
-                });
             });
 
         </script>

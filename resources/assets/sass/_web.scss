@@ -321,6 +321,9 @@ header{
   transition:background-color 300ms ease;
   width:100%;
 }
+.overlay-img{
+  background-color:rgba(0,0,0,.2) !important;
+}
 
 //.fade { background-color:rgba(0,0,0,.85) !important; }
 
@@ -400,7 +403,14 @@ header{
 }
 .nav-goto a{
   padding: 2vh 0;
+  border-bottom: 4px solid #00b3ee;
+  border-radius: 0 !important;
 }
+//.nav-goto a.border-g-{
+//  padding: 2vh 0;
+//  border-bottom: 4px solid #00b3ee;
+//  border-radius: 0 !important;
+//}
 .nav-goto a.active{
   background: transparent !important;
   border-bottom: 4px solid #00b3ee;
