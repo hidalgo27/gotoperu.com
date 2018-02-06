@@ -83,7 +83,7 @@
         </div>
     </section>
 
-    <section class="py-5 bg-white">
+    <section class="py-4 bg-white">
         <div class="container-fluid">
             <div class="row">
                 {{--<div class="col-3 d-none d-lg-block">--}}
@@ -140,15 +140,12 @@
                             {{--<a href="{{route('packages_list_path')}}" class="text-secondary" data-toggle="tooltip" data-placement="top" title="View as list"><i class="fa fa-th-list"></i></a>--}}
                         {{--</li>--}}
                     {{--</ul>--}}
-                        <div class="row">
-                            <div class="col">
-                                @foreach($destinos as $destino)
-                                    <a href=""><img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', $destino->nombre).'')}}.jpg" alt="" width="100" height="100"></a>
-                                    {{$destino->nombre}}
-                                @endforeach
-                            </div>
-                        </div>
-                        <div class="row">
+                    <div class="sticky-top py-2 text-center bg-white">
+                        @foreach($destinos->where('pais',$pais)->sortBy('nombre') as $destino)
+                            <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours"><img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', $destino->nombre).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}"></a>
+                        @endforeach
+                    </div>
+                    <div class="row pt-4">
                             @foreach($paquetes_de->unique('idpaquetes') as $paquetes_des)
                                 @if(isset($paquetes_des->destinos))
                                     @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
