@@ -28,7 +28,7 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/slider/package-1.jpg')}}" alt="" id="hero-vid">
+            <img src="{{asset('images/destinations/'.str_replace(' ','-', $ciudad).'.jpg')}}" alt="" id="hero-vid">
 
         </div>
         <div class="content-header">
@@ -43,7 +43,7 @@
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
 
-                                <a href="" class="text-white">
+                                <a href="#content" class="text-white">
                                     <i class="fa fa-4x fa-chevron-circle-down font-weight-light"></i>
                                 </a>
 
@@ -56,16 +56,7 @@
         </div>
     </section>
 
-    <nav class="nav nav-pills nav-fill nav-goto navbar-expand-lg d-none d-sm-flex">
-        {{--<a class="nav-item nav-link active" href="#">Active</a>--}}
-        <a class="nav-item nav-link text-light border-primary" href="{{route('packages_path')}}">TOURS PACKAGES</a>
-        <a class="nav-item nav-link text-light border-g-green" href="{{route('destinations_path')}}">DESTINATIONS</a>
-        <a class="nav-item nav-link text-light border-danger" href="{{route('about_path')}}">ABOUT US</a>
-        <a class="nav-item nav-link text-light border-success" href="{{route('getting_path')}}">GETTING TO PERU</a>
-        <a class="nav-item nav-link text-light border-g-yellow" href="{{route('testimonials_path')}}">TESTIMONIALS</a>
-        <a class="nav-item nav-link text-light bg-g-yellow border-g-dark" href="#Inquire">INQUIRE</a>
-        {{--<a class="nav-item nav-link disabled" href="#">Disabled</a>--}}
-    </nav>
+    @include('layouts.page.menu-2')
 
     <section class="bg-white">
         <div class="container-fluid">
@@ -125,7 +116,7 @@
                         @endforeach
                     </div>
 
-                        <div class="row pt-">
+                        <div class="row pt-4">
                             @foreach($paquetes_de as $paquetes_des)
                                 @if(isset($paquetes_des->destinos))
                                     @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
@@ -191,4 +182,5 @@
             </div>
         </div>
     </section>
+    @include('layouts.page.form-quote')
 @stop

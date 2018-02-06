@@ -1,36 +1,75 @@
 @extends('layouts.page.default')
 @section('content')
-    <section class="d-none d-sm-block">
-        <div class="jumbotron jumbotron-slider-1 rounded-0">
-            <div class="container">
-                <h2 class="text-white my-5 h1">Frequently Asked Questions</h2>
-                {{--<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>--}}
-                {{--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>--}}
+
+    <section class="header-video">
+        <div id="title" class="text-white">
+            <div class="container-fluid">
+                <div class="row align-items-center mt-2">
+                    <div class="col-3">
+                        <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
+                    </div>
+                    <div class="col">
+                        <i class="text-g-yellow">Top recommended Peru Travel Operator since 2009</i>
+                    </div>
+                    <div class="col-3 text-right sticky-top">
+                        <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
+                        <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
+                        <!-- Button trigger modal -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="overlay" class="overlay-img">
+            {{--<video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>--}}
+            {{--<source src="{{asset('media/video6.mp4')}}" />--}}
+            {{--<source src="{{asset('media/video6.m4v')}}" type="video/mp4" />--}}
+            {{--<source src="{{asset('media/video6.webm')}}" type="video/webm" />--}}
+            {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
+            {{--</video>--}}
+
+            <img src="{{asset('images/slider/package-1.jpg')}}" alt="" id="hero-vid">
+
+        </div>
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row content-header-row align-items-center">
+
+                    <div class="col">
+
+                        <div class="row my-3 justify-content-center">
+                            <p class="text-white display-4 font-weight-light">FREQUENTLY ASKED QUESTIONS</p>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-6 text-center">
+
+                                <a href="#content" class="text-white">
+                                    <i class="fa fa-4x fa-chevron-circle-down font-weight-light"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    @include('layouts.page.included')
+    @include('layouts.page.menu')
 
-    <section class="mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    {{--<h1 class="text-secondary h5"><strong>PERU TRAVEL PACKAGES</strong></h1>--}}
-                    <h1 class="text-g-green">Frequently Asked Questions</h1>
-                    <p class="lead">A trip to Peru is an exciting adventure! There are a number of common questions first-time travelers to Peru frequently ask.
-                    </p>
-
-                    {{--<div class="alert alert-g-yellow" role="alert">--}}
-                        {{--<h4>And even multi countries travel adventures involving Brasil, Ecuador , Argentina.</h4>--}}
-                    {{--</div>--}}
+    <section class="bg-white">
+        <div class="container-fluid">
+            <div class="row pt-5">
+                <div class="col">
+                    <h1 class="text-secondary h4"><strong>Frequently Asked Questions</strong></h1>
+                    <p class="lead">A trip to Peru is an exciting adventure! There are a number of common questions first-time travelers to Peru frequently ask.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="bg-light py-5">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-sm-6">
                     <ul class="list-unstyled card p-3">
@@ -54,8 +93,8 @@
         </div>
     </section>
 
-    <section class="my-5">
-        <div class="container">
+    <section class="bg-white py-5">
+        <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-8">
                     <div class="row">
@@ -157,4 +196,5 @@
             </div>
         </div>
     </section>
+    @include('layouts.page.form-quote')
 @stop

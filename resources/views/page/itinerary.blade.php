@@ -107,42 +107,8 @@
             </div>
         </div>
     </section>
-    <nav class="nav nav-pills nav-fill nav-goto navbar-expand-lg d-none d-sm-flex">
-        {{--<a class="nav-item nav-link active" href="#">Active</a>--}}
-        <a class="nav-item nav-link text-light active" href="">TOURS PACKAGES</a>
-        <a class="nav-item nav-link text-light" href="">DESTINATIONS</a>
-        <a class="nav-item nav-link text-light" href="">ABOUT US</a>
-        <a class="nav-item nav-link text-light" href="">GETTING TO PERU</a>
-        <a class="nav-item nav-link text-light" href="">TESTIMONIALS</a>
-        <a class="nav-item nav-link text-light bg-g-yellow rounded-0" href="#Inquire">INQUIRE</a>
-        {{--<a class="nav-item nav-link disabled" href="#">Disabled</a>--}}
-    </nav>
+    @include('layouts.page.menu-2')
     @include('layouts.page.included')
-
-
-    <section>
-        <div class="container">
-            <div class="row">
-
-            </div>
-        </div>
-    </section>
-
-    {{--<section class="py-5 bg-white">--}}
-        {{--<div class="container">--}}
-            {{--<div class="row">--}}
-                {{--<div class="col text-center">--}}
-                    {{--@foreach($paquete_iti as $paquetes)--}}
-                    {{--<h1 class="text-secondary h5"><strong>PERU TRAVEL PACKAGES</strong></h1>--}}
-                    {{--<h1 class="text-g-green text-uppercase"><span class="d-block h5 text-secondary">Travel Packages:</span>{{strtolower($paquetes->titulo)}}</h1>--}}
-                    {{--@endforeach--}}
-                    {{--<div class="alert alert-g-yellow" role="alert">--}}
-                        {{--<h4>And even multi countries travel adventures involving Brasil, Ecuador , Argentina.</h4>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</section>--}}
 
     <section class="bg-white">
         <div class="container-fluid">

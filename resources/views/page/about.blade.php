@@ -1,37 +1,84 @@
 @extends('layouts.page.default')
 @section('content')
-    <section class="d-none d-lg-block">
-        <div class="jumbotron jumbotron-slider-1 rounded-0">
-            <div class="container">
-                <h2 class="text-white my-5 h1">GotoPeru Team</h2>
-                {{--<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>--}}
-                {{--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>--}}
+
+
+    <section class="header-video">
+        <div id="title" class="text-white">
+            <div class="container-fluid">
+                <div class="row align-items-center mt-2">
+                    <div class="col-3">
+                        <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
+                    </div>
+                    <div class="col">
+                        <i class="text-g-yellow">Top recommended Peru Travel Operator since 2009</i>
+                    </div>
+                    <div class="col-3 text-right sticky-top">
+                        <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
+                        <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
+                        <!-- Button trigger modal -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="overlay" class="overlay-img">
+            {{--<video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>--}}
+            {{--<source src="{{asset('media/video6.mp4')}}" />--}}
+            {{--<source src="{{asset('media/video6.m4v')}}" type="video/mp4" />--}}
+            {{--<source src="{{asset('media/video6.webm')}}" type="video/webm" />--}}
+            {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
+            {{--</video>--}}
+
+            <img src="{{asset('images/slider/package-1.jpg')}}" alt="" id="hero-vid">
+
+        </div>
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row content-header-row align-items-center">
+
+                    <div class="col">
+
+                        <div class="row my-3 justify-content-center">
+                            <p class="text-white display-4 font-weight-light">GOTOPERU TEAM</p>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-6 text-center">
+
+                                <a href="#content" class="text-white">
+                                    <i class="fa fa-4x fa-chevron-circle-down font-weight-light"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    @include('layouts.page.included')
+    @include('layouts.page.menu')
 
-    <section class="my-5">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    {{--<h1 class="text-secondary h5"><strong>PERU TRAVEL PACKAGES</strong></h1>--}}
-                    <h1 class="text-g-green">Peru Travel Featured Packages</h1>
+    <section class="bg-white">
+        <div class="container-fluid">
+            <div class="row pt-5">
+                <div class="col">
+                    <h1 class="text-secondary h4"><strong>PERU TRAVEL FEATURED PACKAGES</strong></h1>
                     <p class="lead">GotoPeru travel agency was founded to fulfill a personal dream: “Provide first class travel experience for the international community while generating job opportunities locally”. It is extremely gratifying to employ and reward individuals who extend effort, enthusiasm and commitment to sharing the best of Peru and South America with the rest of the world.</p>
                     <p class="lead">GotoPeru has become a family for all of us. The best thing about working in GotoPeru is that it requires me to be permanently connected to the world of art, culture, archaeology, geography, wildlife conservation, and cuisine. For this reason, it helps me to understand more of the travel world and formulate new methods that ensure our customers’ memorable travel experience. It is also enriching to interact with different yet all amazing people from all over the globe daily as it teaches me more of their culture.</p>
-
-                    <div class="alert alert-g-yellow" role="alert">
+                    <div class="alert alert-g-yellow text-center m-0" role="alert">
                         <h4>10 Reasons To Let Our Guides Take You On An Unforgettable Adventure!</h4>
                     </div>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
+                    {{--<p class="h4 font-weight-light">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>Customized Travel Packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>Machu Picchu</strong> and the rest of our  homeland… Peru!</p>--}}
                 </div>
             </div>
         </div>
     </section>
 
 
-    <section class="my-5">
-        <div class="container">
+    <section class="bg-white py-5">
+        <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col col-sm-8">
 
@@ -178,7 +225,7 @@
     {{--</section>--}}
 
     <section class="bg-light py-5">
-        <div class="container">
+        <div class="container-fluid">
 
             <div class="row pb-5">
                 <div class="col text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
@@ -268,8 +315,8 @@
         </div>
     </section>
 
-    <section class="my-5">
-        <div class="container">
+    <section class="bg-white py-5">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-md-12 col-lg-3">
                     <h2 class="display-4 font-weight-bold">Because we care</h2>
@@ -301,8 +348,8 @@
         </div>
     </section>
     
-    <section class="mt-5 py-5 bg-light">
-        <div class="container">
+    <section class="py-5 bg-light">
+        <div class="container-fluid">
             <div class="row pb-5">
                 <div class="col text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                     <h3>GOTOPERU PROMISES</h3>
@@ -322,4 +369,7 @@
             </div>
         </div>
     </section>
+
+    @include('layouts.page.form-quote')
+
 @stop

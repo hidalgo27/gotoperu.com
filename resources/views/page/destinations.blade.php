@@ -1,35 +1,82 @@
 @extends('layouts.page.default')
 @section('content')
-    <section class="d-none d-lg-block">
-        <div class="jumbotron jumbotron-slider-1 rounded-0">
-            <div class="container">
-                <h2 class="text-white my-5 h1">South America Travel Destinations</h2>
-                {{--<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>--}}
-                {{--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>--}}
+
+
+    <section class="header-video">
+        <div id="title" class="text-white">
+            <div class="container-fluid">
+                <div class="row align-items-center mt-2">
+                    <div class="col-3">
+                        <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
+                    </div>
+                    <div class="col">
+                        <i class="text-g-yellow">Top recommended Peru Travel Operator since 2009</i>
+                    </div>
+                    <div class="col-3 text-right sticky-top">
+                        <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
+                        <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
+                        <!-- Button trigger modal -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="overlay" class="overlay-img">
+            {{--<video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>--}}
+            {{--<source src="{{asset('media/video6.mp4')}}" />--}}
+            {{--<source src="{{asset('media/video6.m4v')}}" type="video/mp4" />--}}
+            {{--<source src="{{asset('media/video6.webm')}}" type="video/webm" />--}}
+            {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
+            {{--</video>--}}
+
+            <img src="{{asset('images/destinations/puno.jpg')}}" alt="" id="hero-vid">
+
+        </div>
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row content-header-row align-items-center">
+
+                    <div class="col">
+
+                        <div class="row my-3 justify-content-center">
+                            <p class="text-white display-4 font-weight-light">South America Travel Destinations</p>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-6 text-center">
+
+                                <a href="#content" class="text-white">
+                                    <i class="fa fa-4x fa-chevron-circle-down font-weight-light"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    @include('layouts.page.included')
+    @include('layouts.page.menu')
 
-    <section class="my-5">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    {{--<h1 class="text-secondary h5"><strong>PERU TRAVEL PACKAGES</strong></h1>--}}
-                    <h1 class="text-g-green">South America Travel Destinations</h1>
+    <section class="bg-white">
+        <div class="container-fluid">
+            <div class="row pt-5">
+                <div class="col">
+                    <h1 class="text-secondary h4"><strong>SOUTH AMERICA TRAVEL DESTINATIONS</strong></h1>
                     <p class="lead">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>
-
-                    <div class="alert alert-g-yellow" role="alert">
+                    <div class="alert alert-g-yellow text-center m-0" role="alert">
                         <h4>We will work around your schedule and your travel interests to build together the most unique travel plans</h4>
                     </div>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
+                    {{--<p class="h4 font-weight-light">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>Customized Travel Packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>Machu Picchu</strong> and the rest of our  homeland… Peru!</p>--}}
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="my-5">
-        <div class="container">
+    <section class="bg-white py-5">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-lg-6 mb-4">
                     <div class="row">
@@ -37,7 +84,7 @@
                             <img src="{{asset('images/maps/peru.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">
                         </div>
                         <div class="col">
-                            <h2 class="h2 font-weight-bold font-pompiere"><a href="{{route('destinations_country_path', 'peru-travel')}}" class="text-g-dark">Peru Destinations</a></h2>
+                            <h2 class="h2 font-weight-bold"><a href="{{route('destinations_country_path', 'peru-travel')}}" class="text-secondary">Peru Destinations</a></h2>
                             <p class="text-justify">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>
                         </div>
                     </div>
@@ -48,7 +95,7 @@
                             <img src="{{asset('images/maps/ecuador.jpg')}}" alt="ecuador" class="w-100 rounded rounded-circle">
                         </div>
                         <div class="col">
-                            <h2 class="h2 font-weight-bold font-pompiere"><a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="text-g-dark">Ecuador Destinations</a></h2>
+                            <h2 class="h2 font-weight-bold"><a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="text-secondary">Ecuador Destinations</a></h2>
                             <p class="text-justify">This amazing country is one of the most bio-diverse countries in the world, its many destinations offer visitors a range of unique beautiful landscapes to explore from the Amazon, Andes, Coast warm beaches and the world famous Galapagos Islands ecological wonder; plus rich history and Culture specially at Colonial Quito City.</p>
                         </div>
                     </div>
@@ -59,7 +106,7 @@
                             <img src="{{asset('images/maps/bolivia.jpg')}}" alt="bolivia" class="w-100 rounded rounded-circle">
                         </div>
                         <div class="col">
-                            <h2 class="h2 font-weight-bold font-pompiere"><a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="text-g-dark">Bolivia Destinations</a></h2>
+                            <h2 class="h2 font-weight-bold"><a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="text-secondary">Bolivia Destinations</a></h2>
                             <p class="text-justify">Bolivia is s country very diverse , stretching from the majestic icebound peaks and bleak high-altitude deserts of the Andes mountains to the virgin rainforests and vast great savannahs of the Amazon , including the lake titicaca side that include the Tiawanaku templo also stark otherworldly salt pans for instance Uyuni, and ancient Inca trails.</p>
                         </div>
                     </div>
@@ -70,7 +117,7 @@
                             <img src="{{asset('images/maps/brasil.jpg')}}" alt="brasil" class="w-100 rounded rounded-circle">
                         </div>
                         <div class="col">
-                            <h2 class="h2 font-weight-bold font-pompiere"><a href="{{route('destinations_country_path', 'brasil-travel')}}" class="text-g-dark">Brasil Destinations</a></h2>
+                            <h2 class="h2 font-weight-bold"><a href="{{route('destinations_country_path', 'brasil-travel')}}" class="text-secondary">Brasil Destinations</a></h2>
                             <p class="text-justify">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>
                         </div>
                     </div>
@@ -79,15 +126,20 @@
         </div>
     </section>
 
-    <section class="my-5">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
-                    <h4>PERU TRAVEL USEFUL INFORMATION</h4>
-                    <!-- <div class="sec-title-div-4"></div> -->
+
+    <section class="bg-white">
+        <div class="container-fluid">
+            <div class="row pt-5">
+                <div class="col">
+                    <h1 class="text-secondary h4"><strong>PERU TRAVEL USEFUL INFORMATION</strong></h1>
                 </div>
             </div>
+        </div>
+    </section>
 
+
+    <section class="bg-white py-5">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col">
                     <div id="cusco">
@@ -987,4 +1039,6 @@
             </div>
         </div>
     </section>
+
+    @include('layouts.page.form-quote')
 @stop

@@ -87,16 +87,7 @@
         </div>
     </section>
 
-    <nav class="nav nav-pills nav-fill nav-goto navbar-expand-lg d-none d-sm-flex sticky-top">
-        {{--<a class="nav-item nav-link active" href="#">Active</a>--}}
-        <a class="nav-item nav-link text-light border-primary" href="{{route('packages_path')}}">TOURS PACKAGES</a>
-        <a class="nav-item nav-link text-light border-g-green" href="{{route('destinations_path')}}">DESTINATIONS</a>
-        <a class="nav-item nav-link text-light border-danger" href="{{route('about_path')}}">ABOUT US</a>
-        <a class="nav-item nav-link text-light border-success" href="{{route('getting_path')}}">GETTING TO PERU</a>
-        <a class="nav-item nav-link text-light border-g-yellow" href="{{route('testimonials_path')}}">TESTIMONIALS</a>
-        <a class="nav-item nav-link text-light bg-g-yellow border-g-dark" href="#Inquire">INQUIRE</a>
-        {{--<a class="nav-item nav-link disabled" href="#">Disabled</a>--}}
-    </nav>
+    @include('layouts.page.menu')
 
     <section class="bg-light">
         <div class="container-fluid">
@@ -111,72 +102,10 @@
         </div>
     </section>
 
-
-    <!-- Modal -->
-    <div class="modal right  fade" id="modal-menu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                {{--<div class="modal-header">--}}
-                    {{--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
-                {{--</div>--}}
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <div class="modal-body">
-                    <img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="img-fluid">
-                    <div class="row mt-5">
-                        <div class="col">
-                            <ul class="list-unstyled">
-                                <li><a href="{{route('packages_path')}}" class="text-secondary h5"><strong>Travel Packages</strong></a></li>
-                                <li><a href="#" class="text-secondary h5 popover-focus" data-toggle="popover" data-placement="left" title="<h4 class='text-secondary'>Destinations</h4>" data-content="
-                                <ul class='list-unstyled'>
-                                    <li><a href='{{route('destinations_country_path', 'peru-travel')}}' class='text-secondary h5'>Peru</a></li>
-                                    <li><a href='{{route('destinations_country_path', 'ecuador-travel')}}' class='text-secondary h5'>Ecuador</a></li>
-                                    <li><a href='{{route('destinations_country_path', 'bolivia-travel')}}' class='text-secondary h5'>Bolivia</a></li>
-                                    <li><a href='{{route('destinations_country_path', 'brasil-travel')}}' class='text-secondary h5'>Brazil</a></li>
-                                </ul>
-                                "><strong>Destinations</strong></a></li>
-                                <li><a href="" class="text-secondary h5"><strong>Travel Deals</strong></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row mt-4">
-                        <div class="col">
-                            <ul class="list-unstyled">
-                                <li><a href="" class="text-secondary h5"><strong>Travel Agents</strong></a></li>
-                                <li><a href="" class="text-secondary h5"><strong>Our Blog</strong></a></li>
-                                <li><a href="" class="text-secondary h5"><strong>Hotels</strong></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row mt-4">
-                        <div class="col">
-                            <ul class="list-unstyled">
-                                <li><a href="" class="text-primary h5"><strong>Sign In <i class="fa fa-sign-in"></i></strong></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row mt-4">
-                        <div class="col">
-                            <a href="" class="btn btn-primary">Chat Facebook</a>
-                            <a href="" class="btn btn-success">Chat Twitter</a>
-                        </div>
-                    </div>
-                </div>
-                {{--<div class="modal-footer">--}}
-                    {{--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
-                    {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
-                {{--</div>--}}
-            </div>
-        </div>
-    </div>
     <section class="bg-light">
         <div class="container-fluid">
             <div class="row">
-                @foreach($paquetes->take(6) as $paquete)
+                @foreach($paquetes->where('estado', 1) as $paquete)
                     <div class="col-4 mb-3">
                         <div class="card mb-3">
                             <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
@@ -326,7 +255,7 @@
                                                     @foreach($destinos->where('pais', 'peru')->sortBy('nombre')->take(4) as $destino)
                                                     <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
                                                         <div class="media">
-                                                            <img class="align-self-center mr-3 rounded-circle" src="{{asset('images/packages/AV700.jpg')}}" width="70" height="70" alt="Generic placeholder image">
+                                                            <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
                                                             <div class="media-body">
                                                                 <h5 class="mt-0">{{ucwords(strtolower($destino->nombre))}}</h5>
                                                                 <p>{{ucwords(strtolower($destino->pais))}}</p>
@@ -361,7 +290,7 @@
                                                     @foreach($destinos->where('pais', 'ecuador')->sortBy('nombre')->take(4) as $destino)
                                                         <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
                                                             <div class="media">
-                                                                <img class="align-self-center mr-3 rounded-circle" src="{{asset('images/packages/AV700.jpg')}}" width="70" height="70" alt="Generic placeholder image">
+                                                                <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
                                                                 <div class="media-body">
                                                                     <h5 class="mt-0">{{ucwords(strtolower($destino->nombre))}}</h5>
                                                                     <p>{{ucwords(strtolower($destino->pais))}}</p>
@@ -397,7 +326,7 @@
                                                     @foreach($destinos->where('pais', 'bolivia')->sortBy('nombre')->take(4) as $destino)
                                                         <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
                                                             <div class="media">
-                                                                <img class="align-self-center mr-3 rounded-circle" src="{{asset('images/packages/AV700.jpg')}}" width="70" height="70" alt="Generic placeholder image">
+                                                                <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
                                                                 <div class="media-body">
                                                                     <h5 class="mt-0">{{ucwords(strtolower($destino->nombre))}}</h5>
                                                                     <p>{{ucwords(strtolower($destino->pais))}}</p>
@@ -432,7 +361,7 @@
                                                     @foreach($destinos->where('pais', 'brasil')->sortBy('nombre')->take(4) as $destino)
                                                         <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
                                                             <div class="media">
-                                                                <img class="align-self-center mr-3 rounded-circle" src="{{asset('images/packages/AV700.jpg')}}" width="70" height="70" alt="Generic placeholder image">
+                                                                <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
                                                                 <div class="media-body">
                                                                     <h5 class="mt-0">{{ucwords(strtolower($destino->nombre))}}</h5>
                                                                     <p>{{ucwords(strtolower($destino->pais))}}</p>
@@ -852,368 +781,9 @@
         {{--</div>--}}
     {{--</section>--}}
 
-    <section>
-        <div class="jumbotron jumbotron-divider-1 rounded-0 m-0">
-            <div class="container">
-                <div class="row justify-content-center no-gutters">
-                    <div class="col-9 text-white text-center rounded">
-                        <div class="row">
-                            <div class="col">
-                                <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="w-100">
-                                <small>Assistances</small>
-                            </div>
-                            <div class="col">
-                                <img src="{{asset('images/icons/include/breakfast.png')}}" alt="breakfast" class="w-100">
-                                <small>Breakfast</small>
-                            </div>
-                            <div class="col">
-                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="entrances" class="w-100">
-                                <small>Entrances</small>
-                            </div>
-                            <div class="col">
-                                <img src="{{asset('images/icons/include/flight.png')}}" alt="flight" class="w-100">
-                                <small>Flight</small>
-                            </div>
-
-                            <div class="col">
-                                <img src="{{asset('images/icons/include/hotels.png')}}" alt="hotels" class="w-100">
-                                <small>Hotels</small>
-                            </div>
-                            <div class="col">
-                                <img src="{{asset('images/icons/include/tours.png')}}" alt="tours" class="w-100">
-                                <small>Tours</small>
-                            </div>
-                            <div class="col">
-                                <img src="{{asset('images/icons/include/trains.png')}}" alt="trains" class="w-100">
-                                <small>Trains</small>
-                            </div>
-                            <div class="col">
-                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="transfers" class="w-100">
-                                <small>Transfers</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    {{--<section class="bg-white">--}}
-        {{--<div class="container-fluid">--}}
-            {{--<div class="row py-5 ">--}}
-                {{--<div class="col-6">--}}
-                    {{--<div class="row">--}}
-                        {{--<div class="col-3">--}}
-                            {{--<img src="{{asset('images/icons/contact.png')}}" alt="" class="img-fluid img-circle">--}}
-                        {{--</div>--}}
-                        {{--<div class="col">--}}
-                            {{--<h4>CONTACT</h4>--}}
-                            {{--<p>Chat with us, give us a call (813)600-3042, send us an e-mail or fill out our online form. Share with us your travel preferences! If you already have an outline, an idea, any questions… we will be more than happy to assist your needs.</p>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="row">--}}
-                        {{--<div class="col-3">--}}
-                            {{--<img src="{{asset('images/icons/design.png')}}" alt="" class="img-fluid img-circle">--}}
-                        {{--</div>--}}
-                        {{--<div class="col">--}}
-                            {{--<h4>DESIGN</h4>--}}
-                            {{--<p>We will craft out a first travel proposal according to the outline or idea that you shared with us. From then on we will customize it until you are satisfied with the planning! We will then send you a day by day itinerary and leave the rest to you!</p>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="row">--}}
-                        {{--<div class="col-3">--}}
-                            {{--<img src="{{asset('images/icons/vacations.png')}}" alt="" class="img-fluid img-circle">--}}
-                        {{--</div>--}}
-                        {{--<div class="col">--}}
-                            {{--<h4>VACATION</h4>--}}
-                            {{--<p>Be ready for an unforgettable vacation to the land of the Incas, with promptly transfers at every point (airports, hotels, buses,trains) with knowledgable local Guides on each destination plus the best hotel locations and perks...GOTOPERU team will be always with you</p>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</section>--}}
-
-    <section class="bg-light py-5" id="Inquire">
-        <div class="container-fluid">
-            <div class="row py-5 justify-content-center">
-
-                <div class="col-6">
-                    <div class="row justify-content-center pb-2">
-                        <div class="col-10">
-                            <h2 class="text-secondary h4 text-center"><strong>Create Your Dream Adventure</strong></h2>
-                            <hr>
-                        </div>
-                    </div>
-                    <div id="rootwizard">
-                        <div class="navbar d-none">
-                            <div class="navbar-inner">
-                                <div class="container">
-                                    <ul>
-                                        <li><a href="#tab1" data-toggle="tab">First</a></li>
-                                        <li><a href="#tab2" data-toggle="tab">Second</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-content">
-                            <div class="tab-pane" id="tab1">
-                                <div class="row justify-content-center">
-                                    <div class="col-10">
-                                        <div class="row pb-2">
-                                            <div class="col">
-                                                <h2 class="text-secondary h5"><strong>HOTEL QUALITY</strong></h2>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6 col-sm">
-                                                <div class="form-circ btn-group-toggle" data-toggle="buttons">
-                                                    <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel economico">
-                                                        <i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>
-                                                        <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> Budget
-                                                        <div class="d-block text-center sec-stars">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 col-sm">
-                                                <div class="form-circ btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel Turista">
-                                                        <i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>
-                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Turista"> Best Value
-                                                    <div class="d-block text-center sec-stars">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                </label>
-                                                    </div>
-                                            </div>
-                                            <div class="col-6 col-sm">
-                                                <div class="form-circ btn-group-toggle" data-toggle="buttons">
-                                                    <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel Superior">
-                                                            <i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>
-                                                        <input type="checkbox" autocomplete="off" name="accommodation[]" value="Superior"> Superior
-                                                        <div class="d-block text-center sec-stars">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 col-sm">
-                                                <div class="form-circ btn-group-toggle" data-toggle="buttons">
-                                                    <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel Lujo">
-                                                            <i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>
-                                                        <input type="checkbox" autocomplete="off" name="accommodation[]" value="Luxo"> Luxury
-                                                        <div class="d-block text-center sec-stars">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row mt-4 pb-2">
-                                            <div class="col">
-                                                <h2 class="text-secondary h5"><strong>NUMBER OF TRAVELERS</strong></h2>
-                                            </div>
-                                        </div>
-
-                                        <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
-                                            <label class="btn col btn-outline-secondary number-hover">
-                                                <input type="radio" name="number" class="number" autocomplete="off" value="1" checked> 1 <i class="fa fa-male"></i>
-                                            </label>
-                                            <label class="btn col mx-2 btn-outline-secondary number-hover">
-                                                <input type="radio" name="number" class="number" autocomplete="off" value="2"> 2 <i class="fa fa-male"></i>
-                                            </label>
-                                            <label class="btn col btn-outline-secondary number-hover">
-                                                <input type="radio" name="number" class="number" autocomplete="off" value="3"> 3 <i class="fa fa-male"></i>
-                                            </label>
-                                            <label class="btn col mx-2 btn-outline-secondary number-hover">
-                                                <input type="radio" name="number" class="number" autocomplete="off" value="4"> 4 <i class="fa fa-male"></i>
-                                            </label>
-                                            <label class="btn col btn-outline-secondary number-hover">
-                                                <input type="radio" name="number" class="number" autocomplete="off" value="5+"> 5+ <i class="fa fa-male"></i>
-                                            </label>
-                                            <label class="btn col ml-2 btn-outline-secondary number-hover">
-                                                <input type="radio" name="number" class="number" autocomplete="off" value="Undecided"><small>Undecided</small>
-                                            </label>
-                                        </div>
-
-                                        <div class="row mt-4 pb-2">
-                                            <div class="col">
-                                                <h2 class="text-secondary h5"><strong>TRIP LENGTH</strong></h2>
-                                            </div>
-                                        </div>
-
-                                        <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
-                                            <label class="btn col btn-outline-secondary number-hover">
-                                                <input type="radio" name="number" class="number" autocomplete="off" value="1" checked> 3-5 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
-                                            </label>
-                                            <label class="btn col mx-2 btn-outline-secondary number-hover">
-                                                <input type="radio" name="number" class="number" autocomplete="off" value="2"> 6-8 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
-                                            </label>
-                                            <label class="btn col btn-outline-secondary number-hover">
-                                                <input type="radio" name="number" class="number" autocomplete="off" value="3"> 9-11 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
-                                            </label>
-                                            <label class="btn col mx-2 btn-outline-secondary number-hover">
-                                                <input type="radio" name="number" class="number" autocomplete="off" value="4"> 12-15 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
-                                            </label>
-                                            <label class="btn col btn-outline-secondary number-hover">
-                                                <input type="radio" name="number" class="number" autocomplete="off" value="5+"> 16+ <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
-                                            </label>
-                                            <label class="btn col ml-2 btn-outline-secondary number-hover">
-                                                <input type="radio" name="number" class="number" autocomplete="off" value="Undecided"><small>Undecided</small>
-                                            </label>
-                                        </div>
-
-                                        <div class="row mt-4 pb-2">
-                                            <div class="col">
-                                                <h2 class="text-secondary h5"><strong>TRAVEL DATE <span class="text-primary">*</span></strong></h2>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="input-group input-group-lg">
-                                                    <input type="text" class="form-control" id="d_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab2">
-                                <div class="row justify-content-center">
-                                    <div class="col-10">
-                                        <div class="row pb-2">
-                                            <div class="col">
-                                                <h2 class="text-secondary h5"><strong>PHONE NUMBER</strong></h2>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="input-group input-group-lg">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone"></i></span>
-                                                    </div>
-                                                    <input type="tel" class="form-control" id="d_tel" placeholder="Phone number" aria-label="Phone" aria-describedby="basic-addon1">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row mt-4 pb-2">
-                                            <div class="col">
-                                                <h2 class="text-secondary h5"><strong>NAME <span class="text-primary">*</span></strong></h2>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="input-group input-group-lg">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                                    </div>
-                                                    <input type="text" class="form-control" id="d_name" placeholder="Full Name" aria-label="Full Name" aria-describedby="basic-addon1">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row mt-4 pb-2">
-                                            <div class="col">
-                                                <h2 class="text-secondary h5"><strong>EMAIL <span class="text-primary">*</span></strong></h2>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="input-group input-group-lg">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
-                                                    </div>
-                                                    <input type="email" class="form-control" id="d_email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row mt-4 pb-2">
-                                            <div class="col">
-                                                <h2 class="text-secondary h5"><strong>COMMENTS?</strong></h2>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="input-group input-group-lg">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fa fa-comment"></i></span>
-                                                    </div>
-                                                    <textarea class="form-control" id="d_comment" aria-label="With textarea" placeholder="How do you imagine a perfect trip to Peru, Special Requests, Questions, Comments"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row mt-3 justify-content-center">
-                                <div class="col-10">
-                                    <input type='button' class='btn btn-lg button-previous' name='previous' value='Previous' id="previus_tip" onclick="dnext(0)"/>
-                                    <input type='button' class='btn btn-lg btn-g-green button-next' name='next' value='Next' id="next_tip" onclick="dnext(1)"/>
-                                    <button type="submit" class="btn btn-lg btn-primary d-none" id="submit_tip">Submit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- /.row -->
-        </div>
-    </section>
+    @include('layouts.page.form-quote')
 
     @push('scripts')
-        <script>
-            $('#rootwizard').bootstrapWizard({'nextSelector': '.button-next', 'previousSelector': '.button-previous'});
-            function dnext(estado){
-                // alert(estado);
-                if(estado == 0){
-                    // $("#previus_tip").addClass('d-none');
-                    $("#next_tip").removeClass('d-none');
-                    $("#submit_tip").addClass('d-none');
-                }else{
-                    $("#next_tip").addClass('d-none');
-                    $("#submit_tip").removeClass('d-none');
-                }
-                // $('#de_alert').removeClass('d-none');
-            }
-
-            $('.popover-hover').popover({
-                trigger: 'hover'
-            });
-
-            $('.popover-focus').popover({
-                trigger: 'focus',
-                html: true
-            });
-
-
-
-            $('#d_date').datepicker({
-                dateFormat: 'yy-mm-dd',
-                changeMonth: true,
-                changeYear: true
-            });
-        </script>
         <script>
             //form
             function design(){

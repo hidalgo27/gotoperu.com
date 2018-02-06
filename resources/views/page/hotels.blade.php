@@ -35,50 +35,14 @@
                 <div class="row content-header-row align-items-center">
 
                     <div class="col">
-                        {{--<div class="row justify-content-center">--}}
-                            {{--<div class="col-4">--}}
-                                {{--<div class="row no-gutters">--}}
-                                    {{--<div class="col">--}}
-                                        {{--<img src="{{asset('images/icons/include/assistances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Assistances">--}}
-                                        {{--<span>Assistances</span>--}}
-                                    {{--</div>--}}
 
-                                    {{--<div class="col">--}}
-                                        {{--<img src="{{asset('images/icons/include/entrances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Entrances">--}}
-                                        {{--<span>Entrances</span>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="col">--}}
-                                        {{--<img src="{{asset('images/icons/include/transfers.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Transfers">--}}
-                                        {{--<span>Transfers</span>--}}
-                                    {{--</div>--}}
-
-                                    {{--<div class="col">--}}
-                                        {{--<img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">--}}
-                                        {{--<span>Hotels</span>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="col">--}}
-                                        {{--<img src="{{asset('images/icons/include/tours.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Tours">--}}
-                                        {{--<span>Tours</span>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="col">--}}
-                                        {{--<img src="{{asset('images/icons/include/trains.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Trains">--}}
-                                        {{--<span>Trains</span>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="row mt-2">--}}
-                        {{--<div class="col text-white text-center">--}}
-                        {{--<h4 class="h5 font-weight-light text-g-yellow">Top recommended Peru Travel Company</h4>--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
                         <div class="row my-3 justify-content-center">
                             <p class="text-white display-4 font-weight-light">HOTELS</p>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
 
-                                <a href="" class="text-white">
+                                <a href="#content" class="text-white">
                                     <i class="fa fa-4x fa-chevron-circle-down font-weight-light"></i>
                                 </a>
 
@@ -91,16 +55,7 @@
         </div>
     </section>
 
-    <nav class="nav nav-pills nav-fill nav-goto navbar-expand-lg d-none d-sm-flex sticky-top">
-        {{--<a class="nav-item nav-link active" href="#">Active</a>--}}
-        <a class="nav-item nav-link text-light border-primary" href="{{route('packages_path')}}">TOURS PACKAGES</a>
-        <a class="nav-item nav-link text-light border-g-green" href="{{route('destinations_path')}}">DESTINATIONS</a>
-        <a class="nav-item nav-link text-light border-danger" href="{{route('about_path')}}">ABOUT US</a>
-        <a class="nav-item nav-link text-light border-success" href="{{route('getting_path')}}">GETTING TO PERU</a>
-        <a class="nav-item nav-link text-light border-g-yellow" href="{{route('testimonials_path')}}">TESTIMONIALS</a>
-        <a class="nav-item nav-link text-light bg-g-yellow border-g-dark" href="#Inquire">INQUIRE</a>
-        {{--<a class="nav-item nav-link disabled" href="#">Disabled</a>--}}
-    </nav>
+    @include('layouts.page.menu')
 
     <section class="bg-white">
         <div class="container-fluid">
@@ -142,5 +97,5 @@
             @endforeach
         </div>
     </section>
-
+    @include('layouts.page.form-quote')
 @stop
