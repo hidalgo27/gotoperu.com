@@ -117,32 +117,29 @@
 
     <section class="bg-white">
         <div class="container-fluid">
+            @foreach($hoteles as $hotel)
             <div class="row pb-5">
-                <div class="col-4">
-                    <img src="https://www.peruforless.com/content-files/uploads/vi-marriott-hotel-lima.jpg" alt="" class="w-100">
+                <div class="col-3">
+                    <img src="{{$hotel->imagen}}" alt="" class="w-100 rounded">
                 </div>
                 <div class="col">
-                    <h3>JW Marriott Lima Hotel</h3>
-                    <i class="fa fa-star text-g-yellow"></i>
-                    <i class="fa fa-star text-g-yellow"></i>
-                    <i class="fa fa-star text-g-yellow"></i>
-                    <p class="pt-2"><i class="fa fa-map-marker-alt"></i> Avenida Malecon de la Reserva 615, Miraflores, Lima</p>
-                    <a href="" class="btn btn-outline-secondary">JW Marriott Lima Hotel</a>
+                    <h3>{{$hotel->nombre}}</h3>
+                    @for($i=0; $i < $hotel->estrellas; $i++)
+                        <i class="fa fa-star text-g-yellow"></i>
+                    @endfor
+                    <p class="pt-2"><i class="fa fa-map-marker-alt"></i> {{$hotel->direccion}}</p>
+                    <hr>
+                    @php $services = explode(',', $hotel->servicios); @endphp
+                    <p class="lead"><b>Services:</b>
+                    @foreach($services as $service)
+                        <i class="fa fa-check text-secondary"></i> {{$service}}
+                    @endforeach
+                        </p>
+                    <hr>
+                    <a href="{{$hotel->url}}" class="btn btn-outline-secondary" target="_blank">{{$hotel->nombre}}</a>
                 </div>
             </div>
-            <div class="row pb-5">
-                <div class="col-4">
-                    <img src="https://www.peruforless.com/content-files/uploads/vi-marriott-hotel-lima.jpg" alt="" class="w-100">
-                </div>
-                <div class="col">
-                    <h3>JW Marriott Lima Hotel</h3>
-                    <i class="fa fa-star text-g-yellow"></i>
-                    <i class="fa fa-star text-g-yellow"></i>
-                    <i class="fa fa-star text-g-yellow"></i>
-                    <p class="pt-2"><i class="fa fa-map-marker-alt"></i> Avenida Malecon de la Reserva 615, Miraflores, Lima</p>
-                    <a href="" class="btn btn-outline-secondary">JW Marriott Lima Hotel</a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
 

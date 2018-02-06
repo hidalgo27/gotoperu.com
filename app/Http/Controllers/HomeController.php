@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\TCategoria;
 use App\TDestino;
+use App\THotel;
+use App\THotelDestino;
 use App\TPaquete;
 use App\TPaqueteDestino;
 use App\TTestimonio;
@@ -50,7 +52,8 @@ class HomeController extends Controller
 
     public function hotels()
     {
-        return view('page.hotels');
+        $hoteles = THotel::all();
+        return view('page.hotels', ['hoteles'=>$hoteles]);
 
     }
 
@@ -217,6 +220,9 @@ class HomeController extends Controller
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         $paquete_iti = TPaquete::with('itinerario','paquetes_destinos', 'precio_paquetes')->where('titulo', $title)->get();
 
+        $hoteles = THotel::all();
+        $hoteles_destinos = THotelDestino::all();
+
 //        foreach ($paquete_iti as $paq_i) {
 //
 //            SEOMeta::setTitle($paq_i->s_title);
@@ -255,7 +261,7 @@ class HomeController extends Controller
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
-        return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete]);
+        return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos]);
 
     }
 

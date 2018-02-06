@@ -324,7 +324,7 @@
                                             <div class="col">
                                                 <div class="list-group position-relative">
                                                     @foreach($destinos->where('pais', 'peru')->sortBy('nombre')->take(4) as $destino)
-                                                    <a href="#" class="list-group-item list-group-item-action">
+                                                    <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
                                                         <div class="media">
                                                             <img class="align-self-center mr-3 rounded-circle" src="{{asset('images/packages/AV700.jpg')}}" width="70" height="70" alt="Generic placeholder image">
                                                             <div class="media-body">
@@ -359,7 +359,7 @@
                                             <div class="col">
                                                 <div class="list-group position-relative">
                                                     @foreach($destinos->where('pais', 'ecuador')->sortBy('nombre')->take(4) as $destino)
-                                                        <a href="#" class="list-group-item list-group-item-action">
+                                                        <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
                                                             <div class="media">
                                                                 <img class="align-self-center mr-3 rounded-circle" src="{{asset('images/packages/AV700.jpg')}}" width="70" height="70" alt="Generic placeholder image">
                                                                 <div class="media-body">
@@ -395,7 +395,7 @@
                                             <div class="col">
                                                 <div class="list-group position-relative">
                                                     @foreach($destinos->where('pais', 'bolivia')->sortBy('nombre')->take(4) as $destino)
-                                                        <a href="#" class="list-group-item list-group-item-action">
+                                                        <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
                                                             <div class="media">
                                                                 <img class="align-self-center mr-3 rounded-circle" src="{{asset('images/packages/AV700.jpg')}}" width="70" height="70" alt="Generic placeholder image">
                                                                 <div class="media-body">
@@ -430,7 +430,7 @@
                                             <div class="col">
                                                 <div class="list-group position-relative">
                                                     @foreach($destinos->where('pais', 'brasil')->sortBy('nombre')->take(4) as $destino)
-                                                        <a href="#" class="list-group-item list-group-item-action">
+                                                        <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
                                                             <div class="media">
                                                                 <img class="align-self-center mr-3 rounded-circle" src="{{asset('images/packages/AV700.jpg')}}" width="70" height="70" alt="Generic placeholder image">
                                                                 <div class="media-body">
@@ -598,7 +598,7 @@
     <section class="bg-white">
         <div class="container-fluid">
             <div class="row">
-                <img src="{{asset('images/banner-hotel.jpg')}}" alt="" class="img-fluid">
+                <img src="{{asset('images/banner-hotel.jpg')}}" alt="" class="w-100">
             </div>
             <div class="row">
                 <div class="col text-center">
@@ -704,13 +704,13 @@
 
                     <div class="row">
                         <div class="col">
-                            <img src="{{asset('images/social/niños.jpg')}}" alt="" class="img-fluid pl-4" data-toggle="modal" data-target="#social-1">
+                            <img src="{{asset('images/social/ninos.jpg')}}" alt="" class="img-fluid pl-4" data-toggle="modal" data-target="#social-1">
                             <!-- Modal -->
                             <div class="modal fade" id="social-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-body p-0">
-                                            <img src="{{asset('images/social/niños.jpg')}}" alt="" class="img-fluid rounded">
+                                            <img src="{{asset('images/social/ninos.jpg')}}" alt="" class="img-fluid rounded">
                                         </div>
                                     </div>
                                 </div>

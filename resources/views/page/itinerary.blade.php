@@ -216,9 +216,67 @@
                                 </div>
 
                                 <div id="Hotels" class="d-none d-sm-block pt-5">
-                                    <h3 class="text-secondary h4"><strong>Hotels</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at distinctio eos error minus, perspiciatis praesentium sint suscipit ullam voluptatum. Ab, aliquid architecto atque consequuntur expedita hic inventore non repudiandae!</p>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h3 class="text-secondary h4"><strong>Hotels</strong></h3>
+                                            {{--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at distinctio eos error minus, perspiciatis praesentium sint suscipit ullam voluptatum. Ab, aliquid architecto atque consequuntur expedita hic inventore non repudiandae!</p>--}}
+                                            <div class="alert alert-primary text-center mt-3" role="alert">|
+                                                @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
+                                                   <a href="#{{$paquete_destino->destinos->id}}-hotel" class="font-weight-bold">{{$paquete_destino->destinos->nombre}} HOTEL</a> |
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
+                                        <h5 class="text-g-yellow pt-4 m-0" id="{{$paquete_destino->destinos->id}}-hotel"><i class="fa fa-check"></i> {{$paquete_destino->destinos->nombre}} HOTEL</h5>
+                                        @foreach($hoteles_destinos->where('iddestinos', $paquete_destino->destinos->id) as $hoteles_destino)
+                                            <div class="row pt-3 pb-4">
+                                                <div class="col-3">
+                                                    <img src="{{$hoteles_destino->hotel->imagen}}" alt="" class="w-100 rounded">
+                                                </div>
+                                                <div class="col">
+                                                    <h3>{{$hoteles_destino->hotel->nombre}}</h3>
+                                                    @for($i=0; $i < $hoteles_destino->hotel->estrellas; $i++)
+                                                        <i class="fa fa-star text-g-yellow"></i>
+                                                    @endfor
+                                                    <p class="pt-2"><i class="fa fa-map-marker-alt"></i> {{$hoteles_destino->hotel->direccion}}</p>
+                                                    @php $services = explode(',', $hoteles_destino->hotel->servicios); @endphp
+                                                    <p class="lead"><b>Services:</b>
+                                                        @foreach($services as $service)
+                                                            <i class="fa fa-check text-secondary"></i> {{$service}}
+                                                        @endforeach
+                                                    </p>
+                                                    <a href="{{$hoteles_destino->hotel->url}}" class="btn btn-outline-secondary" target="_blank">{{$hoteles_destino->hotel->nombre}}</a>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        @endforeach
+                                    @endforeach
+                                    {{--@foreach($hoteles as $hotel)--}}
+                                        {{--<div class="row py-4">--}}
+                                            {{--<div class="col-3">--}}
+                                                {{--<img src="{{$hotel->imagen}}" alt="" class="w-100 rounded">--}}
+                                            {{--</div>--}}
+                                            {{--<div class="col">--}}
+                                                {{--<h3>{{$hotel->nombre}}</h3>--}}
+                                                {{--@for($i=0; $i < $hotel->estrellas; $i++)--}}
+                                                    {{--<i class="fa fa-star text-g-yellow"></i>--}}
+                                                {{--@endfor--}}
+                                                {{--<p class="pt-2"><i class="fa fa-map-marker-alt"></i> {{$hotel->direccion}}</p>--}}
+                                                {{--@php $services = explode(',', $hotel->servicios); @endphp--}}
+                                                {{--<p class="lead"><b>Services:</b>--}}
+                                                    {{--@foreach($services as $service)--}}
+                                                        {{--<i class="fa fa-check text-secondary"></i> {{$service}}--}}
+                                                    {{--@endforeach--}}
+                                                {{--</p>--}}
+                                                {{--<a href="{{$hotel->url}}" class="btn btn-outline-secondary" target="_blank">{{$hotel->nombre}}</a>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<hr>--}}
+                                    {{--@endforeach--}}
                                 </div>
+
+
 
 
                                 <div id="Included" class="pt-5">
