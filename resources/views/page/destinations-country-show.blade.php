@@ -121,11 +121,11 @@
                 <div class="col">
                     <div class="sticky-top py-2 text-center bg-white">
                         @foreach($destinos->where('pais',$pais)->sortBy('nombre') as $destino)
-                            <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours"><img src="{{asset('images/destination/destinations/'.str_replace(' ','-', $destino->nombre).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}"></a>
+                            <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours"><img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}"></a>
                         @endforeach
                     </div>
 
-                        <div class="row pt-4">
+                        <div class="row pt-">
                             @foreach($paquetes_de as $paquetes_des)
                                 @if(isset($paquetes_des->destinos))
                                     @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
