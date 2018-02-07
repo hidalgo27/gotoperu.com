@@ -98,11 +98,11 @@
                                                             <div class="col-3 p-3">
                                                                 <p class="m-0 text-white">{{$paquetes->duracion}} Days</p>
                                                             </div>
-                                                            <div class="col-3 bg-g-dark py-3 text-white text-center">
+                                                            <div class="col-4 bg-g-dark py-3 text-white text-center">
                                                                 @foreach($paquetes->precio_paquetes as $precio)
                                                                     @if($precio->estrellas == 2)
                                                                         @if($precio->precio_d > 0)
-                                                                            <p class="text-g-yellow font-weight-bold m-0"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
+                                                                            <p class="text-g-yellow font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
                                                                         @else
                                                                             <span class="text-danger">Inquire</span>
                                                                         @endif
@@ -114,7 +114,7 @@
                                                         {{--<small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small>--}}
                                                         {{--</span></p>--}}
                                                     </div>
-                                                    <div class="card-img-overlay-packages">
+                                                    <div class="card-img-overlay-packages bg-rgba-dark-1">
                                                         <h5 class="card-title text-white m-0">{{ucwords(strtolower($paquetes->titulo))}}</h5>
                                                         {{--<h2 class="card-title text-white m-0 h5"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>--}}
                                                         <small class="text-white font-weight-light">

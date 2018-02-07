@@ -105,7 +105,7 @@
     <section class="bg-light">
         <div class="container-fluid">
             <div class="row">
-                @foreach($paquetes->where('estado', 1) as $paquete)
+                @foreach($paquetes->where('estado', 0)->take(6) as $paquete)
                     <div class="col-4 mb-3">
                         <div class="card mb-3">
                             <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
@@ -116,11 +116,11 @@
                                         <div class="col-3 p-3">
                                             <p class="m-0 text-white">{{$paquete->duracion}} Days</p>
                                         </div>
-                                        <div class="col-3 bg-g-dark py-3 text-white text-center">
+                                        <div class="col-4 bg-g-dark py-3 text-white text-center">
                                             @foreach($paquete->precio_paquetes as $precio)
                                                 @if($precio->estrellas == 2)
                                                     @if($precio->precio_d > 0)
-                                                        <p class="text-g-yellow font-weight-bold m-0"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
+                                                        <p class="text-g-yellow font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
                                                     @else
                                                         <span class="text-danger">Inquire</span>
                                                     @endif
@@ -132,7 +132,7 @@
                                             {{--<small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small>--}}
                                         {{--</span></p>--}}
                                 </div>
-                                <div class="card-img-overlay-packages">
+                                <div class="card-img-overlay-packages bg-rgba-dark-1">
                                     <h5 class="card-title text-white m-0">{{ucwords(strtolower($paquete->titulo))}}</h5>
                                     {{--<h2 class="card-title text-white m-0 h5"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>--}}
                                     <small class="text-white font-weight-light">
@@ -396,7 +396,7 @@
         <div class="container-fluid">
             <div class="row pt-5 pb-2">
                 <div class="col">
-                    <h1 class="text-secondary h4"><strong>10 Reasons To Let Our Guides Take You On An Unforgettable Adventure!</strong></h1>
+                    <h1 class="text-secondary h4"><strong>9 Reasons To Let Our Guides Take You On An Unforgettable Adventure!</strong></h1>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
@@ -521,13 +521,21 @@
                     {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
                 </div>
             </div>
+            {{--<div class="row justify-content-center">--}}
+                {{--<div class="col-1">--}}
+                    {{--<img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
     </section>
 
     <section class="bg-white">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row position-relative">
                 <img src="{{asset('images/banner-hotel.jpg')}}" alt="" class="w-100">
+                <div class="card-img-overlay bg-rgba-dark-3">
+                    <p class="m-0 text-white h3 font-weight-light"><img src="{{asset('images/icons/include/hotels.png')}}" width="50" height="50" alt="" class="p-1" data-toggle="tooltip" data-placement="top" title="Hotels"> Hand-Selected  Collection of hotels</p>
+                </div>
             </div>
             <div class="row">
                 <div class="col text-center">
@@ -549,7 +557,7 @@
                     </div>
                     <div class="row">
                         <div class="col text-center">
-                            <i class="font-weight-bold text-secondary">Grupos de 6 a 14 pasajeros y/o paseos privados.</i>
+                            <i class="font-weight-bold text-secondary">Small Groups and Private tours.</i>
                         </div>
                     </div>
 
@@ -560,7 +568,7 @@
                     </div>
                     <div class="row mb-5">
                         <div class="col text-center">
-                            <i class="font-weight-bold text-secondary">Vivimos en el Peru, ofreciendo asistencia real las 24horas.</i>
+                            <i class="font-weight-bold text-secondary">We live here, trully a 24/7 Assistance.</i>
                         </div>
                     </div>
 
@@ -571,7 +579,7 @@
                     </div>
                     <div class="row">
                         <div class="col text-center">
-                            <i class="font-weight-bold text-secondary">Elija programas prearmados o personalize vuestras vacaciones.</i>
+                            <i class="font-weight-bold text-secondary">Book Now option or Customize a dream trip!.</i>
                         </div>
                     </div>
                 </div>
@@ -586,7 +594,7 @@
                     </div>
                     <div class="row">
                         <div class="col text-center">
-                            <i class="font-weight-bold text-secondary">Costos menores al ser una operadora local.</i>
+                            <i class="font-weight-bold text-secondary">Cutting the middlemen, headquarters at Peru.</i>
                         </div>
                     </div>
 
@@ -597,7 +605,7 @@
                     </div>
                     <div class="row mb-5">
                         <div class="col text-center">
-                            <i class="font-weight-bold text-secondary">Excelentes comentarios en Tripadvisor.</i>
+                            <i class="font-weight-bold text-secondary">We take pride of our tripadvisor reviews!.</i>
                         </div>
                     </div>
 
@@ -608,7 +616,7 @@
                     </div>
                     <div class="row">
                         <div class="col text-center">
-                            <i class="font-weight-bold text-secondary">Salidas Diarias para todos nuestros tours.</i>
+                            <i class="font-weight-bold text-secondary">We can adapt to any arrival and departure.</i>
                         </div>
                     </div>
                 </div>
@@ -624,7 +632,7 @@
                 </div>
                 <div class="col">
                     <div class="px-4">
-                        <h3 class="display-4 font-weight-light">Because we care</h3>
+                        <h3 class="display-4 font-weight-light">Because we care <i class="fa fa-heart text-danger"></i></h3>
                         <p class="">We give back to our communities</p>
                         <hr>
                         <p class="text-primary"><i>Chaullacota Locates at 15,000 feed (4500 mts) 2 hours Northwest of cusco</i></p>
