@@ -28,7 +28,7 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/slider/package-1.jpg')}}" alt="" id="hero-vid">
+            <img src="{{asset('images/about.jpg')}}" alt="" id="hero-vid">
 
         </div>
         <div class="content-header">
@@ -37,9 +37,9 @@
 
                     <div class="col">
 
-                        <div class="row my-3 justify-content-center">
-                            <p class="text-white display-4 font-weight-light">GOTOPERU TEAM</p>
-                        </div>
+                        {{--<div class="row my-3 justify-content-center">--}}
+                            {{--<p class="text-white display-4 font-weight-light">GOTOPERU TEAM</p>--}}
+                        {{--</div>--}}
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
 

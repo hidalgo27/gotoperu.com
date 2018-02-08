@@ -12,7 +12,7 @@
                         <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
                     </div>
                     <div class="col">
-                        <i class="text-g-yellow">Top recommended Peru Travel Operator since 2009</i>
+                        <i class="text-white">Top recommended Peru Travel Operator since 2009</i>
                     </div>
                     <div class="col-3 text-right sticky-top">
                         <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
@@ -30,7 +30,7 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/slider/package-1.jpg')}}" alt="" id="hero-vid">
+            <img src="{{asset('images/testimonials.jpg')}}" alt="" id="hero-vid">
 
         </div>
         <div class="content-header">
@@ -39,9 +39,9 @@
 
                     <div class="col">
 
-                        <div class="row my-3 justify-content-center">
-                            <p class="text-white display-4 font-weight-light">GOTOPERU REVIEWS AND TESTIMONIALS</p>
-                        </div>
+                        {{--<div class="row my-3 justify-content-center">--}}
+                            {{--<p class="text-white display-4 font-weight-light">GOTOPERU REVIEWS AND TESTIMONIALS</p>--}}
+                        {{--</div>--}}
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
 
@@ -75,16 +75,16 @@
     <section class="bg-white py-5">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col col-md-9 col-lg-6">
+                <div class="col col-md-9 col-lg-8">
                     @foreach($testimonials as $testimonial)
                     <div class="row mb-5">
                         <div class="col">
                             <p>
-                                <i class="fa fa-quote-left fa-2x float-left text-secondary pr-2"></i>
+                                <i class="fa fa-quote-left fa-2x float-left text-g-green pr-2"></i>
                                     {{$testimonial->contenido}}
-                                <i class="fa fa-quote-right fa-2x float-right text-secondary pl-2"></i>
+                                <i class="fa fa-quote-right fa-2x float-right text-g-green pl-2"></i>
                             </p>
-                            <i class="float-right">{{$testimonial->nombre}} {{$testimonial->ciudad}}</i>
+                            <i class="float-right text-g-yellow">{{$testimonial->nombre}} {{$testimonial->ciudad}}</i>
                         </div>
                     </div>
                     @endforeach

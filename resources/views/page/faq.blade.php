@@ -9,7 +9,7 @@
                         <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
                     </div>
                     <div class="col">
-                        <i class="text-g-yellow">Top recommended Peru Travel Operator since 2009</i>
+                        <i class="text-white">Top recommended Peru Travel Operator since 2009</i>
                     </div>
                     <div class="col-3 text-right sticky-top">
                         <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
@@ -27,7 +27,7 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/slider/package-1.jpg')}}" alt="" id="hero-vid">
+            <img src="{{asset('images/faq.jpg')}}" alt="" id="hero-vid">
 
         </div>
         <div class="content-header">

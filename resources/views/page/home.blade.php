@@ -241,9 +241,9 @@
                                         {{--<div class="row justify-content-center mt-5">--}}
                                             {{--<div class="col-6">--}}
                                                 <h2 class="text-45 font-weight-light">
-                                                    <a href="{{route('destinations_country_path', 'peru-travel')}}" class="text-g-dark">Peru Destinations</a>
+                                                    <a href="{{route('destinations_country_path', 'peru-travel')}}" class="text-g-dark"><img src="{{asset('images/icons/peru.png')}}" alt="peru flag" height="50" width="50" class="float-left" class="float-left"> Peru Destinations</a>
                                                 </h2>
-                                                <p class="text-justify text-22 font-weight-light">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>
+                                                <p class="text-justify lead font-weight-light">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>
 
                                             {{--</div>--}}
                                         {{--</div>--}}
@@ -278,9 +278,9 @@
                                     </div>
                                     <div class="col">
                                         <h2 class="text-45 font-weight-light">
-                                            <a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="text-g-dark">Ecuador Destinations</a>
+                                            <a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="text-g-dark"><img src="{{asset('images/icons/ecuador.png')}}" alt="ecuador flag" height="50" width="50" class="float-left"> Ecuador Destinations</a>
                                         </h2>
-                                        <p class="text-justify text-22 font-weight-light">This amazing country is one of the most bio-diverse countries in the world, its many destinations offer visitors a range of unique beautiful landscapes to explore from the Amazon, Andes, Coast warm beaches and the world famous Galapagos Islands ecological wonder; plus rich history and Culture specially at Colonial Quito City.</p>
+                                        <p class="text-justify lead font-weight-light">This amazing country is one of the most bio-diverse countries in the world, its many destinations offer visitors a range of unique beautiful landscapes to explore from the Amazon, Andes, Coast warm beaches and the world famous Galapagos Islands ecological wonder; plus rich history and Culture specially at Colonial Quito City.</p>
                                         {{--<a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Ecuador packages <i class="fa fa-chevron-right"></i></a>--}}
                                     </div>
                                     <div class="col">
@@ -314,9 +314,9 @@
                                     </div>
                                     <div class="col">
                                         <h2 class="text-45 font-weight-light">
-                                            <a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="text-g-dark">Bolivia Destinations</a>
+                                            <a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="text-g-dark"><img src="{{asset('images/icons/bolivia.png')}}" alt="bolivia flag" height="50" width="50" class="float-left"> Bolivia Destinations</a>
                                         </h2>
-                                        <p class="text-justify text-22 font-weight-light">Bolivia is s country very diverse , stretching from the majestic icebound peaks and bleak high-altitude deserts of the Andes mountains to the virgin rainforests and vast great savannahs of the Amazon , including the lake titicaca side that include the Tiawanaku templo also stark otherworldly salt pans for instance Uyuni, and ancient Inca trails.</p>
+                                        <p class="text-justify lead font-weight-light">Bolivia is s country very diverse , stretching from the majestic icebound peaks and bleak high-altitude deserts of the Andes mountains to the virgin rainforests and vast great savannahs of the Amazon , including the lake titicaca side that include the Tiawanaku templo also stark otherworldly salt pans for instance Uyuni, and ancient Inca trails.</p>
                                         {{--<a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Bolivia packages <i class="fa fa-chevron-right"></i></a>--}}
                                     </div>
                                     <div class="col">
@@ -349,9 +349,9 @@
                                     </div>
                                     <div class="col">
                                         <h2 class="text-45 font-weight-light">
-                                            <a href="{{route('destinations_country_path', 'brasil-travel')}}" class="text-g-dark">Brazil Destinations</a>
+                                            <a href="{{route('destinations_country_path', 'brasil-travel')}}" class="text-g-dark"><img src="{{asset('images/icons/brasil.png')}}" alt="brazil flag" height="50" width="50" class="float-left"> Brazil Destinations</a>
                                         </h2>
-                                        <p class="text-justify text-22 font-weight-light">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>
+                                        <p class="text-justify lead font-weight-light">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>
                                         {{--<a href="{{route('destinations_country_path', 'brasil-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Brazil packages <i class="fa fa-chevron-right"></i></a>--}}
                                     </div>
                                     <div class="col">
@@ -636,7 +636,7 @@
                         <p class="">We give back to our communities</p>
                         <hr>
                         <p class="text-primary"><i>Chaullacota Locates at 15,000 feed (4500 mts) 2 hours Northwest of cusco</i></p>
-                        <p class="text-justify h5 font-weight-light">At GOTOPERU we are committed to doing business in a way that actually give back to our communities specially the one located in remote places. Our planning and execution of one of our trips involves a long supply chain: from local guides and operators to transportation providers to hotels and restaurants, we interact with a lot of different organizations on the ground, but we also know that some communities specially located on top of the Andes at 15,000+feet that due to the difficult access, dont receive the assistance they deserve, is for that reason that we organize periodically trips to this far far away communities to bring them specially sweaters and toys for children.</p>
+                        <p class="text-justify font-weight-light">At GOTOPERU we are committed to doing business in a way that actually give back to our communities specially the one located in remote places. Our planning and execution of one of our trips involves a long supply chain: from local guides and operators to transportation providers to hotels and restaurants, we interact with a lot of different organizations on the ground, but we also know that some communities specially located on top of the Andes at 15,000+feet that due to the difficult access, dont receive the assistance they deserve, is for that reason that we organize periodically trips to this far far away communities to bring them specially sweaters and toys for children.</p>
                     </div>
 
                     <div class="row">
