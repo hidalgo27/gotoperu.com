@@ -792,106 +792,106 @@
     @include('layouts.page.form-quote')
 
     @push('scripts')
-        <script>
-            //form
-            function design(){
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('[name="_token"]').val()
-                    }
-                });
+        {{--<script>--}}
+            {{--//form--}}
+            {{--function design(){--}}
+                {{--$.ajaxSetup({--}}
+                    {{--headers: {--}}
+                        {{--'X-CSRF-TOKEN': $('[name="_token"]').val()--}}
+                    {{--}--}}
+                {{--});--}}
 
-                $("#de_send").attr("disabled", true);
+                {{--$("#de_send").attr("disabled", true);--}}
 
-                var filter=/^[A-Za-z][A-Za-z0-9_.]*@[A-Za-z0-9_]+.[A-Za-z0-9_.]+[A-za-z]$/;
-
-
-                var s_destinations = document.getElementsByName('destinations[]');
-                var $destinations = "";
-                for (var i = 0, l = s_destinations.length; i < l; i++) {
-                    if (s_destinations[i].checked) {
-                        $destinations += s_destinations[i].value+' , ';
-                    }
-                }
-                s_destinations = $destinations.substring(0,$destinations.length-3);
-
-//                alert(s_destinations);
-
-                var s_name = $('#de_name').val();
-                var s_email = $('#de_email').val();
-                var s_country = $('#de_country').val();
-                var s_date = $('#de_date').val();
-                var s_number = $('#de_numero').val();
-                var s_duration = $('#de_duration').val();
-//                var s_other = $('#de_otros').val();
-                var s_comment = $('#de_comment').val();
+                {{--var filter=/^[A-Za-z][A-Za-z0-9_.]*@[A-Za-z0-9_]+.[A-Za-z0-9_.]+[A-za-z]$/;--}}
 
 
-                if (filter.test(s_email)){
-                    sendMail = "true";
-                } else{
-                    $('#de_email').css("border-bottom", "2px solid #FF0000");
-                    sendMail = "false";
-                }
-                if (s_name.length == 0 ){
-                    $('#de_name').css("border-bottom", "2px solid #FF0000");
-                    var sendMail = "false";
-                }
+                {{--var s_destinations = document.getElementsByName('destinations[]');--}}
+                {{--var $destinations = "";--}}
+                {{--for (var i = 0, l = s_destinations.length; i < l; i++) {--}}
+                    {{--if (s_destinations[i].checked) {--}}
+                        {{--$destinations += s_destinations[i].value+' , ';--}}
+                    {{--}--}}
+                {{--}--}}
+                {{--s_destinations = $destinations.substring(0,$destinations.length-3);--}}
 
-                if(sendMail == "true"){
-                    var datos = {
+{{--//                alert(s_destinations);--}}
 
-                        "txt_destinations" : s_destinations,
-
-                        "txt_name" : s_name,
-                        "txt_email" : s_email,
-                        "txt_country" : s_country,
-                        "txt_date" : s_date,
-                        "txt_number" : s_number,
-                        "txt_duration" : s_duration,
-                        "txt_comment" : s_comment,
-
-                    };
-                    $.ajax({
-                        data:  datos,
-                        url:   "{{route('design_path')}}",
-                        type:  'post',
-
-                        beforeSend: function () {
-
-                            $('#de_send').removeClass('show');
-                            $("#de_send").addClass('d-none');
-
-                            $("#loader5").removeClass('d-none');
-                            $("#loader5").addClass('show');
-                        },
-                        success:  function (response) {
-                            $('#de_form')[0].reset();
-                            $('#de_send').removeClass('d-none');
-                            $('#de_send').addClass('show');
-                            $("#loader5").removeClass('show');
-                            $("#loader5").addClass('d-none');
-                            $('#de_alert').removeClass('d-none');
-                            $("#de_alert").addClass('show');
-                            $("#de_alert b").html(response);
-                            $("#de_alert").fadeIn('slow');
-                            $("#de_send").removeAttr("disabled");
-                        }
+                {{--var s_name = $('#de_name').val();--}}
+                {{--var s_email = $('#de_email').val();--}}
+                {{--var s_country = $('#de_country').val();--}}
+                {{--var s_date = $('#de_date').val();--}}
+                {{--var s_number = $('#de_numero').val();--}}
+                {{--var s_duration = $('#de_duration').val();--}}
+{{--//                var s_other = $('#de_otros').val();--}}
+                {{--var s_comment = $('#de_comment').val();--}}
 
 
-                    });
-                } else{
-                    $("#de_send").removeAttr("disabled");
-                }
-            }
+                {{--if (filter.test(s_email)){--}}
+                    {{--sendMail = "true";--}}
+                {{--} else{--}}
+                    {{--$('#de_email').css("border-bottom", "2px solid #FF0000");--}}
+                    {{--sendMail = "false";--}}
+                {{--}--}}
+                {{--if (s_name.length == 0 ){--}}
+                    {{--$('#de_name').css("border-bottom", "2px solid #FF0000");--}}
+                    {{--var sendMail = "false";--}}
+                {{--}--}}
 
-            $('#de_date').datepicker({
-                dateFormat: 'yy-mm-dd',
-                changeMonth: true,
-                changeYear: true
-            });
+                {{--if(sendMail == "true"){--}}
+                    {{--var datos = {--}}
 
-        </script>
+                        {{--"txt_destinations" : s_destinations,--}}
+
+                        {{--"txt_name" : s_name,--}}
+                        {{--"txt_email" : s_email,--}}
+                        {{--"txt_country" : s_country,--}}
+                        {{--"txt_date" : s_date,--}}
+                        {{--"txt_number" : s_number,--}}
+                        {{--"txt_duration" : s_duration,--}}
+                        {{--"txt_comment" : s_comment,--}}
+
+                    {{--};--}}
+                    {{--$.ajax({--}}
+                        {{--data:  datos,--}}
+                        {{--url:   "{{route('design_path')}}",--}}
+                        {{--type:  'post',--}}
+
+                        {{--beforeSend: function () {--}}
+
+                            {{--$('#de_send').removeClass('show');--}}
+                            {{--$("#de_send").addClass('d-none');--}}
+
+                            {{--$("#loader5").removeClass('d-none');--}}
+                            {{--$("#loader5").addClass('show');--}}
+                        {{--},--}}
+                        {{--success:  function (response) {--}}
+                            {{--$('#de_form')[0].reset();--}}
+                            {{--$('#de_send').removeClass('d-none');--}}
+                            {{--$('#de_send').addClass('show');--}}
+                            {{--$("#loader5").removeClass('show');--}}
+                            {{--$("#loader5").addClass('d-none');--}}
+                            {{--$('#de_alert').removeClass('d-none');--}}
+                            {{--$("#de_alert").addClass('show');--}}
+                            {{--$("#de_alert b").html(response);--}}
+                            {{--$("#de_alert").fadeIn('slow');--}}
+                            {{--$("#de_send").removeAttr("disabled");--}}
+                        {{--}--}}
+
+
+                    {{--});--}}
+                {{--} else{--}}
+                    {{--$("#de_send").removeAttr("disabled");--}}
+                {{--}--}}
+            {{--}--}}
+
+            {{--$('#de_date').datepicker({--}}
+                {{--dateFormat: 'yy-mm-dd',--}}
+                {{--changeMonth: true,--}}
+                {{--changeYear: true--}}
+            {{--});--}}
+
+        {{--</script>--}}
 
 
 

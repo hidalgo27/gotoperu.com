@@ -92,6 +92,7 @@
                         <hr>
                     </div>
                 </div>
+                <form id="h_form" role="form">
                 <div id="rootwizard">
                     <div class="navbar d-none">
                         <div class="navbar-inner">
@@ -105,6 +106,8 @@
                     </div>
                     <div class="tab-content">
                         <div class="tab-pane" id="tab1">
+
+                                {{csrf_field()}}
                             <div class="row justify-content-center">
                                 <div class="col-10">
                                     <div class="row pb-2">
@@ -177,7 +180,7 @@
 
                                     <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
                                         <label class="btn col btn-outline-secondary number-hover">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="1" checked> 1 <i class="fa fa-male"></i>
+                                            <input type="radio" name="number" class="number" autocomplete="off" value="1"> 1 <i class="fa fa-male"></i>
                                         </label>
                                         <label class="btn col mx-2 btn-outline-secondary number-hover">
                                             <input type="radio" name="number" class="number" autocomplete="off" value="2"> 2 <i class="fa fa-male"></i>
@@ -204,22 +207,22 @@
 
                                     <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
                                         <label class="btn col btn-outline-secondary number-hover">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="1" checked> 3-5 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
+                                            <input type="radio" name="duration" class="duration" autocomplete="off" value="1" checked> 3-5 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
                                         </label>
                                         <label class="btn col mx-2 btn-outline-secondary number-hover">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="2"> 6-8 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
+                                            <input type="radio" name="duration" class="duration" autocomplete="off" value="2"> 6-8 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
                                         </label>
                                         <label class="btn col btn-outline-secondary number-hover">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="3"> 9-11 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
+                                            <input type="radio" name="duration" class="duration" autocomplete="off" value="3"> 9-11 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
                                         </label>
                                         <label class="btn col mx-2 btn-outline-secondary number-hover">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="4"> 12-15 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
+                                            <input type="radio" name="duration" class="duration" autocomplete="off" value="4"> 12-15 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
                                         </label>
                                         <label class="btn col btn-outline-secondary number-hover">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="5+"> 16+ <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
+                                            <input type="radio" name="duration" class="duration" autocomplete="off" value="5+"> 16+ <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
                                         </label>
                                         <label class="btn col ml-2 btn-outline-secondary number-hover">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="Undecided"><small>Undecided</small>
+                                            <input type="radio" name="duration" class="duration" autocomplete="off" value="Undecided"><small>Undecided</small>
                                         </label>
                                     </div>
 
@@ -232,7 +235,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="input-group input-group-lg">
-                                                <input type="text" class="form-control" id="d_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control" id="h_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
                                                 </div>
@@ -241,6 +244,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                         <div class="tab-pane" id="tab2">
                             <div class="row justify-content-center">
@@ -256,7 +260,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone"></i></span>
                                                 </div>
-                                                <input type="tel" class="form-control" id="d_tel" placeholder="Phone number" aria-label="Phone" aria-describedby="basic-addon1">
+                                                <input type="tel" class="form-control" id="h_tel" placeholder="Phone number" aria-label="Phone" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
                                     </div>
@@ -272,7 +276,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control" id="d_name" placeholder="Full Name" aria-label="Full Name" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control" id="h_name" placeholder="Full Name" aria-label="Full Name" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
                                     </div>
@@ -288,7 +292,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
                                                 </div>
-                                                <input type="email" class="form-control" id="d_email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                                                <input type="email" class="form-control" id="h_email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
                                     </div>
@@ -304,7 +308,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i class="fa fa-comment"></i></span>
                                                 </div>
-                                                <textarea class="form-control" id="d_comment" aria-label="With textarea" placeholder="How do you imagine a perfect trip to Peru, Special Requests, Questions, Comments"></textarea>
+                                                <textarea class="form-control" id="h_comment" aria-label="With textarea" placeholder="How do you imagine a perfect trip to Peru, Special Requests, Questions, Comments"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -316,11 +320,25 @@
                             <div class="col-10">
                                 <input type='button' class='btn btn-lg button-previous' name='previous' value='Previous' id="previus_tip" onclick="dnext(0)"/>
                                 <input type='button' class='btn btn-lg btn-g-green button-next' name='next' value='Next' id="next_tip" onclick="dnext(1)"/>
-                                <button type="submit" class="btn btn-lg btn-primary d-none" id="submit_tip">Submit</button>
+                                <button type="button" class="btn btn-lg btn-primary d-none" id="submit_tip" onclick="design()">Submit</button>
+                                <i class="fas fa-spinner fa-pulse fa-2x text-primary d-none" id="h_load"></i>
                             </div>
                         </div>
+
+                        <div class="row mt-3 justify-content-center d-none" id="h_alert">
+                            <div class="col-10">
+                                <div class="alert alert-success alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <b><strong>THANK YOU FOR CONTACT US</strong>, YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS, GURANTEED. :)</b>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+                </form>
             </div>
 
         </div><!-- /.row -->

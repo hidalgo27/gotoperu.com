@@ -624,14 +624,13 @@ class HomeController extends Controller
         $from = 'info@gotoperu.com';
         $from2 = 'paul@gotoperu.com';
 
-        $destinations = $_POST['txt_destinations'];
-
-        $name = $_POST['txt_name'];
-        $email = $_POST['txt_email'];
-        $country = $_POST['txt_country'];
-        $date = $_POST['txt_date'];
+        $accommodation = $_POST['txt_accommodation'];
         $number = $_POST['txt_number'];
         $duration = $_POST['txt_duration'];
+        $date = $_POST['txt_date'];
+        $tel = $_POST['txt_tel'];
+        $name = $_POST['txt_name'];
+        $email = $_POST['txt_email'];
         $comment = $_POST['txt_comment'];
 
 
@@ -645,13 +644,13 @@ class HomeController extends Controller
 
 
             Mail::send(['html' => 'notifications.page.admin-form-design'], [
-                'destinations' => $destinations,
-                'name' => $name,
-                'email' => $email,
-                'country' => $country,
-                'date' => $date,
+                'accommodation' => $accommodation,
                 'number' => $number,
                 'duration' => $duration,
+                'date' => $date,
+                'tel' => $tel,
+                'name' => $name,
+                'email' => $email,
                 'comment' => $comment
             ], function ($messaje) use ($from) {
                 $messaje->to($from, 'GotoPeru')

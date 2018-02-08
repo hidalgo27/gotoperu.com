@@ -25,7 +25,7 @@
                     {{--</div>--}}
                     <div class="col-3 text-right pt-3 sticky-top">
                         <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
-                        <a href="tel:+2029963000" class="mx-3 h2"><i class="fa fa-bars"></i></a>
+                        <a href="#" class="mx-3 h2" data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
                     </div>
                 </div>
             </div>
@@ -109,6 +109,7 @@
     </section>
     @include('layouts.page.menu-2')
     @include('layouts.page.included')
+
 
     <section class="bg-white">
         <div class="container-fluid">
@@ -451,9 +452,8 @@
                                                 <div class="row">
                                                     <div class="col my-3 text-center">
                                                         <button class="btn btn-primary btn-lg btn-next" id="d_send" type="button" onclick="inquire()">Send</button>
-                                                        <ul class="fa-ul pull-right d-none" id="loader2">
-                                                            <li><i class="fa-li fa fa-spinner fa-spin"></i> <i>Sending...</i></li>
-                                                        </ul>
+                                                        <i class="fas fa-spinner fa-pulse fa-2x text-primary d-none" id="loader2"></i>
+
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -462,7 +462,7 @@
                                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
-                                                            <strong>THANK YOU FOR CONTACT US</strong>, YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS, GURANTEED. :)
+                                                            <b><strong>THANK YOU FOR CONTACT US</strong>, YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS, GURANTEED. :)</b>
                                                         </div>
                                                     </div>
                                                 </div>

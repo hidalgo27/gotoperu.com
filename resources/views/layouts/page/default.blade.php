@@ -23,67 +23,7 @@
 
 @yield('content')
 
-<!-- Modal -->
-<div class="modal right  fade" id="modal-menu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            {{--<div class="modal-header">--}}
-            {{--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
-            {{--</div>--}}
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="modal-body">
-                <img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="img-fluid">
-                <div class="row mt-5">
-                    <div class="col">
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('packages_path')}}" class="text-secondary h5"><strong>Travel Packages</strong></a></li>
-                            <li><a href="#" class="text-secondary h5 popover-focus" data-toggle="popover" data-placement="left" title="<h4 class='text-secondary'>Destinations</h4>" data-content="
-                                <ul class='list-unstyled'>
-                                    <li><a href='{{route('destinations_country_path', 'peru-travel')}}' class='text-secondary h5'>Peru</a></li>
-                                    <li><a href='{{route('destinations_country_path', 'ecuador-travel')}}' class='text-secondary h5'>Ecuador</a></li>
-                                    <li><a href='{{route('destinations_country_path', 'bolivia-travel')}}' class='text-secondary h5'>Bolivia</a></li>
-                                    <li><a href='{{route('destinations_country_path', 'brasil-travel')}}' class='text-secondary h5'>Brazil</a></li>
-                                </ul>
-                                "><strong>Destinations</strong></a></li>
-                            <li><a href="{{route('getting_path')}}" class="text-secondary h5"><strong>Getting To Peru</strong></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr>
-                <div class="row mt-4">
-                    <div class="col">
-                        <ul class="list-unstyled">
-                            {{--<li><a href="#" class="text-secondary h5"><strong>Travel Agents</strong></a></li>--}}
-                            {{--<li><a href="#" class="text-secondary h5"><strong>Our Blog</strong></a></li>--}}
-                            <li><a href="{{route('hotels_path')}}" class="text-secondary h5"><strong>Hotels</strong></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr>
-                <div class="row mt-4">
-                    <div class="col">
-                        <ul class="list-unstyled">
-                            <li><a href="" class="text-primary h5"><strong>Sign In <i class="fa fa-sign-in"></i></strong></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr>
-                <div class="row mt-4">
-                    <div class="col">
-                        <a href="https://m.me/GOTOPERUcom/" class="btn btn-primary" target="_blank">Chat Facebook</a>
-                        <a href="https://api.whatsapp.com/send?phone=51084262555" class="btn btn-success" target="_blank">Chat Twitter</a>
-                    </div>
-                </div>
-            </div>
-            {{--<div class="modal-footer">--}}
-            {{--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
-            {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
-            {{--</div>--}}
-        </div>
-    </div>
-</div>
+@include('layouts.page.menu-right')
 
 
 
@@ -236,80 +176,88 @@
 }
 </script>
 <script>
-    //formilario contac
-    function contact(){
+    //formulario design
+    function design(){
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('[name="_token"]').val()
             }
         });
 
-        $("#c_send").attr("disabled", true);
+        $("#submit_tip").attr("disabled", true);
 
         var filter=/^[A-Za-z][A-Za-z0-9_.]*@[A-Za-z0-9_]+.[A-Za-z0-9_.]+[A-za-z]$/;
 
 
-//                alert(s_destinations);
+        var s_accommodation = document.getElementsByName('accommodation[]');
+        var $accommodation = "";
+        for (var i = 0, l = s_accommodation.length; i < l; i++) {
+            if (s_accommodation[i].checked) {
+                $accommodation += s_accommodation[i].value+' , ';
+            }
+        }
+        s_accommodation = $accommodation.substring(0,$accommodation.length-3);
 
-        var s_name = $('#c_nombre').val();
-        var s_email = $('#c_email').val();
-        var s_phone = $('#c_phone').val();
-        var s_comentario = $('#c_comentario').val();
-
-
-//                var s_comment = $('#d_comment').val();
+        var s_number = $(".number:checked").val();
+        var s_duration = $(".duration:checked").val();
+        var s_date = $('#h_date').val();
+        var s_tel = $('#h_tel').val();
+        var s_name = $('#h_name').val();
+        var s_email = $('#h_email').val();
+        var s_comment = $('#h_comment').val();
 
 
         if (filter.test(s_email)){
             sendMail = "true";
         } else{
-            $('#c_email').css("border-bottom", "2px solid #FF0000");
+            $('#h_email').css("border-bottom", "2px solid #FF0000");
             sendMail = "false";
         }
         if (s_name.length == 0 ){
-            $('#c_nombre').css("border-bottom", "2px solid #FF0000");
+            $('#h_name').css("border-bottom", "2px solid #FF0000");
             var sendMail = "false";
         }
 
         if(sendMail == "true"){
             var datos = {
 
-
+                "txt_accommodation" : s_accommodation,
+                "txt_number" : s_number,
+                "txt_duration" : s_duration,
+                "txt_date" : s_date,
+                "txt_tel" : s_tel,
                 "txt_name" : s_name,
                 "txt_email" : s_email,
-                "txt_phone" : s_phone,
-                "txt_comentario" : s_comentario,
+                "txt_comment" : s_comment,
+
             };
             $.ajax({
                 data:  datos,
-                url:   "{{route('contact_path')}}",
+                url:   "{{route('design_path')}}",
                 type:  'post',
 
                 beforeSend: function () {
 
-                    $('#c_send').removeClass('show');
-                    $("#c_send").addClass('d-none');
-
-                    $("#loader3").removeClass('d-none');
-                    $("#loader3").addClass('show');
+                    // $('#de_send').removeClass('show');
+                    $("#submit_tip").addClass('d-none');
+                    $("#h_load").removeClass('d-none');
                 },
                 success:  function (response) {
-                    $('#c_form')[0].reset();
-                    $('#c_send').removeClass('d-none');
-                    $('#c_send').addClass('show');
-                    $("#loader3").removeClass('show');
-                    $("#loader3").addClass('d-none');
-                    $('#c_alert').removeClass('d-none');
-                    $("#c_alert").addClass('show');
-                    $("#c_alert b").html(response);
-                    $("#c_alert").fadeIn('slow');
-                    $("#c_send").removeAttr("disabled");
+                    $('#h_form')[0].reset();
+                    $('#submit_tip').removeClass('d-none');
+                    $("#h_load").addClass('d-none');
+                    $('#h_alert').removeClass('d-none');
+                    // $("#h_alert b").html(response);
+                    $("#h_alert").fadeIn('slow');
+                    $("#submit_tip").removeAttr("disabled");
                 }
             });
         } else{
-            $("#c_send").removeAttr("disabled");
+            $("#submit_tip").removeAttr("disabled");
         }
     }
+
+
 
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
@@ -363,7 +311,7 @@
         // $('#de_alert').removeClass('d-none');
     }
 
-    $('#d_date').datepicker({
+    $('#h_date').datepicker({
         dateFormat: 'yy-mm-dd',
         changeMonth: true,
         changeYear: true

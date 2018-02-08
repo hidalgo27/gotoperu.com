@@ -8,7 +8,7 @@
                         <tbody>
                         <tr bgcolor="#ffffff">
                             <td valign="top" style="padding:10px 35px 0 35px;color:#ffffff">
-                                <img class="CToWUd" width="350" alt="logo gotoperu" src="https://gotoperu.com/img/logos/logo-gotoperu.png" style="vertical-align:top;max-width:220px">
+                                <img class="CToWUd" width="350" alt="logo gotoperu" src="https://gotoperu.com/images/logos/logo-gotoperu-ave.png" style="vertical-align:top;max-width:220px">
                             </td>
 
                         </tr>
@@ -30,7 +30,7 @@
                     <p><a href="https://gotoperu.com/" style="color:blue" target="_blank">GotoPeru</a></p>
                 </td>
                 <td>
-                    <img class="CToWUd" width="250" alt="logo gotoperu" src="https://gotoperu.com/img/logos/logo-gotoperu.png" style="vertical-align:top;max-width:220px">
+                    <img class="CToWUd" width="250" alt="logo gotoperu" src="https://gotoperu.com/images/logos/logo-gotoperu-ave.png" style="vertical-align:top;max-width:220px">
                 </td>
             </tr>
             </tbody>
