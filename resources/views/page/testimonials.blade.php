@@ -1,5 +1,6 @@
 @extends('layouts.page.default')
 @section('content')
+
     {{--<section class="mb-4">--}}
         {{--<img src="https://gotoperu.com/img/slider/testimonials.jpg" alt="" class="w-100">--}}
     {{--</section>--}}
@@ -39,18 +40,40 @@
 
                     <div class="col">
 
-                        {{--<div class="row my-3 justify-content-center">--}}
-                            {{--<p class="text-white display-4 font-weight-light">GOTOPERU REVIEWS AND TESTIMONIALS</p>--}}
-                        {{--</div>--}}
-                        <div class="row justify-content-center">
-                            <div class="col-6 text-center">
-
-                                <a href="#content" class="text-white">
-                                    <i class="fa fa-4x fa-chevron-circle-down font-weight-light"></i>
-                                </a>
-
+                        <div class="row my-3 justify-content-center">
+                            <div class="col-8 bg-rgba-white p-4 rounded">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="lead"><i class="fa fa-quote-left"></i> I would recommend GoToPeru 100% . We just used the company in June 2017 and everything was perfectly organized and our vacation was a dream come true . All the guides were very punctual, friendly, knowledgeable and offered to take great pictures and recommended restaurants.<i class="fa fa-quote-right"></i></p>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-8">
+                                        <div class="row">
+                                            <div class="col">
+                                                <a href=""><img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="100s Talking about us!"></a>
+                                            </div>
+                                            <div class="col">
+                                                <a href="https://www.trustpilot.com/review/gotoperu.com" target="_blank"><img src="{{asset('images/icons/trust.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="Real Testimonies"></a>
+                                            </div>
+                                            <div class="col">
+                                                <a href="https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com" target="_blank"><img src="{{asset('images/icons/yelp.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="Yelp"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        {{--<div class="row justify-content-center">--}}
+                            {{--<div class="col-6 text-center">--}}
+
+                                {{--<a href="#content" class="text-white">--}}
+                                    {{--<i class="fa fa-4x fa-chevron-circle-down font-weight-light"></i>--}}
+                                {{--</a>--}}
+
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                 </div>
 
@@ -98,4 +121,10 @@
         </div>
     </section>
     @include('layouts.page.form-quote')
+
+    @push('script')
+        <!-- TrustBox script -->
+        <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+        <!-- End Trustbox script -->
+    @endpush
 @stop

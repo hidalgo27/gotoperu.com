@@ -55,7 +55,7 @@
                             @endforeach
                                 @if($paquetes->duracion > 8)
                                     <div class="gradient-destinations"></div>
-                                    <a href="#" class="btn-link font-weight-normal b-routes p-2" data-toggle="modal" data-target="#route-modal">All Routes <i class="fa fa-chevron-right"></i></a>
+                                    <a href="#" class="btn-link font-weight-normal b-routes p-2" data-toggle="modal" data-target="#route-modal">Full Outline <i class="fa fa-chevron-right"></i></a>
                                 @endif
                         </div>
 

@@ -22,30 +22,51 @@
                                     <li><a href='{{route('destinations_country_path', 'brasil-travel')}}' class='text-secondary h5'>Brazil</a></li>
                                 </ul>
                                 "><strong>Destinations</strong></a></li>
-                            <li><a href="{{route('getting_path')}}" class="text-secondary h5"><strong>Getting To Peru</strong></a></li>
+                            <li><a href="{{route('hotels_path')}}" class="text-secondary h5"><strong>Hotels</strong></a></li>
+                            <li><a href="{{route('faq_path')}}" class="text-secondary h5"><strong>FAQ</strong></a></li>
+                            <li><a href="{{route('about_path')}}" class="text-secondary h5"><strong>About Us</strong></a></li>
+                            <li><a href="#" class="text-secondary h5"><strong>Travel Agents</strong></a></li>
                         </ul>
                     </div>
                 </div>
                 <hr>
-                <div class="row mt-4">
+                <div class="row mt-2">
                     <div class="col">
-                        <ul class="list-unstyled">
+                        <ul class="list-unstyled m-0">
                             {{--<li><a href="#" class="text-secondary h5"><strong>Travel Agents</strong></a></li>--}}
                             {{--<li><a href="#" class="text-secondary h5"><strong>Our Blog</strong></a></li>--}}
-                            <li><a href="{{route('hotels_path')}}" class="text-secondary h5"><strong>Hotels</strong></a></li>
+                            <li><a href="{{route('hotels_path')}}" class="text-secondary h5"><strong>Join Our Team</strong></a></li>
                         </ul>
                     </div>
                 </div>
                 <hr>
-                <div class="row mt-4">
+                <div class="row mt-2">
                     <div class="col">
-                        <ul class="list-unstyled">
-                            <li><a href="" class="text-primary h5"><strong>Sign In <i class="fa fa-sign-in"></i></strong></a></li>
+                        <ul class="list-unstyled m-0">
+                            <li><a href="#" class="text-primary h5"><strong>Sign In <i class="fa fa-sign-in-alt"></i></strong></a></li>
                         </ul>
                     </div>
                 </div>
                 <hr>
-                <div class="row mt-4">
+                <div class="row mt-2">
+                    <div class="col">
+                        <ul class="list-unstyled m-0">
+                            {{--<li><a href="#" class="text-secondary h5"><strong>Travel Agents</strong></a></li>--}}
+                            {{--<li><a href="#" class="text-secondary h5"><strong>Our Blog</strong></a></li>--}}
+                            <li><a href="{{route('hotels_path')}}" class="text-secondary h5"><strong>Join Our Team</strong></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank"><i class="fas fa-facebook-square"></i></a>
+                        <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                </div>
+                <div class="row mt-2">
                     <div class="col">
                         <a href="https://m.me/GOTOPERUcom/" class="btn btn-primary" target="_blank">Chat Facebook</a>
                         <a href="https://api.whatsapp.com/send?phone=51084262555" class="btn btn-success" target="_blank">Chat Twitter</a>
