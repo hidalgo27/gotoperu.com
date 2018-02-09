@@ -1,4 +1,4 @@
-<nav class="nav nav-pills nav-fill nav-goto navbar-expand-lg d-none d-sm-flex sticky-top">
+<nav class="nav nav-pills nav-fill nav-goto navbar-expand-lg d-none d-md-flex sticky-top">
     {{--<a class="nav-item nav-link active" href="#">Active</a>--}}
     <a class="nav-item nav-link text-light border-primary" href="{{route('packages_path')}}">TOURS PACKAGES</a>
     <a class="nav-item nav-link text-light border-g-green" href="{{route('destinations_path')}}">DESTINATIONS</a>
@@ -9,7 +9,7 @@
     {{--<a class="nav-item nav-link disabled" href="#">Disabled</a>--}}
 </nav>
 
-<section class="py-2">
+<section class="py-2 d-md-none">
     <div class="container-fluid">
         <div class="row">
             <div class="col">
@@ -18,7 +18,7 @@
         </div>
     </div>
 </section>
-<section class="bg-dark sticky-top py-2">
+<section class="bg-dark sticky-top py-2 d-md-none">
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-6">
@@ -33,8 +33,12 @@
         </div>
     </div>
 </section>
-<div class="row">
-    <div class="col">
-        <img src="{{asset('images/destinations/destinations/inca-trail.jpg')}}" alt="" class="img-fluid">
+<section class="d-md-none">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col">
+                <img src="{{asset('images/machupicchu-a.png')}}" alt="" class="img-fluid">
+            </div>
+        </div>
     </div>
-</div>
+</section>

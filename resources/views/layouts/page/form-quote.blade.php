@@ -1,4 +1,4 @@
-<section class="d-none d-sm-block">
+<section class="d-none d-xl-block">
     <div class="jumbotron jumbotron-divider-1 rounded-0 m-0">
         <div class="container">
             <div class="row justify-content-center no-gutters">
@@ -85,9 +85,9 @@
     <div class="container-fluid">
         <div class="row py-5 justify-content-center">
 
-            <div class="col col-sm-7">
+            <div class="col col-sm-12 col-md-10 col-xl-7">
                 <div class="row justify-content-center pb-2">
-                    <div class="col col-sm-10">
+                    <div class="col col-sm-12">
                         <h2 class="text-secondary h4 text-center"><strong>Create Your Dream Adventure</strong></h2>
                         <hr>
                     </div>
@@ -109,14 +109,14 @@
 
                                 {{csrf_field()}}
                             <div class="row justify-content-center">
-                                <div class="col col-sm-10">
+                                <div class="col col-sm-12">
                                     <div class="row pb-2">
                                         <div class="col">
                                             <h2 class="text-secondary h5"><strong>HOTEL QUALITY</strong></h2>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col col-sm-6 col-sm pb-2">
+                                        <div class="col col-sm col-sm pb-2">
                                             <div class="form-circ btn-group-toggle" data-toggle="buttons">
                                                 <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel economico">
                                                     <i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>
@@ -128,7 +128,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="col col-sm-6 col-sm pb-2">
+                                        <div class="col col-sm col-sm pb-2">
                                             <div class="form-circ btn-group-toggle" data-toggle="buttons">
                                                 <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel Turista">
                                                     <i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>
@@ -141,7 +141,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="col col-sm-6 col-sm pb-2">
+                                        <div class="col col-sm col-sm pb-2">
                                             <div class="form-circ btn-group-toggle" data-toggle="buttons">
                                                 <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel Superior">
                                                     <i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>
@@ -155,7 +155,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="col col-sm-6 col-sm pb-2">
+                                        <div class="col col-sm col-sm pb-2">
                                             <div class="form-circ btn-group-toggle" data-toggle="buttons">
                                                 <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel Lujo">
                                                     <i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>
@@ -248,7 +248,7 @@
                         </div>
                         <div class="tab-pane" id="tab2">
                             <div class="row justify-content-center">
-                                <div class="col col-sm-10">
+                                <div class="col col-sm-12 col-md-12">
                                     <div class="row pb-2">
                                         <div class="col">
                                             <h2 class="text-secondary h5"><strong>PHONE NUMBER</strong></h2>
@@ -317,7 +317,7 @@
                         </div>
 
                         <div class="row mt-3 justify-content-center">
-                            <div class="col-10">
+                            <div class="col-12">
                                 <input type='button' class='btn btn-lg button-previous' name='previous' value='Previous' id="previus_tip" onclick="dnext(0)"/>
                                 <input type='button' class='btn btn-lg btn-g-green button-next' name='next' value='Next' id="next_tip" onclick="dnext(1)"/>
                                 <button type="button" class="btn btn-lg btn-primary d-none" id="submit_tip" onclick="design()">Submit</button>
