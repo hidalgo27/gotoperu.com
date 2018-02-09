@@ -1,7 +1,7 @@
 @extends('layouts.page.default')
 
 @section('content')
-    <section class="header-video">
+    <section class="header-video d-none d-sm-block">
         <div id="title" class="text-white">
             <div class="container-fluid">
                 <div class="row align-items-center mt-2">
@@ -35,7 +35,7 @@
                 <div class="row content-header-row align-items-center">
 
                     <div class="col">
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center d-none d-sm-block">
                             <div class="col-4">
                                 <div class="row no-gutters">
                                     <div class="col">
@@ -72,7 +72,7 @@
                                 {{--<h4 class="h5 font-weight-light text-g-yellow">Top recommended Peru Travel Company</h4>--}}
                             {{--</div>--}}
                         {{--</div>--}}
-                        <div class="row my-3 justify-content-center">
+                        <div class="row my-3 justify-content-center d-none d-sm-block">
                             <p class="text-white h4 font-weight-light">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and qoute <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
                         </div>
                         <div class="row justify-content-center">
@@ -106,17 +106,17 @@
         <div class="container-fluid">
             <div class="row">
                 @foreach($paquetes->where('estado', 0)->take(6) as $paquete)
-                    <div class="col-4 mb-3">
+                    <div class="col-12 col-sm-4 mb-3">
                         <div class="card mb-3">
                             <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
                                 <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}">
 
                                 <div class="card-img-overlay bg-rgba-dark-3 p-0">
                                     <div class="row justify-content-between no-gutters">
-                                        <div class="col-3 p-3">
+                                        <div class="col col-sm-3 p-3">
                                             <p class="m-0 text-white">{{$paquete->duracion}} Days</p>
                                         </div>
-                                        <div class="col-4 bg-g-dark py-3 text-white text-center">
+                                        <div class="col col-sm-4 bg-g-dark py-3 text-white text-center">
                                             @foreach($paquete->precio_paquetes as $precio)
                                                 @if($precio->estrellas == 2)
                                                     @if($precio->precio_d > 0)
@@ -168,7 +168,7 @@
         </div>
     </section>
 
-    <section class="bg-white pt-5">
+    <section class="bg-white pt-5 d-none d-sm-block">
         <div class="container-fluid">
             <div class="col">
                 <div class="row"><!--.row -->
@@ -234,7 +234,7 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="row align-items-center">
-                                    <div class="col-4 d-none d-sm-block">
+                                    <div class="col-12 col-sm-4">
                                         <img src="{{asset('images/maps/peru.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">
                                     </div>
                                     <div class="col">
@@ -248,7 +248,7 @@
                                             {{--</div>--}}
                                         {{--</div>--}}
                                     </div>
-                                    <div class="col">
+                                    <div class="col d-none d-sm-block">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="list-group position-relative">
@@ -273,7 +273,7 @@
                             </div>
                             <div class="carousel-item">
                                 <div class="row align-items-center">
-                                    <div class="col-4 d-none d-sm-block">
+                                    <div class="col-12 col-sm-4">
                                         <img src="{{asset('images/maps/ecuador.jpg')}}" alt="ecuador" class="w-100 rounded rounded-circle">
                                     </div>
                                     <div class="col">
@@ -283,7 +283,7 @@
                                         <p class="text-justify lead font-weight-light">This amazing country is one of the most bio-diverse countries in the world, its many destinations offer visitors a range of unique beautiful landscapes to explore from the Amazon, Andes, Coast warm beaches and the world famous Galapagos Islands ecological wonder; plus rich history and Culture specially at Colonial Quito City.</p>
                                         {{--<a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Ecuador packages <i class="fa fa-chevron-right"></i></a>--}}
                                     </div>
-                                    <div class="col">
+                                    <div class="col d-none d-sm-block">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="list-group position-relative">
@@ -309,7 +309,7 @@
 
                             <div class="carousel-item">
                                 <div class="row align-items-center">
-                                    <div class="col-4 d-none d-sm-block">
+                                    <div class="col-12 col-sm-4">
                                         <img src="{{asset('images/maps/bolivia.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">
                                     </div>
                                     <div class="col">
@@ -319,7 +319,7 @@
                                         <p class="text-justify lead font-weight-light">Bolivia is s country very diverse , stretching from the majestic icebound peaks and bleak high-altitude deserts of the Andes mountains to the virgin rainforests and vast great savannahs of the Amazon , including the lake titicaca side that include the Tiawanaku templo also stark otherworldly salt pans for instance Uyuni, and ancient Inca trails.</p>
                                         {{--<a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Bolivia packages <i class="fa fa-chevron-right"></i></a>--}}
                                     </div>
-                                    <div class="col">
+                                    <div class="col d-none d-sm-block">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="list-group position-relative">
@@ -344,7 +344,7 @@
                             </div>
                             <div class="carousel-item">
                                 <div class="row align-items-center">
-                                    <div class="col-4 d-none d-sm-block">
+                                    <div class="col-12 col-sm-4">
                                         <img src="{{asset('images/maps/brasil.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">
                                     </div>
                                     <div class="col">
@@ -354,7 +354,7 @@
                                         <p class="text-justify lead font-weight-light">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>
                                         {{--<a href="{{route('destinations_country_path', 'brasil-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Brazil packages <i class="fa fa-chevron-right"></i></a>--}}
                                     </div>
-                                    <div class="col">
+                                    <div class="col d-none d-sm-block">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="list-group position-relative">
@@ -408,7 +408,7 @@
     <section class="bg-light">
         <div class="container-fluid">
             <div class="row pb-5">
-                <div class="col-4 mb-3 d-flex os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
+                <div class="col-12 col-sm4 mb-3 d-flex os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
                     <div class="card">
                         <div class="media p-3">
                             <span class="mr-3 rounded-circle px-3 text-white h1 font-weight-light bg-info">1</span>
@@ -419,7 +419,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mb-3 d-flex">
+                <div class="col-12 col-sm4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
                             <span class="mr-3 rounded-circle bg-g-green px-3 text-white h1 font-weight-light">2</span>
@@ -430,7 +430,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mb-3 d-flex">
+                <div class="col-12 col-sm4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
                             <span class="mr-3 rounded-circle bg-danger px-3 text-white h1 font-weight-light">3</span>
@@ -441,7 +441,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mb-3 d-flex">
+                <div class="col-12 col-sm4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
                             <span class="mr-3 rounded-circle bg-warning px-3 text-white h1 font-weight-light">4</span>
@@ -452,7 +452,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mb-3 d-flex">
+                <div class="col-12 col-sm4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
                             <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">5</span>
@@ -463,7 +463,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mb-3 d-flex">
+                <div class="col-12 col-sm4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
                             <span class="mr-3 rounded-circle bg-g-yellow px-3 text-white h1 font-weight-light">6</span>
@@ -474,7 +474,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mb-3 d-flex">
+                <div class="col-12 col-sm4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
                             <span class="mr-3 rounded-circle bg-danger px-3 text-white h1 font-weight-light">7</span>
@@ -485,7 +485,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mb-3 d-flex">
+                <div class="col-12 col-sm4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
                             <span class="mr-3 rounded-circle bg-success px-3 text-white h1 font-weight-light">8</span>
@@ -496,7 +496,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mb-3 d-flex">
+                <div class="col-12 col-sm4 mb-3 d-flex">
                     <div class="card">
                         <div class="media p-3">
                             <span class="mr-3 rounded-circle bg-secondary px-3 text-white h1 font-weight-light">9</span>
@@ -511,7 +511,7 @@
         </div>
     </section>
 
-    <section class="bg-white">
+    <section class="bg-white d-none d-sm-block">
         <div class="container-fluid">
             <div class="row pt-5 pb-2">
                 <div class="col">
@@ -529,12 +529,14 @@
         </div>
     </section>
 
-    <section class="bg-white">
+    <section class="bg-white d-none d-sm-block">
         <div class="container-fluid">
             <div class="row position-relative">
-                <img src="{{asset('images/banner-hotel.jpg')}}" alt="" class="w-100">
-                <div class="card-img-overlay bg-rgba-dark-3">
-                    <p class="m-0 text-white h3 font-weight-light"><img src="{{asset('images/icons/include/hotels.png')}}" width="50" height="50" alt="" class="p-1" data-toggle="tooltip" data-placement="top" title="Hotels"> Hand-Selected  Collection of hotels</p>
+                <div class="col">
+                    <img src="{{asset('images/banner-hotel.jpg')}}" alt="" class="w-100">
+                    <div class="card-img-overlay bg-rgba-dark-3">
+                        <p class="m-0 text-white h3 font-weight-light"><img src="{{asset('images/icons/include/hotels.png')}}" width="50" height="50" alt="" class="p-1" data-toggle="tooltip" data-placement="top" title="Hotels"> Hand-Selected  Collection of hotels</p>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -549,7 +551,7 @@
     <section class="bg-white">
         <div class="container-fluid">
             <div class="row py-5">
-                <div class="col">
+                <div class="col-12 col-sm">
                     <div class="row mt-5 justify-content-center">
                         <div class="col-6 col-sm-4 col-md-6 col-lg-3">
                             <img src="{{asset('images/icons/group.png')}}" alt="" class="img-fluid">
@@ -583,10 +585,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col col-sm d-none d-sm-block">
                     <img src="{{asset('images/goto.jpg')}}" alt="" class="w-100">
                 </div>
-                <div class="col">
+                <div class="col-12 col-sm">
                     <div class="row mt-5 justify-content-center">
                         <div class="col-6 col-sm-4 col-md-6 col-lg-3">
                             <img src="{{asset('images/icons/location.png')}}" alt="" class="img-fluid">
@@ -627,7 +629,7 @@
     <section class="bg-light">
         <div class="container-fluid">
             <div class="row align-items-center no-gutters">
-                <div class="col">
+                <div class="col d-none">
                     <img src="{{asset('images/we-care.jpg')}}" alt="" class="img-fluid">
                 </div>
                 <div class="col">

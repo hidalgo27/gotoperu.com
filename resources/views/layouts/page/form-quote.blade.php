@@ -1,4 +1,4 @@
-<section>
+<section class="d-none d-sm-block">
     <div class="jumbotron jumbotron-divider-1 rounded-0 m-0">
         <div class="container">
             <div class="row justify-content-center no-gutters">
@@ -85,9 +85,9 @@
     <div class="container-fluid">
         <div class="row py-5 justify-content-center">
 
-            <div class="col-6">
+            <div class="col col-sm-7">
                 <div class="row justify-content-center pb-2">
-                    <div class="col-10">
+                    <div class="col col-sm-10">
                         <h2 class="text-secondary h4 text-center"><strong>Create Your Dream Adventure</strong></h2>
                         <hr>
                     </div>
@@ -109,14 +109,14 @@
 
                                 {{csrf_field()}}
                             <div class="row justify-content-center">
-                                <div class="col-10">
+                                <div class="col col-sm-10">
                                     <div class="row pb-2">
                                         <div class="col">
                                             <h2 class="text-secondary h5"><strong>HOTEL QUALITY</strong></h2>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-6 col-sm">
+                                        <div class="col col-sm-6 col-sm pb-2">
                                             <div class="form-circ btn-group-toggle" data-toggle="buttons">
                                                 <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel economico">
                                                     <i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>
@@ -128,7 +128,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="col-6 col-sm">
+                                        <div class="col col-sm-6 col-sm pb-2">
                                             <div class="form-circ btn-group-toggle" data-toggle="buttons">
                                                 <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel Turista">
                                                     <i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>
@@ -141,7 +141,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="col-6 col-sm">
+                                        <div class="col col-sm-6 col-sm pb-2">
                                             <div class="form-circ btn-group-toggle" data-toggle="buttons">
                                                 <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel Superior">
                                                     <i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>
@@ -155,7 +155,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="col-6 col-sm">
+                                        <div class="col col-sm-6 col-sm pb-2">
                                             <div class="form-circ btn-group-toggle" data-toggle="buttons">
                                                 <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel Lujo">
                                                     <i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>
@@ -248,7 +248,7 @@
                         </div>
                         <div class="tab-pane" id="tab2">
                             <div class="row justify-content-center">
-                                <div class="col-10">
+                                <div class="col col-sm-10">
                                     <div class="row pb-2">
                                         <div class="col">
                                             <h2 class="text-secondary h5"><strong>PHONE NUMBER</strong></h2>
