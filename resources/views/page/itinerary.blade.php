@@ -13,19 +13,20 @@
         </div>
     </section>
 
-    <section class="header-video">
+    <section class="header-video d-none d-md-block">
         <div id="title" class="text-white">
             <div class="container-fluid">
-                <div class="row justify-content-between">
-                    <div class="col-3 mt-2">
+                <div class="row align-items-center mt-2">
+                    <div class="col-md-6 col-lg-3">
                         <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
                     </div>
-                    {{--<div class="col text-center">--}}
-                    {{--<i class="h4"></i>--}}
-                    {{--</div>--}}
-                    <div class="col-3 text-right pt-3 sticky-top">
+                    <div class="col d-none d-xl-flex">
+                        <i class="text-white">Top recommended Peru Travel Operator since 2009</i>
+                    </div>
+                    <div class="col-md col-lg text-right sticky-top">
                         <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
-                        <a href="#" class="mx-3 h2" data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
+                        <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
+                        <!-- Button trigger modal -->
                     </div>
                 </div>
             </div>
@@ -44,7 +45,7 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row content-header-row align-items-center no-gutters">
-                    <div class="col-3 bg-rgba-white rounded">
+                    <div class="col col-md-6 col-lg-4 col-xl-3 bg-rgba-white rounded">
                         <h3 class="text-g-yellow p-2"><i class="fa fa-map-marker"></i> Route</h3>
 
                         <div class="pb-4 position-relative">
@@ -90,11 +91,13 @@
                     </div>
                     <div class="col">
                         <div class="row my-4 justify-content-center">
-                            <h2 class="text-g-yellow font-weight-light">
-                             @foreach($paquete_iti as $paquetes)
-                                {{($paquetes->titulo)}} <span class="text-white">{{($paquetes->duracion)}} DAYS TOURS</span>
-                                @endforeach
-                            </h2>
+                            <div class="col text-center">
+                                <h2 class="text-g-yellow font-weight-light">
+                                 @foreach($paquete_iti as $paquetes)
+                                    {{($paquetes->titulo)}} <span class="text-white">{{($paquetes->duracion)}} DAYS TOURS</span>
+                                    @endforeach
+                                </h2>
+                            </div>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
@@ -118,9 +121,12 @@
 
                     <div class="row position-relative">
                         <div class="col">
-                            <ul id="menu" class="nav nav-pills nav-fill bg-light rounded d-none d-sm-flex sticky-top nav-itinerary">
-                                <li class="nav-item">
+                            <ul id="menu" class="nav nav-pills nav-fill bg-light rounded  d-sm-flex sticky-top nav-itinerary">
+                                <li class="nav-item d-none d-sm-block">
                                     <a class="nav-link text-white rounded-0 bg-g-green" href="#Itinerary">Itinerary</a>
+                                </li>
+                                <li class="nav-item d-sm-none">
+                                    <a class="nav-link text-white rounded-0 bg-g-green" href="#Itinerary-2">Itinerary</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white rounded-0 bg-danger" href="#Hotels">Hotels</a>
@@ -128,14 +134,14 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-white rounded-0 bg-info" href="#Included">Included</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item d-none d-sm-block">
                                     <a class="nav-link text-white rounded-0 bg-g-yellow" href="#Inquire">Inquire</a>
                                 </li>
                             </ul>
 
                             <div class="row">
 
-                            <div class="col-8">
+                            <div class="col col-md-12 col-lg-8 col-xl-8">
 
 
                                 <div id="Itinerary" class="d-none d-sm-block">
@@ -179,6 +185,20 @@
                                             </div>
                                         </div>
                                         @php $i++; @endphp
+                                    @endforeach
+                                </div>
+
+                                <div id="Itinerary-2" class="d-md-none">
+                                    <h3 class="text-secondary pt-5 pb-4 h4"><strong>Itinerary</strong></h3>
+                                    @php
+                                        $i = 1;
+                                        $num_des = count($paquetes->itinerario);
+                                    @endphp
+                                    @foreach($paquetes->itinerario->sortBy('dia') as $itinerario)
+                                        <h4 class="text-g-yellow"><strong>DAY {{$itinerario->dia}}:</strong> {{ucwords(strtolower($itinerario->titulo))}}</h4>
+                                        <div class="lead pb-3">
+                                            @php echo $itinerario->descripcion @endphp
+                                        </div>
                                     @endforeach
                                 </div>
 
@@ -269,7 +289,7 @@
                                     </div>
 
                                     <div class="row justify-content-center pt-4">
-                                        <div class="col-12 col-md-10 col-lg-8">
+                                        <div class="col-12 col-md-10 col-lg-12 col-xl-10">
                                             <form id="d_form" role="form">
                                                 {{csrf_field()}}
                                                 <div class="row pb-2">
@@ -472,7 +492,7 @@
                                 </div>
 
                             </div>
-                            <div class="col">
+                            <div class="col col-md">
                                 <h3 class="text-secondary pt-5 h4"><strong>Prices</strong></h3>
                                 <div class="card border-secondary">
                                     <p class="card-header bg-secondary text-white">Price per person based on double accomodation</p>

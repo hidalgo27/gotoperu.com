@@ -1,17 +1,17 @@
 @extends('layouts.page.default')
 @section('content')
 
-    <section class="header-video">
+    <section class="header-video d-none d-md-block">
         <div id="title" class="text-white">
             <div class="container-fluid">
                 <div class="row align-items-center mt-2">
-                    <div class="col-3">
+                    <div class="col-md-6 col-lg-3">
                         <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
                     </div>
-                    <div class="col">
+                    <div class="col d-none d-xl-flex">
                         <i class="text-white">Top recommended Peru Travel Operator since 2009</i>
                     </div>
-                    <div class="col-3 text-right sticky-top">
+                    <div class="col-md col-lg text-right sticky-top">
                         <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
                         <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
                         <!-- Button trigger modal -->
@@ -116,7 +116,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-white border border-white rounded-0 font-weight-normal" href="{{route('packages_durations_path', ['16', '30'])}}">16+ <span class="text-g-yellow font-weight-light">days</span></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item d-sm-none d-md-block">
                             <a class="nav-link text-white border border-white rounded-0 font-weight-normal" href="{{route('packages_list_path')}}" data-toggle="tooltip" data-placement="top" title="View as list"><i class="fa fa-th-list"></i></a>
                             {{--<a href="{{route('packages_list_path')}}" class="text-secondary" data-toggle="tooltip" data-placement="top" title="View as list"><i class="fa fa-th-list"></i></a>--}}
                         </li>
@@ -125,7 +125,7 @@
                     <div class="">
                         <div class="row">
                             @foreach($paquetes->sortBy('duracion') as $paquete)
-                                <div class="col-4 mb-3">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-3">
                                     <div class="card mb-3">
                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
                                             <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}">

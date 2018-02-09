@@ -5,7 +5,7 @@
         <div id="title" class="text-white">
             <div class="container-fluid">
                 <div class="row align-items-center mt-2">
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-3">
                         <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
                     </div>
                     <div class="col d-none d-xl-flex">

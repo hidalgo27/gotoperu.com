@@ -1,17 +1,17 @@
 @extends('layouts.page.default')
 @section('content')
 
-    <section class="header-video">
+    <section class="header-video d-none d-md-block">
         <div id="title" class="text-white">
             <div class="container-fluid">
                 <div class="row align-items-center mt-2">
-                    <div class="col-3">
+                    <div class="col-md-6 col-lg-3">
                         <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
                     </div>
-                    <div class="col">
+                    <div class="col d-none d-xl-flex">
                         <i class="text-g-yellow">Top recommended Peru Travel Operator since 2009</i>
                     </div>
-                    <div class="col-3 text-right sticky-top">
+                    <div class="col-md col-lg text-right sticky-top">
                         <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
                         <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
                         <!-- Button trigger modal -->
@@ -88,7 +88,7 @@
                             @foreach($paquetes_de->unique('idpaquetes') as $paquetes_des)
                                 @if(isset($paquetes_des->destinos))
                                     @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
-                                        <div class="col-4 mb-3">
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-3">
                                             <div class="card mb-3">
                                                 <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="position-relative">
                                                     <img class="card-img-top " src="{{asset('images/packages/'.$paquetes->codigo.'.jpg')}}" alt="{{(strtolower($paquetes->titulo))}}">
