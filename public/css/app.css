@@ -19319,10 +19319,11 @@ header {
   height: 110px;
 }
 
-.popover-hover.focus,
+.popover-hover.focus.active,
 .popover-hover.active:focus {
-  -webkit-box-shadow: 0 0 0 0.05rem rgba(127, 132, 41, 0.5) !important;
-  box-shadow: 0 0 0 0.05rem rgba(127, 132, 41, 0.5) !important;
+  color: #7F8429 !important;
+  background-color: #fff !important;
+  border-color: #7F8429 !important;
 }
 
 .sec-stars {
@@ -19337,6 +19338,15 @@ header {
 .popover-hover:hover .sec-stars > i,
 .popover-hover.active .sec-stars > i {
   color: #ffc107;
+}
+
+.popover-hover.focus {
+  color: #6c757d !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: #6c757d !important;
+  -webkit-box-shadow: 0 0 0 0;
+          box-shadow: 0 0 0 0;
 }
 
 .number-hover:hover,
