@@ -19336,7 +19336,8 @@ header {
 }
 
 .popover-hover:hover .sec-stars > i,
-.popover-hover.active .sec-stars > i {
+.popover-hover.active .sec-stars > i,
+.popover-hover.focus.active .sec-stars > i {
   color: #ffc107;
 }
 
@@ -19347,6 +19348,10 @@ header {
   border-color: #6c757d !important;
   -webkit-box-shadow: 0 0 0 0;
           box-shadow: 0 0 0 0;
+}
+
+.popover-hover.focus .sec-stars > i {
+  color: #6c757d;
 }
 
 .number-hover:hover,
