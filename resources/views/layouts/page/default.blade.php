@@ -312,7 +312,7 @@
     }
 
     $('#h_date').datepicker({
-        dateFormat: 'yy-mm-dd',
+        dateFormat: 'mm-dd-y',
         changeMonth: true,
         changeYear: true
     });

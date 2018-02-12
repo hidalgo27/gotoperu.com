@@ -29,6 +29,7 @@
             {{--<div id="state" class=""><span class="fa fa-pause"></span></div>--}}
             {{--<img id="hero-pic" class="d-none" src="http://www.markhillard.com/sandbox/media/polina.jpg" alt="">--}}
            {{----}}
+            <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="header-expedia">
         </div>
         <div class="content-header">
             <div class="container-fluid">
@@ -480,7 +481,7 @@
                         <div class="media p-3">
                             <span class="mr-3 rounded-circle bg-g-yellow px-3 text-white h1 font-weight-light">6</span>
                             <div class="media-body">
-                                <h5 class="mt-0">We Think Ahead…So You Don’t Have To</h5>
+                                <h5 class="mt-0">We Think Ahead…</h5>
                                 We are aware that surprises, both good and bad, occur while traveling. We are always on top of it and ready to give reliable travel solutions to our customers.
                             </div>
                         </div>
@@ -503,7 +504,7 @@
                             <span class="mr-3 rounded-circle bg-success px-3 text-white h1 font-weight-light">8</span>
                             <div class="media-body">
                                 <h5 class="mt-0">We Aren’t Afraid To Push Our Boundaries</h5>
-                                We offer alternative extensions to the main South American destinations in Ecuador, Bolivia, Chile, Argentina, Brasil, Uruguay and Columbia. In December, 2015 we will be opening a physical travel office in the USA.
+                                We offer alternative extensions to the main South American destinations in Ecuador, Bolivia, Chile, Argentina, Brasil, Uruguay and Columbia.
                             </div>
                         </div>
                     </div>
@@ -513,8 +514,8 @@
                         <div class="media p-3">
                             <span class="mr-3 rounded-circle bg-secondary px-3 text-white h1 font-weight-light">9</span>
                             <div class="media-body">
-                                <h5 class="mt-0">We Are Trustworthy</h5>
-                                We have glowing testimonials on our website and other acclaimed travel websites. We have set a standard of excellence for our customers by giving them the best Peruvian resources for a memorable journey.
+                                <h5 class="mt-0">We are Globally recognize</h5>
+                                With global partners as <strong>Expedia, Viator</strong> and many other travel agents who trust us as their leading Peruvian operations company.
                             </div>
                         </div>
                     </div>

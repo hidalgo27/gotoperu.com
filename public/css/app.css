@@ -19401,6 +19401,12 @@ header {
   border-radius: 0;
 }
 
+.header-expedia {
+  position: absolute;
+  margin-bottom: 7.1vh;
+  bottom: 0;
+}
+
 .font-montserrat {
   font-family: 'Montserrat', sans-serif;
 }

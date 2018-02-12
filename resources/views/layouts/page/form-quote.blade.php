@@ -112,7 +112,7 @@
                                 <div class="col col-sm-12">
                                     <div class="row pb-2">
                                         <div class="col">
-                                            <h2 class="text-secondary h5"><strong>HOTEL QUALITY</strong></h2>
+                                            <h2 class="text-secondary h5"><strong>HOTEL CATEGORY</strong></h2>
                                         </div>
                                     </div>
                                     <div class="row">

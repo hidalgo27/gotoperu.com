@@ -302,7 +302,7 @@
                                                 {{csrf_field()}}
                                                 <div class="row pb-2">
                                                     <div class="col">
-                                                        <h2 class="text-secondary h5"><strong>HOTEL QUALITY</strong></h2>
+                                                        <h2 class="text-secondary h5"><strong>HOTEL CATEGORY</strong></h2>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -501,9 +501,9 @@
 
                             </div>
                             <div class="col col-sm-12 col-md-5 col-lg-4 col-xl-4">
-                                <h3 class="text-secondary pt-5 h4"><strong>Prices</strong></h3>
+                                <h3 class="text-secondary pt-5 h4"><strong>Prices <small class="text-primary font-weight-bold">($USD)</small></strong></h3>
                                 <div class="card border-secondary">
-                                    <p class="card-header bg-secondary text-white">Price per person based on double accomodation</p>
+                                    <p class="card-header bg-secondary text-white">Price per person based on double accomodation </p>
                                     <div class="card-body p-0">
                                         <table class="table m-0">
                                             <thead class="title-header bg-light">
