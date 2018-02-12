@@ -118,7 +118,7 @@
                                     <div class="row">
                                         <div class="col col-sm col-sm pb-2">
                                             <div class="form-circ btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel economico">
+                                                <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">
                                                     <i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>
                                                     <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> Budget
                                                     <div class="d-block text-center sec-stars">
@@ -130,7 +130,7 @@
                                         </div>
                                         <div class="col col-sm col-sm pb-2">
                                             <div class="form-circ btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel Turista">
+                                                <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">
                                                     <i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>
                                                     <input type="checkbox" autocomplete="off" name="accommodation[]" value="Turista"> Best Value
                                                     <div class="d-block text-center sec-stars">
@@ -143,7 +143,7 @@
                                         </div>
                                         <div class="col col-sm col-sm pb-2">
                                             <div class="form-circ btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel Superior">
+                                                <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">
                                                     <i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>
                                                     <input type="checkbox" autocomplete="off" name="accommodation[]" value="Superior"> Superior
                                                     <div class="d-block text-center sec-stars">
@@ -157,7 +157,7 @@
                                         </div>
                                         <div class="col col-sm col-sm pb-2">
                                             <div class="form-circ btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative" data-container="body" data-toggle="popover" data-placement="top" data-content="Hotel Lujo">
+                                                <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">
                                                     <i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>
                                                     <input type="checkbox" autocomplete="off" name="accommodation[]" value="Luxo"> Luxury
                                                     <div class="d-block text-center sec-stars">
