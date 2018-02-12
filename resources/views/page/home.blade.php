@@ -114,7 +114,7 @@
     <section class="bg-light">
         <div class="container-fluid">
             <div class="row">
-                @foreach($paquetes->where('estado', 0)->take(6) as $paquete)
+                @foreach($paquetes->where('estado', 1)->take(6) as $paquete)
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-3">
                         <div class="card mb-3">
                             <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
