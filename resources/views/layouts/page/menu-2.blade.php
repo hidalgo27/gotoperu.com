@@ -33,12 +33,4 @@
         </div>
     </div>
 </section>
-<section class="d-md-none">
-    <div class="container-fluid p-0">
-        <div class="row no-gutters">
-            <div class="col">
-                <img src="{{asset('images/machupicchu-a.png')}}" alt="" class="img-fluid">
-            </div>
-        </div>
-    </div>
-</section>
+

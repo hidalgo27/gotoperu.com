@@ -5,12 +5,12 @@
             {{--<div class="modal-header">--}}
             {{--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
             {{--</div>--}}
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
             <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
                 <img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="img-fluid">
-                <div class="row mt-5">
+                <div class="row mt-3">
                     <div class="col">
                         <ul class="list-unstyled">
                             <li><a href="{{route('packages_path')}}" class="text-secondary h5"><strong>Travel Packages</strong></a></li>
@@ -29,8 +29,8 @@
                         </ul>
                     </div>
                 </div>
-                <hr>
-                <div class="row mt-2">
+                <hr class="mt-0">
+                <div class="row">
                     <div class="col">
                         <ul class="list-unstyled m-0">
                             {{--<li><a href="#" class="text-secondary h5"><strong>Travel Agents</strong></a></li>--}}
@@ -50,20 +50,36 @@
                 <hr>
                 <div class="row mt-2">
                     <div class="col">
-                        <ul class="list-unstyled m-0">
-                            {{--<li><a href="#" class="text-secondary h5"><strong>Travel Agents</strong></a></li>--}}
-                            {{--<li><a href="#" class="text-secondary h5"><strong>Our Blog</strong></a></li>--}}
-                            <li><a href="{{route('hotels_path')}}" class="text-secondary h5"><strong>Join Our Team</strong></a></li>
-                        </ul>
+                        <p class="h5 text-secondary">We are a proud local  Expedia Peru Partner</p>
+                        <a href="https://www.expedia.com/" target="_blank"><img src="{{asset('images/logos/expedia.jpg')}}" alt="" class="img-fluid"></a>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
                     <div class="col">
-                        <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank"><i class="fas fa-facebook-square"></i></a>
-                        <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank"><i class="fa fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                        <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
+                            <img src="{{asset('images/icons/facebook.png')}}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
+                            <img src="{{asset('images/icons/twitter.png')}}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
+                            <img src="{{asset('images/icons/instagram.png')}}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
+                            <img src="{{asset('images/icons/youtube.png')}}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
+                            <img src="{{asset('images/icons/youtube.png')}}" alt="" class="img-fluid">
+                        </a>
                     </div>
                 </div>
                 <div class="row mt-2">

@@ -56,6 +56,15 @@
     </section>
 
     @include('layouts.page.menu-2')
+    <section class="d-md-none">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col">
+                    <img src="{{asset('images/destinations/'.$pais.'.jpg')}}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="bg-white">
         <div class="container-fluid">
@@ -79,7 +88,7 @@
             <div class="row">
                 <div class="col">
 
-                    <div class="sticky-top py-2 text-center bg-white">
+                    <div class="sticky-top py-2 text-center bg-white d-none d-sm-block">
                         @foreach($destinos->where('pais',$pais)->sortBy('nombre') as $destino)
                             <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours"><img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}"></a>
                         @endforeach

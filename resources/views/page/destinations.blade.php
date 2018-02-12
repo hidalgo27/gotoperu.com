@@ -37,7 +37,7 @@
 
                     <div class="col">
 
-                        <div class="row my-3 justify-content-center">
+                        <div class="row my-3 justify-content-center text-center">
                             <p class="text-white display-4 font-weight-light">South America Travel Destinations</p>
                         </div>
                         <div class="row justify-content-center">
@@ -57,6 +57,15 @@
     </section>
 
     @include('layouts.page.menu')
+    <section class="d-md-none">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col">
+                    <img src="{{asset('images/destinations/puno.jpg')}}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="bg-white">
         <div class="container-fluid">

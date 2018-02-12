@@ -111,10 +111,18 @@
         </div>
     </section>
     @include('layouts.page.menu-2')
+    <section class="d-md-none">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col">
+                    <img src="{{asset('images/banners/itinerary/GTP40.jpg')}}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
     @include('layouts.page.included')
 
-
-    <section class="bg-white">
+    <section class="bg-white pt-2">
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
@@ -141,7 +149,7 @@
 
                             <div class="row">
 
-                            <div class="col col-md-12 col-lg-8 col-xl-8">
+                            <div class="col col-sm-12 col-md-7 col-lg-8 col-xl-8">
 
 
                                 <div id="Itinerary" class="d-none d-sm-block">
@@ -188,7 +196,7 @@
                                     @endforeach
                                 </div>
 
-                                <div id="Itinerary-2" class="d-md-none">
+                                <div id="Itinerary-2" class="d-sm-none">
                                     <h3 class="text-secondary pt-5 pb-4 h4"><strong>Itinerary</strong></h3>
                                     @php
                                         $i = 1;
@@ -202,7 +210,7 @@
                                     @endforeach
                                 </div>
 
-                                <div id="Hotels" class="d-none d-sm-block pt-5">
+                                <div id="Hotels" class="pt-5">
                                     <div class="row">
                                         <div class="col">
                                             <h3 class="text-secondary h4"><strong>Hotels</strong></h3>
@@ -218,7 +226,7 @@
                                         <h5 class="text-g-yellow pt-4 m-0" id="{{$paquete_destino->destinos->id}}-hotel"><i class="fa fa-check"></i> {{$paquete_destino->destinos->nombre}} HOTEL</h5>
                                         @foreach($hoteles_destinos->where('iddestinos', $paquete_destino->destinos->id) as $hoteles_destino)
                                             <div class="row pt-3 pb-4">
-                                                <div class="col-3">
+                                                <div class="col-3 d-none d-sm-block">
                                                     <img src="{{$hoteles_destino->hotel->imagen}}" alt="" class="w-100 rounded">
                                                 </div>
                                                 <div class="col">
@@ -279,7 +287,7 @@
                                     </div>
                                 </div>
 
-                                <div id="Inquire" class="d-none d-sm-block pt-5">
+                                <div id="Inquire" class="pt-5">
                                     <h3 class="text-secondary h4"><strong>Inquire</strong></h3>
                                     <div class="row justify-content-center mt-4">
                                         <div class="col-12 col-md-10 col-lg-8 text-center">
@@ -492,7 +500,7 @@
                                 </div>
 
                             </div>
-                            <div class="col col-md">
+                            <div class="col col-sm-12 col-md-5 col-lg-4 col-xl-4">
                                 <h3 class="text-secondary pt-5 h4"><strong>Prices</strong></h3>
                                 <div class="card border-secondary">
                                     <p class="card-header bg-secondary text-white">Price per person based on double accomodation</p>

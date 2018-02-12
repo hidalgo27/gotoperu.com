@@ -57,6 +57,15 @@
     </section>
 
     @include('layouts.page.menu-2')
+    <section class="d-md-none">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col">
+                    <img src="{{asset('images/destinations/'.str_replace(' ','-', $ciudad).'.jpg')}}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="bg-white">
         <div class="container-fluid">

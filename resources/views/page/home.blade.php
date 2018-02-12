@@ -89,7 +89,15 @@
     </section>
 
     @include('layouts.page.menu')
-
+    {{--<section class="d-md-none">--}}
+        {{--<div class="container-fluid p-0">--}}
+            {{--<div class="row no-gutters">--}}
+                {{--<div class="col">--}}
+                    {{--<img src="{{asset('images/slider/cusco.jpg')}}" alt="" class="img-fluid">--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
     <section class="bg-light">
         <div class="container-fluid">
             <div class="row pt-5 pb-2">
@@ -387,6 +395,9 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
+
+                        <a href="{{route('destinations_path')}}" class="btn-link float-right font-weight-normal my-2 d-md-none">View All Destinations <i class="fa fa-chevron-right"></i></a>
+
                     </div>
                 </div>
             </div>
@@ -530,16 +541,22 @@
         </div>
     </section>
 
-    <div class=" position-relative">
+    <div class="bg-light position-relative">
         <img src="{{asset('images/banner-hotel.jpg')}}" alt="" class="w-100">
         <div class="card-img-overlay bg-rgba-dark-3">
             <p class="m-0 text-white h3 font-weight-light"><img src="{{asset('images/icons/include/hotels.png')}}" width="50" height="50" alt="" class="p-1" data-toggle="tooltip" data-placement="top" title="Hotels"> Hand-Selected  Collection of hotels</p>
         </div>
     </div>
-    <div class="text-center">
-        <p class="pt-2 lead">From budget accommodations to the most luxury hotels that are a destination itself, we are partners with practically every top quality hotel at every category ( 2 stars. 3 stars, 4 stars, 5 stars ) plus our volume let us offer you great Vacation packages prices as we translate our volume savings to you.</p>
-        <a href="{{route('hotels_path')}}" class="btn btn-primary btn-lg">Hotels</a>
-    </div>
+
+{{--        <a href="{{route('hotels_path')}}" class="btn btn-primary btn-lg">Hotels</a>--}}
+        <div class="container-fluid text-center bg-light">
+            <div class="row">
+                <div class="col">
+                    <p class="pt-2">From budget accommodations to the most luxury hotels that are a destination itself, we are partners with practically every top quality hotel at every category ( 2 stars. 3 stars, 4 stars, 5 stars ) plus our volume let us offer you great Vacation packages prices as we translate our volume savings to you.</p>
+                    <a href="{{route('hotels_path')}}" class="btn-link float-right font-weight-normal my-2">Hotels <i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
 
 
     <section class="bg-white d-none d-sm-block">
