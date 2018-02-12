@@ -28,7 +28,7 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/slider/package-1.jpg')}}" alt="" id="hero-vid">
+            <img src="{{asset('images/banners/itinerary/GTP40.jpg')}}" alt="" id="hero-vid">
 
         </div>
         <div class="content-header">
