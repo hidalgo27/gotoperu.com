@@ -41,7 +41,7 @@
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
 
-                                <a href="#content" class="text-white">
+                                <a href="#content-page" class="text-white">
                                     <i class="fa fa-4x fa-chevron-circle-down font-weight-light"></i>
                                 </a>
 
