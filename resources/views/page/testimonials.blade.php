@@ -51,13 +51,22 @@
                                     <div class="col-8">
                                         <div class="row">
                                             <div class="col">
-                                                <a href=""><img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="100s Talking about us!"></a>
+                                                <a href=""><img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="If you are visiting anywhere in Peru, you cannot find a better choice than www.gotoperu.com – they live there, and work there, and can sort urgent issues readily, with a quick phone call."></a>
                                             </div>
                                             <div class="col">
-                                                <a href="https://www.trustpilot.com/review/gotoperu.com" target="_blank"><img src="{{asset('images/icons/trust.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="Real Testimonies"></a>
+                                                <a href="https://www.trustpilot.com/review/gotoperu.com" target="_blank"><img src="{{asset('images/icons/trust.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="In summary, we had a wonderful time! We, of course, enjoyed the sights as we expected (Machu Picchu, Sacred Valley, train, Lake Titicacca), but all of the connections were on time and very comfortable. The guides (Franklin in Cusco, Nellie in Machu Picchu) were very pleasant and very knowledgeable. "></a>
                                             </div>
                                             <div class="col">
-                                                <a href="https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com" target="_blank"><img src="{{asset('images/icons/yelp.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="Yelp"></a>
+                                                <a href="https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com" target="_blank"><img src="{{asset('images/icons/yelp.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="The arrangement of the agency since Cuzco arrival, has escort service all the way. You do not need to fear of lost. Hotel, tour guide, transfer are all excellent. "></a>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <strong>Trip Advisor:</strong>
+                                                <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5867868-Has_anyone_booked_a_tour_with_GOTOPERU_www_gotoperu_org-Peru.html">Link 1</a>,
+                                                <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k6509104-Gotoperu_Travel_Agency-Peru.html">Link 2</a>,
+                                                <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5657518-GOTOPERU_online_tour_operator-Peru.html">Link 3</a>,
+                                                <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k6934201-Trip_Report_Two_glorious_weeks_in_Peru_with_GOTOPERU_ORG-Peru.html">Link 4</a>.
                                             </div>
                                         </div>
                                     </div>

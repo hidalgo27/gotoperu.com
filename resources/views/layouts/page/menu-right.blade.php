@@ -35,7 +35,7 @@
                         <ul class="list-unstyled m-0">
                             {{--<li><a href="#" class="text-secondary h5"><strong>Travel Agents</strong></a></li>--}}
                             {{--<li><a href="#" class="text-secondary h5"><strong>Our Blog</strong></a></li>--}}
-                            <li><a href="{{route('hotels_path')}}" class="text-secondary h5"><strong>Join Our Team</strong></a></li>
+                            <li><a href="{{route('join_path')}}" class="text-secondary h5"><strong>Join Our Team</strong></a></li>
                         </ul>
                     </div>
                 </div>
@@ -48,13 +48,14 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row mt-2">
-                    <div class="col">
-                        <p class="h5 text-secondary">We are a proud local  Expedia Peru Partner</p>
-                        <a href="https://www.expedia.com/" target="_blank"><img src="{{asset('images/logos/expedia.jpg')}}" alt="" class="img-fluid"></a>
-                    </div>
-                </div>
-                <hr>
+                {{--<div class="row mt-2">--}}
+                    {{--<div class="col">--}}
+                        {{--<p class="h5 text-secondary">We are a proud local  Expedia Peru Partner</p>--}}
+                        {{--<a href="https://www.expedia.com/" target="_blank"><img src="{{asset('images/logos/expedia.jpg')}}" alt="" class="img-fluid"></a>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+
+                {{--<hr>--}}
                 <div class="row">
                     <div class="col">
                         <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
@@ -77,15 +78,16 @@
                         </a>
                     </div>
                     <div class="col">
-                        <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
-                            <img src="{{asset('images/icons/youtube.png')}}" alt="" class="img-fluid">
+                        <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
+                            <img src="{{asset('images/icons/google-plus.png')}}" alt="" class="img-fluid">
                         </a>
                     </div>
                 </div>
+                <hr>
                 <div class="row mt-2">
                     <div class="col">
-                        <a href="https://m.me/GOTOPERUcom/" class="btn btn-primary" target="_blank">Chat Facebook</a>
-                        <a href="https://api.whatsapp.com/send?phone=51084262555" class="btn btn-success" target="_blank">Chat Twitter</a>
+                        <a href="https://m.me/GOTOPERUcom/" class="btn btn-primary" target="_blank"><i class="fab fa-facebook-square"></i> Chat Facebook</a>
+                        <a href="https://api.whatsapp.com/send?phone=51084262555" class="btn btn-success" target="_blank"><i class="fab fa-whatsapp"></i> Chat Twitter</a>
                     </div>
                 </div>
             </div>

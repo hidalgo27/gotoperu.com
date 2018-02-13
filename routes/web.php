@@ -119,3 +119,9 @@ Route::get('/hotels', [
     'uses' => 'HomeController@hotels',
     'as' => 'hotels_path',
 ]);
+
+//join our team
+Route::get('/join-our-team', [
+    'uses' => 'HomeController@join',
+    'as' => 'join_path',
+]);

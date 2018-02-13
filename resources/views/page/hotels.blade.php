@@ -27,7 +27,7 @@
                 {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-                <img src="{{asset('images/slider/package-1.jpg')}}" alt="" id="hero-vid">
+                <img src="{{asset('images/hotels.jpg')}}" alt="" id="hero-vid">
 
         </div>
         <div class="content-header">
@@ -60,7 +60,7 @@
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col">
-                    <img src="{{asset('images/slider/package-1.jpg')}}" alt="" class="img-fluid">
+                    <img src="{{asset('images/hotels.jpg')}}" alt="" class="img-fluid">
                 </div>
             </div>
         </div>

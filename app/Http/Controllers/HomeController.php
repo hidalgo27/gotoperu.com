@@ -464,6 +464,11 @@ class HomeController extends Controller
         return view('page.agents');
     }
 
+    public function join()
+    {
+        return view('page.join');
+    }
+
     public function deals()
     {
         SEOMeta::setTitle('Travel Deals Peru | Machu Picchu Vacation Packages | Machu Picchu Deals');
