@@ -74,8 +74,8 @@
                             {{--</div>--}}
                         {{--</div>--}}
                         <div class="row my-3 justify-content-center text-center d-none d-sm-block">
-                            <p class="text-white font-weight-light d-none d-md-block d-xl-none">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and qoute <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
-                            <p class="text-white h4 font-weight-light d-md-none d-xl-block">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and qoute <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
+                            <p class="text-white font-weight-light d-none d-md-block d-xl-none">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and quote <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
+                            <p class="text-white h4 font-weight-light d-md-none d-xl-block">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and quote <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
@@ -172,7 +172,7 @@
             </div>
             <div class="row pb-4">
                 <div class="col text-right">
-                    <a href="" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>
+                    <a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>
                 </div>
             </div>
         </div>

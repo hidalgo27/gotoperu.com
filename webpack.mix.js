@@ -21,7 +21,8 @@ mix.scripts([
     'resources/assets/js/vendors/smooth-scroll.js',
     'resources/assets/js/vendors/jquery-ui.js',
     'node_modules/twitter-bootstrap-wizard/jquery.bootstrap.wizard.js',
-    'resources/assets/js/vendors/all.js',
+    // 'resources/assets/js/vendors/all.js',
+    // 'resources/assets/js/font-awesome.js',
     //Customized
     'resources/assets/js/vendors/function-admin.js',
     'resources/assets/js/vendors/function.js'

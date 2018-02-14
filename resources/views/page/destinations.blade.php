@@ -44,7 +44,7 @@
                             <div class="col-6 text-center">
 
                                 <a href="#content-page" class="text-white">
-                                    <i class="fa fa-4x fa-chevron-circle-down font-weight-light"></i>
+                                    <i class="fas fa-chevron-down fa-4x"></i>
                                 </a>
 
                             </div>
