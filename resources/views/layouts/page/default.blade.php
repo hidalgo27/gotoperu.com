@@ -54,7 +54,7 @@
             <div class="col-6 col-sm mb-3 text-white">
                 <h3 class="h6 text-g-yellow">Tour Packages</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="{{route('deals_path')}}" class="text-white">Travel Deals</a></li>
+                    {{--<li><a href="{{route('deals_path')}}" class="text-white">Travel Deals</a></li>--}}
                     <li><a href="{{route('packages_path')}}" class="text-white">Travel Packages</a></li>
                 </ul>
             </div>
@@ -106,8 +106,8 @@
             <div class="col-6 col-sm mb-3 text-white">
                 <h3 class="h6 text-g-yellow">Testimonials</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="#" class="text-white">Reviews</a></li>
-                    <li><a href="{{route('testimonials_path')}}" class="text-white">Testmonials</a></li>
+                    {{--<li><a href="#" class="text-white"></a></li>--}}
+                    <li><a href="{{route('testimonials_path')}}" class="text-white">Reviews & Testmonials</a></li>
                 </ul>
             </div>
             <div class="col-6 col-sm mb-3 text-white">
@@ -119,9 +119,9 @@
                 </ul>
             </div>
             <div class="col-6 col-sm mb-3 text-white">
-                <h3 class="h6 text-g-yellow">Travel Agents</h3>
+                <h3 class="h6 text-g-yellow">Hotels</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="#" class="text-white">Registration</a></li>
+                    <li><a href="{{route('hotels_path')}}" class="text-white">Hotels</a></li>
                 </ul>
             </div>
         </div>

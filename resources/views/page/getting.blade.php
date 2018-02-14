@@ -36,7 +36,7 @@
                     <div class="col">
 
                         <div class="row my-3 justify-content-center">
-                            <p class="text-white display-4 font-weight-light">FREQUENTLY ASKED QUESTIONS</p>
+                            <p class="text-white display-4 font-weight-light">GETTING TO PERU</p>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">

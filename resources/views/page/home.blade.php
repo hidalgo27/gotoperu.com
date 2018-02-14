@@ -74,12 +74,12 @@
                             {{--</div>--}}
                         {{--</div>--}}
                         <div class="row my-3 justify-content-center text-center d-none d-sm-block">
-                            <p class="text-white font-weight-light d-none d-md-block d-xl-none">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and quote <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
-                            <p class="text-white h4 font-weight-light d-md-none d-xl-block">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and quote <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
+                            <p class="text-white font-weight-light d-none d-md-block d-xl-none">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and quote   <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
+                            <p class="text-white h4 font-weight-light d-md-none d-xl-block">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and qoute <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
-                                <a href="#Inquire" class="btn btn-lg btn-g-yellow">GET STARED NOW</a>
+                                <a href="#Inquire" class="btn btn-lg btn-g-yellow">GET STARTED NOW</a>
                             </div>
                         </div>
                     </div>
