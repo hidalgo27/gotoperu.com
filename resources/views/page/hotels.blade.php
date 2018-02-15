@@ -28,7 +28,10 @@
             {{--</video>--}}
 
                 <img src="{{asset('images/hotels.jpg')}}" alt="" id="hero-vid">
-
+{{--            <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="header-expedia">--}}
+            <div class="header-expedia text-white">
+                <p class="p-4">4 <span class="text-g-yellow">Stars </span> Casa Andina Premium - Cusco</p>
+            </div>
         </div>
         <div class="content-header">
             <div class="container-fluid">
