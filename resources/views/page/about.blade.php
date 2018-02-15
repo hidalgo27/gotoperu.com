@@ -182,15 +182,6 @@
                             <p>We have glowing testimonials on our website and other acclaimed travel websites. We have set a standard of excellence for our customers by giving them the best Peruvian resources for a memorable journey.</p>
                         </div>
                     </div>
-                    <div class="row mb-4 os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
-                        <div class="col-2 text-center">
-                            <span class="display-3 font-weight-bold">10</span>
-                        </div>
-                        <div class="col">
-                            <h3>We Are Sincere</h3>
-                            <p>We will show you Peru with an open mind and an authentic smile.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

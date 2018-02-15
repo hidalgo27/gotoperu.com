@@ -75,7 +75,7 @@
                         {{--</div>--}}
                         <div class="row my-3 justify-content-center text-center d-none d-sm-block">
                             <p class="text-white font-weight-light d-none d-md-block d-xl-none">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and quote   <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
-                            <p class="text-white h4 font-weight-light d-md-none d-xl-block">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and qoute <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
+                            <p class="text-white h4 font-weight-light d-md-none d-xl-block">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and quote <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
@@ -90,15 +90,25 @@
     </section>
 
     @include('layouts.page.menu')
-    {{--<section class="d-md-none">--}}
-        {{--<div class="container-fluid p-0">--}}
-            {{--<div class="row no-gutters">--}}
-                {{--<div class="col">--}}
-                    {{--<img src="{{asset('images/slider/cusco.jpg')}}" alt="" class="img-fluid">--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</section>--}}
+    <section class="d-md-none">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col">
+                    <img src="{{asset('images/machu_picchu.jpg')}}" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="row no-gutters align-items-center">
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item"><span class="bg-g-green p-1 rounded-circle px-2 text-white">1</span> Share your travel plans</li>
+                        <li class="list-group-item"><span class="bg-g-yellow p-1 rounded-circle px-2 text-white">1</span> Receive a customize itinerary and quote</li>
+                        <li class="list-group-item"><span class="bg-g-dark p-1 rounded-circle px-2 text-white">1</span> Discover the best of Peru with GOTOPERU</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="bg-light">
         <div class="container-fluid">
             <div class="row pt-5 pb-2">
