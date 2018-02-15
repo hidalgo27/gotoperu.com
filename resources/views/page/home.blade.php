@@ -101,8 +101,8 @@
                 <div class="col">
                     <ul class="list-group">
                         <li class="list-group-item"><span class="bg-g-green p-1 rounded-circle px-2 text-white">1</span> Share your travel plans</li>
-                        <li class="list-group-item"><span class="bg-g-yellow p-1 rounded-circle px-2 text-white">1</span> Receive a customize itinerary and quote</li>
-                        <li class="list-group-item"><span class="bg-g-dark p-1 rounded-circle px-2 text-white">1</span> Discover the best of Peru with GOTOPERU</li>
+                        <li class="list-group-item"><span class="bg-g-yellow p-1 rounded-circle px-2 text-white">2</span> Receive a customize itinerary and quote</li>
+                        <li class="list-group-item"><span class="bg-g-dark p-1 rounded-circle px-2 text-white">3</span> Discover the best of Peru with GOTOPERU</li>
                     </ul>
 
                 </div>
