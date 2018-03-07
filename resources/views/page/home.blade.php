@@ -8,9 +8,9 @@
                     <div class="col-md-6 col-lg-3">
                         <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
                     </div>
-                    <div class="col d-none d-xl-flex">
-                    <i class="text-g-yellow">Top recommended Peru Travel Operator since 2009</i>
-                    </div>
+                    {{--<div class="col d-none d-xl-flex">--}}
+                    {{--<i class="text-g-yellow">Top recommended Peru Travel Operator since 2009</i>--}}
+                    {{--</div>--}}
                     <div class="col-md col-lg text-right sticky-top">
                         <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
                         <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
@@ -29,15 +29,49 @@
             {{--<div id="state" class=""><span class="fa fa-pause"></span></div>--}}
             {{--<img id="hero-pic" class="d-none" src="http://www.markhillard.com/sandbox/media/polina.jpg" alt="">--}}
            {{----}}
-            <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="header-expedia">
+            <p class="header-expedia text-white p-3">As local travel operators our programs start daily</p>
         </div>
         <div class="content-header">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row content-header-row align-items-center">
-
-                    <div class="col">
+                    <div class="col col-sm-7">
+                        <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row justify-content-center">
+                                        <div class="col-9">
+                                            <a href="packages/classic-cusco-and-machu-picchu/5-days-tours">
+                                                <div class="bg-rgba-dark-5 rounded text-white py-2 px-4">
+                                                    <h2 class="text-center h1 text-g-yellow m-0">Classic Cusco</h2>
+                                                    <p class="m-0 h5 font-weight-normal text-center">Classic Cusco and Machu Picchu 5 days</p>
+                                                    <p class="m-0 text-center">From <span class="h1 text-info"><sup>$</sup>688</span> p.p</p>
+                                                    <hr class="my-1">
+                                                    <small class="m-0">Included: Assistances, Entrances, Transfers, Hotels, Tours, Trains.</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{--<div class="carousel-item">--}}
+                                {{--<img class="d-block w-100" src="..." alt="Second slide">--}}
+                                {{--</div>--}}
+                                {{--<div class="carousel-item">--}}
+                                {{--<img class="d-block w-100" src="..." alt="Third slide">--}}
+                                {{--</div>--}}
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+                                <span class="fas fa-angle-left fa-2x text-white" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+                                <span class="fas fa-angle-right fa-2x text-white" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col d-none d-sm-block">
                         <div class="row justify-content-center d-none d-sm-flex">
-                            <div class="col-md-8 col-xl-4">
+                            <div class="col">
                                 <div class="row no-gutters">
                                     <div class="col">
                                         <img src="{{asset('images/icons/include/assistances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Assistances">
@@ -69,20 +103,24 @@
                             </div>
                         </div>
                         {{--<div class="row mt-2">--}}
-                            {{--<div class="col text-white text-center">--}}
-                                {{--<h4 class="h5 font-weight-light text-g-yellow">Top recommended Peru Travel Company</h4>--}}
-                            {{--</div>--}}
+                        {{--<div class="col text-white text-center">--}}
+                        {{--<h4 class="h5 font-weight-light text-g-yellow">Top recommended Peru Travel Company</h4>--}}
                         {{--</div>--}}
-                        <div class="row my-3 justify-content-center text-center d-none d-sm-block">
-                            <p class="text-white font-weight-light d-none d-md-block d-xl-none">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and quote   <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
-                            <p class="text-white h4 font-weight-light d-md-none d-xl-block">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and quote <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-6 text-center">
-                                <a href="#Inquire" class="btn btn-lg btn-g-yellow">GET STARTED NOW</a>
+                        {{--</div>--}}
+                        <div class="row my-3 justify-content-center">
+                            <div class="col">
+                                <p class="text-white mb-3 h5"><span class="bg-g-green p-1 rounded-circle px-3 text-white">1</span> Share your travel plans</p>
+                                <p class="text-white mb-3 h5"><span class="bg-g-yellow p-1 rounded-circle px-3 text-white">2</span> Receive a customize itinerary and quote</p>
+                                <p class="text-white mb-3 h5"><span class="bg-g-dark p-1 rounded-circle px-3 text-white">3</span> Discover the best of Peru with GOTOPERU</p>
                             </div>
                         </div>
+                        {{--<div class="row justify-content-center">--}}
+                        {{--<div class="col-6 text-center">--}}
+                        {{--<a href="#Inquire" class="btn btn-lg btn-g-yellow">GET STARTED NOW</a>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
                     </div>
+
                 </div>
 
             </div>
@@ -320,7 +358,7 @@
                                                     @endforeach
                                                     {{--<div class="gradient-destinations"></div>--}}
                                                 </div>
-                                                <a href="{{route('destinations_country_path', 'peru-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Ecuador packages <i class="fa fa-chevron-right"></i></a>
+                                                <a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Ecuador packages <i class="fa fa-chevron-right"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -414,6 +452,44 @@
             </div>
         </div>
     </section>
+
+
+
+    <section class="bg-white d-none d-sm-block">
+        <div class="container-fluid">
+            <div class="row pt-5 pb-2">
+                <div class="col">
+                    <h1 class="text-secondary h4"><strong>HOTELS</strong></h1>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
+                    {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
+                </div>
+            </div>
+            {{--<div class="row justify-content-center">--}}
+                {{--<div class="col-1">--}}
+                    {{--<img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        </div>
+    </section>
+
+    <div class="bg-light position-relative">
+        <img src="{{asset('images/banner-hotel.jpg')}}" alt="" class="w-100">
+        <div class="card-img-overlay bg-rgba-dark-3">
+            <p class="m-0 text-white h3 font-weight-light"><img src="{{asset('images/icons/include/hotels.png')}}" width="50" height="50" alt="" class="p-1" data-toggle="tooltip" data-placement="top" title="Hotels"> Hand-Selected  Collection of hotels</p>
+        </div>
+    </div>
+
+{{--        <a href="{{route('hotels_path')}}" class="btn btn-primary btn-lg">Hotels</a>--}}
+        <div class="container-fluid text-center bg-white">
+            <div class="row">
+                <div class="col">
+                    <p class="pt-2">From budget accommodations to the most luxury hotels that are a destination itself, we are partners with practically every top quality hotel at every category ( 2 stars. 3 stars, 4 stars, 5 stars ) plus our volume let us offer you great Vacation packages prices as we translate our volume savings to you.</p>
+                    <a href="{{route('hotels_path')}}" class="btn-link float-right font-weight-normal my-2">Hotels <i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+
 
     <section class="bg-light">
         <div class="container-fluid">
@@ -533,42 +609,6 @@
             </div>
         </div>
     </section>
-
-    <section class="bg-white d-none d-sm-block">
-        <div class="container-fluid">
-            <div class="row pt-5 pb-2">
-                <div class="col">
-                    <h1 class="text-secondary h4"><strong>HOTELS</strong></h1>
-                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
-                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                    {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
-                </div>
-            </div>
-            {{--<div class="row justify-content-center">--}}
-                {{--<div class="col-1">--}}
-                    {{--<img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        </div>
-    </section>
-
-    <div class="bg-light position-relative">
-        <img src="{{asset('images/banner-hotel.jpg')}}" alt="" class="w-100">
-        <div class="card-img-overlay bg-rgba-dark-3">
-            <p class="m-0 text-white h3 font-weight-light"><img src="{{asset('images/icons/include/hotels.png')}}" width="50" height="50" alt="" class="p-1" data-toggle="tooltip" data-placement="top" title="Hotels"> Hand-Selected  Collection of hotels</p>
-        </div>
-    </div>
-
-{{--        <a href="{{route('hotels_path')}}" class="btn btn-primary btn-lg">Hotels</a>--}}
-        <div class="container-fluid text-center bg-light">
-            <div class="row">
-                <div class="col">
-                    <p class="pt-2">From budget accommodations to the most luxury hotels that are a destination itself, we are partners with practically every top quality hotel at every category ( 2 stars. 3 stars, 4 stars, 5 stars ) plus our volume let us offer you great Vacation packages prices as we translate our volume savings to you.</p>
-                    <a href="{{route('hotels_path')}}" class="btn-link float-right font-weight-normal my-2">Hotels <i class="fa fa-chevron-right"></i></a>
-                </div>
-            </div>
-        </div>
-
 
     <section class="bg-white d-none d-sm-block">
         <div class="container-fluid">

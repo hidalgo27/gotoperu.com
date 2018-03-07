@@ -226,8 +226,8 @@
                                         <h5 class="text-g-yellow pt-4 m-0" id="{{$paquete_destino->destinos->id}}-hotel"><i class="fa fa-check"></i> {{$paquete_destino->destinos->nombre}} HOTEL</h5>
                                         @foreach($hoteles_destinos->where('iddestinos', $paquete_destino->destinos->id) as $hoteles_destino)
                                             <div class="row pt-3 pb-4">
-                                                <div class="col-3 d-none d-sm-block">
-                                                    <img src="{{$hoteles_destino->hotel->imagen}}" alt="" class="w-100 rounded">
+                                                <div class="col-auto d-none d-sm-block">
+                                                    <img src="{{$hoteles_destino->hotel->imagen}}" alt="" class=" rounded-circle" width="100" height="100">
                                                 </div>
                                                 <div class="col">
                                                     <h3>{{$hoteles_destino->hotel->nombre}}</h3>
@@ -401,10 +401,10 @@
                                                         <div class="row">
                                                             <div class="col">
                                                                 <div class="input-group input-group-lg">
-                                                                    <input type="text" class="form-control" id="d_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
                                                                     <div class="input-group-prepend">
                                                                         <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
                                                                     </div>
+                                                                    <input type="text" class="form-control" id="d_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -669,7 +669,7 @@
             }
 
             $('#d_date').datepicker({
-                dateFormat: 'yy-mm-dd',
+                dateFormat: 'mm-dd-y',
                 changeMonth: true,
                 changeYear: true
             });

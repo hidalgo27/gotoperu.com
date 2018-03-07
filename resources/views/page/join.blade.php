@@ -27,7 +27,7 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/join.jpg')}}" alt="" id="hero-vid">
+            <img src="{{asset('images/about.jpg')}}" alt="" id="hero-vid">
 
         </div>
         <div class="content-header">
@@ -60,7 +60,7 @@
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col">
-                    <img src="{{asset('images/join.jpg')}}" alt="" class="img-fluid">
+                    <img src="{{asset('images/about.jpg')}}" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
 
             <div class="row pb-5 align-items-center">
                 <div class="col-8">
-                    <img src="{{asset('images/team.jpg')}}" alt="" class="w-100 rounded">
+                    <img src="{{asset('images/team-meetup.jpg')}}" alt="" class="w-100 rounded">
                 </div>
                 <div class="col">
 
