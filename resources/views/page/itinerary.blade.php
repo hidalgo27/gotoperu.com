@@ -131,6 +131,9 @@
                         <div class="col">
                             <ul id="menu" class="nav nav-pills nav-fill bg-light rounded  d-sm-flex sticky-top nav-itinerary">
                                 <li class="nav-item d-none d-sm-block">
+                                    <a class="nav-link text-white rounded-0 bg-g-dark" href="#overview">Overview</a>
+                                </li>
+                                <li class="nav-item d-none d-sm-block">
                                     <a class="nav-link text-white rounded-0 bg-g-green" href="#Itinerary">Itinerary</a>
                                 </li>
                                 <li class="nav-item d-sm-none">
@@ -150,6 +153,60 @@
                             <div class="row">
 
                             <div class="col col-sm-12 col-md-7 col-lg-8 col-xl-8">
+
+                                <div id="overview" class="">
+                                    <h3 class="text-secondary pt-5 pb-4 h4"><strong>Overview</strong></h3>
+
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <h5 class="text-right text-secondary">Trip</h5>
+                                        </div>
+                                        <div class="col">
+                                            <h5 class="text-g-yellow"><strong>{{($paquetes->codigo)}}:</strong> {{($paquetes->titulo)}}</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <h5 class="text-right text-secondary">Days</h5>
+                                        </div>
+                                        <div class="col">
+                                            <h5>{{($paquetes->duracion)}}</h5>
+                                        </div>
+                                    </div>
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col-2">--}}
+                                            {{--<h5 class="text-right text-secondary">Intro</h5>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col">--}}
+                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, consequuntur cum cumque dignissimos fugiat in iure, molestias nisi nulla obcaecati repudiandae sapiente velit voluptatibus. Esse hic minus odio placeat rerum.--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    <div class="row py-3 align-items-center">
+                                        <div class="col-2">
+                                            <h5 class="text-right text-secondary">Highlights</h5>
+                                        </div>
+                                        <div class="col">
+                                            @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
+                                                {{--<p class="font-weight-bold text-secondary"><i class="fa fa-check"></i> {{ucwords(strtolower($paquete_destino->destinos->nombre))}}</p>--}}
+                                                <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($paquete_destino->destinos->nombre))])}}-tours"><img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($paquete_destino->destinos->nombre)).'')}}.jpg" alt="" width="50" height="50" class="rounded-circle" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($paquete_destino->destinos->nombre))}}"></a>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <h5 class="text-right text-secondary">Outline</h5>
+                                        </div>
+                                        <div class="col">
+                                            <div class="box-route-ininerary p-2 rounded bg-light">
+                                                @foreach($paquetes->itinerario->sortBy('dia') as $itinerario)
+                                                    <p>
+                                                        <strong>Day {{$itinerario->dia}}: </strong> {{ucwords(strtolower($itinerario->titulo))}}
+                                                    </p>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
 
                                 <div id="Itinerary" class="d-none d-sm-block">
@@ -501,9 +558,9 @@
 
                             </div>
                             <div class="col col-sm-12 col-md-5 col-lg-4 col-xl-4">
-                                <h3 class="text-secondary pt-5 h4"><strong>Prices <small class="text-primary font-weight-bold">($USD)</small></strong></h3>
+                                <h3 class="text-secondary pt-5 h4"><strong>Prices Per Person <small class="text-primary font-weight-bold">($USD)</small></strong></h3>
                                 <div class="card border-secondary">
-                                    <p class="card-header bg-secondary text-white">Price per person based on double accomodation </p>
+                                    <p class="card-header bg-dark text-g-yellow">Based on doble / triple occupancy </p>
                                     <div class="card-body p-0">
                                         <table class="table m-0">
                                             <thead class="title-header bg-light">
@@ -534,7 +591,39 @@
                                     </div>
                                 </div>
 
-                                <div class="card bg-light my-4">
+                                <div class="card border-secondary mt-4">
+                                    <p class="card-header bg-secondary text-white">Based on single occupancy</p>
+                                    <div class="card-body p-0">
+                                        <table class="table m-0">
+                                            <thead class="title-header bg-light">
+                                            <tr>
+                                                <th>2 Stars</th>
+                                                <th>3 Stars</th>
+                                                <th>4 Stars</th>
+                                                <th>5 Stars</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                @foreach($paquetes->precio_paquetes->sortBy('estrellas') as $precio)
+                                                    @if($precio->precio_s > 0)
+                                                        <td>
+                                                            <sup>$</sup>{{$precio->precio_s}}
+                                                        </td>
+                                                    @else
+                                                        <td>
+                                                            Inquire
+                                                        </td>
+                                                    @endif
+                                                @endforeach
+
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="card bg-light my-4 d-none">
                                     {{--<img class="card-img-top" src="..." alt="Card image cap">--}}
                                     <div class="content-video-1 card-img-top">
                                         <div class="content-area-3">
@@ -559,7 +648,7 @@
                                 </div>
 
 
-                                <div class="sticky-top sticky-top-50">
+                                <div class="sticky-top my-4 sticky-top-50">
                                     <img src="{{asset('images/maps/'.$paquetes->codigo.'.jpg')}}" alt="" class="img-fluid rounded">
                                 </div>
 
