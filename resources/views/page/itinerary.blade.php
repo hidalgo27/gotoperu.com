@@ -579,7 +579,7 @@
                                                             <sup>$</sup>{{$precio->precio_d}}
                                                         </td>
                                                     @else
-                                                        <td>
+                                                        <td class="text-danger">
                                                             Inquire
                                                         </td>
                                                     @endif
@@ -611,7 +611,7 @@
                                                             <sup>$</sup>{{$precio->precio_s}}
                                                         </td>
                                                     @else
-                                                        <td>
+                                                        <td class="text-danger">
                                                             Inquire
                                                         </td>
                                                     @endif
@@ -643,10 +643,58 @@
                                                 <p class="font-weight-bold text-secondary"><i class="fa fa-check"></i> {{ucwords(strtolower($paquete_destino->destinos->nombre))}}</p>
                                             @endforeach
 
+                                            @foreach($vuelo as $vuelos)
+                                                {{$vuelos->origen}}
+                                                @endforeach
                                         </div>
                                     </div>
                                 </div>
+                                @php
+                                    $k=0;
+                                @endphp
+                                @foreach($paquete_vuelo->where('idpaquetes',$paquetes->id) as $paquete_vuelo1)
+                                    @php
+                                        $k++;
+                                    @endphp
+                                @endforeach
 
+                                @if($k == 0)
+                                    @php $vue = 'd-none'; @endphp
+                                @else
+                                    @php $vue = ''; @endphp
+                                @endif
+                                <div class="my-4 {{$vue}}">
+                                    <h3 class="text-secondary h4"><strong>Add Internal Flights</strong></h3>
+                                    <div class="row">
+                                        <div class="col d-flex">
+                                            <table class="table m-0">
+                                                {{--<thead class="title-header bg-light">--}}
+                                                {{--<tr>--}}
+                                                    {{--<th></th>--}}
+                                                    {{--<th>3 Stars</th>--}}
+                                                {{--</tr>--}}
+                                                {{--</thead>--}}
+                                                <tbody>
+                                                @foreach($paquete_vuelo->where('idpaquetes',$paquetes->id) as $paquete_vuelos)
+                                                    <tr>
+                                                        <td><small>{{$paquete_vuelos->vuelos->origen}} - {{$paquete_vuelos->vuelos->destino}}</small></td>
+                                                        <td class="font-weight-bold"><sup>$</sup>{{$paquete_vuelos->vuelos->precio}} <small>USD</small></td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col d-flex align-items-center">
+                                            <div class="card w-100 bg-light">
+                                                <div class="card-body text-center p-2">
+                                                    <h5 class="card-title m-0 text-secondary">International Flights</h5>
+                                                    <h4 class="card-text m-0 font-weight-bold text-secondary mt-1">NOT INCLUDED</h4>
+                                                    <small class="m-0">Contact us for a quote</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="sticky-top my-4 sticky-top-50">
                                     <img src="{{asset('images/maps/'.$paquetes->codigo.'.jpg')}}" alt="" class="img-fluid rounded">

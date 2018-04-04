@@ -8,7 +8,9 @@ use App\THotel;
 use App\THotelDestino;
 use App\TPaquete;
 use App\TPaqueteDestino;
+use App\TPaqueteVuelo;
 use App\TTestimonio;
+use App\TVuelo;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
@@ -223,6 +225,8 @@ class HomeController extends Controller
         $hoteles = THotel::all();
         $hoteles_destinos = THotelDestino::all();
 
+        $vuelo = TVuelo::all();
+        $paquete_vuelo = TPaqueteVuelo::with('vuelos')->get();
 //        foreach ($paquete_iti as $paq_i) {
 //
 //            SEOMeta::setTitle($paq_i->s_title);
@@ -261,7 +265,7 @@ class HomeController extends Controller
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
-        return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos]);
+        return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'vuelo'=>$vuelo, 'paquete_vuelo'=>$paquete_vuelo]);
 
     }
 
