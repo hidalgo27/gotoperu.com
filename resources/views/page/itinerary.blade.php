@@ -173,14 +173,14 @@
                                             <h5>{{($paquetes->duracion)}}</h5>
                                         </div>
                                     </div>
-                                    {{--<div class="row">--}}
-                                        {{--<div class="col-2">--}}
-                                            {{--<h5 class="text-right text-secondary">Intro</h5>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="col">--}}
-                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, consequuntur cum cumque dignissimos fugiat in iure, molestias nisi nulla obcaecati repudiandae sapiente velit voluptatibus. Esse hic minus odio placeat rerum.--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <h5 class="text-right text-secondary">Intro</h5>
+                                        </div>
+                                        <div class="col">
+                                            @php echo $paquetes->descripcion; @endphp
+                                        </div>
+                                    </div>
                                     <div class="row py-3 align-items-center">
                                         <div class="col-2">
                                             <h5 class="text-right text-secondary">Highlights</h5>
@@ -234,7 +234,7 @@
                                                         </div>
                                                         <div class="timeline-custom-col content-col ">
                                                             <div class="timeline-location-block">
-                                                                <p class="location-name">{{ucwords(strtolower($itinerario->titulo))}} <i class="fa fa-map-marker icon-marker"></i></p>
+                                                                <p class="location-name">{{ucwords(strtolower($itinerario->titulo))}} <i class="fa fa-map-marker-alt icon-marker"></i></p>
                                                                 <div class="description">
                                                                     @php echo $itinerario->descripcion @endphp
                                                                 </div>
