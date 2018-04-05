@@ -43,7 +43,7 @@
                                             <a href="packages/andes-escape/6-days-tours">
                                                 <div class="bg-rgba-dark-5 rounded text-white py-2 px-4">
                                                     <h2 class="text-center h1 text-g-yellow m-0">Andes Escape</h2>
-                                                    <p class="m-0 h5 font-weight-normal text-center">Andes Escape 5 days</p>
+                                                    <p class="m-0 h5 font-weight-normal text-center">Andes Escape 6 days</p>
                                                     <p class="m-0 text-center">From <span class="h1 text-info"><sup>$</sup>985</span> p.p</p>
                                                     <hr class="my-1">
                                                     <small class="m-0">Included: Assistances, Entrances, Transfers, Hotels, Tours, Trains.</small>
