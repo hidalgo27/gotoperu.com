@@ -75,7 +75,7 @@
                     <p class="lead">GotoPeru travel agency was founded to fulfill a personal dream: “Provide first class travel experience for the international community while generating job opportunities locally”. It is extremely gratifying to employ and reward individuals who extend effort, enthusiasm and commitment to sharing the best of Peru and South America with the rest of the world.</p>
                     <p class="lead">GotoPeru has become a family for all of us. The best thing about working in GotoPeru is that it requires me to be permanently connected to the world of art, culture, archaeology, geography, wildlife conservation, and cuisine. For this reason, it helps me to understand more of the travel world and formulate new methods that ensure our customers’ memorable travel experience. It is also enriching to interact with different yet all amazing people from all over the globe daily as it teaches me more of their culture.</p>
                     <div class="alert alert-g-yellow text-center m-0" role="alert">
-                        <h4>10 Reasons To Let Our Guides Take You On An Unforgettable Adventure!</h4>
+                        <h4>9 Reasons To Let Our Guides Take You On An Unforgettable Adventure!</h4>
                     </div>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
