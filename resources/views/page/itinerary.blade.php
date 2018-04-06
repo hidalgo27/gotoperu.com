@@ -266,7 +266,7 @@
                                         </div>
                                     @endforeach
                                 </div>
-
+                                
                                 <div id="Hotels" class="pt-5">
                                     <div class="row">
                                         <div class="col">
