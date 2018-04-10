@@ -65,7 +65,10 @@
 .navbar{
   padding: 0 !important;
 }
-
+.condition-overflow{
+  overflow-y: scroll;
+  height: 250px;
+}
 //paralax
 .jumbotron-slider{
   background: url("/images/slider/machupicchu-2.jpg");

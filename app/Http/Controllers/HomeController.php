@@ -269,6 +269,44 @@ class HomeController extends Controller
 
     }
 
+    public function information($titulo, $days)
+    {
+        $title = str_replace('-', ' ', strtoupper($titulo));
+//        dd($title);
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->where('estado', 0)->get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        $paquete_iti = TPaquete::with('itinerario','paquetes_destinos', 'precio_paquetes')->where('titulo', $title)->get();
+
+        $hoteles = THotel::all();
+        $hoteles_destinos = THotelDestino::all();
+
+        $vuelo = TVuelo::all();
+        $paquete_vuelo = TPaqueteVuelo::with('vuelos')->get();
+
+
+        return view('page.information', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'vuelo'=>$vuelo, 'paquete_vuelo'=>$paquete_vuelo]);
+
+    }
+
+    public function payment($titulo, $days)
+    {
+        $title = str_replace('-', ' ', strtoupper($titulo));
+//        dd($title);
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->where('estado', 0)->get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        $paquete_iti = TPaquete::with('itinerario','paquetes_destinos', 'precio_paquetes')->where('titulo', $title)->get();
+
+        $hoteles = THotel::all();
+        $hoteles_destinos = THotelDestino::all();
+
+        $vuelo = TVuelo::all();
+        $paquete_vuelo = TPaqueteVuelo::with('vuelos')->get();
+
+
+        return view('page.payment', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'vuelo'=>$vuelo, 'paquete_vuelo'=>$paquete_vuelo]);
+
+    }
+
     public function destinations()
     {
         SEOMeta::setTitle('South America Travel Destinations | Customized Travel Packages');

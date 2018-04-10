@@ -18834,6 +18834,11 @@ readers do not read off random characters that represent icons */
   padding: 0 !important;
 }
 
+.condition-overflow {
+  overflow-y: scroll;
+  height: 250px;
+}
+
 .jumbotron-slider {
   background: url("/images/slider/machupicchu-2.jpg");
   background-size: 100%;

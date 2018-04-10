@@ -266,7 +266,7 @@
                                         </div>
                                     @endforeach
                                 </div>
-                                
+
                                 <div id="Hotels" class="pt-5">
                                     <div class="row">
                                         <div class="col">
@@ -281,28 +281,32 @@
                                     </div>
                                     @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
                                         <h5 class="text-g-yellow pt-4 m-0" id="{{$paquete_destino->destinos->id}}-hotel"><i class="fa fa-check"></i> {{$paquete_destino->destinos->nombre}} HOTEL</h5>
+                                        <div class="row pt-3 pb-4">
                                         @foreach($hoteles_destinos->where('iddestinos', $paquete_destino->destinos->id) as $hoteles_destino)
-                                            <div class="row pt-3 pb-4">
-                                                <div class="col-auto d-none d-sm-block">
-                                                    <img src="{{$hoteles_destino->hotel->imagen}}" alt="" class=" rounded-circle" width="100" height="100">
+                                            <div class="col-6 d-flex my-3">
+                                                <div class="row">
+                                                    <div class="col-auto d-none d-sm-block">
+                                                        <img src="{{$hoteles_destino->hotel->imagen}}" alt="" class=" rounded-circle" width="50" height="50">
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="{{$hoteles_destino->hotel->url}}" class="h5 align-middle">{{$hoteles_destino->hotel->nombre}}</a>
+                                                        @for($i=0; $i < $hoteles_destino->hotel->estrellas; $i++)
+                                                            <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                        @endfor
+                                                        <small class="d-block text-secondary"><i class="fa fa-map-marker-alt"></i> {{$hoteles_destino->hotel->direccion}}</small>
+                                                        @php $services = explode(',', $hoteles_destino->hotel->servicios); @endphp
+                                                        <p class="pt-2"><b>Services:</b>
+                                                            @foreach($services as $service)
+                                                                <i class="fa fa-check text-secondary"></i> {{$service}}
+                                                            @endforeach
+                                                        </p>
+{{--                                                        <a href="{{$hoteles_destino->hotel->url}}" class="btn btn-outline-secondary" target="_blank">{{$hoteles_destino->hotel->nombre}}</a>--}}
+                                                    </div>
                                                 </div>
-                                                <div class="col">
-                                                    <h3>{{$hoteles_destino->hotel->nombre}}</h3>
-                                                    @for($i=0; $i < $hoteles_destino->hotel->estrellas; $i++)
-                                                        <i class="fa fa-star text-g-yellow"></i>
-                                                    @endfor
-                                                    <p class="pt-2"><i class="fa fa-map-marker-alt"></i> {{$hoteles_destino->hotel->direccion}}</p>
-                                                    @php $services = explode(',', $hoteles_destino->hotel->servicios); @endphp
-                                                    <p class="lead"><b>Services:</b>
-                                                        @foreach($services as $service)
-                                                            <i class="fa fa-check text-secondary"></i> {{$service}}
-                                                        @endforeach
-                                                    </p>
-                                                    <a href="{{$hoteles_destino->hotel->url}}" class="btn btn-outline-secondary" target="_blank">{{$hoteles_destino->hotel->nombre}}</a>
-                                                </div>
+                                                {{--<hr>--}}
                                             </div>
-                                            <hr>
                                         @endforeach
+                                        </div>
                                     @endforeach
                                     {{--@foreach($hoteles as $hotel)--}}
                                         {{--<div class="row py-4">--}}
@@ -667,7 +671,7 @@
                                     <h3 class="text-secondary h4"><strong>Add Internal Flights</strong></h3>
                                     <div class="row">
                                         <div class="col d-flex">
-                                            <table class="table m-0">
+                                            <table class="table">
                                                 {{--<thead class="title-header bg-light">--}}
                                                 {{--<tr>--}}
                                                     {{--<th></th>--}}
@@ -678,7 +682,7 @@
                                                 @foreach($paquete_vuelo->where('idpaquetes',$paquetes->id) as $paquete_vuelos)
                                                     <tr>
                                                         <td><small>{{$paquete_vuelos->vuelos->origen}} - {{$paquete_vuelos->vuelos->destino}}</small></td>
-                                                        <td class="font-weight-bold"><sup>$</sup>{{$paquete_vuelos->vuelos->precio}} <small>USD</small></td>
+                                                        <td class="font-weight-bold"><sup>$</sup>{{$paquete_vuelos->vuelos->precio}}</td>
                                                     </tr>
                                                 @endforeach
                                                 </tbody>
@@ -698,6 +702,7 @@
 
                                 <div class="sticky-top my-4 sticky-top-50">
                                     <img src="{{asset('images/maps/'.$paquetes->codigo.'.jpg')}}" alt="" class="img-fluid rounded">
+                                    {{--<button class="btn btn-block btn-lg btn-g-yellow mt-2">Book Now</button>--}}
                                 </div>
 
                             </div>
@@ -708,7 +713,295 @@
                 </div>
 
             </div>
+            @if($paquetes->descuento == 5)
+                @php $d_book = ''; @endphp
+            @else
+                @php $d_book = 'd-none'; @endphp
+            @endif
+            <div class="row {{$d_book}}">
+                <div class="col">
+                    <h3 class="text-secondary pt-5 pb-4 h4 text-g-yellow"><strong>Book Now</strong></h3>
+                </div>
+            </div>
+            <div class="row {{$d_book}}">
+                <div class="col-9">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row pb-2">
+                                        <div class="col">
+                                            <h2 class="text-secondary h5"><strong>TRAVEL DATE <span class="text-primary">*</span></strong></h2>
+                                        </div>
+                                    </div>
 
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" id="d_date" placeholder="TRAVEL DATE" aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-4">
+                                <div class="col">
+                                    <div class="row pb-2">
+                                        <div class="col">
+                                            <h2 class="text-secondary h5"><strong>NUMBER OF TRAVELERS <span class="text-primary">*</span></strong></h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                                </div>
+                                                <input type="number" class="form-control" id="d_date" placeholder="NUMBER OF TRAVELERS" aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col">
+                                    <div class="row pb-2">
+                                        <div class="col">
+                                            <h2 class="text-secondary h5"><strong>NUMBER OF ROOMS <span class="text-primary">*</span></strong></h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-h-square"></i></span>
+                                                </div>
+                                                <input type="number" class="form-control" id="d_date" placeholder="NUMBER OF ROOMS" aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-4">
+                                <div class="col">
+                                    <div class="row pb-2">
+                                        <div class="col">
+                                            <h2 class="text-secondary h5"><strong>PREFERRED CLASS <span class="text-primary">*</span></strong></h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            {{--<div class="input-group input-group-lg">--}}
+                                            {{--<div class="input-group-prepend">--}}
+                                            {{--<span class="input-group-text" id="basic-addon1"><i class="fa fa-h-square"></i></span>--}}
+                                            {{--</div>--}}
+                                            {{--<input type="number" class="form-control" id="d_date" placeholder="PREFERRED CLASS" aria-label="Username" aria-describedby="basic-addon1">--}}
+                                            {{--</div>--}}
+
+
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text" for="inputGroupSelect01"><i class="fa fa-star"></i></label>
+                                                </div>
+                                                <select class="custom-select" id="inputGroupSelect01">
+                                                    <option selected>Choose...</option>
+                                                    <option value="1">2 stars (economy)</option>
+                                                    <option value="2">3 stars ()</option>
+                                                    <option value="2">4 stars (superior)</option>
+                                                    <option value="2">5 stars (luxury)</option>
+                                                </select>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+
+                            <div class="row pb-2">
+                                <div class="col">
+                                    <h2 class="text-secondary h5"><strong>ACCOMMODATION DETAILS</strong></h2>
+                                    <p>Preferred Bedding Configuration</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6>Room 1</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-male"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-light active">
+                                                    <input type="radio" name="options" id="option1" autocomplete="off" checked>
+                                                    <img src="{{asset('images/room/simple.png')}}" alt="" class="img-fluid">
+                                                </label>
+                                                <label class="btn btn-light">
+                                                    <input type="radio" name="options" id="option2" autocomplete="off">
+                                                    <img src="{{asset('images/room/doble.png')}}" alt="" class="img-fluid">
+                                                </label>
+                                                <label class="btn btn-light">
+                                                    <input type="radio" name="options" id="option3" autocomplete="off">
+                                                    <img src="{{asset('images/room/matrimonial.png')}}" alt="" class="img-fluid">
+                                                </label>
+                                                <label class="btn btn-light">
+                                                    <input type="radio" name="options" id="option3" autocomplete="off">
+                                                    <img src="{{asset('images/room/triple.png')}}" alt="" class="img-fluid">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6>Room 2</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-male"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-light">
+                                                    <input type="radio" name="options" id="option1" autocomplete="off">
+                                                    <img src="{{asset('images/room/simple.png')}}" alt="" class="img-fluid">
+                                                </label>
+                                                <label class="btn btn-light">
+                                                    <input type="radio" name="options" id="option2" autocomplete="off">
+                                                    <img src="{{asset('images/room/doble.png')}}" alt="" class="img-fluid">
+                                                </label>
+                                                <label class="btn btn-light active">
+                                                    <input type="radio" name="options" id="option3" autocomplete="off" checked>
+                                                    <img src="{{asset('images/room/matrimonial.png')}}" alt="" class="img-fluid">
+                                                </label>
+                                                <label class="btn btn-light">
+                                                    <input type="radio" name="options" id="option3" autocomplete="off">
+                                                    <img src="{{asset('images/room/triple.png')}}" alt="" class="img-fluid">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6>Room 1</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            {{--<input type="number" class="form-control" id="d_date" placeholder="2" aria-label="Username" aria-describedby="basic-addon1">--}}
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-male"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-light">
+                                                    <input type="radio" name="options" id="option1" autocomplete="off">
+                                                    <img src="{{asset('images/room/simple.png')}}" alt="" class="img-fluid">
+                                                </label>
+                                                <label class="btn btn-light active">
+                                                    <input type="radio" name="options" id="option2" autocomplete="off" checked>
+                                                    <img src="{{asset('images/room/doble.png')}}" alt="" class="img-fluid">
+                                                </label>
+                                                <label class="btn btn-light">
+                                                    <input type="radio" name="options" id="option3" autocomplete="off">
+                                                    <img src="{{asset('images/room/matrimonial.png')}}" alt="" class="img-fluid">
+                                                </label>
+                                                <label class="btn btn-light">
+                                                    <input type="radio" name="options" id="option3" autocomplete="off">
+                                                    <img src="{{asset('images/room/triple.png')}}" alt="" class="img-fluid">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col text-center">
+                            {{--<button class="btn btn-lg btn-primary">Continue</button>--}}
+                            <a href="{{route('information_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="btn btn-lg btn-primary">Continue</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card bg-light sticky-top sticky-top-50">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col border-bottom">
+                                    <p class="py-2 m-0">Travel Date</p>
+                                </div>
+                                <div class="col">
+                                    <span class="text-secondary">25 Jul 2018</span>
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col border-bottom">
+                                    <p class="py-2 m-0">Number of travellers</p>
+                                </div>
+                                <div class="col">
+                                    <span class="text-secondary">2 <i class="fa fa-male"></i></span>
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col border-bottom">
+                                    <p class="py-2 m-0">Number of rooms</p>
+                                </div>
+                                <div class="col">
+                                    <span class="text-secondary">3</span>
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col border-bottom">
+                                    <p class="py-2 m-0">Preferred Class</p>
+                                </div>
+                                <div class="col">
+                                    <span class="text-secondary">5 <i class="fa fa-star text-g-yellow"></i> (luxury)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-g-dark text-white">
+                            <h3>Total <small>(USD)</small> <sup>$</sup>2899.00</h3>
+                            <small>Impuestos incluidos</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

@@ -42,6 +42,19 @@ Route::get('/packages/{title}/{days}-days-tours', [
     'as' => 'itinerary_path',
 ]);
 
+//information
+Route::get('/packages/{title}/{days}-days-tours/information', [
+    'uses' => 'HomeController@information',
+    'as' => 'information_path',
+]);
+
+//payment
+Route::get('/packages/{title}/{days}-days-tours/payment', [
+    'uses' => 'HomeController@payment',
+    'as' => 'payment_path',
+]);
+
+
 //destination
 Route::get('/destinations', [
     'uses' => 'HomeController@destinations',
