@@ -8,10 +8,17 @@
                     <div class="col-md-6 col-lg-3">
                         <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
                     </div>
-                    {{--<div class="col d-none d-xl-flex">--}}
-                    {{--<i class="text-g-yellow">Top recommended Peru Travel Operator since 2009</i>--}}
-                    {{--</div>--}}
-                    <div class="col-md col-lg text-right sticky-top">
+                    <div class="d-none d-lg-inline col-lg">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <i class="text-g-yellow">Local expertise & global partners</i>
+                            </div>
+                            <div class="col-4">
+                                <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md col-lg-auto text-right sticky-top">
                         <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
                         <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
                         <!-- Button trigger modal -->
@@ -19,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div id="overlay">
+        <div id="overlay" class="position-relative">
             <video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>
                 <source src="{{asset('media/video6.mp4')}}" />
                 <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
@@ -29,48 +36,24 @@
             {{--<div id="state" class=""><span class="fa fa-pause"></span></div>--}}
             {{--<img id="hero-pic" class="d-none" src="http://www.markhillard.com/sandbox/media/polina.jpg" alt="">--}}
            {{----}}
-            <p class="header-expedia text-white p-3">As local travel operators our programs start daily</p>
-        </div>
-        <div class="content-header">
-            <div class="container">
-                <div class="row content-header-row align-items-center">
-                    <div class="col col-sm-7">
-                        <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="row justify-content-center">
-                                        <div class="col-9">
-                                            <a href="packages/andes-escape/6-days-tours">
-                                                <div class="bg-rgba-dark-5 rounded text-white py-2 px-4">
-                                                    <h2 class="text-center h1 text-g-yellow m-0">Andes Escape</h2>
-                                                    <p class="m-0 h5 font-weight-normal text-center">Andes Escape 6 days</p>
-                                                    <p class="m-0 text-center">From <span class="h1 text-info"><sup>$</sup>985</span> p.p</p>
-                                                    <hr class="my-1">
-                                                    <small class="m-0">Included: Assistances, Entrances, Transfers, Hotels, Tours, Trains.</small>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{--<div class="carousel-item">--}}
-                                {{--<img class="d-block w-100" src="..." alt="Second slide">--}}
-                                {{--</div>--}}
-                                {{--<div class="carousel-item">--}}
-                                {{--<img class="d-block w-100" src="..." alt="Third slide">--}}
-                                {{--</div>--}}
+            <div class="header-expedia-card col-md-4 col-lg-3 col-xl-2 text-white rounded bg-rgba-dark p-3">
+                <div class="row">
+                    <div class="col">
+                        <a href="packages/andes-escape/6-days-tours">
+                        <div class="row">
+                            <div class="col text-center">
+                                <h3 class="text-g-yellow font-weight-bold m-0">Andes Escape</h3>
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
-                                <span class="fas fa-angle-left fa-2x text-white" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
-                                <span class="fas fa-angle-right fa-2x text-white" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
                         </div>
-                    </div>
-                    <div class="col d-none d-sm-block">
-                        <div class="row justify-content-center d-none d-sm-flex">
+                        <div class="row no-gutters my-2 text-white">
+                            <div class="col">
+                                <span class="h2">6</span> <small>days</small>
+                            </div>
+                            <div class="col">
+                                <span class="h2 text-info"><sup>$</sup>985</span> <small>p.p</small>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col">
                                 <div class="row no-gutters">
                                     <div class="col">
@@ -86,7 +69,8 @@
                                         <img src="{{asset('images/icons/include/transfers.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Transfers">
                                         {{--<span>Transfers</span>--}}
                                     </div>
-
+                                </div>
+                                <div class="row no-gutters">
                                     <div class="col">
                                         <img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">
                                         {{--<span>Hotels</span>--}}
@@ -102,24 +86,118 @@
                                 </div>
                             </div>
                         </div>
-                        {{--<div class="row mt-2">--}}
-                        {{--<div class="col text-white text-center">--}}
-                        {{--<h4 class="h5 font-weight-light text-g-yellow">Top recommended Peru Travel Company</h4>--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
-                        <div class="row my-3 justify-content-center">
-                            <div class="col">
-                                <p class="text-white mb-3 h5"><span class="bg-g-green p-1 rounded-circle px-3 text-white">1</span> Share your travel plans</p>
-                                <p class="text-white mb-3 h5"><span class="bg-g-yellow p-1 rounded-circle px-3 text-white">2</span> Receive a customize itinerary and quote</p>
-                                <p class="text-white mb-3 h5"><span class="bg-g-dark p-1 rounded-circle px-3 text-white">3</span> Discover the best of Peru with GOTOPERU</p>
+                        <div class="row mt-3">
+                            <div class="col text-white">
+                                <small class="m-0 d-block"><i class="fa fa-angle-right"></i> MACHUPICCHU & CUSCO</small>
+                                <small class="m-0 d-block"><i class="fa fa-angle-right"></i> LAKE TITICACA & PUNO</small>
+                                <small class="m-0 d-block"><i class="fa fa-angle-right"></i> LIMA</small>
                             </div>
                         </div>
-                        {{--<div class="row justify-content-center">--}}
-                        {{--<div class="col-6 text-center">--}}
-                        {{--<a href="#Inquire" class="btn btn-lg btn-g-yellow">GET STARTED NOW</a>--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
+                        </a>
                     </div>
+                </div>
+            </div>
+            {{--<div class="header-expedia text-white p-3">As local travel operators our programs start daily</div>--}}
+            <div class="header-expedia p-3 w-100 text-center d-none d-lg-inline">
+                <p class="text-white h6"><span class="bg-g-green p-1 rounded-circle px-3 text-white">1</span> Share your travel plans <span class="bg-g-yellow p-1 rounded-circle px-3 text-white ml-5">2</span> Receive a customize itinerary and quote <span class="bg-g-dark p-1 rounded-circle px-3 text-white ml-5">3</span> Discover the best of Peru with GOTOPERU</p>
+            </div>
+        </div>
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row content-header-row align-items-center">
+                    <div class="col text-center">
+                        {{--<a href="" class="text-white"><i class="fa fa-play-circle fa-4x"></i></a>--}}
+
+                        <div class="text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+                            <div class="">
+                                <div class="content-video-1">
+                                    {{--<img src="images/travel/video-1.jpg" alt="video">--}}
+
+                                    <div class="content-video-btn-1">
+                                        <a href="https://www.youtube.com/watch?v=pNe-NtXIULs"  class="html5lightbox text-white" title=""><i class="fa fa-play-circle fa-4x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    {{--<div class="col col-sm-7">--}}
+                        {{--<div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">--}}
+                            {{--<div class="carousel-inner">--}}
+                                {{--<div class="carousel-item active">--}}
+                                    {{--<div class="row justify-content-center">--}}
+                                        {{--<div class="col-9">--}}
+                                            {{--<a href="packages/andes-escape/6-days-tours">--}}
+                                                {{--<div class="bg-rgba-dark-5 rounded text-white py-2 px-4">--}}
+                                                    {{--<h2 class="text-center h1 text-g-yellow m-0">Andes Escape</h2>--}}
+                                                    {{--<p class="m-0 h5 font-weight-normal text-center">Andes Escape 6 days</p>--}}
+                                                    {{--<p class="m-0 text-center">From <span class="h1 text-info"><sup>$</sup>985</span> p.p</p>--}}
+                                                    {{--<hr class="my-1">--}}
+                                                    {{--<small class="m-0">Included: Assistances, Entrances, Transfers, Hotels, Tours, Trains.</small>--}}
+                                                {{--</div>--}}
+                                            {{--</a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="carousel-item">--}}
+                                {{--<img class="d-block w-100" src="..." alt="Second slide">--}}
+                                {{--</div>--}}
+                                {{--<div class="carousel-item">--}}
+                                {{--<img class="d-block w-100" src="..." alt="Third slide">--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">--}}
+                                {{--<span class="fas fa-angle-left fa-2x text-white" aria-hidden="true"></span>--}}
+                                {{--<span class="sr-only">Previous</span>--}}
+                            {{--</a>--}}
+                            {{--<a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">--}}
+                                {{--<span class="fas fa-angle-right fa-2x text-white" aria-hidden="true"></span>--}}
+                                {{--<span class="sr-only">Next</span>--}}
+                            {{--</a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="col d-none d-sm-block">--}}
+                        {{--<div class="row justify-content-center d-none d-sm-flex">--}}
+                            {{--<div class="col">--}}
+                                {{--<div class="row no-gutters">--}}
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/assistances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Assistances">--}}
+                                        {{--<span>Assistances</span>--}}
+                                    {{--</div>--}}
+
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/entrances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Entrances">--}}
+                                        {{--<span>Entrances</span>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/transfers.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Transfers">--}}
+                                        {{--<span>Transfers</span>--}}
+                                    {{--</div>--}}
+
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">--}}
+                                        {{--<span>Hotels</span>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/tours.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Tours">--}}
+                                        {{--<span>Tours</span>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/trains.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Trains">--}}
+                                        {{--<span>Trains</span>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                     {{----}}
+                        {{--<div class="row my-3 justify-content-center">--}}
+                            {{--<div class="col">--}}
+                                {{--<p class="text-white mb-3 h5"><span class="bg-g-green p-1 rounded-circle px-3 text-white">1</span> Share your travel plans</p>--}}
+                                {{--<p class="text-white mb-3 h5"><span class="bg-g-yellow p-1 rounded-circle px-3 text-white">2</span> Receive a customize itinerary and quote</p>--}}
+                                {{--<p class="text-white mb-3 h5"><span class="bg-g-dark p-1 rounded-circle px-3 text-white">3</span> Discover the best of Peru with GOTOPERU</p>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
 
                 </div>
 
@@ -132,7 +210,7 @@
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col">
-                    <img src="{{asset('images/machu_picchu.jpg')}}" alt="" class="img-fluid">
+                    <img src="{{asset('images/machu_picchu.jpg')}}" alt="" class="w-100">
                 </div>
             </div>
             <div class="row no-gutters align-items-center">

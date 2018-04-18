@@ -553,6 +553,15 @@ header{
   margin-bottom: 7.1vh;
   bottom: 0;
 }
+
+.header-expedia-card{
+  position: absolute;
+  top: 24%;
+  z-index: 2;
+}
+#html5-watermark{
+  display: none !important;
+}
 //
 //.modal.left .modal-body,
 //.modal.right .modal-body {
