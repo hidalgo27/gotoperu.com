@@ -10,10 +10,10 @@
                     </div>
                     <div class="d-none d-lg-inline col-lg">
                         <div class="row align-items-center">
-                            <div class="col-8">
+                            <div class="col-9">
                                 <i class="text-g-yellow">Local expertise & global partners</i>
                             </div>
-                            <div class="col-4">
+                            <div class="col-3">
                                 <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="img-fluid">
                             </div>
                         </div>
@@ -36,7 +36,7 @@
             {{--<div id="state" class=""><span class="fa fa-pause"></span></div>--}}
             {{--<img id="hero-pic" class="d-none" src="http://www.markhillard.com/sandbox/media/polina.jpg" alt="">--}}
            {{----}}
-            <div class="header-expedia-card col-md-4 col-lg-3 col-xl-2 text-white rounded bg-rgba-dark p-3">
+            <div class="header-expedia-card col-md-4 col-lg-3 col-xl-2 text-white rounded bg-rgba-dark p-3 d-none">
                 <div class="row">
                     <div class="col">
                         <a href="packages/andes-escape/6-days-tours">
@@ -110,12 +110,13 @@
 
                         <div class="text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                             <div class="">
-                                <div class="content-video-1">
+                                <div class="content-video-1 text-white">
                                     {{--<img src="images/travel/video-1.jpg" alt="video">--}}
-
-                                    <div class="content-video-btn-1">
-                                        <a href="https://www.youtube.com/watch?v=pNe-NtXIULs"  class="html5lightbox text-white" title=""><i class="fa fa-play-circle fa-4x"></i></a>
-                                    </div>
+                                    <h3 class="font-weight-light">Lets design together your next Peru adventure</h3>
+                                    <a href="" class="btn btn-g-yellow btn-lg h2 font-weight-bold mt-3">My ideal trip will be</a>
+                                    {{--<div class="content-video-btn-1 mt-4">--}}
+                                        {{--<a href="https://www.youtube.com/watch?v=pNe-NtXIULs"  class="html5lightbox text-white" title=""><i class="fa fa-play-circle fa-4x"></i></a>--}}
+                                    {{--</div>--}}
                                 </div>
                             </div>
                         </div>
@@ -227,12 +228,240 @@
     </section>
     <section class="bg-light">
         <div class="container-fluid">
+            <div class="row pt-4 pb-2">
+                <div class="col text-center">
+                    <h2 class="text-secondary h1 font-weight-bold text-g-yellow"><strong>We are GOTOPERU</strong></h2>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
+                    <p class="lead">We are GOTOPERU , local travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 12 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized our efforts citing us a Top local Experts!</p>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col">
+                    <img src="{{asset('images/team-1.jpg')}}" alt="" class="w-100">
+                </div>
+                <div class="col">
+                    <img src="{{asset('images/meetup.jpg')}}" alt="" class="w-100">
+                </div>
+                <div class="col">
+                    <img src="{{asset('images/care.jpg')}}" alt="" class="w-100">
+                </div>
+                <div class="col">
+                    <img src="{{asset('images/frank.jpg')}}" alt="" class="w-100">
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <div class="badge badge-secondary d-block p-1"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Headquarters: Cusco, Peru</span></div>
+                </div>
+                <div class="col">
+                    <div class="badge badge-secondary d-block p-1"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Company: 25 members</span></div>
+                </div>
+                <div class="col">
+                    <div class="badge badge-secondary d-block p-1"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Founded: 2006</span></div>
+                </div>
+                <div class="col">
+                    <div class="badge badge-secondary d-block p-1"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Offices: Lima, Peru / New York, Usa</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="container-fluid">
+            <div class="row pt-5 pb-2">
+                <div class="col">
+                    <h2 class="text-secondary h4"><strong>DEAL OF THE MONTH</strong></h2>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
+                    {{--<p class="h4 font-weight-light">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>Customized Travel Packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>Machu Picchu</strong> and the rest of our  homeland… Peru!</p>--}}
+                </div>
+            </div>
+
+            <div class="row no-gutters">
+                <div class="col-9 d-flex">
+                    <div class="container-fluid p-0">
+
+                        <div class="slider-containers">
+
+                            <!--effect #1 -->
+                            <div class="slider-container">
+                                <div class="flexbox-slider flexbox-slider-1">
+                                    <div class="flexbox-slide">
+                                        <img src="{{asset('images/banners/home/cusco.jpg')}}" alt="Cusco">
+                                        <div class="text-block">
+                                            <h3>Cusco</h3>
+                                            {{--<div class="text">--}}
+                                                {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
+                                            {{--</div>--}}
+                                        </div>
+                                    </div>
+                                    <div class="flexbox-slide">
+                                        <img src="{{asset('images/banners/home/lima.jpg')}}" alt="Lima">
+                                        <div class="text-block">
+                                            <h3>Lima</h3>
+                                            {{--<div class="text">--}}
+                                                {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
+                                            {{--</div>--}}
+                                        </div>
+                                    </div>
+                                    <div class="flexbox-slide">
+                                        <img src="{{asset('images/banners/home/machupicchu.jpg')}}" alt="Machu Picchu">
+                                        <div class="text-block">
+                                            <h3>Machu Picchu</h3>
+                                            {{--<div class="text">--}}
+                                                {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
+                                            {{--</div>--}}
+                                        </div>
+                                    </div>
+                                    <div class="flexbox-slide">
+                                        <img src="{{asset('images/banners/home/titicaca.jpg')}}" alt="Titicaca">
+                                        <div class="text-block">
+                                            <h3>Lake Titicaca</h3>
+                                            {{--<div class="text">--}}
+                                                {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
+                                            {{--</div>--}}
+                                        </div>
+                                    </div>
+                                    <div class="flexbox-slide">
+                                        <img src="{{asset('images/banners/home/valle.jpg')}}" alt="Sacred Valley">
+                                        <div class="text-block">
+                                            <h3>Sacred Valley</h3>
+                                            {{--<div class="text">--}}
+                                                {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
+                                            {{--</div>--}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-center bg-g-dark">
+                    <div class="text-white p-3">
+                        <h3 class="display-4">10 DAYS</h3>
+                        <p class="lead">Cusco, Lima, Machu Picchu, Lake Titicaca, Sacred Valley,</p>
+                        <small class="d-block text-g-yellow py-2">All internal flights, hotels, tours entrances, trains, breakfast, transfer</small>
+                        <p class="h1 text-right my-3"><sup>from</sup> $1449</p>
+                        <a href="packages/expedition-to-peru/10-days-tours" class="btn btn-g-yellow btn-block">View More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="container-fluid">
+            <div class="row pt-5 pb-2">
+                <div class="col">
+                    <h1 class="text-secondary h4"><strong>100'S OF REVIEWS 1 COMPANY</strong></h1>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
+                    {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white pb-5">
+        <div class="container-fluid">
+            <div class="row mb-4">
+                <div class="col">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="px-5">
+                                    <p>
+                                        <i class="fa fa-quote-left fa-2x float-left text-g-green pr-2"></i>
+                                        Gotoperu.org is a fine organization excellent with details and truth in every dealing and statement they make to you while planning and executing the trip. All of them have very good English fluency and some of them are even excellent. Just be sure to ask for all of the optons in each trip since they have many choices and they never get tired of custom fitting to you :) Have no qualms recommending this organization to you.
+                                        <i class="fa fa-quote-right fa-2x float-right text-g-green pl-2"></i>
+                                    </p>
+                                    <i class="float-right text-g-yellow">Jim T. New York City, New</i>
+                                </div>
+                            </div>
+
+                            @foreach($testimonial as $testimonials)
+                                <div class="carousel-item ">
+                                    <div class="px-5">
+                                        <p>
+                                            <i class="fa fa-quote-left fa-2x float-left text-g-green pr-2"></i>
+                                            {{$testimonials->contenido}}
+                                            <i class="fa fa-quote-right fa-2x float-right text-g-green pl-2"></i>
+                                        </p>
+                                        <i class="float-right text-g-yellow">{{$testimonials->nombre}} {{$testimonials->ciudad}}</i>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            {{--<div class="carousel-item">--}}
+                                {{--<div class="px-5">--}}
+                                {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cupiditate deserunt dolore doloremque enim error eveniet fugiat fugit illo impedit, labore nisi nostrum placeat quaerat similique sunt, suscipit tempora velit.--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="carousel-item">--}}
+                                {{--<div class="px-5">--}}
+                                {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cupiditate deserunt dolore doloremque enim error eveniet fugiat fugit illo impedit, labore nisi nostrum placeat quaerat similique sunt, suscipit tempora velit.--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-between align-items-center">
+                <div class="col-auto">
+                    <div class="row">
+                        <div class="col">
+                            <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5867868-Has_anyone_booked_a_tour_with_GOTOPERU_www_gotoperu_org-Peru.html" class="btn btn-g-yellow" target="_blank">Link 1</a>
+                            <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k6509104-Gotoperu_Travel_Agency-Peru.html" class="btn btn-g-yellow" target="_blank">Link 2</a>
+                            <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5657518-GOTOPERU_online_tour_operator-Peru.html" class="btn btn-g-yellow" target="_blank">Link 3</a>
+                            <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k6934201-Trip_Report_Two_glorious_weeks_in_Peru_with_GOTOPERU_ORG-Peru.html" class="btn btn-g-yellow" target="_blank">Link 4</a>
+                            <a href="https://www.tripadvisor.co.za/ShowTopic-g294311-i818-k7362487-o10-GotoPeru_or_David_Expeditions-Peru.html" class="btn btn-g-yellow" target="_blank">Link 5</a>
+                            <a href="https://www.trustpilot.com/review/gotoperu.com" class="btn btn-g-yellow" target="_blank">Link 6</a>
+                            <a href="https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com" class="btn btn-g-yellow" target="_blank">Link 7</a>
+                            <a href="https://www.youtube.com/watch?v=AOa1ygLiapc" class="btn btn-g-yellow" target="_blank">Link 8</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col">
+                            <a href=""><img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="If you are visiting anywhere in Peru, you cannot find a better choice than www.gotoperu.com – they live there, and work there, and can sort urgent issues readily, with a quick phone call."></a>
+                        </div>
+                        <div class="col">
+                            <a href="https://www.trustpilot.com/review/gotoperu.com" target="_blank"><img src="{{asset('images/icons/trust.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="In summary, we had a wonderful time! We, of course, enjoyed the sights as we expected (Machu Picchu, Sacred Valley, train, Lake Titicacca), but all of the connections were on time and very comfortable. The guides (Franklin in Cusco, Nellie in Machu Picchu) were very pleasant and very knowledgeable. "></a>
+                        </div>
+                        <div class="col">
+                            <a href="https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com" target="_blank"><img src="{{asset('images/icons/yelp.png')}}" alt="" class="w-100 p-4" data-toggle="tooltip" data-placement="top" title="" data-original-title="The arrangement of the agency since Cuzco arrival, has escort service all the way. You do not need to fear of lost. Hotel, tour guide, transfer are all excellent. "></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pb-4">
+                <div class="col text-right">
+                    <a href="{{route('testimonials_path')}}" class="btn-link font-weight-normal">View Testimonials <i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="container-fluid">
             <div class="row pt-5 pb-2">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>PERU TRAVEL PACKAGES</strong></h1>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     {{--<p class="h4 font-weight-light">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>Customized Travel Packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>Machu Picchu</strong> and the rest of our  homeland… Peru!</p>--}}
+
                 </div>
             </div>
         </div>
@@ -241,7 +470,7 @@
     <section class="bg-light">
         <div class="container-fluid">
             <div class="row">
-                @foreach($paquetes->where('estado', 1)->take(6) as $paquete)
+                @foreach($paquetes->where('estado', 1)->sortBy('duracion')->take(6) as $paquete)
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-3">
                         <div class="card mb-3">
                             <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
@@ -250,7 +479,7 @@
                                 <div class="card-img-overlay bg-rgba-dark-3 p-0">
                                     <div class="row justify-content-between no-gutters">
                                         <div class="col col-sm-3 p-3">
-                                            <p class="m-0 text-white">{{$paquete->duracion}} Days</p>
+                                            <h5 class="m-0 text-white">{{$paquete->duracion}} Days</h5>
                                         </div>
                                         <div class="col col-sm-4 bg-g-dark py-3 text-white text-center">
                                             @foreach($paquete->precio_paquetes as $precio)

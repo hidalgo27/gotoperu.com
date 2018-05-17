@@ -48,8 +48,9 @@ class HomeController extends Controller
         $paquetes_r = TPaquete::with('precio_paquetes')->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         $destinos = TDestino::all();
+        $testimonial = TTestimonio::all();
 //        dd($paquete_destinos);
-            return view('page.home',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'destinos'=>$destinos]);
+            return view('page.home',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'destinos'=>$destinos, 'testimonial'=>$testimonial]);
     }
 
     public function hotels()
