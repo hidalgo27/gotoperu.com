@@ -113,7 +113,7 @@
                                 <div class="content-video-1 text-white">
                                     {{--<img src="images/travel/video-1.jpg" alt="video">--}}
                                     <h3 class="font-weight-light">Lets design together your next Peru adventure</h3>
-                                    <a href="" class="btn btn-g-yellow btn-lg h2 font-weight-bold mt-3">My ideal trip will be</a>
+                                    <a href="#Inquire" class="btn btn-g-yellow btn-lg h2 font-weight-bold mt-3">My ideal trip will be</a>
                                     {{--<div class="content-video-btn-1 mt-4">--}}
                                         {{--<a href="https://www.youtube.com/watch?v=pNe-NtXIULs"  class="html5lightbox text-white" title=""><i class="fa fa-play-circle fa-4x"></i></a>--}}
                                     {{--</div>--}}

@@ -13,7 +13,7 @@
                         <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
                     </div>
                     <div class="col d-none d-xl-flex">
-                        <i class="text-white">Top recommended Peru Travel Operator since 2009</i>
+                        <i class="text-white">Top recommended Peru Travel Operator since 2006</i>
                     </div>
                     <div class="col-md col-lg text-right sticky-top">
                         <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
