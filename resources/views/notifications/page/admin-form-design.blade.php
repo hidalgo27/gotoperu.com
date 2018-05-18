@@ -11,8 +11,9 @@
                     <tr>
                         <td style="text-align:left">
                             <p><strong>Accommodation: {{$accommodation}}</strong></p>
-                            <p><strong>Travellers: {{$number}}</strong></p>
-                            <p><strong>Duration: {{$duration}}</strong></p>
+                            <p><strong>Destinations: {{$destinations}}</strong></p>
+                            <p><strong>Travellers: {{$number}} {{$number_t}}</strong></p>
+                            <p><strong>Duration: {{$duration}} {{$duration_t}}</strong></p>
                             <p><strong>Date: {{$date}}</strong></p>
                             <p><strong>Date: {{$tel }}</strong></p>
                             <p><strong>Email: {{$email}}</strong></p>

@@ -176,6 +176,12 @@
 }
 </script>
 <script>
+    function estado() {
+        $(".duration_ch").removeClass('active');
+    }
+    function estado2() {
+        $(".number_ch").removeClass('active');
+    }
     //formulario design
     function design(){
         $.ajaxSetup({
@@ -198,8 +204,19 @@
         }
         s_accommodation = $accommodation.substring(0,$accommodation.length-3);
 
+        var s_destinations = document.getElementsByName('destinations[]');
+        var $destinations = "";
+        for (var i = 0, l = s_destinations.length; i < l; i++) {
+            if (s_destinations[i].checked) {
+                $destinations += s_destinations[i].value+' , ';
+            }
+        }
+        s_destinations = $destinations.substring(0,$destinations.length-3);
+
         var s_number = $(".number:checked").val();
+        var s_number_t = $("#h_number").val();
         var s_duration = $(".duration:checked").val();
+        var s_duration_t = $("#h_duration").val();
         var s_date = $('#h_date').val();
         var s_tel = $('#h_tel').val();
         var s_name = $('#h_name').val();
@@ -222,8 +239,11 @@
             var datos = {
 
                 "txt_accommodation" : s_accommodation,
+                "txt_destinations" : s_destinations,
                 "txt_number" : s_number,
+                "txt_number_t" : s_number_t,
                 "txt_duration" : s_duration,
+                "txt_duration_t" : s_duration_t,
                 "txt_date" : s_date,
                 "txt_tel" : s_tel,
                 "txt_name" : s_name,

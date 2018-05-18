@@ -673,8 +673,11 @@ class HomeController extends Controller
         $from2 = 'paul@gotoperu.com';
 
         $accommodation = $_POST['txt_accommodation'];
+        $destinations = $_POST['txt_destinations'];
         $number = $_POST['txt_number'];
+        $number_t = $_POST['txt_number_t'];
         $duration = $_POST['txt_duration'];
+        $duration_t = $_POST['txt_duration_t'];
         $date = $_POST['txt_date'];
         $tel = $_POST['txt_tel'];
         $name = $_POST['txt_name'];
@@ -693,8 +696,11 @@ class HomeController extends Controller
 
             Mail::send(['html' => 'notifications.page.admin-form-design'], [
                 'accommodation' => $accommodation,
+                'destinations' => $destinations,
                 'number' => $number,
+                'number_t' => $number_t,
                 'duration' => $duration,
+                'duration_t' => $duration_t,
                 'date' => $date,
                 'tel' => $tel,
                 'name' => $name,

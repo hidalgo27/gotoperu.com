@@ -81,14 +81,15 @@
 {{--</div>--}}
 {{--</section>--}}
 
-<section class="bg-light py-5" id="Inquire">
-    <div class="container-fluid">
+<section class="bg-light" id="Inquire">
+    <div class="container">
         <div class="row py-5 justify-content-center">
 
-            <div class="col col-sm-12 col-md-10 col-xl-7">
+            <div class="col">
                 <div class="row justify-content-center pb-2">
                     <div class="col col-sm-12">
-                        <h2 class="text-secondary h4 text-center"><strong>Create Your Dream Adventure</strong></h2>
+                        <h2 class="text-g-green text-center"><strong>TRAVEL INQUIRE</strong></h2>
+                        <h5 class="text-secondary text-center">Help us design your perfect Peru vacation & Receive in 24hrs the first itineraries & quotes.</h5>
                         <hr>
                     </div>
                 </div>
@@ -110,217 +111,305 @@
                                 {{csrf_field()}}
                             <div class="row justify-content-center">
                                 <div class="col col-sm-12">
-                                    <div class="row pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>HOTEL CATEGORY</strong></h2>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col col-sm col-sm pb-2">
-                                            <div class="form-circ btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">
-                                                    <i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>
-                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> Budget
-                                                    <div class="d-block text-center sec-stars">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col col-sm col-sm pb-2">
-                                            <div class="form-circ btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">
-                                                    <i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>
-                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Turista"> Best Value
-                                                    <div class="d-block text-center sec-stars">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col col-sm col-sm pb-2">
-                                            <div class="form-circ btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">
-                                                    <i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>
-                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Superior"> Superior
-                                                    <div class="d-block text-center sec-stars">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col col-sm col-sm pb-2">
-                                            <div class="form-circ btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">
-                                                    <i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>
-                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Luxo"> Luxury
-                                                    <div class="d-block text-center sec-stars">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-4 pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>NUMBER OF TRAVELERS</strong></h2>
-                                        </div>
-                                    </div>
-
-                                    <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn col btn-outline-secondary number-hover">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="1"> 1 <i class="fa fa-male"></i>
-                                        </label>
-                                        <label class="btn col mx-2 btn-outline-secondary number-hover">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="2"> 2 <i class="fa fa-male"></i>
-                                        </label>
-                                        <label class="btn col btn-outline-secondary number-hover">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="3"> 3 <i class="fa fa-male"></i>
-                                        </label>
-                                        <label class="btn col mx-2 btn-outline-secondary number-hover">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="4"> 4 <i class="fa fa-male"></i>
-                                        </label>
-                                        <label class="btn col btn-outline-secondary number-hover">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="5+"> 5+ <i class="fa fa-male"></i>
-                                        </label>
-                                        <label class="btn col ml-2 btn-outline-secondary number-hover">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="Undecided"><small>Undecided</small>
-                                        </label>
-                                    </div>
-
-                                    <div class="row mt-4 pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>TRIP LENGTH</strong></h2>
-                                        </div>
-                                    </div>
-
-                                    <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn col btn-outline-secondary number-hover">
-                                            <input type="radio" name="duration" class="duration" autocomplete="off" value="1" checked> 3-5 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
-                                        </label>
-                                        <label class="btn col mx-2 btn-outline-secondary number-hover">
-                                            <input type="radio" name="duration" class="duration" autocomplete="off" value="2"> 6-8 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
-                                        </label>
-                                        <label class="btn col btn-outline-secondary number-hover">
-                                            <input type="radio" name="duration" class="duration" autocomplete="off" value="3"> 9-11 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
-                                        </label>
-                                        <label class="btn col mx-2 btn-outline-secondary number-hover">
-                                            <input type="radio" name="duration" class="duration" autocomplete="off" value="4"> 12-15 <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
-                                        </label>
-                                        <label class="btn col btn-outline-secondary number-hover">
-                                            <input type="radio" name="duration" class="duration" autocomplete="off" value="5+"> 16+ <small class="d-block"><i class="text-g-yellow">Days</i></small></i>
-                                        </label>
-                                        <label class="btn col ml-2 btn-outline-secondary number-hover">
-                                            <input type="radio" name="duration" class="duration" autocomplete="off" value="Undecided"><small>Undecided</small>
-                                        </label>
-                                    </div>
-
-                                    <div class="row mt-4 pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>TRAVEL DATE <span class="text-primary">*</span></strong></h2>
-                                        </div>
-                                    </div>
 
                                     <div class="row">
                                         <div class="col">
-                                            <div class="input-group input-group-lg">
-                                                <input type="text" class="form-control" id="h_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
+                                            <div class="row pb-2">
+                                                <div class="col">
+                                                    <h2 class="text-secondary h5"><strong>HOTEL CATEGORY</strong></h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-3 col-sm col-sm">
+                                                    <div class="btn-group-toggle" data-toggle="buttons">
+                                                        {{--<label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">--}}
+                                                        {{--<i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>--}}
+                                                        <label class="col btn btn-outline-secondary text-secondary number-hover">
+                                                            <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> Budget
+                                                            <div class="d-block">
+                                                                <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                                <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                            </div>
+                                                            {{--<div class="d-block text-center sec-stars">--}}
+                                                            {{--<i class="fa fa-star"></i>--}}
+                                                            {{--<i class="fa fa-star"></i>--}}
+                                                            {{--</div>--}}
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3 col-sm col-sm">
+                                                    <div class="btn-group-toggle" data-toggle="buttons">
+                                                        {{--<label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">--}}
+                                                        {{--<i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>--}}
+                                                        <label class="col btn btn-outline-secondary text-secondary number-hover">
+                                                            <input type="checkbox" autocomplete="off" name="accommodation[]" value="Turista"> Best Value
+                                                            <div class="d-block">
+                                                            <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                            <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                            <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                            </div>
+                                                            {{--<i class="fa fa-star"></i>--}}
+                                                            {{--<div class="d-block text-center sec-stars">--}}
+                                                            {{--<i class="fa fa-star"></i>--}}
+                                                            {{--<i class="fa fa-star"></i>--}}
+                                                            {{--<i class="fa fa-star"></i>--}}
+                                                            {{--</div>--}}
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3 col-sm col-sm">
+                                                    <div class="btn-group-toggle" data-toggle="buttons">
+                                                        {{--<label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">--}}
+                                                        {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
+                                                        <label class="col btn btn-outline-secondary text-secondary number-hover">
+                                                            <input type="checkbox" autocomplete="off" name="accommodation[]" value="Superior"> Superior
+                                                            <div class="d-block">
+                                                            <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                            <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                            <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                            <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3 col-sm col-sm">
+                                                    <div class="btn-group-toggle" data-toggle="buttons">
+                                                        {{--<label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">--}}
+                                                        {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
+                                                        <label class="col btn btn-outline-secondary text-secondary number-hover">
+                                                            <input type="checkbox" autocomplete="off" name="accommodation[]" value="Luxo"> Luxury
+                                                            <div class="d-block">
+                                                            <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                            <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                            <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                            <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                            <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mt-4 pb-2">
+                                                <div class="col">
+                                                    <h2 class="text-secondary h5"><strong>DESTINATIONS</strong></h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
+                                                <label class="col btn btn-outline-secondary text-secondary mb-2 number-hover">
+                                                    <input type="checkbox" name="destinations[]" autocomplete="off" value="Lima">
+                                                    {{--<img src="{{asset('images/destinations/destinations/lima.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
+                                                    Lima
+                                                </label>
+                                                <label class="col mx-2 btn btn-outline-secondary text-secondary mb-2 number-hover">
+                                                    <input type="checkbox" name="destinations[]" autocomplete="off" value="Cusco">
+                                                    {{--<img src="{{asset('images/destinations/destinations/cusco.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
+                                                    Cusco
+                                                </label>
+                                                <label class="col mx-2 btn btn-outline-secondary text-secondary mb-2 number-hover">
+                                                    <input type="checkbox" name="destinations[]" autocomplete="off" value="Machu Pichu">
+                                                    {{--<img src="{{asset('images/destinations/destinations/machu-picchu.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
+                                                    Machu Picchu
+                                                </label>
+                                                <label class="col ml-2 btn btn-outline-secondary text-secondary mb-2 number-hover">
+                                                    <input type="checkbox" name="destinations[]" autocomplete="off" value="Sacred Valley">
+                                                    {{--<img src="{{asset('images/destinations/destinations/sacred-valley.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
+                                                    Sacred Valley
+                                                </label>
+                                            </div>
+
+                                            <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
+                                                <label class="col btn btn-outline-secondary text-secondary number-hover">
+                                                    <input type="checkbox" name="destinations[]" autocomplete="off" value="Lake Titicaca">
+                                                    {{--<img src="{{asset('images/destinations/destinations/puno-and-lake-titicaca.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
+                                                    Lake Titicaca
+                                                </label>
+                                                <label class="col mx-2 btn btn-outline-secondary text-secondary number-hover">
+                                                    <input type="checkbox" name="destinations[]" autocomplete="off" value="Nazca & Ballestas">
+                                                    {{--<img src="{{asset('images/destinations/destinations/nazca-lines.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
+                                                    <small>Nazca & Ballestas</small>
+                                                </label>
+                                                <label class="col mx-2 btn btn-outline-secondary text-secondary number-hover">
+                                                    <input type="checkbox" name="destinations[]" autocomplete="off" value="Amazon">
+                                                    {{--<img src="{{asset('images/destinations/destinations/amazon.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
+                                                    Amazon
+                                                </label>
+                                                <label class="col ml-2 btn btn-outline-secondary text-secondary number-hover">
+                                                    <input type="checkbox" name="destinations[]" autocomplete="off" value="Arequipa & Colca">
+                                                    {{--<img src="{{asset('images/destinations/destinations/arequipa-&-colca-canyon.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
+                                                    <small>Arequipa & Colca</small>
+                                                </label>
+                                            </div>
+
+
+
+                                            <div class="row mt-4 pb-2">
+                                                <div class="col">
+                                                    <h2 class="text-secondary h5"><strong>NUMBER OF TRAVELERS</strong></h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn col btn-outline-secondary number-hover number_ch">
+                                                    <input type="radio" name="number" class="number" autocomplete="off" value="1"> 1 <i class="fa fa-male"></i>
+                                                </label>
+                                                <label class="btn col mx-2 btn-outline-secondary number-hover number_ch">
+                                                    <input type="radio" name="number" class="number" autocomplete="off" value="2"> 2 <i class="fa fa-male"></i>
+                                                </label>
+                                                <label class="btn col mx-2 btn-outline-secondary number-hover number_ch">
+                                                    <input type="radio" name="number" class="number" autocomplete="off" value="3"> 3 <i class="fa fa-male"></i>
+                                                </label>
+                                                <label class="btn col mx-2 btn-outline-secondary number-hover number_ch">
+                                                    <input type="radio" name="number" class="number" autocomplete="off" value="4"> 4 <i class="fa fa-male"></i>
+                                                </label>
+                                                <label class="btn col btn-outline-secondary number-hover number_ch">
+                                                    <input type="radio" name="number" class="number" autocomplete="off" value="5+"> 5+ <i class="fa fa-male"></i>
+                                                </label>
+                                                <div class="col input-group ml-2">
+                                                    <input type="number" class="form-control number" name="number" id="h_number" placeholder="" aria-label="Full Name" aria-describedby="basic-addon1" onfocus="estado2()">
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row mt-4 pb-2">
+                                                <div class="col">
+                                                    <h2 class="text-secondary h5"><strong>TRIP LENGTH</strong></h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn col btn-outline-secondary duration_ch number-hover">
+                                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="3-5" checked> 3-5 <small><i class="text-g-yellow">Days</i></small></i>
+                                                </label>
+                                                <label class="btn col mx-2 btn-outline-secondary duration_ch number-hover">
+                                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="6-8"> 6-8 <small><i class="text-g-yellow">Days</i></small></i>
+                                                </label>
+                                                <label class="btn col btn-outline-secondary duration_ch number-hover">
+                                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="9-11"> 9-11 <small><i class="text-g-yellow">Days</i></small></i>
+                                                </label>
+                                                <label class="btn col mx-2 btn-outline-secondary duration_ch number-hover">
+                                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="12-15"> 12-15 <small><i class="text-g-yellow">Days</i></small></i>
+                                                </label>
+                                                <label class="btn col btn-outline-secondary duration_ch number-hover">
+                                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="16+"> 16+ <small><i class="text-g-yellow">Days</i></small></i>
+                                                </label>
+                                                <div class="col input-group ml-2">
+                                                    <input type="number" class="form-control duration" name="duration" id="h_duration" placeholder="" aria-label="Full Name" aria-describedby="basic-addon1" onfocus="estado()">
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col">
+                                            <div class="row justify-content-center">
+                                                <div class="col col-sm-12 col-md-12">
+
+                                                            <div class="row pb-2">
+                                                                <div class="col">
+                                                                    <h2 class="text-secondary h5"><strong>NAME <span class="text-primary">*</span></strong></h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <div class="input-group input-group-lg">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" id="h_name" placeholder="Full Name" aria-label="Full Name" aria-describedby="basic-addon1">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row pb-2 mt-4">
+                                                                <div class="col">
+                                                                    <h2 class="text-secondary h5"><strong>EMAIL <span class="text-primary">*</span></strong></h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <div class="input-group input-group-lg">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+                                                                        </div>
+                                                                        <input type="email" class="form-control" id="h_email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                    <div class="row mt-4 pb-1">
+                                                        <div class="col">
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <h2 class="text-secondary h5"><strong>TRAVEL DATE</strong></h2>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <div class="input-group input-group-lg">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" id="h_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <h2 class="text-secondary h5"><strong>PHONE NUMBER</strong></h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <div class="input-group input-group-lg">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone"></i></span>
+                                                                        </div>
+                                                                        <input type="tel" class="form-control" id="h_tel" placeholder="Phone number" aria-label="Phone" aria-describedby="basic-addon1">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-4 pb-2">
+                                                        <div class="col">
+                                                            <h2 class="text-secondary h5"><strong>COMMENTS?</strong></h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="input-group input-group-lg">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text"><i class="fa fa-comment"></i></span>
+                                                                </div>
+                                                                <textarea class="form-control" id="h_comment" aria-label="With textarea" placeholder="How do you imagine a perfect trip to Peru, Special Requests, Questions, Comments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
+
+
+
                                 </div>
                             </div>
 
                         </div>
-                        <div class="tab-pane" id="tab2">
-                            <div class="row justify-content-center">
-                                <div class="col col-sm-12 col-md-12">
-                                    <div class="row pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>PHONE NUMBER</strong></h2>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="input-group input-group-lg">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone"></i></span>
-                                                </div>
-                                                <input type="tel" class="form-control" id="h_tel" placeholder="Phone number" aria-label="Phone" aria-describedby="basic-addon1">
-                                            </div>
-                                        </div>
-                                    </div>
+                        {{--<div class="tab-pane" id="tab2">--}}
 
-                                    <div class="row mt-4 pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>NAME <span class="text-primary">*</span></strong></h2>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="input-group input-group-lg">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                                </div>
-                                                <input type="text" class="form-control" id="h_name" placeholder="Full Name" aria-label="Full Name" aria-describedby="basic-addon1">
-                                            </div>
-                                        </div>
-                                    </div>
+                        {{--</div>--}}
 
-                                    <div class="row mt-4 pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>EMAIL <span class="text-primary">*</span></strong></h2>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="input-group input-group-lg">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
-                                                </div>
-                                                <input type="email" class="form-control" id="h_email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-4 pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>COMMENTS?</strong></h2>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="input-group input-group-lg">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i class="fa fa-comment"></i></span>
-                                                </div>
-                                                <textarea class="form-control" id="h_comment" aria-label="With textarea" placeholder="How do you imagine a perfect trip to Peru, Special Requests, Questions, Comments"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mt-3 justify-content-center">
-                            <div class="col-12">
-                                <input type='button' class='btn btn-lg button-previous' name='previous' value='Previous' id="previus_tip" onclick="dnext(0)"/>
-                                <input type='button' class='btn btn-lg btn-g-green button-next' name='next' value='Next' id="next_tip" onclick="dnext(1)"/>
-                                <button type="button" class="btn btn-lg btn-primary d-none" id="submit_tip" onclick="design()">Submit</button>
+                        <div class="row mt-5 justify-content-center">
+                            <div class="col-4 text-center">
+                                {{--<input type='button' class='btn btn-lg button-previous' name='previous' value='Previous' id="previus_tip" onclick="dnext(0)"/>--}}
+                                {{--<input type='button' class='btn btn-lg btn-g-green button-next' name='next' value='Next' id="next_tip" onclick="dnext(1)"/>--}}
+                                <button type="button" class="btn btn-lg btn-g-green btn-block" id="submit_tip" onclick="design()">Submit</button>
                                 <i class="fas fa-spinner fa-pulse fa-2x text-primary d-none" id="h_load"></i>
                             </div>
                         </div>
