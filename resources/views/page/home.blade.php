@@ -364,7 +364,7 @@
         </div>
     </section>
 
-    <section class="bg-white pb-5">
+    <section class="bg-white pb-4">
         <div class="container-fluid">
             <div class="row mb-4">
                 <div class="col">
@@ -445,7 +445,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row pb-4">
+            <div class="row pt-4">
                 <div class="col text-right">
                     <a href="{{route('testimonials_path')}}" class="btn-link font-weight-normal">View Testimonials <i class="fa fa-chevron-right"></i></a>
                 </div>
@@ -470,66 +470,103 @@
     <section class="bg-light">
         <div class="container-fluid">
             <div class="row">
-                @foreach($paquetes->where('estado', 1)->sortBy('duracion')->take(6) as $paquete)
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-3">
-                        <div class="card mb-3">
-                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
-                                <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}">
 
-                                <div class="card-img-overlay bg-rgba-dark-3 p-0">
-                                    <div class="row justify-content-between no-gutters">
-                                        <div class="col col-sm-3 p-3">
-                                            <h5 class="m-0 text-white">{{$paquete->duracion}} Days</h5>
+                <div class="col">
+                    <div class="row">
+                        @foreach($paquetes->where('estado', 1)->sortBy('duracion')->take(4) as $paquete)
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
+                                <div class="card mb-3">
+                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
+                                        <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}">
+
+                                        <div class="card-img-overlay bg-rgba-dark-3 p-0">
+                                            <div class="row justify-content-between no-gutters">
+                                                <div class="col col-sm-3 p-3">
+                                                    <h5 class="m-0 text-white">{{$paquete->duracion}} Days</h5>
+                                                </div>
+                                                <div class="col col-sm-4 bg-g-dark py-3 text-white text-center">
+                                                    @foreach($paquete->precio_paquetes as $precio)
+                                                        @if($precio->estrellas == 2)
+                                                            @if($precio->precio_d > 0)
+                                                                <p class="text-g-yellow font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
+                                                            @else
+                                                                <span class="text-danger">Inquire</span>
+                                                            @endif
+                                                        @endif
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                            {{--<p class="text-white m-0">{{$paquete->duracion}} days <span class="text-g-yellow font-weight-bold float-right bg-danger">--}}
+                                            {{--<small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small>--}}
+                                            {{--</span></p>--}}
                                         </div>
-                                        <div class="col col-sm-4 bg-g-dark py-3 text-white text-center">
-                                            @foreach($paquete->precio_paquetes as $precio)
-                                                @if($precio->estrellas == 2)
-                                                    @if($precio->precio_d > 0)
-                                                        <p class="text-g-yellow font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
-                                                    @else
-                                                        <span class="text-danger">Inquire</span>
+                                        <div class="card-img-overlay-packages bg-rgba-dark-1">
+                                            <h5 class="card-title text-white m-0">{{ucwords(strtolower($paquete->titulo))}}</h5>
+                                            {{--<h2 class="card-title text-white m-0 h5"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>--}}
+                                            <small class="text-white font-weight-light">
+                                                <i class="fa fa-map-marker"></i>
+                                                @php
+                                                    $i = 1;
+                                                    $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
+                                                @endphp
+                                                @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
+                                                    @if(isset($paquete_destino->destinos->nombre))
+                                                        {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
+                                                        @php $i++; @endphp
                                                     @endif
+                                                @endforeach
+                                            </small>
+                                        </div>
+                                    </a>
+                                    {{--<div class="card-body">--}}
+                                    {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
+                                    {{--<p class="card-text">--}}
+                                    {{----}}
+                                    {{--</p>--}}
+                                    {{--</div>--}}
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="list-group position-relative">
+                        @foreach($paquetes->random(6) as $paquete)
+                            <a href="" class="list-group-item list-group-item-action">
+                                <div class="media">
+                                    <img src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{(strtolower($paquete->titulo))}}">
+                                    <div class="media-body">
+                                        <h5 class="mt-0"><span class="text-g-yellow">{{$paquete->duracion}} Days</span> {{ucwords(strtolower($paquete->titulo))}}</h5>
+                                        <small>
+                                            <i class="fa fa-map-marker-alt"></i>
+                                            @php
+                                                $i = 1;
+                                                $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
+                                            @endphp
+                                            @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
+                                                @if(isset($paquete_destino->destinos->nombre))
+                                                    {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
+                                                    @php $i++; @endphp
                                                 @endif
                                             @endforeach
-                                        </div>
+                                        </small>
                                     </div>
-                                    {{--<p class="text-white m-0">{{$paquete->duracion}} days <span class="text-g-yellow font-weight-bold float-right bg-danger">--}}
-                                            {{--<small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small>--}}
-                                        {{--</span></p>--}}
-                                </div>
-                                <div class="card-img-overlay-packages bg-rgba-dark-1">
-                                    <h5 class="card-title text-white m-0">{{ucwords(strtolower($paquete->titulo))}}</h5>
-                                    {{--<h2 class="card-title text-white m-0 h5"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>--}}
-                                    <small class="text-white font-weight-light">
-                                        <i class="fa fa-map-marker"></i>
-                                        @php
-                                            $i = 1;
-                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
-                                        @endphp
-                                        @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
-                                            @if(isset($paquete_destino->destinos->nombre))
-                                                {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
-                                                @php $i++; @endphp
-                                            @endif
-                                        @endforeach
-                                    </small>
                                 </div>
                             </a>
-                            {{--<div class="card-body">--}}
-                                {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
-                                {{--<p class="card-text">--}}
-                                    {{----}}
-                                {{--</p>--}}
-                            {{--</div>--}}
-                        </div>
+                        @endforeach
+                        <div class="gradient-destinations"></div>
                     </div>
-                @endforeach
-            </div>
-            <div class="row pb-4">
-                <div class="col text-right">
-                    <a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>
+                    <div class="col text-right pt-4">
+                        <a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>
+                    </div>
                 </div>
             </div>
+
+            {{--<div class="row pb-4">--}}
+                {{--<div class="col text-right">--}}
+                    {{--<a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
     </section>
 
