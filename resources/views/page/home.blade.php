@@ -255,7 +255,7 @@
                     <div class="badge badge-secondary d-block p-1"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Headquarters: Cusco, Peru</span></div>
                 </div>
                 <div class="col">
-                    <div class="badge badge-secondary d-block p-1 d-md-none d-lg-inline"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Company: 25 members</span></div>
+                    <div class="badge badge-secondary d-lg-block p-1 d-md-none"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Company: 25 members</span></div>
                 </div>
                 <div class="col">
                     <div class="badge badge-secondary d-block p-1"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Founded: 2006</span></div>

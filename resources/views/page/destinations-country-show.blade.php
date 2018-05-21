@@ -66,19 +66,31 @@
             </div>
         </div>
     </section>
+    <div class="bg-white py-2"></div>
+    <div class="sticky-top py-2 text-center bg-white">
+        @foreach($destinos->where('pais',$pais)->sortBy('nombre') as $destino)
 
+            <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours">
+                <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle buble-destinations {{ Request::is( 'destinations/peru-travel/'.str_replace(' ', '-', strtolower($destino->nombre)).'-tours') ? 'active' : '' }}" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
+            </a>
+        @endforeach
+    </div>
     <section class="bg-white">
         <div class="container-fluid">
-            <div class="row pt-5">
+            <div class="row pt-2">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>{{ucwords($ciudad)}} Tours</strong></h1>
-                    <p class="lead">our most popular <strong>Peru and South America itineraries</strong>, these <strong>packages</strong> could be used as a reference to customize your own trip. At <strong>GOTOPERU</strong> we specialize in crafting personalize experiences based on your preferences; we invited to review these programs to have glimpse of the most important destinations for instance MachuPicchu, Lake Titicaca, Nazca and the Amazon.</p>
-                    <div class="alert alert-g-yellow text-center m-0" role="alert">
-                        <h4>We will work around your schedule and your travel interests to build together the most unique travel plans</h4>
-                    </div>
+                    {{--<p class="lead">our most popular <strong>Peru and South America itineraries</strong>, these <strong>packages</strong> could be used as a reference to customize your own trip. At <strong>GOTOPERU</strong> we specialize in crafting personalize experiences based on your preferences; we invited to review these programs to have glimpse of the most important destinations for instance MachuPicchu, Lake Titicaca, Nazca and the Amazon.</p>--}}
+                    {{--<div class="alert alert-g-yellow text-center m-0" role="alert">--}}
+                        {{--<h4>We will work around your schedule and your travel interests to build together the most unique travel plans</h4>--}}
+                    {{--</div>--}}
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     {{--<p class="h4 font-weight-light">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>Customized Travel Packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>Machu Picchu</strong> and the rest of our  homeland… Peru!</p>--}}
+                    {{--<a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a>--}}
+                    {{--<script>--}}
+                        {{--!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');--}}
+                    {{--</script>--}}
                 </div>
             </div>
         </div>
@@ -88,42 +100,9 @@
     <section class="py-4 bg-white">
         <div class="container-fluid">
             <div class="row">
-                {{--<div class="col-3">--}}
-                    {{--<div class="row">--}}
-                        {{--@php $pais_e= explode('-', $pais) @endphp--}}
-                        {{--@foreach($destinos->unique('pais') as $destino)--}}
-                            {{--<div class="col-12 @if($destino->pais == $pais) {{'order-first'}} @endif">--}}
-                                {{--<h3 class="font-weight-bold text-g-green text-capitalize">{{$destino->pais}} Destinations</h3>--}}
-                                {{--@foreach($destinos->where('pais', $destino->pais)->unique('region') as $region)--}}
-                                    {{--@if(isset($region->region))--}}
-                                        {{--<h5 class="text-g-yellow font-pompiere font-weight-bold"><b>Region:</b> {{$region->region}}</h5>--}}
-                                        {{--<div class="list-group mb-3">--}}
-                                            {{--@foreach($destinos->where('pais', $destino->pais)->where('region', $region->region) as $city)--}}
-                                                {{--@php $j=0 @endphp--}}
-                                                {{--@foreach($paquete_destinos->where('iddestinos', $city->id) as $paquete_destino)--}}
-                                                    {{--@php $j++ @endphp--}}
-                                                {{--@endforeach--}}
 
-                                                {{--<a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($city->nombre))])}}-tours" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">--}}
-                                                    {{--<h6 class="text-secondary"> {{ucwords(strtolower($city->nombre))}}</h6>--}}
-                                                    {{--<span class="badge badge-primary badge-pill">{{$j}}</span>--}}
-                                                {{--</a>--}}
-                                                {{--                                            <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($city->nombre))])}}-tours"><i class="fa fa-chevron-right my-2"></i>{{ucwords(strtolower($city->nombre))}} <span class="badge badge-g-yellow float-right mt-1">{{$j}}</span></a>--}}
-
-                                            {{--@endforeach--}}
-                                        {{--</div>--}}
-                                    {{--@endif--}}
-                                {{--@endforeach--}}
-                            {{--</div>--}}
-                        {{--@endforeach--}}
-                    {{--</div>--}}
-                {{--</div>--}}
                 <div class="col">
-                    <div class="sticky-top py-2 text-center bg-white">
-                        @foreach($destinos->where('pais',$pais)->sortBy('nombre') as $destino)
-                            <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours"><img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}"></a>
-                        @endforeach
-                    </div>
+
 
                         <div class="row pt-4">
                             @foreach($paquetes_de as $paquetes_des)
