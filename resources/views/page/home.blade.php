@@ -236,7 +236,7 @@
                     <p class="lead">We are GOTOPERU , local travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 12 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized our efforts citing us a Top local Experts!</p>
                 </div>
             </div>
-            <div class="row no-gutters">
+            <div class="row no-gutters d-none d-sm-inline-flex">
                 <div class="col">
                     <img src="{{asset('images/team-1.jpg')}}" alt="" class="w-100">
                 </div>
@@ -250,12 +250,12 @@
                     <img src="{{asset('images/frank.jpg')}}" alt="" class="w-100">
                 </div>
             </div>
-            <div class="row mt-2">
+            <div class="row mt-2 d-none d-md-flex">
                 <div class="col">
                     <div class="badge badge-secondary d-block p-1"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Headquarters: Cusco, Peru</span></div>
                 </div>
                 <div class="col">
-                    <div class="badge badge-secondary d-block p-1"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Company: 25 members</span></div>
+                    <div class="badge badge-secondary d-block p-1 d-md-none d-lg-inline"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Company: 25 members</span></div>
                 </div>
                 <div class="col">
                     <div class="badge badge-secondary d-block p-1"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Founded: 2006</span></div>
@@ -267,7 +267,7 @@
         </div>
     </section>
 
-    <section class="bg-light">
+    <section class="bg-light d-none d-md-flex">
         <div class="container-fluid">
             <div class="row pt-5 pb-2">
                 <div class="col">
@@ -279,7 +279,7 @@
             </div>
 
             <div class="row no-gutters">
-                <div class="col-9 d-flex">
+                <div class="col-9 col-md-8 d-flex">
                     <div class="container-fluid p-0">
 
                         <div class="slider-containers">
@@ -338,7 +338,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col d-flex align-items-center bg-g-dark">
+                <div class="col col-md-4 d-flex align-items-center bg-g-dark">
                     <div class="text-white p-3">
                         <h3 class="display-4">10 DAYS</h3>
                         <p class="lead">Cusco, Lima, Machu Picchu, Lake Titicaca, Sacred Valley,</p>
@@ -351,7 +351,7 @@
         </div>
     </section>
 
-    <section class="bg-white">
+    <section class="bg-white d-none d-md-flex">
         <div class="container-fluid">
             <div class="row pt-5 pb-2">
                 <div class="col">
@@ -364,7 +364,7 @@
         </div>
     </section>
 
-    <section class="bg-white pb-4">
+    <section class="bg-white pb-4 d-none d-md-flex">
         <div class="container-fluid">
             <div class="row mb-4">
                 <div class="col">
@@ -471,7 +471,7 @@
         <div class="container-fluid">
             <div class="row">
 
-                <div class="col">
+                <div class="col col-xs-12 d-md-none d-lg-inline col-md-8 col-lg-12 col-xl-8">
                     <div class="row">
                         @foreach($paquetes->where('estado', 1)->sortBy('duracion')->take(4) as $paquete)
                             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
@@ -529,9 +529,9 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-4 d-none d-sm-block col-sm-12 d-md-inline col-md-12 col-lg-12 col-xl-4">
                     <div class="list-group position-relative">
-                        @foreach($paquetes->random(6) as $paquete)
+                        @foreach($paquetes->random(5) as $paquete)
                             <a href="" class="list-group-item list-group-item-action">
                                 <div class="media">
                                     <img src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{(strtolower($paquete->titulo))}}">
@@ -555,22 +555,24 @@
                             </a>
                         @endforeach
                         <div class="gradient-destinations"></div>
-                    </div>
-                    <div class="col text-right pt-4">
-                        <a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>
+                            {{--<div class="row">--}}
+                                {{--<div class="col text-right pt-4">--}}
+                                    {{--<a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                     </div>
                 </div>
             </div>
 
-            {{--<div class="row pb-4">--}}
-                {{--<div class="col text-right">--}}
-                    {{--<a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
+            <div class="row py-4">
+                <div class="col text-right">
+                    <a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="bg-white pt-5 d-none d-md-block">
+    <section class="bg-white pt-5 d-none d-lg-block">
         <div class="container-fluid">
             <div class="col">
                 <div class="row"><!--.row -->
@@ -619,7 +621,7 @@
         <div class="container-fluid">
             <div class="row pt-5 pb-2">
                 <div class="col">
-                    <h1 class="text-secondary h4"><strong>SOUTH AMERICA TRAVEL DESTINATIONS</strong></h1>
+                    <h1 class="text-secondary h4"><strong>PERU DESTINATIONS</strong></h1>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
@@ -630,167 +632,72 @@
 
     <section class="bg-white">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row align-items-center">
-                                    <div class="col-12 col-sm-4 d-md-none d-xl-block">
-                                        <img src="{{asset('images/maps/peru.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">
+            <div class="row d-flex">
+                <div class="col-8 d-none d-lg-flex col-lg-8">
+                    <div class="row">
+                        <div class="col">
+                            <div class="grid-category position-relative">
+                                <a href="destinations/peru-travel/machu-picchu-tours" class="text-g-dark rounded">
+                                    <img src="{{asset('images/destinations/destinations/machu-picchu-h.jpg')}}" alt="Machu Picchu" class="w-100 rounded">
+                                    <div class="grid-box p-3 text-center">
+                                        <span class="font">
+                                            <i>Machu</i>
+                                            <b>Picchu</b>
+                                        </span>
+                                        <div class="line"></div>
                                     </div>
-                                    <div class="col">
-                                        {{--<div class="row justify-content-center mt-5">--}}
-                                            {{--<div class="col-6">--}}
-                                                <h2 class="text-45 font-weight-light">
-                                                    <a href="{{route('destinations_country_path', 'peru-travel')}}" class="text-g-dark"><img src="{{asset('images/icons/peru.png')}}" alt="peru flag" height="50" width="50" class="float-left" class="float-left"> Peru Destinations</a>
-                                                </h2>
-                                                <p class="text-justify lead font-weight-light">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>
-
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                    </div>
-                                    <div class="col d-none d-md-block">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="list-group position-relative">
-                                                    @foreach($destinos->where('pais', 'peru')->sortBy('nombre')->take(4) as $destino)
-                                                    <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
-                                                        <div class="media">
-                                                            <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
-                                                            <div class="media-body">
-                                                                <h5 class="mt-0">{{ucwords(strtolower($destino->nombre))}}</h5>
-                                                                <p>{{ucwords(strtolower($destino->pais))}}</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    @endforeach
-                                                    <div class="gradient-destinations"></div>
-                                                </div>
-                                                <a href="{{route('destinations_country_path', 'peru-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Peru packages <i class="fa fa-chevron-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row align-items-center">
-                                    <div class="col-12 col-sm-4 d-md-none d-xl-block">
-                                        <img src="{{asset('images/maps/ecuador.jpg')}}" alt="ecuador" class="w-100 rounded rounded-circle">
-                                    </div>
-                                    <div class="col">
-                                        <h2 class="text-45 font-weight-light">
-                                            <a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="text-g-dark"><img src="{{asset('images/icons/ecuador.png')}}" alt="ecuador flag" height="50" width="50" class="float-left"> Ecuador Destinations</a>
-                                        </h2>
-                                        <p class="text-justify lead font-weight-light">This amazing country is one of the most bio-diverse countries in the world, its many destinations offer visitors a range of unique beautiful landscapes to explore from the Amazon, Andes, Coast warm beaches and the world famous Galapagos Islands ecological wonder; plus rich history and Culture specially at Colonial Quito City.</p>
-                                        {{--<a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Ecuador packages <i class="fa fa-chevron-right"></i></a>--}}
-                                    </div>
-                                    <div class="col d-none d-md-block">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="list-group position-relative">
-                                                    @foreach($destinos->where('pais', 'ecuador')->sortBy('nombre')->take(4) as $destino)
-                                                        <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
-                                                            <div class="media">
-                                                                <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
-                                                                <div class="media-body">
-                                                                    <h5 class="mt-0">{{ucwords(strtolower($destino->nombre))}}</h5>
-                                                                    <p>{{ucwords(strtolower($destino->pais))}}</p>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    @endforeach
-                                                    {{--<div class="gradient-destinations"></div>--}}
-                                                </div>
-                                                <a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Ecuador packages <i class="fa fa-chevron-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="carousel-item">
-                                <div class="row align-items-center">
-                                    <div class="col-12 col-sm-4 d-md-none d-xl-block">
-                                        <img src="{{asset('images/maps/bolivia.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">
-                                    </div>
-                                    <div class="col">
-                                        <h2 class="text-45 font-weight-light">
-                                            <a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="text-g-dark"><img src="{{asset('images/icons/bolivia.png')}}" alt="bolivia flag" height="50" width="50" class="float-left"> Bolivia Destinations</a>
-                                        </h2>
-                                        <p class="text-justify lead font-weight-light">Bolivia is s country very diverse , stretching from the majestic icebound peaks and bleak high-altitude deserts of the Andes mountains to the virgin rainforests and vast great savannahs of the Amazon , including the lake titicaca side that include the Tiawanaku templo also stark otherworldly salt pans for instance Uyuni, and ancient Inca trails.</p>
-                                        {{--<a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Bolivia packages <i class="fa fa-chevron-right"></i></a>--}}
-                                    </div>
-                                    <div class="col d-none d-md-block">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="list-group position-relative">
-                                                    @foreach($destinos->where('pais', 'bolivia')->sortBy('nombre')->take(4) as $destino)
-                                                        <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
-                                                            <div class="media">
-                                                                <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
-                                                                <div class="media-body">
-                                                                    <h5 class="mt-0">{{ucwords(strtolower($destino->nombre))}}</h5>
-                                                                    <p>{{ucwords(strtolower($destino->pais))}}</p>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    @endforeach
-                                                    {{--<div class="gradient-destinations"></div>--}}
-                                                </div>
-                                                <a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Bolivia packages <i class="fa fa-chevron-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row align-items-center">
-                                    <div class="col-12 col-sm-4 d-md-none d-xl-block">
-                                        <img src="{{asset('images/maps/brasil.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">
-                                    </div>
-                                    <div class="col">
-                                        <h2 class="text-45 font-weight-light">
-                                            <a href="{{route('destinations_country_path', 'brasil-travel')}}" class="text-g-dark"><img src="{{asset('images/icons/brasil.png')}}" alt="brazil flag" height="50" width="50" class="float-left"> Brazil Destinations</a>
-                                        </h2>
-                                        <p class="text-justify lead font-weight-light">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>
-                                        {{--<a href="{{route('destinations_country_path', 'brasil-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Brazil packages <i class="fa fa-chevron-right"></i></a>--}}
-                                    </div>
-                                    <div class="col d-none d-md-block">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="list-group position-relative">
-                                                    @foreach($destinos->where('pais', 'brasil')->sortBy('nombre')->take(4) as $destino)
-                                                        <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
-                                                            <div class="media">
-                                                                <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
-                                                                <div class="media-body">
-                                                                    <h5 class="mt-0">{{ucwords(strtolower($destino->nombre))}}</h5>
-                                                                    <p>{{ucwords(strtolower($destino->pais))}}</p>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    @endforeach
-                                                    {{--<div class="gradient-destinations"></div>--}}
-                                                </div>
-                                                <a href="{{route('destinations_country_path', 'brasil-travel')}}" class="btn-link float-right font-weight-normal mt-2">View Brazil packages <i class="fa fa-chevron-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-
-                        <a href="{{route('destinations_path')}}" class="btn-link float-right font-weight-normal my-2 d-md-none">View All Destinations <i class="fa fa-chevron-right"></i></a>
-
+                        <div class="col">
+                            <div class="grid-category position-relative">
+                                <a href="destinations/peru-travel/puno-and-lake-titicaca-tours" class="text-g-dark rounded">
+                                    <img src="{{asset('images/destinations/destinations/lake-titicaca-h.jpg')}}" alt="Lake Titicaca" class="w-100 rounded">
+                                    <div class="grid-box p-3 text-center">
+                                        <span class="font">
+                                            <i>Lake</i>
+                                            <b>Titicaca</b>
+                                        </span>
+                                        <div class="line"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col d-lg-none d-xl-block">
+                            <div class="grid-category position-relative">
+                                <a href="destinations/peru-travel/amazon-tours" class="text-g-dark rounded">
+                                    <img src="{{asset('images/destinations/destinations/amazon-h.jpg')}}" alt="Amazon" class="w-100 rounded">
+                                    <div class="grid-box p-3 text-center">
+                                        <span class="font">
+                                            <i>Ama</i>
+                                            <b>zon</b>
+                                        </span>
+                                        <div class="line"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-4">
+                    <div class="row">
+                        <div class="col">
+                            <div class="list-group position-relative">
+                                @foreach($destinos->where('pais', 'peru')->random(5) as $destino)
+                                    <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
+                                        <div class="media">
+                                            <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
+                                            <div class="media-body">
+                                                <h5 class="mt-0">{{ucwords(strtolower($destino->nombre))}}</h5>
+                                                <p>{{ucwords(strtolower($destino->pais))}}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                @endforeach
+                                <div class="gradient-destinations"></div>
+                            </div>
+                            <a href="{{route('destinations_country_path', 'peru-travel')}}" class="btn-link float-right font-weight-normal mt-2 mb-4">View Peru packages <i class="fa fa-chevron-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -799,7 +706,7 @@
 
 
 
-    <section class="bg-white d-none d-sm-block">
+    <section class="bg-white">
         <div class="container-fluid">
             <div class="row pt-5 pb-2">
                 <div class="col">
@@ -817,7 +724,7 @@
         </div>
     </section>
 
-    <div class="bg-light position-relative">
+    <div class="bg-light d-none d-sm-block position-relative">
         <img src="{{asset('images/banner-hotel.jpg')}}" alt="" class="w-100">
         <div class="card-img-overlay bg-rgba-dark-3">
             <p class="m-0 text-white h3 font-weight-light"><img src="{{asset('images/icons/include/hotels.png')}}" width="50" height="50" alt="" class="p-1" data-toggle="tooltip" data-placement="top" title="Hotels"> Hand-Selected  Collection of hotels</p>

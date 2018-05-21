@@ -113,14 +113,14 @@
                                 <div class="col col-sm-12">
 
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col-12 col-md">
                                             <div class="row pb-2">
                                                 <div class="col">
                                                     <h2 class="text-secondary h5"><strong>HOTEL CATEGORY</strong></h2>
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-3 col-sm col-sm">
+                                                <div class="col-6 col-sm-3 col-md-6 col-sm col-xl mb-2 mb-sm-0 mb-md-2">
                                                     <div class="btn-group-toggle" data-toggle="buttons">
                                                         {{--<label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">--}}
                                                         {{--<i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>--}}
@@ -137,7 +137,7 @@
                                                         </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-3 col-sm col-sm">
+                                                <div class="col-6 col-sm-3 col-md-6 col-sm col-xl mb-2 mb-sm-0 mb-md-2">
                                                     <div class="btn-group-toggle" data-toggle="buttons">
                                                         {{--<label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">--}}
                                                         {{--<i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>--}}
@@ -157,7 +157,7 @@
                                                         </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-3 col-sm col-sm">
+                                                <div class="col-6 col-sm-3 col-md-6 col-sm col-xl mb-2 mb-sm-0 mb-md-2">
                                                     <div class="btn-group-toggle" data-toggle="buttons">
                                                         {{--<label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">--}}
                                                         {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
@@ -172,7 +172,7 @@
                                                         </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-3 col-sm col-sm">
+                                                <div class="col-6 col-sm-3 col-md-6 col-sm col-xl mb-2 mb-sm-0 mb-md-2">
                                                     <div class="btn-group-toggle" data-toggle="buttons">
                                                         {{--<label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">--}}
                                                         {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
@@ -197,22 +197,22 @@
                                             </div>
 
                                             <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
-                                                <label class="col btn btn-outline-secondary text-secondary mb-2 number-hover">
+                                                <label class="col-6 col-sm col-md-6 col-lg btn btn-outline-secondary text-secondary mb-2 number-hover">
                                                     <input type="checkbox" name="destinations[]" autocomplete="off" value="Lima">
                                                     {{--<img src="{{asset('images/destinations/destinations/lima.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
                                                     Lima
                                                 </label>
-                                                <label class="col mx-2 btn btn-outline-secondary text-secondary mb-2 number-hover">
+                                                <label class="col-6 col-sm col-md-6 col-lg ml-sm-2 ml-md-0 btn btn-outline-secondary text-secondary mb-2 number-hover">
                                                     <input type="checkbox" name="destinations[]" autocomplete="off" value="Cusco">
                                                     {{--<img src="{{asset('images/destinations/destinations/cusco.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
                                                     Cusco
                                                 </label>
-                                                <label class="col mx-2 btn btn-outline-secondary text-secondary mb-2 number-hover">
+                                                <label class="col-6 col-sm col-md-6 col-lg ml-sm-2 ml-md-0 btn btn-outline-secondary text-secondary mb-2 number-hover">
                                                     <input type="checkbox" name="destinations[]" autocomplete="off" value="Machu Pichu">
                                                     {{--<img src="{{asset('images/destinations/destinations/machu-picchu.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
                                                     Machu Picchu
                                                 </label>
-                                                <label class="col ml-2 btn btn-outline-secondary text-secondary mb-2 number-hover">
+                                                <label class="col-6 col-sm col-md-6 col-lg ml-sm-2 ml-md-0 btn btn-outline-secondary text-secondary mb-2 number-hover">
                                                     <input type="checkbox" name="destinations[]" autocomplete="off" value="Sacred Valley">
                                                     {{--<img src="{{asset('images/destinations/destinations/sacred-valley.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
                                                     Sacred Valley
@@ -220,22 +220,22 @@
                                             </div>
 
                                             <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
-                                                <label class="col btn btn-outline-secondary text-secondary number-hover">
+                                                <label class="col-6 col-sm col-md-6 col-xl mb-2 mb-sm-0 mb-md-2 btn btn-outline-secondary text-secondary number-hover">
                                                     <input type="checkbox" name="destinations[]" autocomplete="off" value="Lake Titicaca">
                                                     {{--<img src="{{asset('images/destinations/destinations/puno-and-lake-titicaca.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
                                                     Lake Titicaca
                                                 </label>
-                                                <label class="col mx-2 btn btn-outline-secondary text-secondary number-hover">
+                                                <label class="col-6 col-sm col-md-6 col-xl mx-sm-2 mx-md-0 mb-2 mb-sm-0 mb-md-2 btn btn-outline-secondary text-secondary number-hover">
                                                     <input type="checkbox" name="destinations[]" autocomplete="off" value="Nazca & Ballestas">
                                                     {{--<img src="{{asset('images/destinations/destinations/nazca-lines.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
                                                     <small>Nazca & Ballestas</small>
                                                 </label>
-                                                <label class="col mx-2 btn btn-outline-secondary text-secondary number-hover">
+                                                <label class="col-6 col-sm col-md-6 col-xl mx-sm-2 mx-md-0 btn btn-outline-secondary text-secondary number-hover">
                                                     <input type="checkbox" name="destinations[]" autocomplete="off" value="Amazon">
                                                     {{--<img src="{{asset('images/destinations/destinations/amazon.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
                                                     Amazon
                                                 </label>
-                                                <label class="col ml-2 btn btn-outline-secondary text-secondary number-hover">
+                                                <label class="col-6 col-sm col-md-6 col-xl ml-sm-2 mx-md-0 btn btn-outline-secondary text-secondary number-hover">
                                                     <input type="checkbox" name="destinations[]" autocomplete="off" value="Arequipa & Colca">
                                                     {{--<img src="{{asset('images/destinations/destinations/arequipa-&-colca-canyon.jpg')}}" alt="" width="40" height="40" class="rounded-circle">--}}
                                                     <small>Arequipa & Colca</small>
@@ -279,27 +279,27 @@
                                             </div>
 
                                             <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn col btn-outline-secondary duration_ch number-hover">
+                                                <label class="btn col-4 col-sm col-md-4 col-xl mb-2 mb-sm-0  mb-md-2 btn-outline-secondary duration_ch number-hover">
                                                     <input type="radio" name="duration" class="duration" autocomplete="off" value="3-5" checked> 3-5 <small><i class="text-g-yellow">Days</i></small></i>
                                                 </label>
-                                                <label class="btn col mx-2 btn-outline-secondary duration_ch number-hover">
+                                                <label class="btn col-4 col-sm col-md-4 col-xl mx-sm-2 mx-md-0 mb-2 mb-sm-0 mb-md-2  btn-outline-secondary duration_ch number-hover">
                                                     <input type="radio" name="duration" class="duration" autocomplete="off" value="6-8"> 6-8 <small><i class="text-g-yellow">Days</i></small></i>
                                                 </label>
-                                                <label class="btn col btn-outline-secondary duration_ch number-hover">
+                                                <label class="btn col-4 col-sm col-md-4 col-xl mb-2 mb-sm-0 mb-md-2  btn-outline-secondary duration_ch number-hover">
                                                     <input type="radio" name="duration" class="duration" autocomplete="off" value="9-11"> 9-11 <small><i class="text-g-yellow">Days</i></small></i>
                                                 </label>
-                                                <label class="btn col mx-2 btn-outline-secondary duration_ch number-hover">
+                                                <label class="btn col-4 col-sm col-md-4 col-xl mx-sm-2 mx-md-0 btn-outline-secondary duration_ch number-hover">
                                                     <input type="radio" name="duration" class="duration" autocomplete="off" value="12-15"> 12-15 <small><i class="text-g-yellow">Days</i></small></i>
                                                 </label>
-                                                <label class="btn col btn-outline-secondary duration_ch number-hover">
+                                                <label class="btn col-4 col-sm col-md-4 col-xl btn-outline-secondary duration_ch number-hover">
                                                     <input type="radio" name="duration" class="duration" autocomplete="off" value="16+"> 16+ <small><i class="text-g-yellow">Days</i></small></i>
                                                 </label>
-                                                <div class="col input-group ml-2">
+                                                <div class="col-4 col-sm col-md-4 col-xl input-group ml-sm-2 ml-md-0">
                                                     <input type="number" class="form-control duration" name="duration" id="h_duration" placeholder="" aria-label="Full Name" aria-describedby="basic-addon1" onfocus="estado()">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-12 col-md mt-4">
                                             <div class="row justify-content-center">
                                                 <div class="col col-sm-12 col-md-12">
 
@@ -338,7 +338,7 @@
 
 
                                                     <div class="row mt-4 pb-1">
-                                                        <div class="col">
+                                                        <div class="col-12 col-sm col-md-12 col-lg-6">
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <h2 class="text-secondary h5"><strong>TRAVEL DATE</strong></h2>
@@ -356,7 +356,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col">
+                                                        <div class="col-12 mt-4 mt-sm-0 col-sm col-md-12 mt-md-4 col-lg-6 mt-lg-0">
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <h2 class="text-secondary h5"><strong>PHONE NUMBER</strong></h2>
