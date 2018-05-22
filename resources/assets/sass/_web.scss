@@ -251,6 +251,10 @@
   top: 50px;
   z-index: 0;
 }
+.sticky-top-80{
+  top: 80px;
+  z-index: 0;
+}
 .nav-goto-side{
   border-left: 1px solid #f9a825;
 }
@@ -774,4 +778,9 @@ $slide-overlay-opacity: 0.6;
 .grid-category:hover b {
   transition: all 0.3s ease-in-out;
   color: #ffa500;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
 }

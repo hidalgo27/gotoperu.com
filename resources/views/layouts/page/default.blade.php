@@ -156,6 +156,9 @@
 
 <script src="{{asset("js/app.js")}}"></script>
 <script src="{{asset("js/plugins.js")}}"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf1RN8KKGNdS-iEarIgXpaqa-khw7EmZI&callback=initMap">
+</script>
 @stack('scripts')
 <script type="application/ld+json">
 {
@@ -337,5 +340,6 @@
         changeYear: true
     });
 </script>
+
 </body>
 </html>

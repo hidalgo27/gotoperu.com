@@ -400,9 +400,17 @@ class HomeController extends Controller
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
+        $cusco = \GoogleMaps::load('geocoding')
+            ->setParam (['address' =>''.$ciudad.''])
+            ->get();
 
+        $cusco = json_decode($cusco);
 
-        return view('page.destinations-country-show', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos, 'destinos_p'=>$destinos_p, 'pais'=>$pais, 'paquetes_de'=>$paquetes_de, 'ciudad'=>$ciudad]);
+//        dd($cusco);
+
+//                dd($cusco2);
+
+        return view('page.destinations-country-show', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos, 'destinos_p'=>$destinos_p, 'pais'=>$pais, 'paquetes_de'=>$paquetes_de, 'ciudad'=>$ciudad, 'cusco'=>$cusco]);
     }
 
     public function about()

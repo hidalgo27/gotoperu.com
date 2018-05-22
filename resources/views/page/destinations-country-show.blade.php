@@ -77,9 +77,9 @@
     </div>
     <section class="bg-white">
         <div class="container-fluid">
-            <div class="row pt-2">
+            <div class="row pt-4">
                 <div class="col">
-                    <h1 class="text-secondary h4"><strong>{{ucwords($ciudad)}} Tours</strong></h1>
+                    <h1 class="text-secondary text-center text-g-green font-weight-normal"><strong>{{ucwords($ciudad)}} Tours</strong></h1>
                     {{--<p class="lead">our most popular <strong>Peru and South America itineraries</strong>, these <strong>packages</strong> could be used as a reference to customize your own trip. At <strong>GOTOPERU</strong> we specialize in crafting personalize experiences based on your preferences; we invited to review these programs to have glimpse of the most important destinations for instance MachuPicchu, Lake Titicaca, Nazca and the Amazon.</p>--}}
                     {{--<div class="alert alert-g-yellow text-center m-0" role="alert">--}}
                         {{--<h4>We will work around your schedule and your travel interests to build together the most unique travel plans</h4>--}}
@@ -87,83 +87,160 @@
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     {{--<p class="h4 font-weight-light">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>Customized Travel Packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>Machu Picchu</strong> and the rest of our  homeland… Peru!</p>--}}
-                    {{--<a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a>--}}
-                    {{--<script>--}}
-                        {{--!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');--}}
-                    {{--</script>--}}
+
+
                 </div>
             </div>
         </div>
     </section>
 
 
-    <section class="py-4 bg-white">
+    <section class="bg-white">
         <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="row pt-4" id="tours">
+                        <div class="col-12">
+                            <h3 class="text-g-yellow font-weight-bold">Tours</h3>
+                        </div>
+                        @foreach($paquetes_de as $paquetes_des)
+                            @if(isset($paquetes_des->destinos))
+                                @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-4 d-flex">
+                                        <div class="card border-left-0 border-right-0 pb-2">
+                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="position-relative mb-2">
+                                                <img class="card-img-top " src="{{asset('images/packages/'.$paquetes->codigo.'.jpg')}}" alt="{{(strtolower($paquetes->titulo))}}">
+
+                                                <div class="card-img-overlay bg-rgba-dark-3 p-0">
+                                                    <div class="row justify-content-between no-gutters">
+                                                        <div class="col-auto p-3">
+                                                            <p class="m-0 text-white">{{$paquetes->duracion}} Days</p>
+                                                        </div>
+                                                        <div class="col-auto bg-g-dark p-3 text-white text-center">
+                                                            @foreach($paquetes->precio_paquetes as $precio)
+                                                                @if($precio->estrellas == 2)
+                                                                    @if($precio->precio_d > 0)
+                                                                        <p class="text-g-yellow font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
+                                                                    @else
+                                                                        <span class="text-danger">Inquire</span>
+                                                                    @endif
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                    {{--<p class="text-white m-0">{{$paquetes->duracion}} days <span class="text-g-yellow font-weight-bold float-right bg-danger">--}}
+                                                    {{--<small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small>--}}
+                                                    {{--</span></p>--}}
+                                                </div>
+                                                <div class="card-img-overlay-packages bg-rgba-dark-1">
+                                                    <h5 class="card-title text-white m-0">{{ucwords(strtolower($paquetes->titulo))}}</h5>
+                                                    {{--<h2 class="card-title text-white m-0 h5"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>--}}
+                                                    {{--<small class="text-white font-weight-light">--}}
+                                                        {{--<i class="fa fa-map-marker"></i>--}}
+                                                        {{--@php--}}
+                                                            {{--$i = 1;--}}
+                                                            {{--$num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));--}}
+                                                        {{--@endphp--}}
+                                                        {{--@foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)--}}
+                                                            {{--@if(isset($paquete_destino->destinos->nombre))--}}
+                                                                {{--{{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif--}}
+                                                                {{--@php $i++; @endphp--}}
+                                                            {{--@endif--}}
+                                                        {{--@endforeach--}}
+                                                    {{--</small>--}}
+                                                </div>
+                                            </a>
+                                            {{--<div class="card-body">--}}
+                                            {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
+                                            {{--<p class="card-text">--}}
+                                            {{----}}
+                                            {{--</p>--}}
+                                            {{--</div>--}}
+                                            <small class="font-weight-light text-justify">
+                                                <i class="fa fa-map-marker-alt"></i>
+                                                @php
+                                                    $i = 1;
+                                                    $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
+                                                @endphp
+                                                @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
+                                                    @if(isset($paquete_destino->destinos->nombre))
+                                                        {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
+                                                        @php $i++; @endphp
+                                                    @endif
+                                                @endforeach
+                                            </small>
+                                        </div>
+                                    </div>
+
+                                @endforeach
+                            @endif
+                        @endforeach
+                    </div>
+
+                    <div class="row pt-4" id="location">
+                        <div class="col-12">
+                            <h3 class="text-g-yellow font-weight-bold">Location</h3>
+                        </div>
+                        <div class="col-12">
+                            @foreach($cusco->results as $cuscos)
+                                @foreach($cuscos->geometry->location as  $cusco2)
+                                    @php $cusco3[] = $cusco2; @endphp
+                                @endforeach
+                            @endforeach
+                            <div id="map"></div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="history">
+
+                    </div>
+
+                    <div class="row" id="geography">
+
+                    </div>
+
+                    <div class="row" id="hotels">
+
+                    </div>
+
+                    <div class="row pt-5" id="current-weather">
+
+                            <div class="col-12">
+                                <h3 class="text-g-yellow font-weight-bold">Current Weather</h3>
+                            </div>
+                            <div class="col-12">
+                                <a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a>
+                            </div>
+
+                    </div>
+
+                    <div class="row" id="photos">
+
+                    </div>
+
+                </div>
+                <div class="col-3 d-none d-sm-block">
+                    <div class="sticky-top sticky-top-80 mt-5">
+                        <nav id="menu" class="navbar navbar-light nav-goto-side w-100">
+                            <nav class="nav nav-pills flex-column w-100">
+                                <a class="nav-link active" href="#tours">Tours</a>
+                                <a class="nav-link" href="#location">Location</a>
+                                {{--<a class="nav-link" href="#history">History</a>--}}
+                                {{--<a class="nav-link" href="#geography">Geography</a>--}}
+                                {{--<a class="nav-link" href="#hotels">Hotels</a>--}}
+                                <a class="nav-link" href="#current-weather">Current Weather</a>
+                                {{--<a class="nav-link" href="#photos">Photos</a>--}}
+                            </nav>
+                        </nav>
+                    </div>
+                </div>
+            </div>
             <div class="row">
 
                 <div class="col">
 
-
                         <div class="row pt-4">
-                            @foreach($paquetes_de as $paquetes_des)
-                                @if(isset($paquetes_des->destinos))
-                                    @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
-                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-3">
-                                            <div class="card mb-3">
-                                                <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="position-relative">
-                                                    <img class="card-img-top " src="{{asset('images/packages/'.$paquetes->codigo.'.jpg')}}" alt="{{(strtolower($paquetes->titulo))}}">
 
-                                                    <div class="card-img-overlay bg-rgba-dark-3 p-0">
-                                                        <div class="row justify-content-between no-gutters">
-                                                            <div class="col-3 p-3">
-                                                                <p class="m-0 text-white">{{$paquetes->duracion}} Days</p>
-                                                            </div>
-                                                            <div class="col-4 bg-g-dark py-3 text-white text-center">
-                                                                @foreach($paquetes->precio_paquetes as $precio)
-                                                                    @if($precio->estrellas == 2)
-                                                                        @if($precio->precio_d > 0)
-                                                                            <p class="text-g-yellow font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
-                                                                        @else
-                                                                            <span class="text-danger">Inquire</span>
-                                                                        @endif
-                                                                    @endif
-                                                                @endforeach
-                                                            </div>
-                                                        </div>
-                                                        {{--<p class="text-white m-0">{{$paquetes->duracion}} days <span class="text-g-yellow font-weight-bold float-right bg-danger">--}}
-                                                        {{--<small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small>--}}
-                                                        {{--</span></p>--}}
-                                                    </div>
-                                                    <div class="card-img-overlay-packages bg-rgba-dark-1">
-                                                        <h5 class="card-title text-white m-0">{{ucwords(strtolower($paquetes->titulo))}}</h5>
-                                                        {{--<h2 class="card-title text-white m-0 h5"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>--}}
-                                                        <small class="text-white font-weight-light">
-                                                            <i class="fa fa-map-marker"></i>
-                                                            @php
-                                                                $i = 1;
-                                                                $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
-                                                            @endphp
-                                                            @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
-                                                                @if(isset($paquete_destino->destinos->nombre))
-                                                                    {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
-                                                                    @php $i++; @endphp
-                                                                @endif
-                                                            @endforeach
-                                                        </small>
-                                                    </div>
-                                                </a>
-                                                {{--<div class="card-body">--}}
-                                                {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
-                                                {{--<p class="card-text">--}}
-                                                {{----}}
-                                                {{--</p>--}}
-                                                {{--</div>--}}
-                                            </div>
-                                        </div>
-
-                                    @endforeach
-                                @endif
-                            @endforeach
                         </div>
 
                 </div>
@@ -171,4 +248,24 @@
         </div>
     </section>
     @include('layouts.page.form-quote')
+    @push('scripts')
+        <script>
+            function initMap() {
+                var lat1 = parseFloat("{{$cusco3[0]}}");
+                var lng1 = parseFloat("{{$cusco3[1]}}");
+                        {{--alert (lng);--}}
+                var uluru = {lat: lat1, lng: lng1};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 6,
+                    center: uluru
+                });
+                var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map
+                });
+            }
+
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+        </script>
+    @endpush
 @stop
