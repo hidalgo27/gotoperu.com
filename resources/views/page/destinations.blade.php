@@ -38,7 +38,7 @@
                     <div class="col">
 
                         <div class="row my-3 justify-content-center text-center">
-                            <p class="text-white display-4 font-weight-light">South America Travel Destinations</p>
+                            <p class="text-white display-4 font-weight-light">Peru Destinations</p>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
@@ -71,8 +71,9 @@
         <div class="container-fluid">
             <div class="row pt-5">
                 <div class="col">
-                    <h1 class="text-secondary h4"><strong>SOUTH AMERICA TRAVEL DESTINATIONS</strong></h1>
-                    <p class="lead">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>
+                    <h1 class="font-weight-bold text-g-yellow text-center"><strong>PERU DESTINATIONS</strong></h1>
+                    {{--<h1 class="text-secondary h4"><strong>SOUTH AMERICA TRAVEL DESTINATIONS</strong></h1>--}}
+                    <p class="lead text-center">Offering you an authentic and reliable travel experience in peru welcoming you to explore the many fully customized travel packages we have that suit every budget. let us plan your unforgettable trip to our majestic machu picchu and the rest of our homeland… peru!</p>
                     <div class="alert alert-g-yellow text-center m-0" role="alert">
                         <h4>We will work around your schedule and your travel interests to build together the most unique travel plans</h4>
                     </div>
@@ -84,59 +85,207 @@
         </div>
     </section>
 
-    <section class="bg-white py-5">
+    <section class="bg-white pt-3">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-lg-6 mb-4">
-                    <div class="row">
-                        <div class="col d-none d-sm-block">
-                            <img src="{{asset('images/maps/peru.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">
-                        </div>
-                        <div class="col">
-                            <h2 class="h2 font-weight-bold"><a href="{{route('destinations_country_path', 'peru-travel')}}" class="text-secondary">Peru Destinations</a></h2>
-                            <p class="text-justify">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6 mb-4">
-                    <div class="row">
-                        <div class="col d-none d-sm-block">
-                            <img src="{{asset('images/maps/ecuador.jpg')}}" alt="ecuador" class="w-100 rounded rounded-circle">
-                        </div>
-                        <div class="col">
-                            <h2 class="h2 font-weight-bold"><a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="text-secondary">Ecuador Destinations</a></h2>
-                            <p class="text-justify">This amazing country is one of the most bio-diverse countries in the world, its many destinations offer visitors a range of unique beautiful landscapes to explore from the Amazon, Andes, Coast warm beaches and the world famous Galapagos Islands ecological wonder; plus rich history and Culture specially at Colonial Quito City.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6 mb-4">
-                    <div class="row">
-                        <div class="col d-none d-sm-block">
-                            <img src="{{asset('images/maps/bolivia.jpg')}}" alt="bolivia" class="w-100 rounded rounded-circle">
-                        </div>
-                        <div class="col">
-                            <h2 class="h2 font-weight-bold"><a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="text-secondary">Bolivia Destinations</a></h2>
-                            <p class="text-justify">Bolivia is s country very diverse , stretching from the majestic icebound peaks and bleak high-altitude deserts of the Andes mountains to the virgin rainforests and vast great savannahs of the Amazon , including the lake titicaca side that include the Tiawanaku templo also stark otherworldly salt pans for instance Uyuni, and ancient Inca trails.</p>
+                <div class="col">
+                    <div class="row pt-4" id="destinations">
+                        <div class="col-12">
+                            <h4 class="text-secondary"><strong>Destinations</strong></h4>
+                            <div class="row">
+                                @foreach($destinos->sortBy('nombre') as  $destino)
+                                <div class="col-md-4 col-sm-6 mb-4">
+                                    <div class="grid-category position-relative">
+                                        <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="text-g-dark rounded">
+                                            <img src="{{asset('images/destinations/destinations/'.str_replace(' ', '-', strtolower($destino->nombre)).'.jpg')}}" alt="Machu Picchu" class="w-100 rounded">
+                                            <div class="grid-box p-3 text-center">
+                                                <span class="no-margin text-20"><i>{{substr(ucfirst(strtolower($destino->nombre)), 0, strlen($destino->nombre)/2)}}</i><b>{{substr(ucfirst(strtolower($destino->nombre)), strlen($destino->nombre)/2, strlen($destino->nombre))}}</b></span>
+                                                <div class="line"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                @endforeach
+
+                            </div>
                         </div>
                     </div>
+
+                    <div class="row pt-4" id="history">
+                        <div class="col-12">
+                            <h4 class="text-secondary"><strong>History</strong></h4>
+                            <p>Beyond the sculpted stone walls of Machu Picchu, the astounding earthen temples of the Moche culture and the sacred pyramids of Caral, Peru's legacy is a long history of developing civilizations that began on the frigid high Andean plateaus more than ten millennia ago.</p>
+                            <p>The people who built the lost city of the Incas; the same ones who designed the most intricate roads and designed the most incredible hydraulic and agricultural engineering works, started out from cold caves at an altitude of more than four thousand meters. These hunter-gathers were the first inhabitants of our country and have left countless traces of their way of life at sites such as Pikimachay (Ayacucho), Lauricocha (Huánuco) and Toquepala (Tacna), where researchers have unraveled the mystery of the birth of Peruvian civilization.</p>
+                            <p>These first inhabitants left their caves and shelters around seven thousand years ago to descend to the western Pacific valleys, and from there crossed the coastal hills and finally reached the sea. The llama and deer hunters quickly became fishermen and shellfish collectors and then began domesticating plants in the warm valleys that cut through the desert. Men such as the man from Nanchoc bear witness to this dramatic juncture for Peruvians, when they began to cultivate their first crops such as lima beans, corn, potatoes and cotton, allowing them to leave their nomadic life behind and settle in their first hamlets.</p>
+
+                            <h5>a. Ancient civilizations</h5>
+                            <p>Caral, now considered the oldest civilization in America, appeared over more than five thousand years ago in the Supe River Valley, north of the city of Lima. A contemporary of Egypt and Mesopotamia, this coastal dominion completely changed the course of Peru's history more than a decade ago and solidified our country as one of the world's most important cultural hubs, along with Mesoamerica, and the basins of the Nile, Euphrates and Indus.</p>
+                            <p>Caral is the culmination of an early cultural process called the Initial Period, whose main features are the absence of pottery (Preceramic) and the construction of tiered adobe temples, circular town squares and small villages around sacred and government centers. Notable archaeological sites such as Sechín, on the Áncash coast, and the Temple of the Crossed Hands of Kotosh, in Huánuco, belong to this period.</p>
+                            <p>About a thousand years later, Chavín emerged in the north-central Andes, in the state of Áncash. This new government spread its culture throughout a large portion of the country, as can be seen in the "Chavinoid" images and symbols at sites as far away as the southern coast and the Altiplano. Its main religious center was located in the Waqueqsa river valley, in the beautiful region of Conchucos, and is one of the country's greatest archaeological discoveries. Before Caral was discovered, Chavín was believed to be the first great Peruvian civilization.</p>
+                            <p>Around 700 B.C., another fascinating culture appeared on the coast, the first great desert people: the Paracas, who were adept weavers – their great tapestries of intricate designs are known around the world. They are known for their burial methods and for having performed successful skull operations, as is demonstrated by evidence discovered by Julio C. Tello in the 1940s.</p>
+                            <p>During the first centuries AD, and following the dominance of Chavín, various dominions appeared throughout the territory, including the Mochica, whose rule encompassed almost the entire northern coast of Peru. With its center in the Moche valley, at La Libertad, these people are known for their ceramic figurines, their delicate goldsmithing and their efficient use of water resources that allowed them to significantly expand their agricultural frontier and support a large population.</p>
+                            <p>What has been called the first regional empire appeared after this initial regional development; that of the Wari, around 550 AD. As a continuation of the Tiahuanaco culture, forged on the Peruvian and Bolivian Altiplano, the Wari ruled an extensive territory and established what would later become Tahuantinsuyo. It was this people that began tracing the great Pre-Hispanic roads and laying the foundations of the social and territorial governance that the Incas of Cusco would then inherit.</p>
+                            <p>The disappearance of the Wari, around 1200 AD, saw the beginning of the Late Intermediate period, a second wave of regional developments where several cultures, such as Ichma, holders of the powerful oracle of Pachacamac, stand out; the Chincha, great merchants of the sea who later became 'trading partners' of the Incas; and especially the Chimú, the great lords of the north, who took the place of the Mochica and the Lambayeque. Like their predecessors, the Chimú are noted for their exquisite pottery and complex irrigation systems. They were the ones who built the immense city of Chan Chan, the largest adobe construction in the world.</p>
+                            <p>This was also the era of the Chachopyas, the 'men of the clouds,' lords of the lush cloud forests of Amazonas, where they built the most incredible cities and mausoleums, carved into the steepest cliff faces.</p>
+                            <p>As these cultures approached their zenith, a dominion of Quechua origin began to take shape in the valley of the Vilcanota River, in Cusco. They gained land using alliances and systems of reciprocity, in addition to force. After defeating the Chancas of Apurímac and Ayacucho, the Incas – as history tells it – built the largest empire in America. It covered the territory of six modern-day countries and united peoples from the most dissimilar backgrounds under one flag, thanks to strict social control and an efficient system of governance.</p>
+                            <p>Between the 12th and 15th centuries the Incas created what no one had ever imagined before: a great state connected by an efficient road network – the Qhapac Ñan – which summarized millennia of wisdom. Rather than devastating the cultures they conquered, the Incas assimilated the ways of life of their subjects and used the best aspects of each society to build their amazing culture.</p>
+
+                            <h5>b. The arrival of the Spanish</h5>
+                            <p>The Inca culture confronted Hispanic culture with the arrival of the Spanish conquistadors in the 16th century. In 1532, the forces of Francisco Pizarro captured the Inca Atahualpa in Cajamarca, an event that marked the decline of the Inca Empire. In 1542 the Viceroyalty of Peru was created, which depended on the Spanish crown. The territory of the Viceroyalty comprised a large part of South America and remained under diverse forms of control by its authorities for almost 200 years.</p>
+                            <p>The viceroyalty was consolidated in the sixteenth century with the viceroy Francisco de Toledo, who established the basis of the colonial economy: a system for the control of indigenous labor (mita) for mining and craft production. The exploitation of mining wealth affected the colonized Peruvian Indians who saw their rights restricted and their culture oppressed.</p>
+                            <p>The reforms of the eighteenth century created great disagreement between many social sectors and successive rebellions broke out. The most important indigenous uprising was led by Tupac Amaru II, who was responsible for the start of the Creole movement that made Latin America independent in the 19th century.</p>
+
+                            <h5>c. Independence</h5>
+                            <p>In 1821, Peru was declared an independent country by Don Jose de San Martin and in 1824 Simón Bolívar culminated the liberation process with the wars of independence. As a republic in the process of formation, Peru had to face economic crises and military caudillismos during its first years, which made it difficult to establish a new national spirit between Indians and mestizos.</p>
+                            <p>In economic terms, guano, cotton and sugar all experienced a boom. Negro slavery ended in the mid-nineteenth century. The first waves of Chinese migrants, who arrived to work in agriculture, began at the same time. Civil governments appeared later with Manuel Pardo.</p>
+                            <p>By then, the guano boom, the product which had given the country its main income, had ended and the national economy entered a crisis situation. Around 1879 the country faced a war with Chile in which it was defeated. Amidst the bankruptcy, a new heyday of military governments ensued and the civilians returned. Thus began a period called the "Aristocratic Republic," which was based on an economy dominated by the landed elite.</p>
+                            <p>This saw the beginning of the rubber production boom in the jungle and the gap widened further between an elite, mostly from the capital, and the rest of the population in the interior of the country, who mainly lived off agriculture.</p>
+                            <p>During the 1970s, Peru was ruled by a military dictatorship led by General Juan Velasco. The military government nationalized oil, the media and reformed the agricultural foundations, whereby ownership of agricultural land changed radically. Democratic governments returned in the 1980s, but the country was plunged into a severe economic crisis with severe hyperinflation.</p>
+                            <p>At the same time, the emergence of two terrorist movements took on greater importance, violently shaking the country for twenty years. In the 1990s, Alberto Fujimori, after a self-coup in 1992, established a series of laws that initiated the end of these terrorist groups. The country rejoined the world economic system, from which it had retired in the previous decade due to its decision not to pay its external debt.</p>
+                            <p>Since 2000, Peru has had successive, clearly democratic governments, with Alejandro Toledo, Alan Garcia, Ollanta Humala Tasso, Pedro Pablo Kuczynski and Martín Vizcarra Cornejo. The country is in the middle of a period of economic development, with growth rates never previously achieved and overcoming the crises of the past decades.</p>
+
+
+                        </div>
+                    </div>
+
+                    <div class="row pt-4" id="culture">
+                        <div class="col-12">
+                            <h4 class="text-secondary"><strong>Peruvian Culture</strong></h4>
+                            <p>With more than 10,000 years of history, Peru boasts a great wealth of cultures and traditions. It has delicious, acclaimed gastronomy, possesses imposing archaeological complexes, 12 Unesco world heritage sites and has vast natural reserves. It is undoubtedly one of the most varied countries in the world.</p>
+                            <p>Peru is located in the western part of South America. Its territory borders Ecuador, Colombia, Brazil, Bolivia and Chile. It covers 1,285,215 km2 of land and 200 nautical miles of the Pacific Ocean, as well as 60 million hectares in Antarctica. It has an estimated population of over 31.5 million inhabitants.</p>
+                            <p>It is the third largest country in South America and one of the 20 largest in the world - its surface area covers more than the territories of Spain and France combined. Being a consultative party to the Antarctic Treaty, it has a scientific station called 'Machu Picchu' on this continent.</p>
+                            <p>The country is divided into 25 regions or departments, including the constitutional province of El Callao, where Peru’s main port is located. The capital is Lima, a city founded in the year 1535 by the Spanish, and becoming the capital of the Viceroyalty of Peru. After independence in 1821, it became the capital of the republic.</p>
+                            <p>Peru is a highly diverse country. It has 11 ecoregions and 84 of the 117 life zones that exist in the world. It has an enormous range of landscapes due to its geographical conditions, which in turn give it a great diversity of natural resources. Three main regions can be identified in its territory, which is the traditional way of dividing it according to altitudes: Coast, Mountains and Jungle.</p>
+                            <p>The Jungle occupies 59% of the territory of this country, where 12% of the country’s population is concentrated. The Mountains, dominated by the Andes mountain range, occupy 30% of the territory and are home to 36% of the population. Most of the population – 52% – is concentrated on the coast, despite only occupying 11% of the national territory.</p>
+                            <p>Spanish is the official language of Peru and is spoken by 84% of the population. In addition, 47 native languages are spoken in the country, including Quechua and Aymara, spoken by 13% and 1.7% of the population, respectively.</p>
+                            <p>In July 2016, a new government took charge, headed by the president Pedro Pablo Kuczynski from the party Peruvians for Change. This was the fourth democratically elected government after the transitional government of 2000, which announced general elections for the following year, showing the political stability of this country.</p>
+
+                            <h5>Language</h5>
+                            <p>The great culture of ancient Peru is also expressed by a legacy of a wide variety of native languages that co-exist in its territory. Spanish is the official language and is used in most of the country. Other languages have been recognized by the Constitution, such as Quechua, which is spoken in many Andean regions in different varieties, and Aimara, the predominant language of the southern Andes.</p>
+                            <p>Shipibo, Ashaninka and Aguaruna, used by Amazon communities, are just some of the country's 43 native languages.</p>
+
+                            <h5>Religion</h5>
+                            <p>Freedom of religion is a fundamental right in Peru’s culture, although Catholicism is the main religion, another legacy of the Spanish. Religious festivals have strong Spanish influence, but they are also an example of how different beliefs and religions of Peru's pre-Hispanic cultures coexist.</p>
+
+                            <h5>Customs</h5>
+                            <p>Festivals: The coming together of different creeds, customs and experiences have created close to 3,000 annual popular festivals in Peru, including patron saint feasts, processions, carnivals and rituals, encompassing the expression of belief in God, respect for nature and the celebration of freedom. Peruvian festivals have a mystical side to them; most of them are the result of a fusion between Catholicism and pre-Hispanic religious traditions. Repaying the earth is part of the main celebrations in all regions, and is about rewarding and recognizing the Pachamama (Mother Earth) for her endless generosity.</p>
+
+
+                            <h5>Gastronomy:</h5>
+                            <p>Peruvian cuisine is another expression of a national identity that embraces multiple cultures co-existing in one territory; a unifying element in Peru that can be seen everywhere.</p>
+                            <p>Peruvians have become experts at experimenting with new flavors, harmonizing aromas and discovering new ways of cooking. The diversity of Peru's agricultural production, microclimates, geography, multiple cultures and the genius of its chefs have enriched the culinary nature of Peru to the point where it is now recognized as one of the finest expressions of the global cuisine.</p>
+                            <p>Mistura is the main gastronomic fair in Peru. It is held every year in Lima, bringing together the leading chefs and restaurants of Peru. The fair has been named the Gastronomic Capital of America and is one of the main events on international tourism itineraries in the region.</p>
+
+                            <h5>Handicrafts:</h5>
+                            <p>Ancient Peruvians were outstanding handicraft artisans with highly developed technical skills. Pre-Hispanic Peruvian art has been dated back to ancient times through the discovery of weaving, gourds, wood, stone, gold, silver, pottery and even mud, which were used for day-to-day living. This ancestral heritage is still seen today in the coastal, mountain and jungle towns, in a variety of high-quality woven items. Silver filigree, carved gourds, Ayacuchan altars, Huamanga stone and wood carvings, Chulucanas pottery and Monsefú ponchos, among others, are highly valued around the world.</p>
+
+                            <h5>Music and Dances:</h5>
+                            <p>Since pre-Hispanic times, music and dance has always played an important role in Peruvian society. Ancient Peruvians used sea shells, reeds and even animal bones to produce sounds. It is said that the Peruvians of the Nazca culture were the most important pre-Hispanic musicians on the continent. Panpipes or zampoñas, terracotta trumpets and pututos were some of the most important musical instruments in ancient Peru. The music explored themes of religion, war and profanity.</p>
+                            <p>Another result of its many cultures, Peru today has a rich and varied folklore and a wide diversity of both music and dancing, that combine indigenous genres and spirit with Hispanic influence, as well as modern styles that have adapted to the changes and tastes of society's larger social groups.</p>
+
+                            <h5>Idiosyncrasy</h5>
+                            <p>Peruvians are increasingly proud of the historical and cultural wealth, both past and present. After turning its back on its Andean origins for centuries, modern Peru now fully recognizes the value of the Andes and the Amazon for all that they represent in terms of resources and ancient traditions.</p>
+                            <p>Peru's civilization is the oldest in South America. Neighboring countries have been created from ancient Peruvian territory and empire. Peru was the political and productive center of the region with a privileged and special geographical location.</p>
+                            <p>Modern Peru boasts entrepreneurs who have rediscovered their capacity to create new wealth, businesses and services. The country has overcome difficult political and economic crises. Although Peru is still undergoing the consolidation of its institutions, the country has now seen over two decades of democracy.</p>
+                            <p>Peruvians are a welcoming people who take pride in offering incredible services and experiences to visitors that include traditional foods, celebrations and festivals. Peruvians are passionate about soccer, the national sport and a good excuse for family and friends to come together.</p>
+                            <p>Peruvians are very religious. The Catholic faith has an important place in peoples lives, coexisting peacefully with other creeds.</p>
+
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-12 col-lg-6 mb-4">
-                    <div class="row">
-                        <div class="col d-none d-sm-block">
-                            <img src="{{asset('images/maps/brasil.jpg')}}" alt="brasil" class="w-100 rounded rounded-circle">
-                        </div>
-                        <div class="col">
-                            <h2 class="h2 font-weight-bold"><a href="{{route('destinations_country_path', 'brasil-travel')}}" class="text-secondary">Brasil Destinations</a></h2>
-                            <p class="text-justify">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>
-                        </div>
+                <div class="col-3 d-none d-sm-block mt-2">
+                    <div class="sticky-top sticky-top-50 mt-5">
+                        <nav id="menu" class="navbar navbar-light nav-goto-side w-100">
+                            <nav class="nav nav-pills flex-column w-100">
+                                <a class="nav-link active" href="#destinations">Destinations</a>
+                                {{--<a class="nav-link" href="#location">Location</a>--}}
+                                <a class="nav-link" href="#history">History</a>
+                                <a class="nav-link" href="#culture">Culture</a>
+                                {{--<a class="nav-link" href="#hotels">Hotels</a>--}}
+                                {{--<a class="nav-link" href="#current-weather">Current Weather</a>--}}
+                                {{--<a class="nav-link" href="#photos">Photos</a>--}}
+                            </nav>
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    {{--<section class="bg-white py-5">--}}
+        {{--<div class="container-fluid">--}}
+            {{--<div class="row">--}}
+                {{--<div class="col-12 col-lg-6 mb-4">--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="col d-none d-sm-block">--}}
+                            {{--<img src="{{asset('images/maps/peru.jpg')}}" alt="peru" class="w-100 rounded rounded-circle">--}}
+                        {{--</div>--}}
+                        {{--<div class="col">--}}
+                            {{--<h2 class="h2 font-weight-bold"><a href="{{route('destinations_country_path', 'peru-travel')}}" class="text-secondary">Peru Destinations</a></h2>--}}
+                            {{--<p class="text-justify">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="col-12 col-lg-6 mb-4">--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="col d-none d-sm-block">--}}
+                            {{--<img src="{{asset('images/maps/ecuador.jpg')}}" alt="ecuador" class="w-100 rounded rounded-circle">--}}
+                        {{--</div>--}}
+                        {{--<div class="col">--}}
+                            {{--<h2 class="h2 font-weight-bold"><a href="{{route('destinations_country_path', 'ecuador-travel')}}" class="text-secondary">Ecuador Destinations</a></h2>--}}
+                            {{--<p class="text-justify">This amazing country is one of the most bio-diverse countries in the world, its many destinations offer visitors a range of unique beautiful landscapes to explore from the Amazon, Andes, Coast warm beaches and the world famous Galapagos Islands ecological wonder; plus rich history and Culture specially at Colonial Quito City.</p>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="col-12 col-lg-6 mb-4">--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="col d-none d-sm-block">--}}
+                            {{--<img src="{{asset('images/maps/bolivia.jpg')}}" alt="bolivia" class="w-100 rounded rounded-circle">--}}
+                        {{--</div>--}}
+                        {{--<div class="col">--}}
+                            {{--<h2 class="h2 font-weight-bold"><a href="{{route('destinations_country_path', 'bolivia-travel')}}" class="text-secondary">Bolivia Destinations</a></h2>--}}
+                            {{--<p class="text-justify">Bolivia is s country very diverse , stretching from the majestic icebound peaks and bleak high-altitude deserts of the Andes mountains to the virgin rainforests and vast great savannahs of the Amazon , including the lake titicaca side that include the Tiawanaku templo also stark otherworldly salt pans for instance Uyuni, and ancient Inca trails.</p>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="col-12 col-lg-6 mb-4">--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="col d-none d-sm-block">--}}
+                            {{--<img src="{{asset('images/maps/brasil.jpg')}}" alt="brasil" class="w-100 rounded rounded-circle">--}}
+                        {{--</div>--}}
+                        {{--<div class="col">--}}
+                            {{--<h2 class="h2 font-weight-bold"><a href="{{route('destinations_country_path', 'brasil-travel')}}" class="text-secondary">Brasil Destinations</a></h2>--}}
+                            {{--<p class="text-justify">At GOTOPERU we give you the opportunity to choose between Prebuilt travel programs showed below or if you would rather plan your own itinerary we’ll help you build step by step your dream vacation at the best Prices cutting the "middleman" fees companies.</p>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
+    {{--<section class="bg-white">--}}
+        {{--<div class="container-fluid">--}}
+            {{--<div class="row">--}}
 
-    <section class="bg-white">
+                    {{--<div class="col-md-4 col-sm-6">--}}
+                        {{--<div class="grid-category position-relative">--}}
+                            {{--<a href="http://machupicchu.company/destinations/amazon" class="color-goto-grey">--}}
+                                {{--<img src="http://machupicchu.company/images/destinations/amazon.jpg" alt="" class="w-100"/>--}}
+                                {{--<div class="grid-box  text-center">--}}
+
+                                    {{--<span class="no-margin text-20"><i>Ama</i><b>zon</b></span>--}}
+                                    {{--<div class="line"></div>--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
+
+
+    <section class="bg-white d-none">
         <div class="container-fluid">
             <div class="row pt-5">
                 <div class="col">
@@ -147,7 +296,7 @@
     </section>
 
 
-    <section class="bg-white py-5">
+    <section class="bg-white py-5 d-none">
         <div class="container-fluid">
             <div class="row">
                 <div class="col">

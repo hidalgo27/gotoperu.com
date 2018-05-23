@@ -79,7 +79,7 @@
         <div class="container-fluid">
             <div class="row pt-4">
                 <div class="col">
-                    <h1 class="text-secondary text-center text-g-green font-weight-normal"><strong>{{ucwords($ciudad)}} Tours</strong></h1>
+                    <h1 class="text-secondary text-center text-g-green font-weight-normal"><strong>{{ucwords($ciudad)}} Tour</strong></h1>
                     {{--<p class="lead">our most popular <strong>Peru and South America itineraries</strong>, these <strong>packages</strong> could be used as a reference to customize your own trip. At <strong>GOTOPERU</strong> we specialize in crafting personalize experiences based on your preferences; we invited to review these programs to have glimpse of the most important destinations for instance MachuPicchu, Lake Titicaca, Nazca and the Amazon.</p>--}}
                     {{--<div class="alert alert-g-yellow text-center m-0" role="alert">--}}
                         {{--<h4>We will work around your schedule and your travel interests to build together the most unique travel plans</h4>--}}
@@ -199,7 +199,44 @@
 
                     </div>
 
-                    <div class="row" id="hotels">
+                    <div class="row pt-5" id="hotels">
+
+                        <div class="col-12">
+                            <h3 class="text-g-yellow font-weight-bold">Hotels </h3>
+                            @foreach($destinos_id as $d)
+
+                            @endforeach
+                        </div>
+
+                        {{--@foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)--}}
+                            {{--<h5 class="text-g-yellow pt-4 m-0" id="{{$paquete_destino->destinos->id}}-hotel"><i class="fa fa-check"></i> {{$paquete_destino->destinos->nombre}} HOTEL</h5>--}}
+                            {{--<div class="row pt-3 pb-4">--}}
+                                @foreach($hoteles_destinos->where('iddestinos', $d->id) as $hoteles_destino)
+                                    <div class="col-6 d-flex my-3">
+                                        <div class="row">
+                                            <div class="col-auto d-none d-sm-block">
+                                                <img src="{{$hoteles_destino->hotel->imagen}}" alt="" class=" rounded-circle" width="50" height="50">
+                                            </div>
+                                            <div class="col">
+                                                <a href="{{$hoteles_destino->hotel->url}}" class="h5 align-middle">{{$hoteles_destino->hotel->nombre}}</a>
+                                                @for($i=0; $i < $hoteles_destino->hotel->estrellas; $i++)
+                                                    <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                @endfor
+                                                <small class="d-block text-secondary"><i class="fa fa-map-marker-alt"></i> {{$hoteles_destino->hotel->direccion}}</small>
+                                                @php $services = explode(',', $hoteles_destino->hotel->servicios); @endphp
+                                                <p class="pt-2"><b>Services:</b>
+                                                    @foreach($services as $service)
+                                                        <i class="fa fa-check text-secondary"></i> {{$service}}
+                                                    @endforeach
+                                                </p>
+                                                {{--                                                        <a href="{{$hoteles_destino->hotel->url}}" class="btn btn-outline-secondary" target="_blank">{{$hoteles_destino->hotel->nombre}}</a>--}}
+                                            </div>
+                                        </div>
+                                        {{--<hr>--}}
+                                    </div>
+                                @endforeach
+                            {{--</div>--}}
+                        {{--@endforeach--}}
 
                     </div>
 
@@ -209,7 +246,7 @@
                                 <h3 class="text-g-yellow font-weight-bold">Current Weather</h3>
                             </div>
                             <div class="col-12">
-                                <a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a>
+                                <a class="weatherwidget-io" href="https://forecast7.com/en/n13d53n71d97/cusco/" data-label_1="CUSCO" data-label_2="WEATHER" data-theme="original" >CUSCO WEATHER</a>
                             </div>
 
                     </div>
@@ -227,12 +264,26 @@
                                 <a class="nav-link" href="#location">Location</a>
                                 {{--<a class="nav-link" href="#history">History</a>--}}
                                 {{--<a class="nav-link" href="#geography">Geography</a>--}}
-                                {{--<a class="nav-link" href="#hotels">Hotels</a>--}}
+                                <a class="nav-link" href="#hotels">Hotels</a>
                                 <a class="nav-link" href="#current-weather">Current Weather</a>
                                 {{--<a class="nav-link" href="#photos">Photos</a>--}}
                             </nav>
                         </nav>
+
+                        <div class="row mt-4">
+                            <div class="col">
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <h3>QUICK FACTS</h3>
+                                        @foreach($destinos->where('nombre', strtoupper($ciudad)) as $destino)
+                                            @php echo $destino->resumen @endphp
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
             <div class="row">

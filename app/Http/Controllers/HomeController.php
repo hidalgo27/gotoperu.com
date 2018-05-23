@@ -327,7 +327,9 @@ class HomeController extends Controller
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
-        return view('page.destinations');
+        $destinos = TDestino::where('pais', 'peru')->get();
+
+        return view('page.destinations', ['destinos'=>$destinos]);
     }
 
     public function destinations_country($title)
@@ -379,6 +381,9 @@ class HomeController extends Controller
         $destinos = TDestino::get();
         $destinos_p = TDestino::where('pais', $pais)->get();
 
+        $destinos_id = TDestino::where('nombre', $ciudad)->get();
+
+
         $paquetes_de = TPaqueteDestino::with(['destinos'=>function($query) use ($ciudad) { $query->where('nombre', $ciudad);}])->get();
 
 
@@ -406,11 +411,14 @@ class HomeController extends Controller
 
         $cusco = json_decode($cusco);
 
+        $hoteles = THotel::all();
+        $hoteles_destinos = THotelDestino::all();
+
 //        dd($cusco);
 
 //                dd($cusco2);
 
-        return view('page.destinations-country-show', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos, 'destinos_p'=>$destinos_p, 'pais'=>$pais, 'paquetes_de'=>$paquetes_de, 'ciudad'=>$ciudad, 'cusco'=>$cusco]);
+        return view('page.destinations-country-show', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos, 'destinos_p'=>$destinos_p, 'pais'=>$pais, 'paquetes_de'=>$paquetes_de, 'ciudad'=>$ciudad, 'cusco'=>$cusco, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'destinos_id'=>$destinos_id]);
     }
 
     public function about()
