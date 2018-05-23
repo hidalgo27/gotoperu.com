@@ -142,7 +142,7 @@
                 <img src="{{asset('images/logos/logo-mapi-galapagos-footer.png')}}" alt="logo machupicchu galapagos" class="img-fluid">
             </div>
             <div class="col-12 col-sm text-center">
-                <b>PERU LOCAL TIME: 7:38PM</b>
+                {{--<b>PERU LOCAL TIME: 7:38PM</b>--}}
                 <a href="{{asset('pdf/terms-conditions.pdf')}}" target="_blank" class="btn btn-link d-block">Services Terms & Conditions</a>
             </div>
         </div>
