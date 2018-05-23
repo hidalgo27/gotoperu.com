@@ -414,6 +414,12 @@
                             </div>
                         </div>
 
+                        <div class="row">
+                            <div class="col text-right">
+                                <p class="">info@gotoperu.com</p>
+                            </div>
+                        </div>
+
                         <div class="row mt-3 justify-content-center d-none" id="h_alert">
                             <div class="col-10">
                                 <div class="alert alert-success alert-dismissible" role="alert">
