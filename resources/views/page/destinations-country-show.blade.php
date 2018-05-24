@@ -273,7 +273,7 @@
                                 <h3 class="text-g-yellow font-weight-bold">Current Weather</h3>
                             </div>
                             <div class="col-12">
-                                <a class="weatherwidget-io" href="https://forecast7.com/en/n13d53n71d97/cusco/" data-label_1="CUSCO" data-label_2="WEATHER" data-theme="original" >CUSCO WEATHER</a>
+                                <a class="weatherwidget-io" href="https://forecast7.com/en/n13d53n71d97/cusco/?unit=us" data-label_1="CUSCO" data-label_2="WEATHER" data-theme="original" >CUSCO WEATHER</a>
                             </div>
 
                     </div>
