@@ -106,8 +106,8 @@
                             @foreach($destinos->where('nombre', strtoupper($ciudad)) as $destino)
                                 @php echo $destino->descripcion @endphp
                             @endforeach
-                            <div class="alert alert-secondary text-center" role="alert">
-                                <h4>We will work around your schedule and your travel interests to build together the most unique travel plans</h4>
+                            <div class="alert alert-g-green text-center" role="alert">
+                                <h5 class="font-weight-normal"> Peru Local operator : the best local guides,  charming hotels, unique tours, and friendly representatives. <span class="d-block font-weight-bold">#gotoperu #yourperuvianconnection</span></h5>
                             </div>
                         </div>
                         @foreach($paquetes_de as $paquetes_des)
