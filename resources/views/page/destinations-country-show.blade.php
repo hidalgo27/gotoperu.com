@@ -66,8 +66,8 @@
             </div>
         </div>
     </section>
-    <div class="bg-white py-2"></div>
-    <div class="sticky-top py-2 text-center bg-white">
+    <div class="bg-white py-2 pt-4"></div>
+    <div class="sticky-top text-center py-2 bg-white">
         @foreach($destinos->where('pais',$pais)->sortBy('nombre') as $destino)
 
             <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours">
@@ -75,11 +75,11 @@
             </a>
         @endforeach
     </div>
-    <section class="bg-white">
-        <div class="container-fluid">
-            <div class="row pt-4">
-                <div class="col">
-                    <h1 class="text-secondary text-center text-g-green font-weight-normal"><strong>{{ucwords($ciudad)}} Tour</strong></h1>
+    {{--<section class="bg-white">--}}
+        {{--<div class="container-fluid">--}}
+            {{--<div class="row pt-4">--}}
+                {{--<div class="col">--}}
+                    {{--<h1 class="text-secondary text-center text-g-green font-weight-normal"><strong>{{ucwords($ciudad)}} Tour</strong></h1>--}}
                     {{--<p class="lead">our most popular <strong>Peru and South America itineraries</strong>, these <strong>packages</strong> could be used as a reference to customize your own trip. At <strong>GOTOPERU</strong> we specialize in crafting personalize experiences based on your preferences; we invited to review these programs to have glimpse of the most important destinations for instance MachuPicchu, Lake Titicaca, Nazca and the Amazon.</p>--}}
                     {{--<div class="alert alert-g-yellow text-center m-0" role="alert">--}}
                         {{--<h4>We will work around your schedule and your travel interests to build together the most unique travel plans</h4>--}}
@@ -89,19 +89,26 @@
                     {{--<p class="h4 font-weight-light">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>Customized Travel Packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>Machu Picchu</strong> and the rest of our  homeland… Peru!</p>--}}
 
 
-                </div>
-            </div>
-        </div>
-    </section>
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
 
 
-    <section class="bg-white">
+    <section class="bg-white pb-5">
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
                     <div class="row pt-4" id="tours">
                         <div class="col-12">
-                            <h3 class="text-g-yellow font-weight-bold">Tours</h3>
+                            {{--<h3 class="text-g-yellow font-weight-bold">Tours</h3>--}}
+                            <h1 class="text-secondary text-g-yellow font-weight-normal"><strong>{{ucwords($ciudad)}} Tour</strong></h1>
+                            @foreach($destinos->where('nombre', strtoupper($ciudad)) as $destino)
+                                @php echo $destino->descripcion @endphp
+                            @endforeach
+                            <div class="alert alert-secondary text-center" role="alert">
+                                <h4>We will work around your schedule and your travel interests to build together the most unique travel plans</h4>
+                            </div>
                         </div>
                         @foreach($paquetes_de as $paquetes_des)
                             @if(isset($paquetes_des->destinos))
@@ -191,12 +198,32 @@
                         </div>
                     </div>
 
-                    <div class="row" id="history">
+                    @foreach($destinos->where('nombre', strtoupper($ciudad)) as $destino)
+                        @if($destino->historia == " " OR $destino->historia == NULL)
+                            @php $h_resumen = "d-none"; @endphp
+                        @else
+                            @php $h_resumen = " "; @endphp
+                        @endif
+                    @endforeach
 
+                    <div class="row pt-4 {{$h_resumen}}" id="history">
+                        <div class="col-12">
+                            <h3 class="text-g-yellow font-weight-bold">History</h3>
+                        </div>
+                        <div class="col-12">
+                            @php echo $destino->historia @endphp
+                        </div>
                     </div>
 
-                    <div class="row" id="geography">
+                    <div class="row pt-4 {{$h_resumen}}" id="geography">
+                        <div class="col-12">
+                            <h3 class="text-g-yellow font-weight-bold">Geography</h3>
+                        </div>
+                        <div class="col-12">
 
+                                @php echo $destino->geografia @endphp
+
+                        </div>
                     </div>
 
                     <div class="row pt-5" id="hotels">
@@ -260,10 +287,10 @@
                     <div class="sticky-top sticky-top-80 mt-5">
                         <nav id="menu" class="navbar navbar-light nav-goto-side w-100">
                             <nav class="nav nav-pills flex-column w-100">
-                                <a class="nav-link active" href="#tours">Tours</a>
+                                <a class="nav-link active" href="#tours">{{ucwords($ciudad)}} Tours</a>
                                 <a class="nav-link" href="#location">Location</a>
-                                {{--<a class="nav-link" href="#history">History</a>--}}
-                                {{--<a class="nav-link" href="#geography">Geography</a>--}}
+                                <a class="nav-link {{$h_resumen}}" href="#history">History</a>
+                                <a class="nav-link {{$h_resumen}}" href="#geography">Geography</a>
                                 <a class="nav-link" href="#hotels">Hotels</a>
                                 <a class="nav-link" href="#current-weather">Current Weather</a>
                                 {{--<a class="nav-link" href="#photos">Photos</a>--}}
@@ -275,9 +302,9 @@
                                 <div class="card bg-light">
                                     <div class="card-body">
                                         <h3>QUICK FACTS</h3>
-                                        @foreach($destinos->where('nombre', strtoupper($ciudad)) as $destino)
+
                                             @php echo $destino->resumen @endphp
-                                        @endforeach
+
                                     </div>
                                 </div>
                             </div>
@@ -286,16 +313,7 @@
 
                 </div>
             </div>
-            <div class="row">
 
-                <div class="col">
-
-                        <div class="row pt-4">
-
-                        </div>
-
-                </div>
-            </div>
         </div>
     </section>
     @include('layouts.page.form-quote')
