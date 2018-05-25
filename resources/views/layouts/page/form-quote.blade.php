@@ -299,7 +299,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-md mt-4">
+                                        <div class="col-12 col-md mt-4 mt-md-0">
                                             <div class="row justify-content-center">
                                                 <div class="col col-sm-12 col-md-12">
 

@@ -279,7 +279,7 @@
             </div>
 
             <div class="row no-gutters">
-                <div class="col-9 col-md-8 d-flex">
+                <div class="col-9 col-md-8 col-xl-9 d-flex">
                     <div class="container-fluid p-0">
 
                         <div class="slider-containers">
@@ -338,7 +338,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col col-md-4 d-flex align-items-center bg-g-dark">
+                <div class="col col-md-4 col-xl-3 d-flex align-items-center bg-g-dark">
                     <div class="text-white p-3">
                         <h3 class="display-4">10 DAYS</h3>
                         <p class="lead">Cusco, Lima, Machu Picchu, Lake Titicaca, Sacred Valley,</p>

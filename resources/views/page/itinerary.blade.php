@@ -121,7 +121,26 @@
         </div>
     </section>
     @include('layouts.page.included')
-
+    <ul id="menu" class="nav nav-pills nav-fill bg-light rounded  d-sm-flex sticky-top nav-itinerary">
+        <li class="nav-item d-none d-sm-block">
+            <a class="nav-link text-white rounded-0 bg-g-dark" href="#overview">Overview</a>
+        </li>
+        <li class="nav-item d-none d-sm-block">
+            <a class="nav-link text-white rounded-0 bg-g-green" href="#Itinerary">Itinerary</a>
+        </li>
+        <li class="nav-item d-sm-none">
+            <a class="nav-link text-white rounded-0 bg-g-green" href="#Itinerary-2">Itinerary</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white rounded-0 bg-danger" href="#Hotels">Hotels</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white rounded-0 bg-info" href="#Included">Included</a>
+        </li>
+        <li class="nav-item d-none d-sm-block">
+            <a class="nav-link text-white rounded-0 bg-g-yellow" href="#Inquire">Inquire</a>
+        </li>
+    </ul>
     <section class="bg-white pt-2">
         <div class="container-fluid">
             <div class="row">
@@ -129,26 +148,6 @@
 
                     <div class="row position-relative">
                         <div class="col">
-                            <ul id="menu" class="nav nav-pills nav-fill bg-light rounded  d-sm-flex sticky-top nav-itinerary">
-                                <li class="nav-item d-none d-sm-block">
-                                    <a class="nav-link text-white rounded-0 bg-g-dark" href="#overview">Overview</a>
-                                </li>
-                                <li class="nav-item d-none d-sm-block">
-                                    <a class="nav-link text-white rounded-0 bg-g-green" href="#Itinerary">Itinerary</a>
-                                </li>
-                                <li class="nav-item d-sm-none">
-                                    <a class="nav-link text-white rounded-0 bg-g-green" href="#Itinerary-2">Itinerary</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white rounded-0 bg-danger" href="#Hotels">Hotels</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white rounded-0 bg-info" href="#Included">Included</a>
-                                </li>
-                                <li class="nav-item d-none d-sm-block">
-                                    <a class="nav-link text-white rounded-0 bg-g-yellow" href="#Inquire">Inquire</a>
-                                </li>
-                            </ul>
 
                             <div class="row">
 
@@ -158,45 +157,45 @@
                                     <h3 class="text-secondary pt-5 pb-4 h4"><strong>Overview</strong></h3>
 
                                     <div class="row">
-                                        <div class="col-2">
+                                        <div class="col-4 col-md-3">
                                             <h5 class="text-right text-secondary">Trip</h5>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-8 col-md-9">
                                             <h5 class="text-g-yellow"><strong>{{($paquetes->codigo)}}:</strong> {{($paquetes->titulo)}}</h5>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-2">
+                                        <div class="col-4 col-md-3">
                                             <h5 class="text-right text-secondary">Days</h5>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-8 col-md-9">
                                             <h5>{{($paquetes->duracion)}}</h5>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-2">
+                                        <div class="col-4 col-md-3">
                                             <h5 class="text-right text-secondary">Intro</h5>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-8 col-md-9">
                                             @php echo $paquetes->descripcion; @endphp
                                         </div>
                                     </div>
                                     <div class="row py-3 align-items-center">
-                                        <div class="col-2">
+                                        <div class="col-4 col-md-3">
                                             <h5 class="text-right text-secondary">Highlights</h5>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-8 col-md-9">
                                             @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
                                                 {{--<p class="font-weight-bold text-secondary"><i class="fa fa-check"></i> {{ucwords(strtolower($paquete_destino->destinos->nombre))}}</p>--}}
                                                 <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($paquete_destino->destinos->nombre))])}}-tours"><img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($paquete_destino->destinos->nombre)).'')}}.jpg" alt="" width="50" height="50" class="rounded-circle" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($paquete_destino->destinos->nombre))}}"></a>
                                             @endforeach
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-2">
+                                    <div class="row d-none d-md-flex">
+                                        <div class="col-4 col-md-3">
                                             <h5 class="text-right text-secondary">Outline</h5>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-8 col-md-9">
                                             <div class="box-route-ininerary p-2 rounded bg-light">
                                                 @foreach($paquetes->itinerario->sortBy('dia') as $itinerario)
                                                     <p>
@@ -210,6 +209,7 @@
 
 
                                 <div id="Itinerary" class="d-none d-sm-block">
+
                                     <h3 class="text-secondary pt-5 pb-4 h4"><strong>Itinerary</strong></h3>
                                     @php
                                         $i = 1;

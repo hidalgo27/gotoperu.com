@@ -98,7 +98,7 @@
     <section class="bg-white pb-5">
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="col-12 col-sm-7 col-md-8 col-xl-9">
                     <div class="row pt-4" id="tours">
                         <div class="col-12">
                             {{--<h3 class="text-g-yellow font-weight-bold">Tours</h3>--}}
@@ -283,7 +283,7 @@
                     </div>
 
                 </div>
-                <div class="col-3 d-none d-sm-block">
+                <div class="col-12 col-sm-5 col-md-4 col-xl-3 d-none d-sm-block">
                     <div class="sticky-top sticky-top-80 mt-5">
                         <nav id="menu" class="navbar navbar-light nav-goto-side w-100">
                             <nav class="nav nav-pills flex-column w-100">
