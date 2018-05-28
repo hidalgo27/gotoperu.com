@@ -31,58 +31,27 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/contact.jpg')}}" alt="" id="hero-vid">
+            <img src="{{asset('images/contact2.jpg')}}" alt="" id="hero-vid">
 
         </div>
-        <div class="content-header d-none">
+        <div class="content-header">
             <div class="container-fluid">
                 <div class="row content-header-row align-items-center">
 
                     <div class="col">
 
-                        <div class="row my-3 justify-content-center">
-                            <div class="col-8 bg-rgba-white p-4 rounded">
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="lead"><i class="fa fa-quote-left"></i> I would recommend GoToPeru 100% . We just used the company in June 2017 and everything was perfectly organized and our vacation was a dream come true . All the guides were very punctual, friendly, knowledgeable and offered to take great pictures and recommended restaurants.<i class="fa fa-quote-right"></i></p>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-8">
-                                        <div class="row">
-                                            <div class="col">
-                                                <a href=""><img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="If you are visiting anywhere in Peru, you cannot find a better choice than www.gotoperu.com – they live there, and work there, and can sort urgent issues readily, with a quick phone call."></a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="https://www.trustpilot.com/review/gotoperu.com" target="_blank"><img src="{{asset('images/icons/trust.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="In summary, we had a wonderful time! We, of course, enjoyed the sights as we expected (Machu Picchu, Sacred Valley, train, Lake Titicacca), but all of the connections were on time and very comfortable. The guides (Franklin in Cusco, Nellie in Machu Picchu) were very pleasant and very knowledgeable. "></a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com" target="_blank"><img src="{{asset('images/icons/yelp.png')}}" alt="" class="w-100 p-4" data-toggle="tooltip" data-placement="top" title="" data-original-title="The arrangement of the agency since Cuzco arrival, has escort service all the way. You do not need to fear of lost. Hotel, tour guide, transfer are all excellent. "></a>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <strong>Trip Advisor:</strong>
-                                                <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5867868-Has_anyone_booked_a_tour_with_GOTOPERU_www_gotoperu_org-Peru.html">Link 1</a>,
-                                                <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k6509104-Gotoperu_Travel_Agency-Peru.html">Link 2</a>,
-                                                <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5657518-GOTOPERU_online_tour_operator-Peru.html">Link 3</a>,
-                                                <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k6934201-Trip_Report_Two_glorious_weeks_in_Peru_with_GOTOPERU_ORG-Peru.html">Link 4</a>.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="row my-3 justify-content-center text-center">
+                            <p class="text-white display-4 font-weight-light">CONTACT US</p>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-6 text-center">
+
+                                <a href="#content-page" class="text-white">
+                                    <i class="fas fa-chevron-down fa-4x"></i>
+                                </a>
+
                             </div>
                         </div>
-
-                        {{--<div class="row justify-content-center">--}}
-                        {{--<div class="col-6 text-center">--}}
-
-                        {{--<a href="#content" class="text-white">--}}
-                        {{--<i class="fa fa-4x fa-chevron-circle-down font-weight-light"></i>--}}
-                        {{--</a>--}}
-
-                        {{--</div>--}}
-                        {{--</div>--}}
                     </div>
                 </div>
 
@@ -217,7 +186,7 @@
                                                 </div>
                                                 <select class="form-control" id="c_about">
                                                     <option class="Travel Inquire"> Travel Inquire</option>
-                                                    <option value="Travel Agents">Travel Agents</option>
+                                                    <option value="Travel Agents">Travel Agent</option>
                                                     <option value="Other">Other</option>
                                                 </select>
                                             </div>
@@ -263,8 +232,9 @@
                     <h2 class="text-secondary h5"><strong>Or also you can contact us:</strong></h2>
                     <ul class="card p-0 sticky-top sticky-top-50">
                         <div class="card-body">
-                            <p class="pb-3 mb-3 border-bottom"><i class="fa fa-map-marker-alt"></i> Av. Qollasuyu 896, urb. Miravalle - Cusco</p>
-                            <p class="pb-3 mb-3 border-bottom"><i class="fa fa-phone"></i> PERU: +51(084)262-555 | Worldwide: (202)996-3000</p>
+                            <p class="pb-3 mb-3 border-bottom"><i class="fa fa-map-marker-alt"></i> Av. Collasuyu 896, Urb. Miravalle - Cusco</p>
+                            <p class="pb-3 mb-3 border-bottom"><i class="fa fa-phone"></i> <strong>PERU:</strong> +51(084)262-555 Headquarters</p>
+                            <p class="pb-3 mb-3 border-bottom"><i class="fa fa-phone"></i> <b>Worldwide:</b> (202)996-3000 USA number</p>
                             <p class="pb-3 mb-3 border-bottom"><i class="fa fa-envelope"></i> info@gotoperu.com</p>
                             <i class="mb-0 text-g-yellow">Director : Paul Catano : paul@gotoperu.com</i>
                         </div>
