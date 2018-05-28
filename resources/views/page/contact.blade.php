@@ -232,7 +232,7 @@
                     <h2 class="text-secondary h5"><strong>Or also you can contact us:</strong></h2>
                     <ul class="card p-0 sticky-top sticky-top-50">
                         <div class="card-body">
-                            <p class="pb-3 mb-3 border-bottom"><i class="fa fa-map-marker-alt"></i> Av. Collasuyu 896, Urb. Miravalle - Cusco</p>
+                            <p class="pb-3 mb-3 border-bottom"><i class="fa fa-map-marker-alt"></i> Av. Collasuyo 896, Urb. Miravalle - Cusco</p>
                             <p class="pb-3 mb-3 border-bottom"><i class="fa fa-phone"></i> <strong>PERU:</strong> +51(084)262-555 Headquarters</p>
                             <p class="pb-3 mb-3 border-bottom"><i class="fa fa-phone"></i> <b>Worldwide:</b> (202)996-3000 USA number</p>
                             <p class="pb-3 mb-3 border-bottom"><i class="fa fa-envelope"></i> info@gotoperu.com</p>
