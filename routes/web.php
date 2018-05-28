@@ -104,6 +104,16 @@ Route::get('/travel-deals', [
     'uses' => 'HomeController@deals',
     'as' => 'deals_path',
 ]);
+//contact
+Route::get('/contact-us', [
+    'uses' => 'HomeController@contact_us',
+    'as' => 'contact_us_path',
+]);
+
+Route::post('/contact_s', [
+    'uses' => 'HomeController@contact_s',
+    'as' => 'contact_s_path',
+]);
 
 //formularios
 Route::post('/inquire', [

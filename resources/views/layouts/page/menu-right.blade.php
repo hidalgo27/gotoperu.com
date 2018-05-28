@@ -25,7 +25,8 @@
                             <li><a href="{{route('hotels_path')}}" class="text-secondary h5"><strong>Hotels</strong></a></li>
                             <li><a href="{{route('faq_path')}}" class="text-secondary h5"><strong>FAQ</strong></a></li>
                             <li><a href="{{route('about_path')}}" class="text-secondary h5"><strong>About Us</strong></a></li>
-                            <li><a href="#" class="text-secondary h5"><strong>Travel Agents</strong></a></li>
+                            <li><a href="{{route('contact_us_path')}}" class="text-secondary h5"><strong>Contact Us</strong></a></li>
+                            {{--<li><a href="#" class="text-secondary h5"><strong>Travel Agents</strong></a></li>--}}
                         </ul>
                     </div>
                 </div>

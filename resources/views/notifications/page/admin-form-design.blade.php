@@ -15,7 +15,7 @@
                             <p><strong>Travellers: {{$number}} {{$number_t}}</strong></p>
                             <p><strong>Duration: {{$duration}} {{$duration_t}}</strong></p>
                             <p><strong>Date: {{$date}}</strong></p>
-                            <p><strong>Date: {{$tel }}</strong></p>
+                            <p><strong>Phone: {{$tel }}</strong></p>
                             <p><strong>Email: {{$email}}</strong></p>
                             <p><strong>Comment: {{$comment}}</strong></p>
                         </td>

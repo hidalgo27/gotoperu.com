@@ -518,6 +518,29 @@ class HomeController extends Controller
         return view('page.faq');
     }
 
+    public function contact_us()
+    {
+        SEOMeta::setTitle('Contact US | Go To Peru');
+        SEOMeta::setDescription('Call our destination specialist today @ (202) 996-3000 & Book a tour in South America. Our specialist will provide you best knowledge about various air travel packages to Peru.');
+        SEOMeta::setCanonical('https://gotoperu.com/faq');
+//        SEOMeta::addKeyword(['Best Peru Trip Packages', 'Peru Machu Picchu Tours']);
+
+        OpenGraph::setDescription('Call our destination specialist today @ (202) 996-3000 & Book a tour in South America. Our specialist will provide you best knowledge about various air travel packages to Peru.');
+        OpenGraph::setTitle('Contact US | Go To Peru');
+        OpenGraph::setUrl('https://gotoperu.com/faq');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('go to peru');
+        OpenGraph::addProperty('type', 'website');
+        OpenGraph::addProperty('locale', 'en_US');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Contact US | Go To Peru');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
+        return view('page.contact');
+    }
+
     public function agents()
     {
         return view('page.agents');
@@ -757,6 +780,73 @@ class HomeController extends Controller
 
 //        return view('page.itinerary', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos]);
     }
+
+
+    public function contact_s()
+    {
+        $from = 'info@gotoperu.com';
+        $from2 = 'paul@gotoperu.com';
+
+        $name = $_POST['txt_name'];
+        $email = $_POST['txt_email'];
+        $phone = $_POST['txt_phone'];
+        $city = $_POST['txt_city'];
+        $about = $_POST['txt_about'];
+        $comment = $_POST['txt_comment'];
+
+
+        try {
+            Mail::send(['html' => 'notifications.page.client-form-design'], ['name' => $name], function ($messaje) use ($email, $name) {
+                $messaje->to($email, $name)
+                    ->subject('GotoPeru')
+                    /*->attach('ruta')*/
+                    ->from('info@gotoperu.com', 'GotoPeru');
+            });
+
+
+            Mail::send(['html' => 'notifications.page.admin-form-contact'], [
+                'name' => $name,
+                'email' => $email,
+                'phone' => $phone,
+                'city' => $city,
+                'about' => $about,
+                'comment' => $comment
+            ], function ($messaje) use ($from) {
+                $messaje->to($from, 'GotoPeru')
+                    ->subject('GotoPeru')
+                    /*->attach('ruta')*/
+                    ->from('info@gotoperu.com', 'GotoPeru');
+            });
+
+
+//            Mail::send(['html' => 'notifications.page.admin-form-design'], [
+//                'destinations' => $destinations,
+//                'other' => $other,
+//                'duration' => $duration,
+//                'number' => $number,
+//                'date' => $date,
+//                'name' => $name,
+//                'email' => $email,
+//                'tel' => $tel
+////                'comment' => $comment
+//            ], function ($messaje) use ($from2) {
+//                $messaje->to($from2, 'Andes Viagens')
+//                    ->subject('AndesViagens')
+//                    /*->attach('ruta')*/
+//                    ->from('diana@andesviagens.com', 'andesviagens.com');
+//            });
+
+
+            return 'Thank you.';
+
+        }
+        catch (Exception $e){
+            return $e;
+        }
+
+//        return view('page.itinerary', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos]);
+    }
+
 
     public function pagenotfound()
     {
