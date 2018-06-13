@@ -264,8 +264,8 @@
                 <div class="col col-md-4 col-xl-3 d-flex align-items-center bg-g-dark">
                     <div class="text-white p-3">
                         <h3 class="display-4">10 DAYS</h3>
-                        <p class="lead">Cusco, Lima, Machu Picchu, Lake Titicaca, Sacred Valley,</p>
-                        <small class="d-block text-g-yellow py-2">All internal flights, hotels, tours entrances, trains, breakfast, transfer</small>
+                        <p class="lead">Cusco, Lima, Machu Picchu, Lake Titicaca, Sacred Valley.</p>
+                        <small class="d-block text-g-yellow py-2">Hotels, tours entrances, trains, breakfast, transfer</small>
                         <p class="h1 text-right my-3"><sup>from</sup> $1449</p>
                         <a href="packages/expedition-to-peru/10-days-tours" class="btn btn-g-yellow btn-block">View More</a>
                     </div>
