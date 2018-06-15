@@ -13,18 +13,20 @@
 
 //fontaweson
 //@import "~font-awesome-sass/assets/stylesheets/font-awesome";
-@import "~font-awesome-5-css/scss/fontawesome";
-@import "~font-awesome-5-css/scss/fa-solid";
-@import "~font-awesome-5-css/scss/fa-brands";
-@import "~font-awesome-5-css/scss/fa-regular";
+//@import "~font-awesome-5-css/scss/fontawesome";
+//@import "~font-awesome-5-css/scss/fa-solid";
+//@import "~font-awesome-5-css/scss/fa-brands";
+//@import "~font-awesome-5-css/scss/fa-regular";
 
 //animate
 //@import "~animate.css/animate.css";
+@import "~swiper/dist/css/swiper.min.css";
 @import "vendors/animate.css";
 // Web
 @import "web";
 //jquery-ui
 @import '~jquery-ui/themes/base/all.css';
+
 .font-montserrat{
   font-family: 'Montserrat', sans-serif;
 }

@@ -12,6 +12,7 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
+    .js('resources/assets/js/font-awesome.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
 
 mix.scripts([
@@ -24,6 +25,7 @@ mix.scripts([
     // 'resources/assets/js/vendors/all.js',
     // 'resources/assets/js/font-awesome.js',
     //Customized
+    'node_modules/swiper/dist/js/swiper.min.js',
     'resources/assets/js/vendors/function-admin.js',
     'resources/assets/js/vendors/function.js'
 ], 'public/js/plugins.js');

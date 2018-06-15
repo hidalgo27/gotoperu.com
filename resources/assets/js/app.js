@@ -7,6 +7,14 @@
 
 require('./bootstrap');
 
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+
+import 'jquery-ui/ui/widgets/datepicker.js';
+
+window.Vue = require('vue');
+
+
 window.Vue = require('vue');
 
 /**
@@ -20,3 +28,6 @@ window.Vue = require('vue');
 // const app = new Vue({
 //     el: '#app'
 // });
+
+$('#datepicker').datepicker();
+$('#h_date').datepicker();

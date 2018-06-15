@@ -103,7 +103,7 @@
             </div>
         </div>
         <div class="content-header">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row content-header-row align-items-center">
                     <div class="col text-center">
                         {{--<a href="" class="text-white"><i class="fa fa-play-circle fa-4x"></i></a>--}}
@@ -130,8 +130,8 @@
     </section>
 
     @include('layouts.page.menu')
-    <section class="d-md-none">
-        <div class="container-fluid p-0">
+    <section class="d-md-none mt-3">
+        <div class="container p-0">
             <div class="row no-gutters">
                 <div class="col">
                     <img src="{{asset('images/machu_picchu.jpg')}}" alt="" class="w-100">
@@ -140,9 +140,9 @@
             <div class="row no-gutters align-items-center">
                 <div class="col">
                     <ul class="list-group">
-                        <li class="list-group-item"><span class="bg-g-green p-1 rounded-circle px-2 text-white">1</span> Share your travel plans</li>
-                        <li class="list-group-item"><span class="bg-g-yellow p-1 rounded-circle px-2 text-white">2</span> Receive a customize itinerary and quote</li>
-                        <li class="list-group-item"><span class="bg-g-dark p-1 rounded-circle px-2 text-white">3</span> Discover the best of Peru with GOTOPERU</li>
+                        <li class="list-group-item rounded-0"><span class="bg-g-green p-1 rounded-circle px-2 text-white">1</span> Share your travel plans</li>
+                        <li class="list-group-item rounded-0"><span class="bg-g-yellow p-1 rounded-circle px-2 text-white">2</span> Receive a customize itinerary and quote</li>
+                        <li class="list-group-item rounded-0"><span class="bg-g-dark p-1 rounded-circle px-2 text-white">3</span> Discover the best of Peru with GOTOPERU</li>
                     </ul>
 
                 </div>
@@ -150,7 +150,7 @@
         </div>
     </section>
     <section class="bg-light">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-4 pb-2">
                 <div class="col text-center">
                     <h2 class="text-secondary h1 font-weight-bold text-g-yellow"><strong>We are GOTOPERU</strong></h2>
@@ -173,25 +173,27 @@
                     <img src="{{asset('images/frank.jpg')}}" alt="" class="w-100">
                 </div>
             </div>
-            <div class="row mt-2 d-none d-md-flex">
+            <div class="row d-none d-md-flex no-gutters">
                 <div class="col">
-                    <div class="badge badge-secondary d-block p-1"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Headquarters: Cusco, Peru</span></div>
-                </div>
-                <div class="col">
-                    <div class="badge badge-secondary d-lg-block p-1 d-md-none"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Company: 25 members</span></div>
-                </div>
-                <div class="col">
-                    <div class="badge badge-secondary d-block p-1"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Founded: 2006</span></div>
-                </div>
-                <div class="col">
-                    <div class="badge badge-secondary d-block p-1"><span class="h6 font-weight-light"><i class="fa fa-check"></i> Offices: Lima, Peru / New York, Usa</span></div>
+                    <div class="alert alert-g-yellow p-1 rounded-0">
+                        <div class="row">
+                            <div class="col text-center">
+                                <small class="font-weight-light">
+                                    <span><i class="fa fa-check"></i> Headquarters: Cusco, Peru</span>
+                                    <span class="mx-3"><i class="fa fa-check"></i> Company: 25 members</span>
+                                    <span class="mr-3"><i class="fa fa-check"></i> Founded: 2006</span>
+                                    <span><i class="fa fa-check"></i> Offices: Lima, Peru / New York, Usa</span>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="bg-light d-none d-md-flex">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
                     <h2 class="text-secondary h4"><strong>DEAL OF THE MONTH</strong></h2>
@@ -203,7 +205,7 @@
 
             <div class="row no-gutters">
                 <div class="col-9 col-md-8 col-xl-9 d-flex">
-                    <div class="container-fluid p-0">
+                    <div class="container p-0">
 
                         <div class="slider-containers">
 
@@ -263,7 +265,7 @@
                 </div>
                 <div class="col col-md-4 col-xl-3 d-flex align-items-center bg-g-dark">
                     <div class="text-white p-3">
-                        <h3 class="display-4">10 DAYS</h3>
+                        <h3 class="h1 font-weight-bold text-g-yellow">10 DAYS</h3>
                         <p class="lead">Cusco, Lima, Machu Picchu, Lake Titicaca, Sacred Valley.</p>
                         <small class="d-block text-g-yellow py-2">Hotels, tours entrances, trains, breakfast, transfer</small>
                         <p class="h1 text-right my-3"><sup>from</sup> $1449</p>
@@ -275,7 +277,7 @@
     </section>
 
     <section class="bg-white d-none d-md-flex">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>100'S OF REVIEWS 1 COMPANY</strong></h1>
@@ -288,7 +290,7 @@
     </section>
 
     <section class="bg-white pb-4 d-none d-md-flex">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row mb-4">
                 <div class="col">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -377,7 +379,7 @@
     </section>
 
     <section class="bg-light">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>PERU TRAVEL PACKAGES</strong></h1>
@@ -391,7 +393,7 @@
     </section>
 
     <section class="bg-light">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
 
                 <div class="col col-xs-12 d-md-none d-lg-inline col-md-8 col-lg-12 col-xl-8">
@@ -404,7 +406,7 @@
 
                                         <div class="card-img-overlay bg-rgba-dark-3 p-0">
                                             <div class="row justify-content-between no-gutters">
-                                                <div class="col col-sm-3 p-3">
+                                                <div class="col col-sm-5 p-3">
                                                     <h5 class="m-0 text-white">{{$paquete->duracion}} Days</h5>
                                                 </div>
                                                 <div class="col col-sm-4 bg-g-dark py-3 text-white text-center">
@@ -452,42 +454,50 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col-4 d-none d-sm-block col-sm-12 d-md-inline col-md-12 col-lg-12 col-xl-4">
-                    <div class="list-group position-relative">
-                        @foreach($paquetes->random(5) as $paquete)
-                            <a href="" class="list-group-item list-group-item-action">
-                                <div class="media">
-                                    <img src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{(strtolower($paquete->titulo))}}">
-                                    <div class="media-body">
-                                        <h5 class="mt-0"><span class="text-g-yellow">{{$paquete->duracion}} Days</span> {{ucwords(strtolower($paquete->titulo))}}</h5>
-                                        <small>
-                                            <i class="fa fa-map-marker-alt"></i>
-                                            @php
-                                                $i = 1;
-                                                $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
-                                            @endphp
-                                            @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
-                                                @if(isset($paquete_destino->destinos->nombre))
-                                                    {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
-                                                    @php $i++; @endphp
-                                                @endif
-                                            @endforeach
-                                        </small>
-                                    </div>
+                <div class="col-12 d-sm-block col-sm-12 d-md-inline col-md-12 col-lg-12 col-xl-4">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="list-group position-relative">
+                                    @foreach($paquetes->random(5) as $paquete)
+                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="list-group-item list-group-item-action">
+                                            <div class="media">
+                                                <img src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{(strtolower($paquete->titulo))}}">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0"><span class="text-g-yellow">{{$paquete->duracion}} Days</span> {{ucwords(strtolower($paquete->titulo))}}</h5>
+                                                    <small>
+                                                        <i class="fa fa-map-marker-alt"></i>
+                                                        @php
+                                                            $i = 1;
+                                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
+                                                        @endphp
+                                                        @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
+                                                            @if(isset($paquete_destino->destinos->nombre))
+                                                                {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
+                                                                @php $i++; @endphp
+                                                            @endif
+                                                        @endforeach
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    @endforeach
+                                    <div class="gradient-destinations"></div>
+                                        {{--<div class="row">--}}
+                                            {{--<div class="col text-right pt-4">--}}
+                                                {{--<a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
                                 </div>
-                            </a>
-                        @endforeach
-                        <div class="gradient-destinations"></div>
-                            {{--<div class="row">--}}
-                                {{--<div class="col text-right pt-4">--}}
-                                    {{--<a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
+                            </div>
+                        </div>
+                        <!-- Add Scroll Bar -->
+                        <div class="swiper-scrollbar"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="row py-4">
+            <div class="row pb-4">
                 <div class="col text-right">
                     <a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>
                 </div>
@@ -496,7 +506,7 @@
     </section>
 
     <section class="bg-white pt-5 d-none d-lg-block">
-        <div class="container-fluid">
+        <div class="container">
             <div class="col">
                 <div class="row"><!--.row -->
                     <div class="col">
@@ -541,7 +551,7 @@
     </section>
 
     <section class="bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>PERU DESTINATIONS</strong></h1>
@@ -554,7 +564,7 @@
     </section>
 
     <section class="bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row d-flex">
                 <div class="col-8 d-none d-lg-flex col-lg-8">
                     <div class="row">
@@ -605,20 +615,38 @@
                 <div class="col col-lg-4">
                     <div class="row">
                         <div class="col">
-                            <div class="list-group position-relative">
-                                @foreach($destinos->where('pais', 'peru')->random(5) as $destino)
-                                    <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
-                                        <div class="media">
-                                            <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
-                                            <div class="media-body">
-                                                <h5 class="mt-0">{{ucwords(strtolower($destino->nombre))}}</h5>
-                                                <p>{{ucwords(strtolower($destino->pais))}}</p>
-                                            </div>
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="list-group position-relative">
+                                            @foreach($destinos->where('pais', 'peru')->random(6) as $destino)
+                                                <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
+                                                    <div class="media">
+                                                        <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
+                                                        <div class="media-body">
+                                                            <h5 class="mt-0">{{ucwords(strtolower($destino->nombre))}}</h5>
+                                                            <p>{{ucwords(strtolower($destino->pais))}}</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            @endforeach
+                                            <div class="gradient-destinations"></div>
+                                            {{--<div class="row">--}}
+                                            {{--<div class="col text-right pt-4">--}}
+                                            {{--<a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>--}}
+                                            {{--</div>--}}
+                                            {{--</div>--}}
                                         </div>
-                                    </a>
-                                @endforeach
-                                <div class="gradient-destinations"></div>
+                                    </div>
+                                </div>
+                                <!-- Add Scroll Bar -->
+                                <div class="swiper-scrollbar"></div>
                             </div>
+
+                        </div>
+                    </div>
+                    <div class="row py-4">
+                        <div class="col text-right">
                             <a href="{{route('destinations_country_path', 'peru-travel')}}" class="btn-link float-right font-weight-normal mt-2 mb-4">View Peru packages <i class="fa fa-chevron-right"></i></a>
                         </div>
                     </div>
@@ -630,7 +658,7 @@
 
 
     <section class="bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>HOTELS</strong></h1>
@@ -650,12 +678,18 @@
     <div class="bg-light d-none d-sm-block position-relative">
         <img src="{{asset('images/banner-hotel.jpg')}}" alt="" class="w-100">
         <div class="card-img-overlay bg-rgba-dark-3">
-            <p class="m-0 text-white h3 font-weight-light"><img src="{{asset('images/icons/include/hotels.png')}}" width="50" height="50" alt="" class="p-1" data-toggle="tooltip" data-placement="top" title="Hotels"> Hand-Selected  Collection of hotels</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p class="m-0 text-white h3 font-weight-light"><img src="{{asset('images/icons/include/hotels.png')}}" width="50" height="50" alt="" class="p-1" data-toggle="tooltip" data-placement="top" title="Hotels"> Hand-Selected  Collection of hotels</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
 {{--        <a href="{{route('hotels_path')}}" class="btn btn-primary btn-lg">Hotels</a>--}}
-        <div class="container-fluid text-center bg-white">
+        <div class="container text-center bg-white">
             <div class="row">
                 <div class="col">
                     <p class="pt-2">From budget accommodations to the most luxury hotels that are a destination itself, we are partners with practically every top quality hotel at every category ( 2 stars. 3 stars, 4 stars, 5 stars ) plus our volume let us offer you great Vacation packages prices as we translate our volume savings to you.</p>
@@ -666,7 +700,7 @@
 
 
     <section class="bg-light">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>9 Reasons To Let Our Guides Take You On An Unforgettable Adventure!</strong></h1>
@@ -679,7 +713,7 @@
     </section>
 
     <section class="bg-light">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pb-5">
                 <div class="col-12 col-md-6 col-xl-4 mb-3 d-flex os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
                     <div class="card">
@@ -785,7 +819,7 @@
     </section>
 
     <section class="bg-white d-none d-sm-block">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row py-5">
                 <div class="col col-sm">
                     <div class="row mt-5 justify-content-center">
@@ -863,7 +897,7 @@
     </section>
 
     <section class="bg-light">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row align-items-center no-gutters">
                 <div class="col d-none d-xl-block">
                     <img src="{{asset('images/we-care.jpg')}}" alt="" class="img-fluid">
@@ -912,7 +946,7 @@
 
 
     <section class="bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
                     <h2 class="text-secondary h4"><strong>Getting To Peru</strong></h2>
@@ -924,7 +958,7 @@
         </div>
     </section>
     <section class="bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col">
                     <img src="{{asset('images/slider/flights.jpg')}}" alt="" class="w-100">
@@ -1007,7 +1041,7 @@
     </section>
 
     {{--<section class="bg-light">--}}
-        {{--<div class="container-fluid">--}}
+        {{--<div class="container">--}}
             {{--<div class="row align-items-center">--}}
                 {{--<div class="col">--}}
 

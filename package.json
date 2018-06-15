@@ -18,6 +18,7 @@
     "bootstrap-sass": "^3.3.7",
     "cross-env": "^5.1",
     "jquery": "^3.2",
+    "jquery-ui": "^1.12.1",
     "laravel-mix": "^1.0",
     "lodash": "^4.17.4",
     "vue": "^2.1.10"
@@ -28,9 +29,9 @@
     "bootstrap": "^4.0.0",
     "font-awesome-5-css": "^1.0.0",
     "font-awesome-sass": "^4.7.0",
-    "jquery-ui": "^1.12.1",
     "popper.js": "^1.12.9",
     "smartwizard": "^4.2.2",
+    "swiper": "^4.3.3",
     "twitter-bootstrap-wizard": "^1.2.0"
   }
 }
