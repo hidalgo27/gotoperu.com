@@ -149,44 +149,72 @@
             </div>
         </div>
     </section>
-    <section class="bg-light">
+    <section class="bg-light py-3 d-none d-lg-block">
+        <div class="container-fluid">
+            <div class="col">
+                <div class="row"><!--.row -->
+                    <div class="col">
+                        <img src="{{asset('images/logos/apavit.png')}}" alt="logo apavit" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/apotur.png')}}" alt="logo apotur" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/asta.png')}}" alt="logo asta" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/expedia.png')}}" alt="logo expedia" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/facebook.png')}}" alt="logo facebook" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/meetup.png')}}" alt="logo meetup" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/new.png')}}" alt="logo the new york times" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/peru.png')}}" alt="logo marca peru" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/prom-peru.png')}}" alt="logo prom peru" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/tripadvisor.png')}}" alt="logo tripadvisor" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/yelp.png')}}" alt="logo yelp" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/logos/youtube.png')}}" alt="logo youtube" class="img-fluid">
+                    </div>
+                </div><!-- /.row -->
+            </div>
+        </div>
+    </section>
+    <section class="bg-white py-5">
         <div class="container">
-            <div class="row pt-4 pb-2">
-                <div class="col text-center">
+            <div class="row d-none d-sm-inline-flex align-items-center">
+                <div class="col col-sm-12 col-md">
+                    <div class="row no-gutters">
+                        <div class="col"><img src="{{asset('images/banner-home2.jpg')}}" alt="" class="w-100 rounded-top"></div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col"><img src="{{asset('images/banner-home3.jpg')}}" alt="" class="w-100 rounded-bottom"></div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md">
                     <h2 class="text-secondary h1 font-weight-bold text-g-yellow"><strong>We are GOTOPERU</strong></h2>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                    <p class="lead">We are GOTOPERU , local travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 12 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized our efforts citing us a Top local Experts!</p>
-                </div>
-            </div>
-            <div class="row no-gutters d-none d-sm-inline-flex">
-                <div class="col">
-                    <img src="{{asset('images/team-1.jpg')}}" alt="" class="w-100">
-                </div>
-                <div class="col">
-                    <img src="{{asset('images/meetup.jpg')}}" alt="" class="w-100">
-                </div>
-                <div class="col">
-                    <img src="{{asset('images/care.jpg')}}" alt="" class="w-100">
-                </div>
-                <div class="col">
-                    <img src="{{asset('images/frank.jpg')}}" alt="" class="w-100">
-                </div>
-            </div>
-            <div class="row d-none d-md-flex no-gutters">
-                <div class="col">
-                    <div class="alert alert-g-yellow p-1 rounded-0">
-                        <div class="row">
-                            <div class="col text-center">
-                                <small class="font-weight-light">
-                                    <span><i class="fa fa-check"></i> Headquarters: Cusco, Peru</span>
-                                    <span class="mx-3"><i class="fa fa-check"></i> Company: 25 members</span>
-                                    <span class="mr-3"><i class="fa fa-check"></i> Founded: 2006</span>
-                                    <span><i class="fa fa-check"></i> Offices: Lima, Peru / New York, Usa</span>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="text-dark">We are GOTOPERU , local travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 12 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized our efforts citing us a Top local Experts!</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-check text-g-yellow"></i> Headquarters: Cusco, Peru</li>
+                        <li><i class="fa fa-check text-g-yellow"></i> Company: 25 members</li>
+                        <li><i class="fa fa-check text-g-yellow"></i> Founded: 2006</li>
+                        <li><i class="fa fa-check text-g-yellow"></i> Offices: Lima, Peru / New York, Usa</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -280,7 +308,7 @@
         <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
-                    <h1 class="text-secondary h4"><strong>100'S OF REVIEWS 1 COMPANY</strong></h1>
+                    <h4 class="text-secondary"><strong>100'S OF REVIEWS 1 COMPANY</strong></h4>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
@@ -554,7 +582,7 @@
         <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
-                    <h1 class="text-secondary h4"><strong>PERU DESTINATIONS</strong></h1>
+                    <h4 class="text-secondary"><strong>PERU DESTINATIONS</strong></h4>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
@@ -647,7 +675,7 @@
                     </div>
                     <div class="row py-4">
                         <div class="col text-right">
-                            <a href="{{route('destinations_country_path', 'peru-travel')}}" class="btn-link float-right font-weight-normal mt-2 mb-4">View Peru packages <i class="fa fa-chevron-right"></i></a>
+                            <a href="{{route('destinations_country_path', 'peru-travel')}}" class="btn-link float-right font-weight-normal mt-2 mb-4">View Peru destinations <i class="fa fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -659,9 +687,9 @@
 
     <section class="bg-white">
         <div class="container">
-            <div class="row pt-5 pb-2">
+            <div class="row pb-2">
                 <div class="col">
-                    <h1 class="text-secondary h4"><strong>HOTELS</strong></h1>
+                    <h4 class="text-secondary"><strong>HOTELS</strong></h4>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
@@ -703,7 +731,7 @@
         <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
-                    <h1 class="text-secondary h4"><strong>9 Reasons To Let Our Guides Take You On An Unforgettable Adventure!</strong></h1>
+                    <h4 class="text-secondary"><strong>9 Reasons To Let Our Guides Take You On An Unforgettable Adventure!</strong></h4>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
@@ -896,7 +924,7 @@
         </div>
     </section>
 
-    <section class="bg-light">
+    <section class="bg-light py-4">
         <div class="container">
             <div class="row align-items-center no-gutters">
                 <div class="col d-none d-xl-block">
