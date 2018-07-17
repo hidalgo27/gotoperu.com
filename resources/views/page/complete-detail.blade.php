@@ -55,7 +55,7 @@
 
                     <div class="row">
                         <div class="col">
-                            <form role="form" id="d_form">
+                            <form role="form" id="a_form">
                                 {{csrf_field()}}
                                 <div class="row">
                                     <div class="col">
@@ -240,9 +240,7 @@
                 var s_travelers = $('#c_travelers').val();
 
                 var s_aeropuerto = '{{$airports->aeropuerto}}';
-
-
-                alert(s_aeropuerto);
+                
 
                 if (filter.test(s_email)){
                     sendMail = "true";

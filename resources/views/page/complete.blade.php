@@ -341,11 +341,11 @@
                     $.each(list, function(index, price_air) {
                         var fecha = price_air.fecha.split('-');
                         if(fecha){
-                            var meses=new Array("JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULI","AUGUST","SEPTEMBER","NOMBERMBER","DICEMBER");
+                            var meses=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
                             var f = new Date(fecha);
 
                             var texto=meses[f.getMonth()]+' '+f.getDate()+', '+f.getFullYear();
-                            console.log(texto);
+                            // console.log(texto);
                         }
                         $('#price_airport').append('<option value='+price_air.id+'>'+texto+'</option>');
                     });
