@@ -797,3 +797,19 @@ $slide-overlay-opacity: 0.6;
   box-sizing: border-box;
   padding-right: 5px;
 }
+
+.swiper-container-complete{
+  height: auto !important;
+}
+
+.nav-tabs-complete .nav-link.active, .nav-tabs-complete .nav-item.show .nav-link{
+  color: #ffa900;
+  font-weight: bold;
+  background-color: #fff;
+  border-color: #fff #fff #ffa900 !important;
+  border-bottom: 3px solid;
+}
+
+.nav-tabs-complete .nav-link{
+  color: #8e8e8e;
+}

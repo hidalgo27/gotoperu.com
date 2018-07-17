@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\TAeropuerto;
 use App\TCategoria;
 use App\TDestino;
 use App\THotel;
@@ -9,6 +10,7 @@ use App\THotelDestino;
 use App\TPaquete;
 use App\TPaqueteDestino;
 use App\TPaqueteVuelo;
+use App\TPrecioAeropuerto;
 use App\TTestimonio;
 use App\TVuelo;
 use Artesaos\SEOTools\Facades\OpenGraph;
@@ -267,6 +269,139 @@ class HomeController extends Controller
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
         return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'vuelo'=>$vuelo, 'paquete_vuelo'=>$paquete_vuelo]);
+
+    }
+
+    public function complete()
+    {
+        $airport = TAeropuerto::with('precio_aeropuerto')->get();
+
+        return view('page.complete', ['airport'=>$airport]);
+
+    }
+
+    public function lista_precio_aero(){
+        $id = $_POST["txt_airport"];
+        $price_air = TPrecioAeropuerto::where('idaeropuerto', $id)->get();
+
+        return response()->json(['price_air'=>$price_air]);
+
+    }
+    public function precio_aero(){
+        $id = $_POST["txt_price_airport"];
+        $price_t = TPrecioAeropuerto::where('id', $id)->get();
+        return response()->json(['price_t'=>$price_t]);
+
+    }
+    public function inquire_detail_p(){
+        $id_airport = $_POST["txt_airport"];
+        $id_price = $_POST["txt_price_airport"];
+
+        return ($id_airport.'-'.$id_price);
+    }
+
+    public function complete_detail($air, $price)
+    {
+        $id_air = $air;
+        $id_price = $price;
+
+        $aeropuerto = TAeropuerto::where('id', $id_air)->get();
+        $precio_aero = TPrecioAeropuerto::where('id', $id_price)->get();
+
+
+        return view('page.complete-detail', ['aeropuerto'=>$aeropuerto, 'precio_aero'=>$precio_aero]);
+
+    }
+
+    public function availability_inquire()
+    {
+        $from = 'info@gotoperu.com';
+        $from2 = 'catanopaul@gmail.com';
+
+        $name = $_POST["txt_name"];
+        $email = $_POST["txt_email"];
+        $number = $_POST["txt_number"];
+        $travelers = $_POST["txt_travelers"];
+        $aeropuerto = $_POST["txt_aeropuerto"];
+
+        try {
+            Mail::send(['html' => 'notifications.page.client-form-design'], ['name' => $name], function ($messaje) use ($email, $name) {
+                $messaje->to($email, $name)
+                    ->subject('GotoPeru')
+                    /*->attach('ruta')*/
+                    ->from('info@gotoperu.com', 'GotoPeru');
+            });
+
+
+            Mail::send(['html' => 'notifications.page.admin-form-complete'], [
+                'name' => $name,
+                'email' => $email,
+                'number' => $number,
+                'travelers' => $travelers,
+                'aeropuerto' => $aeropuerto
+            ], function ($messaje) use ($from) {
+                $messaje->to($from, 'GotoPeru')
+                    ->subject('GotoPeru')
+                    /*->attach('ruta')*/
+                    ->from('info@gotoperu.com', 'GotoPeru');
+            });
+
+
+//            Mail::send(['html' => 'notifications.page.admin-form-contact'], [
+//                'name' => $name,
+//                'email' => $email,
+//                'comment' => $comment
+////                'comment' => $comment
+//            ], function ($messaje) use ($from2) {
+//                $messaje->to($from2, 'GotoPeru ES')
+//                    ->subject('GotoPeru ES')
+//                    /*->attach('ruta')*/
+//                    ->from('info@gotoperu.com', 'GotoPeru ES');
+//            });
+
+
+            return 'Thank you.';
+
+        }
+        catch (Exception $e){
+            return $e;
+        }
+
+    }
+
+    public function book($titulo, $days)
+    {
+        $title = str_replace('-', ' ', strtoupper($titulo));
+//        dd($title);
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->where('estado', 0)->get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        $paquete_iti = TPaquete::with('itinerario','paquetes_destinos', 'precio_paquetes')->where('titulo', $title)->get();
+
+        $hoteles = THotel::all();
+        $hoteles_destinos = THotelDestino::all();
+
+        $vuelo = TVuelo::all();
+        $paquete_vuelo = TPaqueteVuelo::with('vuelos')->get();
+
+        SEOMeta::setTitle('Travel Packages: '.ucwords(strtolower($title)).' | GotoPeru');
+        SEOMeta::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
+        SEOMeta::setCanonical('https://gotoperu.com/packages');
+//        SEOMeta::addKeyword(['Best Peru Trip Packages', 'Peru Machu Picchu Tours']);
+
+        OpenGraph::setDescription('Our team has many years of experience in travel organization and our main goal is providing an unforgettable experience.');
+        OpenGraph::setTitle('Travel Packages: '.ucwords(strtolower($title)).' | GotoPeru');
+        OpenGraph::setUrl('https://gotoperu.com/packages');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto peru');
+        OpenGraph::addProperty('type', 'website');
+        OpenGraph::addProperty('locale', 'en_US');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Travel Packages: '.ucwords(strtolower($title)).' | GotoPeru');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
+        return view('page.complete-book', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'vuelo'=>$vuelo, 'paquete_vuelo'=>$paquete_vuelo]);
 
     }
 
@@ -670,7 +805,7 @@ class HomeController extends Controller
             });
 
 
-            Mail::send(['html' => 'notifications.page.admin-from-contact'], [
+            Mail::send(['html' => 'notifications.page.admin-form-contact'], [
                 'name' => $name,
                 'email' => $email,
                 'phone' => $phone,
@@ -683,7 +818,7 @@ class HomeController extends Controller
             });
 
 
-//            Mail::send(['html' => 'notifications.page.admin-from-contact'], [
+//            Mail::send(['html' => 'notifications.page.admin-form-contact'], [
 //                'name' => $name,
 //                'email' => $email,
 //                'comment' => $comment

@@ -42,6 +42,38 @@ Route::get('/packages/{title}/{days}-days-tours', [
     'as' => 'itinerary_path',
 ]);
 
+//complete
+Route::get('/packages/air-land/peru-machu-picchu-from-usa/7-days-tours', [
+    'uses' => 'HomeController@complete',
+    'as' => 'complete_path',
+]);
+Route::get('/packages/air-land/peru-machu-picchu-from-usa/7-days-tours/detail/{air}-{price}', [
+    'uses' => 'HomeController@complete_detail',
+    'as' => 'complete_detail_path',
+]);
+Route::get('/packages/air-land/{title}/{days}-days-tours/book', [
+    'uses' => 'HomeController@book',
+    'as' => 'book_path',
+]);
+
+Route::post('/packages/air-land/lista_precio_aero', [
+    'uses' => 'HomeController@lista_precio_aero',
+    'as' => 'lista_precio_aero_path',
+]);
+Route::post('/packages/air-land/precio_aero', [
+    'uses' => 'HomeController@precio_aero',
+    'as' => 'precio_aero_path',
+]);
+Route::post('/packages/air-land/inquire_detail_p', [
+    'uses' => 'HomeController@inquire_detail_p',
+    'as' => 'inquire_detail_p_path',
+]);
+
+Route::post('/packages/air-land/availability_inquire', [
+    'uses' => 'HomeController@availability_inquire',
+    'as' => 'availability_inquire_path',
+]);
+
 //information
 Route::get('/packages/{title}/{days}-days-tours/information', [
     'uses' => 'HomeController@information',

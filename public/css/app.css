@@ -4336,25 +4336,6 @@ button.ui-button::-moz-focus-inner {
 	background: none;
 }
 /*!
- * jQuery UI Tooltip 1.12.1
- * http://jqueryui.com
- *
- * Copyright jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
- *
- * http://api.jqueryui.com/tooltip/#theming
- */
-.ui-tooltip {
-	padding: 8px;
-	position: absolute;
-	z-index: 9999;
-	max-width: 300px;
-}
-body .ui-tooltip {
-	border-width: 2px;
-}
-/*!
  * jQuery UI CSS Framework 1.12.1
  * http://jqueryui.com
  *
@@ -16219,6 +16200,23 @@ header {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding-right: 5px;
+}
+
+.swiper-container-complete {
+  height: auto !important;
+}
+
+.nav-tabs-complete .nav-link.active,
+.nav-tabs-complete .nav-item.show .nav-link {
+  color: #ffa900;
+  font-weight: bold;
+  background-color: #fff;
+  border-color: #fff #fff #ffa900 !important;
+  border-bottom: 3px solid;
+}
+
+.nav-tabs-complete .nav-link {
+  color: #8e8e8e;
 }
 
 .font-montserrat {

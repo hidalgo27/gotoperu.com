@@ -20,7 +20,6 @@ mix.scripts([
     'resources/assets/js/vendors/viedolightbox/video.js',
     'resources/assets/js/vendors/jquery.waypoints.min.js',
     'resources/assets/js/vendors/smooth-scroll.js',
-    'resources/assets/js/vendors/jquery-ui.js',
     'node_modules/twitter-bootstrap-wizard/jquery.bootstrap.wizard.js',
     // 'resources/assets/js/vendors/all.js',
     // 'resources/assets/js/font-awesome.js',

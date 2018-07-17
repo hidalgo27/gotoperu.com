@@ -1092,6 +1092,17 @@
     @include('layouts.page.form-quote')
 
     @push('scripts')
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                direction: 'vertical',
+                slidesPerView: 'auto',
+                freeMode: true,
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+                mousewheel: true,
+            });
+        </script>
         {{--<script>--}}
             {{--//form--}}
             {{--function design(){--}}
