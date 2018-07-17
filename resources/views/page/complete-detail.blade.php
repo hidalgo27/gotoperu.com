@@ -113,7 +113,7 @@
 
                     <div class="row my-4">
                         <div class="col">
-                            <div class="alert alert-success d-none" role="alert" id="loader2">
+                            <div class="alert alert-success d-none" role="alert" id="a_alert">
                                 <h4 class="alert-heading">THANK YOU FOR CONTACT US!</h4>
                                 <p>YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS. :).</p>
                             </div>
