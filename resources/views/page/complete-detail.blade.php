@@ -113,7 +113,7 @@
 
                     <div class="row my-4">
                         <div class="col">
-                            <div class="alert alert-success d-none" role="alert">
+                            <div class="alert alert-success d-none" role="alert" id="loader2">
                                 <h4 class="alert-heading">THANK YOU FOR CONTACT US!</h4>
                                 <p>YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS. :).</p>
                             </div>
@@ -240,7 +240,7 @@
                 var s_travelers = $('#c_travelers').val();
 
                 var s_aeropuerto = '{{$airports->aeropuerto}}';
-                
+
 
                 if (filter.test(s_email)){
                     sendMail = "true";
