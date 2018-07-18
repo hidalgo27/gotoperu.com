@@ -31,10 +31,10 @@
         </div>
         <div id="overlay">
             <video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>
-                <source src="{{asset('videos/land.mp4')}}" />
-                {{--<source src="{{asset('media/video6.m4v')}}" type="video/mp4" />--}}
-                {{--<source src="{{asset('media/video6.webm')}}" type="video/webm" />--}}
-                {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
+                <source src="{{asset('videos/land.mp4')}}" type="video/mp4"/>
+                {{--<source src="{{asset('videos/land.m4v')}}" type="video/mp4" />--}}
+                <source src="{{asset('videos/land.webm')}}" type="video/webm" />
+                <source  src="{{asset('videos/land.ogv')}}" type="video/ogg" />
             </video>
             {{--<div id="state" class=""><span class="fa fa-pause"></span></div>--}}
             {{--<img id="hero-pic" class="d-none" src="http://www.markhillard.com/sandbox/media/polina.jpg" alt="">--}}
