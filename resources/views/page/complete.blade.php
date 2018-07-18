@@ -419,7 +419,7 @@
                 if (list.length < 1) {
                     alert("SIN NINGÚN RESULTADO EN LA BD");
                 } else {
-                    $('#price_airport').append('<option value="0">SELECCIONAR...</option>');
+                    $('#price_airport').append('<option value="0">Select...</option>');
                     $.each(list, function(index, price_air) {
                         var fecha = price_air.fecha.split('-');
                         if(fecha){
