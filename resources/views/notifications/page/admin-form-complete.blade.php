@@ -11,9 +11,10 @@
                     <tr>
                         <td style="text-align:left">
                             <p><strong>Email: {{$email}}</strong></p>
-                            <p><strong>Number of Nights: {{$number}}</strong></p>
+                            <p><strong>Travel Date: {{$fecha}}</strong></p>
                             <p><strong>Travelers: {{$travelers}}</strong></p>
                             <p><strong>Departure Airport: {{$aeropuerto}}</strong></p>
+                            <p><strong>Price: ${{$precio}}</strong></p>
                         </td>
                     </tr>
                     </tbody>

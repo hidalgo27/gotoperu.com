@@ -58,20 +58,20 @@
                             <form role="form" id="a_form">
                                 {{csrf_field()}}
                                 <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="c_number" class="font-weight-bold text-secondary">NUMBER OF NIGHTS:</label>
-                                            <select class="form-control form-control-lg" id="c_number">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                                <option>6+</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col">
+                                    {{--<div class="col">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="c_number" class="font-weight-bold text-secondary">NUMBER OF NIGHTS:</label>--}}
+                                            {{--<select class="form-control form-control-lg" id="c_number">--}}
+                                                {{--<option>1</option>--}}
+                                                {{--<option>2</option>--}}
+                                                {{--<option>3</option>--}}
+                                                {{--<option>4</option>--}}
+                                                {{--<option>5</option>--}}
+                                                {{--<option>6+</option>--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    <div class="col-6">
                                         <div class="form-group">
                                             <label for="c_travelers" class="font-weight-bold text-secondary">TRAVELERS:</label>
                                             <select class="form-control form-control-lg" id="c_travelers">
@@ -88,7 +88,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                                <label for="a_name" class="font-weight-bold text-secondary">NAME</label>
+                                                <label for="a_name" class="font-weight-bold text-secondary">NAME <span class="text-primary">*</span></label>
                                             <input type="text" class="form-control form-control-lg" id="a_name" placeholder="Your name">
                                         </div>
                                     </div>
@@ -96,7 +96,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="a_email" class="font-weight-bold text-secondary">EMAIL</label>
+                                            <label for="a_email" class="font-weight-bold text-secondary">EMAIL <span class="text-primary">*</span></label>
                                             <input type="email" class="form-control form-control-lg" id="a_email" placeholder="Your email">
                                         </div>
                                     </div>
@@ -138,7 +138,7 @@
 
                                     @endforeach
                                     <h5 class="font-weight-bold text-white">Total Price</h5>
-                                    <small>Avg price per person: $631.54 <span class="d-block">Including all taxes and fees</span></small>
+                                    <small>Price per person <span class="d-block">Including all taxes and fees</span></small>
                                 </div>
                                 <div class="col text-right">
                                     @foreach($precio_aero as $precio_aeros)
@@ -160,7 +160,7 @@
                                 </div>
                                 <div class="col text-center">
                                     <p class="m-0">Number of nights</p>
-                                    <b class="font-weight-bold" id="v_number"><span>3</span></b>
+                                    <b class="font-weight-bold" id="v_number"><span>6</span></b>
                                 </div>
                             </div>
                         </div>
@@ -169,7 +169,7 @@
                                 <div class="col">
                                     <h6 class="text-secondary">Departure Airport:</h6>
                                     <div class="">
-                                        <p class="m-0 h5 font-weight-bold">{{ucwords(strtolower($airports->aeropuerto))}} — {{ucwords(strtolower($airports->codigo))}}</p>
+                                        <p class="m-0 h5 font-weight-bold">{{strtoupper($airports->aeropuerto)}} ({{strtoupper($airports->codigo)}}) — Lima</p>
                                         <small class="text-secondary">
                                             {{strftime("%B %d, %Y", strtotime(str_replace('-','/', $precio_aeros->fecha)))}}
                                         </small>
@@ -189,11 +189,11 @@
 
     @push('scripts')
         <script>
-            $('#c_number').change(function(){
-                $('#v_number span').remove();
-                var s_number = $('#c_number').val();
-                $('#v_number').append('<span>'+s_number+'</span>');
-            });
+            // $('#c_number').change(function(){
+            //     $('#v_number span').remove();
+            //     var s_number = $('#c_number').val();
+            //     $('#v_number').append('<span>'+s_number+'</span>');
+            // });
             $('#c_travelers').change(function(){
                 $('#v_travel span').remove();
                 var s_travelers = $('#c_travelers').val();
@@ -236,10 +236,12 @@
                 var s_name = $('#a_name').val();
                 var s_email = $('#a_email').val();
 
-                var s_number = $('#c_number').val();
+                // var s_number = $('#c_number').val();
                 var s_travelers = $('#c_travelers').val();
 
                 var s_aeropuerto = '{{$airports->aeropuerto}}';
+                var s_fecha = '{{$precio_aeros->fecha}}';
+                var s_precio = '{{$precio_aeros->precio}}';
 
 
                 if (filter.test(s_email)){
@@ -257,8 +259,10 @@
                     var datos = {
                         "txt_name" : s_name,
                         "txt_email" : s_email,
-                        "txt_number" : s_number,
+                        // "txt_number" : s_number,
                         "txt_travelers" : s_travelers,
+                        "txt_fecha" : s_fecha,
+                        "txt_precio" : s_precio,
                         "txt_aeropuerto" : s_aeropuerto
                     };
                     $.ajax({

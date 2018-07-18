@@ -47,25 +47,25 @@
                         <h2 class="text-g-yellow p-2">Air & Land</h2>
 
                         <p class="m-0 p-2 text-white">
-                            <b class="font-weight-bold">Day 1: </b> titulo
+                            <b class="font-weight-bold">Day 1: </b> LIMA ARRIVAL
                         </p>
                         <p class="m-0 p-2 text-white">
-                            <b class="font-weight-bold">Day 2: </b> titulo
+                            <b class="font-weight-bold">Day 2: </b> LIMA CITY TOUR
                         </p>
                         <p class="m-0 p-2 text-white">
-                            <b class="font-weight-bold">Day 3: </b> titulo
+                            <b class="font-weight-bold">Day 3: </b> CUSCO FLIGHT & CUSCO WALKING TOUR
                         </p>
                         <p class="m-0 p-2 text-white">
-                            <b class="font-weight-bold">Day 4: </b> titulo
+                            <b class="font-weight-bold">Day 4: </b> CUSCO FREE DAY
                         </p>
                         <p class="m-0 p-2 text-white">
-                            <b class="font-weight-bold">Day 5: </b> titulo
+                            <b class="font-weight-bold">Day 5: </b> TRAIN TO MACHUPICCHU
                         </p>
                         <p class="m-0 p-2 text-white">
-                            <b class="font-weight-bold">Day 6: </b> titulo
+                            <b class="font-weight-bold">Day 6: </b> MACHUPICCHU TOUR - TRAIN BACK TO CUSCO
                         </p>
                         <p class="m-0 p-2 text-white">
-                            <b class="font-weight-bold">Day 7: </b> titulo
+                            <b class="font-weight-bold">Day 7: </b> FLIGHT TO LIMA & FLIGHT TO USA
                         </p>
 
                         <p class="m-0 p-2 text-white h1 text-right">
@@ -152,7 +152,7 @@
                     <div class="row my-3">
                         <div class="col">
                             <h1 class="text-secondary font-weight-bold">7 Day Peru & Machu Picchu from USA</h1>
-                            <h6 class="text-secondary">Peru Tour. Price is per Person, Based on Two Guests per Room. Buy One Voucher per Person.</h6>
+                            <h6 class="text-secondary">Peru Tour including flights from USA. Price is per Person, Based on Two Guests per Room.</h6>
                         </div>
                     </div>
                     <div class="row">
@@ -161,19 +161,16 @@
                             <div class="swiper-container swiper-container-complete">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <img src="{{asset('images/destinations/rainbow-mountain.jpg')}}" alt="" class="w-100">
+                                        <img src="{{asset('images/destinations/lima.jpg')}}" alt="" class="w-100">
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="{{asset('images/destinations/bolivia.jpg')}}" alt="" class="w-100">
+                                        <img src="{{asset('images/destinations/cusco.jpg')}}" alt="" class="w-100">
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="{{asset('images/destinations/argentina.jpg')}}" alt="" class="w-100">
+                                        <img src="{{asset('images/destinations/machu-picchu.jpg')}}" alt="" class="w-100">
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="{{asset('images/destinations/brazil.jpg')}}" alt="" class="w-100">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('images/destinations/iguazu.jpg')}}" alt="" class="w-100">
+                                        <img src="{{asset('images/destinations/sacred-valley.jpg')}}" alt="" class="w-100">
                                     </div>
                                 </div>
                                 <!-- Add Pagination -->
@@ -204,14 +201,15 @@
                             <div class="row mt-3">
                                 <div class="col">
                                     <h5>What's Included</h5>
+                                    <p class="font-weight-normal"><i><span class="text-primary">*</span> All Flights ,Transportation,Tours, Trains, Hotels, Entrances, Taxes:</i></p>
                                     <ul>
-                                        <li>All Flights ,Transportation,Tours, Trains, Hotels, Entrances:</li>
                                         <li>International Round-trip airfare to Lima from</li>
-                                        <li>Miami (MIA)</li>
-                                        <li>Los Angeles (LAX)</li>
-                                        <li>New York (JFK)</li>
-                                        <li>Chicago (ORD)</li>
-                                        <li>Washington, D.C. (IAD)</li>
+                                        <ul>
+                                            <li>Miami (MIA)</li>
+                                            <li>Los Angeles (LAX)</li>
+                                            <li>New York (JFK)</li>
+                                            <li>Washington, D.C. (IAD)</li>
+                                        </ul>
                                         <li>Internal Round-trip airfare to Cusco</li>
                                         <li>All transfers between tours</li>
                                         <li>Peru Airport shuttles</li>
@@ -222,8 +220,8 @@
                                         <li>MachuPicchu Tour</li>
                                         <li>All entrances</li>
                                         <li>All breakfast</li>
-                                        <li>7-day/5-night: Lima to Cusco to Lima</li>
-                                        <li>1 night of accommodations at Allpa Hotel and Suites, Casa Andina Standard or similar in Lima</li>
+                                        <li>7-day/6-night: Lima to Cusco to Lima</li>
+                                        <li>2 night of accommodations at Allpa <a href="{{route('hotels_path')}}" target="_blank">Hotel</a> and Suites, Casa Andina Standard or similar in Lima</li>
                                         <li>3 nights of accommodations at Maytaq Wasin Hotel, San Agustin International Hotel  or similar in Cusco</li>
                                         <li>1 night of accommodations at Inti Punku Machu Picchu, Hatun Samay or similar in Machu Picchu</li>
                                     </ul>
@@ -239,25 +237,109 @@
                             <div class="row mt-3">
                                 <div class="col">
                                     <h5><b>DAY 1</b>  LIMA ARRIVAL</h5>
-                                    <p>Flight from USA to Lima – Perú, we will provide you with flight information including etickets & flight times.
-                                        Once you arrive to Perú our representative will welcome you at the Lima Airport and you will be transfer to your Lima hotel.
-                                        Night at Lima</p>
+                                    <p>Flight from USA to Lima – Perú, we will provide you with flight information including etickets & flight times.</p>
+                                    <p>Once you arrive to Perú our representative will welcome you at the Lima Airport and you will be transfer to your Lima hotel.</p>
+                                    <p class="text-primary">Night at Lima</p>
+
+                                    <h5><b>DAY 2</b> LIMA CITY TOUR</h5>
+                                    <p>The day will begin with breakfast in the hotel, your tour guide and transportation will pick you up around 9:00 am (the time will be confirmed), during your excursion you will visit the following places:</p>
+                                    <ul>
+                                        <li>Lima downtown</li>
+                                        <li>Miraflores neighborhood</li>
+                                        <li>Loving Park</li>
+                                        <li>Main squeare of Lima</li>
+                                        <li>San Francisco Monastery</li>
+                                        <li>San Francisco catacombs</li>
+                                        <li>Huaca Pucllana archeological site</li>
+                                    </ul>
+                                    <p class="text-primary">Night at Lima</p>
+
+                                    <h5><b>DAY 3</b> CUSCO FLIGHT & CUSCO WALKING TOUR</h5>
+                                    <p>After your breakfast our representative will pick you up from your hotel and escort you to the Lima airport . Flight to Cusco City.</p>
+                                    <p>Once you arrive to Cusco your tour guide and private transportation will pick you up and take you to your downtown hotel, during the afternoon you will enjoy a walking tour to see the principal attractions of the city.</p>
+                                    <ul>
+                                        <li>Cusco’s main square</li>
+                                        <li>San Peter local market</li>
+                                        <li>San Blas neighborhood</li>
+                                        <li>Temple of the Sun</li>
+                                        <li>Twelve angle stone</li>
+                                        <li>San Francisco square</li>
+                                        <li>San Cristobal viewpoint</li>
+                                    </ul>
+                                    <p class="text-primary">Night at Cusco</p>
+
+                                    <h5><b>DAY 4</b> CUSCO FREE DAY</h5>
+                                    <p>The Day is yours, you can enjoy the magic of the city, including charming historical plazas, alpaca shops, cafes, museums and more!</p>
+                                    <p class="text-danger">Also we offer optional day trips:</p>
+                                    <ul class="text-danger">
+                                        <li>Sacred Valley Tour $79 p.p</li>
+                                        <li>Rainbow Mountain $79</li>
+                                        <li>River Raffting in Vilcanota River $69</li>
+                                        <li>Horse Riding in Saqsayhuaman Park $59</li>
+                                        <li>Zip Line in the Sacred Valley  $89</li>
+                                        <li>Salt Mines of Maras, Moray and Chinchero Textile Center  $79</li>
+                                        <li>Humantay Lake trek  $79</li>
+                                    </ul>
+                                    <p class="text-primary">Night at Cusco</p>
+
+                                    <h5><b>DAY 5</b> TRAIN TO MACHUPICCHU</h5>
+                                    <p>After having a breakfast in the Hotel, we will take our transportation to Poroy Station or Ollantaytambo train Station , to enjoy an unforgettable train journey crossing the Andes to Aguas Calientes / Machu Picchu; after arrival in Aguas Calientes (the town below Machu Picchu) there will be plenty of time to relax for example you can visit the local hot natural springs!</p>
+                                    <p class="text-primary">Night at Aguas Caliente ( Machu Picchu town)</p>
+
+                                    <h5><b>DAY 6</b> MACHUPICCHU TOUR - TRAIN BACK TO CUSCO</h5>
+                                    <p>Our day to visit the magnificent center of Machu Picchu will began early to take the bus to go up to Lost city of the Incas, at your arrival you will enjoy a history lesson of Machu Picchu given by a regional expert who will focus on major historic sites including the Sun Temple, Sun Stone and Room of the Three Windows, after your tour you will have time to explore the city by yourself</p>
+                                    <p>You will take the comfortable train back to Cusco.</p>
+                                    <p class="text-primary">Night at Cusco</p>
+
+                                    <h5><b>DAY 7</b> FLIGHT TO LIMA & FLIGHT TO USA</h5>
+                                    <p>Breakfast at your Cusco hotel and Private transportation to the Cusco Airport to take your flight to Lima and connecting flight to USA.</p>
+
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="how" role="tabpanel" aria-labelledby="how-tab">...</div>
-                        <div class="tab-pane fade" id="know" role="tabpanel" aria-labelledby="know-tab">...</div>
+                        <div class="tab-pane fade" id="how" role="tabpanel" aria-labelledby="how-tab">
+                            <!-- Three columns of text below the carousel -->
+                            <div class="row mt-5">
+                                <div class="col-lg-4 text-center">
+                                    <div class="text-secondary"><i class="far fa-question-circle fa-5x"></i></div>
+                                    <p class="mt-2">Check Availability.</p>
+                                </div><!-- /.col-lg-4 -->
+                                <div class="col-lg-4 text-center">
+                                    <div class="text-secondary"><i class="fas fa-calendar-check fa-5x"></i></div>
+                                    <p class="mt-2">We will confirm Availability and send you Booking Form and payment link.</p>
+                                </div><!-- /.col-lg-4 -->
+                                <div class="col-lg-4 text-center">
+                                    <div class="text-secondary"><i class="fas fa-suitcase fa-5x"></i></div>
+                                    <p class="mt-2">Enjoy Peru.</p>
+                                </div><!-- /.col-lg-4 -->
+                            </div><!-- /.row -->
+                        </div>
+                        <div class="tab-pane fade" id="know" role="tabpanel" aria-labelledby="know-tab">
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <h5>Know before you go</h5>
+                                    <ul>
+                                        <li>Additional taxes & fees: $200 fee to travel solo traveler (7-day) for single Room accommodation.</li>
+                                        <li>A passport is required for all travel outside the U.S.</li>
+                                        <li>Passports must be valid for at least six months after the date of travel, and contain at least two blank visa pages.</li>
+                                        <li>Official language: Spanish</li>
+                                        <li>Currency: Sol</li>
+                                        <li>You don’t need a visa to enter Peru as a US citizen.</li>
+                                        <li>US electrical sockets are 120 volts while those in Peru are 220 volts. While that shouldn’t make a difference for most electronics, which tend to be compatible with a range of voltages, it does still bear consideration.</li>
+                                        <li>If you would like to add optional tours you add them once you receive confirmation, or once you arrive in Peru.</li>
+                                    </ul>
+                                    <p>Peru is a phenomenal place to travel with awe-inspiring scenery, dynamic cities and friendly people. Keep these things in mind, and your trip there is sure to be a success.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col mt-4">
-                    <div class="card bg-light">
+                    <div class="card bg-light sticky-top">
                         <div class="card-header bg-dark">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h6 class="text-white">Book Your Trip</h6>
-                                </div>
-                                <div class="col">
-                                    <button type="submit" class="btn btn-g-yellow btn-lg btn-block btn-sm">BOOK NOW</button>
+                                    <h5 class="text-white py-2">Book Your Trip</h5>
                                 </div>
                             </div>
                         </div>
@@ -265,9 +347,9 @@
                             <form action="/packages/air-land/land-peru/6-days-tours/detail" role="form" method="post">
                                 {{csrf_field()}}
                                 <div class="form-group">
-                                    <label for="airport" class="h5 text-secondary">Departure Airport:</label>
+                                    <label for="airport" class="h5 text-secondary">Departure Airport: <small>(MIA, LAX, JFK, IAD)</small></label>
                                     <select class="form-control form-control-lg" id="airport" name="txtairport">
-                                        <option>SELECCIONAR...</option>
+                                        <option>Select...</option>
                                             @foreach($airport as $airports)
                                                 <option value="{{$airports->id}}">{{ucwords(strtolower($airports->aeropuerto))}} <small>({{strtoupper($airports->codigo)}})</small></option>
                                             @endforeach~
@@ -277,7 +359,7 @@
                                 <div class="form-group">
                                     <label for="airport" class="h5 text-secondary">Departure DATE:</label>
                                     <select class="form-control form-control-lg" id="price_airport" name="txtdate">
-                                        <option>SELECCIONAR...</option>
+                                        <option>Select...</option>
                                     </select>
                                 </div>
                                 <div class="row my-5">
@@ -291,14 +373,14 @@
                                 </div>
                                 <div class="row my-5">
                                     <div class="col">
-                                        <button type="button" class="btn btn-g-yellow btn-lg btn-block" onclick="detail_p()" id="p_price_b">BOOK NOW</button>
+                                        <button type="button" class="btn btn-g-yellow btn-lg btn-block" onclick="detail_p()" id="p_price_b">CHECK AVAILABILITY</button>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <p>* Vacation is round-trip, per person, based on 2 travelers. Includes air & airport taxes, transfers, hotels, tours and daily breakfast. Additional baggage charges may apply. Rates are available for 1 to 9 travelers.</p>
-                                    </div>
-                                </div>
+                                {{--<div class="row">--}}
+                                    {{--<div class="col">--}}
+                                        {{--<p>* Vacation is round-trip, per person, based on 2 travelers. Includes air & airport taxes, transfers, hotels, tours and daily breakfast. Additional baggage charges may apply. Rates are available for 1 to 9 travelers.</p>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                             </form>
                         </div>
                     </div>

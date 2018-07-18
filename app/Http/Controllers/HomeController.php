@@ -320,8 +320,10 @@ class HomeController extends Controller
 
         $name = $_POST["txt_name"];
         $email = $_POST["txt_email"];
-        $number = $_POST["txt_number"];
+//        $number = $_POST["txt_number"];
         $travelers = $_POST["txt_travelers"];
+        $fecha = $_POST["txt_fecha"];
+        $precio = $_POST["txt_precio"];
         $aeropuerto = $_POST["txt_aeropuerto"];
 
         try {
@@ -336,8 +338,10 @@ class HomeController extends Controller
             Mail::send(['html' => 'notifications.page.admin-form-complete'], [
                 'name' => $name,
                 'email' => $email,
-                'number' => $number,
+//                'number' => $number,
                 'travelers' => $travelers,
+                'fecha' => $fecha,
+                'precio' => $precio,
                 'aeropuerto' => $aeropuerto
             ], function ($messaje) use ($from) {
                 $messaje->to($from, 'GotoPeru')
