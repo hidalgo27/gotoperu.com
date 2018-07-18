@@ -1,6 +1,7 @@
 <nav class="nav nav-pills nav-fill nav-goto navbar-expand-lg d-none d-md-flex sticky-top" id="content-page">
     {{--<a class="nav-item nav-link active" href="#">Active</a>--}}
     <a class="nav-item nav-link text-g-dark font-weight-normal" href="{{route('packages_path')}}">TOURS PACKAGES</a>
+    <a class="nav-item nav-link text-g-dark font-weight-normal bg-success" href="{{route('complete_path')}}"><span class="text-white">AIR & LAND</span></a>
     <a class="nav-item nav-link text-g-dark font-weight-normal" href="{{route('destinations_path')}}">DESTINATIONS</a>
     <a class="nav-item nav-link text-g-dark font-weight-normal {{ Request::is( 'about-us') ? 'active' : '' }}" href="{{route('about_path')}}">ABOUT US</a>
     <a class="nav-item nav-link text-g-dark font-weight-normal" href="{{route('faq_path')}}">FAQ</a>
