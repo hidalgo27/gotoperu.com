@@ -47,7 +47,7 @@
                         <h2 class="text-g-yellow p-2">Air & Land</h2>
 
                         <p class="m-0 p-2 text-white">
-                            <b class="font-weight-bold">Day 1: </b> LIMA ARRIVAL
+                            <b class="font-weight-bold">Day 1: </b> USA DEPARTURE
                         </p>
                         <p class="m-0 p-2 text-white">
                             <b class="font-weight-bold">Day 2: </b> LIMA CITY TOUR
@@ -236,7 +236,7 @@
                         <div class="tab-pane fade" id="itinerary" role="tabpanel" aria-labelledby="itinerary-tab">
                             <div class="row mt-3">
                                 <div class="col">
-                                    <h5><b>DAY 1</b>  LIMA ARRIVAL</h5>
+                                    <h5><b>DAY 1</b>  USA DEPARTURE</h5>
                                     <p>Flight from USA to Lima – Perú, we will provide you with flight information including etickets & flight times.</p>
                                     <p>Once you arrive to Perú our representative will welcome you at the Lima Airport and you will be transfer to your Lima hotel.</p>
                                     <p class="text-primary">Night at Lima</p>
