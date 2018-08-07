@@ -149,7 +149,7 @@
             </div>
             <div class="row mt-4">
                 <div class="col">
-                    <a href="" class="btn btn-block btn-primary">Package Air & Land</a>
+                    <a href="{{route('complete_path')}}" class="btn btn-block btn-primary">Package Air & Land</a>
                 </div>
             </div>
         </div>
