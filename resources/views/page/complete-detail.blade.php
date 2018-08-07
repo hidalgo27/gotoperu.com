@@ -1,17 +1,17 @@
 @extends('layouts.page.default')
 @section('content')
 
-    <section class="d-none d-md-block pb-5">
+    <section class="d-md-block pb-5">
         <div id="title" class="text-white bg-dark">
             <div class="container-fluid">
                 <div class="row align-items-center my-2">
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-sm-6 col col-md-6 col-lg-3">
                         <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
                     </div>
                     {{--<div class="col d-none d-xl-flex">--}}
                     {{--<i class="text-white">Top recommended Peru Travel Operator since 2006</i>--}}
                     {{--</div>--}}
-                    <div class="col-md col-lg text-right sticky-top">
+                    <div class="col-sm-6 col col-md-6 col-lg text-right sticky-top">
                         {{--<a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>--}}
                         <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
                         <!-- Button trigger modal -->
@@ -32,7 +32,7 @@
         {{--</div>--}}
 
     </section>
-
+    
     <section class="d-md-none">
         <div class="container-fluid p-0">
             <div class="row no-gutters">
@@ -46,7 +46,7 @@
     <section class="bg-white  pt-5">
         <div class="container">
             <div class="row">
-                <div class="col-7">
+                <div class="col-12 col-sm-12 col-md-7">
                     <div class="row my-3">
                         <div class="col">
                             <h1 class="text-secondary font-weight-bold">7 Day Peru & Machu Picchu from USA</h1>
@@ -121,7 +121,7 @@
                     </div>
 
                 </div>
-                <div class="col mt-4">
+                <div class="col-12 col-sm-12 col-md-5 mt-4">
                     <div class="card bg-light">
                         <div class="card-header bg-dark py-4">
                             <div class="row align-items-center">

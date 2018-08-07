@@ -147,8 +147,9 @@
 
     <section class="bg-white pt-2">
         <div class="container">
+       
             <div class="row">
-                <div class="col-8">
+                <div class="col-12 col-sm-12 col-md-7">
                     <div class="row my-3">
                         <div class="col">
                             <h1 class="text-secondary font-weight-bold">7 Day Peru & Machu Picchu from USA</h1>
@@ -334,7 +335,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col mt-4">
+                <div class=" col-sm-12 col-md-5 mt-4 d-md-block">
                     <div class="card bg-light sticky-top">
                         <div class="card-header bg-dark">
                             <div class="row align-items-center">
