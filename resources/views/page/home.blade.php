@@ -131,10 +131,10 @@
 
     @include('layouts.page.menu')
     <section class="d-md-none mt-3">
-        <div class="container p-0">
+        <div class="container">
             <div class="row no-gutters">
                 <div class="col">
-                    <img src="{{asset('images/machu_picchu.jpg')}}" alt="" class="w-100">
+                    <img src="{{asset('images/machu_picchu.jpg')}}" alt="" class="w-100 rounded-top">
                 </div>
             </div>
             <div class="row no-gutters align-items-center">
@@ -145,6 +145,11 @@
                         <li class="list-group-item rounded-0"><span class="bg-g-dark p-1 rounded-circle px-2 text-white">3</span> Discover the best of Peru with GOTOPERU</li>
                     </ul>
 
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <a href="" class="btn btn-block btn-primary">Package Air & Land</a>
                 </div>
             </div>
         </div>
@@ -193,7 +198,7 @@
             </div>
         </div>
     </section>
-    <section class="bg-white py-5">
+    <section class="bg-white py-3 py-md-5">
         <div class="container">
             <div class="row d-none d-sm-inline-flex align-items-center">
                 <div class="col col-sm-12 col-md">
