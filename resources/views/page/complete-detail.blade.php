@@ -156,7 +156,7 @@
                             <div class="row">
                                 <div class="col text-center">
                                     <p class="m-0">Travelers</p>
-                                    <b class="font-weight-bold" id="v_travel"><span>6</span></b>
+                                    <b class="font-weight-bold" id="v_travel"><span>?</span></b>
                                 </div>
                                 <div class="col text-center">
                                     <p class="m-0">Number of nights</p>
