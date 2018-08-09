@@ -182,6 +182,31 @@
 
 </script>
 <script>
+    $("#h_tel").intlTelInput({
+        allowDropdown: true,
+        autoHideDialCode: false,
+        autoPlaceholder: "off",
+        dropdownContainer: "body",
+        // excludeCountries: ["us"],
+        // formatOnDisplay: false,
+        geoIpLookup: function(callback) {
+            $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+                var countryCode = (resp && resp.country) ? resp.country : "";
+                callback(countryCode);
+            });
+        },
+        // hiddenInput: "full_number",
+        initialCountry: "auto",
+        // nationalMode: false,
+        // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+        placeholderNumberType: "phone",
+        // preferredCountries: ['cn', 'jp'],
+        separateDialCode: true,
+//      utilsScript: "https://www.legacyfx.com/content/utils.js"
+    });
+</script>
+
+<script>
     function estado() {
         $(".duration_ch").removeClass('active');
     }
@@ -229,6 +254,9 @@
         var s_email = $('#h_email').val();
         var s_comment = $('#h_comment').val();
 
+        var s_countryData = $("#h_tel").intlTelInput("getSelectedCountryData").name;
+        var s_codeData = $("#h_tel").intlTelInput("getNumber");
+
 
         if (filter.test(s_email)){
             sendMail = "true";
@@ -255,6 +283,8 @@
                 "txt_name" : s_name,
                 "txt_email" : s_email,
                 "txt_comment" : s_comment,
+                "txt_countryData" : s_countryData,
+                "txt_codeData" : s_codeData,
 
             };
             $.ajax({
@@ -283,7 +313,38 @@
         }
     }
 
+    $(document).ready(function() {
+        $('#aviso').hide(0);
 
+
+        $(window).scroll(function(){
+
+
+            var windowHeight = $(window).scrollTop();
+            var contenido2 = $(".contenido2").offset();
+
+            contenido2 = contenido2.top;
+
+
+            if(windowHeight >= contenido2  ){
+
+
+                $('#aviso').fadeIn(500);
+
+            }else{
+                $('#aviso').fadeOut(500);
+
+            }
+
+
+        });
+
+    });
+
+    function ideal_trip(){
+        $("#aviso").addClass('d-none');
+        window.location.href="#inquire";
+    }
 
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()

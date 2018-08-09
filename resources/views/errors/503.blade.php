@@ -50,7 +50,7 @@
                     <ul>
                         <li>Visite la página de inicio de <a href="/">GotoPeru</a> .</li>
                         <li>Acceda al mapa del sitio .</li>
-                        <li>Si lo desea, póngase en contacto con el administrador del sitio web con su problema en: webmaster@peruforless.com</li>
+                        <li>Si lo desea, póngase en contacto con el administrador del sitio web con su problema en: hidalgo@pandaninja.com</li>
                     </ul>
                     <p>Gracias.</p>
                 </div>

@@ -16,6 +16,7 @@
                             <p><strong>Duration: {{$duration}} {{$duration_t}}</strong></p>
                             <p><strong>Date: {{$date}}</strong></p>
                             <p><strong>Phone: {{$tel }}</strong></p>
+                            <p><strong>Phone: {{$countryData}} {{$codeData}}</strong></p>
                             <p><strong>Email: {{$email}}</strong></p>
                             <p><strong>Comment: {{$comment}}</strong></p>
                         </td>

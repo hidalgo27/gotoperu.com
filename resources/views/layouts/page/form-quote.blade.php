@@ -364,12 +364,9 @@
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col">
-                                                                    <div class="input-group input-group-lg">
-                                                                        <div class="input-group-prepend">
-                                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone"></i></span>
-                                                                        </div>
-                                                                        <input type="tel" class="form-control" id="h_tel" placeholder="Phone number" aria-label="Phone" aria-describedby="basic-addon1">
-                                                                    </div>
+
+                                                                        <input type="tel" class="form-control form-control-lg" id="h_tel" placeholder="Phone number" aria-label="Phone" aria-describedby="basic-addon1">
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -426,7 +423,7 @@
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
-                                    <b><strong>THANK YOU FOR CONTACT US</strong>, YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS, GURANTEED. :)</b>
+                                    <b><strong>THANK YOU FOR CONTACT US</strong>, YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS. :)</b>
                                 </div>
                             </div>
                         </div>

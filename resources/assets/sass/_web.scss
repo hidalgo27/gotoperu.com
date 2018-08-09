@@ -813,3 +813,19 @@ $slide-overlay-opacity: 0.6;
 .nav-tabs-complete .nav-link{
   color: #8e8e8e;
 }
+#aviso{
+  //margin: 0 auto;
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
+  //padding: 30px 10px 30px 10px;
+  //background: #00bdff;
+  //color: white;
+  //text-align: center;
+  z-index: 9;
+}
+
+.alert-dismissible .close{
+  position: relative !important;
+
+}

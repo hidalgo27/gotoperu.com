@@ -24,6 +24,7 @@ mix.scripts([
     // 'resources/assets/js/vendors/all.js',
     // 'resources/assets/js/font-awesome.js',
     //Customized
+    'node_modules/intl-tel-input/build/js/intlTelInput.js',
     'node_modules/swiper/dist/js/swiper.min.js',
     'resources/assets/js/vendors/function-admin.js',
     'resources/assets/js/vendors/function.js'

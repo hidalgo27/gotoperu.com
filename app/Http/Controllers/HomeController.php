@@ -861,7 +861,8 @@ class HomeController extends Controller
         $name = $_POST['txt_name'];
         $email = $_POST['txt_email'];
         $comment = $_POST['txt_comment'];
-
+        $countryData = $_POST['txt_countryData'];
+        $codeData = $_POST['txt_codeData'];
 
         try {
             Mail::send(['html' => 'notifications.page.client-form-design'], ['name' => $name], function ($messaje) use ($email, $name) {
@@ -883,7 +884,9 @@ class HomeController extends Controller
                 'tel' => $tel,
                 'name' => $name,
                 'email' => $email,
-                'comment' => $comment
+                'comment' => $comment,
+                'countryData' => $countryData,
+                'codeData' => $codeData
             ], function ($messaje) use ($from) {
                 $messaje->to($from, 'GotoPeru')
                     ->subject('GotoPeru')

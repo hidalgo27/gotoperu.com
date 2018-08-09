@@ -1,7 +1,7 @@
 @extends('layouts.page.default')
 
 @section('content')
-    <section class="header-video d-none d-md-block">
+    <section class="header-video d-none d-md-block chat-mensajes">
         <div id="title" class="text-white">
             <div class="container-fluid">
                 <div class="row align-items-center mt-2">
@@ -131,6 +131,7 @@
     </section>
 
     @include('layouts.page.menu')
+
     <section class="d-md-none mt-3">
         <div class="container">
             <div class="row no-gutters">
@@ -199,6 +200,28 @@
             </div>
         </div>
     </section>
+
+
+    {{--<div id="aviso"><h2>Estás haciendo scroll sobre el contenido 2</h2></div>--}}
+
+    <div class="alert alert-g-yellow alert-dismissible show m-0 elemento rounded-0 p-1" role="alert" id="aviso">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <h5 class="m-0"><strong>Customizable Peru Tours </strong> by Experts</h5>
+                </div>
+                <div class="col">
+                    <a href="#Inquire" class="btn btn-g-yellow" onclick="ideal_trip()">My ideal trip will be</a>
+                </div>
+                <div class="col">
+                    <button type="button" class="close p-0" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="bg-white py-3 py-md-5">
         <div class="container">
             <div class="row d-none d-sm-inline-flex align-items-center">
