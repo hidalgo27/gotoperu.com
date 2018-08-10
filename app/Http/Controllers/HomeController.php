@@ -17,6 +17,8 @@ use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use DaveJamesMiller\Breadcrumbs\BreadcrumbsManager;
+use Illuminate\Support\ServiceProvider;
 
 class HomeController extends Controller
 {
