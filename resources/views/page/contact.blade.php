@@ -69,6 +69,17 @@
             </div>
         </div>
     </section>
+
+    <section class="bg-white m-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    {{Breadcrumbs::render('contact')}}
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="bg-white">
         <div class="container-fluid">
             <div class="row pt-5">

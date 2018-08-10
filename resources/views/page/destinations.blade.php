@@ -67,9 +67,19 @@
         </div>
     </section>
 
+    <section class="bg-white m-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    {{Breadcrumbs::render('destinations')}}
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="bg-white">
         <div class="container-fluid">
-            <div class="row pt-5">
+            <div class="row pt-4">
                 <div class="col">
                     <h1 class="font-weight-bold text-g-yellow text-center"><strong>PERU DESTINATIONS</strong></h1>
                     {{--<h1 class="text-secondary h4"><strong>SOUTH AMERICA TRAVEL DESTINATIONS</strong></h1>--}}

@@ -16249,6 +16249,10 @@ header {
   position: relative !important;
 }
 
+.svg-inline--fa.fa-w-14 {
+  width: auto !important;
+}
+
 /**
  * Variables declared here can be overridden by consuming applications, with
  * the help of the `!default` flag.

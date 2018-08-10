@@ -67,9 +67,22 @@
         </div>
     </section>
 
+    <section class="bg-white m-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    @php
+                        $rango = explode('-',$duration);
+                            @endphp
+                    {{Breadcrumbs::render('packages_rango', $rango[0], $rango[1])}}
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="bg-white">
         <div class="container-fluid">
-            <div class="row pt-5">
+            <div class="row pt-4">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>PERU TRAVEL FEATURED PACKAGES</strong></h1>
                     <p class="lead">our most popular <strong>Peru and South America itineraries</strong>, these <strong>packages</strong> could be used as a reference to customize your own trip. At <strong>GOTOPERU</strong> we specialize in crafting personalize experiences based on your preferences; we invited to review these programs to have glimpse of the most important destinations for instance MachuPicchu, Lake Titicaca, Nazca and the Amazon.</p>

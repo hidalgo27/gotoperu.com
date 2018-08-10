@@ -66,6 +66,17 @@
             </div>
         </div>
     </section>
+
+    <section class="bg-white m-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    {{Breadcrumbs::render('destinations_show', $ciudad)}}
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="bg-white py-2 pt-4"></div>
     <div class="sticky-top text-center py-2 bg-white">
         @foreach($destinos->where('pais',$pais)->sortBy('nombre') as $destino)

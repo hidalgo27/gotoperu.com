@@ -65,9 +65,20 @@
             </div>
         </div>
     </section>
+
+    <section class="bg-white m-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    {{Breadcrumbs::render('packages')}}
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="bg-white">
         <div class="container-fluid">
-            <div class="row pt-5">
+            <div class="row pt-4">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>PERU TRAVEL FEATURED PACKAGES</strong></h1>
                     <p class="lead m-0">our most popular <strong>Peru and South America itineraries</strong>, these <strong>packages</strong> could be used as a reference to customize your own trip. At <strong>GOTOPERU</strong> we specialize in crafting personalize experiences based on your preferences; we invited to review these programs to have glimpse of the most important destinations for instance MachuPicchu, Lake Titicaca, Nazca and the Amazon and even multi countries travel adventures involving <strong>Brasil, Ecuador , Argentina.</strong></p>

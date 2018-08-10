@@ -67,9 +67,19 @@
         </div>
     </section>
 
+    <section class="bg-white m-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    {{Breadcrumbs::render('about')}}
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="bg-white">
         <div class="container-fluid">
-            <div class="row pt-5">
+            <div class="row pt-4">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>PERU TRAVEL FEATURED PACKAGES</strong></h1>
                     <p class="lead">GotoPeru travel agency was founded to fulfill a personal dream: “Provide first class travel experience for the international community while generating job opportunities locally”. It is extremely gratifying to employ and reward individuals who extend effort, enthusiasm and commitment to sharing the best of Peru and South America with the rest of the world.</p>

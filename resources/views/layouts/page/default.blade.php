@@ -404,7 +404,7 @@
         changeYear: true
     });
 </script>
-<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0027/9680.js" async="async"></script>
+{{--<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0027/9680.js" async="async"></script>--}}
 
 </body>
 </html>

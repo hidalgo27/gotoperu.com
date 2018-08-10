@@ -120,7 +120,7 @@ Route::get('/testimonials', [
 ]);
 
 //faq
-Route::get('/faq', [
+Route::get('/frequently-asked-questions', [
     'uses' => 'HomeController@faq',
     'as' => 'faq_path',
 ]);

@@ -65,9 +65,20 @@
             </div>
         </div>
     </section>
+
+    <section class="bg-white m-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    {{Breadcrumbs::render('faq')}}
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="bg-white">
         <div class="container-fluid">
-            <div class="row pt-5">
+            <div class="row pt-4">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>Frequently Asked Questions</strong></h1>
                     <p class="lead">A trip to Peru is an exciting adventure! There are a number of common questions first-time travelers to Peru frequently ask.</p>

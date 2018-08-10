@@ -69,9 +69,19 @@
         </div>
     </section>
 
+    <section class="bg-white m-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    {{Breadcrumbs::render('hotels')}}
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="bg-white">
         <div class="container-fluid">
-            <div class="row pt-5 pb-2">
+            <div class="row pt-4 pb-2">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>HOTELS</strong></h1>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
