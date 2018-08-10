@@ -71,7 +71,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    {{Breadcrumbs::render('destinations')}}
+                    {{\Breadcrumbs::render('destinations')}}
                 </div>
             </div>
         </div>
