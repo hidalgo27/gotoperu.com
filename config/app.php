@@ -179,6 +179,7 @@ return [
         // other providers ommited
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         GoogleMaps\ServiceProvider\GoogleMapsServiceProvider::class,
+        DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
 
     ],
 
@@ -235,6 +236,7 @@ return [
         // or
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
         'GoogleMaps' => GoogleMaps\Facade\GoogleMapsFacade::class,
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::class,
 
     ],
 
