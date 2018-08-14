@@ -832,3 +832,37 @@ $slide-overlay-opacity: 0.6;
 .svg-inline--fa.fa-w-14{
   width: auto !important;
 }
+.card_review{
+  position: relative;
+  background: #e9f0fa;
+  padding: 10px 10px 10px 14px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 0 #cce1ff;
+  box-shadow: 0 1px 0 #cce1ff;
+  margin: 0 0 5px;
+  line-height: 1.35em;
+  word-wrap: break-word;
+  min-height: 30px;
+}
+.card_review:before{
+  content: "";
+  position: absolute;
+  bottom: -11px;
+  left: 16px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #cce1ff;
+}
+.card_review:after{
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 16px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #e9f0fa;
+}

@@ -42,7 +42,155 @@
         </div>
         <div class="content-header">
             <div class="container-fluid">
-                <div class="row content-header-row align-items-center justify-content-end no-gutters">
+                <div class="row content-header-row align-items-center justify-content-between no-gutters">
+                    <div class="col-2">
+                        <div class="card_review_title card p-2 bg-info mb-1">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <b class="m-0 p-0 text-white"><span class="h5">Excelente</span> <a href="#" class="d-block small text-g-dark" data-toggle="modal" data-target="#card_review">22 comments</a></b>
+                                </div>
+                                <div class="col">
+                                    <span class="badge badge-g-dark w-100"><b class="h1">9.9</b>
+                                        <small class="d-block text-g-yellow">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="card_review" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        {{--<div class="modal-header">--}}
+                                            {{--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
+                                            {{--<button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+                                                {{--<span aria-hidden="true">&times;</span>--}}
+                                            {{--</button>--}}
+                                        {{--</div>--}}
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="card p-3 bg-light mb-3">
+                                                        <h4>Comentarios 100% auténticos</h4>
+                                                        <small>Clientes reales. Estancias reales. Opiniones reales.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <small class="font-italic"><i class="fas fa-user-circle"></i> Tania | <span class="font-weight-bold">Peru</span></small>
+                                                    <span class="d-block text-g-yellow">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="col">
+                                                    <i class="fa fa-quote-left"></i>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi cum dolore eveniet iure libero maiores molestiae, officiis quia vel. Consectetur, dolorem dolorum exercitationem magnam modi similique? Distinctio, quo repellendus?
+                                                    <i class="fa fa-quote-right"></i>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <small class="font-italic"><i class="fas fa-user-circle"></i> Tania | <span class="font-weight-bold">Peru</span></small>
+                                                    <span class="d-block text-g-yellow">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="col">
+                                                    <i class="fa fa-quote-left"></i>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi cum dolore eveniet iure libero maiores molestiae, officiis quia vel. Consectetur, dolorem dolorum exercitationem magnam modi similique? Distinctio, quo repellendus?
+                                                    <i class="fa fa-quote-right"></i>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <small class="font-italic"><i class="fas fa-user-circle"></i> Tania | <span class="font-weight-bold">Peru</span></small>
+                                                    <span class="d-block text-g-yellow">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="col">
+                                                    <i class="fa fa-quote-left"></i>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi cum dolore eveniet iure libero maiores molestiae, officiis quia vel. Consectetur, dolorem dolorum exercitationem magnam modi similique? Distinctio, quo repellendus?
+                                                    <i class="fa fa-quote-right"></i>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <small class="font-italic"><i class="fas fa-user-circle"></i> Tania | <span class="font-weight-bold">Peru</span></small>
+                                                    <span class="d-block text-g-yellow">
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="col">
+                                                    <i class="fa fa-quote-left"></i>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi cum dolore eveniet iure libero maiores molestiae, officiis quia vel. Consectetur, dolorem dolorum exercitationem magnam modi similique? Distinctio, quo repellendus?
+                                                    <i class="fa fa-quote-right"></i>
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <div class="row justify-content-end">
+                                                <div class="col-4">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
+                                                                <img src="{{asset('images/icons/facebook.png')}}" alt="" class="img-fluid">
+                                                            </a>
+                                                        </div>
+                                                        <div class="col">
+                                                            <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
+                                                                <img src="{{asset('images/icons/twitter.png')}}" alt="" class="img-fluid">
+                                                            </a>
+                                                        </div>
+                                                        <div class="col">
+                                                            <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
+                                                                <img src="{{asset('images/icons/instagram.png')}}" alt="" class="img-fluid">
+                                                            </a>
+                                                        </div>
+                                                        <div class="col">
+                                                            <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
+                                                                <img src="{{asset('images/icons/youtube.png')}}" alt="" class="img-fluid">
+                                                            </a>
+                                                        </div>
+                                                        <div class="col">
+                                                            <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
+                                                                <img src="{{asset('images/icons/google-plus.png')}}" alt="" class="img-fluid">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="card_review">
+                            <p class="m-0">“Very comfortable, spacious and clean room. Wonderful large garden with lots of flowering plants that attract many birds, including some beautiful hummingbirds to sit and watch while enjoying the view of the mountains beyond.”</p>
+                        </div>
+                        <div class="card_review_autor">
+                            <small class="text-white font-italic">Tania | <span class="font-weight-bold">Peru</span></small>
+                        </div>
+                    </div>
                     <div class="col col-md-6 col-lg-4 col-xl-4">
                         <h2 class="text-g-yellow p-2">Air & Land</h2>
 
@@ -162,7 +310,13 @@
                             <div class="swiper-container swiper-container-complete">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
+                                        <img src="{{asset('images/destinations/mapi.jpg')}}" alt="" class="w-100">
+                                    </div>
+                                    <div class="swiper-slide">
                                         <img src="{{asset('images/destinations/lima.jpg')}}" alt="" class="w-100">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="{{asset('images/destinations/familia.jpg')}}" alt="" class="w-100">
                                     </div>
                                     <div class="swiper-slide">
                                         <img src="{{asset('images/destinations/cusco.jpg')}}" alt="" class="w-100">
@@ -193,7 +347,7 @@
                         <li class="nav-item">
                             <a class="nav-link" id="how-tab" data-toggle="tab" href="#how" role="tab" aria-controls="how" aria-selected="false">How to Book</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item small">
                             <a class="nav-link" id="know-tab" data-toggle="tab" href="#know" role="tab" aria-controls="know" aria-selected="false">Know Before You Go</a>
                         </li>
                     </ul>
