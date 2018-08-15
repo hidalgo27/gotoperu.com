@@ -47,12 +47,11 @@
                         <div class="card_review_title card p-2 bg-info mb-1">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <b class="m-0 p-0 text-white"><span class="h5">Excelente</span> <a href="#" class="d-block small text-g-dark" data-toggle="modal" data-target="#card_review">22 comments</a></b>
+                                    <b class="m-0 p-0 text-white"><span class="h5">Excellent</span> <a href="#" class="d-block small text-g-dark" data-toggle="modal" data-target="#card_review">5 comments</a></b>
                                 </div>
                                 <div class="col">
-                                    <span class="badge badge-g-dark w-100"><b class="h1">9.9</b>
+                                    <span class="badge badge-g-dark w-100"><b class="h1">8.9</b>
                                         <small class="d-block text-g-yellow">
-                                            <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -77,14 +76,14 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="card p-3 bg-light mb-3">
-                                                        <h4>Comentarios 100% auténticos</h4>
-                                                        <small>Clientes reales. Estancias reales. Opiniones reales.</small>
+                                                        <h4>Our Reviews</h4>
+                                                        <small>Leave your comment too.</small>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-3">
-                                                    <small class="font-italic"><i class="fas fa-user-circle"></i> Tania | <span class="font-weight-bold">Peru</span></small>
+                                                    <small class="font-italic"><i class="fas fa-user-circle"></i> Jeff G. X2 | <span class="font-weight-bold">New York Feb 2018</span></small>
                                                     <span class="d-block text-g-yellow">
                                                         <i class="fas fa-star"></i>
                                                         <i class="fas fa-star"></i>
@@ -94,30 +93,34 @@
                                                 </div>
                                                 <div class="col">
                                                     <i class="fa fa-quote-left"></i>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi cum dolore eveniet iure libero maiores molestiae, officiis quia vel. Consectetur, dolorem dolorum exercitationem magnam modi similique? Distinctio, quo repellendus?
+                                                    Our tour guide Franklin, was so knowledgeable, there was nothing we asked that he couldn't talk at length about! He was very organized and did an excellent job accommodating each and every traveller. Also in Lima our tour conductor Ivan. All of the hotels were in ideal locations in city centers, which made it easy to explore on our own without having to take a cab.
                                                     <i class="fa fa-quote-right"></i>
                                                 </div>
                                             </div>
                                             <hr>
                                             <div class="row">
                                                 <div class="col-3">
-                                                    <small class="font-italic"><i class="fas fa-user-circle"></i> Tania | <span class="font-weight-bold">Peru</span></small>
+                                                    <small class="font-italic"><i class="fas fa-user-circle"></i> Mary J. x 4 | <span class="font-weight-bold">Chicago, Dec 2017</span></small>
                                                     <span class="d-block text-g-yellow">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
                                                         <i class="fas fa-star"></i>
                                                         <i class="fas fa-star"></i>
                                                     </span>
                                                 </div>
                                                 <div class="col">
                                                     <i class="fa fa-quote-left"></i>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi cum dolore eveniet iure libero maiores molestiae, officiis quia vel. Consectetur, dolorem dolorum exercitationem magnam modi similique? Distinctio, quo repellendus?
+                                                    I went here as part of an escorted GotoPeru tour. MachuPicchu  is an awesome place... Words and photos do not do this place justice, it has to be seen to be believed.  No matter how much you see pictures, learn about it ahead of time, read reviews, nothing compares to actually climbing Machu Picchu, seeing it appear out of the mist on a foggy morning! And then, later, when it is clear - Wow!
                                                     <i class="fa fa-quote-right"></i>
                                                 </div>
                                             </div>
                                             <hr>
                                             <div class="row">
                                                 <div class="col-3">
-                                                    <small class="font-italic"><i class="fas fa-user-circle"></i> Tania | <span class="font-weight-bold">Peru</span></small>
+                                                    <small class="font-italic"><i class="fas fa-user-circle"></i> John Anderson x3 | <span class="font-weight-bold">Austin,TX   Set 2017</span></small>
                                                     <span class="d-block text-g-yellow">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
                                                         <i class="fas fa-star"></i>
                                                         <i class="fas fa-star"></i>
                                                         <i class="fas fa-star"></i>
@@ -125,21 +128,24 @@
                                                 </div>
                                                 <div class="col">
                                                     <i class="fa fa-quote-left"></i>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi cum dolore eveniet iure libero maiores molestiae, officiis quia vel. Consectetur, dolorem dolorum exercitationem magnam modi similique? Distinctio, quo repellendus?
+                                                    We went through Gotoperu which was the first tour we’ve ever taken. We usually travel on our own. For a vacation like Peru which has a lot of area to cover and poor transportation, it was worth it. They took care of everything and the tour guides were very knowledgeable and even funny. If you have any questions at all, ask them. The tour was very safe as well if you stay with the tour. Venture off on your own risk just like anywhere else in the world.
                                                     <i class="fa fa-quote-right"></i>
                                                 </div>
                                             </div>
                                             <hr>
                                             <div class="row">
                                                 <div class="col-3">
-                                                    <small class="font-italic"><i class="fas fa-user-circle"></i> Tania | <span class="font-weight-bold">Peru</span></small>
+                                                    <small class="font-italic"><i class="fas fa-user-circle"></i> Richard Earls x 2 | <span class="font-weight-bold">Arlington, VA   Jan 2018</span></small>
                                                     <span class="d-block text-g-yellow">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
                                                         <i class="fas fa-star"></i>
                                                     </span>
                                                 </div>
                                                 <div class="col">
                                                     <i class="fa fa-quote-left"></i>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi cum dolore eveniet iure libero maiores molestiae, officiis quia vel. Consectetur, dolorem dolorum exercitationem magnam modi similique? Distinctio, quo repellendus?
+                                                    Machu Picchu was more than I expected... bigger, more inspiring, breathtaking!! Do have a professional guide - it really helps. Then go back and wander on your own. If you can't manage the hike to the Sun Gate or Montana MachuPicchu, make it to the Guard House for classic photo shots... Although rules say no walking sticks, lots of people had them. Before exiting, be sure to stamp your passport for Machu Picchu! You do it yourself.
                                                     <i class="fa fa-quote-right"></i>
                                                 </div>
                                             </div>
@@ -185,10 +191,10 @@
 
                         </div>
                         <div class="card_review">
-                            <p class="m-0">“Very comfortable, spacious and clean room. Wonderful large garden with lots of flowering plants that attract many birds, including some beautiful hummingbirds to sit and watch while enjoying the view of the mountains beyond.”</p>
+                            <p class="m-0">“Our guide Franklin was not only knowledgeable but absolutely patient and thorough with her descriptions, narrative and instructions. Machu Picchu is beyond words..you just simply must experience it..Thanks again to Gotoperu!”</p>
                         </div>
                         <div class="card_review_autor">
-                            <small class="text-white font-italic">Tania | <span class="font-weight-bold">Peru</span></small>
+                            <small class="text-white font-italic">Nataly R. | <span class="font-weight-bold">Los Angeles  Oct 2017</span></small>
                         </div>
                     </div>
                     <div class="col col-md-6 col-lg-4 col-xl-4">
