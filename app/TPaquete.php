@@ -28,6 +28,11 @@ class TPaquete extends Model
         return $this->hasMany(TPaqueteCategoria::class, 'idpaquetes');
     }
 
+    public function paquetes_dificultad()
+    {
+        return $this->hasMany(TPaqueteDificultad::class, 'idpaquetes');
+    }
+
     public function paquetes_incluye_iconos()
     {
         return $this->hasMany(TPaqueteIncluyeIcono::class, 'idpaquetes');

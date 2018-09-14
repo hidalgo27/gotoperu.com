@@ -157,9 +157,19 @@
 <script src="{{asset("js/app.js")}}"></script>
 <script src="{{asset("js/font-awesome.js")}}"></script>
 <script src="{{asset("js/plugins.js")}}"></script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf1RN8KKGNdS-iEarIgXpaqa-khw7EmZI&callback=initMap">
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        slidesPerView: 'auto',
+        freeMode: true,
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        mousewheel: true,
+    });
 </script>
+
 @stack('scripts')
 <script type="application/ld+json">
 {
@@ -181,6 +191,7 @@
 
 
 </script>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
 <script>
     $("#h_tel").intlTelInput({
         allowDropdown: true,

@@ -510,7 +510,7 @@
                                 <div class="form-group">
                                     <label for="airport" class="h5 text-secondary">Departure Airport: <small>(MIA, LAX, JFK, IAD)</small></label>
                                     <select class="form-control form-control-lg" id="airport" name="txtairport">
-                                        <option>Select...</option>
+                                        <option value="0">Select...</option>
                                             @foreach($airport as $airports)
                                                 <option value="{{$airports->id}}">{{ucwords(strtolower($airports->aeropuerto))}} <small>({{strtoupper($airports->codigo)}})</small></option>
                                             @endforeach~
@@ -520,7 +520,7 @@
                                 <div class="form-group">
                                     <label for="airport" class="h5 text-secondary">Departure DATE:</label>
                                     <select class="form-control form-control-lg" id="price_airport" name="txtdate">
-                                        <option>Select...</option>
+                                        <option value="0">Select...</option>
                                     </select>
                                 </div>
                                 <div class="row my-5">
@@ -658,19 +658,24 @@
                     }
                 });
 
-                $("#p_price_b").attr("disabled", true);
+                // $("#p_price_b").attr("disabled", true);
 
-                var s_airport = $('#airport').val();
-                var s_price_airport = $('#price_airport').val();
+                var s_airport = $('#airport option:selected').val();
+                var s_price_airport = $('#price_airport option:selected').val();
 
+                if (s_airport){
+                    var sendMail = "true";
+                }
 
-
-                if (s_airport.length == 0 ){
+                if (s_airport == 0){
                     $('#airport').css("border-bottom", "2px solid #FF0000");
                     var sendMail = "false";
                 }
 
-                var sendMail = "true";
+                if (s_price_airport == 0){
+                    $('#price_airport').css("border-bottom", "2px solid #FF0000");
+                    var sendMail = "false";
+                }
 
                 if(sendMail == "true"){
                     var datos = {

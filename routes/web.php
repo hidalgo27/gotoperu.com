@@ -42,6 +42,11 @@ Route::get('/packages/{title}/{days}-days-tours', [
     'as' => 'itinerary_path',
 ]);
 
+Route::get('/packages/{title}/{days}-days-tours/check-availability', [
+    'uses' => 'HomeController@itinerary',
+    'as' => 'itinerary_path',
+]);
+
 //complete
 Route::get('/packages/air-land/peru-machu-picchu-from-usa/7-days-tours', [
     'uses' => 'HomeController@complete',
@@ -179,4 +184,10 @@ Route::get('/hotels', [
 Route::get('/join-our-team', [
     'uses' => 'HomeController@join',
     'as' => 'join_path',
+]);
+
+//gallery
+Route::get('/gallery', [
+    'uses' => 'HomeController@gallery',
+    'as' => 'gallery_path',
 ]);

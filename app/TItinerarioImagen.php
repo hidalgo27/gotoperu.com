@@ -9,6 +9,6 @@ class TItinerarioImagen extends Model
     protected $table = "titinerarioimagen";
     public function itinerario()
     {
-        return $this->belongsTo(TItinerario::class, 'idpaquetes');
+        return $this->belongsTo(TItinerario::class, 'iditinerario');
     }
 }

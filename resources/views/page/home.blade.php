@@ -18,10 +18,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md col-lg-auto text-right sticky-top">
-                        <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
-                        <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
-                        <!-- Button trigger modal -->
+                    <div class="col-md col-lg-auto text-right">
+                        <div class="row align-items-center">
+                            <div class="col">
+                            <a href="tel:+2029963000" class="mx-3 text-white">(202) 996-3000</a>
+                            <a href="#Inquire" class="btn btn-g-yellow btn-sm font-weight-bold">My ideal trip will be</a>
+                            <a href="#" class="mx-3 text-white"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars fa-2x pt-2"></i></a>
+                            <!-- Button trigger modal -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,7 +104,57 @@
             </div>
             {{--<div class="header-expedia text-white p-3">As local travel operators our programs start daily</div>--}}
             <div class="header-expedia p-3 w-100 text-center d-none d-lg-inline">
-                <p class="text-white h6"><span class="bg-g-green p-1 rounded-circle px-3 text-white">1</span> Share your travel plans <span class="bg-g-yellow p-1 rounded-circle px-3 text-white ml-5">2</span> Receive a customize itinerary and quote <span class="bg-g-dark p-1 rounded-circle px-3 text-white ml-5">3</span> Discover the best of Peru with GOTOPERU</p>
+                {{--<p class="text-white h6"><span class="bg-g-green p-1 rounded-circle px-3 text-white">1</span> Share your travel plans <span class="bg-g-yellow p-1 rounded-circle px-3 text-white ml-5">2</span> Receive a customize itinerary and quote <span class="bg-g-dark p-1 rounded-circle px-3 text-white ml-5">3</span> Discover the best of Peru with GOTOPERU</p>--}}
+                <div class="row">
+                    <div class="col">
+                        <a href="" class="btn btn-block btn-lg btn-g-green">
+                            Tours & Activities
+                            <hr class="my-2">
+                            <span class="d-block">
+                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Guide">
+                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Entrances">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="{{route('packages_path')}}" class="btn btn-block btn-lg btn-g-yellow">
+                            Land Packages
+                            <hr class="my-2">
+                            <span class="d-block">
+                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Guide">
+                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Hotels">
+                                <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Trains">
+                                <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Assistances">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="{{route('complete_path')}}" class="btn btn-block btn-lg btn-g-dark">
+                            Air + Land Packages
+                            <hr class="my-2">
+                            <span class="d-block">
+                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Guide">
+                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Hotels">
+                                <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Trains">
+                                <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Assistances">
+                                <img src="{{asset('images/icons/include/flight.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Flights">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#Inquire" class="btn btn-block btn-lg btn-secondary">
+                            Customize
+                            <hr class="my-2">
+                            We will design together...
+
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="content-header">
@@ -112,9 +167,27 @@
                             <div class="">
                                 <div class="content-video-1 text-white">
                                     {{--<img src="images/travel/video-1.jpg" alt="video">--}}
-                                    <h3 class="font-weight-light">Lets design together your next Peru adventure</h3>
-                                    <a href="#Inquire" class="btn btn-g-yellow btn-lg h2 font-weight-bold mt-3">My ideal trip will be</a>
-                                    <a href="{{route('complete_path')}}" class="btn btn-success btn-lg h2 font-weight-bold mt-3 mx-2">7 days with Airfare from $1399</a>
+                                    <h2 class="font-weight-light">Top Recommended Travel Company to Machu Picchu & Peru</h2>
+                                    <div class="row justify-content-center">
+                                        <div class="col-6">
+                                            <i class="fa fa-quote-left"></i>
+                                            <span class="font-weight-light small">Our tour guide Franklin, was so knowledgeable, there was nothing we asked that he couldn't talk at length about! He was very organized and did an excellent job accommodating each and every traveller. Also in Lima our tour conductor Ivan. All of the hotels were in ideal locations in city centers, which made it easy to explore on our own without having to take a cab.</span>
+                                            <i class="fa fa-quote-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-6">
+                                            <small class="font-italic"><i class="fas fa-user-circle"></i> Jeff G. X2 | <span class="font-weight-bold">New York Feb 2018</span></small>
+                                            <span class="d-block text-g-yellow">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    {{--<a href="#Inquire" class="btn btn-g-yellow btn-lg h2 font-weight-bold mt-3">My ideal trip will be</a>--}}
+                                    {{--<a href="{{route('complete_path')}}" class="btn btn-success btn-lg h2 font-weight-bold mt-3 mx-2">7 days with Airfare from $1399</a>--}}
                                     {{--<div class="content-video-btn-1 mt-4">--}}
                                         {{--<a href="https://www.youtube.com/watch?v=pNe-NtXIULs"  class="html5lightbox text-white" title=""><i class="fa fa-play-circle fa-4x"></i></a>--}}
                                     {{--</div>--}}
@@ -130,7 +203,7 @@
         </div>
     </section>
 
-    @include('layouts.page.menu')
+{{--    @include('layouts.page.menu')--}}
 
     <section class="d-md-none mt-3">
         <div class="container">
@@ -156,7 +229,7 @@
             </div>
         </div>
     </section>
-    <section class="bg-light py-3 d-none d-lg-block">
+    <section class="bg-light py-3 d-none d-lg-block contenido2">
         <div class="container-fluid">
             <div class="col">
                 <div class="row"><!--.row -->
@@ -204,14 +277,14 @@
 
     {{--<div id="aviso"><h2>Estás haciendo scroll sobre el contenido 2</h2></div>--}}
 
-    <div class="alert alert-g-yellow alert-dismissible show m-0 elemento rounded-0 p-1" role="alert" id="aviso">
+    <div class="alert alert-primary alert-dismissible show m-0 elemento rounded-0 p-1" role="alert" id="aviso">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-auto">
                     <h5 class="m-0"><strong>Customizable Peru Tours </strong> by Experts</h5>
                 </div>
                 <div class="col">
-                    <a href="#Inquire" class="btn btn-g-yellow" onclick="ideal_trip()">My ideal trip will be</a>
+                    <a href="#Inquire" class="btn btn-sm btn-g-yellow font-weight-bold" onclick="ideal_trip()">My ideal trip will be</a>
                 </div>
                 <div class="col">
                     <button type="button" class="close p-0" data-dismiss="alert" aria-label="Close">
@@ -249,91 +322,702 @@
         </div>
     </section>
 
-    <section class="bg-light d-none d-md-flex">
+
+
+    <section class="bg-light d-none">
         <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
-                    <h2 class="text-secondary h4"><strong>DEAL OF THE MONTH</strong></h2>
+                    <h2 class="text-secondary h4"><strong>TOURS AND ACTIVITIES</strong></h2>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     {{--<p class="h4 font-weight-light">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>Customized Travel Packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>Machu Picchu</strong> and the rest of our  homeland… Peru!</p>--}}
-                </div>
-            </div>
 
-            <div class="row no-gutters">
-                <div class="col-9 col-md-8 col-xl-9 d-flex">
-                    <div class="container p-0">
-
-                        <div class="slider-containers">
-
-                            <!--effect #1 -->
-                            <div class="slider-container">
-                                <div class="flexbox-slider flexbox-slider-1">
-                                    <div class="flexbox-slide">
-                                        <img src="{{asset('images/banners/home/cusco.jpg')}}" alt="Cusco">
-                                        <div class="text-block">
-                                            <h3>Cusco</h3>
-                                            {{--<div class="text">--}}
-                                                {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
-                                            {{--</div>--}}
-                                        </div>
-                                    </div>
-                                    <div class="flexbox-slide">
-                                        <img src="{{asset('images/banners/home/lima.jpg')}}" alt="Lima">
-                                        <div class="text-block">
-                                            <h3>Lima</h3>
-                                            {{--<div class="text">--}}
-                                                {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
-                                            {{--</div>--}}
-                                        </div>
-                                    </div>
-                                    <div class="flexbox-slide">
-                                        <img src="{{asset('images/banners/home/machupicchu.jpg')}}" alt="Machu Picchu">
-                                        <div class="text-block">
-                                            <h3>Machu Picchu</h3>
-                                            {{--<div class="text">--}}
-                                                {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
-                                            {{--</div>--}}
-                                        </div>
-                                    </div>
-                                    <div class="flexbox-slide">
-                                        <img src="{{asset('images/banners/home/titicaca.jpg')}}" alt="Titicaca">
-                                        <div class="text-block">
-                                            <h3>Lake Titicaca</h3>
-                                            {{--<div class="text">--}}
-                                                {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
-                                            {{--</div>--}}
-                                        </div>
-                                    </div>
-                                    <div class="flexbox-slide">
-                                        <img src="{{asset('images/banners/home/valle.jpg')}}" alt="Sacred Valley">
-                                        <div class="text-block">
-                                            <h3>Sacred Valley</h3>
-                                            {{--<div class="text">--}}
-                                                {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
-                                            {{--</div>--}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md-4 col-xl-3 d-flex align-items-center bg-g-dark">
-                    <div class="text-white p-3">
-                        <h3 class="h1 font-weight-bold text-g-yellow">10 DAYS</h3>
-                        <p class="lead">Cusco, Lima, Machu Picchu, Lake Titicaca, Sacred Valley.</p>
-                        <small class="d-block text-g-yellow py-2">Hotels, tours entrances, trains, breakfast, transfer</small>
-                        <p class="h1 text-right my-3"><sup>from</sup> $1449</p>
-                        <a href="packages/expedition-to-peru/10-days-tours" class="btn btn-g-yellow btn-block">View More</a>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="bg-light d-none">
+        <div class="container">
+            <div class="row">
+
+                <div class="col col-xs-12 d-md-none d-lg-inline col-md-8 col-lg-12 col-xl-8">
+                    <div class="row">
+                        @foreach($paquetes->where('estado', 1)->sortBy('duracion')->take(4) as $paquete)
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
+                                <div class="card mb-3">
+                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
+                                        <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}">
+
+                                        <div class="card-img-overlay p-0">
+                                            <div class="row justify-content-between no-gutters">
+                                                <div class="col col-sm-7 p-2 bg-rgba-dark-3">
+                                                    <h5 class="m-0 text-white">{{$paquete->duracion}} Days</h5>
+                                                </div>
+                                                <div class="col col-sm-5 bg-g-dark py-2 text-white text-center">
+                                                    @foreach($paquete->precio_paquetes as $precio)
+                                                        @if($precio->estrellas == 2)
+                                                            @if($precio->precio_d > 0)
+                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
+                                                            @else
+                                                                <span class="text-danger">Inquire</span>
+                                                            @endif
+                                                        @endif
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-end no-gutters">
+                                                <div class="col text-right">
+                                                    <div class="px-3 small">
+                                                        <a href="#" class="text-g-yellow" data-toggle="modal" data-target="#modal-{{$paquete}}">
+                                                            <span class="text-white">5 comments</span>
+                                                            <span class="text-secondary">|</span>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                        </a>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="modal-{{$paquete}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg" role="document">
+                                                            <div class="modal-content">
+
+                                                                <div class="modal-body text-left">
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                            <div class="card p-3 bg-light mb-3">
+                                                                                <h4>Our Reviews</h4>
+                                                                                <small>Leave your comment too.</small>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-3">
+                                                                            <small class="font-italic"><i class="fas fa-user-circle"></i> Jeff G. X2 | <span class="font-weight-bold">New York Feb 2018</span></small>
+                                                                            <span class="d-block text-g-yellow">
+                                                                                    <i class="fas fa-star"></i>
+                                                                                    <i class="fas fa-star"></i>
+                                                                                    <i class="fas fa-star"></i>
+                                                                                    <i class="fas fa-star"></i>
+                                                                                </span>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <i class="fa fa-quote-left"></i>
+                                                                            Our tour guide Franklin, was so knowledgeable, there was nothing we asked that he couldn't talk at length about! He was very organized and did an excellent job accommodating each and every traveller. Also in Lima our tour conductor Ivan. All of the hotels were in ideal locations in city centers, which made it easy to explore on our own without having to take a cab.
+                                                                            <i class="fa fa-quote-right"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div class="row">
+                                                                        <div class="col-3">
+                                                                            <small class="font-italic"><i class="fas fa-user-circle"></i> Jeff G. X2 | <span class="font-weight-bold">New York Feb 2018</span></small>
+                                                                            <span class="d-block text-g-yellow">
+                                                                                    <i class="fas fa-star"></i>
+                                                                                    <i class="fas fa-star"></i>
+                                                                                    <i class="fas fa-star"></i>
+                                                                                    <i class="fas fa-star"></i>
+                                                                                </span>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <i class="fa fa-quote-left"></i>
+                                                                            Our tour guide Franklin, was so knowledgeable, there was nothing we asked that he couldn't talk at length about! He was very organized and did an excellent job accommodating each and every traveller. Also in Lima our tour conductor Ivan. All of the hotels were in ideal locations in city centers, which made it easy to explore on our own without having to take a cab.
+                                                                            <i class="fa fa-quote-right"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div class="row pb-4">
+                                                                        <div class="col text-right">
+                                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="btn-link font-weight-normal">All Opinions <i class="fa fa-chevron-right"></i></a>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row justify-content-end">
+                                                                        <div class="col-4">
+                                                                            <div class="row">
+                                                                                <div class="col">
+                                                                                    <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
+                                                                                        <img src="{{asset('images/icons/facebook.png')}}" alt="" class="img-fluid">
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="col">
+                                                                                    <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
+                                                                                        <img src="{{asset('images/icons/twitter.png')}}" alt="" class="img-fluid">
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="col">
+                                                                                    <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
+                                                                                        <img src="{{asset('images/icons/instagram.png')}}" alt="" class="img-fluid">
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="col">
+                                                                                    <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
+                                                                                        <img src="{{asset('images/icons/youtube.png')}}" alt="" class="img-fluid">
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="col">
+                                                                                    <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
+                                                                                        <img src="{{asset('images/icons/google-plus.png')}}" alt="" class="img-fluid">
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{--<p class="text-white m-0">{{$paquete->duracion}} days <span class="text-g-yellow font-weight-bold float-right bg-danger">--}}
+                                            {{--<small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small>--}}
+                                            {{--</span></p>--}}
+                                        </div>
+                                        <div class="card-img-overlay-packages bg-rgba-dark-1">
+                                            <h5 class="card-title text-white m-0">{{ucwords(strtolower($paquete->titulo))}}</h5>
+                                            @foreach($dificultad->where('idpaquetes', $paquete->id) as $dificultades)
+                                                <small class="text-success font-weight-light" data-toggle="tooltip" data-placement="bottom" title="{{$dificultades->dificultad->nombre}}"><i class="fas fa-signal"></i></small>
+                                            @endforeach
+                                            {{--<h2 class="card-title text-white m-0 h5"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>--}}
+                                            <small class="text-white font-weight-light">
+                                                <i class="fa fa-map-marker-alt"></i>
+                                                @php
+                                                    $i = 1;
+                                                    $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
+                                                @endphp
+                                                @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
+                                                    @if(isset($paquete_destino->destinos->nombre))
+                                                        {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
+                                                        @php $i++; @endphp
+                                                    @endif
+                                                @endforeach
+                                            </small>
+                                        </div>
+                                    </a>
+                                    {{--<div class="card-body">--}}
+                                    {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
+                                    {{--<p class="card-text">--}}
+                                    {{----}}
+                                    {{--</p>--}}
+                                    {{--</div>--}}
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="col-12 d-sm-block col-sm-12 d-md-inline col-md-12 col-lg-12 col-xl-4">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="list-group position-relative">
+                                    @foreach($paquetes->random(5) as $paquete)
+                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="list-group-item list-group-item-action">
+                                            <div class="media">
+                                                <img src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{(strtolower($paquete->titulo))}}">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0"><span class="text-g-yellow">{{$paquete->duracion}} Days</span> {{ucwords(strtolower($paquete->titulo))}}</h5>
+                                                    <small>
+                                                        <i class="fa fa-map-marker-alt"></i>
+                                                        @php
+                                                            $i = 1;
+                                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
+                                                        @endphp
+                                                        @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
+                                                            @if(isset($paquete_destino->destinos->nombre))
+                                                                {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
+                                                                @php $i++; @endphp
+                                                            @endif
+                                                        @endforeach
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    @endforeach
+                                    <div class="gradient-destinations"></div>
+                                    {{--<div class="row">--}}
+                                    {{--<div class="col text-right pt-4">--}}
+                                    {{--<a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>--}}
+                                    {{--</div>--}}
+                                    {{--</div>--}}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add Scroll Bar -->
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row pb-4">
+                <div class="col text-right">
+                    <a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-white">
+        <div class="container">
+            <div class="row pt-5 pb-2">
+                <div class="col">
+                    <h1 class="text-secondary h4"><strong>PERU TRAVEL PACKAGES</strong> <small class="font-italic text-primary font-weight-bold">(Land packges)</small></h1>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
+                    {{--<p class="h4 font-weight-light">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>Customized Travel Packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>Machu Picchu</strong> and the rest of our  homeland… Peru!</p>--}}
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 d-sm-block col-sm-12 d-md-inline col-md-12 col-lg-12 col-xl-4">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="list-group position-relative">
+                                    @foreach($paquetes->random(5) as $paquete)
+                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="list-group-item list-group-item-action">
+                                            <div class="media">
+                                                <img src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{(strtolower($paquete->titulo))}}">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0"><span class="text-g-yellow">{{$paquete->duracion}} Days</span> {{ucwords(strtolower($paquete->titulo))}}</h5>
+                                                    <small>
+                                                        <i class="fa fa-map-marker-alt"></i>
+                                                        @php
+                                                            $i = 1;
+                                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
+                                                        @endphp
+                                                        @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
+                                                            @if(isset($paquete_destino->destinos->nombre))
+                                                                {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
+                                                                @php $i++; @endphp
+                                                            @endif
+                                                        @endforeach
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    @endforeach
+                                    <div class="gradient-destinations"></div>
+                                    {{--<div class="row">--}}
+                                    {{--<div class="col text-right pt-4">--}}
+                                    {{--<a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>--}}
+                                    {{--</div>--}}
+                                    {{--</div>--}}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add Scroll Bar -->
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+
+                <div class="col col-xs-12 d-md-none d-lg-inline col-md-8 col-lg-12 col-xl-8">
+                    <div class="row">
+                        @foreach($paquetes->where('estado', 1)->sortBy('duracion')->take(4) as $paquete)
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
+                                <div class="card mb-3">
+                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
+                                        <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}">
+
+                                        <div class="card-img-overlay p-0">
+                                            <div class="row justify-content-between no-gutters">
+                                                <div class="col col-sm-7 p-2 bg-rgba-dark-3">
+                                                    <h5 class="m-0 text-white">{{$paquete->duracion}} Days</h5>
+                                                </div>
+                                                <div class="col col-sm-5 bg-g-dark py-2 text-white text-center">
+                                                    @foreach($paquete->precio_paquetes as $precio)
+                                                        @if($precio->estrellas == 2)
+                                                            @if($precio->precio_d > 0)
+                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
+                                                            @else
+                                                                <span class="text-danger">Inquire</span>
+                                                            @endif
+                                                        @endif
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-end no-gutters">
+                                                <div class="col text-right">
+                                                    <div class="px-3 small">
+                                                        <a href="#" class="text-g-yellow" data-toggle="modal" data-target="#modal-{{$paquete->id}}">
+                                                            @php $j = 0; $k = 0; @endphp
+                                                            @foreach($comentario->where('idpaquetes', $paquete->id) as $comment)
+                                                                @php
+                                                                    $k = $k + $comment->valoracion;
+                                                                    $j++;
+                                                                @endphp
+                                                            @endforeach
+
+                                                            @if($j > 0)
+                                                                <span class="text-white">{{$j}} comments</span>
+                                                                <span class="text-secondary">|</span>
+                                                                {{--<i class="fas fa-star"></i>--}}
+                                                                {{--<i class="fas fa-star"></i>--}}
+                                                                {{--<i class="fas fa-star"></i>--}}
+                                                                <span class="badge badge-g-yellow">{{$k/$j}} <i class="fas fa-star"></i></span>
+                                                            @endif
+                                                        </a>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="modal-{{$paquete->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg" role="document">
+                                                            <div class="modal-content">
+
+                                                                <div class="modal-body text-left">
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                            <div class="card p-3 bg-light mb-3">
+                                                                                <h4>Our Reviews</h4>
+                                                                                <small>Leave your comment too.</small>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    @foreach($comentario->where('idpaquetes', $paquete->id) as $comentarios)
+                                                                    <div class="row">
+                                                                        <div class="col-3">
+                                                                            <small class="font-italic"><i class="fas fa-user-circle"></i> {{$comentarios->usuario}} | <span class="font-weight-bold">{{$comentarios->ciudad}}</span></small>
+                                                                            <span class="d-block text-g-yellow">
+                                                                                @for ($i = 0; $i < $comentarios->valoracion; $i++)
+                                                                                    <i class="fas fa-star"></i>
+                                                                                @endfor
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <i class="fa fa-quote-left float-left mr-3"></i>
+                                                                            @php echo $comentarios->comentario; @endphp
+                                                                            <i class="fa fa-quote-right float-left"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+                                                                    @endforeach
+
+                                                                    <div class="row pb-4">
+                                                                        <div class="col text-right">
+                                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}#Reviews" class="btn-link font-weight-normal">All Opinions <i class="fa fa-chevron-right"></i></a>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row justify-content-end">
+                                                                        <div class="col-4">
+                                                                            <div class="row">
+                                                                                <div class="col">
+                                                                                    <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
+                                                                                        <img src="{{asset('images/icons/facebook.png')}}" alt="" class="img-fluid">
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="col">
+                                                                                    <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
+                                                                                        <img src="{{asset('images/icons/twitter.png')}}" alt="" class="img-fluid">
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="col">
+                                                                                    <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
+                                                                                        <img src="{{asset('images/icons/instagram.png')}}" alt="" class="img-fluid">
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="col">
+                                                                                    <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
+                                                                                        <img src="{{asset('images/icons/youtube.png')}}" alt="" class="img-fluid">
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="col">
+                                                                                    <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
+                                                                                        <img src="{{asset('images/icons/google-plus.png')}}" alt="" class="img-fluid">
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{--<p class="text-white m-0">{{$paquete->duracion}} days <span class="text-g-yellow font-weight-bold float-right bg-danger">--}}
+                                            {{--<small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small>--}}
+                                            {{--</span></p>--}}
+                                        </div>
+                                        <div class="card-img-overlay-packages bg-rgba-dark-1">
+                                            <h5 class="card-title text-white m-0">{{ucwords(strtolower($paquete->titulo))}}</h5>
+                                            @foreach($dificultad->where('idpaquetes', $paquete->id) as $dificultades)
+                                                <small class="text-success font-weight-light" data-toggle="tooltip" data-placement="bottom" title="{{$dificultades->dificultad->nombre}}"><i class="fas fa-signal"></i></small>
+                                            @endforeach
+                                            {{--<h2 class="card-title text-white m-0 h5"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>--}}
+                                            <small class="text-white font-weight-light">
+                                                <i class="fa fa-map-marker-alt"></i>
+                                                @php
+                                                    $i = 1;
+                                                    $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
+                                                @endphp
+                                                @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
+                                                    @if(isset($paquete_destino->destinos->nombre))
+                                                        {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
+                                                        @php $i++; @endphp
+                                                    @endif
+                                                @endforeach
+                                            </small>
+                                        </div>
+                                    </a>
+                                    {{--<div class="card-body">--}}
+                                    {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
+                                    {{--<p class="card-text">--}}
+                                    {{----}}
+                                    {{--</p>--}}
+                                    {{--</div>--}}
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row pb-4">
+                <div class="col text-right">
+                    <a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-light d-none d-md-flex">
+        <div class="container">
+            <div class="row pt-5 pb-2">
+                <div class="col">
+                    <h2 class="text-secondary h4"><strong>AIR + LAND PACKAGES</strong></h2>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
+                    {{--<p class="h4 font-weight-light">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>Customized Travel Packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>Machu Picchu</strong> and the rest of our  homeland… Peru!</p>--}}
+                </div>
+            </div>
+            <div class="alert alert-secondary">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <h5 class="m-0">7 DAYS WITH AIRFARE | <small><i class="fas fa-map-marker-alt"></i> Cusco, Lima, Sacred Valley, Machu Picchu.</small></h5>
+                    </div>
+                    <div class="col text-right">
+                        <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="40" data-toggle="tooltip" data-placement="top" title="Guide">
+                        <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="40" data-toggle="tooltip" data-placement="top" title="Transfers">
+                        <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="40" data-toggle="tooltip" data-placement="top" title="Entrances">
+                        <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="40" data-toggle="tooltip" data-placement="top" title="Hotels">
+                        <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="40" data-toggle="tooltip" data-placement="top" title="Trains">
+                        <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="40" data-toggle="tooltip" data-placement="top" title="Assistances">
+                        <img src="{{asset('images/icons/include/flight.png')}}" alt="assistances" class="" width="40" data-toggle="tooltip" data-placement="top" title="Flights">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <div class="row no-gutters">
+                        <div class="col-12 col-md-8 col-xl-12 d-flex">
+                            <div class="container p-0">
+
+                                <div class="slider-containers">
+
+                                    <!--effect #1 -->
+                                    <div class="slider-container">
+                                        <div class="flexbox-slider flexbox-slider-1">
+                                            <div class="flexbox-slide">
+                                                <img src="{{asset('images/banners/home/cusco.jpg')}}" alt="Cusco">
+                                                <div class="text-block">
+                                                    <h3>Cusco</h3>
+                                                    {{--<div class="text">--}}
+                                                    {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
+                                                    {{--</div>--}}
+                                                </div>
+                                            </div>
+                                            <div class="flexbox-slide">
+                                                <img src="{{asset('images/banners/home/lima.jpg')}}" alt="Lima">
+                                                <div class="text-block">
+                                                    <h3>Lima</h3>
+                                                    {{--<div class="text">--}}
+                                                    {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
+                                                    {{--</div>--}}
+                                                </div>
+                                            </div>
+                                            <div class="flexbox-slide">
+                                                <img src="{{asset('images/banners/home/machupicchu.jpg')}}" alt="Machu Picchu">
+                                                <div class="text-block">
+                                                    <h3>Machu Picchu</h3>
+                                                    {{--<div class="text">--}}
+                                                    {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
+                                                    {{--</div>--}}
+                                                </div>
+                                            </div>
+                                            <div class="flexbox-slide">
+                                                <img src="{{asset('images/banners/home/titicaca.jpg')}}" alt="Titicaca">
+                                                <div class="text-block">
+                                                    <h3>Lake Titicaca</h3>
+                                                    {{--<div class="text">--}}
+                                                    {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
+                                                    {{--</div>--}}
+                                                </div>
+                                            </div>
+                                            <div class="flexbox-slide">
+                                                <img src="{{asset('images/banners/home/valle.jpg')}}" alt="Sacred Valley">
+                                                <div class="text-block">
+                                                    <h3>Sacred Valley</h3>
+                                                    {{--<div class="text">--}}
+                                                    {{--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>--}}
+                                                    {{--</div>--}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        {{--<div class="col col-md-4 col-xl-3 d-flex align-items-center bg-g-dark">--}}
+                            {{--<div class="text-white p-3">--}}
+                                {{--<h3 class="h1 font-weight-bold text-g-yellow">10 DAYS</h3>--}}
+                                {{--<p class="lead">Cusco, Lima, Machu Picchu, Lake Titicaca, Sacred Valley.</p>--}}
+                                {{--<small class="d-block text-g-yellow py-2">Hotels, tours entrances, trains, breakfast, transfer</small>--}}
+                                {{--<p class="h1 text-right my-3"><sup>from</sup> $1449</p>--}}
+                                {{--<a href="packages/expedition-to-peru/10-days-tours" class="btn btn-g-yellow btn-block">View More</a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card bg-light sticky-top">
+                        <div class="card-header bg-dark">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h5 class="text-white">Book Your Trip</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form action="/packages/air-land/land-peru/6-days-tours/detail" role="form" method="post">
+                                {{csrf_field()}}
+                                <div class="form-group">
+                                    <label for="airport" class="text-secondary font-weight-bold">Departure Airport: <small>(MIA, LAX, JFK, IAD)</small></label>
+                                    <select class="form-control form-control-sm" id="airport" name="txtairport">
+                                        <option value="0">Select...</option>
+                                        @foreach($airport as $airports)
+                                            <option value="{{$airports->id}}">{{ucwords(strtolower($airports->aeropuerto))}} <small>({{strtoupper($airports->codigo)}})</small></option>
+                                        @endforeach~
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="airport" class="text-secondary font-weight-bold">Departure DATE:</label>
+                                    <select class="form-control form-control-sm" id="price_airport" name="txtdate">
+                                        <option value="0">Select...</option>
+                                    </select>
+                                </div>
+                                <div class="row my-4">
+                                    <div class="col-7">
+                                        <h6 class="text-secondary">PRICES FROM:</h6>
+                                        <div class="row mt-3 align-items-center">
+                                            <div class="col-6">
+                                                <b class="m-0 p-0 small"><span class="h6">Excellent</span> <a href="#" class="d-block small text-g-dark" data-toggle="modal" data-target="#card_review">5 comments</a></b>
+                                            </div>
+                                            <div class="col-6">
+                                                <span class="badge badge-g-dark w-100"><b class="h4">8.9</b>
+                                                    <small class="d-block text-g-yellow">
+                                                        <i class="fas fa-star small"></i>
+                                                        <i class="fas fa-star small"></i>
+                                                        <i class="fas fa-star small"></i>
+                                                        <i class="fas fa-star small"></i>
+                                                        <i class="fas fa-star small"></i>
+                                                    </small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col text-right">
+                                        <p class="h1 font-weight-bold text-secondary" id="h_prices"><sup>$</sup><span>-</span></p>
+                                        <small>PER PERSON</small>
+                                    </div>
+                                </div>
+                                <div class="row my-2">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-g-yellow btn-block mb-1 font-weight-bold" onclick="detail_p()" id="p_price_b">CHECK AVAILABILITY</button>
+                                    </div>
+                                </div>
+                                {{--<div class="row">--}}
+                                {{--<div class="col">--}}
+                                {{--<p>* Vacation is round-trip, per person, based on 2 travelers. Includes air & airport taxes, transfers, hotels, tours and daily breakfast. Additional baggage charges may apply. Rates are available for 1 to 9 travelers.</p>--}}
+                                {{--</div>--}}
+                                {{--</div>--}}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <img src="{{asset('images/logos/aero/delta.png')}}" alt="" class="w-100 p-4">
+                </div>
+                <div class="col">
+                    <img src="{{asset('images/logos/aero/copa.png')}}" alt="" class="w-100 p-4">
+                </div>
+                <div class="col">
+                    <img src="{{asset('images/logos/aero/latam.png')}}" alt="" class="w-100 p-4">
+                </div>
+                <div class="col">
+                    <img src="{{asset('images/logos/aero/avianca.png')}}" alt="" class="w-100 p-4">
+                </div>
+                <div class="col">
+                    <img src="{{asset('images/logos/aero/american.png')}}" alt="" class="w-100 p-4">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
     <section class="bg-white d-none d-md-flex">
+        <div class="container">
+            <div class="row pt-5 pb-2">
+                <div class="col">
+                    <h6 class="text-secondary"><strong>#gotoperu check out these #gotoperu photos from past travelers. After your trip, come back and share some of your owm!</strong></h6>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
+                    {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-white">
+        <div class="container">
+
+            <div class="row pb-2">
+                <div class="col">
+                    <div class="elfsight-app-ba7c9526-9468-4d5b-b378-68ec76259e00"></div>
+
+                </div>
+            </div>
+
+            <div class="row pb-5">
+                <div class="col text-right">
+                    <a href="{{route('gallery_path')}}" class="btn-link font-weight-normal">View Gallery <i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="bg-light d-none d-md-flex">
         <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
@@ -346,7 +1030,7 @@
         </div>
     </section>
 
-    <section class="bg-white pb-4 d-none d-md-flex">
+    <section class="bg-light pb-4 d-none d-md-flex">
         <div class="container">
             <div class="row mb-4">
                 <div class="col">
@@ -435,179 +1119,98 @@
         </div>
     </section>
 
-    <section class="bg-light">
+
+
+
+
+    {{--<section class="bg-white pt-5 d-none d-lg-block">--}}
+        {{--<div class="container">--}}
+            {{--<div class="col">--}}
+                {{--<div class="row"><!--.row -->--}}
+                    {{--<div class="col">--}}
+                        {{--<img src="{{asset('images/logos/apavit.png')}}" alt="logo apavit" class="img-fluid">--}}
+                    {{--</div>--}}
+                    {{--<div class="col">--}}
+                        {{--<img src="{{asset('images/logos/apotur.png')}}" alt="logo apotur" class="img-fluid">--}}
+                    {{--</div>--}}
+                    {{--<div class="col">--}}
+                        {{--<img src="{{asset('images/logos/asta.png')}}" alt="logo asta" class="img-fluid">--}}
+                    {{--</div>--}}
+                    {{--<div class="col">--}}
+                        {{--<img src="{{asset('images/logos/expedia.png')}}" alt="logo expedia" class="img-fluid">--}}
+                    {{--</div>--}}
+                    {{--<div class="col">--}}
+                        {{--<img src="{{asset('images/logos/facebook.png')}}" alt="logo facebook" class="img-fluid">--}}
+                    {{--</div>--}}
+                    {{--<div class="col">--}}
+                        {{--<img src="{{asset('images/logos/meetup.png')}}" alt="logo meetup" class="img-fluid">--}}
+                    {{--</div>--}}
+                    {{--<div class="col">--}}
+                        {{--<img src="{{asset('images/logos/new.png')}}" alt="logo the new york times" class="img-fluid">--}}
+                    {{--</div>--}}
+                    {{--<div class="col">--}}
+                        {{--<img src="{{asset('images/logos/peru.png')}}" alt="logo marca peru" class="img-fluid">--}}
+                    {{--</div>--}}
+                    {{--<div class="col">--}}
+                        {{--<img src="{{asset('images/logos/prom-peru.png')}}" alt="logo prom peru" class="img-fluid">--}}
+                    {{--</div>--}}
+                    {{--<div class="col">--}}
+                        {{--<img src="{{asset('images/logos/tripadvisor.png')}}" alt="logo tripadvisor" class="img-fluid">--}}
+                    {{--</div>--}}
+                    {{--<div class="col">--}}
+                        {{--<img src="{{asset('images/logos/yelp.png')}}" alt="logo yelp" class="img-fluid">--}}
+                    {{--</div>--}}
+                    {{--<div class="col">--}}
+                        {{--<img src="{{asset('images/logos/youtube.png')}}" alt="logo youtube" class="img-fluid">--}}
+                    {{--</div>--}}
+                {{--</div><!-- /.row -->--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
+
+
+    <section class="bg-white pt-5">
         <div class="container">
-            <div class="row pt-5 pb-2">
+            <div class="row pb-2">
                 <div class="col">
-                    <h1 class="text-secondary h4"><strong>PERU TRAVEL PACKAGES</strong></h1>
+                    <h4 class="text-secondary"><strong>HOTELS</strong></h4>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                    {{--<p class="h4 font-weight-light">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>Customized Travel Packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>Machu Picchu</strong> and the rest of our  homeland… Peru!</p>--}}
+                    {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
+                </div>
+            </div>
+            {{--<div class="row justify-content-center">--}}
+            {{--<div class="col-1">--}}
+            {{--<img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">--}}
+            {{--</div>--}}
+            {{--</div>--}}
+        </div>
+    </section>
 
+    <div class="bg-white d-none d-sm-block position-relative">
+        <img src="{{asset('images/banner-hotels.jpg')}}" alt="" class="w-100">
+        <div class="card-img-overlay bg-rgba-dark-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p class="m-0 text-white h3 font-weight-light"><img src="{{asset('images/icons/include/hotels.png')}}" width="50" height="50" alt="" class="p-1" data-toggle="tooltip" data-placement="top" title="Hotels"> Hand-Selected  Collection of hotels</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    {{--        <a href="{{route('hotels_path')}}" class="btn btn-primary btn-lg">Hotels</a>--}}
+    <div class="container text-center bg-white">
+        <div class="row">
+            <div class="col">
+                <p class="pt-2">From budget accommodations to the most luxury hotels that are a destination itself, we are partners with practically every top quality hotel at every category ( 2 stars. 3 stars, 4 stars, 5 stars ) plus our volume let us offer you great Vacation packages prices as we translate our volume savings to you.</p>
+                <a href="{{route('hotels_path')}}" class="btn-link float-right font-weight-normal my-2">Hotels <i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
 
     <section class="bg-light">
-        <div class="container">
-            <div class="row">
-
-                <div class="col col-xs-12 d-md-none d-lg-inline col-md-8 col-lg-12 col-xl-8">
-                    <div class="row">
-                        @foreach($paquetes->where('estado', 1)->sortBy('duracion')->take(4) as $paquete)
-                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
-                                <div class="card mb-3">
-                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
-                                        <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}">
-
-                                        <div class="card-img-overlay bg-rgba-dark-3 p-0">
-                                            <div class="row justify-content-between no-gutters">
-                                                <div class="col col-sm-5 p-3">
-                                                    <h5 class="m-0 text-white">{{$paquete->duracion}} Days</h5>
-                                                </div>
-                                                <div class="col col-sm-4 bg-g-dark py-3 text-white text-center">
-                                                    @foreach($paquete->precio_paquetes as $precio)
-                                                        @if($precio->estrellas == 2)
-                                                            @if($precio->precio_d > 0)
-                                                                <p class="text-g-yellow font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
-                                                            @else
-                                                                <span class="text-danger">Inquire</span>
-                                                            @endif
-                                                        @endif
-                                                    @endforeach
-                                                </div>
-                                            </div>
-                                            {{--<p class="text-white m-0">{{$paquete->duracion}} days <span class="text-g-yellow font-weight-bold float-right bg-danger">--}}
-                                            {{--<small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small>--}}
-                                            {{--</span></p>--}}
-                                        </div>
-                                        <div class="card-img-overlay-packages bg-rgba-dark-1">
-                                            <h5 class="card-title text-white m-0">{{ucwords(strtolower($paquete->titulo))}}</h5>
-                                            {{--<h2 class="card-title text-white m-0 h5"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>--}}
-                                            <small class="text-white font-weight-light">
-                                                <i class="fa fa-map-marker"></i>
-                                                @php
-                                                    $i = 1;
-                                                    $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
-                                                @endphp
-                                                @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
-                                                    @if(isset($paquete_destino->destinos->nombre))
-                                                        {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
-                                                        @php $i++; @endphp
-                                                    @endif
-                                                @endforeach
-                                            </small>
-                                        </div>
-                                    </a>
-                                    {{--<div class="card-body">--}}
-                                    {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
-                                    {{--<p class="card-text">--}}
-                                    {{----}}
-                                    {{--</p>--}}
-                                    {{--</div>--}}
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="col-12 d-sm-block col-sm-12 d-md-inline col-md-12 col-lg-12 col-xl-4">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="list-group position-relative">
-                                    @foreach($paquetes->random(5) as $paquete)
-                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="list-group-item list-group-item-action">
-                                            <div class="media">
-                                                <img src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{(strtolower($paquete->titulo))}}">
-                                                <div class="media-body">
-                                                    <h5 class="mt-0"><span class="text-g-yellow">{{$paquete->duracion}} Days</span> {{ucwords(strtolower($paquete->titulo))}}</h5>
-                                                    <small>
-                                                        <i class="fa fa-map-marker-alt"></i>
-                                                        @php
-                                                            $i = 1;
-                                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
-                                                        @endphp
-                                                        @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
-                                                            @if(isset($paquete_destino->destinos->nombre))
-                                                                {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
-                                                                @php $i++; @endphp
-                                                            @endif
-                                                        @endforeach
-                                                    </small>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    @endforeach
-                                    <div class="gradient-destinations"></div>
-                                        {{--<div class="row">--}}
-                                            {{--<div class="col text-right pt-4">--}}
-                                                {{--<a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add Scroll Bar -->
-                        <div class="swiper-scrollbar"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row pb-4">
-                <div class="col text-right">
-                    <a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-white pt-5 d-none d-lg-block">
-        <div class="container">
-            <div class="col">
-                <div class="row"><!--.row -->
-                    <div class="col">
-                        <img src="{{asset('images/logos/apavit.png')}}" alt="logo apavit" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <img src="{{asset('images/logos/apotur.png')}}" alt="logo apotur" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <img src="{{asset('images/logos/asta.png')}}" alt="logo asta" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <img src="{{asset('images/logos/expedia.png')}}" alt="logo expedia" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <img src="{{asset('images/logos/facebook.png')}}" alt="logo facebook" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <img src="{{asset('images/logos/meetup.png')}}" alt="logo meetup" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <img src="{{asset('images/logos/new.png')}}" alt="logo the new york times" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <img src="{{asset('images/logos/peru.png')}}" alt="logo marca peru" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <img src="{{asset('images/logos/prom-peru.png')}}" alt="logo prom peru" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <img src="{{asset('images/logos/tripadvisor.png')}}" alt="logo tripadvisor" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <img src="{{asset('images/logos/yelp.png')}}" alt="logo yelp" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <img src="{{asset('images/logos/youtube.png')}}" alt="logo youtube" class="img-fluid">
-                    </div>
-                </div><!-- /.row -->
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-white">
         <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
@@ -620,7 +1223,7 @@
         </div>
     </section>
 
-    <section class="bg-white">
+    <section class="bg-light">
         <div class="container">
             <div class="row d-flex">
                 <div class="col-8 d-none d-lg-flex col-lg-8">
@@ -714,49 +1317,10 @@
 
 
 
+
+
+
     <section class="bg-white">
-        <div class="container">
-            <div class="row pb-2">
-                <div class="col">
-                    <h4 class="text-secondary"><strong>HOTELS</strong></h4>
-                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
-                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                    {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
-                </div>
-            </div>
-            {{--<div class="row justify-content-center">--}}
-                {{--<div class="col-1">--}}
-                    {{--<img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        </div>
-    </section>
-
-    <div class="bg-light d-none d-sm-block position-relative">
-        <img src="{{asset('images/banner-hotel.jpg')}}" alt="" class="w-100">
-        <div class="card-img-overlay bg-rgba-dark-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <p class="m-0 text-white h3 font-weight-light"><img src="{{asset('images/icons/include/hotels.png')}}" width="50" height="50" alt="" class="p-1" data-toggle="tooltip" data-placement="top" title="Hotels"> Hand-Selected  Collection of hotels</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-{{--        <a href="{{route('hotels_path')}}" class="btn btn-primary btn-lg">Hotels</a>--}}
-        <div class="container text-center bg-white">
-            <div class="row">
-                <div class="col">
-                    <p class="pt-2">From budget accommodations to the most luxury hotels that are a destination itself, we are partners with practically every top quality hotel at every category ( 2 stars. 3 stars, 4 stars, 5 stars ) plus our volume let us offer you great Vacation packages prices as we translate our volume savings to you.</p>
-                    <a href="{{route('hotels_path')}}" class="btn-link float-right font-weight-normal my-2">Hotels <i class="fa fa-chevron-right"></i></a>
-                </div>
-            </div>
-        </div>
-
-
-    <section class="bg-light">
         <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
@@ -769,109 +1333,121 @@
         </div>
     </section>
 
-    <section class="bg-light">
+    <section class="bg-white">
         <div class="container">
-            <div class="row pb-5">
-                <div class="col-12 col-md-6 col-xl-4 mb-3 d-flex os-animation animated fadeInLeft" data-os-animation="fadeInLeft" data-os-animation-delay="0s" style="animation-delay: 0s;">
-                    <div class="card">
-                        <div class="media p-3">
-                            <span class="mr-3 rounded-circle px-3 text-white h1 font-weight-light bg-info">1</span>
-                            <div class="media-body">
-                                <h5 class="mt-0">We Care</h5>
-                                We promise to do the right thing all the time, every time, for our team, travelers, people and places we visit.
+            <div class="row  pb-2">
+                <div class="col">
+
+
+                    <div class="owl-carousel-wrap">
+                        <div class="owl-carousel owl-theme">
+                            <div class="item d-flex">
+                                <div class="card text-white bg-dark">
+                                    <div class="col media p-3">
+                                        <span class="mr-3 rounded-circle px-3 text-white h1 font-weight-light bg-info">1</span>
+                                        <div class="media-body">
+                                            <h5 class="mt-0 text-g-yellow">We Care</h5>
+                                            We promise to do the right thing all the time, every time, for our team, travelers, people and places we visit.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item d-flex">
+                                <div class="card text-white bg-dark">
+                                    <div class="col media p-3">
+                                        <span class="mr-3 rounded-circle bg-g-green px-3 text-white h1 font-weight-light">2</span>
+                                        <div class="media-body">
+                                            <h5 class="mt-0 text-g-yellow">We Are Accessible</h5>
+                                            You will find GoToPeru offices in Lima, Arequipa, Cusco and satellite branches in Quito and La Paz.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item d-flex">
+                                <div class="card text-white bg-dark">
+                                    <div class="col media p-3">
+                                        <span class="mr-3 rounded-circle bg-danger px-3 text-white h1 font-weight-light">3</span>
+                                        <div class="media-body">
+                                            <h5 class="mt-0 text-g-yellow">We Provide The Best Team Of Experts</h5>
+                                            Our expert locals make the difference. They come from all regions across Peru and bring with them unique information and a vast knowledge of main destinations.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item d-flex">
+                                <div class="card text-white bg-dark">
+                                    <div class="col media p-3">
+                                        <span class="mr-3 rounded-circle bg-warning px-3 text-white h1 font-weight-light">4</span>
+                                        <div class="media-body">
+                                            <h5 class="mt-0 text-g-yellow">We Are Internationally Recognized</h5>
+                                            We are rated as a high quality Travel Operator on TripAdvisor with impeccable testimonials. We are proud members of Promperu, the National Tourism Board, fully licensed and authorized by the government.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item d-flex">
+                                <div class="card text-white bg-dark">
+                                    <div class="col media p-3">
+                                        <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">5</span>
+                                        <div class="media-body">
+                                            <h5 class="mt-0 text-g-yellow">We Help Our Community</h5>
+                                            We aim to make positive differences in the communities where we work and live. We look for ways to improve the standards of living. It is our priority to hire local people, develop their communities and work with local supply chains.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item d-flex">
+                                <div class="card text-white bg-dark">
+                                    <div class="col media p-3">
+                                        <span class="mr-3 rounded-circle bg-g-yellow px-3 text-white h1 font-weight-light">6</span>
+                                        <div class="media-body">
+                                            <h5 class="mt-0 text-g-yellow">We Think Ahead…</h5>
+                                            We are aware that surprises, both good and bad, occur while traveling. We are always on top of it and ready to give reliable travel solutions to our customers.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item d-flex">
+                                <div class="card text-white bg-dark">
+                                    <div class="col media p-3">
+                                        <span class="mr-3 rounded-circle bg-danger px-3 text-white h1 font-weight-light">7</span>
+                                        <div class="media-body">
+                                            <h5 class="mt-0 text-g-yellow">We Turn Good Trips Into Unforgettable Adventures</h5>
+                                            We help our travelers choose the perfect trip to the land of the Incas, providing them with the most authentic life-changing adventure possible. We go out of our way to ensure a travel experience unlike anything you’ve seen.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item d-flex">
+                                <div class="card text-white bg-dark">
+                                    <div class="col media p-3">
+                                        <span class="mr-3 rounded-circle bg-success px-3 text-white h1 font-weight-light">8</span>
+                                        <div class="media-body">
+                                            <h5 class="mt-0 text-g-yellow">We Aren’t Afraid To Push Our Boundaries</h5>
+                                            We offer alternative extensions to the main South American destinations in Ecuador, Bolivia, Chile, Argentina, Brasil, Uruguay and Columbia.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item d-flex">
+                                <div class="card text-white bg-dark">
+                                    <div class="col media p-3">
+                                        <span class="mr-3 rounded-circle bg-secondary px-3 text-white h1 font-weight-light">9</span>
+                                        <div class="media-body">
+                                            <h5 class="mt-0 text-g-yellow">We are Globally recognize</h5>
+                                            With global partners as <strong>Expedia, Viator</strong> and many other travel agents who trust us as their leading Peruvian operations company.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        {{--<div class="popup"></div>--}}
                     </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4 mb-3 d-flex">
-                    <div class="card">
-                        <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-g-green px-3 text-white h1 font-weight-light">2</span>
-                            <div class="media-body">
-                                <h5 class="mt-0">We Are Accessible</h5>
-                                You will find GoToPeru offices in Lima, Arequipa, Cusco and satellite branches in Quito and La Paz.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4 mb-3 d-flex">
-                    <div class="card">
-                        <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-danger px-3 text-white h1 font-weight-light">3</span>
-                            <div class="media-body">
-                                <h5 class="mt-0">We Provide The Best Team Of Experts</h5>
-                                Our expert locals make the difference. They come from all regions across Peru and bring with them unique information and a vast knowledge of main destinations.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4 mb-3 d-flex">
-                    <div class="card">
-                        <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-warning px-3 text-white h1 font-weight-light">4</span>
-                            <div class="media-body">
-                                <h5 class="mt-0">We Are Internationally Recognized</h5>
-                                We are rated as a high quality Travel Operator on TripAdvisor with impeccable testimonials. We are proud members of Promperu, the National Tourism Board, fully licensed and authorized by the government.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4 mb-3 d-flex">
-                    <div class="card">
-                        <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-g-dark px-3 text-white h1 font-weight-light">5</span>
-                            <div class="media-body">
-                                <h5 class="mt-0">We Help Our Community</h5>
-                                We aim to make positive differences in the communities where we work and live. We look for ways to improve the standards of living. It is our priority to hire local people, develop their communities and work with local supply chains.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4 mb-3 d-flex">
-                    <div class="card">
-                        <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-g-yellow px-3 text-white h1 font-weight-light">6</span>
-                            <div class="media-body">
-                                <h5 class="mt-0">We Think Ahead…</h5>
-                                We are aware that surprises, both good and bad, occur while traveling. We are always on top of it and ready to give reliable travel solutions to our customers.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4 mb-3 d-flex">
-                    <div class="card">
-                        <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-danger px-3 text-white h1 font-weight-light">7</span>
-                            <div class="media-body">
-                                <h5 class="mt-0">We Turn Good Trips Into Unforgettable Adventures</h5>
-                                We help our travelers choose the perfect trip to the land of the Incas, providing them with the most authentic life-changing adventure possible. We go out of our way to ensure a travel experience unlike anything you’ve seen.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4 mb-3 d-flex">
-                    <div class="card">
-                        <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-success px-3 text-white h1 font-weight-light">8</span>
-                            <div class="media-body">
-                                <h5 class="mt-0">We Aren’t Afraid To Push Our Boundaries</h5>
-                                We offer alternative extensions to the main South American destinations in Ecuador, Bolivia, Chile, Argentina, Brasil, Uruguay and Columbia.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4 mb-3 d-flex">
-                    <div class="card">
-                        <div class="media p-3">
-                            <span class="mr-3 rounded-circle bg-secondary px-3 text-white h1 font-weight-light">9</span>
-                            <div class="media-body">
-                                <h5 class="mt-0">We are Globally recognize</h5>
-                                With global partners as <strong>Expedia, Viator</strong> and many other travel agents who trust us as their leading Peruvian operations company.
-                            </div>
-                        </div>
-                    </div>
+
+
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -1121,15 +1697,71 @@
     @include('layouts.page.form-quote')
 
     @push('scripts')
+
         <script>
-            var swiper = new Swiper('.swiper-container', {
-                direction: 'vertical',
-                slidesPerView: 'auto',
-                freeMode: true,
-                scrollbar: {
-                    el: '.swiper-scrollbar',
-                },
-                mousewheel: true,
+            $(".owl-carousel").owlCarousel({
+                // loop: true,
+                // margin: 10,
+                // nav: true,
+                autoplay:true,
+                autoplayTimeout:10000,
+                autoplayHoverPause:true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+
+            var topItem = 0,
+                leftItem = 0,
+                popupHeight = 500;
+
+            $(".owl-carousel .item").on("click", function(e) {
+                var $this = $(this),
+                    $parent = $this.parents(".owl-carousel-wrap"),
+                    content = $this.html(),
+                    $popup = $parent.find(".popup");
+
+                topItem = $this.offset().top - $parent.offset().top + $this.height() / 2;
+                leftItem = $this.offset().left - $parent.offset().left + $this.width() / 2;
+
+                $popup.css({
+                    top: topItem,
+                    left: leftItem,
+                    width: 0,
+                    height: 0
+                });
+
+                $popup.html(content).stop().animate(
+                    {
+                        top: -((popupHeight - $this.parent().outerHeight()) / 2),
+                        left: 0,
+                        width: "100%",
+                        height: popupHeight,
+                        opacity: 1
+                    },
+                    400
+                );
+            });
+
+            $(".popup").on("click", function(e) {
+                $(this).stop().animate(
+                    {
+                        width: 0,
+                        height: 0,
+                        top: topItem,
+                        left: leftItem,
+                        opacity: 0
+                    },
+                    400
+                );
             });
         </script>
         {{--<script>--}}
@@ -1234,7 +1866,148 @@
         {{--</script>--}}
 
 
+        <script>
+            $('#airport').change(function(){
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('[name="_token"]').val()
+                    }
+                });
+                var s_airport = $('#airport').val();
 
+                var datos = {
+                    "txt_airport" : s_airport
+                };
+
+                $.ajax({
+                    data: datos,
+                    url: "{{route('lista_precio_aero_path')}}",
+                    type: 'post',
+                    // success: rendeListaPrecios
+                    success:  listar_precios
+                });
+            });
+
+            function listar_precios(data) {
+                $('#price_airport option').remove();
+                var list = data == null ? [] : (data.price_air instanceof Array ? data.price_air : [data.price_air ]);
+                if (list.length < 1) {
+                    alert("SIN NINGÚN RESULTADO EN LA BD");
+                } else {
+                    $('#price_airport').append('<option value="0">Select...</option>');
+                    $.each(list, function(index, price_air) {
+                        var fecha = price_air.fecha.split('-');
+                        if(fecha){
+                            var meses=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+                            var f = new Date(fecha);
+
+                            var texto=meses[f.getMonth()]+' '+f.getDate()+', '+f.getFullYear();
+                            // console.log(texto);
+                        }
+                        $('#price_airport').append('<option value='+price_air.id+'>'+texto+'</option>');
+                    });
+                    $('#price_airport').focus();
+                }
+            }
+
+            $('#price_airport').change(function(){
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('[name="_token"]').val()
+                    }
+                });
+                var s_price_airport = $('#price_airport').val();
+
+                var datos = {
+                    "txt_price_airport" : s_price_airport
+                };
+
+                $.ajax({
+                    data: datos,
+                    url: "{{route('precio_aero_path')}}",
+                    type: 'post',
+                    // success: rendeListaPrecios
+                    success:  p_precios
+                });
+            });
+
+            function p_precios(data) {
+                $('#h_prices span').remove();
+                var list = data == null ? [] : (data.price_t instanceof Array ? data.price_t : [data.price_t ]);
+                if (list.length < 1) {
+                    alert("SIN NINGÚN RESULTADO EN LA BD");
+                } else {
+                    // $('#hola b').append('<option value="0">SELECCIONAR...</option>');
+                    $.each(list, function(index, price_t) {
+                        $('#h_prices').append('<span>'+price_t.precio+'</span>');
+                    });
+                }
+            }
+
+
+
+            //
+
+            function detail_p(){
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('[name="_token"]').val()
+                    }
+                });
+
+                // $("#p_price_b").attr("disabled", true);
+
+                var s_airport = $('#airport option:selected').val();
+                var s_price_airport = $('#price_airport option:selected').val();
+
+                if (s_airport){
+                    var sendMail = "true";
+                }
+
+                if (s_airport == 0){
+                    $('#airport').css("border-bottom", "2px solid #FF0000");
+                    var sendMail = "false";
+                }
+
+                if (s_price_airport == 0){
+                    $('#price_airport').css("border-bottom", "2px solid #FF0000");
+                    var sendMail = "false";
+                }
+
+                if(sendMail == "true"){
+                    var datos = {
+                        "txt_airport" : s_airport,
+                        "txt_price_airport" : s_price_airport
+                    };
+                    $.ajax({
+                        data:  datos,
+                        url:   "{{route('inquire_detail_p_path')}}",
+                        type:  'post',
+
+                        beforeSend: function () {
+
+                            $('#d_send').removeClass('show');
+                            $("#d_send").addClass('d-none');
+
+                            $("#loader2").removeClass('d-none');
+                            $("#loader2").addClass('show');
+                        },
+                        success:  function (response) {
+                            window.location.href = '/packages/air-land/peru-machu-picchu-from-usa/7-days-tours/detail/'+response+'';
+                        }
+                    });
+                } else{
+                    $("#d_send").removeAttr("disabled");
+                }
+            }
+
+            $('#d_date').datepicker({
+                dateFormat: 'mm-dd-y',
+                changeMonth: true,
+                changeYear: true
+            });
+
+        </script>
 
     @endpush
 

@@ -73,14 +73,15 @@
                                     {{--</div>--}}
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <label for="c_travelers" class="font-weight-bold text-secondary">TRAVELERS:</label>
+                                            <label for="c_travelers" class="font-weight-bold text-secondary">TRAVELERS <span class="text-primary">*</span></label>
                                             <select class="form-control form-control-lg" id="c_travelers">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                                <option>6+</option>
+                                                <option value="0">Select...</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6+">6+</option>
                                             </select>
                                         </div>
                                     </div>
@@ -237,7 +238,7 @@
                 var s_email = $('#a_email').val();
 
                 // var s_number = $('#c_number').val();
-                var s_travelers = $('#c_travelers').val();
+                var s_travelers = $('#c_travelers option:selected').val();
 
                 var s_aeropuerto = '{{$airports->aeropuerto}}';
                 var s_fecha = '{{$precio_aeros->fecha}}';
@@ -252,6 +253,11 @@
                 }
                 if (s_name.length == 0 ){
                     $('#a_name').css("border-bottom", "2px solid #FF0000");
+                    var sendMail = "false";
+                }
+
+                if (s_travelers == 0){
+                    $('#c_travelers').css("border-bottom", "2px solid #FF0000");
                     var sendMail = "false";
                 }
 

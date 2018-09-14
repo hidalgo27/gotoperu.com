@@ -16,12 +16,13 @@
 //animate
 //@import "~animate.css/animate.css";
 @import "~swiper/dist/css/swiper.min.css";
-@import "vendors/animate.css";
+
 // Web
 @import "web";
 //jquery-ui
 @import '~jquery-ui/themes/base/all.css';
 @import "~intl-tel-input/src/css/intlTelInput";
+@import "~owl.carousel/src/scss/owl.carousel";
 .font-montserrat{
   font-family: 'Montserrat', sans-serif;
 }

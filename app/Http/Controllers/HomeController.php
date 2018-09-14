@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\TAeropuerto;
 use App\TCategoria;
+use App\TComentario;
 use App\TDestino;
 use App\THotel;
 use App\THotelDestino;
+use App\TItinerarioImagen;
 use App\TPaquete;
 use App\TPaqueteDestino;
+use App\TPaqueteDificultad;
 use App\TPaqueteVuelo;
 use App\TPrecioAeropuerto;
 use App\TTestimonio;
@@ -53,8 +56,13 @@ class HomeController extends Controller
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         $destinos = TDestino::all();
         $testimonial = TTestimonio::all();
+
+        $dificultad = TPaqueteDificultad::all();
 //        dd($paquete_destinos);
-            return view('page.home',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'destinos'=>$destinos, 'testimonial'=>$testimonial]);
+        $airport = TAeropuerto::with('precio_aeropuerto')->get();
+        $comentario = TComentario::with('itinerario')->get();
+
+            return view('page.home',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'destinos'=>$destinos, 'testimonial'=>$testimonial, 'dificultad'=>$dificultad, 'airport'=>$airport, 'comentario'=>$comentario]);
     }
 
     public function hotels()
@@ -232,6 +240,11 @@ class HomeController extends Controller
 
         $vuelo = TVuelo::all();
         $paquete_vuelo = TPaqueteVuelo::with('vuelos')->get();
+
+        $dificultad = TPaqueteDificultad::all();
+        $comentario = TComentario::with('itinerario')->get();
+
+        $imagen = TItinerarioImagen::with('itinerario')->get();
 //        foreach ($paquete_iti as $paq_i) {
 //
 //            SEOMeta::setTitle($paq_i->s_title);
@@ -270,7 +283,7 @@ class HomeController extends Controller
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
-        return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'vuelo'=>$vuelo, 'paquete_vuelo'=>$paquete_vuelo]);
+        return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'vuelo'=>$vuelo, 'paquete_vuelo'=>$paquete_vuelo, 'dificultad'=>$dificultad, 'comentario'=>$comentario, 'imagen'=>$imagen]);
 
     }
 
@@ -692,6 +705,11 @@ class HomeController extends Controller
         return view('page.join');
     }
 
+    public function gallery()
+    {
+        return view('page.gallery');
+    }
+
     public function deals()
     {
         SEOMeta::setTitle('Travel Deals Peru | Machu Picchu Vacation Packages | Machu Picchu Deals');
@@ -997,4 +1015,6 @@ class HomeController extends Controller
         SEOMeta::setTitle('404');
         return view('errors.503');
     }
+
+
 }

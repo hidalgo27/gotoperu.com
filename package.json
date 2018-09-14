@@ -30,6 +30,8 @@
     "font-awesome-5-css": "^1.0.0",
     "font-awesome-sass": "^4.7.0",
     "intl-tel-input": "^13.0.2",
+    "jquery.shorten": "^1.0.0",
+    "owl.carousel": "^2.3.4",
     "popper.js": "^1.12.9",
     "smartwizard": "^4.2.2",
     "swiper": "^4.3.3",

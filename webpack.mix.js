@@ -20,14 +20,15 @@ mix.scripts([
     'resources/assets/js/vendors/viedolightbox/video.js',
     'resources/assets/js/vendors/jquery.waypoints.min.js',
     'resources/assets/js/vendors/smooth-scroll.js',
-    'node_modules/twitter-bootstrap-wizard/jquery.bootstrap.wizard.js',
+    'node_modules/swiper/dist/js/swiper.min.js',
     // 'resources/assets/js/vendors/all.js',
     // 'resources/assets/js/font-awesome.js',
     //Customized
+    'node_modules/twitter-bootstrap-wizard/jquery.bootstrap.wizard.js',
     'node_modules/intl-tel-input/src/js/data.js',
     'node_modules/intl-tel-input/build/js/intlTelInput.js',
     'node_modules/intl-tel-input/build/js/utils.js',
-    'node_modules/swiper/dist/js/swiper.min.js',
+    'node_modules/owl.carousel/dist/owl.carousel.min.js',
     'resources/assets/js/vendors/function-admin.js',
     'resources/assets/js/vendors/function.js'
 ], 'public/js/plugins.js');

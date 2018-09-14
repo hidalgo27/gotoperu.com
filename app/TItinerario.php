@@ -17,4 +17,9 @@ class TItinerario extends Model
     {
         return $this->hasMany(TItinerarioImagen::class, 'iditinerario');
     }
+
+    public function comentario()
+    {
+        return $this->hasMany(TComentario::class, 'iditinerario');
+    }
 }
