@@ -1,14 +1,15 @@
-<nav class="nav nav-pills nav-fill nav-goto navbar-expand-lg d-none d-md-flex sticky-top contenido2" id="content-page">
+{{--<nav class="nav nav-pills nav-fill nav-goto navbar-expand-lg d-none d-md-flex sticky-top contenido2" id="content-page">--}}
     {{--<a class="nav-item nav-link active" href="#">Active</a>--}}
-    <a class="nav-item nav-link text-g-dark font-weight-normal {{ Request::is( 'packages') ? 'active' : '' }}" href="{{route('packages_path')}}">TOURS PACKAGES</a>
-    <a class="nav-item nav-link text-g-dark font-weight-normal bg-success" href="{{route('complete_path')}}"><span class="text-white">AIR & LAND</span></a>
-    <a class="nav-item nav-link text-g-dark font-weight-normal {{ Request::is( 'destinations') ? 'active' : '' }}" href="{{route('destinations_path')}}">DESTINATIONS</a>
-    <a class="nav-item nav-link text-g-dark font-weight-normal {{ Request::is( 'about-us') ? 'active' : '' }}" href="{{route('about_path')}}">ABOUT US</a>
-    <a class="nav-item nav-link text-g-dark font-weight-normal {{ Request::is( 'frequently-asked-questions') ? 'active' : '' }}" href="{{route('faq_path')}}">FAQ</a>
-    <a class="nav-item nav-link text-g-dark font-weight-normal {{ Request::is( 'testimonials') ? 'active' : '' }}" href="{{route('testimonials_path')}}">TESTIMONIALS</a>
-    <a class="nav-item nav-link text-g-dark font-weight-normal bg-g-yellow" href="#Inquire">INQUIRE</a>
+    {{--<a class="nav-item nav-link text-g-dark font-weight-normal {{ Request::is( 'packages') ? 'active' : '' }}" href="{{route('packages_path')}}">TOURS PACKAGES</a>--}}
+    {{--<a class="nav-item nav-link text-g-dark font-weight-normal bg-success" href="{{route('complete_path')}}"><span class="text-white">AIR & LAND</span></a>--}}
+    {{--<a class="nav-item nav-link text-g-dark font-weight-normal {{ Request::is( 'destinations') ? 'active' : '' }}" href="{{route('destinations_path')}}">DESTINATIONS</a>--}}
+    {{--<a class="nav-item nav-link text-g-dark font-weight-normal {{ Request::is( 'about-us') ? 'active' : '' }}" href="{{route('about_path')}}">ABOUT US</a>--}}
+    {{--<a class="nav-item nav-link text-g-dark font-weight-normal {{ Request::is( 'frequently-asked-questions') ? 'active' : '' }}" href="{{route('faq_path')}}">FAQ</a>--}}
+    {{--<a class="nav-item nav-link text-g-dark font-weight-normal {{ Request::is( 'testimonials') ? 'active' : '' }}" href="{{route('testimonials_path')}}">TESTIMONIALS</a>--}}
+    {{--<a class="nav-item nav-link text-g-dark font-weight-normal bg-g-yellow" href="#Inquire">INQUIRE</a>--}}
     {{--<a class="nav-item nav-link disabled" href="#">Disabled</a>--}}
-</nav>
+{{--</nav>--}}
+
 
 <section class="py-2 d-md-none">
     <div class="container-fluid">

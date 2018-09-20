@@ -28,7 +28,7 @@
             {{--</video>--}}
 
             <img src="{{asset('images/about.jpg')}}" alt="" id="hero-vid">
-
+            @include('layouts.page.menu-custom')
         </div>
         <div class="content-header">
             <div class="container-fluid">
@@ -66,13 +66,13 @@
         </div>
     </section>
     <section class="bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-5">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>JOIN OUR TEAM</strong></h1>
                     <p class="lead">A trip to Peru is an exciting adventure! There are a number of common questions first-time travelers to Peru frequently ask.</p>
-                </div>>
-            </div>
+                </div>
+        </div>
 
             <div class="row pb-5 align-items-center">
                 <div class="col-8">

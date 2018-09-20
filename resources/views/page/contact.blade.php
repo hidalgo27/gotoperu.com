@@ -32,6 +32,7 @@
             {{--</video>--}}
 
             <img src="{{asset('images/contact2.jpg')}}" alt="" id="hero-vid">
+            @include('layouts.page.menu-custom')
 
         </div>
         <div class="content-header">
@@ -81,7 +82,7 @@
     </section>
 
     <section class="bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-5">
                 <div class="col">
                     <h1 class="font-weight-bold text-g-green text-center"><strong>Thank you for your interest in GOTOPERU</strong></h1>

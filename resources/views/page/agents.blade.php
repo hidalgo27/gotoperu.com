@@ -32,6 +32,7 @@
             {{--</video>--}}
 
             <img src="{{asset('images/destinations/peru.jpg')}}" alt="" id="hero-vid">
+            @include('layouts.page.menu-custom')
 
         </div>
         <div class="content-header">
@@ -68,6 +69,6 @@
         </div>
     </section>
 
-    @include('layouts.page.menu')
+    {{--@include('layouts.page.menu')--}}
 
 @stop

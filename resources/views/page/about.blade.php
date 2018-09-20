@@ -29,7 +29,7 @@
             {{--</video>--}}
 
             <img src="{{asset('images/about.jpg')}}" alt="" id="hero-vid">
-
+            @include('layouts.page.menu-custom')
         </div>
         <div class="content-header">
             <div class="container-fluid">
@@ -54,9 +54,11 @@
 
             </div>
         </div>
+
     </section>
 
     @include('layouts.page.menu')
+
     <section class="d-md-none">
         <div class="container-fluid p-0">
             <div class="row no-gutters">
@@ -78,7 +80,7 @@
     </section>
 
     <section class="bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-4">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>PERU TRAVEL FEATURED PACKAGES</strong></h1>
@@ -97,7 +99,7 @@
 
 
     <section class="bg-white py-5">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row justify-content-center">
                 <div class="col col-sm-8">
 

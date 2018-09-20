@@ -54,7 +54,7 @@
                 {{--<source src="{{asset('media/video6.webm')}}" type="video/webm" />--}}
                 {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
-            <img src="{{asset('images/destinations/puno.jpg')}}" alt="" id="hero-vid">
+            <img src="{{asset('images/itinerary/banners/'.$paquetes->imagen.'')}}" alt="" id="hero-vid">
             {{--<div id="state" class=""><span class="fa fa-pause"></span></div>--}}
             {{--<img id="hero-pic" class="d-none" src="http://www.markhillard.com/sandbox/media/polina.jpg" alt="">--}}
             {{----}}
@@ -120,59 +120,7 @@
                 </div>
             </div>
             {{--<div class="header-expedia text-white p-3">As local travel operators our programs start daily</div>--}}
-            <div class="header-expedia p-3 w-100 text-center d-none d-lg-inline">
-                {{--<p class="text-white h6"><span class="bg-g-green p-1 rounded-circle px-3 text-white">1</span> Share your travel plans <span class="bg-g-yellow p-1 rounded-circle px-3 text-white ml-5">2</span> Receive a customize itinerary and quote <span class="bg-g-dark p-1 rounded-circle px-3 text-white ml-5">3</span> Discover the best of Peru with GOTOPERU</p>--}}
-                <div class="row">
-                    <div class="col">
-                        <a href="" class="btn btn-block btn-lg btn-g-green">
-                            Tours & Activities
-                            <hr class="my-2">
-                            <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Entrances">
-                            </span>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="{{route('packages_path')}}" class="btn btn-block btn-lg btn-g-yellow">
-                            Land Packages
-                            <hr class="my-2">
-                            <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Entrances">
-                                <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Hotels">
-                                <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Trains">
-                                <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Assistances">
-                            </span>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="{{route('complete_path')}}" class="btn btn-block btn-lg btn-g-dark">
-                            Air + Land Packages
-                            <hr class="my-2">
-                            <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Entrances">
-                                <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Hotels">
-                                <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Trains">
-                                <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Assistances">
-                                <img src="{{asset('images/icons/include/flight.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Flights">
-                            </span>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#Inquire" class="btn btn-block btn-lg btn-secondary">
-                            Customize
-                            <hr class="my-2">
-                            We will design together...
-
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @include('layouts.page.menu-custom')
         </div>
         <div class="content-header">
             <div class="container">
@@ -224,7 +172,7 @@
                                             <i class="fa fa-quote-left float-left"></i>
                                             <span class="font-weight-light small">
                                                 @foreach($comentario->where('idpaquetes', $paquetes->id)->random(1) as $comment2)
-                                                    @php echo $comment2->comentario; @endphp
+                                                    @php echo substr($comment2->comentario, 0, 300).' ...'; @endphp
                                                 @endforeach
                                             </span>
                                             <i class="fa fa-quote-right float-right"></i>
@@ -259,7 +207,7 @@
         </div>
     </section>
 
-{{--    @include('layouts.page.menu-2')--}}
+    @include('layouts.page.menu-2')
     <section class="d-md-none">
         <div class="container-fluid p-0">
             <div class="row no-gutters">
@@ -279,30 +227,30 @@
         </div>
     </section>
     @include('layouts.page.included')
-    <ul id="menu" class="nav nav-pills nav-fill bg-light rounded  d-sm-flex sticky-top nav-itinerary contenido2">
+    <ul id="menu" class="nav nav-pills nav-fill bg-light d-sm-flex sticky-top nav-itinerary contenido2">
         <li class="nav-item d-none d-sm-block">
-            <a class="nav-link text-white rounded-0 bg-g-dark" href="#overview">Overview</a>
+            <a class="nav-link text-secondary rounded-0" href="#overview">Overview</a>
         </li>
         <li class="nav-item d-none d-sm-block">
-            <a class="nav-link text-white rounded-0 bg-g-green" href="#Itinerary">Itinerary</a>
+            <a class="nav-link text-secondary rounded-0" href="#Itinerary">Itinerary</a>
         </li>
         <li class="nav-item d-sm-none">
-            <a class="nav-link text-white rounded-0 bg-g-green" href="#Itinerary-2">Itinerary</a>
+            <a class="nav-link text-secondary rounded-0" href="#Itinerary-2">Itinerary</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white rounded-0 bg-danger" href="#Hotels">Hotels</a>
+            <a class="nav-link text-secondary rounded-0" href="#Hotels">Hotels</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white rounded-0 bg-info" href="#Maps">Route & Google Maps</a>
+            <a class="nav-link text-secondary rounded-0" href="#Maps">Route & Google Maps</a>
         </li>
         <li class="nav-item d-none d-sm-block">
-            <a class="nav-link text-white rounded-0 bg-g-yellow" href="#Inquire">Inquire</a>
+            <a class="nav-link text-secondary rounded-0" href="#Inquire">Inquire</a>
         </li>
         <li class="nav-item d-none d-sm-block">
-            <a class="nav-link text-white rounded-0 bg-secondary" href="#Reviews">Reviews</a>
+            <a class="nav-link text-secondary rounded-0" href="#Reviews">Reviews</a>
         </li>
     </ul>
-    <section class="bg-white pt-2">
+    <section class="bg-white">
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
@@ -312,7 +260,7 @@
                             <div class="row">
 
                             <div class="col col-sm-12 col-md-7 col-lg-9 col-xl-9">
-                                <div class="row mt-4">
+                                <div class="row mt-3">
                                     <div class="col">
                                         <h1 class="text-g-yellow font-weight-bold">{{($paquetes->titulo)}}</h1>
                                         @if($j > 0)
@@ -335,14 +283,23 @@
                                 <div id="overview" class="">
                                     <h3 class="text-secondary pt-4 pb-2 h4"><strong>Overview</strong></h3>
                                     @php echo $paquetes->descripcion; @endphp
-                                    <div class="row py-3 align-items-center">
+                                    <div class="row py-3">
                                         <div class="col">
                                             <h5 class="text-secondary">Highlights</h5>
 
+                                            {{--<div class="row text-center">--}}
+{{----}}
                                                 @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
                                                     {{--<p class="font-weight-bold text-secondary"><i class="fa fa-check"></i> {{ucwords(strtolower($paquete_destino->destinos->nombre))}}</p>--}}
-                                                    <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($paquete_destino->destinos->nombre))])}}-tours"><img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($paquete_destino->destinos->nombre)).'')}}.jpg" alt="" width="50" height="50" class="rounded-circle" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($paquete_destino->destinos->nombre))}}"></a>
+                                                {{--<div class="col-2 mb-3">--}}
+                                                    <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($paquete_destino->destinos->nombre))])}}-tours"><img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($paquete_destino->destinos->nombre)).'')}}.jpg" alt="" width="50" height="50" class="rounded-circle mb-2" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($paquete_destino->destinos->nombre))}}">
+                                                        {{--<small class="small d-block">{{ucwords(strtolower($paquete_destino->destinos->nombre))}}</small>--}}
+                                                    </a>
+                                                {{--</div>--}}
+
                                                 @endforeach
+
+                                            {{--</div>--}}
 
                                         </div>
                                         <div class="col">
@@ -604,7 +561,7 @@
                                         <div class="row my-3">
                                             <div class="col">
                                                 <div class="alert alert-success">
-                                                    <small>*Si tiene algún hotel en especifico con gusto lo prepararemos una cotización personalizada.</small>
+                                                    <small>*If you have a preferred hotel in mind feel free to share it with us as we work with most hotels in Peru.</small>
                                                 </div>
                                             </div>
                                         </div>
@@ -1536,9 +1493,7 @@
     </div>
 
     @push('scripts')
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf1RN8KKGNdS-iEarIgXpaqa-khw7EmZI&callback=initMap">
-        </script>
+
 
 
         <script>

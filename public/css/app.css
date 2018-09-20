@@ -12551,7 +12551,7 @@ header {
           perspective: 1000;
   position: fixed;
   right: 0;
-  width: auto;
+  width: 100%;
   z-index: -1;
 }
 
@@ -12739,6 +12739,8 @@ header {
 .nav-itinerary .nav-link.active {
   opacity: 1;
   border-bottom: 3px solid #000000;
+  color: #FFFFFF !important;
+  background-color: #7F8429;
 }
 
 .modal.left .modal-dialog,

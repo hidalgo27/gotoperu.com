@@ -29,7 +29,7 @@
             {{--</video>--}}
 
             <img src="{{asset('images/destinations/puno.jpg')}}" alt="" id="hero-vid">
-
+            @include('layouts.page.menu-custom')
         </div>
         <div class="content-header">
             <div class="container-fluid">
@@ -78,7 +78,7 @@
     </section>
 
     <section class="bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-4">
                 <div class="col">
                     <h1 class="font-weight-bold text-g-yellow text-center"><strong>PERU DESTINATIONS</strong></h1>
@@ -96,7 +96,7 @@
     </section>
 
     <section class="bg-white pt-3">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="row pt-4" id="destinations">
@@ -1209,4 +1209,6 @@
     </section>
 
     @include('layouts.page.form-quote')
+
+
 @stop

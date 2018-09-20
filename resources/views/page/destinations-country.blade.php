@@ -28,7 +28,7 @@
             {{--</video>--}}
 
             <img src="{{asset('images/destinations/'.$pais.'.jpg')}}" alt="" id="hero-vid">
-
+            @include('layouts.page.menu-custom')
         </div>
         <div class="content-header">
             <div class="container-fluid">

@@ -28,10 +28,11 @@
             {{--</video>--}}
 
                 <img src="{{asset('images/hotels.jpg')}}" alt="" id="hero-vid">
+            @include('layouts.page.menu-custom')
 {{--            <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="header-expedia">--}}
-            <div class="header-expedia text-white">
-                <p class="p-4">4 <span class="text-g-yellow">Stars </span> Casa Andina Premium - Cusco</p>
-            </div>
+            {{--<div class="header-expedia text-white">--}}
+                {{--<p class="p-4">4 <span class="text-g-yellow">Stars </span> Casa Andina Premium - Cusco</p>--}}
+            {{--</div>--}}
         </div>
         <div class="content-header">
             <div class="container-fluid">
@@ -80,7 +81,7 @@
     </section>
 
     <section class="bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-4 pb-2">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>HOTELS</strong></h1>
@@ -93,7 +94,7 @@
     </section>
 
     <section class="bg-white">
-        <div class="container-fluid">
+        <div class="container">
             @foreach($hoteles as $hotel)
             <div class="row pb-5">
                 <div class="col-12 col-md-3">

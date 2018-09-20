@@ -29,7 +29,7 @@
             {{--</video>--}}
 
             <img src="{{asset('images/destinations/'.str_replace(' ','-', $ciudad).'.jpg')}}" alt="" id="hero-vid">
-
+            @include('layouts.page.menu-custom')
         </div>
         <div class="content-header">
             <div class="container-fluid">
@@ -107,7 +107,7 @@
 
 
     <section class="bg-white pb-5">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-7 col-md-8 col-xl-9">
                     <div class="row pt-4" id="tours">
@@ -124,26 +124,125 @@
                         @foreach($paquetes_de as $paquetes_des)
                             @if(isset($paquetes_des->destinos))
                                 @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-4 d-flex">
-                                        <div class="card border-left-0 border-right-0 pb-2">
-                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="position-relative mb-2">
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-3">
+                                        <div class="card mb-3">
+                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="position-relative">
                                                 <img class="card-img-top " src="{{asset('images/packages/'.$paquetes->codigo.'.jpg')}}" alt="{{(strtolower($paquetes->titulo))}}">
 
-                                                <div class="card-img-overlay bg-rgba-dark-3 p-0">
+                                                <div class="card-img-overlay p-0">
                                                     <div class="row justify-content-between no-gutters">
-                                                        <div class="col-auto p-3">
-                                                            <p class="m-0 text-white">{{$paquetes->duracion}} Days</p>
+                                                        <div class="col col-sm-7 p-2 bg-rgba-dark-3">
+                                                            <h5 class="m-0 text-white">{{$paquetes->duracion}} Days</h5>
                                                         </div>
-                                                        <div class="col-auto bg-g-dark p-3 text-white text-center">
+                                                        <div class="col col-sm-5 bg-g-dark py-2 text-white text-center">
                                                             @foreach($paquetes->precio_paquetes as $precio)
                                                                 @if($precio->estrellas == 2)
                                                                     @if($precio->precio_d > 0)
-                                                                        <p class="text-g-yellow font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
+                                                                        <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
                                                                     @else
                                                                         <span class="text-danger">Inquire</span>
                                                                     @endif
                                                                 @endif
                                                             @endforeach
+                                                        </div>
+                                                    </div>
+                                                    <div class="row justify-content-end no-gutters">
+                                                        <div class="col text-right">
+                                                            <div class="px-3 small">
+                                                                <a href="#" class="text-g-yellow" data-toggle="modal" data-target="#modal-{{$paquetes->id}}">
+                                                                    @php $j = 0; $k = 0; @endphp
+                                                                    @foreach($comentario->where('idpaquetes', $paquetes->id) as $comment)
+                                                                        @php
+                                                                            $k = $k + $comment->valoracion;
+                                                                            $j++;
+                                                                        @endphp
+                                                                    @endforeach
+
+                                                                    @if($j > 0)
+                                                                        <span class="text-white">{{$j}} comments</span>
+                                                                        <span class="text-secondary">|</span>
+                                                                        {{--<i class="fas fa-star"></i>--}}
+                                                                        {{--<i class="fas fa-star"></i>--}}
+                                                                        {{--<i class="fas fa-star"></i>--}}
+                                                                        <span class="badge badge-g-yellow">{{$k/$j}} <i class="fas fa-star"></i></span>
+                                                                    @endif
+                                                                </a>
+                                                            </div>
+                                                            <!-- Modal -->
+                                                            <div class="modal fade" id="modal-{{$paquetes->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-lg" role="document">
+                                                                    <div class="modal-content">
+
+                                                                        <div class="modal-body text-left">
+                                                                            <div class="row">
+                                                                                <div class="col">
+                                                                                    <div class="card p-3 bg-light mb-3">
+                                                                                        <h4>Our Reviews</h4>
+                                                                                        <small>Leave your comment too.</small>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            @foreach($comentario->where('idpaquetes', $paquetes->id) as $comentarios)
+                                                                                <div class="row">
+                                                                                    <div class="col-3">
+                                                                                        <small class="font-italic"><i class="fas fa-user-circle"></i> {{$comentarios->usuario}} | <span class="font-weight-bold">{{$comentarios->ciudad}}</span></small>
+                                                                                        <span class="d-block text-g-yellow">
+                                                                                @for ($i = 0; $i < $comentarios->valoracion; $i++)
+                                                                                                <i class="fas fa-star"></i>
+                                                                                            @endfor
+                                                                            </span>
+                                                                                    </div>
+                                                                                    <div class="col">
+                                                                                        <i class="fa fa-quote-left float-left mr-3"></i>
+                                                                                        @php echo $comentarios->comentario; @endphp
+                                                                                        <i class="fa fa-quote-right float-left"></i>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <hr>
+                                                                            @endforeach
+
+                                                                            <div class="row pb-4">
+                                                                                <div class="col text-right">
+                                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}#Reviews" class="btn-link font-weight-normal">All Opinions <i class="fa fa-chevron-right"></i></a>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="row justify-content-end">
+                                                                                <div class="col-4">
+                                                                                    <div class="row">
+                                                                                        <div class="col">
+                                                                                            <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
+                                                                                                <img src="{{asset('images/icons/facebook.png')}}" alt="" class="img-fluid">
+                                                                                            </a>
+                                                                                        </div>
+                                                                                        <div class="col">
+                                                                                            <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
+                                                                                                <img src="{{asset('images/icons/twitter.png')}}" alt="" class="img-fluid">
+                                                                                            </a>
+                                                                                        </div>
+                                                                                        <div class="col">
+                                                                                            <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
+                                                                                                <img src="{{asset('images/icons/instagram.png')}}" alt="" class="img-fluid">
+                                                                                            </a>
+                                                                                        </div>
+                                                                                        <div class="col">
+                                                                                            <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
+                                                                                                <img src="{{asset('images/icons/youtube.png')}}" alt="" class="img-fluid">
+                                                                                            </a>
+                                                                                        </div>
+                                                                                        <div class="col">
+                                                                                            <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
+                                                                                                <img src="{{asset('images/icons/google-plus.png')}}" alt="" class="img-fluid">
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     {{--<p class="text-white m-0">{{$paquetes->duracion}} days <span class="text-g-yellow font-weight-bold float-right bg-danger">--}}
@@ -152,20 +251,23 @@
                                                 </div>
                                                 <div class="card-img-overlay-packages bg-rgba-dark-1">
                                                     <h5 class="card-title text-white m-0">{{ucwords(strtolower($paquetes->titulo))}}</h5>
-                                                    {{--<h2 class="card-title text-white m-0 h5"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>--}}
-                                                    {{--<small class="text-white font-weight-light">--}}
-                                                        {{--<i class="fa fa-map-marker"></i>--}}
-                                                        {{--@php--}}
-                                                            {{--$i = 1;--}}
-                                                            {{--$num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));--}}
-                                                        {{--@endphp--}}
-                                                        {{--@foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)--}}
-                                                            {{--@if(isset($paquete_destino->destinos->nombre))--}}
-                                                                {{--{{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif--}}
-                                                                {{--@php $i++; @endphp--}}
-                                                            {{--@endif--}}
-                                                        {{--@endforeach--}}
-                                                    {{--</small>--}}
+                                                    @foreach($dificultad->where('idpaquetes', $paquetes->id) as $dificultades)
+                                                        <small class="text-success font-weight-light" data-toggle="tooltip" data-placement="bottom" title="{{$dificultades->dificultad->nombre}}"><i class="fas fa-signal"></i></small>
+                                                    @endforeach
+                                                    {{--<h2 class="card-title text-white m-0 h5"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>--}}
+                                                    <small class="text-white font-weight-light">
+                                                        <i class="fa fa-map-marker-alt"></i>
+                                                        @php
+                                                            $i = 1;
+                                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
+                                                        @endphp
+                                                        @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
+                                                            @if(isset($paquete_destino->destinos->nombre))
+                                                                {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
+                                                                @php $i++; @endphp
+                                                            @endif
+                                                        @endforeach
+                                                    </small>
                                                 </div>
                                             </a>
                                             {{--<div class="card-body">--}}
@@ -174,19 +276,6 @@
                                             {{----}}
                                             {{--</p>--}}
                                             {{--</div>--}}
-                                            <small class="font-weight-light text-justify">
-                                                <i class="fa fa-map-marker-alt"></i>
-                                                @php
-                                                    $i = 1;
-                                                    $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
-                                                @endphp
-                                                @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
-                                                    @if(isset($paquete_destino->destinos->nombre))
-                                                        {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
-                                                        @php $i++; @endphp
-                                                    @endif
-                                                @endforeach
-                                            </small>
                                         </div>
                                     </div>
 

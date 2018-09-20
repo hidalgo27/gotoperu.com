@@ -32,7 +32,7 @@
             {{--</video>--}}
 
             <img src="{{asset('images/testimonials.jpg')}}" alt="" id="hero-vid">
-
+            @include('layouts.page.menu-custom')
         </div>
         <div class="content-header">
             <div class="container-fluid">

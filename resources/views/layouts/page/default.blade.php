@@ -416,6 +416,8 @@
     });
 </script>
 {{--<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0027/9680.js" async="async"></script>--}}
-
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf1RN8KKGNdS-iEarIgXpaqa-khw7EmZI&callback=initMap">
+</script>
 </body>
 </html>

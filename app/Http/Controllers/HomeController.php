@@ -160,7 +160,10 @@ class HomeController extends Controller
         $paquetes = TPaquete::with('precio_paquetes')->get();
         $paquetes_r = TPaquete::with('precio_paquetes')->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
-        return view('page.packages',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r]);
+        $comentario = TComentario::with('itinerario')->get();
+        $dificultad = TPaqueteDificultad::all();
+
+        return view('page.packages',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'comentario'=>$comentario, 'dificultad'=>$dificultad]);
     }
 
     public function packages_durations($from, $to)
@@ -168,7 +171,8 @@ class HomeController extends Controller
         $paquetes = TPaquete::with('precio_paquetes')->where('duracion', '>=', $from)->where('duracion', '<=', $to)->get();
         $paquetes_r = TPaquete::with('precio_paquetes')->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
-
+        $comentario = TComentario::with('itinerario')->get();
+        $dificultad = TPaqueteDificultad::all();
 
         SEOMeta::setTitle('Travel Packages '.$from.'-'.-$to.' days - Peru Travel Packages | Machu Picchu Tour Packages');
         SEOMeta::setDescription('Travel Packages '.$from.'-'.$to.' days. Discover Peru with Gotoperu Tour & Travel Packages. We offer amazing deals on Machu Picchu Vacation Packages.  Give us call @ (202) 996-3000 for more info.');
@@ -189,7 +193,7 @@ class HomeController extends Controller
 
 
 
-        return view('page.packages-durations',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'duration'=>$from.'-'.$to]);
+        return view('page.packages-durations',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'duration'=>$from.'-'.$to, 'comentario'=>$comentario, 'dificultad'=>$dificultad]);
     }
 
 
@@ -540,7 +544,8 @@ class HomeController extends Controller
 
         $paquetes_de = TPaqueteDestino::with(['destinos'=>function($query) use ($ciudad) { $query->where('nombre', $ciudad);}])->get();
 
-
+        $comentario = TComentario::with('itinerario')->get();
+        $dificultad = TPaqueteDificultad::all();
 
         SEOMeta::setTitle(''.ucwords($ciudad).' Tours | '.ucwords($ciudad).' Travel Offers | Cheap '.ucwords($ciudad).' Deals');
         SEOMeta::setDescription('Plan your vacations in '.ucwords($ciudad).' with our affordable tour packages and enjoy the astounding structures, stunning beaches, lush landscapes and much more!');
@@ -572,7 +577,7 @@ class HomeController extends Controller
 
 //                dd($cusco2);
 
-        return view('page.destinations-country-show', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos, 'destinos_p'=>$destinos_p, 'pais'=>$pais, 'paquetes_de'=>$paquetes_de, 'ciudad'=>$ciudad, 'cusco'=>$cusco, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'destinos_id'=>$destinos_id]);
+        return view('page.destinations-country-show', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos, 'destinos_p'=>$destinos_p, 'pais'=>$pais, 'paquetes_de'=>$paquetes_de, 'ciudad'=>$ciudad, 'cusco'=>$cusco, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'destinos_id'=>$destinos_id, 'comentario'=>$comentario, 'dificultad'=>$dificultad]);
     }
 
     public function about()

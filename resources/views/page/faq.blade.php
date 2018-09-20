@@ -28,7 +28,7 @@
             {{--</video>--}}
 
             <img src="{{asset('images/faq.jpg')}}" alt="" id="hero-vid">
-
+            @include('layouts.page.menu-custom')
         </div>
         <div class="content-header">
             <div class="container-fluid">
@@ -77,7 +77,7 @@
     </section>
 
     <section class="bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-4">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>Frequently Asked Questions</strong></h1>
@@ -88,7 +88,7 @@
     </section>
 
     <section class="bg-light py-5">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-6">
                     <ul class="list-unstyled card p-3">

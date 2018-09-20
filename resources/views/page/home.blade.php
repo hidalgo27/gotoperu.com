@@ -5,26 +5,31 @@
         <div id="title" class="text-white">
             <div class="container-fluid">
                 <div class="row align-items-center mt-2">
-                    <div class="col-md-6 col-lg-3">
-                        <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="d-none d-lg-inline col-lg">
+                    <div class="col-md-6 col-lg-6">
                         <div class="row align-items-center">
-                            <div class="col-9">
-                                <i class="text-g-yellow">Local expertise & global partners</i>
+                            <div class="col">
+                                <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
                             </div>
-                            <div class="col-3">
-                                <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="img-fluid">
+                            <div class="col">
+                                <i class="text-g-yellow">Local expertise & global partners</i>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md col-lg-auto text-right">
+
+                    <div class="col-md col-lg-6 text-right">
                         <div class="row align-items-center">
-                            <div class="col">
-                            <a href="tel:+2029963000" class="mx-3 text-white">(202) 996-3000</a>
-                            <a href="#Inquire" class="btn btn-g-yellow btn-sm font-weight-bold">My ideal trip will be</a>
-                            <a href="#" class="mx-3 text-white"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars fa-2x pt-2"></i></a>
-                            <!-- Button trigger modal -->
+                            <div class="col-3">
+                                <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-4">
+                                <a href="tel:+2029963000" class="mx-3 text-white h5">(202) 996-3000</a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#Inquire" class="btn btn-g-yellow font-weight-bold">My ideal trip will be</a>
+                                <!-- Button trigger modal -->
+                            </div>
+                            <div class="col-2 text-right">
+                                <a href="#" class="text-white"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars fa-2x"></i></a>
                             </div>
                         </div>
                     </div>
@@ -103,59 +108,7 @@
                 </div>
             </div>
             {{--<div class="header-expedia text-white p-3">As local travel operators our programs start daily</div>--}}
-            <div class="header-expedia p-3 w-100 text-center d-none d-lg-inline">
-                {{--<p class="text-white h6"><span class="bg-g-green p-1 rounded-circle px-3 text-white">1</span> Share your travel plans <span class="bg-g-yellow p-1 rounded-circle px-3 text-white ml-5">2</span> Receive a customize itinerary and quote <span class="bg-g-dark p-1 rounded-circle px-3 text-white ml-5">3</span> Discover the best of Peru with GOTOPERU</p>--}}
-                <div class="row">
-                    <div class="col">
-                        <a href="" class="btn btn-block btn-lg btn-g-green">
-                            Tours & Activities
-                            <hr class="my-2">
-                            <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Entrances">
-                            </span>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="{{route('packages_path')}}" class="btn btn-block btn-lg btn-g-yellow">
-                            Land Packages
-                            <hr class="my-2">
-                            <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Entrances">
-                                <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Hotels">
-                                <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Trains">
-                                <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Assistances">
-                            </span>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="{{route('complete_path')}}" class="btn btn-block btn-lg btn-g-dark">
-                            Air + Land Packages
-                            <hr class="my-2">
-                            <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Entrances">
-                                <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Hotels">
-                                <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Trains">
-                                <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Assistances">
-                                <img src="{{asset('images/icons/include/flight.png')}}" alt="assistances" class="" width="30" data-toggle="tooltip" data-placement="top" title="Flights">
-                            </span>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#Inquire" class="btn btn-block btn-lg btn-secondary">
-                            Customize
-                            <hr class="my-2">
-                            We will design together...
-
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @include('layouts.page.menu-custom')
         </div>
         <div class="content-header">
             <div class="container">
@@ -563,7 +516,7 @@
         <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
-                    <h1 class="text-secondary h4"><strong>PERU TRAVEL PACKAGES</strong> <small class="font-italic text-primary font-weight-bold">(Land packges)</small></h1>
+                    <h1 class="text-secondary h4"><strong>PERU TRAVEL PACKAGES</strong> <small class="font-italic text-primary font-weight-bold">(Land Packages)</small></h1>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     {{--<p class="h4 font-weight-light">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>Customized Travel Packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>Machu Picchu</strong> and the rest of our  homeland… Peru!</p>--}}
