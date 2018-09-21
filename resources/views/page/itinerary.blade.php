@@ -16,7 +16,7 @@
         <div id="title" class="text-white">
             <div class="container-fluid">
                 <div class="row align-items-center mt-2">
-                    <div class="col-md-6 col-lg-6">
+                    <div class="col-md-9 col-lg-7 col-xl">
                         <div class="row align-items-center">
                             <div class="col">
                                 <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
@@ -27,19 +27,19 @@
                         </div>
                     </div>
 
-                    <div class="col-md col-lg-6 text-right">
+                    <div class="col-md-3 col-lg-5 col-xl text-right">
                         <div class="row align-items-center">
-                            <div class="col-3">
+                            <div class="col-3 d-md-none d-xl-inline col-xl-3">
                                 <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="img-fluid">
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 d-md-none d-xl-inline col-xl-4">
                                 <a href="tel:+2029963000" class="mx-3 text-white h5">(202) 996-3000</a>
                             </div>
-                            <div class="col-3">
+                            <div class="col-3 d-md-none d-lg-inline col-lg col-xl-3">
                                 <a href="#Inquire" class="btn btn-g-yellow font-weight-bold">My ideal trip will be</a>
                                 <!-- Button trigger modal -->
                             </div>
-                            <div class="col-2 text-right">
+                            <div class="col-2 col-md-12 col-lg-auto col-xl-2 text-right">
                                 <a href="#" class="text-white"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars fa-2x"></i></a>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
         <div class="content-header">
             <div class="container">
                 <div class="row content-header-row align-items-center justify-content-center">
-                    <div class="col-10 text-center">
+                    <div class="col-10 col-md-12 text-center">
                         {{--<a href="" class="text-white"><i class="fa fa-play-circle fa-4x"></i></a>--}}
 
                         <div class="text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
@@ -329,7 +329,7 @@
                                         <div class="tab-content" id="myTabContent">
                                             <div class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="resumen-tab">
                                                 <div class="row">
-                                                    <div class="col-12 col-sm-6 col-md-8">
+                                                    <div class="col-12 col-sm-6 col-md-12">
                                                         @foreach($paquetes->itinerario->sortBy('dia') as $itinerario)
 
                                                             <div class="row pt-4" id="section-{{$itinerario->id}}">
@@ -399,7 +399,7 @@
 
                                                         @endforeach
                                                     </div>
-                                                    <div class="d-none d-sm-inline col-sm-6 col-md-4">
+                                                    <div class="d-none d-sm-inline col-sm-6 d-md-none">
                                                         <div class="sticky-top sticky-top-50 mt-5">
                                                             <nav id="menu" class="navbar navbar-light nav-goto-side w-100">
                                                                 <nav class="nav nav-pills flex-column w-100">

@@ -144,7 +144,7 @@
                     <div class="">
                         <div class="row">
                             @foreach($paquetes->sortBy('duracion') as $paquete)
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-3">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-3">
                                     <div class="card mb-3">
                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
                                             <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}">
