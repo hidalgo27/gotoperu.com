@@ -18,6 +18,7 @@
                 <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="img-fluid"></a>
             </div>
         </div>
+
     </div>
 </section>
 <section class="bg-dark sticky-top py-2 d-md-none">

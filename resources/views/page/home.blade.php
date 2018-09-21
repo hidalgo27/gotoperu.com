@@ -5,7 +5,7 @@
         <div id="title" class="text-white">
             <div class="container-fluid">
                 <div class="row align-items-center mt-2">
-                    <div class="col-md-6 col-lg-6">
+                    <div class="col-md-9 col-lg-7 col-xl">
                         <div class="row align-items-center">
                             <div class="col">
                                 <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
@@ -16,19 +16,19 @@
                         </div>
                     </div>
 
-                    <div class="col-md col-lg-6 text-right">
+                    <div class="col-md-3 col-lg-5 col-xl text-right">
                         <div class="row align-items-center">
-                            <div class="col-3">
+                            <div class="col-3 d-md-none d-xl-inline col-xl-3">
                                 <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="img-fluid">
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 d-md-none d-xl-inline col-xl-4">
                                 <a href="tel:+2029963000" class="mx-3 text-white h5">(202) 996-3000</a>
                             </div>
-                            <div class="col-3">
+                            <div class="col-3 d-md-none d-lg-inline col-lg col-xl-3">
                                 <a href="#Inquire" class="btn btn-g-yellow font-weight-bold">My ideal trip will be</a>
                                 <!-- Button trigger modal -->
                             </div>
-                            <div class="col-2 text-right">
+                            <div class="col-2 col-md-12 col-lg-auto col-xl-2 text-right">
                                 <a href="#" class="text-white"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars fa-2x"></i></a>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div id="overlay" class="position-relative">
-            <video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>
+            <video class="hero-vid-home" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>
                 <source src="{{asset('media/video6.mp4')}}" />
                 <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
                 <source src="{{asset('media/video6.webm')}}" type="video/webm" />
@@ -156,7 +156,7 @@
         </div>
     </section>
 
-{{--    @include('layouts.page.menu')--}}
+    @include('layouts.page.menu')
 
     <section class="d-md-none mt-3">
         <div class="container">
@@ -165,24 +165,80 @@
                     <img src="{{asset('images/machu_picchu.jpg')}}" alt="" class="w-100 rounded-top">
                 </div>
             </div>
-            <div class="row no-gutters align-items-center">
-                <div class="col">
-                    <ul class="list-group">
-                        <li class="list-group-item rounded-0"><span class="bg-g-green p-1 rounded-circle px-2 text-white">1</span> Share your travel plans</li>
-                        <li class="list-group-item rounded-0"><span class="bg-g-yellow p-1 rounded-circle px-2 text-white">2</span> Receive a customize itinerary and quote</li>
-                        <li class="list-group-item rounded-0"><span class="bg-g-dark p-1 rounded-circle px-2 text-white">3</span> Discover the best of Peru with GOTOPERU</li>
-                    </ul>
+            {{--<div class="row no-gutters align-items-center">--}}
+                {{--<div class="col">--}}
+                    {{--<ul class="list-group">--}}
+                        {{--<li class="list-group-item rounded-0"><span class="bg-g-green p-1 rounded-circle px-2 text-white">1</span> Share your travel plans</li>--}}
+                        {{--<li class="list-group-item rounded-0"><span class="bg-g-yellow p-1 rounded-circle px-2 text-white">2</span> Receive a customize itinerary and quote</li>--}}
+                        {{--<li class="list-group-item rounded-0"><span class="bg-g-dark p-1 rounded-circle px-2 text-white">3</span> Discover the best of Peru with GOTOPERU</li>--}}
+                    {{--</ul>--}}
 
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="row mt-4">--}}
+                {{--<div class="col">--}}
+                    {{--<a href="{{route('complete_path')}}" class="btn btn-block btn-primary">Package Air & Land</a>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+
+
+            <div class="w-100 text-center d-md-inline">
+                {{--<p class="text-white h6"><span class="bg-g-green p-1 rounded-circle px-3 text-white">1</span> Share your travel plans <span class="bg-g-yellow p-1 rounded-circle px-3 text-white ml-5">2</span> Receive a customize itinerary and quote <span class="bg-g-dark p-1 rounded-circle px-3 text-white ml-5">3</span> Discover the best of Peru with GOTOPERU</p>--}}
+                <div class="row">
+                    <div class="col my-2 my-sm-2 mb-md-2 col-lg col-xl">
+                        <a href="" class="btn btn-block btn-lg btn-g-green">
+                            <span class="font-weight-normal">Peru Tours & Activities</span>
+                            <hr class="my-2">
+                            <span class="d-block">
+                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
+                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col mb-2 mb-sm-2 mb-md-2 col-lg col-xl">
+                        <a href="{{route('packages_path')}}" class="btn btn-block btn-lg btn-g-yellow">
+                            <span class="font-weight-normal">Peru Travel Packages</span>
+                            <hr class="my-2">
+                            <span class="d-block">
+                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
+                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
+                                <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
+                                <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col mb-2 mb-sm-2 mb-md-2 col-lg col-xl">
+                        <a href="{{route('complete_path')}}" class="btn btn-block btn-lg btn-g-dark">
+                            <span class="font-weight-normal">Peru Travel Packages + Air</span>
+                            <hr class="my-2">
+                            <span class="d-block">
+                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
+                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
+                                <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
+                                <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
+                                <img src="{{asset('images/icons/include/flight.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Flights">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col mb-2 mb-sm-2 mb-md-2 d-lg-none d-xl-inline col-xl">
+                        <a href="#Inquire" class="btn btn-block btn-lg btn-secondary">
+                            <span class="font-weight-normal">Customize</span>
+                            <hr class="my-2">
+                            We will design together...
+
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col">
-                    <a href="{{route('complete_path')}}" class="btn btn-block btn-primary">Package Air & Land</a>
-                </div>
-            </div>
+
         </div>
     </section>
-    <section class="bg-light py-3 d-none d-lg-block contenido2">
+    <section class="bg-light py-3 d-none d-md-block contenido2">
         <div class="container-fluid">
             <div class="col">
                 <div class="row"><!--.row -->
@@ -260,10 +316,10 @@
                     </div>
                 </div>
                 <div class="col col-sm-12 col-md">
-                    <h2 class="text-secondary h1 font-weight-bold text-g-yellow"><strong>We are GOTOPERU</strong></h2>
+                    <h2 class="text-secondary h1 font-weight-bold text-g-yellow"><strong>We are <img src="{{asset('images/logos/logo-gotoperu.png')}}" alt="" width="250"></strong></h2>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                    <p class="text-dark">We are GOTOPERU , local travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 12 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized our efforts citing us a Top local Experts!</p>
+                    <p class="text-dark">Local travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 12 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized our efforts citing us a Top local Experts!</p>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-check text-g-yellow"></i> Headquarters: Cusco, Peru</li>
                         <li><i class="fa fa-check text-g-yellow"></i> Company: 25 members</li>
@@ -514,7 +570,7 @@
 
     <section class="bg-white">
         <div class="container">
-            <div class="row pt-5 pb-2">
+            <div class="row pt-md-0 pt-sm-0 pt-0 pt-lg-5 pb-2">
                 <div class="col">
                     <h1 class="text-secondary h4"><strong>PERU TRAVEL PACKAGES</strong> <small class="font-italic text-primary font-weight-bold">(Land Packages)</small></h1>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
@@ -530,7 +586,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-12 d-sm-block col-sm-12 d-md-inline col-md-12 col-lg-12 col-xl-4">
+                <div class="col-12 d-none col-sm-12 d-md-none d-lg-inline col-md-12 col-lg-4 col-xl-4">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -558,7 +614,7 @@
                                             </div>
                                         </a>
                                     @endforeach
-                                    <div class="gradient-destinations"></div>
+                                    {{--<div class="gradient-destinations"></div>--}}
                                     {{--<div class="row">--}}
                                     {{--<div class="col text-right pt-4">--}}
                                     {{--<a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>--}}
@@ -572,7 +628,7 @@
                     </div>
                 </div>
 
-                <div class="col col-xs-12 d-md-none d-lg-inline col-md-8 col-lg-12 col-xl-8">
+                <div class="col col-xs-12 d-md-inline col-md-12 col-lg-8 col-xl-8">
                     <div class="row">
                         @foreach($paquetes->where('estado', 1)->sortBy('duracion')->take(4) as $paquete)
                             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
@@ -749,7 +805,7 @@
         <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
-                    <h2 class="text-secondary h4"><strong>AIR + LAND PACKAGES</strong></h2>
+                    <h2 class="text-secondary h4"><strong>PERU TRAVEL PACKAGES + AIR</strong></h2>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     {{--<p class="h4 font-weight-light">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>Customized Travel Packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>Machu Picchu</strong> and the rest of our  homeland… Peru!</p>--}}
@@ -758,24 +814,24 @@
             <div class="alert alert-secondary">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <h5 class="m-0">7 DAYS WITH AIRFARE | <small><i class="fas fa-map-marker-alt"></i> Cusco, Lima, Sacred Valley, Machu Picchu.</small></h5>
+                        <h5 class="m-0">7 DAYS WITH AIRFARE FROM USA <a href="" class="small font-italic">(View Program)</a><small class="d-md-block "><i class="fas fa-map-marker-alt"></i> Cusco, Lima, Sacred Valley, Machu Picchu.</small></h5>
                     </div>
                     <div class="col text-right">
-                        <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="40" data-toggle="tooltip" data-placement="top" title="Guide">
-                        <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="40" data-toggle="tooltip" data-placement="top" title="Transfers">
-                        <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="40" data-toggle="tooltip" data-placement="top" title="Entrances">
-                        <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="40" data-toggle="tooltip" data-placement="top" title="Hotels">
-                        <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="40" data-toggle="tooltip" data-placement="top" title="Trains">
-                        <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="40" data-toggle="tooltip" data-placement="top" title="Assistances">
-                        <img src="{{asset('images/icons/include/flight.png')}}" alt="assistances" class="" width="40" data-toggle="tooltip" data-placement="top" title="Flights">
+                        <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
+                        <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
+                        <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
+                        <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
+                        <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
+                        <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
+                        <img src="{{asset('images/icons/include/flight.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Flights">
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-8">
+                <div class="col-8 col-md-6 col-lg-7 col-xl-8">
                     <div class="row no-gutters">
-                        <div class="col-12 col-md-8 col-xl-12 d-flex">
+                        <div class="col-12 col-md-12 col-xl-12 d-flex">
                             <div class="container p-0">
 
                                 <div class="slider-containers">
@@ -845,7 +901,7 @@
                         {{--</div>--}}
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-4 col-md-6 col-lg-5 col-xl-4">
                     <div class="card bg-light sticky-top">
                         <div class="card-header bg-dark">
                             <div class="row align-items-center">
@@ -940,7 +996,7 @@
         <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
-                    <h6 class="text-secondary"><strong>#gotoperu check out these #gotoperu photos from past travelers. After your trip, come back and share some of your owm!</strong></h6>
+                    <h6 class="text-secondary"><strong><a href=""><i class="fab fa-instagram"></i></a> #gotoperu check out these #gotoperu photos from past travelers. After your trip, come back and share some of your owm!</strong></h6>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
@@ -1053,7 +1109,7 @@
                 <div class="col-4">
                     <div class="row">
                         <div class="col">
-                            <a href=""><img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="If you are visiting anywhere in Peru, you cannot find a better choice than www.gotoperu.com – they live there, and work there, and can sort urgent issues readily, with a quick phone call."></a>
+                            <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5867868-Has_anyone_booked_a_tour_with_GOTOPERU_www_gotoperu_org-Peru.html"><img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="If you are visiting anywhere in Peru, you cannot find a better choice than www.gotoperu.com – they live there, and work there, and can sort urgent issues readily, with a quick phone call."></a>
                         </div>
                         <div class="col">
                             <a href="https://www.trustpilot.com/review/gotoperu.com" target="_blank"><img src="{{asset('images/icons/trust.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="In summary, we had a wonderful time! We, of course, enjoyed the sights as we expected (Machu Picchu, Sacred Valley, train, Lake Titicacca), but all of the connections were on time and very comfortable. The guides (Franklin in Cusco, Nellie in Machu Picchu) were very pleasant and very knowledgeable. "></a>
@@ -1664,7 +1720,7 @@
                         items: 1
                     },
                     600: {
-                        items: 3
+                        items: 2
                     },
                     1000: {
                         items: 3

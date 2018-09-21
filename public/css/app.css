@@ -12555,6 +12555,10 @@ header {
   z-index: -1;
 }
 
+.hero-vid-home {
+  width: auto !important;
+}
+
 #hero-pic {
   display: block;
   height: auto;
