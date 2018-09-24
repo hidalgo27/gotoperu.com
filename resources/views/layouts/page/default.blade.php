@@ -158,18 +158,6 @@
 <script src="{{asset("js/font-awesome.js")}}"></script>
 <script src="{{asset("js/plugins.js")}}"></script>
 
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        direction: 'vertical',
-        slidesPerView: 'auto',
-        freeMode: true,
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-        mousewheel: true,
-    });
-</script>
-
 @stack('scripts')
 <script type="application/ld+json">
 {

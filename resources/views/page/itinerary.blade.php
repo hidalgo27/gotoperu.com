@@ -155,7 +155,7 @@
                                                                 <b class="m-0 p-0 "><span class="h5">Excellent</span> <a href="#Reviews" class="d-block">{{$j}} comments</a></b>
                                                             </div>
                                                             <div class="col-6">
-                                                                <span class="badge badge-g-dark w-100"><b class="h4">{{$k/$j}}</b>
+                                                                <span class="badge badge-g-dark w-100"><b class="h4">{{round($k/$j, 2)}}</b>
                                                                     <small class="d-block text-g-yellow">
                                                                         @for ($i = 0; $i < ($k/$j); $i++)
                                                                             <i class="fas fa-star small"></i>
@@ -241,17 +241,17 @@
             <a class="nav-link text-secondary rounded-0" href="#Hotels">Hotels</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-secondary rounded-0" href="#Maps">Route & Google Maps</a>
+            <a class="nav-link text-secondary rounded-0" href="#Maps">Route</a>
         </li>
-        <li class="nav-item d-none d-sm-block">
-            <a class="nav-link text-secondary rounded-0" href="#Inquire">Inquire</a>
-        </li>
+        {{--<li class="nav-item d-none d-sm-block">--}}
+            {{--<a class="nav-link text-secondary rounded-0" href="#Inquire">Inquire</a>--}}
+        {{--</li>--}}
         <li class="nav-item d-none d-sm-block">
             <a class="nav-link text-secondary rounded-0" href="#Reviews">Reviews</a>
         </li>
     </ul>
     <section class="bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="row position-relative">
@@ -272,7 +272,7 @@
                                                     @endfor
                                                 </span>
                                                 <span class="badge badge-g-dark">
-                                                {{$k/$j}}
+                                                {{round($k/$j, 2)}}
                                             </span>
                                             </a>
 
@@ -311,9 +311,9 @@
                                     </div>
                                 </div>
 
-                                <div class="row">
+                                <div class="row" id="Itinerary">
                                     <div class="col">
-                                        <div class="row" id="itinerary">
+                                        <div class="row" id="">
                                             <div class="col">
                                                 <h3 class="text-secondary pt-5 pb-4 h4"><strong>Itinerary</strong></h3>
                                             </div>
@@ -333,11 +333,16 @@
                                                         @foreach($paquetes->itinerario->sortBy('dia') as $itinerario)
 
                                                             <div class="row pt-4" id="section-{{$itinerario->id}}">
-                                                                <div class="col">
+                                                                <div class="col-12 col-md-12 col-lg-8">
                                                                     <h6 class="text-g-yellow font-weight-normal"><span class="badge badge-g-dark">Day {{$itinerario->dia}}:</span> <strong>{{ucwords(strtolower($itinerario->titulo))}}</strong>
                                                                     </h6>
                                                                     {{--<img src="{{asset('images/itinerary/amazon-arrival-1.jpg')}}" alt="" width="280" data-toggle="modal" data-target="#exampleModal" class="float-right rounded m-2">--}}
 
+                                                                    @php echo $itinerario->resumen; @endphp
+                                                                <!-- Button trigger modal -->
+
+                                                                </div>
+                                                                <div class="col-12 col-md-12 col-lg">
                                                                     <div class="box15 float-right rounded">
                                                                         <img src="{{asset('images/itinerary/'.str_replace(' ', '-', strtolower($itinerario->titulo).'-1.jpg'))}}" alt="" class="rounded">
                                                                         <div class="box-content text-center">
@@ -347,11 +352,6 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-
-                                                                    @php echo $itinerario->resumen; @endphp
-                                                                <!-- Button trigger modal -->
-
-
                                                                     <!-- Modal -->
                                                                     <div class="modal fade" id="modal-img-{{$itinerario->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -360,7 +360,7 @@
                                                                                     <div id="carouselExampleFade{{$itinerario->id}}" class="carousel slide carousel-fade" data-ride="carousel">
                                                                                         <div class="carousel-inner">
                                                                                             {{--<div class="carousel-item active">--}}
-                                                                                                {{--<img class="d-block w-100 rounded" src="{{asset('images/itinerary/'.str_replace(' ', '-', strtolower($itinerario->titulo).'-1.jpg'))}}" alt="First slide">--}}
+                                                                                            {{--<img class="d-block w-100 rounded" src="{{asset('images/itinerary/'.str_replace(' ', '-', strtolower($itinerario->titulo).'-1.jpg'))}}" alt="First slide">--}}
                                                                                             {{--</div>--}}
                                                                                             @php
                                                                                                 $k = 0;
@@ -392,7 +392,6 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-
                                                                 </div>
                                                             </div>
                                                             <hr>
@@ -415,7 +414,7 @@
                                             <div class="tab-pane fade" id="full" role="tabpanel" aria-labelledby="full-tab">
                                                 <div class="row">
                                                     <div class="col-8">
-                                                        <div id="Itinerary" class="d-none d-sm-block">
+                                                        <div id="Itinerary-2" class="d-none d-sm-block">
 
                                                             <h3 class="text-secondary pt-5 pb-4 h4"><strong>Itinerary</strong></h3>
                                                             @php
@@ -486,12 +485,12 @@
                                     </div>
                                 </div>
 
-                                <div class="row">
+                                <div class="row" id="Hotels">
                                     <div class="col">
-                                        {{--<h3 class="text-secondary h4"><strong>Hotels</strong></h3>--}}
+                                        <h3 class="text-secondary h4"><strong>Hotels</strong></h3>
                                         <h3 class="text-secondary pt-5 pb-3 h4"><strong>Prices Per Person <small class="text-primary font-weight-bold">($USD)</small></strong></h3>
                                         <div class="row">
-                                            <div class="col">
+                                            <div class="col mb-md-2">
                                                 <div class="card border-secondary">
                                                     <p class="card-header bg-dark text-g-yellow">Based on doble / triple occupancy </p>
                                                     <div class="card-body p-0">
@@ -524,7 +523,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col">
+                                            <div class="col mb-md-2">
                                                 <div class="card border-secondary">
                                                     <p class="card-header bg-secondary text-white">Based on single occupancy</p>
                                                     <div class="card-body p-0">
@@ -565,30 +564,31 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div id="Included" class="">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h3 class="text-secondary h4"><strong>Included</strong></h3>
-                                            @php echo $paquetes->incluye; @endphp
-                                        </div>
-                                        <div class="col">
-                                            <h3 class="text-secondary h4"><strong>Not Included</strong></h3>
-                                            @php echo $paquetes->noincluye; @endphp
+                                        <div class="row">
+                                            <div class="col-12 col-lg">
+                                                <h3 class="text-secondary h4"><strong>Included</strong></h3>
+                                                @php echo $paquetes->incluye; @endphp
+                                            </div>
+                                            <div class="col-12 col-lg">
+                                                <h3 class="text-secondary h4"><strong>Not Included</strong></h3>
+                                                @php echo $paquetes->noincluye; @endphp
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div id="Maps">
-                                    <div class="row pt-5">
-                                        <div class="col-12">
-                                            <h3 class="text-secondary h4 mb-3"><strong>Maps</strong></h3>
-                                            @php echo $paquetes->maps; @endphp
-                                        </div>
-                                    </div>
-                                </div>
+                                {{--<div id="Included" class="">--}}
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col">--}}
+                                            {{--<h3 class="text-secondary h4"><strong>Included</strong></h3>--}}
+                                            {{--@php echo $paquetes->incluye; @endphp--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col">--}}
+                                            {{--<h3 class="text-secondary h4"><strong>Not Included</strong></h3>--}}
+                                            {{--@php echo $paquetes->noincluye; @endphp--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
 
                                 <div id="Hotels" class="pt-5">
                                     <div class="row">
@@ -608,7 +608,7 @@
                                                 <h6 class="text-secondary pt-2 m-0 font-weight-bold" id="{{$paquete_destino->destinos->id}}-hotel"><i class="fas fa-angle-right text-primary"></i> {{$paquete_destino->destinos->nombre}} HOTEL</h6>
                                                 <div class="row p-2 pb-4">
                                                     @foreach($hoteles_destinos->where('iddestinos', $paquete_destino->destinos->id) as $hoteles_destino)
-                                                        <div class="col-4 d-flex my-2">
+                                                        <div class="col-12 col-lg-4 d-flex my-2">
                                                             <div class="row">
                                                                 {{--<div class="col-auto d-none d-sm-block">--}}
                                                                     {{--<img src="{{$hoteles_destino->hotel->imagen}}" alt="" class=" rounded-circle" width="50" height="50">--}}
@@ -660,13 +660,21 @@
                                     {{--@endforeach--}}
                                 </div>
 
+                                <div id="Maps">
+                                    <div class="row pt-5">
+                                        <div class="col-12">
+                                            <h3 class="text-secondary h4 mb-3"><strong>Maps</strong></h3>
+                                            @php echo $paquetes->maps; @endphp
+                                        </div>
+                                    </div>
+                                </div>
 
 
 
                             </div>
                             <div class="col col-sm-12 col-md-5 col-lg-3 col-xl-3">
                                 <div class="sticky-top sticky-top-50 mt-4">
-                                    <div class="card py-3 px-4 bg-light">
+                                    <div class="card p-3 bg-light">
                                         <div class="row">
                                             <div class="col">
                                                 <span class="font-weight-bold d-block h4">{{$paquetes->duracion}} days</span>
@@ -689,6 +697,13 @@
 
                                         <div class="row my-2">
                                             <div class="col">
+                                                @php $j = 0; $k = 0; @endphp
+                                                @foreach($comentario->where('idpaquetes', $paquetes->id) as $comment)
+                                                    @php
+                                                        $k = $k + $comment->valoracion;
+                                                        $j++;
+                                                    @endphp
+                                                @endforeach
                                                 @if($j > 0)
                                                     <a href="#Reviews" class="h6 text-primary">
                                                         Comments {{$j}}
@@ -698,7 +713,7 @@
                                                             @endfor
                                                 </span>
                                                         <span class="badge badge-g-dark">
-                                                {{$k/$j}}
+                                                {{round($k/$j, 2)}}
                                             </span>
                                                     </a>
 
@@ -711,7 +726,7 @@
                                                 {{--<a href="" class="btn btn-g-yellow btn-block">Check Availability</a>--}}
                                             {{--</div>--}}
                                             <div class="col">
-                                                <a href="" class="btn btn-g-yellow btn-block">INQUIRE</a>
+                                                <a href="" class="btn btn-g-yellow btn-block font-weight-bold">INQUIRE</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1024,7 +1039,7 @@
                                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
-                                                            <b><strong>THANK YOU FOR CONTACT US</strong>, YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS, GURANTEED. :)</b>
+                                                            <b><strong>THANK YOU FOR CONTACT US</strong>, YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS. :)</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1035,12 +1050,12 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row mb-4">
                                 <div class="col">
                                     <div id="Reviews" class="pt-5">
                                         <h3 class="text-secondary h4"><strong>Reviews</strong></h3>
                                         <div class="row">
-                                            <div class="col-8">
+                                            <div class="col-12 col-md-6 col-lg-7 col-xl-8">
 
 
 
@@ -1136,7 +1151,7 @@
                                                 </div>
 
                                                 <div class="row justify-content-end">
-                                                    <div class="col-4">
+                                                    <div class="col-12 col-sm-7 col-md-12 col-lg-6">
                                                         <div class="row">
                                                             <div class="col">
                                                                 <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
@@ -1169,8 +1184,10 @@
 
 
                                             </div>
-                                            <div class="col-4">
-                                                <div class="fb-page" data-href="https://www.facebook.com/GOTOPERUcom" data-tabs="timeline" data-width="500" data-height="650" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/GOTOPERUcom" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GOTOPERUcom">GOTOPERUcom</a></blockquote></div>
+                                            <div class="col-12 col-md-6 col-lg-5 col-xl-4 mt-4 mt-md-0">
+                                                <div class="sticky-top sticky-top-50">
+                                                    <div class="fb-page" data-href="https://www.facebook.com/GOTOPERUcom" data-tabs="timeline" data-width="500" data-height="550" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/GOTOPERUcom" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GOTOPERUcom">GOTOPERUcom</a></blockquote></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1477,13 +1494,13 @@
     <div class="alert alert-secondary alert-dismissible show m-0 elemento rounded-0 p-1" role="alert" id="aviso">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-auto">
+                <div class="col-12 text-center text-sm-left text-md-right col-sm-7 col-md-7 col-lg-auto">
                     <h5 class="m-0"><strong>{{($paquetes->titulo)}} </strong> {{($paquetes->duracion)}} DAYS TOURS | <sup>from $</sup>{{$precio->precio_d}}<small>USD</small></h5>
                 </div>
-                <div class="col text-right">
+                <div class="col-12 text-center text-sm-left text-md-right col-sm-3 col-md-3 col-lg text-right">
                     <a href="#Inquire" class="btn btn-sm btn-g-yellow font-weight-bold" onclick="ideal_trip()">INQUIRE NOW</a>
                 </div>
-                <div class="col-auto">
+                <div class="col-12 text-center text-sm-left text-md-right col-sm-2 col-md-2 col-lg-auto">
                     <button type="button" class="close p-0" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

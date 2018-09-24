@@ -162,7 +162,7 @@
         <div class="container">
             <div class="row no-gutters">
                 <div class="col">
-                    <img src="{{asset('images/machu_picchu.jpg')}}" alt="" class="w-100 rounded-top">
+                    <img src="{{asset('images/family.jpg')}}" alt="" class="w-100 rounded-top">
                 </div>
             </div>
             {{--<div class="row no-gutters align-items-center">--}}
@@ -289,13 +289,13 @@
     <div class="alert alert-primary alert-dismissible show m-0 elemento rounded-0 p-1" role="alert" id="aviso">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-auto">
+                <div class="col-12 text-center text-sm-left text-md-right col-sm-7 col-md-7 col-lg-auto">
                     <h5 class="m-0"><strong>Customizable Peru Tours </strong> by Experts</h5>
                 </div>
-                <div class="col">
+                <div class="col-12 text-center text-sm-left text-md-right col-sm-3 col-md-3 col-lg text-right">
                     <a href="#Inquire" class="btn btn-sm btn-g-yellow font-weight-bold" onclick="ideal_trip()">My ideal trip will be</a>
                 </div>
-                <div class="col">
+                <div class="col-12 text-center text-sm-left text-md-right col-sm-2 col-md-2 col-lg-auto">
                     <button type="button" class="close p-0" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -350,6 +350,12 @@
     <section class="bg-light d-none">
         <div class="container">
             <div class="row">
+                <div class="col">
+                    <!-- FareHarbor item grid of flow #94586 -->
+                    <script src="https://fareharbor.com/embeds/script/items/gotoperu/?fallback=simple&flow=94586"></script>
+                </div>
+            </div>
+            <div class="row d-none">
 
                 <div class="col col-xs-12 d-md-none d-lg-inline col-md-8 col-lg-12 col-xl-8">
                     <div class="row">
@@ -671,7 +677,7 @@
                                                                 {{--<i class="fas fa-star"></i>--}}
                                                                 {{--<i class="fas fa-star"></i>--}}
                                                                 {{--<i class="fas fa-star"></i>--}}
-                                                                <span class="badge badge-g-yellow">{{$k/$j}} <i class="fas fa-star"></i></span>
+                                                                <span class="badge badge-g-yellow">{{round($k/$j, 2)}} <i class="fas fa-star"></i></span>
                                                             @endif
                                                         </a>
                                                     </div>
@@ -2016,6 +2022,18 @@
                 changeYear: true
             });
 
+        </script>
+
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                direction: 'vertical',
+                slidesPerView: 'auto',
+                freeMode: true,
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+                mousewheel: true,
+            });
         </script>
 
     @endpush

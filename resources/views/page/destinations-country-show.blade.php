@@ -124,7 +124,7 @@
                         @foreach($paquetes_de as $paquetes_des)
                             @if(isset($paquetes_des->destinos))
                                 @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
-                                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-3">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-3">
                                         <div class="card mb-3">
                                             <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="position-relative">
                                                 <img class="card-img-top " src="{{asset('images/packages/'.$paquetes->codigo.'.jpg')}}" alt="{{(strtolower($paquetes->titulo))}}">
@@ -164,7 +164,7 @@
                                                                         {{--<i class="fas fa-star"></i>--}}
                                                                         {{--<i class="fas fa-star"></i>--}}
                                                                         {{--<i class="fas fa-star"></i>--}}
-                                                                        <span class="badge badge-g-yellow">{{$k/$j}} <i class="fas fa-star"></i></span>
+                                                                        <span class="badge badge-g-yellow">{{round($k/$j, 2)}} <i class="fas fa-star"></i></span>
                                                                     @endif
                                                                 </a>
                                                             </div>

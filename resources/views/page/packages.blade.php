@@ -184,7 +184,7 @@
                                                                     {{--<i class="fas fa-star"></i>--}}
                                                                     {{--<i class="fas fa-star"></i>--}}
                                                                     {{--<i class="fas fa-star"></i>--}}
-                                                                    <span class="badge badge-g-yellow">{{$k/$j}} <i class="fas fa-star"></i></span>
+                                                                    <span class="badge badge-g-yellow">{{round($k/$j, 2)}} <i class="fas fa-star"></i></span>
                                                                 @endif
                                                             </a>
                                                         </div>

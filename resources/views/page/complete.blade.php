@@ -513,7 +513,7 @@
                                         <option value="0">Select...</option>
                                             @foreach($airport as $airports)
                                                 <option value="{{$airports->id}}">{{ucwords(strtolower($airports->aeropuerto))}} <small>({{strtoupper($airports->codigo)}})</small></option>
-                                            @endforeach~
+                                            @endforeach
 
                                     </select>
                                 </div>
