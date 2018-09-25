@@ -212,7 +212,7 @@
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col">
-                    <img src="{{asset('images/banners/itinerary/GTP40.jpg')}}" alt="" class="img-fluid">
+                    <img src="{{asset('images/itinerary/banners/'.$paquetes->imagen.'')}}" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
