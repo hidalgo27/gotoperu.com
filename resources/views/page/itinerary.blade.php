@@ -412,11 +412,10 @@
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade" id="full" role="tabpanel" aria-labelledby="full-tab">
-                                                <div class="row">
-                                                    <div class="col-8">
+                                                <div class="row mt-4">
+                                                    <div class="col-12">
                                                         <div id="Itinerary-2" class="d-none d-sm-block">
 
-                                                            <h3 class="text-secondary pt-5 pb-4 h4"><strong>Itinerary</strong></h3>
                                                             @php
                                                                 $i = 1;
                                                                 $num_des = count($paquetes->itinerario);
@@ -435,8 +434,9 @@
                                                                         {{--</div>--}}
                                                                         <div class="timeline-content position-relative">
                                                                             <div class="row">
+                                                                                <div class="col-12">
                                                                                 <div class="timeline-point">
-                                                                                    <i class="fa fa-circle-o"></i>
+                                                                                    <i class="far fa-circle"></i>
                                                                                 </div>
                                                                                 <div class="timeline-custom-col content-col ">
                                                                                     <div class="timeline-location-block">
@@ -444,6 +444,56 @@
                                                                                         <div class="description">
                                                                                             @php echo $itinerario->descripcion @endphp
                                                                                         </div>
+                                                                                        {{--<div class="box15 float-right rounded">--}}
+                                                                                            {{--<img src="{{asset('images/itinerary/'.str_replace(' ', '-', strtolower($itinerario->titulo).'-1.jpg'))}}" alt="" class="rounded">--}}
+                                                                                            {{--<div class="box-content text-center">--}}
+                                                                                                {{--<h3 class="title">View Gallery</h3>--}}
+                                                                                                {{--<ul class="icon p-0">--}}
+                                                                                                    {{--<li><a href="#" data-toggle="modal" data-target="#modal-img-{{$itinerario->id}}-2"><i class="fas fa-camera"></i></a></li>--}}
+                                                                                                {{--</ul>--}}
+                                                                                            {{--</div>--}}
+                                                                                        {{--</div>--}}
+                                                                                        {{--<!-- Modal -->--}}
+                                                                                        {{--<div class="modal fade" id="modal-img-{{$itinerario->id}}-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
+                                                                                            {{--<div class="modal-dialog modal-dialog-centered modal-lg" role="document">--}}
+                                                                                                {{--<div class="modal-content">--}}
+                                                                                                    {{--<div class="modal-body p-0 rounded">--}}
+                                                                                                        {{--<div id="carouselExampleFade{{$itinerario->id}}" class="carousel slide carousel-fade" data-ride="carousel">--}}
+                                                                                                            {{--<div class="carousel-inner">--}}
+                                                                                                                {{--<div class="carousel-item active">--}}
+                                                                                                                {{--<img class="d-block w-100 rounded" src="{{asset('images/itinerary/'.str_replace(' ', '-', strtolower($itinerario->titulo).'-1.jpg'))}}" alt="First slide">--}}
+                                                                                                                {{--</div>--}}
+                                                                                                                {{--@php--}}
+                                                                                                                    {{--$k = 0;--}}
+                                                                                                                {{--@endphp--}}
+                                                                                                                {{--@foreach($imagen->where('iditinerario', $itinerario->id) as $img)--}}
+                                                                                                                    {{--@if($k == 0)--}}
+                                                                                                                        {{--@php $act = 'active'; @endphp--}}
+                                                                                                                    {{--@else--}}
+                                                                                                                        {{--@php $act = ''; @endphp--}}
+                                                                                                                    {{--@endif--}}
+
+                                                                                                                    {{--<div class="carousel-item {{$act}}">--}}
+                                                                                                                        {{--<img class="d-block w-100 rounded" src="{{asset('images/itinerary/'.$img->nombre.'')}}" alt="First slide">--}}
+                                                                                                                    {{--</div>--}}
+
+                                                                                                                    {{--@php $k++; @endphp--}}
+                                                                                                                {{--@endforeach--}}
+                                                                                                            {{--</div>--}}
+                                                                                                            {{--<a class="carousel-control-prev" href="#carouselExampleFade{{$itinerario->id}}" role="button" data-slide="prev">--}}
+                                                                                                                {{--<i class="fas fa-angle-left text-white fa-2x"></i>--}}
+                                                                                                                {{--<span class="sr-only">Previous</span>--}}
+                                                                                                            {{--</a>--}}
+                                                                                                            {{--<a class="carousel-control-next" href="#carouselExampleFade{{$itinerario->id}}" role="button" data-slide="next">--}}
+                                                                                                                {{--<i class="fas fa-angle-right text-white fa-2x"></i>--}}
+                                                                                                                {{--<span class="sr-only">Next</span>--}}
+                                                                                                            {{--</a>--}}
+                                                                                                        {{--</div>--}}
+                                                                                                    {{--</div>--}}
+                                                                                                {{--</div>--}}
+                                                                                            {{--</div>--}}
+                                                                                        {{--</div>--}}
+
                                                                                     </div>
                                                                                     {{--<div class="timeline-custom-col">--}}
                                                                                     {{--<div class="timeline-image-block">--}}
@@ -451,6 +501,7 @@
                                                                                     {{--</div>--}}
                                                                                     {{--</div>--}}
                                                                                 </div>
+                                                                                    </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -473,21 +524,28 @@
                                                             @endforeach
                                                         </div>
                                                     </div>
-                                                    <div class="col">
-                                                        <div class="sticky-top my-4 sticky-top-50">
-                                                            <img src="{{asset('images/maps/'.$paquetes->codigo.'.jpg')}}" alt="" class="img-fluid rounded">
+                                                    {{--<div class="col">--}}
+                                                        {{--<div class="sticky-top my-4 sticky-top-50">--}}
+                                                            {{--<img src="{{asset('images/maps/'.$paquetes->codigo.'.jpg')}}" alt="" class="img-fluid rounded">--}}
                                                             {{--<button class="btn btn-block btn-lg btn-g-yellow mt-2">Book Now</button>--}}
-                                                        </div>
-                                                    </div>
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row" id="Hotels">
+                                @php
+                                    if ($paquetes->codigo == 'GTP412'){
+                                        $hide_price = "d-none";
+                                    }else{
+                                        $hide_price = "";
+                                    }
+                                @endphp
+                                <div class="row {{$hide_price}}" id="Prices">
                                     <div class="col">
-                                        <h3 class="text-secondary h4"><strong>Hotels</strong></h3>
+                                        {{--<h3 class="text-secondary h4"><strong>Hotels</strong></h3>--}}
                                         <h3 class="text-secondary pt-5 pb-3 h4"><strong>Prices Per Person <small class="text-primary font-weight-bold">($USD)</small></strong></h3>
                                         <div class="row">
                                             <div class="col mb-md-2">

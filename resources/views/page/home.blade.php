@@ -820,7 +820,7 @@
             <div class="alert alert-secondary">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <h5 class="m-0">7 DAYS WITH AIRFARE FROM USA <a href="" class="small font-italic">(View Program)</a><small class="d-md-block "><i class="fas fa-map-marker-alt"></i> Cusco, Lima, Sacred Valley, Machu Picchu.</small></h5>
+                        <h5 class="m-0">7 DAYS WITH AIRFARE FROM USA <a href="packages/air-land/peru-machu-picchu-from-usa/7-days-tours" class="small font-italic">(View Program)</a><small class="d-md-block "><i class="fas fa-map-marker-alt"></i> Cusco, Lima, Sacred Valley, Machu Picchu.</small></h5>
                     </div>
                     <div class="col text-right">
                         <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
