@@ -13,6 +13,12 @@ Breadcrumbs::register('about', function ($trail) {
     $trail->push('About Us', route('about_path'));
 });
 
+// Home > tours
+Breadcrumbs::register('peru_tours', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Peru Tours', route('peru_tours_path'));
+});
+
 // Home > Packages
 Breadcrumbs::register('packages', function ($trail) {
     $trail->parent('home');

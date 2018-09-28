@@ -2,7 +2,7 @@
     {{--<p class="text-white h6"><span class="bg-g-green p-1 rounded-circle px-3 text-white">1</span> Share your travel plans <span class="bg-g-yellow p-1 rounded-circle px-3 text-white ml-5">2</span> Receive a customize itinerary and quote <span class="bg-g-dark p-1 rounded-circle px-3 text-white ml-5">3</span> Discover the best of Peru with GOTOPERU</p>--}}
     <div class="row">
         <div class="col mb-md-2 col-lg col-xl">
-            <a href="" class="btn btn-block btn-lg btn-g-green">
+            <a href="{{route('peru_tours_path')}}" class="btn btn-block btn-lg btn-g-green">
                 <span class="font-weight-normal">Peru Tours & Activities</span>
                 <hr class="my-2">
                 <span class="d-block">

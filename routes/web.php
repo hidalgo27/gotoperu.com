@@ -191,3 +191,9 @@ Route::get('/gallery', [
     'uses' => 'HomeController@gallery',
     'as' => 'gallery_path',
 ]);
+
+//gallery
+Route::get('/peru-tours', [
+    'uses' => 'HomeController@peru_tours',
+    'as' => 'peru_tours_path',
+]);

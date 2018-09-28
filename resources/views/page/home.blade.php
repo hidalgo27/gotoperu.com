@@ -333,7 +333,7 @@
 
 
 
-    <section class="bg-light d-none">
+    <section class="bg-light">
         <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
@@ -347,226 +347,18 @@
         </div>
     </section>
 
-    <section class="bg-light d-none">
+    <section class="bg-light">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <!-- FareHarbor item grid of flow #94586 -->
-                    <script src="https://fareharbor.com/embeds/script/items/gotoperu/?fallback=simple&flow=94586"></script>
-                </div>
-            </div>
-            <div class="row d-none">
-
-                <div class="col col-xs-12 d-md-none d-lg-inline col-md-8 col-lg-12 col-xl-8">
-                    <div class="row">
-                        @foreach($paquetes->where('estado', 1)->sortBy('duracion')->take(4) as $paquete)
-                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
-                                <div class="card mb-3">
-                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
-                                        <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}">
-
-                                        <div class="card-img-overlay p-0">
-                                            <div class="row justify-content-between no-gutters">
-                                                <div class="col col-sm-7 p-2 bg-rgba-dark-3">
-                                                    <h5 class="m-0 text-white">{{$paquete->duracion}} Days</h5>
-                                                </div>
-                                                <div class="col col-sm-5 bg-g-dark py-2 text-white text-center">
-                                                    @foreach($paquete->precio_paquetes as $precio)
-                                                        @if($precio->estrellas == 2)
-                                                            @if($precio->precio_d > 0)
-                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
-                                                            @else
-                                                                <span class="text-danger">Inquire</span>
-                                                            @endif
-                                                        @endif
-                                                    @endforeach
-                                                </div>
-                                            </div>
-                                            <div class="row justify-content-end no-gutters">
-                                                <div class="col text-right">
-                                                    <div class="px-3 small">
-                                                        <a href="#" class="text-g-yellow" data-toggle="modal" data-target="#modal-{{$paquete}}">
-                                                            <span class="text-white">5 comments</span>
-                                                            <span class="text-secondary">|</span>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                        </a>
-                                                    </div>
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="modal-{{$paquete}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog modal-lg" role="document">
-                                                            <div class="modal-content">
-
-                                                                <div class="modal-body text-left">
-                                                                    <div class="row">
-                                                                        <div class="col">
-                                                                            <div class="card p-3 bg-light mb-3">
-                                                                                <h4>Our Reviews</h4>
-                                                                                <small>Leave your comment too.</small>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-3">
-                                                                            <small class="font-italic"><i class="fas fa-user-circle"></i> Jeff G. X2 | <span class="font-weight-bold">New York Feb 2018</span></small>
-                                                                            <span class="d-block text-g-yellow">
-                                                                                    <i class="fas fa-star"></i>
-                                                                                    <i class="fas fa-star"></i>
-                                                                                    <i class="fas fa-star"></i>
-                                                                                    <i class="fas fa-star"></i>
-                                                                                </span>
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            <i class="fa fa-quote-left"></i>
-                                                                            Our tour guide Franklin, was so knowledgeable, there was nothing we asked that he couldn't talk at length about! He was very organized and did an excellent job accommodating each and every traveller. Also in Lima our tour conductor Ivan. All of the hotels were in ideal locations in city centers, which made it easy to explore on our own without having to take a cab.
-                                                                            <i class="fa fa-quote-right"></i>
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr>
-                                                                    <div class="row">
-                                                                        <div class="col-3">
-                                                                            <small class="font-italic"><i class="fas fa-user-circle"></i> Jeff G. X2 | <span class="font-weight-bold">New York Feb 2018</span></small>
-                                                                            <span class="d-block text-g-yellow">
-                                                                                    <i class="fas fa-star"></i>
-                                                                                    <i class="fas fa-star"></i>
-                                                                                    <i class="fas fa-star"></i>
-                                                                                    <i class="fas fa-star"></i>
-                                                                                </span>
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            <i class="fa fa-quote-left"></i>
-                                                                            Our tour guide Franklin, was so knowledgeable, there was nothing we asked that he couldn't talk at length about! He was very organized and did an excellent job accommodating each and every traveller. Also in Lima our tour conductor Ivan. All of the hotels were in ideal locations in city centers, which made it easy to explore on our own without having to take a cab.
-                                                                            <i class="fa fa-quote-right"></i>
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr>
-                                                                    <div class="row pb-4">
-                                                                        <div class="col text-right">
-                                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="btn-link font-weight-normal">All Opinions <i class="fa fa-chevron-right"></i></a>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="row justify-content-end">
-                                                                        <div class="col-4">
-                                                                            <div class="row">
-                                                                                <div class="col">
-                                                                                    <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
-                                                                                        <img src="{{asset('images/icons/facebook.png')}}" alt="" class="img-fluid">
-                                                                                    </a>
-                                                                                </div>
-                                                                                <div class="col">
-                                                                                    <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
-                                                                                        <img src="{{asset('images/icons/twitter.png')}}" alt="" class="img-fluid">
-                                                                                    </a>
-                                                                                </div>
-                                                                                <div class="col">
-                                                                                    <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
-                                                                                        <img src="{{asset('images/icons/instagram.png')}}" alt="" class="img-fluid">
-                                                                                    </a>
-                                                                                </div>
-                                                                                <div class="col">
-                                                                                    <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
-                                                                                        <img src="{{asset('images/icons/youtube.png')}}" alt="" class="img-fluid">
-                                                                                    </a>
-                                                                                </div>
-                                                                                <div class="col">
-                                                                                    <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
-                                                                                        <img src="{{asset('images/icons/google-plus.png')}}" alt="" class="img-fluid">
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {{--<p class="text-white m-0">{{$paquete->duracion}} days <span class="text-g-yellow font-weight-bold float-right bg-danger">--}}
-                                            {{--<small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small>--}}
-                                            {{--</span></p>--}}
-                                        </div>
-                                        <div class="card-img-overlay-packages bg-rgba-dark-1">
-                                            <h5 class="card-title text-white m-0">{{ucwords(strtolower($paquete->titulo))}}</h5>
-                                            @foreach($dificultad->where('idpaquetes', $paquete->id) as $dificultades)
-                                                <small class="text-success font-weight-light" data-toggle="tooltip" data-placement="bottom" title="{{$dificultades->dificultad->nombre}}"><i class="fas fa-signal"></i></small>
-                                            @endforeach
-                                            {{--<h2 class="card-title text-white m-0 h5"><a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="text-dark">{{$paquete->titulo}}</a></h2>--}}
-                                            <small class="text-white font-weight-light">
-                                                <i class="fa fa-map-marker-alt"></i>
-                                                @php
-                                                    $i = 1;
-                                                    $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
-                                                @endphp
-                                                @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
-                                                    @if(isset($paquete_destino->destinos->nombre))
-                                                        {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
-                                                        @php $i++; @endphp
-                                                    @endif
-                                                @endforeach
-                                            </small>
-                                        </div>
-                                    </a>
-                                    {{--<div class="card-body">--}}
-                                    {{--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
-                                    {{--<p class="card-text">--}}
-                                    {{----}}
-                                    {{--</p>--}}
-                                    {{--</div>--}}
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="col-12 d-sm-block col-sm-12 d-md-inline col-md-12 col-lg-12 col-xl-4">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="list-group position-relative">
-                                    @foreach($paquetes->random(5) as $paquete)
-                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="list-group-item list-group-item-action">
-                                            <div class="media">
-                                                <img src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{(strtolower($paquete->titulo))}}">
-                                                <div class="media-body">
-                                                    <h5 class="mt-0"><span class="text-g-yellow">{{$paquete->duracion}} Days</span> {{ucwords(strtolower($paquete->titulo))}}</h5>
-                                                    <small>
-                                                        <i class="fa fa-map-marker-alt"></i>
-                                                        @php
-                                                            $i = 1;
-                                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
-                                                        @endphp
-                                                        @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
-                                                            @if(isset($paquete_destino->destinos->nombre))
-                                                                {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@else.@endif
-                                                                @php $i++; @endphp
-                                                            @endif
-                                                        @endforeach
-                                                    </small>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    @endforeach
-                                    <div class="gradient-destinations"></div>
-                                    {{--<div class="row">--}}
-                                    {{--<div class="col text-right pt-4">--}}
-                                    {{--<a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>--}}
-                                    {{--</div>--}}
-                                    {{--</div>--}}
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add Scroll Bar -->
-                        <div class="swiper-scrollbar"></div>
-                    </div>
+                    <!-- FareHarbor item grid of flow #100236 -->
+                    <script src="https://fareharbor.com/embeds/script/items/gotoperu/?full-items=yes&fallback=simple&flow=100236"></script>
                 </div>
             </div>
 
             <div class="row pb-4">
                 <div class="col text-right">
-                    <a href="{{route('packages_path')}}" class="btn-link font-weight-normal">All Packages <i class="fa fa-chevron-right"></i></a>
+                    <a href="{{route('peru_tours_path')}}" class="btn-link font-weight-normal">View All Tours <i class="fa fa-chevron-right"></i></a>
                 </div>
             </div>
         </div>
