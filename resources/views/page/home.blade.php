@@ -1507,7 +1507,7 @@
                     <h2 class="text-secondary h4"><strong>Certificates</strong></h2>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                    <p class=" font-weight-light">GOTOPERU is certified by the local government as an official tour operator.</p>
+                    <p class=" font-weight-light">GOTOPERU is fully certified by the Peruvian local government as an officially licensed tour operator on behalf of the "Ministerio de Turismo del Peru".</p>
                 </div>
             </div>
         </div>
