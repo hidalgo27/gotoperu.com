@@ -219,8 +219,6 @@ class HomeController extends Controller
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
-
-
         return view('page.packages-durations',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'duration'=>$from.'-'.$to, 'comentario'=>$comentario, 'dificultad'=>$dificultad]);
     }
 

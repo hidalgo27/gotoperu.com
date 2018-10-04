@@ -789,42 +789,7 @@
         </div>
     </section>
 
-
     <section class="bg-white d-none d-md-flex">
-        <div class="container">
-            <div class="row pt-5 pb-2">
-                <div class="col">
-                    <h6 class="text-secondary"><strong><a href=""><i class="fab fa-instagram"></i></a> #gotoperu check out these #gotoperu photos from past travelers. After your trip, come back and share some of your owm!</strong></h6>
-                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
-                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                    {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="bg-white">
-        <div class="container">
-
-            <div class="row pb-2">
-                <div class="col">
-                    <div class="elfsight-app-ba7c9526-9468-4d5b-b378-68ec76259e00"></div>
-
-                </div>
-            </div>
-
-            <div class="row pb-5">
-                <div class="col text-right">
-                    <a href="{{route('gallery_path')}}" class="btn-link font-weight-normal">View Gallery <i class="fa fa-chevron-right"></i></a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <section class="bg-light d-none d-md-flex">
         <div class="container">
             <div class="row pt-5 pb-2">
                 <div class="col">
@@ -837,7 +802,7 @@
         </div>
     </section>
 
-    <section class="bg-light pb-4 d-none d-md-flex">
+    <section class="bg-white pb-4 d-none d-md-flex">
         <div class="container">
             <div class="row mb-4">
                 <div class="col">
@@ -1502,6 +1467,110 @@
     {{--</section>--}}
 
     @include('layouts.page.form-quote')
+    <section class="bg-white d-none d-md-flex">
+        <div class="container">
+            <div class="row pt-5 pb-2">
+                <div class="col">
+                    <h6 class="text-secondary"><strong><a href=""><i class="fab fa-instagram"></i></a> #gotoperu check out these #gotoperu photos from past travelers. After your trip, come back and share some of your owm!</strong></h6>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
+                    {{--<p class=" font-weight-light">You are already in the "neighborhood" here are some possible multi countries travel programs for your review, rest assure we can fully customize any travel lenght and any combination of countries, we can even design a comprehensive 30 days South America escape.</p>--}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-white">
+        <div class="container">
+
+            <div class="row pb-2">
+                <div class="col">
+                    <div class="elfsight-app-ba7c9526-9468-4d5b-b378-68ec76259e00"></div>
+
+                </div>
+            </div>
+
+            <div class="row pb-5">
+                <div class="col text-right">
+                    <a href="{{route('gallery_path')}}" class="btn-link font-weight-normal">View Gallery <i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="container">
+            <div class="row pt-5 pb-2">
+                <div class="col">
+                    <h2 class="text-secondary h4"><strong>Certificates</strong></h2>
+                    {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
+                    {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
+                    <p class=" font-weight-light">A trip to Peru is an exciting adventure! There are a number of common questions first-time travelers to Peru frequently ask.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-1">
+                    <img src="{{asset('images/cuadro-01.png')}}" alt="" class="w-100">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-4 mb-2">
+                            <img src="{{asset('images/certificates/certificate-1.jpg')}}" alt="" class="w-100" data-toggle="modal" data-target="#certificate-1">
+                            <div class="modal fade" id="certificate-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body p-0">
+                                            <img src="{{asset('images/certificates/certificate-1.jpg')}}" alt="" class="img-fluid rounded">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 mb-2">
+                            <img src="{{asset('images/certificates/certificate-2.jpg')}}" alt="" class="w-100" data-toggle="modal" data-target="#certificate-2">
+                            <div class="modal fade" id="certificate-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body p-0">
+                                            <img src="{{asset('images/certificates/certificate-2.jpg')}}" alt="" class="img-fluid rounded">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 mb-2">
+                            <img src="{{asset('images/certificates/certificate-3.jpg')}}" alt="" class="w-100" data-toggle="modal" data-target="#certificate-3">
+                            <div class="modal fade" id="certificate-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body p-0">
+                                            <img src="{{asset('images/certificates/certificate-3.jpg')}}" alt="" class="img-fluid rounded">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-1">
+                    <img src="{{asset('images/cuadro-02.png')}}" alt="" class="w-100">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 
     @push('scripts')
 
