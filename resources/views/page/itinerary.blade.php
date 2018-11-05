@@ -784,7 +784,7 @@
                                                 {{--<a href="" class="btn btn-g-yellow btn-block">Check Availability</a>--}}
                                             {{--</div>--}}
                                             <div class="col">
-                                                <a href="" class="btn btn-g-yellow btn-block font-weight-bold">INQUIRE</a>
+                                                <a href="#Inquire" class="btn btn-g-yellow btn-block font-weight-bold">INQUIRE</a>
                                             </div>
                                         </div>
                                     </div>
