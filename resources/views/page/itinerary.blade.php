@@ -784,7 +784,7 @@
                                                 {{--<a href="" class="btn btn-g-yellow btn-block">Check Availability</a>--}}
                                             {{--</div>--}}
                                             <div class="col">
-                                                <a href="" class="btn btn-g-yellow btn-block font-weight-bold">INQUIRE</a>
+                                                <a href="#Inquire" class="btn btn-g-yellow btn-block font-weight-bold">INQUIRE</a>
                                                 <a href="https://fareharbor.com/embeds/book/gotoperu/items/{{$paquetes->codigo_f}}/calendar/?flow=92114" class="btn btn-g-green btn-block font-weight-bold">BOOK NOW</a>
                                             </div>
                                         </div>
