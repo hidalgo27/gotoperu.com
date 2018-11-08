@@ -543,7 +543,7 @@
                                         $hide_price = "";
                                     }
                                 @endphp
-                                <div class="row {{$hide_price}}" id="Prices">
+                                <div class="row {{$hide_price}} d-none" id="Prices">
                                     <div class="col">
                                         {{--<h3 class="text-secondary h4"><strong>Hotels</strong></h3>--}}
                                         <h3 class="text-secondary pt-5 pb-3 h4"><strong>Prices Per Person <small class="text-primary font-weight-bold">($USD)</small></strong></h3>
@@ -738,7 +738,7 @@
                                                 <span class="font-weight-bold d-block h4">{{$paquetes->duracion}} days</span>
                                                 <div class="text-center">
                                                     <small>from</small>
-                                                    @foreach($paquetes->precio_paquetes->where('estrellas', 2)->sortBy('estrellas') as $precio)
+                                                    @foreach($paquetes->precio_paquetes->where('estrellas', 3)->sortBy('estrellas') as $precio)
                                                         @if($precio->precio_d > 0)
                                                             <span class="h1 font-weight-bold text-danger"><sup>$</sup>{{$precio->precio_d}}</span>
                                                         @else
@@ -785,23 +785,28 @@
                                             {{--</div>--}}
                                             <div class="col">
                                                 <a href="" class="btn btn-g-yellow btn-block font-weight-bold">INQUIRE</a>
+                                                <a href="https://fareharbor.com/embeds/book/gotoperu/items/{{$paquetes->codigo_f}}/calendar/?flow=92114" class="btn btn-g-green btn-block font-weight-bold">BOOK NOW</a>
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
 
-                                <div class="">
-                                    <div class="row mt-3">
-                                        <div class="col">
-                                            <div class="card">
+                                {{--<div class="">--}}
+                                    {{--<div class="row mt-3">--}}
+                                        {{--<div class="col">--}}
+                                            {{--<div class="card">--}}
 
-                                            <!-- FareHarbor calendar of item #106623 -->
-                                                <script src="https://fareharbor.com/embeds/script/calendar/gotoperu/items/{{$paquetes->codigo_f}}/?fallback=simple&flow=92114"></script>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                            {{--<!-- FareHarbor calendar of item #106623 -->--}}
+{{--                                                <script src="https://fareharbor.com/embeds/script/calendar/gotoperu/items/{{$paquetes->codigo_f}}/?fallback=simple&flow=92114"></script>--}}
+
+                                                {{--<!-- FareHarbor book button for item #106632 -->--}}
+                                                {{--<a href="https://fareharbor.com/embeds/book/gotoperu/items/{{$paquetes->codigo_f}}/calendar/?flow=92114">Book Now</a>--}}
+                                                {{--<!-- FareHarbor item grid of flow #92114 -->--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
 
                                 <div class="card bg-light my-4 d-none">
                                     {{--<img class="card-img-top" src="..." alt="Card image cap">--}}
@@ -881,7 +886,7 @@
 
 
 
-                            <div class="row bg-light mb-3">
+                            <div class="row mb-3">
                                 <div class="col">
 
 
@@ -894,8 +899,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="row justify-content-center pt-4">
-                                        <div class="col-12 col-ms-9 col-md-6">
+                                    <div class="row justify-content-center pt-4 ">
+                                        <div class="col-12 col-ms-9 col-md-8">
                                             <form id="d_form" role="form">
                                                 {{csrf_field()}}
                                                 <div class="row pb-2">
