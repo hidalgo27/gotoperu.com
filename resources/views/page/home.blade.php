@@ -46,67 +46,67 @@
             {{--<div id="state" class=""><span class="fa fa-pause"></span></div>--}}
             {{--<img id="hero-pic" class="d-none" src="http://www.markhillard.com/sandbox/media/polina.jpg" alt="">--}}
            {{----}}
-            <div class="header-expedia-card col-md-4 col-lg-3 col-xl-2 text-white rounded bg-rgba-dark p-3 d-none">
-                <div class="row">
-                    <div class="col">
-                        <a href="packages/andes-escape/6-days-tours">
-                        <div class="row">
-                            <div class="col text-center">
-                                <h3 class="text-g-yellow font-weight-bold m-0">Andes Escape</h3>
-                            </div>
-                        </div>
-                        <div class="row no-gutters my-2 text-white">
-                            <div class="col">
-                                <span class="h2">6</span> <small>days</small>
-                            </div>
-                            <div class="col">
-                                <span class="h2 text-info"><sup>$</sup>985</span> <small>p.p</small>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <img src="{{asset('images/icons/include/assistances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Assistances">
+            {{--<div class="header-expedia-card col-md-4 col-lg-3 col-xl-2 text-white rounded bg-rgba-dark p-3 ">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col">--}}
+                        {{--<a href="packages/andes-escape/6-days-tours">--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="col text-center">--}}
+                                {{--<h3 class="text-g-yellow font-weight-bold m-0">Andes Escape</h3>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="row no-gutters my-2 text-white">--}}
+                            {{--<div class="col">--}}
+                                {{--<span class="h2">6</span> <small>days</small>--}}
+                            {{--</div>--}}
+                            {{--<div class="col">--}}
+                                {{--<span class="h2 text-info"><sup>$</sup>985</span> <small>p.p</small>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="col">--}}
+                                {{--<div class="row no-gutters">--}}
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/assistances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Assistances">--}}
                                         {{--<span>Assistances</span>--}}
-                                    </div>
+                                    {{--</div>--}}
 
-                                    <div class="col">
-                                        <img src="{{asset('images/icons/include/entrances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/entrances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Entrances">--}}
                                         {{--<span>Entrances</span>--}}
-                                    </div>
-                                    <div class="col">
-                                        <img src="{{asset('images/icons/include/transfers.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                    {{--</div>--}}
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/transfers.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Transfers">--}}
                                         {{--<span>Transfers</span>--}}
-                                    </div>
-                                </div>
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="row no-gutters">--}}
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">--}}
                                         {{--<span>Hotels</span>--}}
-                                    </div>
-                                    <div class="col">
-                                        <img src="{{asset('images/icons/include/tours.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Tours">
+                                    {{--</div>--}}
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/tours.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Tours">--}}
                                         {{--<span>Tours</span>--}}
-                                    </div>
-                                    <div class="col">
-                                        <img src="{{asset('images/icons/include/trains.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Trains">
+                                    {{--</div>--}}
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/trains.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Trains">--}}
                                         {{--<span>Trains</span>--}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col text-white">
-                                <small class="m-0 d-block"><i class="fa fa-angle-right"></i> MACHUPICCHU & CUSCO</small>
-                                <small class="m-0 d-block"><i class="fa fa-angle-right"></i> LAKE TITICACA & PUNO</small>
-                                <small class="m-0 d-block"><i class="fa fa-angle-right"></i> LIMA</small>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="row mt-3">--}}
+                            {{--<div class="col text-white">--}}
+                                {{--<small class="m-0 d-block"><i class="fa fa-angle-right"></i> MACHUPICCHU & CUSCO</small>--}}
+                                {{--<small class="m-0 d-block"><i class="fa fa-angle-right"></i> LAKE TITICACA & PUNO</small>--}}
+                                {{--<small class="m-0 d-block"><i class="fa fa-angle-right"></i> LIMA</small>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
             {{--<div class="header-expedia text-white p-3">As local travel operators our programs start daily</div>--}}
             @include('layouts.page.menu-custom')
         </div>
