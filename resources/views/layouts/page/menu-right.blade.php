@@ -9,7 +9,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="img-fluid">
+                <img src="{{asset('images/logos/logo-gotoperu-ave.webp')}}" alt="" class="img-fluid">
                 <div class="row mt-3">
                     <div class="col">
                         <ul class="list-unstyled">
@@ -62,27 +62,27 @@
                 <div class="row">
                     <div class="col">
                         <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
-                            <img src="{{asset('images/icons/facebook.png')}}" alt="" class="img-fluid">
+                            <img src="{{asset('images/icons/facebook.webp')}}" alt="" class="img-fluid">
                         </a>
                     </div>
                     <div class="col">
                         <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
-                            <img src="{{asset('images/icons/twitter.png')}}" alt="" class="img-fluid">
+                            <img src="{{asset('images/icons/twitter.webp')}}" alt="" class="img-fluid">
                         </a>
                     </div>
                     <div class="col">
                         <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
-                            <img src="{{asset('images/icons/instagram.png')}}" alt="" class="img-fluid">
+                            <img src="{{asset('images/icons/instagram.webp')}}" alt="" class="img-fluid">
                         </a>
                     </div>
                     <div class="col">
                         <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
-                            <img src="{{asset('images/icons/youtube.png')}}" alt="" class="img-fluid">
+                            <img src="{{asset('images/icons/youtube.webp')}}" alt="" class="img-fluid">
                         </a>
                     </div>
                     <div class="col">
                         <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
-                            <img src="{{asset('images/icons/google-plus.png')}}" alt="" class="img-fluid">
+                            <img src="{{asset('images/icons/google-plus.webp')}}" alt="" class="img-fluid">
                         </a>
                     </div>
                 </div>

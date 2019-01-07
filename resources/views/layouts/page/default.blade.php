@@ -28,13 +28,13 @@
 
 
 <footer class="bg-g-dark">
-    <img src="{{asset('images/footer.jpg')}}" alt="footer gotoperu" class="w-100">
+    <img src="{{asset('images/footer.webp')}}" alt="footer gotoperu" class="w-100">
     <div class="container footer-logo">
         <div class="row justify-content-center">
             <div class="col-6">
                 <div class="row">
                     <div class="col">
-                        <img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="logo gotoperu" class="w-100">
+                        <img src="{{asset('images/logos/logo-gotoperu-ave-w.webp')}}" alt="logo gotoperu" class="w-100">
                     </div>
                 </div>
 

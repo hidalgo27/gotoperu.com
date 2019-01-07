@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row align-items-center mt-2">
                     <div class="col-md-6 col-lg-3">
-                        <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
+                        <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.webp')}}" alt="" class="img-fluid"></a>
                     </div>
                     <div class="col d-none d-xl-flex">
                         <i class="text-g-yellow">Top recommended Peru Travel Operator since 2006</i>
@@ -28,7 +28,7 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/destinations/puno.jpg')}}" alt="" id="hero-vid">
+            <img src="{{asset('images/destinations/puno.webp')}}" alt="" id="hero-vid">
             @include('layouts.page.menu-custom')
         </div>
         <div class="content-header">
@@ -61,7 +61,7 @@
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col">
-                    <img src="{{asset('images/destinations/puno.jpg')}}" alt="" class="img-fluid">
+                    <img src="{{asset('images/destinations/puno.webp')}}" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="grid-category position-relative">
                                         <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="text-g-dark rounded">
-                                            <img src="{{asset('images/destinations/destinations/'.str_replace(' ', '-', strtolower($destino->nombre)).'.jpg')}}" alt="Machu Picchu" class="w-100 rounded">
+                                            <img src="{{asset('images/destinations/destinations/'.str_replace(' ', '-', strtolower($destino->nombre)).'.webp')}}" alt="Machu Picchu" class="w-100 rounded">
                                             <div class="grid-box p-3 text-center">
                                                 <span class="no-margin text-20"><i>{{substr(ucfirst(strtolower($destino->nombre)), 0, strlen($destino->nombre)/2)}}</i><b>{{substr(ucfirst(strtolower($destino->nombre)), strlen($destino->nombre)/2, strlen($destino->nombre))}}</b></span>
                                                 <div class="line"></div>
@@ -312,7 +312,7 @@
                 <div class="col">
                     <div id="cusco">
                         <h3 class="text-g-yellow pt-5">Cusco</h3>
-                        <img src="{{asset('images/guia/cusco.jpg')}}" alt="" class="img-fluid rounded">
+                        <img src="{{asset('images/guia/cusco.webp')}}" alt="" class="img-fluid rounded">
                     </div>
 
                     <div id="intro">
@@ -1082,12 +1082,12 @@
 
                     <div id="machu-picchu">
                         <h3 class="text-g-yellow pt-5">Machu Picchu</h3>
-                        <img src="{{asset('images/guia/mapi.jpg')}}" alt="Machu Picchu" class="img-fluid mb-3">
+                        <img src="{{asset('images/guia/mapi.webp')}}" alt="Machu Picchu" class="img-fluid mb-3">
                         <p>Spread over 32,592 hectares, in the basins of the river Vilcanota - Urubamba are the ruins of Machu Picchu. In 15th century, The Incan empire developed the site into a phenomenon masterpiece - Machu Picchu. This was the greatest empire in the pre-Columbian America. They built this city in the 15th century and later abandoned it .Thus it is often referred to as “The Lost city of Incas”. This enigmatic city is famous for its archeological sites, throughout South America. It is acclaimed globally for its disillusioned dry-stone walls which are fitted together meticulously with mortarless joints in such a way that not even a thin knife blade can be inserted through them.Visit the most intriguing destination in the world to witness the cathedrals, a collection of beautiful temples, the terraced hills and plazas. There are structures, sculpted from the gray granite of the mountain top that are stupefaction of both the architectural as well as the aesthetic brilliance. Merging in with the hillside itself, people say the area spawns a flawless and sumptuous green paradise, thus making it a must visit place for every tourist who travels to Peru.</p>
                     </div>
                     <div id="sacred-valley">
                         <h3 class="text-g-yellow pt-5">Sacred Valley</h3>
-                        <img src="{{asset('images/guia/valle-sagrado.jpg')}}" alt="Sacred Valley Peru" class="img-fluid mb-3">
+                        <img src="{{asset('images/guia/valle-sagrado.webp')}}" alt="Sacred Valley Peru" class="img-fluid mb-3">
                         <h4>The Sacred Valley of the Incas</h4>
                         <p>The Sacred Valley of the Incas, also know as the Urubamba Valley is located in the Andes of Peru, and is in between Cusco and Machu Picchu. This valley is fed by various rivers flowing out of the valleys and gorges. It is filled with old archaeologically preserved villages and monuments. The special climatic and geographic conditions made this city one of the most appreciated places by the Incas. It was believed to be a spiritual base of the Incan empire. Today this eternal region, is a quiet domain of country that is immersed in Andean culture and history. The modernity and tradition is equally balanced in this city. Devoting some time to the small towns of Sacred Valley and archaeological sites, is a clear evidence of a Peruvian lifestyle and also describes the unbelievable capabilities of the once-glorious Inca Empire. Even today, the locals at the markets communicate speaking their traditional Quechua language, while the colonial constructions offer a glimpse of the Spanish culture. The Sacred Valley is a hotspot for trek lovers due to the splendid mountain passses offering some magnificent views. The travellers are awestruck by the beauty and uniqueness of this city which in turn has brought an influx of even more travellers from around the world.</p>
 
@@ -1140,17 +1140,17 @@
                     </div>
                     <div id="lake-titicaca">
                         <h3 class="text-g-yellow pt-5">Lake Titicaca</h3>
-                        <img src="{{asset('images/guia/titi.jpg')}}" alt="Titicaca" class="img-fluid mb-3">
+                        <img src="{{asset('images/guia/titi.webp')}}" alt="Titicaca" class="img-fluid mb-3">
                         <p>Let us take you to the largest lake by volume in South America called Lake Titicaca. It is situated between Peru and Bolivia. This fascinating lake is situated some 3800 metres above the sea level. The crystal blue water, the serene islands the splendid ruins of this mystical lake has lured a lot of travellers. This lake is believed to be a sacred place as per the Incan civilization, since their first Inca king was born here. Recently, a temple was discovered submerged in this much-venerated sacred lake, which has added to its mystical fascination. Remnants on the shore as well as on the islands of the lake substantiate the earlier existence of one of the most ancient civilizations ever known in the America. The local people inhibiting the Titicaca Basin still practice the traditional ancient approach of agriculture on the slopy stepped terraces that are existing eversince the Incan civilzation. The impact of the ancient traditions can still be seen in the present day culture and has remained uninfluenced by the present day modern world. The traditions here stay as still as the water of the limpid and slightly brackish lake. Live a surreal dream, by embarking this highest commercially available navigable lake. Captivating and in many ways bizarre, the glistening deep blue Lake Titicaca is the inherent home of highland civilization drenched in the ancient ways.</p>
                     </div>
                     <div id="lima">
                         <h3 class="text-g-yellow pt-5">Lima</h3>
-                        <img src="{{asset('images/guia/lima.jpg')}}" alt="Lima" class="img-fluid mb-3">
+                        <img src="{{asset('images/guia/lima.webp')}}" alt="Lima" class="img-fluid mb-3">
                         <p>Lima is the capital as well as the largest city in Peru. Lima happens to be a curious mix of the medieval architectural remains and rural villages and slum, and the present day modern city. It has a cluster of churches and monasteries influenced by the Spanish culture and architecture. Adding to the beauty and charm of this place, are some of the incomparable views of the magnificently large Pacific ocean. Lima is an iconic evidence of Peru’s historical past and is covered in layers of culture and traditions upon which rests the development of the modern city life. Peruvian cuisine is a special highlight for the travellers. The vast sea coast with the cold sea current makes it rich in seafood. Each and every nook and corner of Lima, including the boulevards and avenues, parks, colonial buildings, ancient museum, and prehistoric relics will illustrate an anecdote of Peru’s evolution and its advancement into a contemporary society.Its inevitable to be intrigued by the story and the people of this beautiful city while your stay here.</p>
                     </div>
                     <div id="treks">
                         <h3 class="text-g-yellow pt-5">Treks</h3>
-                        <img src="{{asset('images/guia/treking.jpg')}}" alt="Trekking Peru" class="img-fluid mb-3">
+                        <img src="{{asset('images/guia/treking.webp')}}" alt="Trekking Peru" class="img-fluid mb-3">
                         <h4>What you need to know: Trekking options</h4>
 
                         <h5>Inca Trail to Machu Picchu</h5>

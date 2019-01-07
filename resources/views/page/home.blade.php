@@ -8,7 +8,7 @@
                     <div class="col-md-9 col-lg-7 col-xl">
                         <div class="row align-items-center">
                             <div class="col">
-                                <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
+                                <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.webp')}}" alt="" class="img-fluid"></a>
                             </div>
                             <div class="col">
                                 <i class="text-g-yellow">Local expertise & global partners</i>
@@ -19,7 +19,7 @@
                     <div class="col-md-3 col-lg-5 col-xl text-right">
                         <div class="row align-items-center">
                             <div class="col-3 d-md-none d-xl-inline col-xl-3">
-                                <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="img-fluid">
+                                <img src="{{asset('images/logos/logo-expedia2.webp')}}" alt="" class="img-fluid">
                             </div>
                             <div class="col-4 d-md-none d-xl-inline col-xl-4">
                                 <a href="tel:+2029963000" class="mx-3 text-white h5">(202) 996-3000</a>
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div id="overlay" class="position-relative">
-            <video class="hero-vid-home" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>
+            <video class="hero-vid-home" id="hero-vid" poster="{{asset('images/slider/package-1.webp')}}" autoplay loop muted>
                 <source src="{{asset('media/video6.mp4')}}" />
                 <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
                 <source src="{{asset('media/video6.webm')}}" type="video/webm" />
@@ -162,7 +162,7 @@
         <div class="container">
             <div class="row no-gutters">
                 <div class="col">
-                    <img src="{{asset('images/family.jpg')}}" alt="" class="w-100 rounded-top">
+                    <img src="{{asset('images/family.webp')}}" alt="" class="w-100 rounded-top">
                 </div>
             </div>
             {{--<div class="row no-gutters align-items-center">--}}
@@ -190,9 +190,9 @@
                             <span class="font-weight-normal">Peru Tours & Activities</span>
                             <hr class="my-2">
                             <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                <img src="{{asset('images/icons/include/tours.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
+                                <img src="{{asset('images/icons/include/transfers.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                <img src="{{asset('images/icons/include/entrances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
                             </span>
                         </a>
                     </div>
@@ -201,12 +201,12 @@
                             <span class="font-weight-normal">Peru Travel Packages</span>
                             <hr class="my-2">
                             <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
-                                <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
-                                <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
-                                <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
+                                <img src="{{asset('images/icons/include/tours.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
+                                <img src="{{asset('images/icons/include/transfers.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                <img src="{{asset('images/icons/include/entrances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                <img src="{{asset('images/icons/include/hotels.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
+                                <img src="{{asset('images/icons/include/trains.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
+                                <img src="{{asset('images/icons/include/assistances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
                             </span>
                         </a>
                     </div>
@@ -215,13 +215,13 @@
                             <span class="font-weight-normal">Peru Travel Packages + Air</span>
                             <hr class="my-2">
                             <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
-                                <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
-                                <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
-                                <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
-                                <img src="{{asset('images/icons/include/flight.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Flights">
+                                <img src="{{asset('images/icons/include/tours.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
+                                <img src="{{asset('images/icons/include/transfers.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                <img src="{{asset('images/icons/include/entrances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                <img src="{{asset('images/icons/include/hotels.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
+                                <img src="{{asset('images/icons/include/trains.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
+                                <img src="{{asset('images/icons/include/assistances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
+                                <img src="{{asset('images/icons/include/flight.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Flights">
                             </span>
                         </a>
                     </div>
@@ -243,40 +243,40 @@
             <div class="col">
                 <div class="row"><!--.row -->
                     <div class="col">
-                        <img src="{{asset('images/logos/apavit.png')}}" alt="logo apavit" class="img-fluid">
+                        <img src="{{asset('images/logos/apavit.webp')}}" alt="logo apavit" class="img-fluid">
                     </div>
                     <div class="col">
-                        <img src="{{asset('images/logos/apotur.png')}}" alt="logo apotur" class="img-fluid">
+                        <img src="{{asset('images/logos/apotur.webp')}}" alt="logo apotur" class="img-fluid">
                     </div>
                     <div class="col">
-                        <img src="{{asset('images/logos/asta.png')}}" alt="logo asta" class="img-fluid">
+                        <img src="{{asset('images/logos/asta.webp')}}" alt="logo asta" class="img-fluid">
                     </div>
                     <div class="col">
-                        <img src="{{asset('images/logos/expedia.png')}}" alt="logo expedia" class="img-fluid">
+                        <img src="{{asset('images/logos/expedia.webp')}}" alt="logo expedia" class="img-fluid">
                     </div>
                     <div class="col">
-                        <img src="{{asset('images/logos/facebook.png')}}" alt="logo facebook" class="img-fluid">
+                        <img src="{{asset('images/logos/facebook.webp')}}" alt="logo facebook" class="img-fluid">
                     </div>
                     <div class="col">
-                        <img src="{{asset('images/logos/meetup.png')}}" alt="logo meetup" class="img-fluid">
+                        <img src="{{asset('images/logos/meetup.webp')}}" alt="logo meetup" class="img-fluid">
                     </div>
                     <div class="col">
-                        <img src="{{asset('images/logos/new.png')}}" alt="logo the new york times" class="img-fluid">
+                        <img src="{{asset('images/logos/new.webp')}}" alt="logo the new york times" class="img-fluid">
                     </div>
                     <div class="col">
-                        <img src="{{asset('images/logos/peru.png')}}" alt="logo marca peru" class="img-fluid">
+                        <img src="{{asset('images/logos/peru.webp')}}" alt="logo marca peru" class="img-fluid">
                     </div>
                     <div class="col">
-                        <img src="{{asset('images/logos/prom-peru.png')}}" alt="logo prom peru" class="img-fluid">
+                        <img src="{{asset('images/logos/prom-peru.webp')}}" alt="logo prom peru" class="img-fluid">
                     </div>
                     <div class="col">
-                        <img src="{{asset('images/logos/tripadvisor.png')}}" alt="logo tripadvisor" class="img-fluid">
+                        <img src="{{asset('images/logos/tripadvisor.webp')}}" alt="logo tripadvisor" class="img-fluid">
                     </div>
                     <div class="col">
-                        <img src="{{asset('images/logos/yelp.png')}}" alt="logo yelp" class="img-fluid">
+                        <img src="{{asset('images/logos/yelp.webp')}}" alt="logo yelp" class="img-fluid">
                     </div>
                     <div class="col">
-                        <img src="{{asset('images/logos/youtube.png')}}" alt="logo youtube" class="img-fluid">
+                        <img src="{{asset('images/logos/youtube.webp')}}" alt="logo youtube" class="img-fluid">
                     </div>
                 </div><!-- /.row -->
             </div>
@@ -309,14 +309,14 @@
             <div class="row d-none d-sm-inline-flex align-items-center">
                 <div class="col col-sm-12 col-md">
                     <div class="row no-gutters">
-                        <div class="col"><img src="{{asset('images/banner-home2.jpg')}}" alt="" class="w-100 rounded-top"></div>
+                        <div class="col"><img src="{{asset('images/banner-home2.webp')}}" alt="" class="w-100 rounded-top"></div>
                     </div>
                     <div class="row no-gutters">
-                        <div class="col"><img src="{{asset('images/banner-home3.jpg')}}" alt="" class="w-100 rounded-bottom"></div>
+                        <div class="col"><img src="{{asset('images/banner-home3.webp')}}" alt="" class="w-100 rounded-bottom"></div>
                     </div>
                 </div>
                 <div class="col col-sm-12 col-md">
-                    <h2 class="text-secondary h1 font-weight-bold text-g-yellow"><strong>We are <img src="{{asset('images/logos/logo-gotoperu.png')}}" alt="" width="250"></strong></h2>
+                    <h2 class="text-secondary h1 font-weight-bold text-g-yellow"><strong>We are <img src="{{asset('images/logos/logo-gotoperu.webp')}}" alt="" width="250"></strong></h2>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     <p class="text-dark">Local travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 12 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized our efforts citing us a Top local Experts!</p>
@@ -392,7 +392,7 @@
                                     @foreach($paquetes->random(5) as $paquete)
                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="list-group-item list-group-item-action">
                                             <div class="media">
-                                                <img src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{(strtolower($paquete->titulo))}}">
+                                                <img src="{{asset('images/packages/'.$paquete->codigo.'.webp')}}" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{(strtolower($paquete->titulo))}}">
                                                 <div class="media-body">
                                                     <h5 class="mt-0"><span class="text-g-yellow">{{$paquete->duracion}} Days</span> {{ucwords(strtolower($paquete->titulo))}}</h5>
                                                     <small>
@@ -432,7 +432,7 @@
                             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
                                 <div class="card mb-3">
                                     <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
-                                        <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}">
+                                        <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.webp')}}" alt="{{(strtolower($paquete->titulo))}}">
 
                                         <div class="card-img-overlay p-0">
                                             <div class="row justify-content-between no-gutters">
@@ -517,27 +517,27 @@
                                                                             <div class="row">
                                                                                 <div class="col">
                                                                                     <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
-                                                                                        <img src="{{asset('images/icons/facebook.png')}}" alt="" class="img-fluid">
+                                                                                        <img src="{{asset('images/icons/facebook.webp')}}" alt="" class="img-fluid">
                                                                                     </a>
                                                                                 </div>
                                                                                 <div class="col">
                                                                                     <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
-                                                                                        <img src="{{asset('images/icons/twitter.png')}}" alt="" class="img-fluid">
+                                                                                        <img src="{{asset('images/icons/twitter.webp')}}" alt="" class="img-fluid">
                                                                                     </a>
                                                                                 </div>
                                                                                 <div class="col">
                                                                                     <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
-                                                                                        <img src="{{asset('images/icons/instagram.png')}}" alt="" class="img-fluid">
+                                                                                        <img src="{{asset('images/icons/instagram.webp')}}" alt="" class="img-fluid">
                                                                                     </a>
                                                                                 </div>
                                                                                 <div class="col">
                                                                                     <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
-                                                                                        <img src="{{asset('images/icons/youtube.png')}}" alt="" class="img-fluid">
+                                                                                        <img src="{{asset('images/icons/youtube.webp')}}" alt="" class="img-fluid">
                                                                                     </a>
                                                                                 </div>
                                                                                 <div class="col">
                                                                                     <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
-                                                                                        <img src="{{asset('images/icons/google-plus.png')}}" alt="" class="img-fluid">
+                                                                                        <img src="{{asset('images/icons/google-plus.webp')}}" alt="" class="img-fluid">
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
@@ -615,13 +615,13 @@
                         <h5 class="m-0">7 DAYS WITH AIRFARE FROM USA <a href="packages/air-land/peru-machu-picchu-from-usa/7-days-tours" class="small font-italic">(View Program)</a><small class="d-md-block "><i class="fas fa-map-marker-alt"></i> Cusco, Lima, Sacred Valley, Machu Picchu.</small></h5>
                     </div>
                     <div class="col text-right">
-                        <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
-                        <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
-                        <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
-                        <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
-                        <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
-                        <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
-                        <img src="{{asset('images/icons/include/flight.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Flights">
+                        <img src="{{asset('images/icons/include/tours.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
+                        <img src="{{asset('images/icons/include/transfers.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
+                        <img src="{{asset('images/icons/include/entrances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
+                        <img src="{{asset('images/icons/include/hotels.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
+                        <img src="{{asset('images/icons/include/trains.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
+                        <img src="{{asset('images/icons/include/assistances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
+                        <img src="{{asset('images/icons/include/flight.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Flights">
                     </div>
                 </div>
             </div>
@@ -638,7 +638,7 @@
                                     <div class="slider-container">
                                         <div class="flexbox-slider flexbox-slider-1">
                                             <div class="flexbox-slide">
-                                                <img src="{{asset('images/banners/home/cusco.jpg')}}" alt="Cusco">
+                                                <img src="{{asset('images/banners/home/cusco.webp')}}" alt="Cusco">
                                                 <div class="text-block">
                                                     <h3>Cusco</h3>
                                                     {{--<div class="text">--}}
@@ -647,7 +647,7 @@
                                                 </div>
                                             </div>
                                             <div class="flexbox-slide">
-                                                <img src="{{asset('images/banners/home/lima.jpg')}}" alt="Lima">
+                                                <img src="{{asset('images/banners/home/lima.webp')}}" alt="Lima">
                                                 <div class="text-block">
                                                     <h3>Lima</h3>
                                                     {{--<div class="text">--}}
@@ -656,7 +656,7 @@
                                                 </div>
                                             </div>
                                             <div class="flexbox-slide">
-                                                <img src="{{asset('images/banners/home/machupicchu.jpg')}}" alt="Machu Picchu">
+                                                <img src="{{asset('images/banners/home/machupicchu.webp')}}" alt="Machu Picchu">
                                                 <div class="text-block">
                                                     <h3>Machu Picchu</h3>
                                                     {{--<div class="text">--}}
@@ -665,7 +665,7 @@
                                                 </div>
                                             </div>
                                             <div class="flexbox-slide">
-                                                <img src="{{asset('images/banners/home/titicaca.jpg')}}" alt="Titicaca">
+                                                <img src="{{asset('images/banners/home/titicaca.webp')}}" alt="Titicaca">
                                                 <div class="text-block">
                                                     <h3>Lake Titicaca</h3>
                                                     {{--<div class="text">--}}
@@ -674,7 +674,7 @@
                                                 </div>
                                             </div>
                                             <div class="flexbox-slide">
-                                                <img src="{{asset('images/banners/home/valle.jpg')}}" alt="Sacred Valley">
+                                                <img src="{{asset('images/banners/home/valle.webp')}}" alt="Sacred Valley">
                                                 <div class="text-block">
                                                     <h3>Sacred Valley</h3>
                                                     {{--<div class="text">--}}
@@ -770,19 +770,19 @@
 
             <div class="row">
                 <div class="col">
-                    <img src="{{asset('images/logos/aero/delta.png')}}" alt="" class="w-100 p-4">
+                    <img src="{{asset('images/logos/aero/delta.webp')}}" alt="" class="w-100 p-4">
                 </div>
                 <div class="col">
-                    <img src="{{asset('images/logos/aero/copa.png')}}" alt="" class="w-100 p-4">
+                    <img src="{{asset('images/logos/aero/copa.webp')}}" alt="" class="w-100 p-4">
                 </div>
                 <div class="col">
-                    <img src="{{asset('images/logos/aero/latam.png')}}" alt="" class="w-100 p-4">
+                    <img src="{{asset('images/logos/aero/latam.webp')}}" alt="" class="w-100 p-4">
                 </div>
                 <div class="col">
-                    <img src="{{asset('images/logos/aero/avianca.png')}}" alt="" class="w-100 p-4">
+                    <img src="{{asset('images/logos/aero/avianca.webp')}}" alt="" class="w-100 p-4">
                 </div>
                 <div class="col">
-                    <img src="{{asset('images/logos/aero/american.png')}}" alt="" class="w-100 p-4">
+                    <img src="{{asset('images/logos/aero/american.webp')}}" alt="" class="w-100 p-4">
                 </div>
             </div>
 
@@ -872,13 +872,13 @@
                 <div class="col-4">
                     <div class="row">
                         <div class="col">
-                            <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5867868-Has_anyone_booked_a_tour_with_GOTOPERU_www_gotoperu_org-Peru.html"><img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="If you are visiting anywhere in Peru, you cannot find a better choice than www.gotoperu.com – they live there, and work there, and can sort urgent issues readily, with a quick phone call."></a>
+                            <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5867868-Has_anyone_booked_a_tour_with_GOTOPERU_www_gotoperu_org-Peru.html"><img src="{{asset('images/icons/tripadvisor.webp')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="If you are visiting anywhere in Peru, you cannot find a better choice than www.gotoperu.com – they live there, and work there, and can sort urgent issues readily, with a quick phone call."></a>
                         </div>
                         <div class="col">
-                            <a href="https://www.trustpilot.com/review/gotoperu.com" target="_blank"><img src="{{asset('images/icons/trust.png')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="In summary, we had a wonderful time! We, of course, enjoyed the sights as we expected (Machu Picchu, Sacred Valley, train, Lake Titicacca), but all of the connections were on time and very comfortable. The guides (Franklin in Cusco, Nellie in Machu Picchu) were very pleasant and very knowledgeable. "></a>
+                            <a href="https://www.trustpilot.com/review/gotoperu.com" target="_blank"><img src="{{asset('images/icons/trust.webp')}}" alt="" class="w-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="In summary, we had a wonderful time! We, of course, enjoyed the sights as we expected (Machu Picchu, Sacred Valley, train, Lake Titicacca), but all of the connections were on time and very comfortable. The guides (Franklin in Cusco, Nellie in Machu Picchu) were very pleasant and very knowledgeable. "></a>
                         </div>
                         <div class="col">
-                            <a href="https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com" target="_blank"><img src="{{asset('images/icons/yelp.png')}}" alt="" class="w-100 p-4" data-toggle="tooltip" data-placement="top" title="" data-original-title="The arrangement of the agency since Cuzco arrival, has escort service all the way. You do not need to fear of lost. Hotel, tour guide, transfer are all excellent. "></a>
+                            <a href="https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com" target="_blank"><img src="{{asset('images/icons/yelp.webp')}}" alt="" class="w-100 p-4" data-toggle="tooltip" data-placement="top" title="" data-original-title="The arrangement of the agency since Cuzco arrival, has escort service all the way. You do not need to fear of lost. Hotel, tour guide, transfer are all excellent. "></a>
                         </div>
                     </div>
                 </div>
@@ -960,12 +960,12 @@
     </section>
 
     <div class="bg-white d-none d-sm-block position-relative">
-        <img src="{{asset('images/banner-hotels.jpg')}}" alt="" class="w-100">
+        <img src="{{asset('images/banner-hotels.webp')}}" alt="" class="w-100">
         <div class="card-img-overlay bg-rgba-dark-3">
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <p class="m-0 text-white h3 font-weight-light"><img src="{{asset('images/icons/include/hotels.png')}}" width="50" height="50" alt="" class="p-1" data-toggle="tooltip" data-placement="top" title="Hotels"> Hand-Selected  Collection of hotels</p>
+                        <p class="m-0 text-white h3 font-weight-light"><img src="{{asset('images/icons/include/hotels.webp')}}" width="50" height="50" alt="" class="p-1" data-toggle="tooltip" data-placement="top" title="Hotels"> Hand-Selected  Collection of hotels</p>
                     </div>
                 </div>
             </div>
@@ -1003,7 +1003,7 @@
                         <div class="col">
                             <div class="grid-category position-relative">
                                 <a href="destinations/peru-travel/machu-picchu-tours" class="text-g-dark rounded">
-                                    <img src="{{asset('images/destinations/destinations/machu-picchu-h.jpg')}}" alt="Machu Picchu" class="w-100 rounded">
+                                    <img src="{{asset('images/destinations/destinations/machu-picchu-h.webp')}}" alt="Machu Picchu" class="w-100 rounded">
                                     <div class="grid-box p-3 text-center">
                                         <span class="font">
                                             <i>Machu</i>
@@ -1017,7 +1017,7 @@
                         <div class="col">
                             <div class="grid-category position-relative">
                                 <a href="destinations/peru-travel/puno-and-lake-titicaca-tours" class="text-g-dark rounded">
-                                    <img src="{{asset('images/destinations/destinations/lake-titicaca-h.jpg')}}" alt="Lake Titicaca" class="w-100 rounded">
+                                    <img src="{{asset('images/destinations/destinations/lake-titicaca-h.webp')}}" alt="Lake Titicaca" class="w-100 rounded">
                                     <div class="grid-box p-3 text-center">
                                         <span class="font">
                                             <i>Lake</i>
@@ -1031,7 +1031,7 @@
                         <div class="col d-lg-none d-xl-block">
                             <div class="grid-category position-relative">
                                 <a href="destinations/peru-travel/amazon-tours" class="text-g-dark rounded">
-                                    <img src="{{asset('images/destinations/destinations/amazon-h.jpg')}}" alt="Amazon" class="w-100 rounded">
+                                    <img src="{{asset('images/destinations/destinations/amazon-h.webp')}}" alt="Amazon" class="w-100 rounded">
                                     <div class="grid-box p-3 text-center">
                                         <span class="font">
                                             <i>Ama</i>
@@ -1054,7 +1054,7 @@
                                             @foreach($destinos->where('pais', 'peru')->random(6) as $destino)
                                                 <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
                                                     <div class="media">
-                                                        <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
+                                                        <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.webp" alt="" width="60" height="60" class="rounded-circle align-self-center mr-3" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
                                                         <div class="media-body">
                                                             <h5 class="mt-0">{{ucwords(strtolower($destino->nombre))}}</h5>
                                                             <p>{{ucwords(strtolower($destino->pais))}}</p>
@@ -1229,7 +1229,7 @@
                 <div class="col col-sm">
                     <div class="row mt-5 justify-content-center">
                         <div class="col-6 col-sm-4 col-md-6 col-lg-3">
-                            <img src="{{asset('images/icons/group.png')}}" alt="" class="img-fluid">
+                            <img src="{{asset('images/icons/group.webp')}}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <div class="row">
@@ -1240,7 +1240,7 @@
 
                     <div class="row mt-5 justify-content-center">
                         <div class="col-6 col-sm-4 col-md-6 col-lg-3">
-                            <img src="{{asset('images/icons/assistance.png')}}" alt="" class="img-fluid">
+                            <img src="{{asset('images/icons/assistance.webp')}}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <div class="row mb-5">
@@ -1251,7 +1251,7 @@
 
                     <div class="row justify-content-center">
                         <div class="col-6 col-sm-4 col-md-6 col-lg-3">
-                            <img src="{{asset('images/icons/customize.png')}}" alt="" class="img-fluid">
+                            <img src="{{asset('images/icons/customize.webp')}}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <div class="row">
@@ -1261,12 +1261,12 @@
                     </div>
                 </div>
                 <div class="col col-sm d-none d-sm-block">
-                    <img src="{{asset('images/goto.jpg')}}" alt="" class="w-100">
+                    <img src="{{asset('images/goto.webp')}}" alt="" class="w-100">
                 </div>
                 <div class="col-12 col-sm">
                     <div class="row mt-5 justify-content-center">
                         <div class="col-6 col-sm-4 col-md-6 col-lg-3">
-                            <img src="{{asset('images/icons/location.png')}}" alt="" class="img-fluid">
+                            <img src="{{asset('images/icons/location.webp')}}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <div class="row">
@@ -1277,7 +1277,7 @@
 
                     <div class="row mt-5 justify-content-center">
                         <div class="col-6 col-sm-4 col-md-6 col-lg-3">
-                            <img src="{{asset('images/icons/trip.png')}}" alt="" class="img-fluid">
+                            <img src="{{asset('images/icons/trip.webp')}}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <div class="row mb-5">
@@ -1288,7 +1288,7 @@
 
                     <div class="row justify-content-center">
                         <div class="col-6 col-sm-4 col-md-6 col-lg-3">
-                            <img src="{{asset('images/icons/departure.png')}}" alt="" class="img-fluid">
+                            <img src="{{asset('images/icons/departure.webp')}}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <div class="row">
@@ -1305,7 +1305,7 @@
         <div class="container">
             <div class="row align-items-center no-gutters">
                 <div class="col d-none d-xl-block">
-                    <img src="{{asset('images/we-care.jpg')}}" alt="" class="img-fluid">
+                    <img src="{{asset('images/we-care.webp')}}" alt="" class="img-fluid">
                 </div>
                 <div class="col">
                     <div class="px-4">
@@ -1318,26 +1318,26 @@
 
                     <div class="row">
                         <div class="col">
-                            <img src="{{asset('images/social/ninos.jpg')}}" alt="" class="img-fluid pl-4" data-toggle="modal" data-target="#social-1">
+                            <img src="{{asset('images/social/ninos.webp')}}" alt="" class="img-fluid pl-4" data-toggle="modal" data-target="#social-1">
                             <!-- Modal -->
                             <div class="modal fade" id="social-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-body p-0">
-                                            <img src="{{asset('images/social/ninos.jpg')}}" alt="" class="img-fluid rounded">
+                                            <img src="{{asset('images/social/ninos.webp')}}" alt="" class="img-fluid rounded">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col">
-                            <img src="{{asset('images/social/social.jpg')}}" alt="" class="img-fluid pr-4" data-toggle="modal" data-target="#social-2">
+                            <img src="{{asset('images/social/social.webp')}}" alt="" class="img-fluid pr-4" data-toggle="modal" data-target="#social-2">
                             <!-- Modal -->
                             <div class="modal fade" id="social-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-body p-0">
-                                            <img src="{{asset('images/social/social.jpg')}}" alt="" class="img-fluid rounded">
+                                            <img src="{{asset('images/social/social.webp')}}" alt="" class="img-fluid rounded">
                                         </div>
                                     </div>
                                 </div>
@@ -1366,7 +1366,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <img src="{{asset('images/slider/flights.jpg')}}" alt="" class="w-100">
+                    <img src="{{asset('images/slider/flights.webp')}}" alt="" class="w-100">
                     <a href="#" class="btn-link float-right font-weight-normal my-3" data-toggle="modal" data-target="#exampleModal">More Information <i class="fa fa-chevron-right"></i></a>
 
                     <!-- Modal -->
@@ -1517,43 +1517,43 @@
         <div class="container">
             <div class="row">
                 <div class="col-1">
-                    <img src="{{asset('images/cuadro-01.png')}}" alt="" class="w-100">
+                    <img src="{{asset('images/cuadro-01.webp')}}" alt="" class="w-100">
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-10">
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-4 mb-2">
-                            <img src="{{asset('images/certificates/certificate-1.jpg')}}" alt="" class="w-100" data-toggle="modal" data-target="#certificate-1">
+                            <img src="{{asset('images/certificates/certificate-1.webp')}}" alt="" class="w-100" data-toggle="modal" data-target="#certificate-1">
                             <div class="modal fade" id="certificate-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-body p-0">
-                                            <img src="{{asset('images/certificates/certificate-1.jpg')}}" alt="" class="img-fluid rounded">
+                                            <img src="{{asset('images/certificates/certificate-1.webp')}}" alt="" class="img-fluid rounded">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 mb-2">
-                            <img src="{{asset('images/certificates/certificate-2.jpg')}}" alt="" class="w-100" data-toggle="modal" data-target="#certificate-2">
+                            <img src="{{asset('images/certificates/certificate-2.webp')}}" alt="" class="w-100" data-toggle="modal" data-target="#certificate-2">
                             <div class="modal fade" id="certificate-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-body p-0">
-                                            <img src="{{asset('images/certificates/certificate-2.jpg')}}" alt="" class="img-fluid rounded">
+                                            <img src="{{asset('images/certificates/certificate-2.webp')}}" alt="" class="img-fluid rounded">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 mb-2">
-                            <img src="{{asset('images/certificates/certificate-3.jpg')}}" alt="" class="w-100" data-toggle="modal" data-target="#certificate-3">
+                            <img src="{{asset('images/certificates/certificate-3.webp')}}" alt="" class="w-100" data-toggle="modal" data-target="#certificate-3">
                             <div class="modal fade" id="certificate-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-body p-0">
-                                            <img src="{{asset('images/certificates/certificate-3.jpg')}}" alt="" class="img-fluid rounded">
+                                            <img src="{{asset('images/certificates/certificate-3.webp')}}" alt="" class="img-fluid rounded">
                                         </div>
                                     </div>
                                 </div>
@@ -1564,7 +1564,7 @@
             </div>
             <div class="row justify-content-end">
                 <div class="col-1">
-                    <img src="{{asset('images/cuadro-02.png')}}" alt="" class="w-100">
+                    <img src="{{asset('images/cuadro-02.webp')}}" alt="" class="w-100">
                 </div>
             </div>
 

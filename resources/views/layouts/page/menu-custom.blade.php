@@ -6,9 +6,9 @@
                 <span class="font-weight-normal">Peru Tours & Activities</span>
                 <hr class="my-2">
                 <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                <img src="{{asset('images/icons/include/tours.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
+                                <img src="{{asset('images/icons/include/transfers.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                <img src="{{asset('images/icons/include/entrances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
                             </span>
             </a>
         </div>
@@ -17,12 +17,12 @@
                 <span class="font-weight-normal">Peru Travel Packages</span>
                 <hr class="my-2">
                 <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
-                                <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
-                                <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
-                                <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
+                                <img src="{{asset('images/icons/include/tours.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
+                                <img src="{{asset('images/icons/include/transfers.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                <img src="{{asset('images/icons/include/entrances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                <img src="{{asset('images/icons/include/hotels.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
+                                <img src="{{asset('images/icons/include/trains.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
+                                <img src="{{asset('images/icons/include/assistances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
                             </span>
             </a>
         </div>
@@ -31,13 +31,13 @@
                 <span class="font-weight-normal">Peru Travel Packages + Air</span>
                 <hr class="my-2">
                 <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
-                                <img src="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
-                                <img src="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
-                                <img src="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
-                                <img src="{{asset('images/icons/include/flight.png')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Flights">
+                                <img src="{{asset('images/icons/include/tours.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
+                                <img src="{{asset('images/icons/include/transfers.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                <img src="{{asset('images/icons/include/entrances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                <img src="{{asset('images/icons/include/hotels.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
+                                <img src="{{asset('images/icons/include/trains.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
+                                <img src="{{asset('images/icons/include/assistances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
+                                <img src="{{asset('images/icons/include/flight.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Flights">
                             </span>
             </a>
         </div>

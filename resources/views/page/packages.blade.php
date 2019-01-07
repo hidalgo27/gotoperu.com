@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row align-items-center mt-2">
                     <div class="col-md-6 col-lg-3">
-                        <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
+                        <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.webp')}}" alt="" class="img-fluid"></a>
                     </div>
                     <div class="col d-none d-xl-flex">
                         <i class="text-white">Top recommended Peru Travel Operator since 2006</i>
@@ -27,7 +27,7 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/banners/itinerary/GTP40.jpg')}}" alt="" id="hero-vid">
+            <img src="{{asset('images/banners/itinerary/GTP40.webp')}}" alt="" id="hero-vid">
             @include('layouts.page.menu-custom')
         </div>
         <div class="content-header">
@@ -60,7 +60,7 @@
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col">
-                    <img src="{{asset('images/banners/itinerary/GTP40.jpg')}}" alt="" class="img-fluid">
+                    <img src="{{asset('images/banners/itinerary/GTP40.webp')}}" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -147,7 +147,7 @@
                                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-3">
                                     <div class="card mb-3">
                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
-                                            <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}">
+                                            <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.webp')}}" alt="{{(strtolower($paquete->titulo))}}">
 
                                             <div class="card-img-overlay p-0">
                                                 <div class="row justify-content-between no-gutters">
@@ -232,27 +232,27 @@
                                                                                 <div class="row">
                                                                                     <div class="col">
                                                                                         <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
-                                                                                            <img src="{{asset('images/icons/facebook.png')}}" alt="" class="img-fluid">
+                                                                                            <img src="{{asset('images/icons/facebook.webp')}}" alt="" class="img-fluid">
                                                                                         </a>
                                                                                     </div>
                                                                                     <div class="col">
                                                                                         <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
-                                                                                            <img src="{{asset('images/icons/twitter.png')}}" alt="" class="img-fluid">
+                                                                                            <img src="{{asset('images/icons/twitter.webp')}}" alt="" class="img-fluid">
                                                                                         </a>
                                                                                     </div>
                                                                                     <div class="col">
                                                                                         <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
-                                                                                            <img src="{{asset('images/icons/instagram.png')}}" alt="" class="img-fluid">
+                                                                                            <img src="{{asset('images/icons/instagram.webp')}}" alt="" class="img-fluid">
                                                                                         </a>
                                                                                     </div>
                                                                                     <div class="col">
                                                                                         <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
-                                                                                            <img src="{{asset('images/icons/youtube.png')}}" alt="" class="img-fluid">
+                                                                                            <img src="{{asset('images/icons/youtube.webp')}}" alt="" class="img-fluid">
                                                                                         </a>
                                                                                     </div>
                                                                                     <div class="col">
                                                                                         <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
-                                                                                            <img src="{{asset('images/icons/google-plus.png')}}" alt="" class="img-fluid">
+                                                                                            <img src="{{asset('images/icons/google-plus.webp')}}" alt="" class="img-fluid">
                                                                                         </a>
                                                                                     </div>
                                                                                 </div>

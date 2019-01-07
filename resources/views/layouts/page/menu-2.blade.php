@@ -13,7 +13,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="img-fluid"></a>
+                <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave.webp')}}" alt="" class="img-fluid"></a>
             </div>
         </div>
     </div>
