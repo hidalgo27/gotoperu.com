@@ -39,3 +39,13 @@
 //$panel-default-heading-bg: #fff;
 //$fa-font-path:   "~font-awesome-5-css/webfonts";
 $carousel-control-color: #333333;
+$g-green:    #7F8429 !default;
+$g-yellow:   #f9a825 !default;
+$g-dark:   #333333 !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge((
+        "g-green": $g-green,
+        "g-yellow": $g-yellow,
+        "g-dark": $g-dark
+), $theme-colors);
