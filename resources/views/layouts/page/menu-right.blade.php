@@ -59,30 +59,30 @@
                 {{--</div>--}}
 
                 {{--<hr>--}}
-                <div class="row">
+                <div class="row no-gutters">
                     <div class="col">
-                        <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
-                            <img src="{{asset('images/icons/facebook.png')}}" alt="" class="img-fluid">
+                        <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline" target="_blank">
+                            <i class="fab fa-facebook text-primary fa-2x"></i>
                         </a>
                     </div>
                     <div class="col">
-                        <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
-                            <img src="{{asset('images/icons/twitter.png')}}" alt="" class="img-fluid">
+                        <a href="https://twitter.com/GOTOPERUCOM" class="d-inline" target="_blank">
+                            <i class="fab fa-twitter text-info fa-2x"></i>
                         </a>
                     </div>
                     <div class="col">
-                        <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
-                            <img src="{{asset('images/icons/instagram.png')}}" alt="" class="img-fluid">
+                        <a href="https://www.instagram.com/gotoperucom/" class="d-inline" target="_blank">
+                            <i class="fab fa-instagram text-g-dark fa-2x"></i>
                         </a>
                     </div>
                     <div class="col">
-                        <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
-                            <img src="{{asset('images/icons/youtube.png')}}" alt="" class="img-fluid">
+                        <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline" target="_blank">
+                            <i class="fab fa-youtube text-danger fa-2x"></i>
                         </a>
                     </div>
                     <div class="col">
-                        <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
-                            <img src="{{asset('images/icons/google-plus.png')}}" alt="" class="img-fluid">
+                        <a href="https://plus.google.com/+Gotoperu" class="d-inline" target="_blank">
+                            <i class="fab fa-google-plus text-danger fa-2x"></i>
                         </a>
                     </div>
                 </div>

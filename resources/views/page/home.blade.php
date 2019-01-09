@@ -1071,7 +1071,7 @@
                                             @foreach($destinos->where('pais', 'peru')->random(6) as $destino)
                                                 <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="list-group-item list-group-item-action">
                                                     <div class="media">
-                                                        <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="{{strtolower($destino->nombre)}}" width="60" height="60" class="rounded-circle align-self-center mr-3 lazy has-webp" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
+                                                        <img data-src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" data-srcset="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="{{strtolower($destino->nombre)}}" width="60" height="60" class="rounded-circle align-self-center mr-3 lazy has-webp" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
                                                         <div class="media-body">
                                                             <h5 class="mt-0">{{ucwords(strtolower($destino->nombre))}}</h5>
                                                             <p>{{ucwords(strtolower($destino->pais))}}</p>
@@ -1257,7 +1257,7 @@
 
                     <div class="row mt-5 justify-content-center">
                         <div class="col-6 col-sm-4 col-md-6 col-lg-3">
-                            <img data-src="{{asset('images/icons/assistance.png')}}" src="{{asset('images/icons/assistance.png')}}" alt="icon assistance" class="img-fluid lazy has-webp">
+                            <img data-src="{{asset('images/icons/assistance.png')}}" data-srcset="{{asset('images/icons/assistance.png')}}" alt="icon assistance" class="img-fluid lazy has-webp">
                         </div>
                     </div>
                     <div class="row mb-5">
@@ -1337,28 +1337,28 @@
                         <div class="col">
                             <img data-src="{{asset('images/social/ninos.jpg')}}" data-srcset="{{asset('images/social/ninos.jpg')}}" alt="we care" class="img-fluid lazy has-webp pl-4" data-toggle="modal" data-target="#social-1">
                             <!-- Modal -->
-                            <div class="modal fade" id="social-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-body p-0">
-                                            <img src="{{asset('images/social/ninos.jpg')}}" alt="we care" class="img-fluid rounded">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="modal fade" id="social-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
+                                {{--<div class="modal-dialog modal-lg" role="document">--}}
+                                    {{--<div class="modal-content">--}}
+                                        {{--<div class="modal-body p-0">--}}
+                                            {{--<img src="{{asset('images/social/ninos.jpg')}}" alt="we care" class="img-fluid rounded">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                         </div>
                         <div class="col">
                             <img data-src="{{asset('images/social/social.jpg')}}" data-srcset="{{asset('images/social/social.jpg')}}" alt="social" class="img-fluid pr-4 lazy has-webp" data-toggle="modal" data-target="#social-2">
                             <!-- Modal -->
-                            <div class="modal fade" id="social-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-body p-0">
-                                            <img src="{{asset('images/social/social.jpg')}}" alt="" class="img-fluid rounded">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="modal fade" id="social-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
+                                {{--<div class="modal-dialog modal-lg" role="document">--}}
+                                    {{--<div class="modal-content">--}}
+                                        {{--<div class="modal-body p-0">--}}
+                                            {{--<img src="{{asset('images/social/social.jpg')}}" alt="" class="img-fluid rounded">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                         </div>
                     </div>
                 </div>
@@ -1542,39 +1542,39 @@
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-4 mb-2">
                             <img data-src="{{asset('images/certificates/certificate-1.jpg')}}" data-srcset="{{asset('images/certificates/certificate-1.jpg')}}" alt="certificate gotoperu" class="w-100 lazy has-webp" data-toggle="modal" data-target="#certificate-1">
-                            <div class="modal fade" id="certificate-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-body p-0">
-                                            <img src="{{asset('images/certificates/certificate-1.jpg')}}" alt="certificate gotoperu" class="img-fluid rounded">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="modal fade" id="certificate-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
+                                {{--<div class="modal-dialog modal-lg" role="document">--}}
+                                    {{--<div class="modal-content">--}}
+                                        {{--<div class="modal-body p-0">--}}
+                                            {{--<img src="{{asset('images/certificates/certificate-1.jpg')}}" alt="certificate gotoperu" class="img-fluid rounded">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 mb-2">
                             <img data-src="{{asset('images/certificates/certificate-2.jpg')}}" data-srcset="{{asset('images/certificates/certificate-2.jpg')}}" alt="certificate gotoperu" class="w-100 lazy has-webp" data-toggle="modal" data-target="#certificate-2">
-                            <div class="modal fade" id="certificate-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-body p-0">
-                                            <img src="{{asset('images/certificates/certificate-2.jpg')}}" alt="certificate gotoperu" class="img-fluid rounded">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="modal fade" id="certificate-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
+                                {{--<div class="modal-dialog modal-lg" role="document">--}}
+                                    {{--<div class="modal-content">--}}
+                                        {{--<div class="modal-body p-0">--}}
+                                            {{--<img src="{{asset('images/certificates/certificate-2.jpg')}}" alt="certificate gotoperu" class="img-fluid rounded">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 mb-2">
                             <img data-src="{{asset('images/certificates/certificate-3.jpg')}}" data-srcset="{{asset('images/certificates/certificate-3.jpg')}}" alt="certificate gotoperu" class="w-100 lazy has-webp" data-toggle="modal" data-target="#certificate-3">
-                            <div class="modal fade" id="certificate-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-body p-0">
-                                            <img src="{{asset('images/certificates/certificate-3.jpg')}}" alt="certificate gotoperu" class="img-fluid rounded">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="modal fade" id="certificate-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
+                                {{--<div class="modal-dialog modal-lg" role="document">--}}
+                                    {{--<div class="modal-content">--}}
+                                        {{--<div class="modal-body p-0">--}}
+                                            {{--<img src="{{asset('images/certificates/certificate-3.jpg')}}" alt="certificate gotoperu" class="img-fluid rounded">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                         </div>
                     </div>
             </div>
