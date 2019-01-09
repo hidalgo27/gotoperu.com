@@ -1,4 +1,21 @@
 //menu
+.has-webp {
+  //display: block;
+  //border: 0;
+  opacity: 0;
+}
+.has-webp:not(.initial) {
+  transition: opacity 1s;
+}
+.has-webp.initial,
+.has-webp.loaded,
+.has-webp.error {
+  opacity: 1;
+}
+
+.has-webp:not([src]) {
+  visibility: hidden;
+}
 .text-8{
   font-size: 8px;
 }

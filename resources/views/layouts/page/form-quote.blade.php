@@ -5,36 +5,36 @@
                 <div class="col-9 text-white text-center rounded">
                     <div class="row">
                         <div class="col">
-                            <img src="{{asset('images/icons/include/assistances.webp')}}" alt="assistances" class="w-100">
+                            <img data-src="{{asset('images/icons/include/assistances.png')}}" data-srcset="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="w-100 lazy has-webp">
                             <small>Assistances</small>
                         </div>
                         <div class="col">
-                            <img src="{{asset('images/icons/include/breakfast.webp')}}" alt="breakfast" class="w-100">
+                            <img data-src="{{asset('images/icons/include/breakfast.png')}}" data-srcset="{{asset('images/icons/include/breakfast.png')}}" alt="breakfast" class="w-100 lazy has-webp">
                             <small>Breakfast</small>
                         </div>
                         <div class="col">
-                            <img src="{{asset('images/icons/include/entrances.webp')}}" alt="entrances" class="w-100">
+                            <img data-src="{{asset('images/icons/include/entrances.png')}}" data-srcset="{{asset('images/icons/include/entrances.png')}}" alt="entrances" class="w-100 lazy has-webp">
                             <small>Entrances</small>
                         </div>
                         <div class="col">
-                            <img src="{{asset('images/icons/include/flight.webp')}}" alt="flight" class="w-100">
+                            <img data-src="{{asset('images/icons/include/flight.png')}}" data-srcset="{{asset('images/icons/include/flight.png')}}" alt="flight" class="w-100 lazy has-webp">
                             <small>Flight</small>
                         </div>
 
                         <div class="col">
-                            <img src="{{asset('images/icons/include/hotels.webp')}}" alt="hotels" class="w-100">
+                            <img data-src="{{asset('images/icons/include/hotels.png')}}" data-srcset="{{asset('images/icons/include/hotels.png')}}" alt="hotels" class="w-100 lazy has-webp">
                             <small>Hotels</small>
                         </div>
                         <div class="col">
-                            <img src="{{asset('images/icons/include/tours.webp')}}" alt="tours" class="w-100">
+                            <img data-src="{{asset('images/icons/include/tours.png')}}" data-srcset="{{asset('images/icons/include/tours.png')}}" alt="tours" class="w-100 lazy has-webp">
                             <small>Tours</small>
                         </div>
                         <div class="col">
-                            <img src="{{asset('images/icons/include/trains.webp')}}" alt="trains" class="w-100">
+                            <img data-src="{{asset('images/icons/include/trains.png')}}" data-srcset="{{asset('images/icons/include/trains.png')}}" alt="trains" class="w-100 lazy has-webp">
                             <small>Trains</small>
                         </div>
                         <div class="col">
-                            <img src="{{asset('images/icons/include/transfers.webp')}}" alt="transfers" class="w-100">
+                            <img data-src="{{asset('images/icons/include/transfers.png')}}" data-srcset="{{asset('images/icons/include/transfers.png')}}" alt="transfers" class="w-100 lazy has-webp">
                             <small>Transfers</small>
                         </div>
                     </div>

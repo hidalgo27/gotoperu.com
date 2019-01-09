@@ -29,6 +29,7 @@ mix.scripts([
     'node_modules/intl-tel-input/build/js/intlTelInput.js',
     'node_modules/intl-tel-input/build/js/utils.js',
     'node_modules/owl.carousel/dist/owl.carousel.min.js',
+    'node_modules/vanilla-lazyload/dist/lazyload.min.js',
     'resources/assets/js/vendors/function-admin.js',
     'resources/assets/js/vendors/function.js'
 ], 'public/js/plugins.js');

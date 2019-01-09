@@ -28,13 +28,13 @@
 
 
 <footer class="bg-g-dark">
-    <img src="{{asset('images/footer.webp')}}" alt="footer gotoperu" class="w-100">
+    <img data-src="{{asset('images/footer.jpg')}}" data-srcset="{{asset('images/footer.jpg')}}" alt="footer gotoperu" class="w-100 lazy has-webp">
     <div class="container footer-logo">
         <div class="row justify-content-center">
             <div class="col-6">
                 <div class="row">
                     <div class="col">
-                        <img src="{{asset('images/logos/logo-gotoperu-ave-w.webp')}}" alt="logo gotoperu" class="w-100">
+                        <img data-src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" data-srcset="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="logo gotoperu" class="w-100 lazy has-webp">
                     </div>
                 </div>
 
@@ -130,16 +130,16 @@
                 <h6 class="mt-2">GOTOPERU GROUP:</h6>
             </div>
             <div class="col-6 col-sm mb-3">
-                <img src="{{asset('images/logos/logo-gotoperu-footer.png')}}" alt="logo gotoperu" class="img-fluid">
+                <img data-src="{{asset('images/logos/logo-gotoperu-footer.png')}}" data-srcset="{{asset('images/logos/logo-gotoperu-footer.png')}}" alt="logo gotoperu" class="img-fluid lazy has-webp">
             </div>
             <div class="col-6 col-sm mb-3">
-                <img src="{{asset('images/logos/logo-andes-footer.png')}}" alt="logo andes viagens" class="img-fluid">
+                <img data-src="{{asset('images/logos/logo-andes-footer.png')}}" data-srcset="{{asset('images/logos/logo-andes-footer.png')}}" alt="logo andes viagens" class="img-fluid lazy has-webp">
             </div>
             <div class="col-6 col-sm mb-3">
-                <img src="{{asset('images/logos/logo-latinamerica-footer.png')}}" alt="logo gotolatinamerica" class="img-fluid">
+                <img data-src="{{asset('images/logos/logo-latinamerica-footer.png')}}" data-srcset="{{asset('images/logos/logo-latinamerica-footer.png')}}" alt="logo gotolatinamerica" class="img-fluid lazy has-webp">
             </div>
             <div class="col-6 col-sm mb-3">
-                <img src="{{asset('images/logos/logo-mapi-galapagos-footer.png')}}" alt="logo machupicchu galapagos" class="img-fluid">
+                <img data-src="{{asset('images/logos/logo-mapi-galapagos-footer.png')}}" data-srcset="{{asset('images/logos/logo-mapi-galapagos-footer.png')}}" alt="logo machupicchu galapagos" class="img-fluid lazy has-webp">
             </div>
             <div class="col-12 col-sm text-center">
                 {{--<b>PERU LOCAL TIME: 7:38PM</b>--}}
@@ -402,6 +402,7 @@
         changeMonth: true,
         changeYear: true
     });
+
 </script>
 {{--<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0027/9680.js" async="async"></script>--}}
 <script async defer

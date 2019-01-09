@@ -6,10 +6,10 @@
                 <span class="font-weight-normal">Peru Tours & Activities</span>
                 <hr class="my-2">
                 <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
-                            </span>
+                    <img data-src="{{asset('images/icons/include/tours.png')}}" data-srcset="{{asset('images/icons/include/tours.png')}}" alt="tours" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
+                    <img data-src="{{asset('images/icons/include/transfers.png')}}" data-srcset="{{asset('images/icons/include/transfers.png')}}" alt="transfers" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
+                    <img data-src="{{asset('images/icons/include/entrances.png')}}" data-srcset="{{asset('images/icons/include/entrances.png')}}" alt="entrances" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
+                </span>
             </a>
         </div>
         <div class="col mb-md-2 col-lg col-xl">
@@ -17,13 +17,13 @@
                 <span class="font-weight-normal">Peru Travel Packages</span>
                 <hr class="my-2">
                 <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
-                                <img src="{{asset('images/icons/include/hotels.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
-                                <img src="{{asset('images/icons/include/trains.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
-                                <img src="{{asset('images/icons/include/assistances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
-                            </span>
+                    <img data-src="{{asset('images/icons/include/tours.png')}}" data-srcset="{{asset('images/icons/include/tours.png')}}" alt="tours" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
+                    <img data-src="{{asset('images/icons/include/transfers.png')}}" data-srcset="{{asset('images/icons/include/transfers.png')}}" alt="transfers" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
+                    <img data-src="{{asset('images/icons/include/entrances.png')}}" data-srcset="{{asset('images/icons/include/entrances.png')}}" alt="entrances" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
+                    <img data-src="{{asset('images/icons/include/hotels.png')}}" data-srcset="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
+                    <img data-src="{{asset('images/icons/include/trains.png')}}" data-srcset="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
+                    <img data-src="{{asset('images/icons/include/assistances.png')}}" data-srcset="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
+                </span>
             </a>
         </div>
         <div class="col mb-md-2 col-lg col-xl">
@@ -31,14 +31,14 @@
                 <span class="font-weight-normal">Peru Travel Packages + Air</span>
                 <hr class="my-2">
                 <span class="d-block">
-                                <img src="{{asset('images/icons/include/tours.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
-                                <img src="{{asset('images/icons/include/transfers.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                <img src="{{asset('images/icons/include/entrances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
-                                <img src="{{asset('images/icons/include/hotels.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
-                                <img src="{{asset('images/icons/include/trains.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
-                                <img src="{{asset('images/icons/include/assistances.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
-                                <img src="{{asset('images/icons/include/flight.webp')}}" alt="assistances" class="" width="35" data-toggle="tooltip" data-placement="top" title="Flights">
-                            </span>
+                    <img data-src="{{asset('images/icons/include/tours.png')}}" data-srcset="{{asset('images/icons/include/tours.png')}}" alt="tours" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
+                    <img data-src="{{asset('images/icons/include/transfers.png')}}" data-srcset="{{asset('images/icons/include/transfers.png')}}" alt="transfers" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
+                    <img data-src="{{asset('images/icons/include/entrances.png')}}" data-srcset="{{asset('images/icons/include/entrances.png')}}" alt="entrances" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
+                    <img data-src="{{asset('images/icons/include/hotels.png')}}" data-srcset="{{asset('images/icons/include/hotels.png')}}" alt="hotels" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
+                    <img data-src="{{asset('images/icons/include/trains.png')}}" data-srcset="{{asset('images/icons/include/trains.png')}}" alt="trains" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
+                    <img data-src="{{asset('images/icons/include/assistances.png')}}" data-srcset="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
+                    <img data-src="{{asset('images/icons/include/flight.png')}}" data-srcset="{{asset('images/icons/include/flight.png')}}" alt="flight" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Flights">
+                </span>
             </a>
         </div>
         <div class="col mb-md-2 d-lg-none d-xl-inline col-xl">

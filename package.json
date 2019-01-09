@@ -35,6 +35,7 @@
     "popper.js": "^1.12.9",
     "smartwizard": "^4.2.2",
     "swiper": "^4.3.3",
-    "twitter-bootstrap-wizard": "^1.2.0"
+    "twitter-bootstrap-wizard": "^1.2.0",
+    "vanilla-lazyload": "^8.17.0"
   }
 }
