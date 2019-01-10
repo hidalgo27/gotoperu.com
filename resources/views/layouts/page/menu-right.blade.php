@@ -38,7 +38,7 @@
                         <ul class="list-unstyled m-0">
                             {{--<li><a href="#" class="text-secondary h5"><strong>Travel Agents</strong></a></li>--}}
                             {{--<li><a href="#" class="text-secondary h5"><strong>Our Blog</strong></a></li>--}}
-                            <li><a href="{{route('join_path')}}" class="text-secondary h5" target="_blank"><strong>Join Our Team</strong></a></li>
+                            <li><a href="{{route('join_path')}}" class="text-secondary h5"><strong>Join Our Team</strong></a></li>
                         </ul>
                     </div>
                 </div>

@@ -3,23 +3,7 @@
 
 
     <section class="header-video d-none d-md-block">
-        <div id="title" class="text-white">
-            <div class="container-fluid">
-                <div class="row align-items-center mt-2">
-                    <div class="col-md-6 col-lg-3">
-                        <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.webp')}}" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="col d-none d-xl-flex">
-                        <i class="text-g-yellow">Top recommended Peru Travel Operator since 2006</i>
-                    </div>
-                    <div class="col-md col-lg text-right sticky-top">
-                        <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
-                        <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
-                        <!-- Button trigger modal -->
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('layouts.page.header')
         <div id="overlay" class="overlay-img">
             {{--<video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>--}}
             {{--<source src="{{asset('media/video6.mp4')}}" />--}}
@@ -28,7 +12,7 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/destinations/'.str_replace(' ','-', $ciudad).'.webp')}}" alt="" id="hero-vid">
+            <img src="{{asset('images/destinations/'.str_replace(' ','-', $ciudad).'.jpg')}}" alt="" id="hero-vid">
             @include('layouts.page.menu-custom')
         </div>
         <div class="content-header">
@@ -61,7 +45,7 @@
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col">
-                    <img src="{{asset('images/destinations/'.str_replace(' ','-', $ciudad).'.webp')}}" alt="" class="img-fluid">
+                    <img data-src="{{asset('images/destinations/'.str_replace(' ','-', $ciudad).'.jpg')}}" data-srcset="{{asset('images/destinations/'.str_replace(' ','-', $ciudad).'.jpg')}}" alt="{{$ciudad}}" class="img-fluid lazy has-webp">
                 </div>
             </div>
         </div>
@@ -82,7 +66,7 @@
         @foreach($destinos->where('pais',$pais)->sortBy('nombre') as $destino)
 
             <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours">
-                <img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.webp" alt="" width="60" height="60" class="rounded-circle buble-destinations {{ Request::is( 'destinations/peru-travel/'.str_replace(' ', '-', strtolower($destino->nombre)).'-tours') ? 'active' : '' }}" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
+                <img data-src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" data-srcset="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="{{strtolower($destino->nombre)}}" width="60" height="60" class="rounded-circle lazy has-webp buble-destinations {{ Request::is( 'destinations/peru-travel/'.str_replace(' ', '-', strtolower($destino->nombre)).'-tours') ? 'active' : '' }}" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
             </a>
         @endforeach
     </div>
@@ -127,7 +111,7 @@
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-3">
                                         <div class="card mb-3">
                                             <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="position-relative">
-                                                <img class="card-img-top " src="{{asset('images/packages/'.$paquetes->codigo.'.webp')}}" alt="{{(strtolower($paquetes->titulo))}}">
+                                                <img class="card-img-top lazy has-webp" data-src="{{asset('images/packages/'.$paquetes->codigo.'.jpg')}}" data-srcset="{{asset('images/packages/'.$paquetes->codigo.'.jpg')}}" alt="{{(strtolower($paquetes->titulo))}}">
 
                                                 <div class="card-img-overlay p-0">
                                                     <div class="row justify-content-between no-gutters">
@@ -209,30 +193,30 @@
 
                                                                             <div class="row justify-content-end">
                                                                                 <div class="col-4">
-                                                                                    <div class="row">
+                                                                                    <div class="row no-gutters">
                                                                                         <div class="col">
                                                                                             <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
-                                                                                                <img src="{{asset('images/icons/facebook.webp')}}" alt="" class="img-fluid">
+                                                                                                <i class="fab fa-facebook text-primary fa-2x"></i>
                                                                                             </a>
                                                                                         </div>
                                                                                         <div class="col">
                                                                                             <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
-                                                                                                <img src="{{asset('images/icons/twitter.webp')}}" alt="" class="img-fluid">
+                                                                                                <i class="fab fa-twitter text-info fa-2x"></i>
                                                                                             </a>
                                                                                         </div>
                                                                                         <div class="col">
                                                                                             <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
-                                                                                                <img src="{{asset('images/icons/instagram.webp')}}" alt="" class="img-fluid">
+                                                                                                <i class="fab fa-instagram text-g-dark fa-2x"></i>
                                                                                             </a>
                                                                                         </div>
                                                                                         <div class="col">
                                                                                             <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
-                                                                                                <img src="{{asset('images/icons/youtube.webp')}}" alt="" class="img-fluid">
+                                                                                                <i class="fab fa-youtube text-danger fa-2x"></i>
                                                                                             </a>
                                                                                         </div>
                                                                                         <div class="col">
                                                                                             <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
-                                                                                                <img src="{{asset('images/icons/google-plus.webp')}}" alt="" class="img-fluid">
+                                                                                                <i class="fab fa-google-plus text-danger fa-2x"></i>
                                                                                             </a>
                                                                                         </div>
                                                                                     </div>
@@ -342,7 +326,7 @@
                                     <div class="col-6 d-flex my-3">
                                         <div class="row">
                                             <div class="col-auto d-none d-sm-block">
-                                                <img src="{{$hoteles_destino->hotel->imagen}}" alt="" class=" rounded-circle" width="50" height="50">
+                                                <img src="{{$hoteles_destino->hotel->imagen}}" alt="hotel cusco" class=" rounded-circle" width="50" height="50">
                                             </div>
                                             <div class="col">
                                                 <a href="{{$hoteles_destino->hotel->url}}" class="h5 align-middle">{{$hoteles_destino->hotel->nombre}}</a>

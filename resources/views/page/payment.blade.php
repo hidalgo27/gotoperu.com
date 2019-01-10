@@ -13,23 +13,7 @@
         </div>
     </section>
     <section class="d-none d-md-block pb-5">
-        <div id="title" class="text-white bg-dark pb-2">
-            <div class="container-fluid">
-                <div class="row align-items-center mt-2">
-                    <div class="col-md-6 col-lg-3">
-                        <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="col d-none d-xl-flex">
-                        <i class="text-white">Top recommended Peru Travel Operator since 2009</i>
-                    </div>
-                    <div class="col-md col-lg text-right sticky-top">
-                        <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
-                        <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
-                        <!-- Button trigger modal -->
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('layouts.page.header')
         {{--<div id="overlay">--}}
         {{--<video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>--}}
         {{--<source src="{{asset('media/video6.mp4')}}" />--}}

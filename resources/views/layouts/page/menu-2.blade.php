@@ -13,7 +13,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave.webp')}}" alt="" class="img-fluid"></a>
+                <a href="{{route('home_path')}}"><img data-src="{{asset('images/logos/logo-gotoperu-ave.png')}}" data-srcset="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="logo gotoperu" class="img-fluid lazy has-webp"></a>
             </div>
         </div>
     </div>

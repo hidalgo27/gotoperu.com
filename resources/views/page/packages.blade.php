@@ -2,23 +2,7 @@
 @section('content')
 
     <section class="header-video d-none d-md-block">
-        <div id="title" class="text-white">
-            <div class="container-fluid">
-                <div class="row align-items-center mt-2">
-                    <div class="col-md-6 col-lg-3">
-                        <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.webp')}}" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="col d-none d-xl-flex">
-                        <i class="text-white">Top recommended Peru Travel Operator since 2006</i>
-                    </div>
-                    <div class="col-md col-lg text-right sticky-top">
-                        <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
-                        <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
-                        <!-- Button trigger modal -->
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('layouts.page.header')
         <div id="overlay" class="overlay-img">
             {{--<video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>--}}
             {{--<source src="{{asset('media/video6.mp4')}}" />--}}
@@ -60,7 +44,7 @@
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col">
-                    <img src="{{asset('images/banners/itinerary/GTP40.webp')}}" alt="" class="img-fluid">
+                    <img data-src="{{asset('images/banners/itinerary/GTP40.jpg')}}" data-srcset="{{asset('images/banners/itinerary/GTP40.jpg')}}" alt="machu picchu" class="img-fluid lazy has-webp">
                 </div>
             </div>
         </div>
@@ -147,7 +131,7 @@
                                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-3">
                                     <div class="card mb-3">
                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="position-relative">
-                                            <img class="card-img-top " src="{{asset('images/packages/'.$paquete->codigo.'.webp')}}" alt="{{(strtolower($paquete->titulo))}}">
+                                            <img class="card-img-top lazy has-webp" data-src="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" data-srcset="{{asset('images/packages/'.$paquete->codigo.'.jpg')}}" alt="{{(strtolower($paquete->titulo))}}">
 
                                             <div class="card-img-overlay p-0">
                                                 <div class="row justify-content-between no-gutters">

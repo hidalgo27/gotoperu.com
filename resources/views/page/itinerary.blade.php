@@ -19,7 +19,7 @@
                     <div class="col-md-9 col-lg-7 col-xl">
                         <div class="row align-items-center">
                             <div class="col">
-                                <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
+                                <a href="{{route('home_path')}}"><img data-src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" data-srcset="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="logo gotoperu" class="img-fluid lazy has-webp"></a>
                             </div>
                             <div class="col">
                                 <i class="text-g-yellow">Local expertise & global partners</i>
@@ -30,7 +30,7 @@
                     <div class="col-md-3 col-lg-5 col-xl text-right">
                         <div class="row align-items-center">
                             <div class="col-3 d-md-none d-xl-inline col-xl-3">
-                                <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="img-fluid">
+                                <img data-src="{{asset('images/logos/logo-expedia2.png')}}" data-srcset="{{asset('images/logos/logo-expedia2.png')}}" alt="logo expedia" class="img-fluid lazy has-webp">
                             </div>
                             <div class="col-4 d-md-none d-xl-inline col-xl-4">
                                 <a href="tel:+2029963000" class="mx-3 text-white h5">(202) 996-3000</a>
@@ -54,71 +54,71 @@
                 {{--<source src="{{asset('media/video6.webm')}}" type="video/webm" />--}}
                 {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
-            <img src="{{asset('images/itinerary/banners/'.$paquetes->imagen.'')}}" alt="" id="hero-vid">
+            <img src="{{asset('images/itinerary/banners/'.$paquetes->imagen.'')}}" alt="banner gotoperu" id="hero-vid">
             {{--<div id="state" class=""><span class="fa fa-pause"></span></div>--}}
             {{--<img id="hero-pic" class="d-none" src="http://www.markhillard.com/sandbox/media/polina.jpg" alt="">--}}
             {{----}}
-            <div class="header-expedia-card col-md-4 col-lg-3 col-xl-2 text-white rounded bg-rgba-dark p-3 d-none">
-                <div class="row">
-                    <div class="col">
-                        <a href="packages/andes-escape/6-days-tours">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <h3 class="text-g-yellow font-weight-bold m-0">Andes Escape</h3>
-                                </div>
-                            </div>
-                            <div class="row no-gutters my-2 text-white">
-                                <div class="col">
-                                    <span class="h2">6</span> <small>days</small>
-                                </div>
-                                <div class="col">
-                                    <span class="h2 text-info"><sup>$</sup>985</span> <small>p.p</small>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="row no-gutters">
-                                        <div class="col">
-                                            <img src="{{asset('images/icons/include/assistances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Assistances">
+            {{--<div class="header-expedia-card col-md-4 col-lg-3 col-xl-2 text-white rounded bg-rgba-dark p-3 d-none">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col">--}}
+                        {{--<a href="packages/andes-escape/6-days-tours">--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col text-center">--}}
+                                    {{--<h3 class="text-g-yellow font-weight-bold m-0">Andes Escape</h3>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="row no-gutters my-2 text-white">--}}
+                                {{--<div class="col">--}}
+                                    {{--<span class="h2">6</span> <small>days</small>--}}
+                                {{--</div>--}}
+                                {{--<div class="col">--}}
+                                    {{--<span class="h2 text-info"><sup>$</sup>985</span> <small>p.p</small>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col">--}}
+                                    {{--<div class="row no-gutters">--}}
+                                        {{--<div class="col">--}}
+                                            {{--<img src="{{asset('images/icons/include/assistances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Assistances">--}}
                                             {{--<span>Assistances</span>--}}
-                                        </div>
+                                        {{--</div>--}}
 
-                                        <div class="col">
-                                            <img src="{{asset('images/icons/include/entrances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                        {{--<div class="col">--}}
+                                            {{--<img src="{{asset('images/icons/include/entrances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Entrances">--}}
                                             {{--<span>Entrances</span>--}}
-                                        </div>
-                                        <div class="col">
-                                            <img src="{{asset('images/icons/include/transfers.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                        {{--</div>--}}
+                                        {{--<div class="col">--}}
+                                            {{--<img src="{{asset('images/icons/include/transfers.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Transfers">--}}
                                             {{--<span>Transfers</span>--}}
-                                        </div>
-                                    </div>
-                                    <div class="row no-gutters">
-                                        <div class="col">
-                                            <img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="row no-gutters">--}}
+                                        {{--<div class="col">--}}
+                                            {{--<img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">--}}
                                             {{--<span>Hotels</span>--}}
-                                        </div>
-                                        <div class="col">
-                                            <img src="{{asset('images/icons/include/tours.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Tours">
+                                        {{--</div>--}}
+                                        {{--<div class="col">--}}
+                                            {{--<img src="{{asset('images/icons/include/tours.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Tours">--}}
                                             {{--<span>Tours</span>--}}
-                                        </div>
-                                        <div class="col">
-                                            <img src="{{asset('images/icons/include/trains.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Trains">
+                                        {{--</div>--}}
+                                        {{--<div class="col">--}}
+                                            {{--<img src="{{asset('images/icons/include/trains.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Trains">--}}
                                             {{--<span>Trains</span>--}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col text-white">
-                                    <small class="m-0 d-block"><i class="fa fa-angle-right"></i> MACHUPICCHU & CUSCO</small>
-                                    <small class="m-0 d-block"><i class="fa fa-angle-right"></i> LAKE TITICACA & PUNO</small>
-                                    <small class="m-0 d-block"><i class="fa fa-angle-right"></i> LIMA</small>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="row mt-3">--}}
+                                {{--<div class="col text-white">--}}
+                                    {{--<small class="m-0 d-block"><i class="fa fa-angle-right"></i> MACHUPICCHU & CUSCO</small>--}}
+                                    {{--<small class="m-0 d-block"><i class="fa fa-angle-right"></i> LAKE TITICACA & PUNO</small>--}}
+                                    {{--<small class="m-0 d-block"><i class="fa fa-angle-right"></i> LIMA</small>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
             {{--<div class="header-expedia text-white p-3">As local travel operators our programs start daily</div>--}}
             @include('layouts.page.menu-custom')
         </div>
@@ -212,7 +212,7 @@
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col">
-                    <img src="{{asset('images/itinerary/banners/'.$paquetes->imagen.'')}}" alt="" class="img-fluid">
+                    <img data-src="{{asset('images/itinerary/banners/'.$paquetes->imagen.'.jpg')}}" data-srcset="{{asset('images/itinerary/banners/'.$paquetes->imagen.'.jpg')}}" alt="banner gotoperu" class="img-fluid lazy has-webp">
                 </div>
             </div>
         </div>
@@ -344,7 +344,7 @@
                                                                 </div>
                                                                 <div class="col-12 col-md-12 col-lg">
                                                                     <div class="box15 float-right rounded">
-                                                                        <img src="{{asset('images/itinerary/'.str_replace(' ', '-', strtolower($itinerario->titulo).'-1.jpg'))}}" alt="" class="rounded">
+                                                                        <img src="{{asset('images/itinerary/'.str_replace(' ', '-', strtolower($itinerario->titulo).'-1.jpg'))}}" alt="{{strtolower($itinerario->titulo)}}" class="rounded">
                                                                         <div class="box-content text-center">
                                                                             <h3 class="title">View Gallery</h3>
                                                                             <ul class="icon p-0">
@@ -808,32 +808,32 @@
                                     {{--</div>--}}
                                 {{--</div>--}}
 
-                                <div class="card bg-light my-4 d-none">
+                                {{--<div class="card bg-light my-4">--}}
                                     {{--<img class="card-img-top" src="..." alt="Card image cap">--}}
-                                    <div class="content-video-1 card-img-top">
-                                        <div class="content-area-3">
-                                            <div class="position-relative">
-                                                <img src="{{asset('images/video/prom-peru.jpg')}}" alt="video promperu" class="img-fluid">
-                                                <div class="video-btn-1">
-                                                    <a href="https://www.youtube.com/embed/gGq_U1DYUCs" title=""><i class="fa fa-play-circle text-g-dark"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {{--<div class="content-video-1 card-img-top">--}}
+                                        {{--<div class="content-area-3">--}}
+                                            {{--<div class="position-relative">--}}
+                                                {{--<img src="{{asset('images/video/prom-peru.jpg')}}" alt="video promperu" class="img-fluid">--}}
+                                                {{--<div class="video-btn-1">--}}
+                                                    {{--<a href="https://www.youtube.com/embed/gGq_U1DYUCs" title=""><i class="fa fa-play-circle text-g-dark"></i></a>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     {{--<img src="{{asset('images/prom-peru-4.jpg')}}" alt="video" class="img-fluid card-img-top" >--}}
-                                    <div class="card-body">
-                                        <h4 class="card-title">Destinations</h4>
-                                        <div class="box-route-ininerary p-0">
-                                            @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
-                                                <p class="font-weight-bold text-secondary"><i class="fa fa-check"></i> {{ucwords(strtolower($paquete_destino->destinos->nombre))}}</p>
-                                            @endforeach
+                                    {{--<div class="card-body">--}}
+                                        {{--<h4 class="card-title">Destinations</h4>--}}
+                                        {{--<div class="box-route-ininerary p-0">--}}
+                                            {{--@foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)--}}
+                                                {{--<p class="font-weight-bold text-secondary"><i class="fa fa-check"></i> {{ucwords(strtolower($paquete_destino->destinos->nombre))}}</p>--}}
+                                            {{--@endforeach--}}
 
-                                            @foreach($vuelo as $vuelos)
-                                                {{$vuelos->origen}}
-                                                @endforeach
-                                        </div>
-                                    </div>
-                                </div>
+                                            {{--@foreach($vuelo as $vuelos)--}}
+                                                {{--{{$vuelos->origen}}--}}
+                                                {{--@endforeach--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 {{--@php--}}
                                     {{--$k=0;--}}
                                 {{--@endphp--}}
@@ -1215,30 +1215,30 @@
 
                                                 <div class="row justify-content-end">
                                                     <div class="col-12 col-sm-7 col-md-12 col-lg-6">
-                                                        <div class="row">
+                                                        <div class="row no-gutters">
                                                             <div class="col">
                                                                 <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
-                                                                    <img src="{{asset('images/icons/facebook.png')}}" alt="" class="img-fluid">
+                                                                    <i class="fab fa-facebook text-primary fa-2x"></i>
                                                                 </a>
                                                             </div>
                                                             <div class="col">
                                                                 <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
-                                                                    <img src="{{asset('images/icons/twitter.png')}}" alt="" class="img-fluid">
+                                                                    <i class="fab fa-twitter text-info fa-2x"></i>
                                                                 </a>
                                                             </div>
                                                             <div class="col">
                                                                 <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
-                                                                    <img src="{{asset('images/icons/instagram.png')}}" alt="" class="img-fluid">
+                                                                    <i class="fab fa-instagram text-g-dark fa-2x"></i>
                                                                 </a>
                                                             </div>
                                                             <div class="col">
                                                                 <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
-                                                                    <img src="{{asset('images/icons/youtube.png')}}" alt="" class="img-fluid">
+                                                                    <i class="fab fa-youtube text-danger fa-2x"></i>
                                                                 </a>
                                                             </div>
                                                             <div class="col">
                                                                 <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
-                                                                    <img src="{{asset('images/icons/google-plus.png')}}" alt="" class="img-fluid">
+                                                                    <i class="fab fa-google-plus text-danger fa-2x"></i>
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -1262,90 +1262,90 @@
                 </div>
 
             </div>
-            @if($paquetes->descuento == 5)
-                @php $d_book = ''; @endphp
-            @else
-                @php $d_book = 'd-none'; @endphp
-            @endif
-            <div class="row {{$d_book}}">
-                <div class="col">
-                    <h3 class="text-secondary pt-5 pb-4 h4 text-g-yellow"><strong>Book Now</strong></h3>
-                </div>
-            </div>
-            <div class="row {{$d_book}}">
-                <div class="col-9">
-                    <div class="row">
-                        <div class="col-5">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="row pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>TRAVEL DATE <span class="text-primary">*</span></strong></h2>
-                                        </div>
-                                    </div>
+            {{--@if($paquetes->descuento == 5)--}}
+                {{--@php $d_book = ''; @endphp--}}
+            {{--@else--}}
+                {{--@php $d_book = 'd-none'; @endphp--}}
+            {{--@endif--}}
+            {{--<div class="row {{$d_book}}">--}}
+                {{--<div class="col">--}}
+                    {{--<h3 class="text-secondary pt-5 pb-4 h4 text-g-yellow"><strong>Book Now</strong></h3>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="row {{$d_book}}">--}}
+                {{--<div class="col-9">--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="col-5">--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col">--}}
+                                    {{--<div class="row pb-2">--}}
+                                        {{--<div class="col">--}}
+                                            {{--<h2 class="text-secondary h5"><strong>TRAVEL DATE <span class="text-primary">*</span></strong></h2>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
 
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
-                                                </div>
-                                                <input type="text" class="form-control" id="d_date" placeholder="TRAVEL DATE" aria-label="Username" aria-describedby="basic-addon1">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row my-4">
-                                <div class="col">
-                                    <div class="row pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>NUMBER OF TRAVELERS <span class="text-primary">*</span></strong></h2>
-                                        </div>
-                                    </div>
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col">--}}
+                                            {{--<div class="input-group">--}}
+                                                {{--<div class="input-group-prepend">--}}
+                                                    {{--<span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>--}}
+                                                {{--</div>--}}
+                                                {{--<input type="text" class="form-control" id="d_date" placeholder="TRAVEL DATE" aria-label="Username" aria-describedby="basic-addon1">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="row my-4">--}}
+                                {{--<div class="col">--}}
+                                    {{--<div class="row pb-2">--}}
+                                        {{--<div class="col">--}}
+                                            {{--<h2 class="text-secondary h5"><strong>NUMBER OF TRAVELERS <span class="text-primary">*</span></strong></h2>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
 
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                                </div>
-                                                <input type="number" class="form-control" id="d_date" placeholder="NUMBER OF TRAVELERS" aria-label="Username" aria-describedby="basic-addon1">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-4">
-                                <div class="col">
-                                    <div class="row pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>NUMBER OF ROOMS <span class="text-primary">*</span></strong></h2>
-                                        </div>
-                                    </div>
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col">--}}
+                                            {{--<div class="input-group">--}}
+                                                {{--<div class="input-group-prepend">--}}
+                                                    {{--<span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>--}}
+                                                {{--</div>--}}
+                                                {{--<input type="number" class="form-control" id="d_date" placeholder="NUMBER OF TRAVELERS" aria-label="Username" aria-describedby="basic-addon1">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="row mt-4">--}}
+                                {{--<div class="col">--}}
+                                    {{--<div class="row pb-2">--}}
+                                        {{--<div class="col">--}}
+                                            {{--<h2 class="text-secondary h5"><strong>NUMBER OF ROOMS <span class="text-primary">*</span></strong></h2>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
 
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-h-square"></i></span>
-                                                </div>
-                                                <input type="number" class="form-control" id="d_date" placeholder="NUMBER OF ROOMS" aria-label="Username" aria-describedby="basic-addon1">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row my-4">
-                                <div class="col">
-                                    <div class="row pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>PREFERRED CLASS <span class="text-primary">*</span></strong></h2>
-                                        </div>
-                                    </div>
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col">--}}
+                                            {{--<div class="input-group">--}}
+                                                {{--<div class="input-group-prepend">--}}
+                                                    {{--<span class="input-group-text" id="basic-addon1"><i class="fa fa-h-square"></i></span>--}}
+                                                {{--</div>--}}
+                                                {{--<input type="number" class="form-control" id="d_date" placeholder="NUMBER OF ROOMS" aria-label="Username" aria-describedby="basic-addon1">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="row my-4">--}}
+                                {{--<div class="col">--}}
+                                    {{--<div class="row pb-2">--}}
+                                        {{--<div class="col">--}}
+                                            {{--<h2 class="text-secondary h5"><strong>PREFERRED CLASS <span class="text-primary">*</span></strong></h2>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
 
-                                    <div class="row">
-                                        <div class="col">
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col">--}}
                                             {{--<div class="input-group input-group-lg">--}}
                                             {{--<div class="input-group-prepend">--}}
                                             {{--<span class="input-group-text" id="basic-addon1"><i class="fa fa-h-square"></i></span>--}}
@@ -1354,203 +1354,203 @@
                                             {{--</div>--}}
 
 
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <label class="input-group-text" for="inputGroupSelect01"><i class="fa fa-star"></i></label>
-                                                </div>
-                                                <select class="custom-select" id="inputGroupSelect01">
-                                                    <option selected>Choose...</option>
-                                                    <option value="1">2 stars (economy)</option>
-                                                    <option value="2">3 stars ()</option>
-                                                    <option value="2">4 stars (superior)</option>
-                                                    <option value="2">5 stars (luxury)</option>
-                                                </select>
-                                            </div>
+                                            {{--<div class="input-group">--}}
+                                                {{--<div class="input-group-prepend">--}}
+                                                    {{--<label class="input-group-text" for="inputGroupSelect01"><i class="fa fa-star"></i></label>--}}
+                                                {{--</div>--}}
+                                                {{--<select class="custom-select" id="inputGroupSelect01">--}}
+                                                    {{--<option selected>Choose...</option>--}}
+                                                    {{--<option value="1">2 stars (economy)</option>--}}
+                                                    {{--<option value="2">3 stars ()</option>--}}
+                                                    {{--<option value="2">4 stars (superior)</option>--}}
+                                                    {{--<option value="2">5 stars (luxury)</option>--}}
+                                                {{--</select>--}}
+                                            {{--</div>--}}
 
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="col">--}}
 
-                            <div class="row pb-2">
-                                <div class="col">
-                                    <h2 class="text-secondary h5"><strong>ACCOMMODATION DETAILS</strong></h2>
-                                    <p>Preferred Bedding Configuration</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h6>Room 1</h6>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-male"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-light active">
-                                                    <input type="radio" name="options" id="option1" autocomplete="off" checked>
-                                                    <img src="{{asset('images/room/simple.png')}}" alt="" class="img-fluid">
-                                                </label>
-                                                <label class="btn btn-light">
-                                                    <input type="radio" name="options" id="option2" autocomplete="off">
-                                                    <img src="{{asset('images/room/doble.png')}}" alt="" class="img-fluid">
-                                                </label>
-                                                <label class="btn btn-light">
-                                                    <input type="radio" name="options" id="option3" autocomplete="off">
-                                                    <img src="{{asset('images/room/matrimonial.png')}}" alt="" class="img-fluid">
-                                                </label>
-                                                <label class="btn btn-light">
-                                                    <input type="radio" name="options" id="option3" autocomplete="off">
-                                                    <img src="{{asset('images/room/triple.png')}}" alt="" class="img-fluid">
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h6>Room 2</h6>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-male"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-light">
-                                                    <input type="radio" name="options" id="option1" autocomplete="off">
-                                                    <img src="{{asset('images/room/simple.png')}}" alt="" class="img-fluid">
-                                                </label>
-                                                <label class="btn btn-light">
-                                                    <input type="radio" name="options" id="option2" autocomplete="off">
-                                                    <img src="{{asset('images/room/doble.png')}}" alt="" class="img-fluid">
-                                                </label>
-                                                <label class="btn btn-light active">
-                                                    <input type="radio" name="options" id="option3" autocomplete="off" checked>
-                                                    <img src="{{asset('images/room/matrimonial.png')}}" alt="" class="img-fluid">
-                                                </label>
-                                                <label class="btn btn-light">
-                                                    <input type="radio" name="options" id="option3" autocomplete="off">
-                                                    <img src="{{asset('images/room/triple.png')}}" alt="" class="img-fluid">
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h6>Room 1</h6>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3">
+                            {{--<div class="row pb-2">--}}
+                                {{--<div class="col">--}}
+                                    {{--<h2 class="text-secondary h5"><strong>ACCOMMODATION DETAILS</strong></h2>--}}
+                                    {{--<p>Preferred Bedding Configuration</p>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col">--}}
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col">--}}
+                                            {{--<h6>Room 1</h6>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col-3">--}}
+                                            {{--<div class="input-group">--}}
+                                                {{--<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">--}}
+                                                {{--<div class="input-group-prepend">--}}
+                                                    {{--<span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-male"></i></span>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col">--}}
+                                            {{--<div class="btn-group btn-group-toggle" data-toggle="buttons">--}}
+                                                {{--<label class="btn btn-light active">--}}
+                                                    {{--<input type="radio" name="options" id="option1" autocomplete="off" checked>--}}
+                                                    {{--<img src="{{asset('images/room/simple.png')}}" alt="" class="img-fluid">--}}
+                                                {{--</label>--}}
+                                                {{--<label class="btn btn-light">--}}
+                                                    {{--<input type="radio" name="options" id="option2" autocomplete="off">--}}
+                                                    {{--<img src="{{asset('images/room/doble.png')}}" alt="" class="img-fluid">--}}
+                                                {{--</label>--}}
+                                                {{--<label class="btn btn-light">--}}
+                                                    {{--<input type="radio" name="options" id="option3" autocomplete="off">--}}
+                                                    {{--<img src="{{asset('images/room/matrimonial.png')}}" alt="" class="img-fluid">--}}
+                                                {{--</label>--}}
+                                                {{--<label class="btn btn-light">--}}
+                                                    {{--<input type="radio" name="options" id="option3" autocomplete="off">--}}
+                                                    {{--<img src="{{asset('images/room/triple.png')}}" alt="" class="img-fluid">--}}
+                                                {{--</label>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col">--}}
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col">--}}
+                                            {{--<h6>Room 2</h6>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col-3">--}}
+                                            {{--<div class="input-group">--}}
+                                                {{--<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">--}}
+                                                {{--<div class="input-group-prepend">--}}
+                                                    {{--<span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-male"></i></span>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col">--}}
+                                            {{--<div class="btn-group btn-group-toggle" data-toggle="buttons">--}}
+                                                {{--<label class="btn btn-light">--}}
+                                                    {{--<input type="radio" name="options" id="option1" autocomplete="off">--}}
+                                                    {{--<img src="{{asset('images/room/simple.png')}}" alt="" class="img-fluid">--}}
+                                                {{--</label>--}}
+                                                {{--<label class="btn btn-light">--}}
+                                                    {{--<input type="radio" name="options" id="option2" autocomplete="off">--}}
+                                                    {{--<img src="{{asset('images/room/doble.png')}}" alt="" class="img-fluid">--}}
+                                                {{--</label>--}}
+                                                {{--<label class="btn btn-light active">--}}
+                                                    {{--<input type="radio" name="options" id="option3" autocomplete="off" checked>--}}
+                                                    {{--<img src="{{asset('images/room/matrimonial.png')}}" alt="" class="img-fluid">--}}
+                                                {{--</label>--}}
+                                                {{--<label class="btn btn-light">--}}
+                                                    {{--<input type="radio" name="options" id="option3" autocomplete="off">--}}
+                                                    {{--<img src="{{asset('images/room/triple.png')}}" alt="" class="img-fluid">--}}
+                                                {{--</label>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col">--}}
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col">--}}
+                                            {{--<h6>Room 1</h6>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col-3">--}}
                                             {{--<input type="number" class="form-control" id="d_date" placeholder="2" aria-label="Username" aria-describedby="basic-addon1">--}}
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-male"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-light">
-                                                    <input type="radio" name="options" id="option1" autocomplete="off">
-                                                    <img src="{{asset('images/room/simple.png')}}" alt="" class="img-fluid">
-                                                </label>
-                                                <label class="btn btn-light active">
-                                                    <input type="radio" name="options" id="option2" autocomplete="off" checked>
-                                                    <img src="{{asset('images/room/doble.png')}}" alt="" class="img-fluid">
-                                                </label>
-                                                <label class="btn btn-light">
-                                                    <input type="radio" name="options" id="option3" autocomplete="off">
-                                                    <img src="{{asset('images/room/matrimonial.png')}}" alt="" class="img-fluid">
-                                                </label>
-                                                <label class="btn btn-light">
-                                                    <input type="radio" name="options" id="option3" autocomplete="off">
-                                                    <img src="{{asset('images/room/triple.png')}}" alt="" class="img-fluid">
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row my-4">
-                        <div class="col text-center">
+                                            {{--<div class="input-group">--}}
+                                                {{--<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">--}}
+                                                {{--<div class="input-group-prepend">--}}
+                                                    {{--<span class="input-group-text" id="inputGroup-sizing-default"><i class="fa fa-male"></i></span>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col">--}}
+                                            {{--<div class="btn-group btn-group-toggle" data-toggle="buttons">--}}
+                                                {{--<label class="btn btn-light">--}}
+                                                    {{--<input type="radio" name="options" id="option1" autocomplete="off">--}}
+                                                    {{--<img src="{{asset('images/room/simple.png')}}" alt="" class="img-fluid">--}}
+                                                {{--</label>--}}
+                                                {{--<label class="btn btn-light active">--}}
+                                                    {{--<input type="radio" name="options" id="option2" autocomplete="off" checked>--}}
+                                                    {{--<img src="{{asset('images/room/doble.png')}}" alt="" class="img-fluid">--}}
+                                                {{--</label>--}}
+                                                {{--<label class="btn btn-light">--}}
+                                                    {{--<input type="radio" name="options" id="option3" autocomplete="off">--}}
+                                                    {{--<img src="{{asset('images/room/matrimonial.png')}}" alt="" class="img-fluid">--}}
+                                                {{--</label>--}}
+                                                {{--<label class="btn btn-light">--}}
+                                                    {{--<input type="radio" name="options" id="option3" autocomplete="off">--}}
+                                                    {{--<img src="{{asset('images/room/triple.png')}}" alt="" class="img-fluid">--}}
+                                                {{--</label>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="row my-4">--}}
+                        {{--<div class="col text-center">--}}
                             {{--<button class="btn btn-lg btn-primary">Continue</button>--}}
-                            <a href="{{route('information_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="btn btn-lg btn-primary">Continue</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card bg-light sticky-top sticky-top-50">
-                        <div class="card-body">
-                            <div class="row align-items-center">
-                                <div class="col border-bottom">
-                                    <p class="py-2 m-0">Travel Date</p>
-                                </div>
-                                <div class="col">
-                                    <span class="text-secondary">25 Jul 2018</span>
-                                </div>
-                            </div>
-                            <div class="row align-items-center">
-                                <div class="col border-bottom">
-                                    <p class="py-2 m-0">Number of travellers</p>
-                                </div>
-                                <div class="col">
-                                    <span class="text-secondary">2 <i class="fa fa-male"></i></span>
-                                </div>
-                            </div>
-                            <div class="row align-items-center">
-                                <div class="col border-bottom">
-                                    <p class="py-2 m-0">Number of rooms</p>
-                                </div>
-                                <div class="col">
-                                    <span class="text-secondary">3</span>
-                                </div>
-                            </div>
-                            <div class="row align-items-center">
-                                <div class="col border-bottom">
-                                    <p class="py-2 m-0">Preferred Class</p>
-                                </div>
-                                <div class="col">
-                                    <span class="text-secondary">5 <i class="fa fa-star text-g-yellow"></i> (luxury)</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-g-dark text-white">
-                            <h3>Total <small>(USD)</small> <sup>$</sup>2899.00</h3>
-                            <small>Impuestos incluidos</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            {{--<a href="{{route('information_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="btn btn-lg btn-primary">Continue</a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="col-3">--}}
+                    {{--<div class="card bg-light sticky-top sticky-top-50">--}}
+                        {{--<div class="card-body">--}}
+                            {{--<div class="row align-items-center">--}}
+                                {{--<div class="col border-bottom">--}}
+                                    {{--<p class="py-2 m-0">Travel Date</p>--}}
+                                {{--</div>--}}
+                                {{--<div class="col">--}}
+                                    {{--<span class="text-secondary">25 Jul 2018</span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="row align-items-center">--}}
+                                {{--<div class="col border-bottom">--}}
+                                    {{--<p class="py-2 m-0">Number of travellers</p>--}}
+                                {{--</div>--}}
+                                {{--<div class="col">--}}
+                                    {{--<span class="text-secondary">2 <i class="fa fa-male"></i></span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="row align-items-center">--}}
+                                {{--<div class="col border-bottom">--}}
+                                    {{--<p class="py-2 m-0">Number of rooms</p>--}}
+                                {{--</div>--}}
+                                {{--<div class="col">--}}
+                                    {{--<span class="text-secondary">3</span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="row align-items-center">--}}
+                                {{--<div class="col border-bottom">--}}
+                                    {{--<p class="py-2 m-0">Preferred Class</p>--}}
+                                {{--</div>--}}
+                                {{--<div class="col">--}}
+                                    {{--<span class="text-secondary">5 <i class="fa fa-star text-g-yellow"></i> (luxury)</span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="card-footer bg-g-dark text-white">--}}
+                            {{--<h3>Total <small>(USD)</small> <sup>$</sup>2899.00</h3>--}}
+                            {{--<small>Impuestos incluidos</small>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
     </section>
 
@@ -1573,7 +1573,6 @@
     </div>
 
     @push('scripts')
-
 
 
         <script>

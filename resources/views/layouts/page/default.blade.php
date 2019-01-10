@@ -125,20 +125,20 @@
                 </ul>
             </div>
         </div>
-        <div class="row bg-light pt-3">
-            <div class="col-12 col-sm mb-3">
+        <div class="row bg-light align-items-center py-3">
+            <div class="col-12 col-sm">
                 <h6 class="mt-2">GOTOPERU GROUP:</h6>
             </div>
-            <div class="col-6 col-sm mb-3">
+            <div class="col-6 col-sm">
                 <img data-src="{{asset('images/logos/logo-gotoperu-footer.png')}}" data-srcset="{{asset('images/logos/logo-gotoperu-footer.png')}}" alt="logo gotoperu" class="img-fluid lazy has-webp">
             </div>
-            <div class="col-6 col-sm mb-3">
+            <div class="col-6 col-sm">
                 <img data-src="{{asset('images/logos/logo-andes-footer.png')}}" data-srcset="{{asset('images/logos/logo-andes-footer.png')}}" alt="logo andes viagens" class="img-fluid lazy has-webp">
             </div>
-            <div class="col-6 col-sm mb-3">
+            <div class="col-6 col-sm">
                 <img data-src="{{asset('images/logos/logo-latinamerica-footer.png')}}" data-srcset="{{asset('images/logos/logo-latinamerica-footer.png')}}" alt="logo gotolatinamerica" class="img-fluid lazy has-webp">
             </div>
-            <div class="col-6 col-sm mb-3">
+            <div class="col-6 col-sm">
                 <img data-src="{{asset('images/logos/logo-mapi-galapagos-footer.png')}}" data-srcset="{{asset('images/logos/logo-mapi-galapagos-footer.png')}}" alt="logo machupicchu galapagos" class="img-fluid lazy has-webp">
             </div>
             <div class="col-12 col-sm text-center">
@@ -402,6 +402,42 @@
         changeMonth: true,
         changeYear: true
     });
+
+    (function () {
+        function logEvent(eventName, element) {
+            console.log(Date.now(), eventName, element.getAttribute('data-src'), element.getAttribute('src'));
+        }
+        var callback_enter = function (element) {
+            logEvent("ENTERED", element);
+        };
+        var callback_load = function (element) {
+            logEvent("LOADED", element);
+        };
+        var callback_set = function (element) {
+            logEvent("SET", element);
+        };
+        var callback_error = function (element) {
+            logEvent("ERROR", element);
+            element.src = "https://placehold.it/220x280?text=Placeholder";
+        };
+        var llWebp = new LazyLoad({
+            elements_selector: ".lazy.has-webp",
+            to_webp: true,
+            threshold: 0,
+            callback_enter: callback_enter,
+            callback_load: callback_load,
+            callback_set: callback_set,
+            callback_error: callback_error
+        });
+        var llStandard = new LazyLoad({
+            elements_selector: ".lazy:not(.has-webp)",
+            threshold: 0,
+            callback_enter: callback_enter,
+            callback_load: callback_load,
+            callback_set: callback_set,
+            callback_error: callback_error
+        });
+    }());
 
 </script>
 {{--<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0027/9680.js" async="async"></script>--}}

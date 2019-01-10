@@ -2,23 +2,7 @@
 @section('content')
 
     <section class="header-video d-none d-md-block">
-        <div id="title" class="text-white">
-            <div class="container-fluid">
-                <div class="row align-items-center mt-2">
-                    <div class="col-md-6 col-lg-3">
-                        <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="col d-none d-xl-flex">
-                        <i class="text-g-yellow">Top recommended Peru Travel Operator since 2006</i>
-                    </div>
-                    <div class="col-md col-lg text-right sticky-top">
-                        <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
-                        <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
-                        <!-- Button trigger modal -->
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('layouts.page.header')
         <div id="overlay" class="overlay-img">
             {{--<video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>--}}
             {{--<source src="{{asset('media/video6.mp4')}}" />--}}
@@ -60,7 +44,7 @@
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col">
-                    <img src="{{asset('images/destinations/'.$pais.'.jpg')}}" alt="" class="img-fluid">
+                    <img data-src="{{asset('images/destinations/'.$pais.'.jpg')}}" data-srcset="{{asset('images/destinations/'.$pais.'.jpg')}}" alt="{{$pais}}" class="img-fluid lazy has-webp">
                 </div>
             </div>
         </div>
@@ -100,7 +84,7 @@
 
                     <div class="sticky-top py-2 text-center bg-white d-none d-sm-block">
                         @foreach($destinos->where('pais',$pais)->sortBy('nombre') as $destino)
-                            <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours"><img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}"></a>
+                            <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours"><img data-src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" data-srcset="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="{{ucwords(strtolower($destino->nombre))}}" width="60" height="60" class="rounded-circle lazy has-webp" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}"></a>
                         @endforeach
                     </div>
                     <div class="row pt-4">
@@ -110,7 +94,7 @@
                                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-3">
                                             <div class="card mb-3">
                                                 <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="position-relative">
-                                                    <img class="card-img-top " src="{{asset('images/packages/'.$paquetes->codigo.'.jpg')}}" alt="{{(strtolower($paquetes->titulo))}}">
+                                                    <img class="card-img-top lazy has-webp" data-src="{{asset('images/packages/'.$paquetes->codigo.'.jpg')}}" data-srcset="{{asset('images/packages/'.$paquetes->codigo.'.jpg')}}" alt="{{(strtolower($paquetes->titulo))}}">
 
                                                     <div class="card-img-overlay bg-rgba-dark-3 p-0">
                                                         <div class="row justify-content-between no-gutters">

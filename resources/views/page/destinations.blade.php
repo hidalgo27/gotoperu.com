@@ -3,23 +3,7 @@
 
 
     <section class="header-video d-none d-md-block">
-        <div id="title" class="text-white">
-            <div class="container-fluid">
-                <div class="row align-items-center mt-2">
-                    <div class="col-md-6 col-lg-3">
-                        <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave-w.webp')}}" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="col d-none d-xl-flex">
-                        <i class="text-g-yellow">Top recommended Peru Travel Operator since 2006</i>
-                    </div>
-                    <div class="col-md col-lg text-right sticky-top">
-                        <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
-                        <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
-                        <!-- Button trigger modal -->
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('layouts.page.header')
         <div id="overlay" class="overlay-img">
             {{--<video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>--}}
             {{--<source src="{{asset('media/video6.mp4')}}" />--}}
@@ -28,7 +12,7 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/destinations/puno.webp')}}" alt="" id="hero-vid">
+            <img src="{{asset('images/destinations/puno.jpg')}}" alt="" id="hero-vid">
             @include('layouts.page.menu-custom')
         </div>
         <div class="content-header">
@@ -61,7 +45,7 @@
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col">
-                    <img src="{{asset('images/destinations/puno.webp')}}" alt="" class="img-fluid">
+                    <img data-src="{{asset('images/destinations/puno.jpg')}}" data-srcset="{{asset('images/destinations/puno.jpg')}}" alt="puno" class="img-fluid lazy has-webp">
                 </div>
             </div>
         </div>
@@ -107,7 +91,7 @@
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="grid-category position-relative">
                                         <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="text-g-dark rounded">
-                                            <img src="{{asset('images/destinations/destinations/'.str_replace(' ', '-', strtolower($destino->nombre)).'.webp')}}" alt="Machu Picchu" class="w-100 rounded">
+                                            <img data-src="{{asset('images/destinations/destinations/'.str_replace(' ', '-', strtolower($destino->nombre)).'.jpg')}}" data-srcset="{{asset('images/destinations/destinations/'.str_replace(' ', '-', strtolower($destino->nombre)).'.jpg')}}" alt="Machu Picchu" class="w-100 rounded lazy has-webp">
                                             <div class="grid-box p-3 text-center">
                                                 <span class="no-margin text-20"><i>{{substr(ucfirst(strtolower($destino->nombre)), 0, strlen($destino->nombre)/2)}}</i><b>{{substr(ucfirst(strtolower($destino->nombre)), strlen($destino->nombre)/2, strlen($destino->nombre))}}</b></span>
                                                 <div class="line"></div>
