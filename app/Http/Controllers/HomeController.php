@@ -41,6 +41,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
         OpenGraph::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
         OpenGraph::setUrl('https://gotoperu.com/');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto-peru');
         OpenGraph::addProperty('type', 'website');
@@ -148,6 +149,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
         OpenGraph::setTitle('Machu Picchu Tours | Peru Tours');
         OpenGraph::setUrl('https://gotoperu.com/packages');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto-peru');
         OpenGraph::addProperty('type', 'website');
@@ -176,6 +178,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
         OpenGraph::setTitle('Machu Picchu Tour Packages | Machu Picchu Vacation Packages | Machu Picchu Deals | Peru Honeymoon Travel Packages');
         OpenGraph::setUrl('https://gotoperu.com/packages');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto-peru');
         OpenGraph::addProperty('type', 'website');
@@ -210,6 +213,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Travel Packages '.$from.'-'.$to.' days. Discover Peru with Gotoperu Tour & Travel Packages. We offer amazing deals on Machu Picchu Vacation Packages.  Give us call @ (202) 996-3000 for more info.');
         OpenGraph::setTitle('Machu Picchu Tour Packages | Machu Picchu Vacation Packages | Machu Picchu Deals | Peru Honeymoon Travel Packages');
         OpenGraph::setUrl('https://gotoperu.com/packages');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto-peru');
         OpenGraph::addProperty('type', 'website');
@@ -234,6 +238,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
         OpenGraph::setTitle('Machu Picchu Tour Packages | Machu Picchu Vacation Packages | Machu Picchu Deals | Peru Honeymoon Travel Packages');
         OpenGraph::setUrl('https://gotoperu.com/packages');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto-peru');
         OpenGraph::addProperty('type', 'website');
@@ -285,6 +290,7 @@ class HomeController extends Controller
 //            OpenGraph::setDescription($paq_i->s_description);
 //            OpenGraph::setTitle($paq_i->s_titile);
 ////            OpenGraph::setUrl('http://new-goto.nu/packages/inca-trail-to-machu-picchu/4-days-tours');
+//OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 //            OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
 //            OpenGraph::setSiteName('goto-peru');
 //            OpenGraph::addProperty('type', 'website');
@@ -303,6 +309,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Our team has many years of experience in travel organization and our main goal is providing an unforgettable experience.');
         OpenGraph::setTitle('Travel Packages: '.ucwords(strtolower($title)).' | GotoPeru');
         OpenGraph::setUrl('https://gotoperu.com/packages');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto peru');
         OpenGraph::addProperty('type', 'website');
@@ -440,6 +447,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Our team has many years of experience in travel organization and our main goal is providing an unforgettable experience.');
         OpenGraph::setTitle('Travel Packages: '.ucwords(strtolower($title)).' | GotoPeru');
         OpenGraph::setUrl('https://gotoperu.com/packages');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto peru');
         OpenGraph::addProperty('type', 'website');
@@ -502,6 +510,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Discover beautiful places to visit in south america tours with gotoperu. Experience best places in south america - peru, bolivia, ecuador, brasil.');
         OpenGraph::setTitle('South America Travel Destinations | Customized Travel Packages');
         OpenGraph::setUrl('https://gotoperu.com/destinations');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto-peru');
         OpenGraph::addProperty('type', 'website');
@@ -536,6 +545,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Discover beautiful places to visit in '.ucwords($pais).' with GotoPeru..');
         OpenGraph::setTitle(''.ucwords($pais).' Travel Destinations | Customized '.ucwords($pais).' Travel Packages');
         OpenGraph::setUrl('https://gotoperu.com/destinations/'.$pais.'-travel');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto-peru');
         OpenGraph::addProperty('type', 'website');
@@ -581,6 +591,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Plan your vacations in '.ucwords($ciudad).' with our affordable tour packages and enjoy the astounding structures, stunning beaches, lush landscapes and much more!');
         OpenGraph::setTitle(''.ucwords($ciudad).' Tours | '.ucwords($ciudad).' Travel Offers | Cheap '.ucwords($ciudad).' Deals');
         OpenGraph::setUrl(['url'=>'https://gotoperu.com/destinations/'.$pais.'-travel/'.$city.'']);
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto-peru');
         OpenGraph::addProperty('type', 'website');
@@ -617,6 +628,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Our team has many years of experience in travel organization and our main goal is providing an unforgettable experience.');
         OpenGraph::setTitle('About Us | GotoPeru');
         OpenGraph::setUrl('https://gotoperu.com/about-us');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto peru');
         OpenGraph::addProperty('type', 'website');
@@ -640,6 +652,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Call our destination specialist today @ (202) 996-3000 & Book a tour in South America. Our specialist will provide you best knowledge about various air travel packages to Peru.');
         OpenGraph::setTitle('Getting To Peru | GotoPeru');
         OpenGraph::setUrl('https://gotoperu.com/getting-to-peru');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto peru');
         OpenGraph::addProperty('type', 'website');
@@ -663,6 +676,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('If you are looking for a travel agency located in Peru, read our travelers testimonials and find out why they loved travelling with GOTOPERU!');
         OpenGraph::setTitle('Goto Peru Reviews & Testimonials | Goto Peru');
         OpenGraph::setUrl('https://gotoperu.com/testimonials');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto peru');
         OpenGraph::addProperty('type', 'website');
@@ -690,6 +704,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Call our destination specialist today @ (202) 996-3000 & Book a tour in South America. Our specialist will provide you best knowledge about various air travel packages to Peru.');
         OpenGraph::setTitle('Frequently Asked Questions | GoTo Peru');
         OpenGraph::setUrl('https://gotoperu.com/faq');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto peru');
         OpenGraph::addProperty('type', 'website');
@@ -713,6 +728,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Call our destination specialist today @ (202) 996-3000 & Book a tour in South America. Our specialist will provide you best knowledge about various air travel packages to Peru.');
         OpenGraph::setTitle('Contact US | Go To Peru');
         OpenGraph::setUrl('https://gotoperu.com/faq');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('go to peru');
         OpenGraph::addProperty('type', 'website');
@@ -751,6 +767,7 @@ class HomeController extends Controller
         OpenGraph::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
         OpenGraph::setTitle('Travel Deals Peru | Machu Picchu Vacation Packages | Machu Picchu Deals');
         OpenGraph::setUrl('https://gotoperu.com/packages');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
         OpenGraph::setSiteName('goto-peru');
         OpenGraph::addProperty('type', 'website');
