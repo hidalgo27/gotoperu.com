@@ -212,7 +212,7 @@
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col">
-                    <img data-src="{{asset('images/itinerary/banners/'.$paquetes->imagen.'.jpg')}}" data-srcset="{{asset('images/itinerary/banners/'.$paquetes->imagen.'.jpg')}}" alt="banner gotoperu" class="img-fluid lazy has-webp">
+                    <img src="{{asset('images/itinerary/banners/'.$paquetes->imagen.'')}}" alt="banner gotoperu" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -259,7 +259,7 @@
 
                             <div class="row">
 
-                            <div class="col col-sm-12 col-md-7 col-lg-9 col-xl-9">
+                            <div class="col-12 col-sm-12 col-md-7 col-lg-9 col-xl-9">
                                 <div class="row mt-3">
                                     <div class="col">
                                         <h1 class="text-g-yellow font-weight-bold">{{($paquetes->titulo)}}</h1>
