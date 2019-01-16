@@ -220,7 +220,7 @@
     <section class="bg-white">
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="col d-none d-sm-block">
                     {{Breadcrumbs::render('packages_show',$paquetes->titulo, $paquetes->duracion)}}
                 </div>
             </div>
@@ -1563,8 +1563,8 @@
                 <div class="col-12 text-center text-sm-left text-md-right col-sm-3 col-md-3 col-lg text-right">
                     <a href="#Inquire" class="btn btn-sm btn-g-yellow font-weight-bold" onclick="ideal_trip()">INQUIRE NOW</a>
                 </div>
-                <div class="col-12 text-center text-sm-left text-md-right col-sm-2 col-md-2 col-lg-auto">
-                    <button type="button" class="close p-0" data-dismiss="alert" aria-label="Close">
+                <div class="col-12 text-left text-sm-left text-md-right col-sm-2 col-md-2 col-lg-auto">
+                    <button type="button" class="close p-0 float-left float-md-right" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
