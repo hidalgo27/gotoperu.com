@@ -994,7 +994,7 @@
                                                 </div>
 
                                                 <div class="row mt-4">
-                                                    <div class="col">
+                                                    <div class="col-12 col-sm">
                                                         <div class="row pb-2">
                                                             <div class="col">
                                                                 <h2 class="text-secondary h5"><strong>TRAVEL DATE <span class="text-primary">*</span></strong></h2>
@@ -1013,7 +1013,7 @@
                                                         </div>
                                                         <input type="hidden" id="d_package" value="{{$paquetes->codigo}}: {{$paquetes->titulo}} {{$paquetes->duracion}} DAYS">
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="col-12 col-sm mt-4 mt-sm-0">
                                                         <div class="row pb-2">
                                                             <div class="col">
                                                                 <h2 class="text-secondary h5"><strong>PHONE NUMBER</strong></h2>
@@ -1033,7 +1033,7 @@
                                                 </div>
 
                                                 <div class="row">
-                                                    <div class="col">
+                                                    <div class="col-12 col-sm">
                                                         <div class="row mt-4 pb-2">
                                                             <div class="col">
                                                                 <h2 class="text-secondary h5"><strong>NAME <span class="text-primary">*</span></strong></h2>
@@ -1050,7 +1050,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="col-12 col-sm">
                                                         <div class="row mt-4 pb-2">
                                                             <div class="col">
                                                                 <h2 class="text-secondary h5"><strong>EMAIL <span class="text-primary">*</span></strong></h2>
