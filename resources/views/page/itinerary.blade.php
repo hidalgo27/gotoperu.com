@@ -235,7 +235,7 @@
             <a class="nav-link text-secondary rounded-0" href="#Itinerary">Itinerary</a>
         </li>
         <li class="nav-item d-sm-none">
-            <a class="nav-link text-secondary rounded-0" href="#Itinerary-2">Itinerary</a>
+            <a class="nav-link text-secondary rounded-0" href="#Itinerary">Itinerary</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-secondary rounded-0" href="#Hotels">Hotels</a>
