@@ -935,3 +935,8 @@ $slide-overlay-opacity: 0.6;
 .box15 .icon li a:hover{background:#000;color:#fff}
 @media only screen and (max-width:990px){.box15{margin-bottom:30px}
 }
+.fb-page,
+.fb-page span,
+.fb-page span iframe[style] {
+  max-width: 100% !important;
+}
