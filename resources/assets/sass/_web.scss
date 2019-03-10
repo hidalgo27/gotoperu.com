@@ -345,7 +345,7 @@ header{
   height: 100vh;
 }
 #overlay {
-  background-color:rgba(0,0,0,.5);
+  background-color:rgba(0,0,0,.3);
   height:100vh;
   left:0;
   position:relative;
@@ -368,12 +368,12 @@ header{
   background-size:cover;
   bottom:0;
   height:auto;
-  min-height:100%;
-  min-width:100%;
+  //min-height:100%;
+  //min-width:100%;
   perspective:1000;
   position:fixed;
   right:0;
-  width:100%;
+  width:100% !important;
   z-index:-1;
 }
 
@@ -939,4 +939,8 @@ $slide-overlay-opacity: 0.6;
 .fb-page span,
 .fb-page span iframe[style] {
   max-width: 100% !important;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #7f8429 !important;
 }

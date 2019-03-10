@@ -12,17 +12,15 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-    .js('resources/assets/js/font-awesome.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
 
 mix.scripts([
+    'node_modules/venobox/venobox/venobox.min.js',
     'resources/assets/js/vendors/jquery-migrate-3.0.0.min.js',
     'resources/assets/js/vendors/viedolightbox/video.js',
     'resources/assets/js/vendors/jquery.waypoints.min.js',
     'resources/assets/js/vendors/smooth-scroll.js',
     'node_modules/swiper/dist/js/swiper.min.js',
-    // 'resources/assets/js/vendors/all.js',
-    // 'resources/assets/js/font-awesome.js',
     //Customized
     'node_modules/twitter-bootstrap-wizard/jquery.bootstrap.wizard.js',
     'node_modules/intl-tel-input/src/js/data.js',
@@ -31,6 +29,7 @@ mix.scripts([
     'node_modules/owl.carousel/dist/owl.carousel.min.js',
     'node_modules/vanilla-lazyload/dist/lazyload.min.js',
     'resources/assets/js/vendors/function-admin.js',
+
     'resources/assets/js/vendors/function.js'
 ], 'public/js/plugins.js');
 
