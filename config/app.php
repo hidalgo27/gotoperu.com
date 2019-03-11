@@ -177,7 +177,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         // other providers ommited
-        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+//        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         GoogleMaps\ServiceProvider\GoogleMapsServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
 
@@ -230,11 +230,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         // other Facades ommited
-        'SEOMeta'   => Artesaos\SEOTools\Facades\SEOMeta::class,
-        'OpenGraph' => Artesaos\SEOTools\Facades\OpenGraph::class,
-        'Twitter'   => Artesaos\SEOTools\Facades\TwitterCard::class,
+//        'SEOMeta'   => Artesaos\SEOTools\Facades\SEOMeta::class,
+//        'OpenGraph' => Artesaos\SEOTools\Facades\OpenGraph::class,
+//        'Twitter'   => Artesaos\SEOTools\Facades\TwitterCard::class,
         // or
-        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+//        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
         'GoogleMaps' => GoogleMaps\Facade\GoogleMapsFacade::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::class,
 
