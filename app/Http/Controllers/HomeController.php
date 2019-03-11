@@ -66,6 +66,42 @@ class HomeController extends Controller
             return view('page.home',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'destinos'=>$destinos, 'testimonial'=>$testimonial, 'dificultad'=>$dificultad, 'airport'=>$airport, 'comentario'=>$comentario]);
     }
 
+    public function index2()
+    {
+
+        SEOMeta::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        SEOMeta::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
+        SEOMeta::setCanonical('https://gotoperu.com/');
+        SEOMeta::addKeyword(['peru travel packages', 'travel packages to peru', 'Go To Peru', 'machu picchu travel', 'peru vacations', 'peru vacation packages', 'machu picchu deals', 'peru travel offers', 'machu picchu travel offers', 'Machu Picchu packages', 'customize peru travel packages', 'tour packages to machu picchu']);
+
+        OpenGraph::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
+        OpenGraph::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        OpenGraph::setUrl('https://gotoperu.com/');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto-peru');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
+
+        $paquetes = TPaquete::with('precio_paquetes')->get();
+        $paquetes_r = TPaquete::with('precio_paquetes')->get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        $destinos = TDestino::all();
+        $testimonial = TTestimonio::all();
+
+        $dificultad = TPaqueteDificultad::all();
+//        dd($paquete_destinos);
+        $airport = TAeropuerto::with('precio_aeropuerto')->get();
+        $comentario = TComentario::with('itinerario')->get();
+
+        return view('page.home2',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'destinos'=>$destinos, 'testimonial'=>$testimonial, 'dificultad'=>$dificultad, 'airport'=>$airport, 'comentario'=>$comentario]);
+    }
+
     public function hotels()
     {
         $hoteles = THotel::all();
