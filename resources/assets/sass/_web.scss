@@ -944,3 +944,37 @@ $slide-overlay-opacity: 0.6;
 .slick-prev:before, .slick-next:before {
     color: #7f8429 !important;
 }
+
+//
+.nav-category-goto{
+  box-sizing: border-box;
+  padding: 10px 5px;
+  text-align: center;
+  font-size: 1.35em;
+  color: #333;
+  cursor: pointer;
+  font-weight: 600;
+}
+.nav-category-goto .nav-link.active, .nav-pills .show > .nav-link{
+  background-color: #7F8429;
+}
+.nav-category-goto .nav-link:first-child {
+  border-left: 0;
+}
+
+.nav-category-goto .nav-link{
+  color: #333333;
+  background: #f8f8f8 ;
+  border-left: 2px solid #ecf0f1;
+}
+
+.position-absolute-bottom {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.position-absolute-top {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}

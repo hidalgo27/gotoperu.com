@@ -45,50 +45,14 @@
     </div>
 </section>
 
-{{--<section class="bg-white">--}}
-{{--<div class="container-fluid">--}}
-{{--<div class="row py-5 ">--}}
-{{--<div class="col-6">--}}
-{{--<div class="row">--}}
-{{--<div class="col-3">--}}
-{{--<img src="{{asset('images/icons/contact.png')}}" alt="" class="img-fluid img-circle">--}}
-{{--</div>--}}
-{{--<div class="col">--}}
-{{--<h4>CONTACT</h4>--}}
-{{--<p>Chat with us, give us a call (813)600-3042, send us an e-mail or fill out our online form. Share with us your travel preferences! If you already have an outline, an idea, any questions… we will be more than happy to assist your needs.</p>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--<div class="row">--}}
-{{--<div class="col-3">--}}
-{{--<img src="{{asset('images/icons/design.png')}}" alt="" class="img-fluid img-circle">--}}
-{{--</div>--}}
-{{--<div class="col">--}}
-{{--<h4>DESIGN</h4>--}}
-{{--<p>We will craft out a first travel proposal according to the outline or idea that you shared with us. From then on we will customize it until you are satisfied with the planning! We will then send you a day by day itinerary and leave the rest to you!</p>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--<div class="row">--}}
-{{--<div class="col-3">--}}
-{{--<img src="{{asset('images/icons/vacations.png')}}" alt="" class="img-fluid img-circle">--}}
-{{--</div>--}}
-{{--<div class="col">--}}
-{{--<h4>VACATION</h4>--}}
-{{--<p>Be ready for an unforgettable vacation to the land of the Incas, with promptly transfers at every point (airports, hotels, buses,trains) with knowledgable local Guides on each destination plus the best hotel locations and perks...GOTOPERU team will be always with you</p>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</section>--}}
-
-<section class="bg-light" id="Inquire">
+<section class="bg-white" id="Inquire">
     <div class="container">
         <div class="row py-5 justify-content-center">
 
             <div class="col">
                 <div class="row justify-content-center pb-2">
-                    <div class="col col-sm-12">
-                        <h2 class="text-g-green text-center"><strong>TRAVEL INQUIRE</strong></h2>
+                    <div class="col col-sm-12 text-center">
+                        <h2 class="h1 font-weight-bold text-g-yellow mb-3">TRAVEL INQUIRE</h2>
                         <h5 class="text-secondary text-center">Help us design your perfect Peru vacation & Receive in 24hrs the first itineraries & quotes.</h5>
                         <hr>
                     </div>
