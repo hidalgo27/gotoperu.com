@@ -12,7 +12,8 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+   .sass('resources/assets/sass/app.scss', 'public/css')
+    .sass('resources/assets/sass/admin.scss', 'public/css');
 
 mix.scripts([
     'node_modules/venobox/venobox/venobox.min.js',
@@ -28,10 +29,13 @@ mix.scripts([
     'node_modules/intl-tel-input/build/js/utils.js',
     'node_modules/owl.carousel/dist/owl.carousel.min.js',
     'node_modules/vanilla-lazyload/dist/lazyload.min.js',
-    'resources/assets/js/vendors/function-admin.js',
-
     'resources/assets/js/vendors/function.js'
 ], 'public/js/plugins.js');
+
+mix.scripts([
+    'node_modules/feather-icons/dist/feather.js',
+    'resources/assets/js/vendors/function-admin.js',
+], 'public/js/plugins-admin.js');
 
 
 if (mix.config.inProduction) {

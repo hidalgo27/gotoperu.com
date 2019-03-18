@@ -197,3 +197,7 @@ Route::get('/peru-tours', [
     'uses' => 'HomepageController@peru_tours',
     'as' => 'peru_tours_path',
 ]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth', 'role:admin');;

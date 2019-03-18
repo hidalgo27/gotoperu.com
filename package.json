@@ -28,6 +28,7 @@
     "animate.css": "^3.5.2",
     "bcrypt-pbkdf": "^1.0.1",
     "bootstrap": "^4.0.0",
+    "feather-icons": "^4.19.0",
     "font-awesome-5-css": "^1.0.0",
     "font-awesome-sass": "^4.7.0",
     "intl-tel-input": "^13.0.2",
