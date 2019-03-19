@@ -34,6 +34,7 @@ mix.scripts([
 
 mix.scripts([
     'node_modules/feather-icons/dist/feather.js',
+    'node_modules/bootstrap4-toggle/js/bootstrap4-toggle.js',
     'resources/assets/js/vendors/function-admin.js',
 ], 'public/js/plugins-admin.js');
 

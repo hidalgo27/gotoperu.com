@@ -198,6 +198,10 @@ Route::get('/peru-tours', [
     'as' => 'peru_tours_path',
 ]);
 
+//ADMINISTRADOR
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth', 'role:admin');;
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth', 'role:admin');
+Route::get('/package/{id}', [
+    'uses' => 'HomeController@show',
+    'as' => 'show_path',
+]);
