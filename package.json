@@ -28,6 +28,7 @@
     "animate.css": "^3.5.2",
     "bcrypt-pbkdf": "^1.0.1",
     "bootstrap": "^4.0.0",
+    "bootstrap-select": "^1.13.8",
     "bootstrap4-toggle": "^3.4.0",
     "feather-icons": "^4.19.0",
     "font-awesome-5-css": "^1.0.0",

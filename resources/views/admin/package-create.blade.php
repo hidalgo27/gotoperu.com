@@ -20,6 +20,8 @@
             </div>
         </section>
     </div>
+    <form action="{{route('store_path')}}" method="post">
+        @csrf
     <div class="row">
         <div class="col-9">
             <div class="">
@@ -298,7 +300,7 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 @foreach($level as $levels)
-                                <span class="custom-checkbox d-block pr-3 text-ellipsis">
+                                    <span class="custom-checkbox d-block pr-3 text-ellipsis">
                                     <input type="checkbox" id="level_{{$levels->id}}" name="level[]" value="{{$levels->id}}" >
                                     <label for="level_{{$levels->id}}" data-toggle="tooltip" data-placement="left" title="{{ucwords(strtolower($levels->nombre))}}">{{ucwords(strtolower($levels->nombre))}}</label>
                                 </span>
@@ -319,7 +321,7 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 @foreach($category as $categoria)
-                                <span class="custom-checkbox d-block pr-3 text-ellipsis">
+                                    <span class="custom-checkbox d-block pr-3 text-ellipsis">
                                     <input type="checkbox" id="category_{{$categoria->id}}" name="category[]" value="{{$categoria->id}}" >
                                     <label for="category_{{$categoria->id}}" data-toggle="tooltip" data-placement="left" title="{{ucwords(strtolower($categoria->nombre))}}">{{ucwords(strtolower($categoria->nombre))}}</label>
                                 </span>
@@ -396,9 +398,11 @@
     <hr>
     <div class="row mb-3">
         <div class="col text-center">
-            <a href="" class="btn btn-primary font-weight-bold">Update Package</a>
+            {{--<a href="" class="btn btn-primary font-weight-bold">Update Package</a>--}}
+            <button type="submit" class="btn btn-primary font-weight-bold">Update Package</button>
         </div>
     </div>
+    </form>
 @endsection
 @push('scripts')
     <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=m4amx6h3rsnmj9whskr1vn3m6mpv7bi6qwwscvtbam4h0uic "></script>
@@ -465,9 +469,9 @@
         }
 
         {{--$(document).ready(function() {--}}
-            {{--$("#refrescar").bind("click", function() {--}}
-                {{--$("#contenido").load("{{route('load_path', [49, 5])}}");--}}
-            {{--});--}}
+        {{--$("#refrescar").bind("click", function() {--}}
+        {{--$("#contenido").load("{{route('load_path', [49, 5])}}");--}}
+        {{--});--}}
         {{--});--}}
 
     </script>

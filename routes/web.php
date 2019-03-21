@@ -201,7 +201,29 @@ Route::get('/peru-tours', [
 //ADMINISTRADOR
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth', 'role:admin');
+
+Route::get('/package/create', [
+    'uses' => 'HomeController@create',
+    'as' => 'create_path',
+]);
 Route::get('/package/{id}', [
     'uses' => 'HomeController@show',
     'as' => 'show_path',
 ]);
+Route::post('/package/duration', [
+    'uses' => 'HomeController@duration',
+    'as' => 'duration_path',
+]);
+
+Route::get('/package/load/{id}/{duration}', [
+    'uses' => 'HomeController@load',
+    'as' => 'load_path',
+]);
+
+//create
+Route::post('/package/store/123', [
+    'uses' => 'HomeController@store',
+    'as' => 'store_path',
+]);
+
+

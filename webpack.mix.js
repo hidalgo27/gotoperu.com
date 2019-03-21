@@ -35,6 +35,9 @@ mix.scripts([
 mix.scripts([
     'node_modules/feather-icons/dist/feather.js',
     'node_modules/bootstrap4-toggle/js/bootstrap4-toggle.js',
+    'node_modules/bootstrap-select/js/bootstrap-select.js',
+    'node_modules/bootstrap-select/js/i18n/defaults-es_US.js',
+    'node_modules/swiper/dist/js/swiper.min.js',
     'resources/assets/js/vendors/function-admin.js',
 ], 'public/js/plugins-admin.js');
 

@@ -333,3 +333,26 @@ table.table .avatar {
   border-width: 0 1px;
   background-color: #fff;
 }
+
+.bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+  font-weight: bold;
+}
+
+//swipper
+.swiper-container {
+  width: 100%;
+  height: 70px;
+}
+.swiper-slide {
+  height: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.swiper-right{
+  height: 130px;
+}
+.text-ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
