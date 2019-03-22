@@ -20,33 +20,81 @@
             </div>
         </section>
         {{--<div class="btn-toolbar mb-2 mb-md-0">--}}
-            {{--<div class="btn-group mr-2">--}}
-                {{--<button type="button" class="btn btn-sm btn-outline-secondary">Share</button>--}}
-                {{--<button type="button" class="btn btn-sm btn-outline-secondary">Export</button>--}}
-            {{--</div>--}}
-            {{--<button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">--}}
-                {{--<span data-feather="calendar"></span>--}}
-                {{--This week--}}
-            {{--</button>--}}
+        {{--<div class="btn-group mr-2">--}}
+        {{--<button type="button" class="btn btn-sm btn-outline-secondary">Share</button>--}}
+        {{--<button type="button" class="btn btn-sm btn-outline-secondary">Export</button>--}}
+        {{--</div>--}}
+        {{--<button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">--}}
+        {{--<span data-feather="calendar"></span>--}}
+        {{--This week--}}
+        {{--</button>--}}
         {{--</div>--}}
     </div>
 
     {{--<h2>Section title</h2>--}}
     {{--@if(Auth::user()->hasRole('admin'))--}}
-        {{--<div>Acceso como administrador</div>--}}
+    {{--<div>Acceso como administrador</div>--}}
     {{--@else--}}
-        {{--<div>Acceso usuario</div>--}}
+    {{--<div>Acceso usuario</div>--}}
     {{--@endif--}}
     {{--You are logged in!--}}
+    {{--<div class="row">--}}
+        {{--<div class="col">--}}
+            {{--sd--}}
+        {{--</div>--}}
+    {{--</div>--}}
+    @if (session('status'))
+        <div class="toast bg-primary fixed-top" role="alert" aria-live="polite" aria-atomic="true" data-delay="10000" style="left: auto; top: 55px; right: 10px;">
+            <div class="toast-header">
+                <span data-feather="alert-circle" class="text-success mr-2"></span>
+                <strong class="mr-auto">Itinerary</strong>
+                <small>
+                    @php
+                        date_default_timezone_set('America/Lima');
+                        echo date ("l m Y");
+                    @endphp
+                </small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body font-weight-bold text-white">
+                {{ session('status') }}
+            </div>
+        </div>
+    @endif
+
+    @if (session('delete'))
+        <div class="toast bg-danger fixed-top" role="alert" aria-live="polite" aria-atomic="true" data-delay="10000" style="left: auto; top: 55px; right: 10px;">
+            <div class="toast-header">
+                <span data-feather="alert-circle" class="text-success mr-2"></span>
+                <strong class="mr-auto">Itinerary</strong>
+                <small>
+                    @php
+                        date_default_timezone_set('America/Lima');
+                        echo date ("l m Y");
+                    @endphp
+                </small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body font-weight-bold text-white">
+                {{ session('delete') }}
+            </div>
+        </div>
+    @endif
+
+
     <div class="">
         <div class="table-wrapper m-0 p-0">
             <div class="table-title m-0">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h2>Manage <b>Packages</b></h2>
+                        <h2>Manage <b>Itinerary</b></h2>
                     </div>
                     <div class="col-sm-6">
-                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><span data-feather="plus-circle"></span> Add New Package</a>
+                        <a href="{{route('admin_itinerary_create_path')}}" class="btn btn-success" data-toggle="modal"><span data-feather="plus-circle"></span> Add New Itinerary</a>
                         <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><span data-feather="trash"></span> Delete</a>
                     </div>
                 </div>
@@ -61,19 +109,14 @@
 							</span>
                     </th>
                     <th>Code</th>
-                    <th>Name</th>
+                    <th>Title</th>
                     {{--<th>Address</th>--}}
-                    <th>Status</th>
                     <th class="text-center">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($paquete as $paquetes)
-                    @if ($paquetes->estado == 0)
-                        @php $estado_paquete = ""; @endphp
-                    @else
-                        @php $estado_paquete = "checked"; @endphp
-                    @endif
+                @foreach($itinerary->groupBy('titulo') as $itinerario1)
+                    @foreach($itinerario1 as $itinerario)
                     <tr>
                         <td>
                             <span class="custom-checkbox">
@@ -81,15 +124,15 @@
                                 <label for="checkbox1"></label>
                             </span>
                         </td>
-                        <td>{{$paquetes->codigo}} </td>
-                        <td><a href="{{route('admin_package_show_path', $paquetes->id)}}">{{$paquetes->titulo}}</a></td>
-                        <td><input type="checkbox" {{$estado_paquete}} data-toggle="toggle" data-size="xs"></td>
+                        <td>{{$itinerario->codigo}} </td>
+                        <td>{{$itinerario->titulo}}</td>
                         {{--<td>(171) 555-2222</td>--}}
                         <td class="text-center">
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><span data-feather="edit-3"></span></a>
+                            <a href="{{route('admin_itinerary_edit_path', $itinerario->id)}}" class="edit" data-toggle="modal"><span data-feather="edit"></span></a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><span data-feather="trash"></span></a>
                         </td>
                     </tr>
+                    @endforeach
                 @endforeach
                 </tbody>
             </table>
@@ -223,6 +266,9 @@
                     $("#selectAll").prop("checked", false);
                 }
             });
+        });
+        $(document).ready(function(){
+            $('.toast').toast('show');
         });
     </script>
 @endpush

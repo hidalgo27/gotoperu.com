@@ -200,30 +200,54 @@ Route::get('/peru-tours', [
 
 //ADMINISTRADOR
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth', 'role:admin');
+Route::get('/home', 'admin\HomeController@index')->name('home')->middleware('auth', 'role:admin');
 
 Route::get('/package/create', [
-    'uses' => 'HomeController@create',
-    'as' => 'create_path',
+    'uses' => 'admin\HomeController@create',
+    'as' => 'admin_package_create_path',
 ]);
 Route::get('/package/{id}', [
-    'uses' => 'HomeController@show',
-    'as' => 'show_path',
+    'uses' => 'admin\HomeController@show',
+    'as' => 'admin_package_show_path',
 ]);
 Route::post('/package/duration', [
-    'uses' => 'HomeController@duration',
-    'as' => 'duration_path',
+    'uses' => 'admin\HomeController@duration',
+    'as' => 'admin_package_duration_path',
 ]);
 
 Route::get('/package/load/{id}/{duration}', [
-    'uses' => 'HomeController@load',
+    'uses' => 'admin\HomeController@load',
     'as' => 'load_path',
 ]);
 
 //create
 Route::post('/package/store/123', [
-    'uses' => 'HomeController@store',
+    'uses' => 'admin\HomeController@store',
     'as' => 'store_path',
 ]);
 
-
+//itinerary
+Route::get('/itinerary', [
+    'uses' => 'admin\ItineraryController@index',
+    'as' => 'admin_itinerary_index_path',
+]);
+Route::get('/itinerary/create', [
+    'uses' => 'admin\ItineraryController@create',
+    'as' => 'admin_itinerary_create_path',
+]);
+Route::post('/itinerary/store', [
+    'uses' => 'admin\ItineraryController@store',
+    'as' => 'admin_itinerary_store_path',
+]);
+Route::get('/itinerary/edit/{id}', [
+    'uses' => 'admin\ItineraryController@edit',
+    'as' => 'admin_itinerary_edit_path',
+]);
+Route::post('/itinerary/update/{id}', [
+    'uses' => 'admin\ItineraryController@update',
+    'as' => 'admin_itinerary_update_path',
+]);
+Route::delete('/itinerary/edit/{id}', [
+    'uses' => 'admin\ItineraryController@destroy',
+    'as' => 'admin_itinerary_delete_path',
+]);

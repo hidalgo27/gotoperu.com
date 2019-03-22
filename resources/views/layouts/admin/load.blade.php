@@ -2,10 +2,11 @@
 <div class="col">
     <h4>Itinerary</h4>
     <hr>
+    @php $i = 1; @endphp
     @foreach($itinerario->sortBy('dia') as $itinerary)
         <div class="row mb-3">
             <div class="col">
-                <select class="selectpicker" data-width="100%" name="itinerary{{$itinerary->dia}}">
+                <select class="selectpicker" data-width="100%" name="itinerary_{{$i}}">
                     @foreach($itinerario_full->where('dia', $itinerary->dia) as $itinerary_full)
                         <option value="{{$itinerary_full->id}}-{{$itinerary->id}}">Day {{$itinerary_full->dia}}: {{ucwords(strtolower($itinerary_full->titulo))}}
                     @endforeach
@@ -23,7 +24,7 @@
                 </div>
             </div>
         </div>
-
+        @php $i++; @endphp
     @endforeach
 
     <script>
@@ -37,7 +38,7 @@
             });
             $.ajax( {
                 type: "POST",
-                url: "{{route('duration_path')}}",
+                url: "{{route('admin_package_duration_path')}}",
                 data: {id_itinerary: $id_itinerary},
                 success: function( response ) {
                     // console.log( $id );

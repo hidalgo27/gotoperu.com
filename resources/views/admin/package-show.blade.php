@@ -443,7 +443,7 @@
             });
             $.ajax( {
                 type: "POST",
-                url: "{{route('duration_path')}}",
+                url: "{{route('admin_package_duration_path')}}",
                 data: {id_itinerary: $id_itinerary},
                 success: function( response ) {
                     // console.log( $id );

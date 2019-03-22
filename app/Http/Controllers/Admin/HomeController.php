@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\TCategoria;
 use App\TDestino;
 use App\TDificultad;
@@ -87,7 +88,6 @@ class HomeController extends Controller
 
     public function store()
     {
-
         $codigo = $_POST["txt_codigo"];
         dd($codigo);
     }
