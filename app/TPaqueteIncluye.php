@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TPaqueteIncluye extends Model
 {
-    protected $table = "tpaqueteincluye";
+    protected $table = "tpaquetesincluye";
 
     public function paquetes()
     {

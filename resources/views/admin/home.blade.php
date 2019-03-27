@@ -38,6 +38,47 @@
         {{--<div>Acceso usuario</div>--}}
     {{--@endif--}}
     {{--You are logged in!--}}
+    @if (session('status'))
+        <div class="toast bg-primary fixed-top" role="alert" aria-live="polite" aria-atomic="true" data-delay="10000" style="left: auto; top: 55px; right: 10px;">
+            <div class="toast-header">
+                <span data-feather="alert-circle" class="text-success mr-2"></span>
+                <strong class="mr-auto">Package</strong>
+                <small>
+                    @php
+                        date_default_timezone_set('America/Lima');
+                        echo date ("l m Y");
+                    @endphp
+                </small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body font-weight-bold text-white">
+                {{ session('status') }}
+            </div>
+        </div>
+    @endif
+
+    @if (session('delete'))
+        <div class="toast bg-danger fixed-top" role="alert" aria-live="polite" aria-atomic="true" data-delay="10000" style="left: auto; top: 55px; right: 10px;">
+            <div class="toast-header">
+                <span data-feather="alert-circle" class="text-success mr-2"></span>
+                <strong class="mr-auto">Package</strong>
+                <small>
+                    @php
+                        date_default_timezone_set('America/Lima');
+                        echo date ("l m Y");
+                    @endphp
+                </small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body font-weight-bold text-white">
+                {{ session('delete') }}
+            </div>
+        </div>
+    @endif
     <div class="">
         <div class="table-wrapper m-0 p-0">
             <div class="table-title m-0">
@@ -46,7 +87,7 @@
                         <h2>Manage <b>Packages</b></h2>
                     </div>
                     <div class="col-sm-6">
-                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><span data-feather="plus-circle"></span> Add New Package</a>
+                        <a href="{{route('admin_package_create_path')}}" class="btn btn-success"><span data-feather="plus-circle"></span> Add New Package</a>
                         <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><span data-feather="trash"></span> Delete</a>
                     </div>
                 </div>
@@ -86,7 +127,7 @@
                         <td><input type="checkbox" {{$estado_paquete}} data-toggle="toggle" data-size="xs"></td>
                         {{--<td>(171) 555-2222</td>--}}
                         <td class="text-center">
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><span data-feather="edit-3"></span></a>
+                            <a href="{{route('admin_package_show_path', $paquetes->id)}}" class="edit"><span data-feather="edit-3"></span></a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><span data-feather="trash"></span></a>
                         </td>
                     </tr>
@@ -223,6 +264,9 @@
                     $("#selectAll").prop("checked", false);
                 }
             });
+        });
+        $(document).ready(function(){
+            $('.toast').toast('show');
         });
     </script>
 @endpush

@@ -955,14 +955,23 @@ $slide-overlay-opacity: 0.6;
   cursor: pointer;
   font-weight: 600;
 }
-.nav-category-goto .nav-link.active, .nav-pills .show > .nav-link{
+.nav-category-goto-green .nav-link.active, .nav-pills .show > .nav-link{
   background-color: #7F8429;
 }
-.nav-category-goto .nav-link:first-child {
+.nav-category-goto-yellow .nav-link.active, .nav-pills .show > .nav-link{
+  background-color: #f9a825;
+}
+.nav-category-goto-grey .nav-link.active, .nav-pills .show > .nav-link{
+  background-color: #333333;
+}
+.nav-category-goto-info .nav-link.active, .nav-pills .show > .nav-link{
+  background-color: #1482b6;
+}
+.nav-category-goto-green .nav-link:first-child, .nav-category-goto-yellow .nav-link:first-child, .nav-category-goto-grey .nav-link:first-child, .nav-category-goto-info .nav-link:first-child {
   border-left: 0;
 }
 
-.nav-category-goto .nav-link{
+.nav-category-goto-green .nav-link, .nav-category-goto-yellow .nav-link, .nav-category-goto-grey .nav-link, .nav-category-goto-info .nav-link{
   color: #333333;
   background: #f8f8f8 ;
   border-left: 2px solid #ecf0f1;

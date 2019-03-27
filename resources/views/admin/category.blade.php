@@ -39,15 +39,15 @@
     {{--@endif--}}
     {{--You are logged in!--}}
     {{--<div class="row">--}}
-        {{--<div class="col">--}}
-            {{--sd--}}
-        {{--</div>--}}
+    {{--<div class="col">--}}
+    {{--sd--}}
+    {{--</div>--}}
     {{--</div>--}}
     @if (session('status'))
         <div class="toast bg-primary fixed-top" role="alert" aria-live="polite" aria-atomic="true" data-delay="10000" style="left: auto; top: 55px; right: 10px;">
             <div class="toast-header">
                 <span data-feather="alert-circle" class="text-success mr-2"></span>
-                <strong class="mr-auto">Itinerary</strong>
+                <strong class="mr-auto">Category</strong>
                 <small>
                     @php
                         date_default_timezone_set('America/Lima');
@@ -68,7 +68,7 @@
         <div class="toast bg-danger fixed-top" role="alert" aria-live="polite" aria-atomic="true" data-delay="10000" style="left: auto; top: 55px; right: 10px;">
             <div class="toast-header">
                 <span data-feather="alert-circle" class="text-success mr-2"></span>
-                <strong class="mr-auto">Itinerary</strong>
+                <strong class="mr-auto">Category</strong>
                 <small>
                     @php
                         date_default_timezone_set('America/Lima');
@@ -91,14 +91,45 @@
             <div class="table-title m-0">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h2>Manage <b>Itinerary</b></h2>
+                        <h2>Manage <b>Category</b></h2>
                     </div>
                     <div class="col-sm-6">
-                        <a href="{{route('admin_itinerary_create_path')}}" class="btn btn-success"><span data-feather="plus-circle"></span> Add New Itinerary</a>
+                        <a href="#addCategory" class="btn btn-success" data-toggle="modal"><span data-feather="plus-circle"></span> Add New Category</a>
                         <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><span data-feather="trash"></span> Delete</a>
                     </div>
                 </div>
             </div>
+
+            <!-- add Modal HTML -->
+            <div id="addCategory" class="modal fade">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <form action="{{route('admin_category_store_path')}}" method="post">
+                            @csrf
+                            <div class="modal-header">
+                                <h4 class="modal-title">Add Category</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <input type="text" class="form-control" name="txt_category" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea name="txta_descripcion" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                <input type="submit" class="btn btn-success" value="Add">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
             <table class="table table-striped table-hover small table-sm font-weight-bold text-secondary">
                 <thead>
                 <tr>
@@ -108,54 +139,83 @@
 								<label for="selectAll"></label>
 							</span>
                     </th>
-                    <th>Code</th>
-                    <th>Title</th>
+                    <th>Category</th>
                     {{--<th>Address</th>--}}
                     <th class="text-center">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($itinerary->groupBy('titulo') as $itinerario1)
-                    @foreach($itinerario1 as $itinerario)
-                    <tr>
-                        <td>
+                @foreach($category as $category1)
+
+                        <tr>
+                            <td>
                             <span class="custom-checkbox">
                                 <input type="checkbox" id="checkbox1" name="options[]" value="1" >
                                 <label for="checkbox1"></label>
                             </span>
-                        </td>
-                        <td>{{$itinerario->codigo}} </td>
-                        <td>{{$itinerario->titulo}}</td>
-                        {{--<td>(171) 555-2222</td>--}}
-                        <td class="text-center">
-                            <a href="{{route('admin_itinerary_edit_path', $itinerario->id)}}" class="edit"><span data-feather="edit"></span></a>
-                            <a href="#delete_itinerary_{{$itinerario->id}}" class="delete" data-toggle="modal"><span data-feather="trash"></span></a>
-                        </td>
-                    </tr>
-                    <!-- Delete Modal HTML -->
-                    <div id="delete_itinerary_{{$itinerario->id}}" class="modal fade">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <form action="{{route('admin_itinerary_delete_path', $itinerario->id)}}" method="post">
-                                    @method('DELETE')
-                                    @csrf
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Delete Itinerary</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Are you sure you want to delete these Records?</p>
-                                        <p class="text-warning"><small>This action cannot be undone.</small></p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                                        <input type="submit" class="btn btn-danger" value="Delete">
-                                    </div>
-                                </form>
+                            </td>
+                            <td>{{$category1->nombre}} </td>
+                            {{--<td>{{$category1->estado}}</td>--}}
+                            {{--<td>(171) 555-2222</td>--}}
+                            <td class="text-center">
+                                <a href="#edit_category_{{$category1->id}}" class="edit" data-toggle="modal"><span data-feather="edit"></span></a>
+                                <a href="#delete_category_{{$category1->id}}" class="delete" data-toggle="modal"><span data-feather="trash"></span></a>
+                            </td>
+                        </tr>
+                        <!-- Delete Modal HTML -->
+                        <div id="delete_category_{{$category1->id}}" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form action="{{route('admin_category_delete_path', $category1->id)}}" method="post">
+                                        @method('DELETE')
+                                        @csrf
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Delete Included</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Are you sure you want to delete these Records?</p>
+                                            <p class="text-warning"><small>This action cannot be undone.</small></p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                            <input type="submit" class="btn btn-danger" value="Delete">
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    @endforeach
+
+                        <!-- Edit Modal HTML -->
+                        <div id="edit_category_{{$category1->id}}" class="modal fade">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <form action="{{route('admin_category_update_path', $category1->id)}}" method="post">
+                                        @csrf
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Add Category</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label>Category</label>
+                                                <input type="text" class="form-control" name="txt_category" required value="{{$category1->nombre}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <textarea name="txta_descripcion" rows="6" class="form-control">{{$category1->descripcion}}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                            <input type="submit" class="btn btn-success" value="Add">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
                 @endforeach
                 </tbody>
             </table>
@@ -173,76 +233,8 @@
             </div>
         </div>
     </div>
-    <!-- Edit Modal HTML -->
-    <div id="addEmployeeModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h4 class="modal-title">Add Employee</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Address</label>
-                            <textarea class="form-control" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Add">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Edit Modal HTML -->
-    <div id="editEmployeeModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h4 class="modal-title">Edit Employee</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Address</label>
-                            <textarea class="form-control" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-info" value="Save">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+
+
 
 @endsection
 @push('scripts')

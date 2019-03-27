@@ -202,52 +202,143 @@ Route::get('/peru-tours', [
 Auth::routes();
 Route::get('/home', 'admin\HomeController@index')->name('home')->middleware('auth', 'role:admin');
 
-Route::get('/package/create', [
+Route::get('admin/package/create', [
     'uses' => 'admin\HomeController@create',
     'as' => 'admin_package_create_path',
 ]);
-Route::get('/package/{id}', [
+Route::post('admin/package/store', [
+    'uses' => 'admin\HomeController@store',
+    'as' => 'admin_package_store_path',
+]);
+Route::get('admin/package/{id}', [
     'uses' => 'admin\HomeController@show',
     'as' => 'admin_package_show_path',
 ]);
-Route::post('/package/duration', [
+Route::post('admin/package/duration', [
     'uses' => 'admin\HomeController@duration',
     'as' => 'admin_package_duration_path',
 ]);
 
-Route::get('/package/load/{id}/{duration}', [
+Route::get('admin/package/load/{id}/{duration}', [
     'uses' => 'admin\HomeController@load',
     'as' => 'load_path',
 ]);
 
-//create
-Route::post('/package/store/123', [
-    'uses' => 'admin\HomeController@store',
-    'as' => 'store_path',
-]);
-
 //itinerary
-Route::get('/itinerary', [
+Route::get('admin/itinerary', [
     'uses' => 'admin\ItineraryController@index',
     'as' => 'admin_itinerary_index_path',
 ]);
-Route::get('/itinerary/create', [
+Route::get('admin/itinerary/create', [
     'uses' => 'admin\ItineraryController@create',
     'as' => 'admin_itinerary_create_path',
 ]);
-Route::post('/itinerary/store', [
+Route::post('admin/itinerary/store', [
     'uses' => 'admin\ItineraryController@store',
     'as' => 'admin_itinerary_store_path',
 ]);
-Route::get('/itinerary/edit/{id}', [
+Route::get('admin/itinerary/edit/{id}', [
     'uses' => 'admin\ItineraryController@edit',
     'as' => 'admin_itinerary_edit_path',
 ]);
-Route::post('/itinerary/update/{id}', [
+Route::post('admin/itinerary/update/{id}', [
     'uses' => 'admin\ItineraryController@update',
     'as' => 'admin_itinerary_update_path',
 ]);
-Route::delete('/itinerary/edit/{id}', [
+Route::delete('admin/itinerary/edit/{id}', [
     'uses' => 'admin\ItineraryController@destroy',
     'as' => 'admin_itinerary_delete_path',
+]);
+//destinations
+Route::get('admin/destinations', [
+    'uses' => 'admin\DestinationsController@index',
+    'as' => 'admin_destinations_index_path',
+]);
+Route::get('admin/destinations/create', [
+    'uses' => 'admin\DestinationsController@create',
+    'as' => 'admin_destinations_create_path',
+]);
+Route::post('admin/destinations/store', [
+    'uses' => 'admin\DestinationsController@store',
+    'as' => 'admin_destinations_store_path',
+]);
+Route::get('admin/destinations/edit/{id}', [
+    'uses' => 'admin\DestinationsController@edit',
+    'as' => 'admin_destinations_edit_path',
+]);
+Route::post('admin/destinations/update/{id}', [
+    'uses' => 'admin\DestinationsController@update',
+    'as' => 'admin_destinations_update_path',
+]);
+Route::delete('admin/destinations/edit/{id}', [
+    'uses' => 'admin\DestinationsController@destroy',
+    'as' => 'admin_destinations_delete_path',
+]);
+//included
+Route::get('admin/included', [
+    'uses' => 'admin\IncludedController@index',
+    'as' => 'admin_included_index_path',
+]);
+Route::post('admin/included/store', [
+    'uses' => 'admin\IncludedController@store',
+    'as' => 'admin_included_store_path',
+]);
+Route::post('admin/included/update/{id}', [
+    'uses' => 'admin\IncludedController@update',
+    'as' => 'admin_included_update_path',
+]);
+Route::delete('admin/included/edit/{id}', [
+    'uses' => 'admin\IncludedController@destroy',
+    'as' => 'admin_included_delete_path',
+]);
+//not included
+Route::get('admin/not-included', [
+    'uses' => 'admin\NotIncludedController@index',
+    'as' => 'admin_not_included_index_path',
+]);
+Route::post('admin/not-included/store', [
+    'uses' => 'admin\NotIncludedController@store',
+    'as' => 'admin_not_included_store_path',
+]);
+Route::post('admin/not-included/update/{id}', [
+    'uses' => 'admin\NotIncludedController@update',
+    'as' => 'admin_not_included_update_path',
+]);
+Route::delete('admin/not-included/edit/{id}', [
+    'uses' => 'admin\NotIncludedController@destroy',
+    'as' => 'admin_not_included_delete_path',
+]);
+//category
+Route::get('admin/category', [
+    'uses' => 'admin\CategoryController@index',
+    'as' => 'admin_category_index_path',
+]);
+Route::post('admin/category/store', [
+    'uses' => 'admin\CategoryController@store',
+    'as' => 'admin_category_store_path',
+]);
+Route::post('admin/category/update/{id}', [
+    'uses' => 'admin\CategoryController@update',
+    'as' => 'admin_category_update_path',
+]);
+Route::delete('admin/category/edit/{id}', [
+    'uses' => 'admin\CategoryController@destroy',
+    'as' => 'admin_category_delete_path',
+]);
+//difficulty
+Route::get('admin/difficulty', [
+    'uses' => 'admin\DifficultyController@index',
+    'as' => 'admin_difficulty_index_path',
+]);
+Route::post('admin/difficulty/store', [
+    'uses' => 'admin\DifficultyController@store',
+    'as' => 'admin_difficulty_store_path',
+]);
+Route::post('admin/difficulty/update/{id}', [
+    'uses' => 'admin\DifficultyController@update',
+    'as' => 'admin_difficulty_update_path',
+]);
+Route::delete('admin/difficulty/edit/{id}', [
+    'uses' => 'admin\DifficultyController@destroy',
+    'as' => 'admin_difficulty_delete_path',
 ]);

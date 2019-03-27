@@ -108,23 +108,38 @@
                                 <div class="content-video-1 text-white">
                                     {{--<img src="images/travel/video-1.jpg" alt="video">--}}
                                     <h2 class="font-weight-bolder">Top Recommended Travel Company to Machu Picchu & Peru</h2>
-                                    <div class="row justify-content-center">
+
+                                    <div class="row mt-5 justify-content-center">
                                         <div class="col-6">
-                                            <i class="fa fa-quote-left"></i>
-                                            <span class="font-weight-light small">Our tour guide Franklin, was so knowledgeable, there was nothing we asked that he couldn't talk at length about! He was very organized and did an excellent job accommodating each and every traveller. Also in Lima our tour conductor Ivan. All of the hotels were in ideal locations in city centers, which made it easy to explore on our own without having to take a cab.</span>
-                                            <i class="fa fa-quote-right"></i>
+                                            <div class="row ">
+                                                <div class="col d-flex">
+                                                    <div class="card bg-rgba-dark-3 w-100">
+                                                        <div class="card-header bg-g-yellow">
+                                                            <h5 class="m-0">CUSTOMIZED TRIP</h5>
+                                                        </div>
+                                                        <div class="card-body small p-1 font-weight-bold">
+                                                            <a href="#" class="stretched-link text-white">Lets design together a Peru dream vacation!</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{--<div class="col-auto d-flex">--}}
+                                                    {{--or--}}
+                                                {{--</div>--}}
+                                                <div class="col d-flex">
+                                                    <div class="card bg-rgba-dark-3 w-100">
+                                                        <div class="card-header bg-g-green">
+                                                            <h5 class="m-0">BOOK ONLINE</h5>
+                                                        </div>
+                                                        <div class="card-body small p-1 font-weight-bold">
+                                                            <a href="" class="stretched-link text-white">Pre-design Programs</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row justify-content-center">
-                                        <div class="col-6">
-                                            <small class="font-italic"><i class="fas fa-user-circle"></i> Jeff G. X2 | <span class="font-weight-bold">New York Feb 2018</span></small>
-                                            <span class="d-block text-g-yellow">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                        </div>
+
+
+
                                     </div>
                                     {{--<a href="#Inquire" class="btn btn-g-yellow btn-lg h2 font-weight-bold mt-3">My ideal trip will be</a>--}}
                                     {{--<a href="{{route('complete_path')}}" class="btn btn-success btn-lg h2 font-weight-bold mt-3 mx-2">7 days with Airfare from $1399</a>--}}
@@ -305,51 +320,31 @@
         </div>
     </section>
 
-    <section class="bg-light">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-6">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <button class="btn btn-block btn-g-yellow">
-                                <h4>DESING</h4>
-                                <hr class="my-1">
-                                Your next adventure
-                            </button>
-                        </div>
-                        <div class="col-auto">
-                            or
-                        </div>
-                        <div class="col">
-                            <button class="btn btn-block btn-g-green">
-                                <h4>BOOK ONLINE</h4>
-                                <hr class="my-1">
-                                Pre-design vacations
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="bg-light py-5">
+
+    <section class="bg-light pb-5">
         <div class="container-fluid">
 
                     <div class="row">
                         <div class="col">
                             <div class="row slider-top-home mx-4">
                                 <div class="col">
-                                    <a class="venobox" data-gall="myGallery" href="{{asset('images/abcd.jpg')}}"><img src="{{asset('images/abcd.jpg')}}" class="w-100" /></a>
+                                    <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/21.jpg')}}"><img src="{{asset('images/slider-home/thumbnail/21.jpg')}}" class="w-100" /></a>
                                 </div>
                                 <div class="col">
-                                    <a class="venobox" data-gall="myGallery" href="{{asset('images/abcd.jpg')}}"><img src="{{asset('images/abcd.jpg')}}" class="w-100" /></a>
+                                    <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/22.jpg')}}"><img src="{{asset('images/slider-home/thumbnail/22.jpg')}}" class="w-100" /></a>
                                 </div>
                                 <div class="col">
-                                    <a class="venobox" data-gall="myGallery" href="{{asset('images/abcd.jpg')}}"><img src="{{asset('images/abcd.jpg')}}" class="w-100" /></a>
+                                    <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/23.jpg')}}"><img src="{{asset('images/slider-home/thumbnail/23.jpg')}}" class="w-100" /></a>
                                 </div>
                                 <div class="col">
-                                    <a class="venobox" data-gall="myGallery" href="{{asset('images/abcd.jpg')}}"><img src="{{asset('images/abcd.jpg')}}" class="w-100" /></a>
+                                    <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/24.jpg')}}"><img src="{{asset('images/slider-home/thumbnail/24.jpg')}}" class="w-100" /></a>
+                                </div>
+                                <div class="col">
+                                    <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/25.jpg')}}"><img src="{{asset('images/slider-home/thumbnail/25.jpg')}}" class="w-100" /></a>
+                                </div>
+                                <div class="col">
+                                    <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/26.jpg')}}"><img src="{{asset('images/slider-home/thumbnail/26.jpg')}}" class="w-100" /></a>
                                 </div>
                             </div>
                         </div>
@@ -362,7 +357,7 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <h2 class="h1 font-weight-bold text-g-yellow mb-3"><span class="text-g-green">BOOK ONLINE</span> YOUR TRAVEL PACKAGE</h2>
+                    <h2 class="h1 font-weight-bold text-g-yellow mb-3">BOOK ONLINE</h2>
                     <p class="lead font-weight-normal text-secondary mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores commodi consequatur deleniti deserunt dolorem ea in molestias, natus nemo perferendis praesentium quae qui rerum saepe sapiente tempore voluptate voluptatem!</p>
                 </div>
             </div>
@@ -371,7 +366,7 @@
                 <div class="col">
                     <div class="row">
                         <div class="col-12">
-                            <div class="nav-category-goto nav nav-pills flex-column flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <div class="nav-category-goto-yellow nav nav-pills flex-column flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                 <a class="flex-sm-fill text-sm-center rounded-0 nav-link active" id="recommended-tab" data-toggle="pill" href="#recommended" role="tab" aria-controls="recommended" aria-selected="true">Recommended</a>
                                 <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="all-tab" data-toggle="pill" href="#all" role="tab" aria-controls="all" aria-selected="false">All Included</a>
                                 <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="families-tab" data-toggle="pill" href="#families" role="tab" aria-controls="families" aria-selected="false">For Families</a>
@@ -391,7 +386,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row slider-top-home mt-4">
+                                    <div class="row slider-category mt-4">
                                         <div class="col">
                                             <div class="bg-light shadow-sm rounded">
                                                 <div class="row align-items-center no-gutters">
@@ -460,7 +455,7 @@
                 <div class="col">
                     <div class="row">
                         <div class="col-12">
-                            <div class="nav-category-goto nav nav-pills flex-column flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <div class="nav-category-goto-green nav nav-pills flex-column flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                 <a class="flex-sm-fill text-sm-center rounded-0 nav-link active" id="short-tab" data-toggle="pill" href="#short" role="tab" aria-controls="short" aria-selected="true">Short Programs</a>
                                 <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="active-trek-tab" data-toggle="pill" href="#all" role="tab" aria-controls="active-trek" aria-selected="false">Active / Treks</a>
                                 <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="luxury-tab" data-toggle="pill" href="#luxury" role="tab" aria-controls="luxury" aria-selected="false">Luxury</a>
@@ -480,7 +475,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row slider-top-home mt-4">
+                                    <div class="row slider-category mt-4">
                                         <div class="col">
                                             <div class="bg-light shadow-sm rounded">
                                                 <div class="row align-items-center no-gutters">
@@ -549,7 +544,7 @@
                 <div class="col">
                     <div class="row">
                         <div class="col-12">
-                            <div class="nav-category-goto nav nav-pills flex-column flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <div class="nav-category-goto-grey nav nav-pills flex-column flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                 <a class="flex-sm-fill text-sm-center rounded-0 nav-link active" id="cultural-tab" data-toggle="pill" href="#cultural" role="tab" aria-controls="cultural" aria-selected="true">Cultural</a>
                                 <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="single-traveler-tab" data-toggle="pill" href="#all" role="tab" aria-controls="single-traveler" aria-selected="false">Single Traveler</a>
                                 <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="long-duration-tab" data-toggle="pill" href="#long-duration" role="tab" aria-controls="long-duration" aria-selected="false">Long Duration</a>
@@ -569,7 +564,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row slider-top-home mt-4">
+                                    <div class="row slider-category mt-4">
                                         <div class="col">
                                             <div class="bg-light shadow-sm rounded">
                                                 <div class="row align-items-center no-gutters">
@@ -1406,6 +1401,44 @@
 
             //slick
             $('.slider-top-home').slick({
+                // dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 10000,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
+            });
+
+            $('.slider-category').slick({
                 // dots: true,
                 infinite: true,
                 speed: 300,

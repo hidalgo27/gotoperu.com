@@ -3,12 +3,15 @@
     <h4>Itinerary</h4>
     <hr>
     @php $i = 1; @endphp
-    @foreach($itinerario->sortBy('dia') as $itinerary)
-        <div class="row mb-3">
+    @foreach($itinerario->sortBy('codigo') as $itinerary)
+        <div class="row mb-3 align-items-center">
+            <div class="col-auto text-center">
+                <h6 class="font-weight-bold">Day {{$i}} <span data-feather="corner-down-right" class="d-block"></span></h6>
+            </div>
             <div class="col">
-                <select class="selectpicker" data-width="100%" name="itinerary_{{$i}}">
-                    @foreach($itinerario_full->where('dia', $itinerary->dia) as $itinerary_full)
-                        <option value="{{$itinerary_full->id}}-{{$itinerary->id}}">Day {{$itinerary_full->dia}}: {{ucwords(strtolower($itinerary_full->titulo))}}
+                <select class="selectpicker" data-live-search="true" title="choose itinerary of day {{$i}}" data-width="100%" name="itinerary_{{$i}}">
+                    @foreach($itinerario_full as $itinerary_full)
+                            <option value="{{$itinerary_full->id}}-{{$itinerary->id}}"><span class="font-weight-bold">{{$itinerary_full->codigo}}:</span> {{ucwords(strtolower($itinerary_full->titulo))}}
                     @endforeach
                 </select>
                 <div class="p-2 small shadow-sm mt-2">
@@ -56,5 +59,6 @@
             mousewheel: true,
         });
         $('select').selectpicker();
+        feather.replace();
     </script>
 </div>
