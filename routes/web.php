@@ -16,7 +16,7 @@
 //});
 
 Route::get('/', [
-    'uses' => 'HomepageController@index2',
+    'uses' => 'HomepageController@index',
     'as' => 'home_path',
 ]);
 
