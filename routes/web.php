@@ -210,9 +210,13 @@ Route::post('admin/package/store', [
     'uses' => 'admin\HomeController@store',
     'as' => 'admin_package_store_path',
 ]);
-Route::get('admin/package/{id}', [
-    'uses' => 'admin\HomeController@show',
-    'as' => 'admin_package_show_path',
+Route::get('admin/package/edit/{id}', [
+    'uses' => 'admin\HomeController@edit',
+    'as' => 'admin_package_edit_path',
+]);
+Route::post('admin/package/update/{id}', [
+    'uses' => 'admin\HomeController@update',
+    'as' => 'admin_package_update_path',
 ]);
 Route::post('admin/package/duration', [
     'uses' => 'admin\HomeController@duration',
@@ -222,6 +226,11 @@ Route::post('admin/package/duration', [
 Route::get('admin/package/load/{id}/{duration}', [
     'uses' => 'admin\HomeController@load',
     'as' => 'load_path',
+]);
+
+Route::delete('admin/package/edit/{id}', [
+    'uses' => 'admin\HomeController@destroy',
+    'as' => 'admin_package_delete_path',
 ]);
 
 //itinerary

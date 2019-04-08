@@ -40,7 +40,7 @@ class CategoryController extends Controller
         $category = $_POST["txt_category"];
         $descripcion = $_POST["txta_descripcion"];
 
-        if ($request->filled(['txt_category', 'txta_descripcion'])){
+        if ($request->filled(['txt_category'])){
 
             $category2 = new TCategoria();
             $category2->nombre = $category;
@@ -88,7 +88,7 @@ class CategoryController extends Controller
         $category = $_POST["txt_category"];
         $descripcion = $_POST["txta_descripcion"];
 
-        if ($request->filled(['txt_category', 'txta_descripcion'])){
+        if ($request->filled(['txt_category'])){
 
             $category2 = TCategoria::FindOrFail($id);
             $category2->nombre = $category;

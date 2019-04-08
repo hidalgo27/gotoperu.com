@@ -14,7 +14,9 @@ use App\TPaqueteCategoria;
 use App\TPaqueteDestino;
 use App\TPaqueteDificultad;
 use App\TPaqueteIncluye;
+use App\TpaqueteItinerario;
 use App\TPaqueteNoIncluye;
+use App\TPrecioPaquete;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -35,20 +37,20 @@ class HomeController extends Controller
     /**
      * Show
      */
-    public function show(Request $request, $id)
-    {
-        $request->user()->authorizeRoles(['user', 'admin']);
-
-        $paquete = TPaquete::where('id', $id)->get();
-        $itinerario = TItinerario::get()->unique('dia');
-        $itinerario_full = TItinerario::all();
-        $level = TDificultad::all();
-        $category = TCategoria::all();
-        $destinations = TDestino::all();
-        $incluye = TIncluye::all();
-        $noincluye = TNoIncluye::all();
-        return view('admin.package-show', compact('paquete'), ['itinerario'=>$itinerario, 'itinerario_full' => $itinerario_full, 'level'=>$level, 'category'=>$category, 'destinations'=>$destinations, 'incluye'=>$incluye, 'noincluye'=>$noincluye]);
-    }
+//    public function show(Request $request, $id)
+//    {
+//        $request->user()->authorizeRoles(['user', 'admin']);
+//
+//        $paquete = TPaquete::where('id', $id)->get();
+//        $itinerario = TItinerario::get()->unique('dia');
+//        $itinerario_full = TItinerario::all();
+//        $level = TDificultad::all();
+//        $category = TCategoria::all();
+//        $destinations = TDestino::all();
+//        $incluye = TIncluye::all();
+//        $noincluye = TNoIncluye::all();
+//        return view('admin.package-show', compact('paquete'), ['itinerario'=>$itinerario, 'itinerario_full' => $itinerario_full, 'level'=>$level, 'category'=>$category, 'destinations'=>$destinations, 'incluye'=>$incluye, 'noincluye'=>$noincluye]);
+//    }
 
     public function duration(Request $request)
     {
@@ -98,56 +100,17 @@ class HomeController extends Controller
 //            'txt_codigo' => 'required'
 //        ]);
 
-//        $validator = Validator::make($request->all(), [
-//            'codigo' => 'required|unique:tpaquetes',
-//            'codigo_f' => 'required|unique:tpaquetes',
-//            'titulo' => 'required|unique:tpaquetes',
-//            'duracion' => 'required',
-//        ]);
-//
-//        if ($validator->fails()) {
-//            return redirect(route('admin_package_create_path'))
-//                ->withErrors($validator)
-//                ->withInput();
-//        }
-//        $package = new TPaquete();
-//        $package->codigo = $request->input('txt_codigo');
-//        $package->save();
-//        return redirect()->route('admin_package_create_path');
-//        $codigo = $_POST["txt_codigo"];
-//        $codigo_f = $_POST["txt_codigo_f"];
-//        $title_package = $_POST["txt_title_package"];
-//        $duration = $_POST["txt_duration"];
-//        $descripcion = $_POST["txta_descripcion"];
-//
-//        $itinerary = $_POST["itinerary"];
-//
-//        $s2 = $_POST["txt_2_s"];
-//        $d2 = $_POST["txt_2_d"];
-//        $m2 = $_POST["txt_2_m"];
-//        $t2 = $_POST["txt_2_t"];
-//
-//        $s3 = $_POST["txt_3_s"];
-//        $d3 = $_POST["txt_3_d"];
-//        $m3 = $_POST["txt_3_m"];
-//        $t3 = $_POST["txt_3_t"];
-//
-//        $s4 = $_POST["txt_4_s"];
-//        $d4 = $_POST["txt_4_d"];
-//        $m4 = $_POST["txt_4_m"];
-//        $t4 = $_POST["txt_4_t"];
-//
-//        $s5 = $_POST["txt_5_s"];
-//        $d5 = $_POST["txt_5_d"];
-//        $m5 = $_POST["txt_5_m"];
-//        $t5 = $_POST["txt_5_t"];
-//
-//        $level = $_POST["level"];
-//        $category = $_POST["category"];
-//        $destino = $_POST["destino"];
-//        $include = $_POST["include"];
-//        $noinclude = $_POST["noinclude"];
-//
+        $validator = Validator::make($request->all(), [
+            'codigo' => 'required|unique:tpaquetes',
+            'codigo_f' => 'required',
+            'titulo' => 'required|unique:tpaquetes',
+            'duracion' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect(route('admin_package_create_path'))
+                ->withErrors($validator)
+                ->withInput();
+        }
 
             $package = new TPaquete();
             $package->codigo = $request->input('codigo');
@@ -157,6 +120,29 @@ class HomeController extends Controller
             $package->descripcion = $request->input('descripcion');
 
             if ($package->save()){
+
+                for($x=2; $x < 6; $x++){
+                    $price = new TPrecioPaquete();
+                    $price->estrellas = $x;
+                    $price->precio_s = $request->input('txt_'.$x.'_s');
+                    $price->precio_d = $request->input('txt_'.$x.'_d');
+                    $price->precio_t = $request->input('txt_'.$x.'_t');
+                    $price->idpaquetes = $package->id;
+                    $price->save();
+                }
+
+                $itinerario_val = explode('-', $request->input('itinerary')[0]);
+                if ($itinerario_val[0] > 0){
+                    for($y=0; $y < count($request->input('itinerary')); $y++){
+                        $itinerario = explode('-', $request->input('itinerary')[$y]);
+                        $itinerary = new TpaqueteItinerario();
+                        $itinerary->idpaquetes = $package->id;
+                        $itinerary->iditinerario = $itinerario[0];
+                        $itinerary->save();
+                    }
+                }
+
+
                 $package_level = TPaqueteDificultad::where('idpaquetes', $package->id)->get();
                 $var = [];
                 if ($request->input('level')) {
@@ -268,10 +254,136 @@ class HomeController extends Controller
                 }
 
             }
+            return redirect('/home')->with('status', 'Package created successfully');
 
+    }
 
-//            return redirect('/home')->with('status', 'Package created successfully');
+    public function edit(Request $request, $id)
+    {
+        $request->user()->authorizeRoles(['user', 'admin']);
 
+        $paquete = TPaquete::where('id', $id)->get();
+        $paquete_itinerario = TpaqueteItinerario::with('itinerarios')->where('idpaquetes', $id)->get();
+
+        $itinerario_full = TItinerario::all();
+
+        $level = TDificultad::all();
+        $paquete_dificultad = TPaqueteDificultad::where('idpaquetes', $id)->get();
+
+        $category = TCategoria::all();
+        $paquete_category = TPaqueteCategoria::where('idpaquetes', $id)->get();
+
+        $destinations = TDestino::all();
+        $paquete_destino = TPaqueteDestino::where('idpaquetes', $id)->get();
+
+        $incluye = TIncluye::all();
+        $paquete_incluye = TPaqueteIncluye::where('idpaquetes', $id)->get();
+
+        $noincluye = TNoIncluye::all();
+        $paquete_no_incluye = TPaqueteNoIncluye::where('idpaquetes', $id)->get();
+
+        $precio_paquetes_2 = TPrecioPaquete::where('idpaquetes', $id)->where('estrellas', 2)->get();
+        $precio_paquetes_3 = TPrecioPaquete::where('idpaquetes', $id)->where('estrellas', 3)->get();
+        $precio_paquetes_4 = TPrecioPaquete::where('idpaquetes', $id)->where('estrellas', 4)->get();
+        $precio_paquetes_5 = TPrecioPaquete::where('idpaquetes', $id)->where('estrellas', 5)->get();
+
+        return view('admin.package-edit', compact('id','paquete','precio_paquetes_2', 'precio_paquetes_3','precio_paquetes_4','precio_paquetes_5','paquete_dificultad','paquete_category','paquete_destino','paquete_incluye','paquete_no_incluye'), ['paquete_itinerario'=>$paquete_itinerario, 'itinerario_full' => $itinerario_full, 'level'=>$level, 'category'=>$category, 'destinations'=>$destinations, 'incluye'=>$incluye, 'noincluye'=>$noincluye]);
+    }
+    public function update(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'codigo' => 'required',
+            'codigo_f' => 'required',
+            'titulo' => 'required',
+            'duracion' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect(route('admin_package_create_path'))
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $package = TPaquete::FindOrFail($id);
+        $package->codigo = $request->input('codigo');
+        $package->codigo_f = $request->input('codigo_f');
+        $package->titulo = $request->input('titulo');
+        $package->duracion = $request->input('duracion');
+        $package->descripcion = $request->input('descripcion');
+
+        if ($package->save()){
+            TPrecioPaquete::where('idpaquetes', $id)->delete();
+            for($x=2; $x < 6; $x++){
+                $price = new TPrecioPaquete();
+                $price->estrellas = $x;
+                $price->precio_s = $request->input('txt_'.$x.'_s');
+                $price->precio_d = $request->input('txt_'.$x.'_d');
+                $price->precio_t = $request->input('txt_'.$x.'_t');
+                $price->idpaquetes = $package->id;
+                $price->save();
+            }
+
+            TpaqueteItinerario::where('idpaquetes', $id)->delete();
+            $itinerario_val = explode('-', $request->input('itinerary')[0]);
+            if ($itinerario_val[0] > 0){
+                for ($y=0; $y < count($request->input('itinerary')); $y++) {
+                    $itinerario = explode('-', $request->input('itinerary')[$y]);
+                    $itinerary = new TpaqueteItinerario();
+                    $itinerary->idpaquetes = $package->id;
+                    $itinerary->iditinerario = $itinerario[0];
+                    $itinerary->save();
+                }
+            }
+
+            TPaqueteDificultad::where('idpaquetes', $id)->delete();
+            for($i=0; $i < count($request->input('level')); $i++){
+                TPaqueteDificultad::insert([
+                    'idpaquetes' => $id,
+                    'iddificultad' => $request->input('level')[$i],
+                ]);
+            }
+
+            TPaqueteCategoria::where('idpaquetes', $id)->delete();
+            for($i=0; $i < count($request->input('category')); $i++){
+                TPaqueteCategoria::insert([
+                    'idpaquetes' => $id,
+                    'idcategoria' => $request->input('category')[$i],
+                ]);
+            }
+
+            TPaqueteDestino::where('idpaquetes', $id)->delete();
+            for($i=0; $i < count($request->input('destino')); $i++){
+                TPaqueteDestino::insert([
+                    'idpaquetes' => $id,
+                    'iddestinos' => $request->input('destino')[$i],
+                ]);
+            }
+
+            TPaqueteIncluye::where('idpaquetes', $id)->delete();
+            for($i=0; $i < count($request->input('incluye')); $i++){
+                TPaqueteIncluye::insert([
+                    'idpaquetes' => $id,
+                    'idincluye' => $request->input('incluye')[$i],
+                ]);
+            }
+
+            TPaqueteNoIncluye::where('idpaquetes', $id)->delete();
+            for($i=0; $i < count($request->input('no_incluye')); $i++){
+                TPaqueteNoIncluye::insert([
+                    'idpaquetes' => $id,
+                    'idnoincluye' => $request->input('no_incluye')[$i],
+                ]);
+            }
+
+        }
+        return redirect(route('admin_package_edit_path', $id))->with('status', 'Successfully updated package');
+
+    }
+
+    public function destroy($id)
+    {
+        $packages=TPaquete::find($id);
+        $packages->delete();
+        return redirect('/home')->with('delete', 'Package successfully removed');
     }
 
 }

@@ -104,9 +104,9 @@
                                 <div class="col">
                                     Double
                                 </div>
-                                <div class="col">
-                                    Matrimonial
-                                </div>
+                                {{--<div class="col">--}}
+                                    {{--Matrimonial--}}
+                                {{--</div>--}}
                                 <div class="col">
                                     Triple
                                 </div>
@@ -121,7 +121,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><small>$</small></span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_2_s">
+                                        <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" name="txt_2_s" value="0">
                                         <div class="input-group-append">
                                             <span class="input-group-text"><small>USD</small></span>
                                         </div>
@@ -132,80 +132,29 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><small>$</small></span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_2_d">
+                                        <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" name="txt_2_d" value="0">
                                         <div class="input-group-append">
                                             <span class="input-group-text"><small>USD</small></span>
                                         </div>
                                     </div>
                                 </div>
+                                {{--<div class="col">--}}
+                                    {{--<div class="input-group input-group-sm">--}}
+                                        {{--<div class="input-group-prepend">--}}
+                                            {{--<span class="input-group-text"><small>$</small></span>--}}
+                                        {{--</div>--}}
+                                        {{--<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_2_m">--}}
+                                        {{--<div class="input-group-append">--}}
+                                            {{--<span class="input-group-text"><small>USD</small></span>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="col">
                                     <div class="input-group input-group-sm">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><small>$</small></span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_2_m">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><small>USD</small></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><small>$</small></span>
-                                        </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_2_t">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><small>USD</small></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mb-2">
-                                <div class="col">
-                                    <span data-feather="star"></span>
-                                    <span data-feather="star"></span>
-                                    <span data-feather="star"></span>
-                                </div>
-                                <div class="col">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><small>$</small></span>
-                                        </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_3_s">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><small>USD</small></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><small>$</small></span>
-                                        </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_3_d">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><small>USD</small></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><small>$</small></span>
-                                        </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_3_m">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><small>USD</small></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><small>$</small></span>
-                                        </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_3_t">
+                                        <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" name="txt_2_t" value="0">
                                         <div class="input-group-append">
                                             <span class="input-group-text"><small>USD</small></span>
                                         </div>
@@ -217,14 +166,13 @@
                                     <span data-feather="star"></span>
                                     <span data-feather="star"></span>
                                     <span data-feather="star"></span>
-                                    <span data-feather="star"></span>
                                 </div>
                                 <div class="col">
                                     <div class="input-group input-group-sm">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><small>$</small></span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_4_s">
+                                        <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" name="txt_3_s" value="0">
                                         <div class="input-group-append">
                                             <span class="input-group-text"><small>USD</small></span>
                                         </div>
@@ -235,29 +183,29 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><small>$</small></span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_4_d">
+                                        <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" name="txt_3_d" value="0">
                                         <div class="input-group-append">
                                             <span class="input-group-text"><small>USD</small></span>
                                         </div>
                                     </div>
                                 </div>
+                                {{--<div class="col">--}}
+                                    {{--<div class="input-group input-group-sm">--}}
+                                        {{--<div class="input-group-prepend">--}}
+                                            {{--<span class="input-group-text"><small>$</small></span>--}}
+                                        {{--</div>--}}
+                                        {{--<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_3_m">--}}
+                                        {{--<div class="input-group-append">--}}
+                                            {{--<span class="input-group-text"><small>USD</small></span>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="col">
                                     <div class="input-group input-group-sm">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><small>$</small></span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_4_m">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><small>USD</small></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><small>$</small></span>
-                                        </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_4_t">
+                                        <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" name="txt_3_t" value="0">
                                         <div class="input-group-append">
                                             <span class="input-group-text"><small>USD</small></span>
                                         </div>
@@ -270,6 +218,58 @@
                                     <span data-feather="star"></span>
                                     <span data-feather="star"></span>
                                     <span data-feather="star"></span>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><small>$</small></span>
+                                        </div>
+                                        <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" name="txt_4_s" value="0">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><small>USD</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><small>$</small></span>
+                                        </div>
+                                        <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" name="txt_4_d" value="0">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><small>USD</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{--<div class="col">--}}
+                                    {{--<div class="input-group input-group-sm">--}}
+                                        {{--<div class="input-group-prepend">--}}
+                                            {{--<span class="input-group-text"><small>$</small></span>--}}
+                                        {{--</div>--}}
+                                        {{--<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_4_m">--}}
+                                        {{--<div class="input-group-append">--}}
+                                            {{--<span class="input-group-text"><small>USD</small></span>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                <div class="col">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><small>$</small></span>
+                                        </div>
+                                        <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" name="txt_4_t" value="0">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><small>USD</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <span data-feather="star"></span>
+                                    <span data-feather="star"></span>
+                                    <span data-feather="star"></span>
+                                    <span data-feather="star"></span>
                                     <span data-feather="star"></span>
                                 </div>
                                 <div class="col">
@@ -277,7 +277,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><small>$</small></span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_5_s">
+                                        <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" name="txt_5_s" value="0">
                                         <div class="input-group-append">
                                             <span class="input-group-text"><small>USD</small></span>
                                         </div>
@@ -288,29 +288,29 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><small>$</small></span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_5_d">
+                                        <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" name="txt_5_d" value="0">
                                         <div class="input-group-append">
                                             <span class="input-group-text"><small>USD</small></span>
                                         </div>
                                     </div>
                                 </div>
+                                {{--<div class="col">--}}
+                                    {{--<div class="input-group input-group-sm">--}}
+                                        {{--<div class="input-group-prepend">--}}
+                                            {{--<span class="input-group-text"><small>$</small></span>--}}
+                                        {{--</div>--}}
+                                        {{--<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_5_m">--}}
+                                        {{--<div class="input-group-append">--}}
+                                            {{--<span class="input-group-text"><small>USD</small></span>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="col">
                                     <div class="input-group input-group-sm">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><small>$</small></span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_5_m">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><small>USD</small></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><small>$</small></span>
-                                        </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="txt_5_t">
+                                        <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" name="txt_5_t" value="0">
                                         <div class="input-group-append">
                                             <span class="input-group-text"><small>USD</small></span>
                                         </div>

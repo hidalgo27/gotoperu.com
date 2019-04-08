@@ -25,7 +25,7 @@
         </div>
         <div id="overlay" class="position-relative">
             <video class="hero-vid-home" id="hero-vid" poster="{{asset('images/slider/package-1.webp')}}" autoplay loop muted>
-                <source src="{{asset('media/gotoperu2.mp4')}}" />
+                <source src="{{asset('media/final.mp4')}}" />
                 <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
                 <source src="{{asset('media/video6.webm')}}" type="video/webm" />
                 <source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />
@@ -368,9 +368,9 @@
                         <div class="col-12">
                             <div class="nav-category-goto-yellow nav nav-pills flex-column flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                 <a class="flex-sm-fill text-sm-center rounded-0 nav-link active" id="recommended-tab" data-toggle="pill" href="#recommended" role="tab" aria-controls="recommended" aria-selected="true">Recommended</a>
-                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="all-tab" data-toggle="pill" href="#all" role="tab" aria-controls="all" aria-selected="false">All Included</a>
-                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="families-tab" data-toggle="pill" href="#families" role="tab" aria-controls="families" aria-selected="false">For Families</a>
-                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="romantic-tab" data-toggle="pill" href="#romantic" role="tab" aria-controls="romantic" aria-selected="false">Settings</a>
+                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="active-trek-tab" data-toggle="pill" href="#active-trek" role="tab" aria-controls="active-trek" aria-selected="false">Active / Trek</a>
+                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="luxury-tab" data-toggle="pill" href="#luxury" role="tab" aria-controls="luxury" aria-selected="false">Luxury</a>
+                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="cruise-tab" data-toggle="pill" href="#cruise" role="tab" aria-controls="cruise" aria-selected="false">Cruise Extension</a>
                             </div>
                         </div>
                         <div class="col-12">
@@ -386,63 +386,187 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row slider-category mt-4">
-                                        <div class="col">
-                                            <div class="bg-light shadow-sm rounded">
-                                                <div class="row align-items-center no-gutters">
-                                                    <div class="col-7">
-                                                        <img src="{{asset('images/mapas/gtp100.jpg')}}" alt="" class="w-100 rounded-left">
-                                                    </div>
-                                                    <div class="col text-center">
-                                                        <div class="px-3">
-                                                            <div class="h5">6 days</div>
-                                                            <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
-                                                            <a href="" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                            <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                    {{--<div class="row slider-recommended mt-4">--}}
+                                        {{--@foreach($cateoria_recommended as $cateorias_recommended)--}}
+                                            {{--@if (isset($cateorias_recommended->categoria))--}}
+                                                {{--<div class="col text-decoration-none">--}}
+                                                    {{--<div class="bg-light shadow-sm rounded">--}}
+                                                        {{--<div class="row align-items-center no-gutters">--}}
+                                                            {{--<div class="col-7">--}}
+                                                                {{--<div class="position-relative">--}}
+                                                                    {{--<img src="{{asset('images/mapas/'.$cateorias_recommended->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
+                                                                    {{--<div class="position-absolute-bottom p-2 text-center">--}}
+                                                                        {{--<span class="small font-weight-bold badge badge-g-yellow shadow">{{$cateorias_recommended->categoria->nombre}}</span>--}}
+                                                                    {{--</div>--}}
+                                                                {{--</div>--}}
+                                                            {{--</div>--}}
+                                                            {{--<div class="col text-center">--}}
+                                                                {{--<div class="px-3">--}}
+                                                                    {{--<div class="h5">{{$cateorias_recommended->paquete->duracion}} days</div>--}}
+                                                                    {{--<div class="display-4 font-weight-bold"><sup>$</sup>899</div>--}}
+                                                                    {{--<a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($cateorias_recommended->paquete->titulo)), $cateorias_recommended->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>--}}
+                                                                    {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}
+                                                                {{--</div>--}}
+                                                            {{--</div>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                            {{--@endif--}}
+                                        {{--@endforeach--}}
+                                    {{--</div>--}}
+
+                                    <div class="row mt-4">
+                                        @foreach($cateoria_recommended as $cateorias_recommended)
+                                            <div class="col-6">
+                                                <div class="bg-light shadow-sm rounded">
+                                                    <div class="row align-items-center no-gutters">
+                                                        <div class="col-7">
+                                                            <div class="position-relative">
+                                                                <img src="{{asset('images/mapas/'.$cateorias_recommended->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                                <div class="position-absolute-bottom p-2 text-center">
+                                                                    <span class="small font-weight-bold badge badge-g-yellow shadow">{{$cateorias_recommended->categoria->nombre}}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col text-center">
+                                                            <div class="px-3">
+                                                                <h2 class="h6 font-weight-bold">{{$cateorias_recommended->paquete->titulo}}</h2>
+                                                                <small class="text-muted font-weight-bold">{{$cateorias_recommended->paquete->duracion}} days</small>
+                                                                <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
+                                                                <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($cateorias_recommended->paquete->titulo)), $cateorias_recommended->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                                <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        @endforeach
+                                    </div>
+
+
+                                </div>
+                                <div class="tab-pane fade" id="active-trek" role="tabpanel" aria-labelledby="active-trek-tab">
+                                    <div class="row">
                                         <div class="col">
-                                            <div class="bg-light shadow-sm rounded">
-                                                <div class="row align-items-center no-gutters">
-                                                    <div class="col-7">
-                                                        <img src="{{asset('images/mapas/gtp100.jpg')}}" alt="" class="w-100 rounded-left">
-                                                    </div>
-                                                    <div class="col text-center">
-                                                        <div class="px-3">
-                                                            <div class="h5">6 days</div>
-                                                            <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
-                                                            <a href="" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                            <a href="" class="btn btn-g-green btn-block">Book Now</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="bg-light shadow-sm rounded">
-                                                <div class="row align-items-center no-gutters">
-                                                    <div class="col-7">
-                                                        <img src="{{asset('images/mapas/gtp100.jpg')}}" alt="" class="w-100 rounded-left">
-                                                    </div>
-                                                    <div class="col text-center">
-                                                        <div class="px-3">
-                                                            <div class="h5">6 days</div>
-                                                            <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
-                                                            <a href="" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                            <a href="" class="btn btn-g-green btn-block">Book Now</a>
-                                                        </div>
-                                                    </div>
+                                            <div class="position-relative">
+                                                <img src="{{asset('images/banners/cusco.jpg')}}" alt="" class="w-100">
+                                                <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
+                                                    <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="row mt-4">
+                                        @foreach($categorias_active as $categorias_active)
+                                            @if (isset($categorias_active->categoria))
+                                                <div class="col-6">
+                                                    <div class="bg-light shadow-sm rounded">
+                                                        <div class="row align-items-center no-gutters">
+                                                            <div class="col-7">
+                                                                <div class="position-relative">
+                                                                    <img src="{{asset('images/mapas/'.$categorias_active->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                                    <div class="position-absolute-bottom p-2 text-center">
+                                                                        <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categorias_active->categoria->nombre}}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col text-center">
+                                                                <div class="px-3">
+                                                                    <h2 class="h6 font-weight-bold">{{$categorias_active->paquete->titulo}}</h2>
+                                                                    <small class="text-muted font-weight-bold">{{$categorias_active->paquete->duracion}} days</small>
+                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_active->paquete->titulo)), $categorias_active->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                                    <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">...</div>
-                                <div class="tab-pane fade" id="families" role="tabpanel" aria-labelledby="families-tab">...</div>
-                                <div class="tab-pane fade" id="romantic" role="tabpanel" aria-labelledby="romantic-tab">...</div>
+                                <div class="tab-pane fade" id="luxury" role="tabpanel" aria-labelledby="luxury-tab">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="position-relative">
+                                                <img src="{{asset('images/banners/cusco.jpg')}}" alt="" class="w-100">
+                                                <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
+                                                    <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row slider-category-3 mt-4">
+                                        @foreach($categorias_luxury as $categorias_luxury)
+                                                <div class="col text-decoration-none">
+                                                    <div class="bg-light shadow-sm rounded">
+                                                        <div class="row align-items-center no-gutters">
+                                                            <div class="col-7">
+                                                                <div class="position-relative">
+                                                                    <img src="{{asset('images/mapas/'.$categorias_luxury->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                                    <div class="position-absolute-bottom p-2 text-center">
+                                                                        <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categorias_luxury->categoria->nombre}}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col text-center">
+                                                                <div class="px-3">
+                                                                    <h2 class="h6 font-weight-bold">{{$categorias_luxury->paquete->titulo}}</h2>
+                                                                    <small class="text-muted font-weight-bold">{{$categorias_luxury->paquete->duracion}} days</small>
+                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_luxury->paquete->titulo)), $categorias_luxury->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                                    <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="cruise" role="tabpanel" aria-labelledby="cruise-tab">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="position-relative">
+                                                <img src="{{asset('images/banners/cusco.jpg')}}" alt="" class="w-100">
+                                                <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
+                                                    <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row slider-category-4 mt-4">
+                                        @foreach($categorias_cruise as $categoria_cruise)
+                                            <div class="col-6 text-decoration-none">
+                                                <div class="bg-light shadow-sm rounded">
+                                                    <div class="row align-items-center no-gutters">
+                                                        <div class="col-7">
+                                                            <div class="position-relative">
+                                                                <img src="{{asset('images/mapas/'.$categoria_cruise->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                                <div class="position-absolute-bottom p-2 text-center">
+                                                                    <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categoria_cruise->categoria->nombre}}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col text-center">
+                                                            <div class="px-3">
+                                                                <h2 class="h6 font-weight-bold">{{$categoria_cruise->paquete->titulo}}</h2>
+                                                                <small class="text-muted font-weight-bold">{{$categoria_cruise->paquete->duracion}} days</small>
+                                                                <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
+                                                                <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cruise->paquete->titulo)), $categoria_cruise->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                                <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -457,14 +581,15 @@
                         <div class="col-12">
                             <div class="nav-category-goto-green nav nav-pills flex-column flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                 <a class="flex-sm-fill text-sm-center rounded-0 nav-link active" id="short-tab" data-toggle="pill" href="#short" role="tab" aria-controls="short" aria-selected="true">Short Programs</a>
-                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="active-trek-tab" data-toggle="pill" href="#all" role="tab" aria-controls="active-trek" aria-selected="false">Active / Treks</a>
-                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="luxury-tab" data-toggle="pill" href="#luxury" role="tab" aria-controls="luxury" aria-selected="false">Luxury</a>
-                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="cruise-tab" data-toggle="pill" href="#cruise" role="tab" aria-controls="cruise" aria-selected="false">Cruise Extension</a>
+                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="all-tab" data-toggle="pill" href="#all" role="tab" aria-controls="all" aria-selected="false">All Included</a>
+                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="family-tab" data-toggle="pill" href="#family" role="tab" aria-controls="family" aria-selected="false">Family</a>
+                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="honeymoon-tab" data-toggle="pill" href="#honeymoon" role="tab" aria-controls="honeymoon" aria-selected="false">Honeymoon</a>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="tab-content" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="short" role="tabpanel" aria-labelledby="short-tab">
+
                                     <div class="row">
                                         <div class="col">
                                             <div class="position-relative">
@@ -475,63 +600,157 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row slider-category mt-4">
-                                        <div class="col">
-                                            <div class="bg-light shadow-sm rounded">
-                                                <div class="row align-items-center no-gutters">
-                                                    <div class="col-7">
-                                                        <img src="{{asset('images/mapas/gtp100.jpg')}}" alt="" class="w-100 rounded-left">
-                                                    </div>
-                                                    <div class="col text-center">
-                                                        <div class="px-3">
-                                                            <div class="h5">6 days</div>
-                                                            <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
-                                                            <a href="" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                            <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                    <div class="row slider-short mt-4">
+                                        @foreach($categorias_short as $categoria_short)
+
+                                                <div class="col text-decoration-none">
+                                                    <div class="bg-light shadow-sm rounded">
+                                                        <div class="row align-items-center no-gutters">
+                                                            <div class="col-7">
+                                                                <div class="position-relative">
+                                                                    <img src="{{asset('images/mapas/'.$categoria_short->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                                    <div class="position-absolute-bottom p-2 text-center">
+                                                                        <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categoria_short->categoria->nombre}}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col text-center">
+                                                                <div class="px-3">
+                                                                    <h2 class="h6 font-weight-bold">{{$categoria_short->paquete->titulo}}</h2>
+                                                                    <small class="text-muted font-weight-bold">{{$categoria_short->paquete->duracion}} days</small>
+                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_short->paquete->titulo)), $categoria_short->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                                    <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
+
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
+                                    <div class="row">
                                         <div class="col">
-                                            <div class="bg-light shadow-sm rounded">
-                                                <div class="row align-items-center no-gutters">
-                                                    <div class="col-7">
-                                                        <img src="{{asset('images/mapas/gtp100.jpg')}}" alt="" class="w-100 rounded-left">
-                                                    </div>
-                                                    <div class="col text-center">
-                                                        <div class="px-3">
-                                                            <div class="h5">6 days</div>
-                                                            <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
-                                                            <a href="" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                            <a href="" class="btn btn-g-green btn-block">Book Now</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="bg-light shadow-sm rounded">
-                                                <div class="row align-items-center no-gutters">
-                                                    <div class="col-7">
-                                                        <img src="{{asset('images/mapas/gtp100.jpg')}}" alt="" class="w-100 rounded-left">
-                                                    </div>
-                                                    <div class="col text-center">
-                                                        <div class="px-3">
-                                                            <div class="h5">6 days</div>
-                                                            <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
-                                                            <a href="" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                            <a href="" class="btn btn-g-green btn-block">Book Now</a>
-                                                        </div>
-                                                    </div>
+                                            <div class="position-relative">
+                                                <img src="{{asset('images/banners/cusco.jpg')}}" alt="" class="w-100">
+                                                <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
+                                                    <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row slider-all mt-4">
+                                        @foreach($categorias_all as $categoria_all)
+
+                                                <div class="col text-decoration-none">
+                                                    <div class="bg-light shadow-sm rounded">
+                                                        <div class="row align-items-center no-gutters">
+                                                            <div class="col-7">
+                                                                <div class="position-relative">
+                                                                    <img src="{{asset('images/mapas/'.$categoria_all->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                                    <div class="position-absolute-bottom p-2 text-center">
+                                                                        <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categoria_all->categoria->nombre}}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col text-center">
+                                                                <div class="px-3">
+                                                                    <h2 class="h6 font-weight-bold">{{$categoria_all->paquete->titulo}}</h2>
+                                                                    <small class="text-muted font-weight-bold">{{$categoria_all->paquete->duracion}} days</small>
+                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_all->paquete->titulo)), $categoria_all->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                                    <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                        @endforeach
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade" id="active-trek" role="tabpanel" aria-labelledby="active-trek-tab">...</div>
-                                <div class="tab-pane fade" id="luxury" role="tabpanel" aria-labelledby="luxury-tab">...</div>
-                                <div class="tab-pane fade" id="cruise" role="tabpanel" aria-labelledby="cruise-tab">...</div>
+                                <div class="tab-pane fade" id="family" role="tabpanel" aria-labelledby="family-tab">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="position-relative">
+                                                <img src="{{asset('images/banners/cusco.jpg')}}" alt="" class="w-100">
+                                                <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
+                                                    <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row slider-all mt-4">
+                                        @foreach($categorias_family as $categoria_family)
+                                            @if (isset($categoria_family->categoria))
+                                                <div class="col text-decoration-none">
+                                                    <div class="bg-light shadow-sm rounded">
+                                                        <div class="row align-items-center no-gutters">
+                                                            <div class="col-7">
+                                                                <div class="position-relative">
+                                                                    <img src="{{asset('images/mapas/'.$categoria_family->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                                    <div class="position-absolute-bottom p-2 text-center">
+                                                                        <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categoria_family->categoria->nombre}}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col text-center">
+                                                                <div class="px-3">
+                                                                    <h2 class="h6 font-weight-bold">{{$categoria_family->paquete->titulo}}</h2>
+                                                                    <small class="text-muted font-weight-bold">{{$categoria_family->paquete->duracion}} days</small>
+                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_family->paquete->titulo)), $categoria_family->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                                    <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="honeymoon" role="tabpanel" aria-labelledby="honeymoon-tab">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="position-relative">
+                                                <img src="{{asset('images/banners/cusco.jpg')}}" alt="" class="w-100">
+                                                <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
+                                                    <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row slider-all mt-4">
+                                        @foreach($categorias_honeymoon as $categoria_honeymoon)
+                                            <div class="col-6 text-decoration-none">
+                                                <div class="bg-light shadow-sm rounded">
+                                                    <div class="row align-items-center no-gutters">
+                                                        <div class="col-7">
+                                                            <div class="position-relative">
+                                                                <img src="{{asset('images/mapas/'.$categoria_honeymoon->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                                <div class="position-absolute-bottom p-2 text-center">
+                                                                    <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categoria_honeymoon->categoria->nombre}}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col text-center">
+                                                            <div class="px-3">
+                                                                <h2 class="h6 font-weight-bold">{{$categoria_honeymoon->paquete->titulo}}</h2>
+                                                                <small class="text-muted font-weight-bold">{{$categoria_honeymoon->paquete->duracion}} days</small>
+                                                                <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
+                                                                <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_honeymoon->paquete->titulo)), $categoria_honeymoon->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                                <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -546,9 +765,9 @@
                         <div class="col-12">
                             <div class="nav-category-goto-grey nav nav-pills flex-column flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                 <a class="flex-sm-fill text-sm-center rounded-0 nav-link active" id="cultural-tab" data-toggle="pill" href="#cultural" role="tab" aria-controls="cultural" aria-selected="true">Cultural</a>
-                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="single-traveler-tab" data-toggle="pill" href="#all" role="tab" aria-controls="single-traveler" aria-selected="false">Single Traveler</a>
+                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="single-traveler-tab" data-toggle="pill" href="#single-traveler" role="tab" aria-controls="single-traveler" aria-selected="false">Single Traveler</a>
                                 <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="long-duration-tab" data-toggle="pill" href="#long-duration" role="tab" aria-controls="long-duration" aria-selected="false">Long Duration</a>
-                                <a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="amazon-tab" data-toggle="pill" href="#amazon" role="tab" aria-controls="amazon" aria-selected="false">With Amazon</a>
+                                {{--<a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="amazon-tab" data-toggle="pill" href="#amazon" role="tab" aria-controls="amazon" aria-selected="false">With Amazon</a>--}}
                             </div>
                         </div>
                         <div class="col-12">
@@ -564,63 +783,118 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row slider-category mt-4">
-                                        <div class="col">
-                                            <div class="bg-light shadow-sm rounded">
-                                                <div class="row align-items-center no-gutters">
-                                                    <div class="col-7">
-                                                        <img src="{{asset('images/mapas/gtp100.jpg')}}" alt="" class="w-100 rounded-left">
-                                                    </div>
-                                                    <div class="col text-center">
-                                                        <div class="px-3">
-                                                            <div class="h5">6 days</div>
-                                                            <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
-                                                            <a href="" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                            <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                    <div class="row slider-all mt-4">
+                                        @foreach($categorias_cultural as $categoria_cultural)
+
+                                                <div class="col text-decoration-none">
+                                                    <div class="bg-light shadow-sm rounded">
+                                                        <div class="row align-items-center no-gutters">
+                                                            <div class="col-7">
+                                                                <div class="position-relative">
+                                                                    <img src="{{asset('images/mapas/'.$categoria_cultural->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                                    <div class="position-absolute-bottom p-2 text-center">
+                                                                        <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categoria_cultural->categoria->nombre}}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col text-center">
+                                                                <div class="px-3">
+                                                                    <h2 class="h6 font-weight-bold">{{$categoria_cultural->paquete->titulo}}</h2>
+                                                                    <small class="text-muted font-weight-bold">{{$categoria_cultural->paquete->duracion}} days</small>
+                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                                    <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
+
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="single-traveler" role="tabpanel" aria-labelledby="single-traveler-tab">
+                                    <div class="row">
                                         <div class="col">
-                                            <div class="bg-light shadow-sm rounded">
-                                                <div class="row align-items-center no-gutters">
-                                                    <div class="col-7">
-                                                        <img src="{{asset('images/mapas/gtp100.jpg')}}" alt="" class="w-100 rounded-left">
-                                                    </div>
-                                                    <div class="col text-center">
-                                                        <div class="px-3">
-                                                            <div class="h5">6 days</div>
-                                                            <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
-                                                            <a href="" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                            <a href="" class="btn btn-g-green btn-block">Book Now</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="bg-light shadow-sm rounded">
-                                                <div class="row align-items-center no-gutters">
-                                                    <div class="col-7">
-                                                        <img src="{{asset('images/mapas/gtp100.jpg')}}" alt="" class="w-100 rounded-left">
-                                                    </div>
-                                                    <div class="col text-center">
-                                                        <div class="px-3">
-                                                            <div class="h5">6 days</div>
-                                                            <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
-                                                            <a href="" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                            <a href="" class="btn btn-g-green btn-block">Book Now</a>
-                                                        </div>
-                                                    </div>
+                                            <div class="position-relative">
+                                                <img src="{{asset('images/banners/cusco.jpg')}}" alt="" class="w-100">
+                                                <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
+                                                    <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row slider-all mt-4">
+                                        @foreach($categorias_single as $categoria_single)
+
+                                                <div class="col text-decoration-none">
+                                                    <div class="bg-light shadow-sm rounded">
+                                                        <div class="row align-items-center no-gutters">
+                                                            <div class="col-7">
+                                                                <div class="position-relative">
+                                                                    <img src="{{asset('images/mapas/'.$categoria_single->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                                    <div class="position-absolute-bottom p-2 text-center">
+                                                                        <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categoria_single->categoria->nombre}}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col text-center">
+                                                                <div class="px-3">
+                                                                    <h2 class="h6 font-weight-bold">{{$categoria_single->paquete->titulo}}</h2>
+                                                                    <small class="text-muted font-weight-bold">{{$categoria_single->paquete->duracion}} days</small>
+                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_single->paquete->titulo)), $categoria_single->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                                    <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                        @endforeach
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade" id="single-traveler" role="tabpanel" aria-labelledby="single-traveler-tab">...</div>
-                                <div class="tab-pane fade" id="long-duration" role="tabpanel" aria-labelledby="long-duration-tab">...</div>
-                                <div class="tab-pane fade" id="amazon" role="tabpanel" aria-labelledby="amazon-tab">...</div>
+                                <div class="tab-pane fade" id="long-duration" role="tabpanel" aria-labelledby="long-duration-tab">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="position-relative">
+                                                <img src="{{asset('images/banners/cusco.jpg')}}" alt="" class="w-100">
+                                                <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
+                                                    <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row slider-all mt-4">
+                                        @foreach($categorias_long as $categoria_long)
+                                                <div class="col-6 text-decoration-none">
+                                                    <div class="bg-light shadow-sm rounded">
+                                                        <div class="row align-items-center no-gutters">
+                                                            <div class="col-7">
+                                                                <div class="position-relative">
+                                                                    <img src="{{asset('images/mapas/'.$categoria_long->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                                    <div class="position-absolute-bottom p-2 text-center">
+                                                                        <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categoria_long->categoria->nombre}}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col text-center">
+                                                                <div class="px-3">
+                                                                    <h2 class="h6 font-weight-bold">{{$categoria_long->paquete->titulo}}</h2>
+                                                                    <small class="text-muted font-weight-bold">{{$categoria_long->paquete->duracion}} days</small>
+                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>899</div>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_long->paquete->titulo)), $categoria_long->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                                    <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                        @endforeach
+                                    </div>
+                                </div>
+                                {{--<div class="tab-pane fade" id="amazon" role="tabpanel" aria-labelledby="amazon-tab">...</div>--}}
                             </div>
                         </div>
                     </div>
@@ -786,7 +1060,6 @@
             </div>
         </div>
     </section>
-
     <section class="bg-white py-5">
         <div class="container">
             <div class="row align-items-center no-gutters">
@@ -939,8 +1212,6 @@
             </div>
         </div>
     </section>
-
-
 
     <section class="bg-white">
         <div class="container">
@@ -1361,6 +1632,62 @@
                 mousewheel: true,
             });
 
+            var swiper = new Swiper('.swiper-container-category', {
+                slidesPerView: 2,
+                spaceBetween: 30,
+                freeMode: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    }
+                }
+            });
+
+            var swiper = new Swiper('.swiper-container-category2', {
+                slidesPerView: 2,
+                spaceBetween: 30,
+                freeMode: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    }
+                }
+            });
+
             // var myLazyLoad = new LazyLoad({
             //     elements_selector: ".lazy"
             // });
@@ -1475,6 +1802,9 @@
                     // instead of a settings object
                 ]
             });
+
+
+
             $('.slider-top-home2').slick({
                 // dots: true,
                 infinite: true,
@@ -1512,6 +1842,7 @@
                     // instead of a settings object
                 ]
             });
+
 
 
         </script>

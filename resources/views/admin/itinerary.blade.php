@@ -44,7 +44,7 @@
         {{--</div>--}}
     {{--</div>--}}
     @if (session('status'))
-        <div class="toast bg-primary fixed-top" role="alert" aria-live="polite" aria-atomic="true" data-delay="10000" style="left: auto; top: 55px; right: 10px;">
+        <div class="toast bg-primary fixed-top" role="alert" aria-live="polite" aria-atomic="true" data-delay="3000" style="left: auto; top: 55px; right: 10px;">
             <div class="toast-header">
                 <span data-feather="alert-circle" class="text-success mr-2"></span>
                 <strong class="mr-auto">Itinerary</strong>
@@ -115,8 +115,8 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($itinerary->groupBy('titulo') as $itinerario1)
-                    @foreach($itinerario1 as $itinerario)
+                @foreach($itinerary as $itinerario)
+
                     <tr>
                         <td>
                             <span class="custom-checkbox">
@@ -155,7 +155,7 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
+
                 @endforeach
                 </tbody>
             </table>

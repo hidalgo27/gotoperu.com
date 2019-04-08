@@ -15,7 +15,7 @@ class ItineraryController extends Controller
      */
     public function index()
     {
-        $itinerary = TItinerario::all()->sortBy('dia');
+        $itinerary = TItinerario::all()->sortBy('id');
         return view('admin.itinerary', compact('itinerary'));
     }
 
@@ -42,7 +42,7 @@ class ItineraryController extends Controller
         $short = $_POST["txta_short"];
         $extended = $_POST["txta_extended"];
 
-        if ($request->filled(['txt_codigo', 'txt_title', 'txta_short', 'txta_extended'])){
+        if ($request->filled(['txt_codigo', 'txt_title'])){
 
             $itinerary = new TItinerario();
             $itinerary->codigo = $codigo;
@@ -95,7 +95,7 @@ class ItineraryController extends Controller
         $short = $_POST["txta_short"];
         $extended = $_POST["txta_extended"];
 
-        if ($request->filled(['txt_codigo', 'txt_title', 'txta_short', 'txta_extended'])){
+        if ($request->filled(['txt_codigo', 'txt_title'])){
 
             $itinerary = TItinerario::FindOrFail($id);
             $itinerary->codigo = $codigo;

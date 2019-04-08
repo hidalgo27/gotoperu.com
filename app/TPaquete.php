@@ -8,9 +8,9 @@ class TPaquete extends Model
 {
     protected $table = "tpaquetes";
 
-    public function itinerario()
+    public function paquete_itinerario()
     {
-        return $this->hasMany(TItinerario::class, 'idpaquetes');
+        return $this->hasMany(TpaqueteItinerario::class, 'idpaquetes');
     }
 
     public function precio_paquetes()

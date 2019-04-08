@@ -123,14 +123,36 @@
                             </span>
                         </td>
                         <td>{{$paquetes->codigo}} </td>
-                        <td><a href="{{route('admin_package_show_path', $paquetes->id)}}">{{$paquetes->titulo}}</a></td>
+                        <td><a href="{{route('admin_package_edit_path', $paquetes->id)}}">{{$paquetes->titulo}}</a></td>
                         <td><input type="checkbox" {{$estado_paquete}} data-toggle="toggle" data-size="xs"></td>
                         {{--<td>(171) 555-2222</td>--}}
                         <td class="text-center">
-                            <a href="{{route('admin_package_show_path', $paquetes->id)}}" class="edit"><span data-feather="edit-3"></span></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><span data-feather="trash"></span></a>
+                            <a href="{{route('admin_package_edit_path', $paquetes->id)}}" class="edit"><span data-feather="edit-3"></span></a>
+                            <a href="#delete_package_{{$paquetes->id}}" class="delete" data-toggle="modal"><span data-feather="trash"></span></a>
                         </td>
                     </tr>
+                    <div id="delete_package_{{$paquetes->id}}" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form action="{{route('admin_package_delete_path', $paquetes->id)}}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Delete Itinerary</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure you want to delete these Records?</p>
+                                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                        <input type="submit" class="btn btn-danger" value="Delete">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 @endforeach
                 </tbody>
             </table>

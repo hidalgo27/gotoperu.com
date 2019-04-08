@@ -9,7 +9,7 @@
                 <h6 class="font-weight-bold">Day {{$i}} <span data-feather="corner-down-right" class="d-block"></span></h6>
             </div>
             <div class="col">
-                <select class="selectpicker" data-live-search="true" title="choose itinerary of day {{$i}}" data-width="100%" name="itinerary_{{$i}}">
+                <select class="selectpicker" data-live-search="true" title="choose itinerary of day {{$i}}" data-width="100%" name="itinerary[]">
                     @foreach($itinerario_full as $itinerary_full)
                             <option value="{{$itinerary_full->id}}-{{$itinerary->id}}"><span class="font-weight-bold">{{$itinerary_full->codigo}}:</span> {{ucwords(strtolower($itinerary_full->titulo))}}
                     @endforeach
