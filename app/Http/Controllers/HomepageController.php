@@ -910,7 +910,7 @@ class HomepageController extends Controller
     public function inquire()
     {
         $from = 'info@gotoperu.com';
-        $from2 = 'paul@gotoperu.com';
+        $from2 = 'doriam@gotoperu.com';
 
         $accommodation = $_POST['txt_accommodation'];
         $number = $_POST['txt_number'];
@@ -943,9 +943,10 @@ class HomepageController extends Controller
                 'email' => $email,
                 'package' => $package,
                 'comment' => $comment
-            ], function ($messaje) use ($from) {
+            ], function ($messaje) use ($from, $from2) {
                 $messaje->to($from, 'GotoPeru')
                     ->subject('GOTOPERU')
+                    ->cc($from2, 'GotoPeru')
                     /*->attach('ruta')*/
                     ->from('info@gotoperu.com', 'GotoPeru');
             });
@@ -982,7 +983,7 @@ class HomepageController extends Controller
     public function contact()
     {
         $from = 'info@gotoperu.com';
-        $from2 = 'catanopaul@gmail.com';
+        $from2 = 'doriam@gotoperu.com';
 
         $name = $_POST['txt_name'];
         $email = $_POST['txt_email'];
@@ -1004,9 +1005,10 @@ class HomepageController extends Controller
                 'email' => $email,
                 'phone' => $phone,
                 'comment' => $comment
-            ], function ($messaje) use ($from) {
+            ], function ($messaje) use ($from, $from2) {
                 $messaje->to($from, 'GotoPeru ES')
                     ->subject('GotoPeru')
+                    ->cc($from2, 'GotoPeru')
                     /*->attach('ruta')*/
                     ->from('info@gotoperu.com', 'GotoPeru');
             });
@@ -1038,7 +1040,7 @@ class HomepageController extends Controller
     public function design()
     {
         $from = 'info@gotoperu.com';
-        $from2 = 'paul@gotoperu.com';
+        $from2 = 'doriam@gotoperu.com';
 
         $accommodation = $_POST['txt_accommodation'];
         $destinations = $_POST['txt_destinations'];
@@ -1077,9 +1079,10 @@ class HomepageController extends Controller
                 'comment' => $comment,
                 'countryData' => $countryData,
                 'codeData' => $codeData
-            ], function ($messaje) use ($from) {
+            ], function ($messaje) use ($from, $from2) {
                 $messaje->to($from, 'GotoPeru')
                     ->subject('GotoPeru')
+                    ->cc($from2, 'GotoPeru')
                     /*->attach('ruta')*/
                     ->from('info@gotoperu.com', 'GotoPeru');
             });
@@ -1117,7 +1120,7 @@ class HomepageController extends Controller
     public function contact_s()
     {
         $from = 'info@gotoperu.com';
-        $from2 = 'paul@gotoperu.com';
+        $from2 = 'doriam@gotoperu.com';
 
         $name = $_POST['txt_name'];
         $email = $_POST['txt_email'];
@@ -1143,9 +1146,10 @@ class HomepageController extends Controller
                 'city' => $city,
                 'about' => $about,
                 'comment' => $comment
-            ], function ($messaje) use ($from) {
+            ], function ($messaje) use ($from, $from2) {
                 $messaje->to($from, 'GotoPeru')
                     ->subject('GotoPeru')
+                    ->cc($from2, 'GotoPeru')
                     /*->attach('ruta')*/
                     ->from('info@gotoperu.com', 'GotoPeru');
             });

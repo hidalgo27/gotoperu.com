@@ -16,7 +16,7 @@
 //});
 
 Route::get('/', [
-    'uses' => 'HomepageController@index2',
+    'uses' => 'HomepageController@index',
     'as' => 'home_path',
 ]);
 
@@ -258,6 +258,11 @@ Route::delete('admin/itinerary/edit/{id}', [
     'uses' => 'admin\ItineraryController@destroy',
     'as' => 'admin_itinerary_delete_path',
 ]);
+
+
+
+
+
 //destinations
 Route::get('admin/destinations', [
     'uses' => 'admin\DestinationsController@index',
