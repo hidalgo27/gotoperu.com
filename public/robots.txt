@@ -1,0 +1,3 @@
+Sitemap: https://gotoperu.com/sitemap.xml
+User-agent: *
+Disallow:

@@ -1,0 +1,54 @@
+//
+// Body
+$font-family-sans-serif: "Quicksand", sans-serif;
+//$body-color: #263238;
+//$font-weight-base: 300;
+//// Borders
+//$laravel-border-color: darken($body-bg, 10%);
+//$list-group-border: $laravel-border-color;
+//$navbar-default-border: $laravel-border-color;
+//$panel-default-border: $laravel-border-color;
+//$panel-inner-border: $laravel-border-color;
+//
+//// Brands
+//$brand-primary: #3097D1;
+//$brand-info: #8eb4cb;
+//$brand-success: #2ab27b;
+//$brand-warning: #cbb956;
+//$brand-danger: #bf5329;
+//
+//// Typography
+//$icon-font-path: "~bootstrap-sass/assets/fonts2/bootstrap/";
+//$font-family-sans-serif: "Raleway", sans-serif;
+//$font-size-base: 1rem;
+//$line-height-base: 1.6;
+//$text-color: #263238;
+//
+//// Navbar
+//$navbar-default-bg: #fff;
+//
+//// Buttons
+//$btn-default-color: $text-color;
+//
+//// Inputs
+//$input-border: lighten($text-color, 40%);
+//$input-border-focus: lighten($brand-primary, 25%);
+//$input-color-placeholder: lighten($text-color, 30%);
+//
+//// Panels
+//$panel-default-heading-bg: #fff;
+//$fa-font-path:   "~font-awesome-5-css/webfonts";
+$breadcrumb-divider: quote(">");
+$fa-font-path:        "../webfonts";
+
+$carousel-control-color: #333333;
+$g-green:    #7F8429 !default;
+$g-yellow:   #f9a825 !default;
+$g-dark:   #333333 !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge((
+        "g-green": $g-green,
+        "g-yellow": $g-yellow,
+        "g-dark": $g-dark
+), $theme-colors);
