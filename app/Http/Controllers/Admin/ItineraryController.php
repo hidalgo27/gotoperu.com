@@ -79,7 +79,8 @@ class ItineraryController extends Controller
      */
     public function edit($id)
     {
-        $itinerary = TItinerario::where('id', $id)->get();
+        $itinerary = TItinerario::with('itinerario_imagen')->where('id', $id)->get();
+
         return view('admin.itinerary-edit', ['itinerary'=>$itinerary]);
     }
 
@@ -149,6 +150,18 @@ class ItineraryController extends Controller
             unlink($path);
         }
         return $filename;
+    }
+
+    public function image_delete_form(Request $request)
+    {
+        $filename = $request->get('filename');
+        $id_itinerario = $request->get('id_itinerario');
+        TItinerarioImagen::where('nombre', $filename)->delete();
+        $path = public_path() . '/images/itinerario/' . $filename;
+        if (file_exists($path)) {
+            unlink($path);
+        }
+        return redirect(route('admin_itinerary_edit_path', $id_itinerario))->with('delete', 'Image successfully removed');
     }
 
     public function image_list(Request $request)

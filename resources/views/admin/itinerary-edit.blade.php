@@ -83,6 +83,20 @@
         </div>
     </form>
     <div class="row my-5">
+        @foreach($itinerario->itinerario_imagen as $imagen)
+            <div class="col-2 text-center">
+                <img src="{{asset('images/itinerario/'.$imagen->nombre.'')}}" alt="" class="img-thumbnail w-100 mb-2">
+                <form action="{{route('admin_iitinerary_image_delete_form_path')}}" method="post">
+                    {{--@method('DELETE')--}}
+                    @csrf
+                    <input type="hidden" name="id_itinerario" value="{{$itinerario->id}}">
+                    <input type="hidden" name="filename" value="{{$imagen->nombre}}">
+                    <button type="submit" class="btn btn-xs btn-danger">Eliminar</button>
+                </form>
+            </div>
+        @endforeach
+    </div>
+    <div class="row my-5">
         <div class="col">
             <form method="post" action="{{route('admin_itinerary_image_store_path')}}" enctype="multipart/form-data"
                   class="dropzone" id="dropzone">
@@ -127,37 +141,39 @@
         {{--Dropzone.createThumbnailFromUrl(file, "{{asset('images/destinations/puno.jpg')}}", callback, crossOrigin);--}}
         Dropzone.options.dropzone =
             {
-                init: function() {
-                    thisDropzone = this;
-                    <!-- 4 -->
-                    $.get("{{route('admin_itinerary_list_path')}}", function(data) {
+                {{--init: function() {--}}
+                    {{--thisDropzone = this;--}}
+                    {{--// var name = file.upload.filename;--}}
+                    {{--<!-- 4 -->--}}
+                    {{--$.get("{{route('admin_itinerary_list_path')}}", function(data) {--}}
 
-                        <!-- 5 -->
-                        $.each(data.images, function(key,value){
+                        {{--<!-- 5 -->--}}
+                        {{--$.each(data.images, function(key,value){--}}
 
-                            var mockFile = { name: value.original, size: value.size };
-                            thisDropzone.emit("addedfile", mockFile);
-                            thisDropzone.emit("thumbnail", mockFile, "http://new-goto.nu/images/itinerario/"+value.original);
-                            thisDropzone.emit("complete", mockFile);
-                            var existingFileCount = 1; // The number of files already uploaded
-                            thisDropzone.options.maxFiles = thisDropzone.options.maxFiles - existingFileCount;
+                            {{--var mockFile = { name: value.original, size: value.size };--}}
+                            {{--thisDropzone.emit("addedfile", mockFile);--}}
+                            {{--thisDropzone.emit("thumbnail", mockFile, "http://new-goto.nu/images/itinerario/"+value.original);--}}
+                            {{--thisDropzone.emit("complete", mockFile);--}}
+                            {{--var existingFileCount = 1; // The number of files already uploaded--}}
+                            {{--thisDropzone.options.maxFiles = thisDropzone.options.maxFiles - existingFileCount;--}}
 
-                        });
+                        {{--});--}}
 
-                    });
-                },
+                    {{--});--}}
+                {{--},--}}
 
                 maxFilesize: 12,
-                renameFile: function (file) {
+                renameFile: function(file) {
                     var dt = new Date();
                     var time = dt.getTime();
-                    return time + file.name;
+                    return time+file.name;
                 },
                 acceptedFiles: ".jpeg,.jpg,.png,.gif",
                 addRemoveLinks: true,
                 timeout: 50000,
-                removedfile: function (file) {
-                    var name = file.upload.filename;
+                removedfile: function(file){
+                var name = file.upload.filename;
+
                     $.ajax({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')

@@ -14,6 +14,7 @@ use App\TPaquete;
 use App\TPaqueteCategoria;
 use App\TPaqueteDestino;
 use App\TPaqueteDificultad;
+use App\TPaqueteImagen;
 use App\TPaqueteIncluye;
 use App\TpaqueteItinerario;
 use App\TPaqueteNoIncluye;
@@ -263,7 +264,7 @@ class HomeController extends Controller
     {
         $request->user()->authorizeRoles(['user', 'admin']);
 
-        $paquete = TPaquete::where('id', $id)->get();
+        $paquete = TPaquete::with('imagen_paquetes')->where('id', $id)->get();
         $paquete_itinerario = TpaqueteItinerario::with('itinerarios')->where('idpaquetes', $id)->get();
 
         $itinerario_full = TItinerario::all();
@@ -389,12 +390,15 @@ class HomeController extends Controller
     public function image_store(Request $request)
     {
         $image = $request->file('file');
-        $imageName = $image->getClientOriginalName();
-        $image->move(public_path('images/itinerario/'), $imageName);
+        $id_package = $request->get('id_package_file');
 
-        $imageUpload = new TItinerarioImagen();
-        $imageUpload->nombre = $imageName;
+        $imageName = $image->getClientOriginalName();
+        $image->move(public_path('images/mapas/'), $imageName);
+
+        $imageUpload = TPaquete::FindOrFail($id_package);
+        $imageUpload->imagen = $imageName;
         $imageUpload->save();
+
         return response()->json(['success' => $imageName]);
     }
 
@@ -402,10 +406,39 @@ class HomeController extends Controller
     {
         $filename = $request->get('filename');
         TItinerarioImagen::where('nombre', $filename)->delete();
-        $path = public_path() . '/images/itinerario/' . $filename;
+        $path = public_path() . '/images/mapas/' . $filename;
         if (file_exists($path)) {
             unlink($path);
         }
         return $filename;
     }
+
+
+    public function image_store_slider(Request $request)
+    {
+        $image = $request->file('file');
+        $id_package = $request->get('id_package_file');
+
+        $imageName = $image->getClientOriginalName();
+        $image->move(public_path('images/packages/slider/'), $imageName);
+
+        $imageUpload = new TPaqueteImagen();
+        $imageUpload->nombre = $imageName;
+        $imageUpload->idpaquetes = $id_package;
+        $imageUpload->save();
+
+        return response()->json(['success' => $imageName]);
+    }
+
+    public function image_delete_slider(Request $request)
+    {
+        $filename = $request->get('filename');
+        TPaqueteImagen::where('nombre', $filename)->delete();
+        $path = public_path() . '/images/packages/slider/' . $filename;
+        if (file_exists($path)) {
+            unlink($path);
+        }
+        return $filename;
+    }
+
 }

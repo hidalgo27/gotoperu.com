@@ -18,6 +18,11 @@ class TPaquete extends Model
         return $this->hasMany(TPrecioPaquete::class, 'idpaquetes');
     }
 
+    public function imagen_paquetes()
+    {
+        return $this->hasMany(TPaqueteImagen::class, 'idpaquetes');
+    }
+
     public function paquetes_destinos()
     {
         return $this->hasMany(TPaqueteDestino::class, 'idpaquetes');

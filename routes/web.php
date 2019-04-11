@@ -237,12 +237,22 @@ Route::get('admin/package/image/image_upload', [
 ]);
 Route::post('admin/package/image/image_store', [
     'uses' => 'admin\HomeController@image_store',
-    'as' => 'admin_image_store_path',
+    'as' => 'admin_image_maps_store_path',
 ]);
 Route::post('admin/package/image/image_delete', [
     'uses' => 'admin\HomeController@image_delete',
     'as' => 'admin_image_delete_path',
 ]);
+
+Route::post('admin/package/image/image_store_slider', [
+    'uses' => 'admin\HomeController@image_store_slider',
+    'as' => 'admin_image_slider_store_path',
+]);
+Route::post('admin/package/image/image_delete_slider', [
+    'uses' => 'admin\HomeController@image_delete_slider',
+    'as' => 'admin_image_slider_delete_path',
+]);
+
 //itinerary
 Route::get('admin/itinerary', [
     'uses' => 'admin\ItineraryController@index',
@@ -275,6 +285,10 @@ Route::post('admin/itinerary/image/image_store', [
 Route::post('admin/itinerary/image/image_delete', [
     'uses' => 'admin\ItineraryController@image_delete',
     'as' => 'admin_iitinerary_mage_delete_path',
+]);
+Route::post('admin/itinerary/image/image_delete_form', [
+    'uses' => 'admin\ItineraryController@image_delete_form',
+    'as' => 'admin_iitinerary_image_delete_form_path',
 ]);
 Route::get('admin/itinerary/image/image_list', [
     'uses' => 'admin\ItineraryController@image_list',

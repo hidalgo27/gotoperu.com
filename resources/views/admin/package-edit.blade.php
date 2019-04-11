@@ -20,10 +20,11 @@
             </div>
         </section>
     </div>
+    @foreach($paquete as $paquetes)
     <form action="{{route('admin_package_update_path', $id)}}" method="post">
         @csrf
         <div class="row">
-            @foreach($paquete as $paquetes)
+
             <div class="col-9">
                 <div class="">
                     <div class="">
@@ -515,7 +516,6 @@
                 </div>
 
             </div>
-            @endforeach
         </div>
         <hr>
         <div class="row my-5">
@@ -525,22 +525,145 @@
             </div>
         </div>
     </form>
-    {{--<form method="post" action="{{url('image/upload/store')}}" enctype="multipart/form-data"--}}
-          {{--class="dropzone" id="dropzone">--}}
-        {{--<input type="text" name="prueba" value="1" form="dropzone">--}}
-        {{--@csrf--}}
-    {{--</form>--}}
-    {{--<div class="row my-5">--}}
-        {{--<div class="col">--}}
-            {{--<form method="post" action="{{route('admin_image_store_path')}}" enctype="multipart/form-data"--}}
-                  {{--class="dropzone" id="dropzone">--}}
-                {{--<input type="text" value="" name="id_itinerary_file">--}}
-                {{--@csrf--}}
-            {{--</form>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+    <div class="row my-5">
+        <div class="col-9">
+            <div class="row">
+                @foreach($paquetes->imagen_paquetes as $imagen)
+                    <div class="col-3 text-center">
+                        <img src="{{asset('images/packages/slider/'.$imagen->nombre.'')}}" alt="" class="img-thumbnail w-100 mb-2">
+                        <form action="{{route('admin_iitinerary_image_delete_form_path')}}" method="post">
+                            {{--@method('DELETE')--}}
+                            @csrf
+                            <input type="hidden" name="id_itinerario" value="{{$imagen->id}}">
+                            <input type="hidden" name="filename" value="{{$imagen->nombre}}">
+                            <button type="submit" class="btn btn-xs btn-danger">Eliminar</button>
+                        </form>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        <div class="col text-center">
+
+                <img src="{{asset('images/mapas/'.$paquetes->imagen.'')}}" alt="" class="img-thumbnail w-100 mb-2">
+                <form action="{{route('admin_iitinerary_image_delete_form_path')}}" method="post">
+                    {{--@method('DELETE')--}}
+                    @csrf
+                    {{--<input type="hidden" name="id_itinerario" value="{{$imagen->id}}">--}}
+                    {{--<input type="hidden" name="filename" value="{{$imagen->nombre}}">--}}
+                    <button type="submit" class="btn btn-xs btn-danger">Eliminar</button>
+                </form>
+
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col-9">
+            <form method="post" action="{{route('admin_image_slider_store_path')}}" enctype="multipart/form-data"
+                  class="dropzone" id="dropzone">
+                <input type="hidden" value="{{$paquetes->id}}" name="id_package_file">
+                @csrf
+            </form>
+        </div>
+        <div class="col">
+            <form method="post" action="{{route('admin_image_maps_store_path')}}" enctype="multipart/form-data"
+                  class="dropzone" id="dropzone2">
+                <input type="hidden" value="{{$paquetes->id}}" name="id_package_file">
+                @csrf
+            </form>
+        </div>
+    </div>
+    @endforeach
 @endsection
 @push('scripts')
+    <script>
+        Dropzone.autoDiscover = false;
+        jQuery(document).ready(function() {
+            $("#dropzone").dropzone({
+
+                maxFilesize: 12,
+                maxFiles: 3,
+                renameFile: function(file) {
+                    var dt = new Date();
+                    var time = dt.getTime();
+                    return time+file.name;
+                },
+                acceptedFiles: ".jpeg,.jpg,.png,.gif",
+                addRemoveLinks: true,
+                timeout: 50000,
+                removedfile: function(file){
+                    var name = file.upload.filename;
+
+                    $.ajax({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                        },
+                        type: 'POST',
+                        url: "{{ route('admin_image_slider_delete_path') }}",
+                        data: {filename: name},
+                        success: function (data) {
+                            console.log("File has been successfully removed!!");
+                        },
+                        error: function (e) {
+                            console.log(e);
+                        }
+                    });
+                    var fileRef;
+                    return (fileRef = file.previewElement) != null ?
+                        fileRef.parentNode.removeChild(file.previewElement) : void 0;
+                },
+
+                // success: function (file, response) {
+                //     console.log(response);
+                // },
+                // error: function (file, response) {
+                //     return false;
+                // },
+
+            });
+            $("#dropzone2").dropzone({
+
+                maxFilesize: 12,
+                maxFiles: 1,
+                renameFile: function(file) {
+                    var dt = new Date();
+                    var time = dt.getTime();
+                    return time+file.name;
+                },
+                acceptedFiles: ".jpeg,.jpg,.png,.gif",
+                addRemoveLinks: true,
+                timeout: 50000,
+                removedfile: function(file){
+                    var name = file.upload.filename;
+
+                    $.ajax({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                        },
+                        type: 'POST',
+                        url: "{{ route('admin_image_delete_path') }}",
+                        data: {filename: name},
+                        success: function (data) {
+                            console.log("File has been successfully removed!!");
+                        },
+                        error: function (e) {
+                            console.log(e);
+                        }
+                    });
+                    var fileRef;
+                    return (fileRef = file.previewElement) != null ?
+                        fileRef.parentNode.removeChild(file.previewElement) : void 0;
+                },
+
+                // success: function (file, response) {
+                //     console.log(response);
+                // },
+                // error: function (file, response) {
+                //     return false;
+                // },
+
+            });
+        });
+
+    </script>
     <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=m4amx6h3rsnmj9whskr1vn3m6mpv7bi6qwwscvtbam4h0uic "></script>
     <script>
         tinymce.init({
@@ -603,12 +726,6 @@
                 $("#contenido").load("http://new-goto.nu/admin/package/load/"+49+"/"+$duration1+"");
             }
         }
-
-        {{--$(document).ready(function() {--}}
-        {{--$("#refrescar").bind("click", function() {--}}
-        {{--$("#contenido").load("{{route('load_path', [49, 5])}}");--}}
-        {{--});--}}
-        {{--});--}}
 
     </script>
 @endpush
