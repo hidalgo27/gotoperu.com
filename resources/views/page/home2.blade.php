@@ -159,6 +159,7 @@
     </section>
 
     @include('layouts.page.menu')
+
     <div class="bg-white">
         <section class="d-md-none mt-3">
             <div class="container">
@@ -626,7 +627,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                             @endforeach
                                         </div>
                                     </div>
@@ -667,7 +667,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                             @endforeach
                                         </div>
                                     </div>
@@ -756,7 +755,6 @@
                         </div>
                     </div>
                 </div>
-
                 <hr class="my-5">
                 {{--short--}}
                 <div class="row">
@@ -890,7 +888,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                             @endforeach
                                         </div>
                                     </div>
@@ -900,7 +897,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -1779,7 +1775,6 @@
                     // instead of a settings object
                 ]
             });
-
         </script>
         <div id="fb-root"></div>
         <script async defer src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2&appId=1712869952328301&autoLogAppEvents=1"></script>

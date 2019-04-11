@@ -20,8 +20,8 @@
             </div>
         </section>
     </div>
-{{--    <form action="{{route('admin_package_update_path', $id)}}" method="post">--}}
-        {{--@csrf--}}
+    <form action="{{route('admin_package_update_path', $id)}}" method="post">
+        @csrf
         <div class="row">
             @foreach($paquete as $paquetes)
             <div class="col-9">
@@ -158,7 +158,6 @@
                                                         <span class="input-group-text"><small>$</small></span>
                                                     </div>
                                                     <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" name="txt_2_s" value="{{$precio_paquete_2->precio_s}}">
-
                                                     <div class="input-group-append">
                                                         <span class="input-group-text"><small>USD</small></span>
                                                     </div>
@@ -364,7 +363,6 @@
 
                             </div>
                         </div>
-
                         <div class="row my-3">
                             <div class="col">
                                 {{--<div id="dropzone" class="dropzone">--}}
@@ -611,10 +609,6 @@
         {{--$("#contenido").load("{{route('load_path', [49, 5])}}");--}}
         {{--});--}}
         {{--});--}}
-
-
-
-
 
     </script>
 @endpush

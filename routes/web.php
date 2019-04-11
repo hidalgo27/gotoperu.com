@@ -230,6 +230,7 @@ Route::delete('admin/package/edit/{id}', [
     'uses' => 'admin\HomeController@destroy',
     'as' => 'admin_package_delete_path',
 ]);
+
 Route::get('admin/package/image/image_upload', [
     'uses' => 'admin\HomeController@image_upload',
     'as' => 'admin_upload_file_path',

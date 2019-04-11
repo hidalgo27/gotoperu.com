@@ -39,6 +39,7 @@ mix.scripts([
     'node_modules/bootstrap-select/js/i18n/defaults-es_US.js',
     'node_modules/swiper/dist/js/swiper.min.js',
     'node_modules/dropzone/dist/min/dropzone.min.js',
+
     'resources/assets/js/vendors/function-admin.js',
 ], 'public/js/plugins-admin.js');
 

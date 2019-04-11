@@ -6,7 +6,6 @@
             <div class="container">
                     <h2 class="text-white my-5 h1"><strong>{{($paquetes->titulo)}} {{($paquetes->duracion)}} DAYS TOURS</strong></h2>
                     <h2 class="text-white my-5 h1">Our excursions and packages depart 365 days a year</h2>
-
                 <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
                 <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
             </div>
@@ -156,6 +155,7 @@
             </div>
         </div>
     </section>
+
     <section class="bg-white">
         <div class="container">
             <div class="row">
@@ -668,7 +668,6 @@
                                             @endforeach
                                         </div>
                                     </div>
-
                                 </div>
 
                                 {{--<div class="">--}}

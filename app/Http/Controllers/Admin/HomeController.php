@@ -386,7 +386,6 @@ class HomeController extends Controller
         $packages->delete();
         return redirect('/home')->with('delete', 'Package successfully removed');
     }
-
     public function image_store(Request $request)
     {
         $image = $request->file('file');
@@ -409,5 +408,4 @@ class HomeController extends Controller
         }
         return $filename;
     }
-
 }

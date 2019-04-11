@@ -82,7 +82,6 @@
             </div>
         </div>
     </form>
-
     <div class="row my-5">
         <div class="col">
             <form method="post" action="{{route('admin_itinerary_image_store_path')}}" enctype="multipart/form-data"
@@ -92,7 +91,6 @@
             </form>
         </div>
     </div>
-
     @endforeach
 @endsection
 @push('scripts')
@@ -117,6 +115,7 @@
             $('.toast').toast('show');
         });
     </script>
+
     <script>
         // Dropzone.autoDiscover = false;
         // jQuery(document).ready(function() {

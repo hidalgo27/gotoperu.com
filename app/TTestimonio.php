@@ -8,4 +8,5 @@ class TTestimonio extends Model
 {
     protected
         $table = "ttestimonios";
+
 }

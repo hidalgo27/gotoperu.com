@@ -173,7 +173,6 @@ class HomepageController extends Controller
         foreach ($c_cruise as $c_cru) {
             $categorias_cruise = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_cru->id)->take(2)->get();
         }
-
         $testimonio_video = TVideoTestimonio::all()->take(3);
         return view('page.home2',
             compact(
