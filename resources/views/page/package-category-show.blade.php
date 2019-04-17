@@ -78,22 +78,51 @@
     <section class="bg-white pb-5">
         <div class="container">
             <div class="row">
-                @foreach($categoria as $categorias)
-                <div class="col-4 mb-4">
-                    <div class="position-relative category-box">
-                        <a href="{{route('category_show_path', str_replace(' ', '-', strtolower($categorias->nombre)))}}">
-                            <img src="{{asset('images/category/'.$categorias->imagen.'')}}" alt="" class="w-100 rounded shadow-sm img-thumbnail">
-                            <div class="position-absolute-bottom text-center p-3 category-tape">
-                                <div class="category-circle rounded-circle mx-auto">
-                                    <h6 class="text-white font-weight-bold text-g-dark">
-                                        {{ucwords(strtolower($categorias->nombre))}}
-                                        <span class="line-category d-block mx-auto mt-2"></span>
-                                    </h6>
+                @foreach($paquete_categoria as $paquete_categorias)
+                    @if(isset($paquete_categorias->categoria))
+                        @foreach($paquete->where('id',$paquete_categorias->idpaquetes) as $paquetes)
+                            <div class="col-6 text-decoration-none mb-5">
+                                <div class="bg-light shadow-sm rounded">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col-12">
+                                            <div class="position-relative">
+                                                <img src="{{asset('images/mapas/'.$paquetes->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                <div class="position-absolute-bottom p-2 text-center">
+                                                    @foreach($paquetes->paquetes_categoria as $paquetes_categorias)
+                                                        <span class="small font-weight-bold badge badge-g-yellow shadow">{{$paquetes_categorias->categoria->nombre}}</span>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 text-center mt-2">
+                                            <div class="px-3">
+                                                <h2 class="h6 font-weight-bold">{{$paquetes->titulo}}</h2>
+                                                <small class="text-muted font-weight-bold">{{$paquetes->duracion}} days</small>
+                                                @foreach($paquetes->precio_paquetes as $precio)
+                                                    @if($precio->estrellas == 3)
+                                                        @if($precio->precio_d > 0)
+                                                            {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
+                                                            <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
+                                                        @else
+                                                            <span class="text-danger">Inquire</span>
+                                                        @endif
+                                                    @endif
+                                                @endforeach
+                                                <div class="row my-3">
+                                                    <div class="col">
+                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                </div>
+                        @endforeach
+                    @endif
                 @endforeach
             </div>
         </div>

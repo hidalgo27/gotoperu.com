@@ -1225,8 +1225,8 @@
             <div class="container">
                 <div class="row mb-3">
                     <div class="col text-center">
-                        <h2 class="h1 font-weight-bold text-g-dark">Buscas un estilo de viaje</h2>
-                        <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam architecto assumenda aut consectetur, consequatur cumque delectus ea est ex fuga harum laborum, minima omnis optio qui quod sint vero!</p>
+                        <h2 class="h1 font-weight-bold text-g-dark">Destinations</h2>
+                        <p class="lead text-muted">from the Coast , to the Andes and to the Rainforest! Go with the peruvian experts, GO with GOTOPERU:</p>
                     </div>
                 </div>
                 <div class="row">
