@@ -1189,7 +1189,7 @@
                     <div class="col">
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
-                                <a href="{{route('')}}">
+                                <a href="">
                                     <img src="{{asset('images/destinations/destinations/machu-picchu.jpg')}}" alt="" class="w-100 shadow-sm">
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
                                         <h6 class="p-2 m-0 font-weight-normal footer-title-category">Cusco</h6>
