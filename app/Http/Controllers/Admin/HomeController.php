@@ -441,4 +441,32 @@ class HomeController extends Controller
         return $filename;
     }
 
+    public function image_delete_package_form(Request $request)
+    {
+        $filename = $request->get('filename');
+        $id_package = $request->get('id_package');
+        TPaqueteImagen::where('nombre', $filename)->delete();
+        $path = public_path() . '/images/packages/slider/' . $filename;
+        if (file_exists($path)) {
+            unlink($path);
+        }
+        return redirect(route('admin_package_edit_path', $id_package))->with('delete', 'Image successfully removed');
+    }
+
+    public function image_delete_map_package_form(Request $request)
+    {
+        $filename = $request->get('filename');
+        $id_package = $request->get('id_package');
+
+        $imageUpload = TPaquete::FindOrFail($id_package);
+        $imageUpload->imagen = NULL;
+        $imageUpload->save();
+
+        $path = public_path() . '/images/mapas/' . $filename;
+        if (file_exists($path)) {
+            unlink($path);
+        }
+        return redirect(route('admin_package_edit_path', $id_package))->with('delete', 'Image successfully removed');
+    }
+
 }

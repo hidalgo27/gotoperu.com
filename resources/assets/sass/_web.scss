@@ -98,8 +98,24 @@
 }
 
 .jumbotron-slider-1{
-  background: url("/images/banners/slider-1.jpg");
-  background-size: 100%;
+  background: url("/images/slider/machupicchu-2.jpg");
+  //background: url(/images/placebg.jpg) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.jumbotron-slider-1:before {
+  content: "";
+  position: absolute;
+  background: -webkit-gradient(linear, left top, right top, color-stop(46%, rgba(41, 44, 52, 0.76)), to(rgba(0, 0, 0, 0.41)));
+  background: linear-gradient(to right, rgba(41, 44, 52, 0.76) 46%, rgba(0, 0, 0, 0.41) 100%);
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
 }
 
 .jumbotron {
@@ -526,6 +542,10 @@ header{
   border-color: #6c757d !important;
   box-shadow: 0 0 0 0;
 }
+.number-hover{
+  //background: #cecece;
+  cursor: pointer;
+}
 .popover-hover.focus .sec-stars>i{
   color: #6c757d;
 }
@@ -534,7 +554,9 @@ header{
   background-color: #f9a825 !important;
   border-color: #f9a825 !important;
 }
-
+.number_place{
+  font-size: 15px !important;
+}
 .number-hover:hover i, .number-hover.active i{
   color: #000000 !important;
 }
@@ -542,6 +564,10 @@ header{
 .number-hover.focus, .number-hover.active:focus{
   -webkit-box-shadow: 0 0 0 0.05rem rgba(249, 168, 37, 0.5) !important;
   box-shadow: 0 0 0 0.05rem rgba(249, 168, 37, 0.5) !important;
+}
+
+#Inquire{
+  background: url(/images/img-noise.png) repeat !important;
 }
 
 .b-routes{
@@ -1032,4 +1058,67 @@ $slide-overlay-opacity: 0.6;
 .banner-itinerary{
   top: 0;
   height: 100vh !important;
+}
+.header-img-category {
+  position: relative;
+  overflow: hidden;
+}
+
+.header-img-category a img {
+  transition: 0.4s ease;
+}
+
+.header-img-category a:hover img {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+}
+.footer-title-category{
+  opacity: .7;
+}
+.header-img-category a:hover .footer-title-category{
+  transition: 0.4s ease;
+  opacity: 1;
+}
+
+.header-img-category a:hover .footer-title-category{
+  transition: 0.4s ease;
+  opacity: 1;
+}
+
+.header-img-destinations a:hover .footer-title-category{
+  opacity: 1;
+  //border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  background: rgba(0,0,0,.5);
+}
+
+//.top-actividades:hover img {
+//  transition: all 0.5s ease;
+//  opacity: 0.5;
+//  border-radius: 5px;
+//}
+
+.offer {
+  background: url(/images/placebg.jpg) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.offer:before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(to right, rgba(41, 44, 52, 0.76) 46%, rgba(0, 0, 0, 0.41) 100%);
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+.offer-l {
+  padding: 110px 0px 100px 0px;
+  text-align: center;
 }

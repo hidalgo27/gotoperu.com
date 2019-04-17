@@ -11,8 +11,8 @@
                 {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-                <img src="{{asset('images/hotels.jpg')}}" alt="" id="hero-vid">
-            @include('layouts.page.menu-custom')
+                <img src="{{asset('images/hotels.jpg')}}" alt="" id="hero-vid" class="banner-itinerary">
+{{--            @include('layouts.page.menu-custom')--}}
 {{--            <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="header-expedia">--}}
             {{--<div class="header-expedia text-white">--}}
                 {{--<p class="p-4">4 <span class="text-g-yellow">Stars </span> Casa Andina Premium - Cusco</p>--}}

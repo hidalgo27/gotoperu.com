@@ -17,19 +17,15 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row content-header-row align-items-center">
-
                     <div class="col">
-
-                        <div class="row my-3 justify-content-center">
-                            <p class="text-white display-4 font-weight-light">{{strtoupper($pais)}} DESTINATIONS</p>
+                        <div class="row my-3 justify-content-center text-white font-weight-bold h2">
+                            {{strtoupper($pais)}} DESTINATIONS
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
-
                                 <a href="#content-page" class="text-white">
-                                    <i class="fas fa-chevron-down fa-4x"></i>
+                                    <i data-feather="chevron-down" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
                                 </a>
-
                             </div>
                         </div>
                     </div>
@@ -39,7 +35,6 @@
         </div>
     </section>
 
-    @include('layouts.page.menu-2')
     <section class="d-md-none">
         <div class="container-fluid p-0">
             <div class="row no-gutters">

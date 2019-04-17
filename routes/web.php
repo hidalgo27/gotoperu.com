@@ -252,7 +252,14 @@ Route::post('admin/package/image/image_delete_slider', [
     'uses' => 'admin\HomeController@image_delete_slider',
     'as' => 'admin_image_slider_delete_path',
 ]);
-
+Route::post('admin/package/image/image_delete_package_form', [
+    'uses' => 'admin\HomeController@image_delete_package_form',
+    'as' => 'admin_image_delete_package_form_path',
+]);
+Route::post('admin/package/image/image_delete_map_package_form', [
+    'uses' => 'admin\HomeController@image_delete_map_package_form',
+    'as' => 'admin_image_delete_map_package_form_path',
+]);
 //itinerary
 Route::get('admin/itinerary', [
     'uses' => 'admin\ItineraryController@index',

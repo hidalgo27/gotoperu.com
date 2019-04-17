@@ -13,24 +13,20 @@
             {{--</video>--}}
 
             <img src="{{asset('images/destinations/puno.jpg')}}" alt="" id="hero-vid">
-            @include('layouts.page.menu-custom')
+{{--            @include('layouts.page.menu-custom')--}}
         </div>
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row content-header-row align-items-center">
-
                     <div class="col">
-
-                        <div class="row my-3 justify-content-center text-center">
-                            <p class="text-white display-4 font-weight-light">Peru Destinations</p>
+                        <div class="row my-3 justify-content-center text-white font-weight-bold h2">
+                            Peru Destinations
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
-
                                 <a href="#content-page" class="text-white">
-                                    <i class="fas fa-chevron-down fa-4x"></i>
+                                    <i data-feather="chevron-down" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
                                 </a>
-
                             </div>
                         </div>
                     </div>
@@ -54,7 +50,7 @@
     <section class="bg-white m-0">
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="col small font-weight-bold">
                     {{ Breadcrumbs::render('destinations') }}
                 </div>
             </div>
@@ -65,10 +61,10 @@
         <div class="container">
             <div class="row pt-4">
                 <div class="col">
-                    <h1 class="font-weight-bold text-g-yellow text-center"><strong>PERU DESTINATIONS</strong></h1>
+                    <h1 class="font-weight-bold text-g-yellow text-center">PERU <span class="text-g-green">DESTINATIONS</span></h1>
                     {{--<h1 class="text-secondary h4"><strong>SOUTH AMERICA TRAVEL DESTINATIONS</strong></h1>--}}
                     <p class="lead text-center">Offering you an authentic and reliable travel experience in peru welcoming you to explore the many fully customized travel packages we have that suit every budget. let us plan your unforgettable trip to our majestic machu picchu and the rest of our homeland… peru!</p>
-                    <div class="alert alert-g-yellow text-center m-0" role="alert">
+                    <div class="alert alert-primary text-center m-0" role="alert">
                         <h4>We will work around your schedule and your travel interests to build together the most unique travel plans</h4>
                     </div>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
@@ -89,7 +85,7 @@
                             <div class="row">
                                 @foreach($destinos->sortBy('nombre') as  $destino)
                                 <div class="col-md-4 col-sm-6 mb-4">
-                                    <div class="grid-category position-relative">
+                                    <div class="grid-category position-relative shadow-sm">
                                         <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="text-g-dark rounded">
                                             <img data-src="{{asset('images/destinations/destinations/'.str_replace(' ', '-', strtolower($destino->nombre)).'.jpg')}}" data-srcset="{{asset('images/destinations/destinations/'.str_replace(' ', '-', strtolower($destino->nombre)).'.jpg')}}" alt="Machu Picchu" class="w-100 rounded lazy has-webp">
                                             <div class="grid-box p-3 text-center">

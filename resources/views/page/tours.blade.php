@@ -11,8 +11,8 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/auto.jpg')}}" alt="" id="hero-vid">
-            @include('layouts.page.menu-custom')
+            <img src="{{asset('images/auto.jpg')}}" alt="" id="hero-vid" class="banner-itinerary">
+{{--            @include('layouts.page.menu-custom')--}}
         </div>
         <div class="content-header">
             <div class="container-fluid">
@@ -20,19 +20,19 @@
 
                     <div class="col">
 
-                        <div class="row my-3 justify-content-center">
-                            <p class="text-white display-4 font-weight-light">PERU TOURS & ACTIVITIES</p>
+                        <div class="row my-3 justify-content-center text-white font-weight-bold h2">
+                            PERU TOURS & ACTIVITIES
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
-
                                 <a href="#content-page" class="text-white">
-                                    <i class="fas fa-chevron-down fa-4x"></i>
+                                    <i data-feather="chevron-down" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
                                 </a>
-
                             </div>
                         </div>
                     </div>
+
+
                 </div>
 
             </div>
@@ -53,7 +53,7 @@
     <section class="bg-white m-0">
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="col small font-weight-bold">
                     {{Breadcrumbs::render('peru_tours')}}
                 </div>
             </div>
@@ -64,7 +64,7 @@
         <div class="container">
             <div class="row pt-4">
                 <div class="col">
-                    <h1 class="text-secondary h4"><strong>PERU TOURS</strong></h1>
+                    <h1 class="text-g-green text-center font-weight-bold">PERU <span class="text-g-yellow">TOURS</span></h1>
                     <p class="lead m-0"><strong>GOTOPERU</strong> offers you an “A La Carte tours” where YOU decide of the schedule and WE organize it for you. It gives you flexibility and freedom. Enjoy everything you’ve come to expect from the travel experts at GOTOPERU, while selecting only the experiences you wish at the land of the Incas! Gotoperu...go with the experts!
                         Daily departures.</p>
                     {{--<div class="alert alert-g-yellow text-center m-0" role="alert">--}}

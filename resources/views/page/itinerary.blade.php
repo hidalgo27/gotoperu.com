@@ -40,7 +40,9 @@
                 {{--<source src="{{asset('media/video6.webm')}}" type="video/webm" />--}}
                 {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
-            <img src="{{asset('images/itinerary/banners/'.$paquetes->imagen.'')}}" alt="banner gotoperu" id="hero-vid" class="banner-itinerary">
+            @foreach($paquetes->imagen_paquetes->take(1) as $paquetes_imagen)
+            <img src="{{asset('images/packages/slider/'.$paquetes_imagen->nombre.'')}}" alt="banner gotoperu" id="hero-vid" class="banner-itinerary">
+            @endforeach
             {{--<div id="state" class=""><span class="fa fa-pause"></span></div>--}}
             {{--<img id="hero-pic" class="d-none" src="http://www.markhillard.com/sandbox/media/polina.jpg" alt="">--}}
             {{----}}
@@ -115,17 +117,21 @@
                         {{--<a href="" class="text-white"><i class="fa fa-play-circle fa-4x"></i></a>--}}
 
                         <div class="text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
-                            <div class="">
+
                                 <div class="content-video-1 text-white p-3 rounded">
                                     {{--<img src="images/travel/video-1.jpg" alt="video">--}}
                                     <h2 class="font-weight-bold">
-
-                                            {{($paquetes->titulo)}} <span class="text-white">{{($paquetes->duracion)}} DAYS TOURS</span>
-
+                                        {{($paquetes->titulo)}} <span class="text-white">{{($paquetes->duracion)}} DAYS TOURS</span>
                                     </h2>
-
                                 </div>
-                            </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 text-center">
+                                        <a href="#content-page" class="text-white">
+                                            <i data-feather="chevron-down" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
                         </div>
 
                     </div>
@@ -205,9 +211,9 @@
                                     {{--<li class="nav-item d-none d-sm-block">--}}
                                     {{--<a class="nav-link text-secondary rounded-0" href="#Inquire">Inquire</a>--}}
                                     {{--</li>--}}
-                                    <li class="nav-item d-none d-sm-block">
-                                        <a class="nav-link text-white font-weight-bold rounded-0" href="#Reviews">Reviews</a>
-                                    </li>
+                                    {{--<li class="nav-item d-none d-sm-block">--}}
+                                        {{--<a class="nav-link text-white font-weight-bold rounded-0" href="#Reviews">Reviews</a>--}}
+                                    {{--</li>--}}
                                 </ul>
 
                                 <div id="" class="mt-4">
@@ -252,16 +258,19 @@
                                             <div class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="resumen-tab">
                                                 <div class="row">
                                                     <div class="col-12 col-sm-6 col-md-12">
+                                                        @php $day = 1; @endphp
                                                         @foreach($paquetes->paquete_itinerario as $itinerario)
                                                             <div class="row pt-4" id="section-{{$itinerario->itinerarios->id}}">
                                                                 <div class="col-12 col-md-12 col-lg-8">
-                                                                    <h6 class="text-g-yellow font-weight-normal"><span class="badge badge-g-dark">Day {{$itinerario->itinerarios->dia}}:</span> <strong>{{ucwords(strtolower($itinerario->itinerarios->titulo))}}</strong>
+                                                                    <h6 class="text-g-yellow font-weight-normal"><span class="badge badge-g-dark">Day {{$day}}:</span> <strong>{{ucwords(strtolower($itinerario->itinerarios->titulo))}}</strong>
                                                                     </h6>
                                                                     @php echo $itinerario->itinerarios->resumen; @endphp
                                                                 </div>
                                                                 <div class="col-12 col-md-12 col-lg">
                                                                     <div class="box15 float-right rounded">
-                                                                        <img src="{{asset('images/itinerary/'.str_replace(' ', '-', strtolower($itinerario->itinerarios->titulo).'-1.jpg'))}}" alt="{{strtolower($itinerario->itinerarios->titulo)}}" class="rounded">
+                                                                        @foreach($imagen->where('iditinerario', $itinerario->itinerarios->id)->take(1) as $img)
+                                                                            <img src="{{asset('images/itinerario/'.$img->nombre.'')}}" alt="" class="rounded">
+                                                                        @endforeach
                                                                         <div class="box-content text-center">
                                                                             <h3 class="title">View Gallery</h3>
                                                                             <ul class="icon p-0">
@@ -288,7 +297,7 @@
                                                                                                 @endif
 
                                                                                                 <div class="carousel-item {{$act}}">
-                                                                                                    <img class="d-block w-100 rounded" src="{{asset('images/itinerary/'.$img->nombre.'')}}" alt="First slide">
+                                                                                                    <img class="d-block w-100 rounded" src="{{asset('images/itinerario/'.$img->nombre.'')}}" alt="First slide">
                                                                                                 </div>
 
                                                                                                 @php $k++; @endphp
@@ -310,6 +319,7 @@
                                                                 </div>
                                                             </div>
                                                             <hr>
+                                                            @php $day++; @endphp
                                                         @endforeach
                                                     </div>
                                                     <div class="d-none d-sm-inline col-sm-6 d-md-none">
@@ -338,26 +348,24 @@
                                                                 @foreach($paquetes->paquete_itinerario as $itinerario)
                                                                 <div class="timeline @php if($i == $num_des) echo 'timeline-f' @endphp">
                                                                     <div class="timeline-title">
-                                                                        <span class="rounded-circle bg-g-green text-white py-4 font-weight-bold">DAY {{$itinerario->itinerarios->dia}}</span>
+                                                                        <span class="rounded-circle bg-g-green text-white py-4 font-weight-bold">DAY {{$i}}</span>
                                                                     </div>
                                                                     <div class="col">
                                                                         <div class="timeline-content position-relative">
                                                                             <div class="row">
                                                                                 <div class="col-12">
-                                                                                <div class="timeline-point">
-                                                                                    <i class="far fa-circle"></i>
-                                                                                </div>
-                                                                                <div class="timeline-custom-col content-col ">
-                                                                                    <div class="timeline-location-block">
-                                                                                        <p class="location-name">{{ucwords(strtolower($itinerario->itinerarios->titulo))}} <i class="fa fa-map-marker-alt icon-marker"></i></p>
-                                                                                        <div class="description">
-                                                                                            @php echo $itinerario->itinerarios->descripcion @endphp
+                                                                                    <div class="timeline-point">
+                                                                                        <i class="far fa-circle"></i>
+                                                                                    </div>
+                                                                                    <div class="timeline-custom-col content-col ">
+                                                                                        <div class="timeline-location-block">
+                                                                                            <p class="location-name">{{ucwords(strtolower($itinerario->itinerarios->titulo))}} <i class="fa fa-map-marker-alt icon-marker"></i></p>
+                                                                                            <div class="description">
+                                                                                                @php echo $itinerario->itinerarios->descripcion @endphp
+                                                                                            </div>
                                                                                         </div>
-
                                                                                     </div>
-
                                                                                 </div>
-                                                                                    </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -762,378 +770,6 @@
                             </div>
                             </div>
 
-
-
-                            <div class="row mb-3">
-                                <div class="col">
-
-
-                                <div id="Inquire" class="pt-5">
-                                    <h3 class="text-secondary h4"><strong>Inquire</strong></h3>
-                                    <div class="row justify-content-center mt-4">
-                                        <div class="col-12 col-md-10 col-lg-8 text-center">
-                                            <h2 class="text-secondary h4 font-weight-bold text-g-yellow">{{$paquetes->titulo}} {{$paquetes->duracion}} DAYS</h2>
-                                            {{--<h5 class="text-secondary">{{$paquetes->duracion}} Days</h5>--}}
-                                        </div>
-                                    </div>
-
-                                    <div class="row justify-content-center pt-4 ">
-                                        <div class="col-12 col-ms-9 col-md-8">
-                                            <form id="d_form" role="form">
-                                                {{csrf_field()}}
-                                                <div class="row pb-2">
-                                                    <div class="col">
-                                                        <h2 class="text-secondary h5"><strong>HOTEL CATEGORY</strong></h2>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-6 col-sm text-center">
-                                                        <div class="btn-group-toggle" data-toggle="buttons">
-                                                            <label class="col btn btn-outline-secondary text-secondary number-hover">
-                                                                {{--<i class="fa fa-home d-block fa-2x"></i>--}}
-                                                                <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> Budget
-                                                                <div class="d-block small">
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 col-sm">
-                                                        <div class="btn-group-toggle" data-toggle="buttons">
-                                                            <label class="col btn btn-outline-secondary text-secondary number-hover">
-                                                                {{--<i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>--}}
-                                                                <input type="checkbox" autocomplete="off" name="accommodation[]" value="Turista"> Best Value
-                                                                <div class="d-block small">
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 col-sm">
-                                                        <div class="btn-group-toggle" data-toggle="buttons">
-                                                            <label class="col btn btn-outline-secondary text-secondary number-hover">
-                                                                {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
-                                                                <input type="checkbox" autocomplete="off" name="accommodation[]" value="Superior"> Superior
-                                                                <div class="d-block small">
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 col-sm">
-                                                        <div class="btn-group-toggle" data-toggle="buttons">
-                                                            <label class="col btn btn-outline-secondary text-secondary number-hover">
-                                                                {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
-                                                                <input type="checkbox" autocomplete="off" name="accommodation[]" value="Luxo"> Luxury
-                                                                <div class="d-block small">
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="row mt-4 pb-2">
-                                                    <div class="col">
-                                                        <h2 class="text-secondary h5"><strong>NUMBER OF TRAVELERS</strong></h2>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
-                                                    <label class="btn col btn-outline-secondary number-hover">
-                                                        <input type="radio" name="number" class="number" autocomplete="off" value="1" checked> 1 <i class="fa fa-male"></i>
-                                                    </label>
-                                                    <label class="btn col mx-2 btn-outline-secondary number-hover">
-                                                        <input type="radio" name="number" class="number" autocomplete="off" value="2"> 2 <i class="fa fa-male"></i>
-                                                    </label>
-                                                    <label class="btn col btn-outline-secondary number-hover">
-                                                        <input type="radio" name="number" class="number" autocomplete="off" value="3"> 3 <i class="fa fa-male"></i>
-                                                    </label>
-                                                    <label class="btn col mx-2 btn-outline-secondary number-hover">
-                                                        <input type="radio" name="number" class="number" autocomplete="off" value="4"> 4 <i class="fa fa-male"></i>
-                                                    </label>
-                                                    <label class="btn col btn-outline-secondary number-hover">
-                                                        <input type="radio" name="number" class="number" autocomplete="off" value="5+"> 5+ <i class="fa fa-male"></i>
-                                                    </label>
-                                                    <label class="btn col ml-2 btn-outline-secondary number-hover">
-                                                        <input type="radio" name="number" class="number" autocomplete="off" value="Undecided"><small>Undecided</small>
-                                                    </label>
-                                                </div>
-
-                                                <div class="row mt-4">
-                                                    <div class="col-12 col-sm">
-                                                        <div class="row pb-2">
-                                                            <div class="col">
-                                                                <h2 class="text-secondary h5"><strong>TRAVEL DATE <span class="text-primary">*</span></strong></h2>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="row">
-                                                            <div class="col">
-                                                                <div class="input-group input-group-lg">
-                                                                    <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
-                                                                    </div>
-                                                                    <input type="text" class="form-control" id="d_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <input type="hidden" id="d_package" value="{{$paquetes->codigo}}: {{$paquetes->titulo}} {{$paquetes->duracion}} DAYS">
-                                                    </div>
-                                                    <div class="col-12 col-sm mt-4 mt-sm-0">
-                                                        <div class="row pb-2">
-                                                            <div class="col">
-                                                                <h2 class="text-secondary h5"><strong>PHONE NUMBER</strong></h2>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col">
-                                                                <div class="input-group input-group-lg">
-                                                                    <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone"></i></span>
-                                                                    </div>
-                                                                    <input type="tel" class="form-control" id="d_tel" placeholder="Phone number" aria-label="Phone" aria-describedby="basic-addon1">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-12 col-sm">
-                                                        <div class="row mt-4 pb-2">
-                                                            <div class="col">
-                                                                <h2 class="text-secondary h5"><strong>NAME <span class="text-primary">*</span></strong></h2>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col">
-                                                                <div class="input-group input-group-lg">
-                                                                    <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                                                    </div>
-                                                                    <input type="text" class="form-control" id="d_name" placeholder="Full Name" aria-label="Full Name" aria-describedby="basic-addon1">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-sm">
-                                                        <div class="row mt-4 pb-2">
-                                                            <div class="col">
-                                                                <h2 class="text-secondary h5"><strong>EMAIL <span class="text-primary">*</span></strong></h2>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col">
-                                                                <div class="input-group input-group-lg">
-                                                                    <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
-                                                                    </div>
-                                                                    <input type="email" class="form-control" id="d_email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-
-
-
-                                                <div class="row mt-4 pb-2">
-                                                    <div class="col">
-                                                        <h2 class="text-secondary h5"><strong>COMMENTS?</strong></h2>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="input-group input-group-lg">
-                                                            <div class="input-group-prepend">
-                                                                <span class="input-group-text"><i class="fa fa-comment"></i></span>
-                                                            </div>
-                                                            <textarea class="form-control" id="d_comment" aria-label="With textarea" placeholder="How do you imagine a perfect trip to Peru, Special Requests, Questions, Comments"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col my-3 text-center">
-                                                        <button class="btn btn-primary btn-lg btn-next" id="d_send" type="button" onclick="inquire()">Send</button>
-                                                        <i class="fas fa-spinner fa-pulse fa-2x text-primary d-none" id="loader2"></i>
-
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="alert alert-success alert-dismissible fade d-none" id="d_alert" role="alert">
-                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                            <b><strong>THANK YOU FOR CONTACT US</strong>, YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS. :)</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-
-                            <div class="row mb-4">
-                                <div class="col">
-                                    <div id="Reviews" class="pt-5">
-                                        <h3 class="text-secondary h4"><strong>Reviews</strong></h3>
-                                        <div class="row">
-                                            <div class="col-12 col-md-6 col-lg-7 col-xl-8">
-
-
-
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="alert alert-primary mb-3">
-                                                            <h4 class="">{{ucwords(strtolower($paquetes->titulo))}} {{$paquetes->duracion}} Days</h4>
-                                                            <small>Leave your comment too.</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                @foreach($comentario->where('idpaquetes', $paquetes->id) as $comentarios)
-                                                    <div class="row">
-                                                        <div class="col-3">
-                                                            <small class="font-italic"><i class="fas fa-user-circle"></i> {{$comentarios->usuario}} | <span class="font-weight-bold">{{$comentarios->ciudad}}</span></small>
-                                                            <span class="d-block text-g-yellow">
-                                                                                @for ($i = 0; $i < $comentarios->valoracion; $i++)
-                                                                    <i class="fas fa-star"></i>
-                                                                @endfor
-                                                                            </span>
-                                                        </div>
-                                                        <div class="col">
-                                                            <i class="fa fa-quote-left float-left mr-3"></i>
-                                                            @php echo $comentarios->comentario; @endphp
-                                                            <i class="fa fa-quote-right float-left"></i>
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-                                                @endforeach
-
-
-
-                                                <div class="row mb-3">
-                                                    <div class="col text-right">
-                                                        <a href="" class="btn btn-link" data-toggle="modal" data-target="#review-modal">Add Comment <i class="fa fa-plus"></i></a>
-
-                                                        <!-- Modal -->
-                                                        <div class="modal fade" id="review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                            <div class="modal-dialog" role="document">
-                                                                <div class="modal-content">
-                                                                    {{--<div class="modal-header">--}}
-                                                                        {{--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
-                                                                        {{--<button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
-                                                                            {{--<span aria-hidden="true">&times;</span>--}}
-                                                                        {{--</button>--}}
-                                                                    {{--</div>--}}
-                                                                    <div class="modal-body text-left">
-                                                                        <div class="row">
-                                                                            <div class="col">
-                                                                                <div class="alert alert-primary">
-                                                                                    <strong>Share your experience with us.</strong>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">Name <span class="text-primary">*</span></label>
-                                                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">Email address <span class="text-primary">*</span></label>
-                                                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">Travel Date</label>
-                                                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleFormControlTextarea1" class="font-weight-bold">Comment</label>
-                                                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <div class="col text-right">
-                                                                                <a href="" class="btn btn-info"> Add Comment <i class="fa fa-plus"></i></a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row d-none" id="alert-comment">
-                                                                            <div class="col">
-                                                                                <div class="alert alert-success">
-                                                                                    <span><strong>Thanks</strong>, your review is very important for us, it will be posted soon.</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    {{--<div class="modal-footer">--}}
-                                                                        {{--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
-                                                                        {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
-                                                                    {{--</div>--}}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="row justify-content-end">
-                                                    <div class="col-12 col-sm-7 col-md-12 col-lg-6">
-                                                        <div class="row no-gutters">
-                                                            <div class="col">
-                                                                <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
-                                                                    <i class="fab fa-facebook text-primary fa-2x"></i>
-                                                                </a>
-                                                            </div>
-                                                            <div class="col">
-                                                                <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
-                                                                    <i class="fab fa-twitter text-info fa-2x"></i>
-                                                                </a>
-                                                            </div>
-                                                            <div class="col">
-                                                                <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
-                                                                    <i class="fab fa-instagram text-g-dark fa-2x"></i>
-                                                                </a>
-                                                            </div>
-                                                            <div class="col">
-                                                                <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
-                                                                    <i class="fab fa-youtube text-danger fa-2x"></i>
-                                                                </a>
-                                                            </div>
-                                                            <div class="col">
-                                                                <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
-                                                                    <i class="fab fa-google-plus text-danger fa-2x"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                            </div>
-                                            <div class="col-12 col-md-6 col-lg-5 col-xl-4 mt-4 mt-md-0">
-                                                <div class="sticky-top sticky-top-50">
-                                                    <div class="fb-page" data-href="https://www.facebook.com/GOTOPERUcom" data-tabs="timeline" data-width="500" data-height="550" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/GOTOPERUcom" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GOTOPERUcom">GOTOPERUcom</a></blockquote></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -1429,6 +1065,390 @@
                     {{--</div>--}}
                 {{--</div>--}}
             {{--</div>--}}
+        </div>
+    </section>
+
+    <section id="Inquire" class="my-5 py-5">
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col">
+
+                    <div>
+                        <h3 class="text-secondary h4"><strong>Inquire</strong></h3>
+                        <div class="row justify-content-center mt-4">
+                            <div class="col-3 mb-3 d-block">
+                                <img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="w-100">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-10 col-lg-8 text-center">
+                                <h2 class="text-secondary h1 font-weight-bold text-g-green">{{$paquetes->titulo}} {{$paquetes->duracion}} DAYS</h2>
+                                {{--<h5 class="text-secondary">{{$paquetes->duracion}} Days</h5>--}}
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center pt-4 ">
+                            <div class="col-12 col-ms-9 col-md-8">
+                                <form id="d_form" role="form">
+                                    {{csrf_field()}}
+                                    <div class="row pb-2">
+                                        <div class="col">
+                                            <h2 class="text-secondary h5"><strong>HOTEL CATEGORY</strong></h2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 col-sm text-center">
+                                            <div class="btn-group-toggle" data-toggle="buttons">
+                                                <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">
+                                                    {{--<i class="fa fa-home d-block fa-2x"></i>--}}
+                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> Budget
+                                                    <div class="d-block small">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-sm">
+                                            <div class="btn-group-toggle" data-toggle="buttons">
+                                                <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">
+                                                    {{--<i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>--}}
+                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Turista"> Best Value
+                                                    <div class="d-block small">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-sm">
+                                            <div class="btn-group-toggle" data-toggle="buttons">
+                                                <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">
+                                                    {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
+                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Superior"> Superior
+                                                    <div class="d-block small">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-sm">
+                                            <div class="btn-group-toggle" data-toggle="buttons">
+                                                <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">
+                                                    {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
+                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Luxo"> Luxury
+                                                    <div class="d-block small">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row mt-4 pb-2">
+                                        <div class="col">
+                                            <h2 class="text-secondary h5"><strong>NUMBER OF TRAVELERS</strong></h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn col btn-outline-secondary number-hover font-weight-bold bg-light shadow">
+                                            <input type="radio" name="number" class="number" autocomplete="off" value="1" checked> 1 <i class="fa fa-male"></i>
+                                        </label>
+                                        <label class="btn col mx-2 btn-outline-secondary number-hover font-weight-bold bg-light shadow">
+                                            <input type="radio" name="number" class="number" autocomplete="off" value="2"> 2 <i class="fa fa-male"></i>
+                                        </label>
+                                        <label class="btn col btn-outline-secondary number-hover font-weight-bold bg-light shadow">
+                                            <input type="radio" name="number" class="number" autocomplete="off" value="3"> 3 <i class="fa fa-male"></i>
+                                        </label>
+                                        <label class="btn col mx-2 btn-outline-secondary number-hover font-weight-bold bg-light shadow">
+                                            <input type="radio" name="number" class="number" autocomplete="off" value="4"> 4 <i class="fa fa-male"></i>
+                                        </label>
+                                        <label class="btn col btn-outline-secondary number-hover font-weight-bold bg-light shadow">
+                                            <input type="radio" name="number" class="number" autocomplete="off" value="5+"> 5+ <i class="fa fa-male"></i>
+                                        </label>
+                                        <label class="btn col ml-2 btn-outline-secondary number-hover font-weight-bold bg-light shadow">
+                                            <input type="radio" name="number" class="number" autocomplete="off" value="Undecided"><small>Undecided</small>
+                                        </label>
+                                    </div>
+
+                                    <div class="row mt-4">
+                                        <div class="col-12 col-sm">
+                                            <div class="row pb-2">
+                                                <div class="col">
+                                                    <h2 class="text-secondary h5"><strong>TRAVEL DATE <span class="text-primary">*</span></strong></h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="input-group input-group-lg">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="d_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" id="d_package" value="{{$paquetes->codigo}}: {{$paquetes->titulo}} {{$paquetes->duracion}} DAYS">
+                                        </div>
+                                        <div class="col-12 col-sm mt-4 mt-sm-0">
+                                            <div class="row pb-2">
+                                                <div class="col">
+                                                    <h2 class="text-secondary h5"><strong>PHONE NUMBER</strong></h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="input-group input-group-lg">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone"></i></span>
+                                                        </div>
+                                                        <input type="tel" class="form-control" id="d_tel" placeholder="Phone number" aria-label="Phone" aria-describedby="basic-addon1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm">
+                                            <div class="row mt-4 pb-2">
+                                                <div class="col">
+                                                    <h2 class="text-secondary h5"><strong>NAME <span class="text-primary">*</span></strong></h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="input-group input-group-lg">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="d_name" placeholder="Full Name" aria-label="Full Name" aria-describedby="basic-addon1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm">
+                                            <div class="row mt-4 pb-2">
+                                                <div class="col">
+                                                    <h2 class="text-secondary h5"><strong>EMAIL <span class="text-primary">*</span></strong></h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="input-group input-group-lg">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+                                                        </div>
+                                                        <input type="email" class="form-control" id="d_email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-4 pb-2">
+                                        <div class="col">
+                                            <h2 class="text-secondary h5"><strong>COMMENTS?</strong></h2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="input-group input-group-lg">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fa fa-comment"></i></span>
+                                                </div>
+                                                <textarea class="form-control" id="d_comment" aria-label="With textarea" placeholder="How do you imagine a perfect trip to Peru, Special Requests, Questions, Comments"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center mt-2">
+                                        <div class="col-4 my-3 text-center">
+                                            <button class="btn btn-primary btn-lg btn-next font-weight-bold btn-block" id="d_send" type="button" onclick="inquire()">Send</button>
+                                            <i class="fas fa-spinner fa-pulse fa-2x text-primary d-none" id="loader2"></i>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="alert alert-success alert-dismissible fade d-none" id="d_alert" role="alert">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                <b><strong>THANK YOU FOR CONTACT US</strong>, YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS. :)</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col text-right">
+                                <p class="font-weight-bold text-muted">info@gotoperu.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col">
+                    <div id="Reviews" class="pt-5">
+                        <h3 class="text-secondary h4"><strong>Reviews</strong></h3>
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-7 col-xl-8">
+
+
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="alert alert-primary mb-3">
+                                            <h4 class="">{{ucwords(strtolower($paquetes->titulo))}} {{$paquetes->duracion}} Days</h4>
+                                            <small>Leave your comment too.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                @foreach($comentario->where('idpaquetes', $paquetes->id) as $comentarios)
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <small class="font-italic"><i class="fas fa-user-circle"></i> {{$comentarios->usuario}} | <span class="font-weight-bold">{{$comentarios->ciudad}}</span></small>
+                                            <span class="d-block text-g-yellow">
+                                                                                @for ($i = 0; $i < $comentarios->valoracion; $i++)
+                                                    <i class="fas fa-star"></i>
+                                                @endfor
+                                                                            </span>
+                                        </div>
+                                        <div class="col">
+                                            <i class="fa fa-quote-left float-left mr-3"></i>
+                                            @php echo $comentarios->comentario; @endphp
+                                            <i class="fa fa-quote-right float-left"></i>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                @endforeach
+
+
+
+                                <div class="row mb-3">
+                                    <div class="col text-right">
+                                        <a href="" class="btn btn-link" data-toggle="modal" data-target="#review-modal">Add Comment <i class="fa fa-plus"></i></a>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    {{--<div class="modal-header">--}}
+                                                    {{--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
+                                                    {{--<button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+                                                    {{--<span aria-hidden="true">&times;</span>--}}
+                                                    {{--</button>--}}
+                                                    {{--</div>--}}
+                                                    <div class="modal-body text-left">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="alert alert-primary">
+                                                                    <strong>Share your experience with us.</strong>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">Name <span class="text-primary">*</span></label>
+                                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">Email address <span class="text-primary">*</span></label>
+                                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">Travel Date</label>
+                                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlTextarea1" class="font-weight-bold">Comment</label>
+                                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col text-right">
+                                                                <a href="" class="btn btn-info"> Add Comment <i class="fa fa-plus"></i></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row d-none" id="alert-comment">
+                                                            <div class="col">
+                                                                <div class="alert alert-success">
+                                                                    <span><strong>Thanks</strong>, your review is very important for us, it will be posted soon.</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{--<div class="modal-footer">--}}
+                                                    {{--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
+                                                    {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
+                                                    {{--</div>--}}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-12 col-sm-7 col-md-12 col-lg-6">
+                                        <div class="row no-gutters">
+                                            <div class="col">
+                                                <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
+                                                    <i class="fab fa-facebook text-primary fa-2x"></i>
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
+                                                    <i class="fab fa-twitter text-info fa-2x"></i>
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
+                                                    <i class="fab fa-instagram text-g-dark fa-2x"></i>
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
+                                                    <i class="fab fa-youtube text-danger fa-2x"></i>
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
+                                                    <i class="fab fa-google-plus text-danger fa-2x"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-5 col-xl-4 mt-4 mt-md-0">
+                                <div class="sticky-top sticky-top-50">
+                                    <div class="fb-page" data-href="https://www.facebook.com/GOTOPERUcom" data-tabs="timeline" data-width="500" data-height="550" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/GOTOPERUcom" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GOTOPERUcom">GOTOPERUcom</a></blockquote></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

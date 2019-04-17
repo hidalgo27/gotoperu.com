@@ -1,4 +1,4 @@
-@extends('layouts.page.default')
+    @extends('layouts.page.default')
 @section('content')
 
 <section class="d-md-block pb-5">

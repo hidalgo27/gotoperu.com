@@ -12,8 +12,8 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/about.jpg')}}" alt="about us gotoperu" id="hero-vid" class="lazy2">
-            @include('layouts.page.menu-custom')
+            <img src="{{asset('images/about.jpg')}}" alt="about us gotoperu" id="hero-vid" class="banner-itinerary">
+{{--            @include('layouts.page.menu-custom')--}}
         </div>
         <div class="content-header">
             <div class="container-fluid">
@@ -26,11 +26,9 @@
                         {{--</div>--}}
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
-
                                 <a href="#content-page" class="text-white">
-                                    <i class="fas fa-chevron-down fa-4x"></i>
+                                    <i data-feather="chevron-down" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
                                 </a>
-
                             </div>
                         </div>
                     </div>
@@ -56,7 +54,7 @@
     <section class="bg-white m-0">
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="col small font-weight-bold">
                     {{Breadcrumbs::render('about')}}
                 </div>
             </div>
@@ -67,7 +65,7 @@
         <div class="container">
             <div class="row pt-4">
                 <div class="col">
-                    <h1 class="text-secondary h4"><strong>PERU TRAVEL FEATURED PACKAGES</strong></h1>
+                    <h1 class="text-g-green text-center font-weight-bold">PERU TRAVEL <span class="text-g-yellow">FEATURED PACKAGES</span></h1>
                     <p class="lead">GotoPeru travel agency was founded to fulfill a personal dream: “Provide first class travel experience for the international community while generating job opportunities locally”. It is extremely gratifying to employ and reward individuals who extend effort, enthusiasm and commitment to sharing the best of Peru and South America with the rest of the world.</p>
                     <p class="lead">GotoPeru has become a family for all of us. The best thing about working in GotoPeru is that it requires me to be permanently connected to the world of art, culture, archaeology, geography, wildlife conservation, and cuisine. For this reason, it helps me to understand more of the travel world and formulate new methods that ensure our customers’ memorable travel experience. It is also enriching to interact with different yet all amazing people from all over the globe daily as it teaches me more of their culture.</p>
                     <div class="alert alert-g-yellow text-center m-0" role="alert">

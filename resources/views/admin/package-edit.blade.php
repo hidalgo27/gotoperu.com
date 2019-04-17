@@ -531,10 +531,10 @@
                 @foreach($paquetes->imagen_paquetes as $imagen)
                     <div class="col-3 text-center">
                         <img src="{{asset('images/packages/slider/'.$imagen->nombre.'')}}" alt="" class="img-thumbnail w-100 mb-2">
-                        <form action="{{route('admin_iitinerary_image_delete_form_path')}}" method="post">
+                        <form action="{{route('admin_image_delete_package_form_path')}}" method="post">
                             {{--@method('DELETE')--}}
                             @csrf
-                            <input type="hidden" name="id_itinerario" value="{{$imagen->id}}">
+                            <input type="hidden" name="id_package" value="{{$paquetes->id}}">
                             <input type="hidden" name="filename" value="{{$imagen->nombre}}">
                             <button type="submit" class="btn btn-xs btn-danger">Eliminar</button>
                         </form>
@@ -543,16 +543,17 @@
             </div>
         </div>
         <div class="col text-center">
+            @if ($paquetes->imagen)
 
                 <img src="{{asset('images/mapas/'.$paquetes->imagen.'')}}" alt="" class="img-thumbnail w-100 mb-2">
-                <form action="{{route('admin_iitinerary_image_delete_form_path')}}" method="post">
+                <form action="{{route('admin_image_delete_map_package_form_path')}}" method="post">
                     {{--@method('DELETE')--}}
                     @csrf
-                    {{--<input type="hidden" name="id_itinerario" value="{{$imagen->id}}">--}}
-                    {{--<input type="hidden" name="filename" value="{{$imagen->nombre}}">--}}
+                    <input type="hidden" name="id_package" value="{{$paquetes->id}}">
+                    <input type="hidden" name="filename" value="{{$paquetes->imagen}}">
                     <button type="submit" class="btn btn-xs btn-danger">Eliminar</button>
                 </form>
-
+            @endif
         </div>
     </div>
     <div class="row my-5">

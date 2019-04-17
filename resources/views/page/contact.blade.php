@@ -15,8 +15,8 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/contact2.jpg')}}" alt="" id="hero-vid">
-            @include('layouts.page.menu-custom')
+            <img src="{{asset('images/contact2.jpg')}}" alt="" id="hero-vid" class="banner-itinerary">
+{{--            @include('layouts.page.menu-custom')--}}
 
         </div>
         <div class="content-header">
@@ -25,18 +25,17 @@
 
                     <div class="col">
 
-                        <div class="row my-3 justify-content-center text-center">
-                            <p class="text-white display-4 font-weight-light">CONTACT US</p>
+                        <div class="row my-3 justify-content-center text-white font-weight-bold h2">
+                            Contact Us
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
-
                                 <a href="#content-page" class="text-white">
-                                    <i class="fas fa-chevron-down fa-4x"></i>
+                                    <i data-feather="chevron-down" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
                                 </a>
-
                             </div>
                         </div>
+
                     </div>
                 </div>
 

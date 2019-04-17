@@ -22,6 +22,7 @@ mix.scripts([
     'resources/assets/js/vendors/jquery.waypoints.min.js',
     'resources/assets/js/vendors/smooth-scroll.js',
     'node_modules/swiper/dist/js/swiper.min.js',
+    'node_modules/feather-icons/dist/feather.js',
     //Customized
     'node_modules/twitter-bootstrap-wizard/jquery.bootstrap.wizard.js',
     'node_modules/intl-tel-input/src/js/data.js',

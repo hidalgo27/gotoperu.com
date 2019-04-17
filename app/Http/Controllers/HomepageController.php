@@ -313,22 +313,28 @@ class HomepageController extends Controller
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
-        $paquetes = TPaquete::with('precio_paquetes')->get();
+//        $paquetes = TPaquete::with('precio_paquetes','paquetes_categoria')->get();
+
+        $paquete_categoria = TPaqueteCategoria::with('paquete.precio_paquetes', 'categoria')->get();
+
         $paquetes_r = TPaquete::with('precio_paquetes')->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         $comentario = TComentario::with('itinerario')->get();
         $dificultad = TPaqueteDificultad::all();
 
-        return view('page.packages',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'comentario'=>$comentario, 'dificultad'=>$dificultad]);
+
+        return view('page.packages',['paquete_categoria'=>$paquete_categoria, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'comentario'=>$comentario, 'dificultad'=>$dificultad]);
     }
 
     public function packages_durations($from, $to)
     {
-        $paquetes = TPaquete::with('precio_paquetes')->where('duracion', '>=', $from)->where('duracion', '<=', $to)->get();
+
+        $paquetes = TPaquete::with('precio_paquetes', 'paquetes_categoria.categoria')->where('duracion', '>=', $from)->where('duracion', '<=', $to)->get();
         $paquetes_r = TPaquete::with('precio_paquetes')->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         $comentario = TComentario::with('itinerario')->get();
         $dificultad = TPaqueteDificultad::all();
+
 
         SEOMeta::setTitle('Travel Packages '.$from.'-'.-$to.' days - Peru Travel Packages | Machu Picchu Tour Packages');
         SEOMeta::setDescription('Travel Packages '.$from.'-'.$to.' days. Discover Peru with Gotoperu Tour & Travel Packages. We offer amazing deals on Machu Picchu Vacation Packages.  Give us call @ (202) 996-3000 for more info.');
@@ -391,10 +397,12 @@ class HomepageController extends Controller
     {
         $title = str_replace('-', ' ', strtoupper($titulo));
 //        dd($title);
-        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->where('estado', 0)->get();
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes', 'imagen_paquetes')->where('estado', 0)->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
 //        $paquete_categoria =
         $paquete_iti = TPaquete::with('paquete_itinerario','paquetes_destinos', 'precio_paquetes', 'paquetes_categoria')->where('titulo', $title)->get();
+
+//        $imagen_itinerario = TItinerarioImagen::all();
 
         $hoteles = THotel::all();
         $hoteles_destinos = THotelDestino::all();
@@ -695,7 +703,7 @@ class HomepageController extends Controller
         $ciudad = $ciudad[0];
         $ciudad = str_replace('-', ' ', $ciudad);
         $destinations = str_replace('-', ' ', ucwords(strtolower($title)));
-        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->get();
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes', 'paquetes_categoria.categoria')->get();
         $categoria = TCategoria::get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         $destinos = TDestino::get();

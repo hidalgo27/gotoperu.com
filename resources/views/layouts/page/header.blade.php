@@ -1,16 +1,20 @@
 <div id="title" class="text-white">
     <div class="container-fluid">
-        <div class="row align-items-center mt-2">
-            <div class="col-md-6 col-lg-3">
-                <a href="{{route('home_path')}}"><img data-src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" data-srcset="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="logo gotoperu" class="img-fluid lazy has-webp"></a>
+        <div class="row align-items-center justify-content-between my-2">
+            <div class="col-3">
+                <a href="{{route('home_path')}}">
+                    {{--<img src="{{asset('images/logos/logo-gotoperu-ave-w.webp')}}" alt="" class="img-fluid">--}}
+                    <img class="w-100 lazy has-webp"
+                         data-src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}"
+                         data-srcset="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="logo gotoperu">
+                </a>
             </div>
-            <div class="col d-none d-xl-flex">
-                <i class="text-white">Top recommended Peru Travel Operator since 2006</i>
+            <div class="col text-center">
+                <h5 class="font-weight-light"><b class="font-weight-bold">GO</b> with the Peruvian experts</h5>
             </div>
-            <div class="col-md col-lg text-right sticky-top">
-                <a href="tel:+2029963000" class="mx-3 h4">(202) 996-3000</a>
-                <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars"></i></a>
-                <!-- Button trigger modal -->
+            <div class="col-3 text-right">
+                <a href="tel:+2029963000" class="mx-3 text-g-yellow font-weight-bold h5">(202) 996-3000</a>
+                <a href="#" class="text-white"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars fa-2x"></i></a>
             </div>
         </div>
     </div>

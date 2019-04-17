@@ -15,8 +15,8 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/testimonials.jpg')}}" alt="" id="hero-vid">
-            @include('layouts.page.menu-custom')
+            <img src="{{asset('images/testimonials.jpg')}}" alt="" id="hero-vid" class="banner-itinerary">
+            {{--@include('layouts.page.menu-custom')--}}
         </div>
         <div class="content-header">
             <div class="container-fluid">
@@ -88,7 +88,7 @@
     <section class="bg-white m-0">
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="col small font-weight-bold">
                     {{Breadcrumbs::render('testimonials')}}
                 </div>
             </div>
@@ -96,10 +96,10 @@
     </section>
 
     <section class="bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row pt-4">
                 <div class="col">
-                    <h1 class="text-secondary h4"><strong>GOTOPERU REVIEWS AND TESTIMONIALS</strong></h1>
+                    <h1 class="text-g-green font-weight-bold text-center">GOTOPERU REVIEWS AND <span class="text-g-yellow">TESTIMONIALS</span></h1>
                     <p class="lead">We could go on and on about GOTOPERU, but we prefer to show a sample of the testimonials we receive from our value clients from around the world. Check out reviews of GOTOPERU on TripAdvisor or on our own website with over 1000+ testimonials. We want to make you another one of our satisfied clients by giving you stellar service and quality travel, which we have been providing to our customers since 2009.</p>
                 </div>
             </div>
@@ -108,7 +108,7 @@
 
 
     <section class="bg-white py-5">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row justify-content-center">
                 <div class="col col-md-9 col-lg-8">
                     @foreach($testimonials as $testimonial)

@@ -17,8 +17,8 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/destinations/peru.jpg')}}" alt="valle sagrado" id="hero-vid" class="lazy2">
-            @include('layouts.page.menu-custom')
+            <img src="{{asset('images/destinations/peru.jpg')}}" alt="valle sagrado" id="hero-vid" class="banner-itinerary">
+            {{--@include('layouts.page.menu-custom')--}}
 
         </div>
         <div class="content-header">
