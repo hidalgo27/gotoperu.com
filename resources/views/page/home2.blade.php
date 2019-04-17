@@ -357,10 +357,12 @@
                                                         <div class="row align-items-center no-gutters">
                                                             <div class="col-7">
                                                                 <div class="position-relative">
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($cateorias_recommended->paquete->titulo)), $cateorias_recommended->paquete->duracion])}}">
                                                                     <img src="{{asset('images/mapas/'.$cateorias_recommended->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
                                                                     <div class="position-absolute-bottom p-2 text-center">
                                                                         <span class="small font-weight-bold badge badge-g-yellow shadow">{{$cateorias_recommended->categoria->nombre}}</span>
                                                                     </div>
+                                                                    </a>
                                                                 </div>
                                                             </div>
                                                             <div class="col text-center">
@@ -377,8 +379,8 @@
                                                                             @endif
                                                                         @endif
                                                                     @endforeach
-                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($cateorias_recommended->paquete->titulo)), $cateorias_recommended->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                                    <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($cateorias_recommended->paquete->titulo)), $cateorias_recommended->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
+                                                                    <a href="" class="btn btn-g-green font-weight-bold btn-block">Book Now</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -938,7 +940,7 @@
                 <div class="row">
                     <div class="col text-center">
                         <h2 class="display-4 font-weight-bold text-g-yellow">Testimonios <span class="text-g-green">en Video</span></h2>
-                        <p class="lead font-weight-normal text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam architecto assumenda aut consectetur, consequatur cumque delectus ea est ex fuga harum laborum, minima omnis optio qui quod sint vero!</p>
+                        <p class="lead font-weight-normal text-muted">Our biggest rewards are to have satisfied clients share their experience with us. Below are a few testimonials that we would like to share with you!  would you like to be next...camera, action!</p>
                     </div>
                 </div>
                 <div class="row slider-video-testimonio mt-4">
@@ -1014,8 +1016,8 @@
             <div class="container">
                 <div class="row mb-3">
                     <div class="col text-center">
-                        <h2 class="h1 font-weight-bold text-g-dark">Buscas un estilo de viaje</h2>
-                        <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam architecto assumenda aut consectetur, consequatur cumque delectus ea est ex fuga harum laborum, minima omnis optio qui quod sint vero!</p>
+                        <h2 class="h1 font-weight-bold text-g-dark">Looking for the best Travel Experience</h2>
+                        <p class="lead text-muted">No matter the type of adventure you are seeking, GOTOPERU has a trip for you. Hoping to see Llamas? Check! Want an active Inca Trail hiking trip? Check! , How about a Ceviche in Lima? Check!  , How about a trip for you, your kiddos, and Grandma and Grandpa?</p>
                     </div>
                 </div>
                 <div class="row">
@@ -1088,7 +1090,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col text-center">
-                        <a href="" class="btn btn-g-yellow btn-lg font-weight-bold">View all video testimonials</a>
+                        <a href="{{route('category_path')}}" class="btn btn-g-yellow btn-lg font-weight-bold">View all Category</a>
                     </div>
                 </div>
             </div>
@@ -1189,7 +1191,7 @@
                     <div class="col">
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
-                                <a href="">
+                                <a href="{{route('destinations_country_show_path', ['peru-travel', 'cusco'])}}-tours">
                                     <img src="{{asset('images/destinations/destinations/machu-picchu.jpg')}}" alt="" class="w-100 shadow-sm">
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
                                         <h6 class="p-2 m-0 font-weight-normal footer-title-category">Cusco</h6>
@@ -1201,7 +1203,7 @@
                     <div class="col">
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
-                                <a href="#">
+                                <a href="{{route('destinations_country_show_path', ['peru-travel', 'lima'])}}-tours">
                                     <img src="{{asset('images/destinations/destinations/lima.jpg')}}" alt="" class="w-100 shadow-sm">
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
                                         <h6 class="p-2 m-0 font-weight-normal footer-title-category">Lima</h6>
@@ -1213,7 +1215,7 @@
                     <div class="col">
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
-                                <a href="#">
+                                <a href="{{route('destinations_country_show_path', ['peru-travel', 'puno-and-lake-titicaca-tours'])}}-tours">
                                     <img src="{{asset('images/destinations/destinations/puno-and-lake-titicaca.jpg')}}" alt="" class="w-100 shadow-sm">
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
                                         <h6 class="p-2 m-0 font-weight-normal footer-title-category">Puno</h6>
@@ -1225,7 +1227,7 @@
                     <div class="col">
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
-                                <a href="#">
+                                <a href="{{route('destinations_country_show_path', ['peru-travel', 'arequipa-and-colca-canyon-tours'])}}-tours">
                                     <img src="{{asset('images/destinations/destinations/arequipa-and-colca-canyon.jpg')}}" alt="" class="w-100 shadow-sm">
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
                                         <h6 class="p-2 m-0 font-weight-normal footer-title-category">Arequipa</h6>
@@ -1238,7 +1240,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col text-center">
-                        <a href="" class="btn btn-g-yellow btn-lg font-weight-bold">View all video testimonials</a>
+                        <a href="" class="btn btn-g-yellow btn-lg font-weight-bold">View all destinations</a>
                     </div>
                 </div>
             </div>

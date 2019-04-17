@@ -1092,6 +1092,19 @@ $slide-overlay-opacity: 0.6;
   background: rgba(0,0,0,.5);
 }
 
+.category-box .category-tape{
+  margin-bottom: 30px;
+}
+.category-box .category-tape .category-circle{
+  width: 130px;
+  height: 130px;
+  padding: 53px 0;
+  background: rgba(255,255,255,.7);
+}
+.category-box .category-tape .category-circle span.line-category{
+  border-bottom: 1px solid #333333;
+  width: 50px;
+}
 //.top-actividades:hover img {
 //  transition: all 0.5s ease;
 //  opacity: 0.5;

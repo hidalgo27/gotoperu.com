@@ -458,6 +458,31 @@ class HomepageController extends Controller
 
     }
 
+    public function category()
+    {
+        SEOMeta::setTitle('Machu Picchu Tour Packages | Machu Picchu Vacation Packages | Machu Picchu Deals | Peru Honeymoon Travel Packages');
+        SEOMeta::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
+        SEOMeta::setCanonical('https://gotoperu.com/packages');
+        SEOMeta::addKeyword(['Machu Picchu Tour Packages', 'Machu Picchu Packages', 'Machu Picchu Vacation Packages', 'Machu Picchu Deals', 'Peru Honeymoon Travel Packages']);
+
+        OpenGraph::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
+        OpenGraph::setTitle('Machu Picchu Tour Packages | Machu Picchu Vacation Packages | Machu Picchu Deals | Peru Honeymoon Travel Packages');
+        OpenGraph::setUrl('https://gotoperu.com/packages');
+        OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+        OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
+        OpenGraph::setSiteName('goto-peru');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
+
+        $categoria = TCategoria::all();
+
+        return view('page.package-category',['categoria'=>$categoria]);
+    }
+
     public function complete()
     {
         $airport = TAeropuerto::with('precio_aeropuerto')->get();

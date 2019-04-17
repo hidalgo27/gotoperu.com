@@ -35,6 +35,11 @@ Route::get('/tours-packages', [
     'uses' => 'HomepageController@packages_list',
     'as' => 'packages_list_path',
 ]);
+//category
+Route::get('/packages/category', [
+    'uses' => 'HomepageController@category',
+    'as' => 'category_path',
+]);
 
 //itinerary
 Route::get('/packages/{title}/{days}-days-tours', [
