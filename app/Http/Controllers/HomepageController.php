@@ -501,13 +501,14 @@ class HomepageController extends Controller
     }
     public function category_show($title)
     {
-        $category = explode('-', $title);
-        $category = $category[0];
+        $category_t = str_replace('-', ' ', $title);
 
-        $paquete_categoria = TPaqueteCategoria::with(['paquete.precio_paquetes', 'categoria'=>function($query) use ($category) { $query->where('nombre', $category);}])->get();
+        $category = TCategoria::where('nombre', $category_t)->get();
+        foreach ($category as $c_s) {
+            $categorias = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_s->id)->get();
+        }
 
-        $paquetes_r = TPaquete::with('precio_paquetes')->get();
-
+        $all_category = TCategoria::all();
 
         SEOMeta::setTitle('Machu Picchu Tour Packages | Machu Picchu Vacation Packages | Machu Picchu Deals | Peru Honeymoon Travel Packages');
         SEOMeta::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
@@ -529,7 +530,7 @@ class HomepageController extends Controller
 
         $categoria = TCategoria::all();
 
-        return view('page.package-category-show',compact('paquete_categoria'),['categoria'=>$categoria]);
+        return view('page.package-category-show',compact('categorias','all_category','category_t'),['categoria'=>$categoria]);
     }
 
     public function complete()

@@ -19,9 +19,11 @@
                 <div class="row content-header-row align-items-center">
 
                     <div class="col">
-
+                        <div class="row my-3 justify-content-center text-white font-weight-bold">
+                            <small class="d-block">PERU TRAVEL PACKAGES BY CATEGORY</small>
+                        </div>
                         <div class="row my-3 justify-content-center text-white font-weight-bold h2">
-                            PERU TRAVEL PACKAGES BY CATEGORY
+                            {{$category_t}}
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
@@ -60,9 +62,9 @@
 
     <section class="bg-white">
         <div class="container">
-            <div class="row py-4">
+            <div class="row pt-4">
                 <div class="col">
-                    <h1 class="text-g-yellow font-weight-bold text-center">PERU TRAVEL <span class="text-g-green">PACKAGES BY CATEGORY</span></h1>
+                    <h1 class="text-g-yellow font-weight-bold text-center">{{ucwords(strtolower($category_t))}}</h1>
                     <p class="lead m-0">our most popular <b>Peru and South America itineraries</b>, these <strong>packages</strong> could be used as a reference to customize your own trip. At <strong>GOTOPERU</strong> we specialize in crafting personalize experiences based on your preferences; we invited to review these programs to have glimpse of the most important destinations for instance MachuPicchu, Lake Titicaca, Nazca and the Amazon and even multi countries travel adventures involving <strong>Brasil, Ecuador , Argentina.</strong></p>
                     {{--<div class="alert alert-g-yellow text-center m-0" role="alert">--}}
                     {{--<h4>And even multi countries travel adventures involving Brasil, Ecuador , Argentina.</h4>--}}
@@ -77,53 +79,63 @@
 
     <section class="bg-white pb-5">
         <div class="container">
-            <div class="row">
-                @foreach($paquete_categoria as $paquete_categorias)
-                    @if(isset($paquete_categorias->categoria))
-                        @foreach($paquete->where('id',$paquete_categorias->idpaquetes) as $paquetes)
-                            <div class="col-6 text-decoration-none mb-5">
-                                <div class="bg-light shadow-sm rounded">
-                                    <div class="row align-items-center no-gutters">
-                                        <div class="col-12">
-                                            <div class="position-relative">
-                                                <img src="{{asset('images/mapas/'.$paquetes->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
-                                                <div class="position-absolute-bottom p-2 text-center">
-                                                    @foreach($paquetes->paquetes_categoria as $paquetes_categorias)
-                                                        <span class="small font-weight-bold badge badge-g-yellow shadow">{{$paquetes_categorias->categoria->nombre}}</span>
-                                                    @endforeach
+            <div class="row pt-5">
+                <div class="col-3">
+                    <ul class="list-group list-group-flush">
+                        @foreach($all_category as $all_categorys)
+                            <li class="list-group-item font-weight-bold pl-0"><a href="{{route('category_show_path', str_replace(' ', '-', strtolower($all_categorys->nombre)))}}" class="text-secondary stretched-link"><i class="fas fa-chevron-right"></i> {{ucwords(strtolower($all_categorys->nombre))}}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="col-9">
+                    <div class="row">
+                        @foreach($categorias as $categorias)
+                            @if (isset($categorias->categoria))
+                                <div class="col-6 mb-4 text-decoration-none">
+                                    <div class="bg-light shadow-sm rounded">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col-12">
+                                                <div class="position-relative">
+                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias->paquete->titulo)), $categorias->paquete->duracion])}}">
+                                                        <img src="{{asset('images/mapas/'.$categorias->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                        <div class="position-absolute-bottom p-2 text-center">
+                                                            <span class="small font-weight-bold badge badge-g-green shadow">{{$categorias->categoria->nombre}}</span>
+                                                        </div>
+                                                    </a>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-12 text-center mt-2">
-                                            <div class="px-3">
-                                                <h2 class="h6 font-weight-bold">{{$paquetes->titulo}}</h2>
-                                                <small class="text-muted font-weight-bold">{{$paquetes->duracion}} days</small>
-                                                @foreach($paquetes->precio_paquetes as $precio)
-                                                    @if($precio->estrellas == 3)
-                                                        @if($precio->precio_d > 0)
-                                                            {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                            <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                        @else
-                                                            <span class="text-danger">Inquire</span>
+                                            <div class="col-12 text-center mt-2">
+                                                <div class="px-3">
+                                                    <h2 class="h6 font-weight-bold">{{$categorias->paquete->titulo}}</h2>
+                                                    <small class="text-muted font-weight-bold">{{$categorias->paquete->duracion}} days</small>
+                                                    @foreach($categorias->paquete->precio_paquetes as $precio)
+                                                        @if($precio->estrellas == 3)
+                                                            @if($precio->precio_d > 0)
+                                                                {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
+                                                                <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
+                                                            @else
+                                                                <span class="text-danger">Inquire</span>
+                                                            @endif
                                                         @endif
-                                                    @endif
-                                                @endforeach
-                                                <div class="row my-3">
-                                                    <div class="col">
-                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                    </div>
-                                                    <div class="col">
-                                                        <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                    @endforeach
+
+                                                    <div class="row my-3">
+                                                        <div class="col">
+                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias->paquete->titulo)), $categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                        </div>
+                                                        <div class="col">
+                                                            <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
                         @endforeach
-                    @endif
-                @endforeach
+                    </div>
+                </div>
             </div>
         </div>
     </section>

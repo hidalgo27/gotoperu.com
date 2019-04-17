@@ -1066,7 +1066,7 @@
                     <div class="col">
                         <div class="header-img-category rounded">
                             <div class="position-relative">
-                                <a href="#">
+                                <a href="{{route('category_show_path', 'for-families')}}">
                                     <img src="{{asset('images/category/home.jpg')}}" alt="" class="w-100 shadow-sm">
                                     <div class="position-absolute-bottom text-white text-left">
                                         <h5 class="p-2 m-0 footer-title-category">Family</h5>
@@ -1080,7 +1080,7 @@
                             <div class="col">
                                 <div class="header-img-category rounded">
                                     <div class="position-relative">
-                                        <a href="#">
+                                        <a href="{{route('category_show_path', 'recommended')}}">
                                             <img src="{{asset('images/category/recommended.jpg')}}" alt="" class="w-100 shadow-sm">
                                             <div class="position-absolute-bottom text-white text-left">
                                                 <h6 class="p-2 m-0 font-weight-normal footer-title-category">Recommended</h6>
@@ -1092,7 +1092,7 @@
                             <div class="col">
                                 <div class="header-img-category rounded">
                                     <div class="position-relative">
-                                        <a href="#">
+                                        <a href="{{route('category_show_path', 'cultural')}}">
                                             <img src="{{asset('images/category/cultural.jpg')}}" alt="" class="w-100 shadow-sm">
                                             <div class="position-absolute-bottom text-white text-left">
                                                 <h6 class="p-2 m-0 font-weight-normal footer-title-category">Cultural</h6>
@@ -1106,7 +1106,7 @@
                             <div class="col">
                                 <div class="header-img-category rounded">
                                     <div class="position-relative">
-                                        <a href="#">
+                                        <a href="{{route('category_show_path', 'active-treks')}}">
                                             <img src="{{asset('images/category/active.jpg')}}" alt="" class="w-100 shadow-sm">
                                             <div class="position-absolute-bottom text-white text-left">
                                                 <h6 class="p-2 m-0 font-weight-normal footer-title-category">Active / Trek</h6>
@@ -1118,7 +1118,7 @@
                             <div class="col">
                                 <div class="header-img-category rounded">
                                     <div class="position-relative">
-                                        <a href="#">
+                                        <a href="{{route('category_show_path', 'short-programs')}}">
                                             <img src="{{asset('images/category/short.jpg')}}" alt="" class="w-100 shadow-sm">
                                             <div class="position-absolute-bottom text-white text-left">
                                                 <h6 class="p-2 m-0 font-weight-normal footer-title-category">Short Programs</h6>
@@ -1292,7 +1292,7 @@
             <div class="container-fluid">
                 <div class="row mb-3">
                     <div class="col text-center">
-                        <h2 class="h1 font-weight-bold text-g-dark">Buscas un estilo de viaje</h2>
+                        <h2 class="h1 font-weight-bold text-g-dark">Peru Authentic Experiences</h2>
                         <a href="{{route('gallery_path')}}" class="font-weight-bold">Ver nuestra publicaciones</a>
                     </div>
                 </div>
