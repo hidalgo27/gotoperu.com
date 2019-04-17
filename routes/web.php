@@ -128,6 +128,11 @@ Route::get('/testimonials', [
     'uses' => 'HomepageController@testimonials',
     'as' => 'testimonials_path',
 ]);
+//video testimonials
+Route::get('/video-testimonials', [
+    'uses' => 'HomepageController@video_testimonials',
+    'as' => 'video_testimonials_path',
+]);
 
 //faq
 Route::get('/frequently-asked-questions', [

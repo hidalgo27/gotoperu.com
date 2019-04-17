@@ -174,6 +174,7 @@ class HomepageController extends Controller
             $categorias_cruise = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_cru->id)->take(2)->get();
         }
         $testimonio_video = TVideoTestimonio::all()->take(3);
+
         return view('page.home2',
             compact(
                 'categorias_short',
@@ -200,6 +201,11 @@ class HomepageController extends Controller
                 'c_long',
                 'c_cruise'
                 ), ['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'destinos'=>$destinos, 'testimonial'=>$testimonial, 'dificultad'=>$dificultad, 'airport'=>$airport, 'comentario'=>$comentario]);
+    }
+
+    public  function video_testimonials(){
+        $testimonio_video = TVideoTestimonio::all();
+        return view('page.video-testimonials', compact('testimonio_video'));
     }
 
     public function hotels()

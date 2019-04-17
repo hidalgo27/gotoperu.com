@@ -981,7 +981,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col text-center">
-                        <h2 class="display-4 font-weight-bold text-g-yellow">Testimonios <span class="text-g-green">en Video</span></h2>
+                        <h2 class="display-4 font-weight-bold text-g-yellow">Video <span class="text-g-green">Testimonials</span></h2>
                         <p class="lead font-weight-normal text-muted">Our biggest rewards are to have satisfied clients share their experience with us. Below are a few testimonials that we would like to share with you!  would you like to be next...camera, action!</p>
                     </div>
                 </div>
@@ -1001,7 +1001,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col text-center">
-                        <a href="" class="btn btn-primary btn-lg font-weight-bold">View all video testimonials</a>
+                        <a href="{{route('video_testimonials_path')}}" class="btn btn-primary btn-lg font-weight-bold">View all video testimonials</a>
                     </div>
                 </div>
             </div>
