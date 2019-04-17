@@ -76,7 +76,7 @@
                         </a>
                     </div>
                     <div class="col">
-                        <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline" target="_blank">
+                        <a href="https://www.youtube.com/channel/UCWjJ10j-_BfNTDnmjBug8Ng" class="d-inline" target="_blank">
                             <i class="fab fa-youtube text-danger fa-2x"></i>
                         </a>
                     </div>
