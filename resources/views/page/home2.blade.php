@@ -30,6 +30,9 @@
                 <source src="{{asset('media/video6.webm')}}" type="video/webm" />
                 <source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />
             </video>
+            <div class="position-absolute-bottom p-3">
+                <img src="{{asset('images/logos/logo-expedia.png')}}" alt="" width="180">
+            </div>
         </div>
         <div class="content-header">
             <div class="container">
@@ -71,15 +74,8 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
-
                                     </div>
-                                    {{--<a href="#Inquire" class="btn btn-g-yellow btn-lg h2 font-weight-bold mt-3">My ideal trip will be</a>--}}
-                                    {{--<a href="{{route('complete_path')}}" class="btn btn-success btn-lg h2 font-weight-bold mt-3 mx-2">7 days with Airfare from $1399</a>--}}
-                                    {{--<div class="content-video-btn-1 mt-4">--}}
-                                    {{--<a href="https://www.youtube.com/watch?v=pNe-NtXIULs"  class="html5lightbox text-white" title=""><i class="fa fa-play-circle fa-4x"></i></a>--}}
-                                    {{--</div>--}}
+
                                 </div>
                             </div>
                         </div>
