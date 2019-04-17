@@ -187,7 +187,18 @@ class HomepageController extends Controller
                 'categorias_single',
                 'categorias_long',
                 'categorias_cruise',
-                'testimonio_video'
+                'testimonio_video',
+                'c_short',
+                'c_active',
+                'c_luxury',
+                'c_recommended',
+                'c_all',
+                'c_family',
+                'c_honeymoon',
+                'c_cultural',
+                'c_single',
+                'c_long',
+                'c_cruise'
                 ), ['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'destinos'=>$destinos, 'testimonial'=>$testimonial, 'dificultad'=>$dificultad, 'airport'=>$airport, 'comentario'=>$comentario]);
     }
 

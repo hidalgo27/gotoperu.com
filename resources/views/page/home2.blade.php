@@ -316,7 +316,9 @@
                                                 <div class="position-relative">
                                                     <img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                        @foreach($c_recommended as $c_recommendeds)
+                                                            <p class="m-0 font-weight-bold">{{$c_recommendeds->descripcion}}</p>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -397,7 +399,9 @@
                                                 <div class="position-relative">
                                                     <img src="{{asset('images/banners/category/trek.jpg')}}" alt="" class="w-100">
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                        @foreach($c_active as $c_actives)
+                                                            <p class="m-0 font-weight-bold">{{$c_actives->descripcion}}</p>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -411,10 +415,12 @@
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-7">
                                                                     <div class="position-relative">
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_active->paquete->titulo)), $categorias_active->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categorias_active->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categorias_active->categoria->nombre}}</span>
                                                                         </div>
+                                                                        </a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col text-center">
@@ -431,8 +437,8 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_active->paquete->titulo)), $categorias_active->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                                        <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_active->paquete->titulo)), $categorias_active->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                        <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -449,7 +455,9 @@
                                                 <div class="position-relative">
                                                     <img src="{{asset('images/banners/category/luxury.jpg')}}" alt="" class="w-100">
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                        @foreach($c_luxury as $c_luxurys)
+                                                            <p class="m-0 font-weight-bold">{{$c_luxurys->descripcion}}</p>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -461,10 +469,12 @@
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-7">
                                                                     <div class="position-relative">
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_luxury->paquete->titulo)), $categorias_luxury->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categorias_luxury->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categorias_luxury->categoria->nombre}}</span>
                                                                         </div>
+                                                                        </a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col text-center">
@@ -481,8 +491,8 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_luxury->paquete->titulo)), $categorias_luxury->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                                        <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_luxury->paquete->titulo)), $categorias_luxury->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                        <a href="" class="btn btn-g-green font-weight-bold btn-block">Book Now</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -498,7 +508,9 @@
                                                 <div class="position-relative">
                                                     <img src="{{asset('images/banners/category/cruise.jpg')}}" alt="" class="w-100">
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                        @foreach($c_cruise as $c_cruises)
+                                                            <p class="m-0 font-weight-bold">{{$c_cruises->descripcion}}</p>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -510,10 +522,12 @@
                                                         <div class="row align-items-center no-gutters">
                                                             <div class="col-7">
                                                                 <div class="position-relative">
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cruise->paquete->titulo)), $categoria_cruise->paquete->duracion])}}">
                                                                     <img src="{{asset('images/mapas/'.$categoria_cruise->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
                                                                     <div class="position-absolute-bottom p-2 text-center">
                                                                         <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categoria_cruise->categoria->nombre}}</span>
                                                                     </div>
+                                                                    </a>
                                                                 </div>
                                                             </div>
                                                             <div class="col text-center">
@@ -530,8 +544,8 @@
                                                                             @endif
                                                                         @endif
                                                                     @endforeach
-                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cruise->paquete->titulo)), $categoria_cruise->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                                    <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cruise->paquete->titulo)), $categoria_cruise->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                    <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
                                                                 </div>
                                                             </div>
                                                         </div>
