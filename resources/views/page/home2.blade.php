@@ -582,7 +582,9 @@
                                                 <div class="position-relative">
                                                     <img src="{{asset('images/banners/category/short.jpg')}}" alt="" class="w-100">
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                        @foreach($c_short as $c_shorts)
+                                                            <p class="m-0 font-weight-bold">{{$c_shorts->descripcion}}</p>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -595,10 +597,12 @@
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-7">
                                                                     <div class="position-relative">
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_short->paquete->titulo)), $categoria_short->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categoria_short->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-green shadow">{{$categoria_short->categoria->nombre}}</span>
                                                                         </div>
+                                                                        </a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col text-center">
@@ -615,8 +619,8 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_short->paquete->titulo)), $categoria_short->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                                        <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_short->paquete->titulo)), $categoria_short->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                        <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -631,7 +635,9 @@
                                                 <div class="position-relative">
                                                     <img src="{{asset('images/banners/category/all.jpg')}}" alt="" class="w-100">
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                        @foreach($c_all as $c_alls)
+                                                            <p class="m-0 font-weight-bold">{{$c_alls->descripcion}}</p>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -644,10 +650,12 @@
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-7">
                                                                     <div class="position-relative">
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_all->paquete->titulo)), $categoria_all->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categoria_all->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-green shadow">{{$categoria_all->categoria->nombre}}</span>
                                                                         </div>
+                                                                        </a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col text-center">
@@ -680,7 +688,9 @@
                                                 <div class="position-relative">
                                                     <img src="{{asset('images/banners/category/family.jpg')}}" alt="" class="w-100">
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                        @foreach($c_family as $c_familys)
+                                                            <p class="m-0 font-weight-bold">{{$c_familys->descripcion}}</p>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -693,10 +703,12 @@
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-7">
                                                                     <div class="position-relative">
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_family->paquete->titulo)), $categoria_family->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categoria_family->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-green shadow">{{$categoria_family->categoria->nombre}}</span>
                                                                         </div>
+                                                                        </a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col text-center">
@@ -730,7 +742,9 @@
                                                 <div class="position-relative">
                                                     <img src="{{asset('images/banners/category/honeymoon.jpg')}}" alt="" class="w-100">
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                        @foreach($c_honeymoon as $c_honeymoons)
+                                                            <p class="m-0 font-weight-bold">{{$c_honeymoons->descripcion}}</p>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -742,10 +756,12 @@
                                                         <div class="row align-items-center no-gutters">
                                                             <div class="col-7">
                                                                 <div class="position-relative">
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_honeymoon->paquete->titulo)), $categoria_honeymoon->paquete->duracion])}}">
                                                                     <img src="{{asset('images/mapas/'.$categoria_honeymoon->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
                                                                     <div class="position-absolute-bottom p-2 text-center">
                                                                         <span class="small font-weight-bold badge badge-g-green shadow">{{$categoria_honeymoon->categoria->nombre}}</span>
                                                                     </div>
+                                                                    </a>
                                                                 </div>
                                                             </div>
                                                             <div class="col text-center">
@@ -762,8 +778,8 @@
                                                                             @endif
                                                                         @endif
                                                                     @endforeach
-                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_honeymoon->paquete->titulo)), $categoria_honeymoon->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                                    <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_honeymoon->paquete->titulo)), $categoria_honeymoon->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                    <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -798,7 +814,9 @@
                                                 <div class="position-relative">
                                                     <img src="{{asset('images/banners/category/cultural.jpg')}}" alt="" class="w-100">
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                        @foreach($c_cultural as $c_culturals)
+                                                            <p class="m-0 font-weight-bold">{{$c_culturals->descripcion}}</p>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -811,10 +829,12 @@
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-7">
                                                                     <div class="position-relative">
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categoria_cultural->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-dark shadow">{{$categoria_cultural->categoria->nombre}}</span>
                                                                         </div>
+                                                                        </a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col text-center">
@@ -831,8 +851,8 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                                        <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                        <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -848,7 +868,9 @@
                                                 <div class="position-relative">
                                                     <img src="{{asset('images/banners/category/single.jpg')}}" alt="" class="w-100">
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                        @foreach($c_single as $c_singles)
+                                                            <p class="m-0 font-weight-bold">{{$c_singles->descripcion}}</p>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -861,10 +883,12 @@
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-7">
                                                                     <div class="position-relative">
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_single->paquete->titulo)), $categoria_single->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categoria_single->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-dark shadow">{{$categoria_single->categoria->nombre}}</span>
                                                                         </div>
+                                                                        </a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col text-center">
@@ -881,8 +905,8 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_single->paquete->titulo)), $categoria_single->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                                        <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_single->paquete->titulo)), $categoria_single->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                        <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -898,7 +922,9 @@
                                                 <div class="position-relative">
                                                     <img src="{{asset('images/banners/category/long.jpg')}}" alt="" class="w-100">
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        <p class="m-0 font-weight-bold">Ideally for familes with kids, focus on quality time and best price.</p>
+                                                        @foreach($c_long as $c_longs)
+                                                            <p class="m-0 font-weight-bold">{{$c_longs->descripcion}}</p>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -910,10 +936,12 @@
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-7">
                                                                     <div class="position-relative">
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_long->paquete->titulo)), $categoria_long->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categoria_long->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-dark shadow">{{$categoria_long->categoria->nombre}}</span>
                                                                         </div>
+                                                                        </a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col text-center">
@@ -930,8 +958,8 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_long->paquete->titulo)), $categoria_long->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                                        <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_long->paquete->titulo)), $categoria_long->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                        <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
