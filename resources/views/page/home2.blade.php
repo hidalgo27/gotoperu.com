@@ -24,9 +24,9 @@
             </div>
         </div>
         <div id="overlay" class="position-relative">
-            <video class="hero-vid-home banner-itinerary" id="hero-vid" poster="{{asset('images/slider/package-1.webp')}}" autoplay loop muted>
+            <video class="hero-vid-home banner-itinerary" id="hero-vid" poster="{{asset('images/itinerary/banners/GTP1.jpg')}}" autoplay loop muted>
                 <source src="{{asset('media/final2.mp4')}}" type="video/mp4"/>
-{{--                <source src="{{asset('media/final2.m4v')}}" type="video/mp4" />--}}
+                <source src="{{asset('media/final2.m4v')}}" type="video/mp4" />
                 <source src="{{asset('media/final2.webm')}}" type="video/webm" />
                 <source  src="{{asset('media/final2.ogv')}}" type="video/ogg" />
             </video>
