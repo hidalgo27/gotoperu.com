@@ -24,11 +24,11 @@
             </div>
         </div>
         <div id="overlay" class="position-relative">
-            <video class="hero-vid-home" id="hero-vid" poster="{{asset('images/slider/package-1.webp')}}" autoplay loop muted>
-                <source src="{{asset('media/final.mp4')}}" />
-                <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
-                <source src="{{asset('media/video6.webm')}}" type="video/webm" />
-                <source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />
+            <video class="hero-vid-home banner-itinerary" id="hero-vid" poster="{{asset('images/slider/package-1.webp')}}" autoplay loop muted>
+                <source src="{{asset('media/final2.mp4')}}" type="video/mp4"/>
+{{--                <source src="{{asset('media/final2.m4v')}}" type="video/mp4" />--}}
+                <source src="{{asset('media/final2.webm')}}" type="video/webm" />
+                <source  src="{{asset('media/final2.ogv')}}" type="video/ogg" />
             </video>
             <div class="position-absolute-bottom p-3">
                 <img src="{{asset('images/logos/logo-expedia.png')}}" alt="" width="180">
@@ -288,8 +288,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col text-center">
-                        <h2 class="h1 font-weight-bold text-g-green mb-3">BOOK ONLINE</h2>
-                        <p class="lead font-weight-normal text-secondary mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores commodi consequatur deleniti deserunt dolorem ea in molestias, natus nemo perferendis praesentium quae qui rerum saepe sapiente tempore voluptate voluptatem!</p>
+                        <h2 class="h1 font-weight-bold text-g-green mb-3">OUR BEST PROGRAMS</h2>
+                        <p class="lead font-weight-normal text-secondary mb-5">Crafting unforgettable trips to the land of the Incas since 2010!  Select a pre-designed travel package below or design an unforgettable vacation with our local travel advisors.</p>
                     </div>
                 </div>
                 {{--recom--}}
