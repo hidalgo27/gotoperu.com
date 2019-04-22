@@ -15247,6 +15247,8 @@ header {
 
 .footer-title-category {
   opacity: .7;
+  border-bottom: 1px solid #FFFFFF;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .header-img-category a:hover .footer-title-category {
@@ -15263,7 +15265,7 @@ header {
 
 .header-img-destinations a:hover .footer-title-category {
   opacity: 1;
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid #f9a825;
   background: rgba(0, 0, 0, 0.5);
 }
 

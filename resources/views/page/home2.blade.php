@@ -368,7 +368,7 @@
                                                                     <h2 class="h6 font-weight-bold">{{$cateorias_recommended->paquete->titulo}}</h2>
                                                                     <small class="text-muted font-weight-bold">{{$cateorias_recommended->paquete->duracion}} days</small>
                                                                     @foreach($cateorias_recommended->paquete->precio_paquetes as $precio)
-                                                                        @if($precio->estrellas == 3)
+                                                                        @if($precio->estrellas == 2)
                                                                             @if($precio->precio_d > 0)
                                                                                 {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                                 <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
@@ -424,7 +424,7 @@
                                                                         <h2 class="h6 font-weight-bold">{{$categorias_active->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categorias_active->paquete->duracion}} days</small>
                                                                         @foreach($categorias_active->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 3)
+                                                                            @if($precio->estrellas == 2)
                                                                                 @if($precio->precio_d > 0)
                                                                                     {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                                     <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
@@ -478,7 +478,7 @@
                                                                         <h2 class="h6 font-weight-bold">{{$categorias_luxury->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categorias_luxury->paquete->duracion}} days</small>
                                                                         @foreach($categorias_luxury->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 3)
+                                                                            @if($precio->estrellas == 2)
                                                                                 @if($precio->precio_d > 0)
                                                                                     {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                                     <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
@@ -531,7 +531,7 @@
                                                                     <h2 class="h6 font-weight-bold">{{$categoria_cruise->paquete->titulo}}</h2>
                                                                     <small class="text-muted font-weight-bold">{{$categoria_cruise->paquete->duracion}} days</small>
                                                                     @foreach($categoria_cruise->paquete->precio_paquetes as $precio)
-                                                                        @if($precio->estrellas == 3)
+                                                                        @if($precio->estrellas == 2)
                                                                             @if($precio->precio_d > 0)
                                                                                 {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                                 <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
@@ -606,7 +606,7 @@
                                                                         <h2 class="h6 font-weight-bold">{{$categoria_short->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categoria_short->paquete->duracion}} days</small>
                                                                         @foreach($categoria_short->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 3)
+                                                                            @if($precio->estrellas == 2)
                                                                                 @if($precio->precio_d > 0)
                                                                                     {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                                     <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
@@ -659,7 +659,7 @@
                                                                         <h2 class="h6 font-weight-bold">{{$categoria_all->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categoria_all->paquete->duracion}} days</small>
                                                                         @foreach($categoria_all->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 3)
+                                                                            @if($precio->estrellas == 2)
                                                                                 @if($precio->precio_d > 0)
                                                                                     {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                                     <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
@@ -712,7 +712,7 @@
                                                                         <h2 class="h6 font-weight-bold">{{$categoria_family->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categoria_family->paquete->duracion}} days</small>
                                                                         @foreach($categoria_family->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 3)
+                                                                            @if($precio->estrellas == 2)
                                                                                 @if($precio->precio_d > 0)
                                                                                     {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                                     <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
@@ -765,7 +765,7 @@
                                                                     <h2 class="h6 font-weight-bold">{{$categoria_honeymoon->paquete->titulo}}</h2>
                                                                     <small class="text-muted font-weight-bold">{{$categoria_honeymoon->paquete->duracion}} days</small>
                                                                     @foreach($categoria_honeymoon->paquete->precio_paquetes as $precio)
-                                                                        @if($precio->estrellas == 3)
+                                                                        @if($precio->estrellas == 2)
                                                                             @if($precio->precio_d > 0)
                                                                                 {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                                 <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
@@ -838,7 +838,7 @@
                                                                         <h2 class="h6 font-weight-bold">{{$categoria_cultural->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categoria_cultural->paquete->duracion}} days</small>
                                                                         @foreach($categoria_cultural->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 3)
+                                                                            @if($precio->estrellas == 2)
                                                                                 @if($precio->precio_d > 0)
                                                                                     {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                                     <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
@@ -892,7 +892,7 @@
                                                                         <h2 class="h6 font-weight-bold">{{$categoria_single->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categoria_single->paquete->duracion}} days</small>
                                                                         @foreach($categoria_single->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 3)
+                                                                            @if($precio->estrellas == 2)
                                                                                 @if($precio->precio_d > 0)
                                                                                     {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                                     <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
@@ -945,7 +945,7 @@
                                                                         <h2 class="h6 font-weight-bold">{{$categoria_long->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categoria_long->paquete->duracion}} days</small>
                                                                         @foreach($categoria_long->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 3)
+                                                                            @if($precio->estrellas == 2)
                                                                                 @if($precio->precio_d > 0)
                                                                                     {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                                     <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
@@ -1232,7 +1232,7 @@
                                 <a href="{{route('destinations_country_show_path', ['peru-travel', 'cusco'])}}-tours">
                                     <img src="{{asset('images/destinations/destinations/machu-picchu.jpg')}}" alt="" class="w-100 shadow-sm">
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
-                                        <h6 class="p-2 m-0 font-weight-normal footer-title-category">Cusco</h6>
+                                        <h6 class="p-2 m-0 font-weight-bold footer-title-category">Cusco</h6>
                                     </div>
                                 </a>
                             </div>
@@ -1244,7 +1244,7 @@
                                 <a href="{{route('destinations_country_show_path', ['peru-travel', 'lima'])}}-tours">
                                     <img src="{{asset('images/destinations/destinations/lima.jpg')}}" alt="" class="w-100 shadow-sm">
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
-                                        <h6 class="p-2 m-0 font-weight-normal footer-title-category">Lima</h6>
+                                        <h6 class="p-2 m-0 font-weight-bold footer-title-category">Lima</h6>
                                     </div>
                                 </a>
                             </div>
@@ -1256,7 +1256,7 @@
                                 <a href="{{route('destinations_country_show_path', ['peru-travel', 'puno-and-lake-titicaca-tours'])}}-tours">
                                     <img src="{{asset('images/destinations/destinations/puno-and-lake-titicaca.jpg')}}" alt="" class="w-100 shadow-sm">
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
-                                        <h6 class="p-2 m-0 font-weight-normal footer-title-category">Puno</h6>
+                                        <h6 class="p-2 m-0 font-weight-bold footer-title-category">Puno</h6>
                                     </div>
                                 </a>
                             </div>
@@ -1268,7 +1268,7 @@
                                 <a href="{{route('destinations_country_show_path', ['peru-travel', 'arequipa-and-colca-canyon-tours'])}}-tours">
                                     <img src="{{asset('images/destinations/destinations/arequipa-and-colca-canyon.jpg')}}" alt="" class="w-100 shadow-sm">
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
-                                        <h6 class="p-2 m-0 font-weight-normal footer-title-category">Arequipa</h6>
+                                        <h6 class="p-2 m-0 font-weight-bold footer-title-category">Arequipa</h6>
                                     </div>
                                 </a>
                             </div>

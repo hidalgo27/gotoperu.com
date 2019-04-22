@@ -113,7 +113,7 @@
                                                     <h2 class="h6 font-weight-bold">{{$paquete_categorias->paquete->titulo}}</h2>
                                                     <small class="text-muted font-weight-bold">{{$paquete_categorias->paquete->duracion}} days</small>
                                                     @foreach($paquete_categorias->paquete->precio_paquetes as $precio)
-                                                        @if($precio->estrellas == 3)
+                                                        @if($precio->estrellas == 2)
                                                             @if($precio->precio_d > 0)
 {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                 <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>

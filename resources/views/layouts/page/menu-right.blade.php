@@ -89,8 +89,8 @@
                 <hr>
                 <div class="row mt-2">
                     <div class="col">
-                        <a href="https://m.me/GOTOPERUcom/" class="btn btn-primary" target="_blank"><i class="fab fa-facebook-square"></i> Chat Facebook</a>
-                        <a href="https://api.whatsapp.com/send?phone=51084262555" class="btn btn-success" target="_blank"><i class="fab fa-whatsapp"></i> Chat Twitter</a>
+                        <a href="https://m.me/GOTOPERUcom/" class="btn btn-primary" target="_blank"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+                        <a href="https://api.whatsapp.com/send?phone=19294807000" class="btn btn-success" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
             </div>

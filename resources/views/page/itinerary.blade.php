@@ -605,7 +605,7 @@
                                                 <span class="font-weight-bold d-block h4">{{$paquetes->duracion}} days</span>
                                                 <div class="text-center">
                                                     <small>from</small>
-                                                    @foreach($paquetes->precio_paquetes->where('estrellas', 3)->sortBy('estrellas') as $precio)
+                                                    @foreach($paquetes->precio_paquetes->where('estrellas', 2)->sortBy('estrellas') as $precio)
                                                         @if($precio->precio_d > 0)
                                                             <span class="h1 font-weight-bold text-danger"><sup>$</sup>{{$precio->precio_d}}</span>
                                                         @else

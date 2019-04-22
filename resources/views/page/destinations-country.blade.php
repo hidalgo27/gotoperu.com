@@ -98,7 +98,7 @@
                                                             </div>
                                                             <div class="col-4 bg-g-dark py-3 text-white text-center">
                                                                 @foreach($paquetes->precio_paquetes as $precio)
-                                                                    @if($precio->estrellas == 3)
+                                                                    @if($precio->estrellas == 2)
                                                                         @if($precio->precio_d > 0)
                                                                             <p class="text-g-yellow font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>
                                                                         @else
