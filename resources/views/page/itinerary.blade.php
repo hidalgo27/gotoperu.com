@@ -203,10 +203,10 @@
                                         <a class="nav-link text-white font-weight-bold rounded-0" href="#Itinerary">Itinerary</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link text-white font-weight-bold rounded-0" href="#Hotels">Hotels</a>
+                                        <a class="nav-link text-white font-weight-bold rounded-0" href="#Included">Included and Not Included</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link text-white font-weight-bold rounded-0" href="#Maps">Route</a>
+                                        <a class="nav-link text-white font-weight-bold rounded-0" href="#Hotels">Hotels</a>
                                     </li>
                                     {{--<li class="nav-item d-none d-sm-block">--}}
                                     {{--<a class="nav-link text-secondary rounded-0" href="#Inquire">Inquire</a>--}}
