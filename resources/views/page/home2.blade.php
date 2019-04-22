@@ -1174,7 +1174,7 @@
                     </div>
                     <div class="row mt-5">
                         <div class="col text-white text-white text-center">
-                            <a href="#" class="btn btn-lg btn-g-yellow font-weight-bold text-white">Reserve Ahora</a>
+                            <a href="#" class="btn btn-lg btn-g-yellow font-weight-bold text-white">Inquire Now</a>
                         </div>
                     </div>
                 </div>
