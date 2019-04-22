@@ -1289,7 +1289,7 @@
                 <div class="row mb-3">
                     <div class="col text-center">
                         <h2 class="h1 font-weight-bold text-g-dark">Peru Authentic Experiences</h2>
-                        <a href="{{route('gallery_path')}}" class="font-weight-bold">Ver nuestra publicaciones</a>
+                        <a href="{{route('gallery_path')}}" class="font-weight-bold">See our publications</a>
                     </div>
                 </div>
                 <div class="row">
