@@ -549,17 +549,17 @@
                                                 <h6 class="text-secondary pt-2 m-0 font-weight-bold" id="{{$paquete_destino->destinos->id}}-hotel"><i class="fas fa-angle-right text-primary"></i> {{$paquete_destino->destinos->nombre}} HOTEL</h6>
                                                 <div class="row p-2 pb-4">
                                                     @foreach($hoteles_destinos->where('iddestinos', $paquete_destino->destinos->id) as $hoteles_destino)
-                                                        <div class="col-12 col-lg-4 d-flex my-2">
+                                                        <div class="col-12 col-lg-4 d-flex my-3">
                                                             <div class="row">
                                                                 {{--<div class="col-auto d-none d-sm-block">--}}
                                                                     {{--<img src="{{$hoteles_destino->hotel->imagen}}" alt="" class=" rounded-circle" width="50" height="50">--}}
                                                                 {{--</div>--}}
                                                                 <div class="col">
-                                                                    <a href="{{$hoteles_destino->hotel->url}}" class="text-secondary align-middle"><i class="fas fa-h-square"></i> {{ucwords(strtolower($hoteles_destino->hotel->nombre))}}</a>
+                                                                    <a href="{{$hoteles_destino->hotel->url}}" class="text-secondary font-weight-bold align-middle d-block"><i class="fas fa-h-square"></i> {{ucwords(strtolower($hoteles_destino->hotel->nombre))}}</a>
                                                                     @for($i=0; $i < $hoteles_destino->hotel->estrellas; $i++)
-                                                                        <small><i class="fa fa-star text-g-yellow"></i></small>
+                                                                        <small><i class="fa fa-star text-g-yellow small"></i></small>
                                                                     @endfor
-                                                                    <small class="d-block text-secondary"><i class="fa fa-map-marker-alt"></i> {{$hoteles_destino->hotel->direccion}}</small>
+                                                                    <small class="d-block text-secondary mt-2"><i class="fa fa-map-marker-alt"></i> {{$hoteles_destino->hotel->direccion}}</small>
                                                                     {{--@php $services = explode(',', $hoteles_destino->hotel->servicios); @endphp--}}
                                                                     {{--<p class="pt-2"><b>Services:</b>--}}
                                                                     {{--@foreach($services as $service)--}}
