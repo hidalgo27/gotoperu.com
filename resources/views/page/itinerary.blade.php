@@ -508,7 +508,7 @@
                                         <div class="col">
                                             {{--<h3 class="text-secondary h4"><strong>Included</strong></h3>--}}
                                             <div class="card p-3 w-100">
-                                                <h5 class="text-primary font-weight-bold"><i class="fas fa-angle-right"></i> Included:</h5>
+                                                <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> Included:</h5>
                                                 <hr>
                                                 <ul class="pl-3">
                                                     @foreach($paquetes->paquete_incluye as $paquetes_incluye)
@@ -519,7 +519,7 @@
                                         </div>
                                         <div class="col">
                                             <div class="card p-3 w-100">
-                                                <h5 class="text-primary font-weight-bold"><i class="fas fa-angle-right"></i> Not Included:</h5>
+                                                <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> Not Included:</h5>
                                                 <hr>
                                                 <ul class="pl-3">
                                                     @foreach($paquetes->paquete_no_incluye as $paquetes_no_incluye)
