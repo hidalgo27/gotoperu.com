@@ -245,7 +245,7 @@
                         <h2 class="display-4 font-weight-bold text-g-yellow">WE ARE <span class="text-g-green">GOTOPERU</span></h2>
                         {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                         {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                        <p class="lead font-weight-normal text-secondary m-0">Local travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 12 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized our efforts citing us a Top local Experts!</p>
+                        <p class="lead font-weight-normal text-secondary m-0">Local travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 10 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized our efforts citing us a Top local Experts!</p>
                     </div>
                 </div>
             </div>
@@ -289,7 +289,7 @@
                 <div class="row">
                     <div class="col text-center">
                         <h2 class="h1 font-weight-bold text-g-green mb-3">OUR BEST PROGRAMS</h2>
-                        <p class="lead font-weight-normal text-secondary mb-5">Crafting unforgettable trips to the land of the Incas since 2010!  Select a pre-designed travel package below or design an unforgettable vacation with our local travel advisors.</p>
+                        <p class="lead font-weight-normal text-secondary mb-5">Crafting unforgettable trips to the land of the Incas since 2009!  Select a pre-designed travel package below or design an unforgettable vacation with our local travel advisors.</p>
                     </div>
                 </div>
                 {{--recom--}}
@@ -1139,7 +1139,7 @@
             <div class="offer py-5">
                 <div class="container">
                     <div class="col text-center">
-                        <h2 class="h1 font-weight-bold text-white">Buscas un <span class="text-g-yellow">estilo</span>  de viaje</h2>
+                        <h2 class="h1 font-weight-bold text-white">Why <span class="text-g-yellow">Go</span>  With GotoPeru</h2>
                     </div>
                     <div class="row mt-5">
                         <div class="col-2 text-center">
@@ -1169,7 +1169,7 @@
                     </div>
                     <div class="row mt-5">
                         <div class="col text-white text-white text-center">
-                            <p class="font-weight-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <p class="font-weight-light">Since 2009.</p>
                         </div>
                     </div>
                     <div class="row mt-5">
@@ -1205,11 +1205,11 @@
                         <h2 class="text-secondary h1 font-weight-bold text-g-yellow"><strong>We are <img src="{{asset('images/logos/logo-gotoperu.webp')}}" alt="" width="250"></strong></h2>
                         {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                         {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                        <p class="text-dark">Local travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 12 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized our efforts citing us a Top local Experts!</p>
+                        <p class="text-dark">Local travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 10 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized our efforts citing us a Top local Experts!</p>
                         <ul class="list-unstyled">
                             <li><i class="fa fa-check text-g-yellow"></i> Headquarters: Cusco, Peru</li>
                             <li><i class="fa fa-check text-g-yellow"></i> Company: 25 members</li>
-                            <li><i class="fa fa-check text-g-yellow"></i> Founded: 2006</li>
+                            <li><i class="fa fa-check text-g-yellow"></i> Founded: 2009</li>
                             <li><i class="fa fa-check text-g-yellow"></i> Offices: Lima, Peru / New York, Usa</li>
                         </ul>
                     </div>
