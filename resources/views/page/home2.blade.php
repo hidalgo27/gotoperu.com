@@ -433,7 +433,7 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_active->paquete->titulo)), $categorias_active->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_active->paquete->titulo)), $categorias_active->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
                                                                         <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
                                                                     </div>
                                                                 </div>
@@ -487,7 +487,7 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_luxury->paquete->titulo)), $categorias_luxury->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_luxury->paquete->titulo)), $categorias_luxury->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
                                                                         <a href="" class="btn btn-g-green font-weight-bold btn-block">Book Now</a>
                                                                     </div>
                                                                 </div>
@@ -540,7 +540,7 @@
                                                                             @endif
                                                                         @endif
                                                                     @endforeach
-                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cruise->paquete->titulo)), $categoria_cruise->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cruise->paquete->titulo)), $categoria_cruise->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
                                                                     <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
                                                                 </div>
                                                             </div>
@@ -615,7 +615,7 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_short->paquete->titulo)), $categoria_short->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_short->paquete->titulo)), $categoria_short->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
                                                                         <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
                                                                     </div>
                                                                 </div>
@@ -774,7 +774,7 @@
                                                                             @endif
                                                                         @endif
                                                                     @endforeach
-                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_honeymoon->paquete->titulo)), $categoria_honeymoon->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_honeymoon->paquete->titulo)), $categoria_honeymoon->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
                                                                     <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
                                                                 </div>
                                                             </div>
@@ -847,7 +847,7 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
                                                                         <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
                                                                     </div>
                                                                 </div>
@@ -901,7 +901,7 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_single->paquete->titulo)), $categoria_single->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_single->paquete->titulo)), $categoria_single->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
                                                                         <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
                                                                     </div>
                                                                 </div>
@@ -954,7 +954,7 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_long->paquete->titulo)), $categoria_long->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_long->paquete->titulo)), $categoria_long->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
                                                                         <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
                                                                     </div>
                                                                 </div>
