@@ -414,7 +414,7 @@ class HomepageController extends Controller
     {
         $title = str_replace('-', ' ', strtoupper($titulo));
 //        dd($title);
-        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes', 'imagen_paquetes')->where('estado', 0)->get();
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes', 'imagen_paquetes', 'paquete_incluye', 'paquete_no_incluye')->where('estado', 0)->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
 //        $paquete_categoria =
         $paquete_iti = TPaquete::with('paquete_itinerario','paquetes_destinos', 'precio_paquetes', 'paquetes_categoria')->where('titulo', $title)->get();

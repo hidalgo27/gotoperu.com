@@ -221,9 +221,9 @@
                                     @php echo $paquetes->descripcion; @endphp
                                     <div class="row py-3">
                                         <div class="col d-flex">
-                                            <div class="card p-3 w-100">
-                                                @foreach($paquetes->paquetes_categoria as $categoria)
-                                                <h5 class="text-secondary font-weight-bold"><i class="fas fa-angle-right"></i> Category: <span class="text-primary">{{ucwords(strtolower($categoria->categoria->nombre))}}</span></h5>
+                                            @foreach($paquetes->paquetes_categoria as $categoria)
+                                                <div class="card p-3 w-100">
+                                                    <h5 class="text-secondary font-weight-bold"><i class="fas fa-angle-right"></i> Category: <span class="text-primary">{{ucwords(strtolower($categoria->categoria->nombre))}}</span></h5>
                                                     <p>{{$categoria->categoria->descripcion}}</p>
                                                 </div>
                                             @endforeach
@@ -493,6 +493,7 @@
                                             <div class="col-12 col-lg">
                                                 <h3 class="text-secondary h4"><strong>Included</strong></h3>
                                                 @php echo $paquetes->incluye; @endphp
+
                                             </div>
                                             <div class="col-12 col-lg">
                                                 <h3 class="text-secondary h4"><strong>Not Included</strong></h3>
@@ -502,18 +503,33 @@
                                     </div>
                                 </div>
 
-                                {{--<div id="Included" class="">--}}
-                                    {{--<div class="row">--}}
-                                        {{--<div class="col">--}}
+                                <div id="Included" class="mt-4">
+                                    <div class="row">
+                                        <div class="col">
                                             {{--<h3 class="text-secondary h4"><strong>Included</strong></h3>--}}
-                                            {{--@php echo $paquetes->incluye; @endphp--}}
-                                        {{--</div>--}}
-                                        {{--<div class="col">--}}
-                                            {{--<h3 class="text-secondary h4"><strong>Not Included</strong></h3>--}}
-                                            {{--@php echo $paquetes->noincluye; @endphp--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
+                                            <div class="card p-3 w-100">
+                                                <h5 class="text-primary font-weight-bold"><i class="fas fa-angle-right"></i> Included:</h5>
+                                                <hr>
+                                                <ul class="pl-3">
+                                                    @foreach($paquetes->paquete_incluye as $paquetes_incluye)
+                                                        <li>{{$paquetes_incluye->incluye->incluye}}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card p-3 w-100">
+                                                <h5 class="text-primary font-weight-bold"><i class="fas fa-angle-right"></i> Not Included:</h5>
+                                                <hr>
+                                                <ul class="pl-3">
+                                                    @foreach($paquetes->paquete_no_incluye as $paquetes_no_incluye)
+                                                        <li>{{$paquetes_no_incluye->no_incluye->noincluye}}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div id="Hotels" class="pt-5">
                                     <div class="row">
@@ -585,14 +601,14 @@
                                     {{--@endforeach--}}
                                 </div>
 
-                                <div id="Maps">
-                                    <div class="row pt-5">
-                                        <div class="col-12">
-                                            <h3 class="text-secondary h4 mb-3"><strong>Maps</strong></h3>
-                                            @php echo $paquetes->maps; @endphp
-                                        </div>
-                                    </div>
-                                </div>
+                                {{--<div id="Maps">--}}
+                                    {{--<div class="row pt-5">--}}
+                                        {{--<div class="col-12">--}}
+                                            {{--<h3 class="text-secondary h4 mb-3"><strong>Maps</strong></h3>--}}
+                                            {{--@php echo $paquetes->maps; @endphp--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
 
 
 
@@ -1074,9 +1090,10 @@
                 <div class="col">
 
                     <div>
-                        <h3 class="text-secondary h4"><strong>Inquire</strong></h3>
+
                         <div class="row justify-content-center mt-4">
-                            <div class="col-3 mb-3 d-block">
+                            <div class="col-3 mb-3 d-block text-center">
+                                <h3 class="text-secondary h4"><strong>Inquire</strong></h3>
                                 <img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="w-100">
                             </div>
                         </div>
