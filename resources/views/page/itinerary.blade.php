@@ -1450,7 +1450,17 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 text-center text-sm-left text-md-right col-sm-7 col-md-7 col-lg-auto">
-                    <h5 class="m-0"><strong>{{($paquetes->titulo)}} </strong> {{($paquetes->duracion)}} DAYS TOURS | <sup>from $</sup>{{$precio->precio_d}}<small>USD</small></h5>
+                    <h5 class="m-0"><strong>{{($paquetes->titulo)}} </strong> {{($paquetes->duracion)}} DAYS TOURS | <sup>from $</sup>
+                        @foreach($paquetes->precio_paquetes->where('estrellas', 2)->sortBy('estrellas') as $precio)
+                            @if($precio->precio_d > 0)
+                                {{$precio->precio_d}}
+                            @else
+                                <span class="text-danger">
+                                                                Inquire
+                                                            </span>
+                            @endif
+                        @endforeach
+                        <small>USD</small></h5>
                 </div>
                 <div class="col-12 text-center text-sm-left text-md-right col-sm-3 col-md-3 col-lg text-right">
                     <a href="#Inquire" class="btn btn-sm btn-g-yellow font-weight-bold" onclick="ideal_trip()">INQUIRE NOW</a>
