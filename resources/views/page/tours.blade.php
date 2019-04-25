@@ -39,16 +39,7 @@
         </div>
     </section>
 
-    @include('layouts.page.menu-2')
-    <section class="d-md-none">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col">
-                    <img data-src="{{asset('images/banners/itinerary/GTP40.jpg')}}" data-srcset="{{asset('images/banners/itinerary/GTP40.jpg')}}" alt="machu picchu" class="img-fluid lazy has-webp">
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('layouts.page.menu')
 
     <section class="bg-white m-0">
         <div class="container-fluid">

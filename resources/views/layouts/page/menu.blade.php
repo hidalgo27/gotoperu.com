@@ -10,17 +10,6 @@
     {{--<a class="nav-item nav-link disabled" href="#">Disabled</a>--}}
 {{--</nav>--}}
 
-
-<section class="py-2 d-md-none">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="img-fluid lazy has-webp"></a>
-            </div>
-        </div>
-
-    </div>
-</section>
 <section class="bg-dark sticky-top py-2 d-md-none">
     <div class="container-fluid">
         <div class="row align-items-center">
@@ -34,5 +23,16 @@
                 <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars text-white"></i></a>
             </div>
         </div>
+    </div>
+</section>
+<section class="py-2 d-md-none bg-light">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <a href="{{route('home_path')}}"><img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="w-100"></a>
+            </div>
+        </div>
+        <hr>
+
     </div>
 </section>

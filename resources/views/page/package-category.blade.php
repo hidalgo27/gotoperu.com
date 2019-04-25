@@ -37,16 +37,7 @@
         </div>
     </section>
 
-    @include('layouts.page.menu-2')
-    <section class="d-md-none">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col">
-                    <img data-src="{{asset('images/banners/itinerary/GTP40.jpg')}}" data-srcset="{{asset('images/banners/itinerary/GTP40.jpg')}}" alt="machu picchu" class="img-fluid lazy has-webp">
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('layouts.page.menu')
 
     <section class="bg-white m-0">
         <div class="container-fluid">
@@ -79,7 +70,7 @@
         <div class="container">
             <div class="row">
                 @foreach($categoria as $categorias)
-                <div class="col-4 mb-4">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
                     <div class="position-relative category-box">
                         <a href="{{route('category_show_path', str_replace(' ', '-', strtolower($categorias->nombre)))}}">
                             <img src="{{asset('images/category/'.$categorias->imagen.'')}}" alt="" class="w-100 rounded shadow-sm img-thumbnail">

@@ -2,27 +2,7 @@
 
 @section('content')
     <section class="header-video d-none d-md-block chat-mensajes">
-        <div id="title" class="text-white">
-            <div class="container-fluid">
-                <div class="row align-items-center justify-content-between my-2">
-                    <div class="col-3">
-                        <a href="{{route('home_path')}}">
-                            {{--<img src="{{asset('images/logos/logo-gotoperu-ave-w.webp')}}" alt="" class="img-fluid">--}}
-                            <img class="w-100 lazy has-webp"
-                                 data-src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}"
-                                 data-srcset="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="logo gotoperu">
-                        </a>
-                    </div>
-                    <div class="col text-center">
-                        <h5 class="font-weight-light"><b class="font-weight-bold">GO</b> with the Peruvian experts</h5>
-                    </div>
-                    <div class="col-3 text-right">
-                        <a href="tel:+2029963000" class="mx-3 text-g-yellow font-weight-bold h5">(202) 996-3000</a>
-                        <a href="#" class="text-white"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars fa-2x"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('layouts.page.header')
         <div id="overlay" class="position-relative">
             <video class="hero-vid-home banner-itinerary" id="hero-vid" poster="{{asset('images/itinerary/banners/GTP1.jpg')}}" autoplay loop muted>
                 <source src="{{asset('media/final2.mp4')}}" type="video/mp4"/>
@@ -47,7 +27,7 @@
                                     <h2 class="font-weight-bolder">Top Recommended Travel Company to Machu Picchu & Peru</h2>
 
                                     <div class="row mt-5 justify-content-center">
-                                        <div class="col-6">
+                                        <div class="col-6 col-md-12 col-lg-8 col-xl-6">
                                             <div class="row ">
                                                 <div class="col d-flex">
                                                     <div class="card bg-rgba-dark-3 w-100">
@@ -90,88 +70,7 @@
 
     @include('layouts.page.menu')
 
-    <div class="bg-white">
-        <section class="d-md-none mt-3">
-            <div class="container">
-                <div class="row no-gutters">
-                    <div class="col">
-                        <img data-src="{{asset('images/family.webp')}}" data-srcset="{{asset('images/family.webp')}}" alt="" class="w-100 rounded-top lazy has-webp">
 
-                    </div>
-                </div>
-                {{--<div class="row no-gutters align-items-center">--}}
-                {{--<div class="col">--}}
-                {{--<ul class="list-group">--}}
-                {{--<li class="list-group-item rounded-0"><span class="bg-g-green p-1 rounded-circle px-2 text-white">1</span> Share your travel plans</li>--}}
-                {{--<li class="list-group-item rounded-0"><span class="bg-g-yellow p-1 rounded-circle px-2 text-white">2</span> Receive a customize itinerary and quote</li>--}}
-                {{--<li class="list-group-item rounded-0"><span class="bg-g-dark p-1 rounded-circle px-2 text-white">3</span> Discover the best of Peru with GOTOPERU</li>--}}
-                {{--</ul>--}}
-
-                {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="row mt-4">--}}
-                {{--<div class="col">--}}
-                {{--<a href="{{route('complete_path')}}" class="btn btn-block btn-primary">Package Air & Land</a>--}}
-                {{--</div>--}}
-                {{--</div>--}}
-
-
-                <div class="w-100 text-center d-md-inline">
-                    {{--<p class="text-white h6"><span class="bg-g-green p-1 rounded-circle px-3 text-white">1</span> Share your travel plans <span class="bg-g-yellow p-1 rounded-circle px-3 text-white ml-5">2</span> Receive a customize itinerary and quote <span class="bg-g-dark p-1 rounded-circle px-3 text-white ml-5">3</span> Discover the best of Peru with GOTOPERU</p>--}}
-                    <div class="row">
-                        <div class="col-12 my-2 my-sm-2 mb-md-2 col-lg col-xl">
-                            <a href="" class="btn btn-block btn-lg btn-g-green">
-                                <span class="font-weight-normal">Peru Tours & Activities</span>
-                                <hr class="my-2">
-                                <span class="d-block">
-                                    <img data-src="{{asset('images/icons/include/tours.png')}}" data-srcset="{{asset('images/icons/include/tours.png')}}" alt="tours" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
-                                    <img data-src="{{asset('images/icons/include/transfers.png')}}" data-srcset="{{asset('images/icons/include/transfers.png')}}" alt="transfers" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                    <img data-src="{{asset('images/icons/include/entrances.png')}}" data-srcset="{{asset('images/icons/include/entrances.png')}}" alt="entrances" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-12 mb-2 mb-sm-2 mb-md-2 col-lg col-xl">
-                            <a href="{{route('packages_path')}}" class="btn btn-block btn-lg btn-g-yellow">
-                                <span class="font-weight-normal">Peru Travel Packages</span>
-                                <hr class="my-2">
-                                <span class="d-block">
-                                    <img data-src="{{asset('images/icons/include/tours.png')}}" data-srcset="{{asset('images/icons/include/tours.png')}}" alt="tours" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
-                                    <img data-src="{{asset('images/icons/include/transfers.png')}}" data-srcset="{{asset('images/icons/include/transfers.png')}}" alt="transfers" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                    <img data-src="{{asset('images/icons/include/entrances.png')}}" data-srcset="{{asset('images/icons/include/entrances.png')}}" alt="entrances" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
-                                    <img data-src="{{asset('images/icons/include/hotels.png')}}" data-srcset="{{asset('images/icons/include/hotels.png')}}" alt="assistances" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
-                                    <img data-src="{{asset('images/icons/include/trains.png')}}" data-srcset="{{asset('images/icons/include/trains.png')}}" alt="assistances" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
-                                    <img data-src="{{asset('images/icons/include/assistances.png')}}" data-srcset="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-12 mb-2 mb-sm-2 mb-md-2 col-lg col-xl">
-                            <a href="{{route('complete_path')}}" class="btn btn-block btn-lg btn-g-dark">
-                                <span class="font-weight-normal">Peru Travel Packages + Air</span>
-                                <hr class="my-2">
-                                <span class="d-block">
-                                    <img data-src="{{asset('images/icons/include/tours.png')}}" data-srcset="{{asset('images/icons/include/tours.png')}}" alt="tours" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Guide">
-                                    <img data-src="{{asset('images/icons/include/transfers.png')}}" data-srcset="{{asset('images/icons/include/transfers.png')}}" alt="transfers" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Transfers">
-                                    <img data-src="{{asset('images/icons/include/entrances.png')}}" data-srcset="{{asset('images/icons/include/entrances.png')}}" alt="entrances" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Entrances">
-                                    <img data-src="{{asset('images/icons/include/hotels.png')}}" data-srcset="{{asset('images/icons/include/hotels.png')}}" alt="hotels" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Hotels">
-                                    <img data-src="{{asset('images/icons/include/trains.png')}}" data-srcset="{{asset('images/icons/include/trains.png')}}" alt="trains" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Trains">
-                                    <img data-src="{{asset('images/icons/include/assistances.png')}}" data-srcset="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Assistances">
-                                    <img data-src="{{asset('images/icons/include/flight.png')}}" data-srcset="{{asset('images/icons/include/flight.png')}}" alt="flight" class="lazy has-webp" width="35" data-toggle="tooltip" data-placement="top" title="Flights">
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-12 mb-2 mb-sm-2 mb-md-2 d-lg-none d-xl-inline col-xl">
-                            <a href="#Inquire" class="btn btn-block btn-lg btn-secondary">
-                                <span class="font-weight-normal">Customize</span>
-                                <hr class="my-2">
-                                We will design together...
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
         <section class="bg-light py-3 d-none d-md-block contenido2">
             <div class="container-fluid">
                 <div class="col">
@@ -238,7 +137,7 @@
             </div>
         </div>
 
-        <section class="bg-light py-5">
+        <section class="bg-light pb-5">
             <div class="container">
                 <div class="row">
                     <div class="col text-center">
@@ -296,13 +195,15 @@
                 <div class="row">
                     <div class="col">
                         <div class="row">
-                            <div class="col-12">
-                                <div class="nav-category-goto-yellow nav nav-pills flex-column flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <div class="col-12 nav-tabs-wrapper">
+
+                                <div class="nav-category-goto-yellow nav nav-tabs dragscroll horizontal flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link active" id="recommended-tab" data-toggle="pill" href="#recommended" role="tab" aria-controls="recommended" aria-selected="true">Recommended</a>
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="active-trek-tab" data-toggle="pill" href="#active-trek" role="tab" aria-controls="active-trek" aria-selected="false">Active / Trek</a>
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="luxury-tab" data-toggle="pill" href="#luxury" role="tab" aria-controls="luxury" aria-selected="false">Luxury</a>
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="cruise-tab" data-toggle="pill" href="#cruise" role="tab" aria-controls="cruise" aria-selected="false">Cruise Extension</a>
                                 </div>
+
                             </div>
                             <div class="col-12">
                                 <div class="tab-content" id="v-pills-tabContent">
@@ -319,41 +220,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {{--<div class="row slider-recommended mt-4">--}}
-                                            {{--@foreach($cateoria_recommended as $cateorias_recommended)--}}
-                                                {{--@if (isset($cateorias_recommended->categoria))--}}
-                                                    {{--<div class="col text-decoration-none">--}}
-                                                        {{--<div class="bg-light shadow-sm rounded">--}}
-                                                            {{--<div class="row align-items-center no-gutters">--}}
-                                                                {{--<div class="col-7">--}}
-                                                                    {{--<div class="position-relative">--}}
-                                                                        {{--<img src="{{asset('images/mapas/'.$cateorias_recommended->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
-                                                                        {{--<div class="position-absolute-bottom p-2 text-center">--}}
-                                                                            {{--<span class="small font-weight-bold badge badge-g-yellow shadow">{{$cateorias_recommended->categoria->nombre}}</span>--}}
-                                                                        {{--</div>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="col text-center">--}}
-                                                                    {{--<div class="px-3">--}}
-                                                                        {{--<div class="h5">{{$cateorias_recommended->paquete->duracion}} days</div>--}}
-                                                                        {{--<div class="display-4 font-weight-bold"><sup>$</sup>899</div>--}}
-                                                                        {{--<a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($cateorias_recommended->paquete->titulo)), $cateorias_recommended->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>--}}
-                                                                        {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</div>--}}
-                                                    {{--</div>--}}
-                                                {{--@endif--}}
-                                            {{--@endforeach--}}
-                                        {{--</div>--}}
 
                                         <div class="row mt-4">
                                             @foreach($cateoria_recommended as $cateorias_recommended)
-                                                <div class="col-6">
+                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                     <div class="bg-light shadow-sm rounded">
                                                         <div class="row align-items-center no-gutters">
-                                                            <div class="col-7">
+                                                            <div class="col-12 col-sm-7">
                                                                 <div class="position-relative">
                                                                     <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($cateorias_recommended->paquete->titulo)), $cateorias_recommended->paquete->duracion])}}">
                                                                     <img src="{{asset('images/mapas/'.$cateorias_recommended->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
@@ -363,7 +236,7 @@
                                                                     </a>
                                                                 </div>
                                                             </div>
-                                                            <div class="col text-center">
+                                                            <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                                 <div class="px-3">
                                                                     <h2 class="h6 font-weight-bold">{{$cateorias_recommended->paquete->titulo}}</h2>
                                                                     <small class="text-muted font-weight-bold">{{$cateorias_recommended->paquete->duracion}} days</small>
@@ -406,10 +279,10 @@
                                         <div class="row mt-4">
                                             @foreach($categorias_active as $categorias_active)
                                                 @if (isset($categorias_active->categoria))
-                                                    <div class="col-6">
+                                                    <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
-                                                                <div class="col-7">
+                                                                <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_active->paquete->titulo)), $categorias_active->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categorias_active->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
@@ -419,7 +292,7 @@
                                                                         </a>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col text-center">
+                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                                     <div class="px-3">
                                                                         <h2 class="h6 font-weight-bold">{{$categorias_active->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categorias_active->paquete->duracion}} days</small>
@@ -460,10 +333,10 @@
                                         </div>
                                         <div class="row slider-category-3 mt-4">
                                             @foreach($categorias_luxury as $categorias_luxury)
-                                                    <div class="col text-decoration-none">
+                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
-                                                                <div class="col-7">
+                                                                <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_luxury->paquete->titulo)), $categorias_luxury->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categorias_luxury->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
@@ -473,7 +346,7 @@
                                                                         </a>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col text-center">
+                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                                     <div class="px-3">
                                                                         <h2 class="h6 font-weight-bold">{{$categorias_luxury->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categorias_luxury->paquete->duracion}} days</small>
@@ -513,10 +386,10 @@
                                         </div>
                                         <div class="row slider-category-4 mt-4">
                                             @foreach($categorias_cruise as $categoria_cruise)
-                                                <div class="col-6 text-decoration-none">
+                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                     <div class="bg-light shadow-sm rounded">
                                                         <div class="row align-items-center no-gutters">
-                                                            <div class="col-7">
+                                                            <div class="col-12 col-sm-7">
                                                                 <div class="position-relative">
                                                                     <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cruise->paquete->titulo)), $categoria_cruise->paquete->duracion])}}">
                                                                     <img src="{{asset('images/mapas/'.$categoria_cruise->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
@@ -526,7 +399,7 @@
                                                                     </a>
                                                                 </div>
                                                             </div>
-                                                            <div class="col text-center">
+                                                            <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                                 <div class="px-3">
                                                                     <h2 class="h6 font-weight-bold">{{$categoria_cruise->paquete->titulo}}</h2>
                                                                     <small class="text-muted font-weight-bold">{{$categoria_cruise->paquete->duracion}} days</small>
@@ -561,8 +434,8 @@
                 <div class="row">
                     <div class="col">
                         <div class="row">
-                            <div class="col-12">
-                                <div class="nav-category-goto-green nav nav-pills flex-column flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <div class="col-12 nav-tabs-wrapper">
+                                <div class="nav-category-goto-green nav nav-tabs dragscroll horizontal flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link active" id="short-tab" data-toggle="pill" href="#short" role="tab" aria-controls="short" aria-selected="true">Short Programs</a>
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="all-tab" data-toggle="pill" href="#all" role="tab" aria-controls="all" aria-selected="false">All Included</a>
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="family-tab" data-toggle="pill" href="#family" role="tab" aria-controls="family" aria-selected="false">Family</a>
@@ -588,10 +461,10 @@
                                         <div class="row slider-short mt-4">
                                             @foreach($categorias_short as $categoria_short)
 
-                                                    <div class="col text-decoration-none">
+                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
-                                                                <div class="col-7">
+                                                                <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_short->paquete->titulo)), $categoria_short->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categoria_short->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
@@ -601,7 +474,7 @@
                                                                         </a>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col text-center">
+                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                                     <div class="px-3">
                                                                         <h2 class="h6 font-weight-bold">{{$categoria_short->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categoria_short->paquete->duracion}} days</small>
@@ -641,10 +514,10 @@
                                         <div class="row slider-all mt-4">
                                             @foreach($categorias_all as $categoria_all)
 
-                                                    <div class="col text-decoration-none">
+                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
-                                                                <div class="col-7">
+                                                                <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_all->paquete->titulo)), $categoria_all->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categoria_all->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
@@ -654,7 +527,7 @@
                                                                         </a>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col text-center">
+                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                                     <div class="px-3">
                                                                         <h2 class="h6 font-weight-bold">{{$categoria_all->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categoria_all->paquete->duracion}} days</small>
@@ -694,10 +567,10 @@
                                         <div class="row slider-all mt-4">
                                             @foreach($categorias_family as $categoria_family)
                                                 @if (isset($categoria_family->categoria))
-                                                    <div class="col text-decoration-none">
+                                                    <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
-                                                                <div class="col-7">
+                                                                <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_family->paquete->titulo)), $categoria_family->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categoria_family->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
@@ -707,7 +580,7 @@
                                                                         </a>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col text-center">
+                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                                     <div class="px-3">
                                                                         <h2 class="h6 font-weight-bold">{{$categoria_family->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categoria_family->paquete->duracion}} days</small>
@@ -747,10 +620,10 @@
                                         </div>
                                         <div class="row slider-all mt-4">
                                             @foreach($categorias_honeymoon as $categoria_honeymoon)
-                                                <div class="col-6 text-decoration-none">
+                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                     <div class="bg-light shadow-sm rounded">
                                                         <div class="row align-items-center no-gutters">
-                                                            <div class="col-7">
+                                                            <div class="col-12 col-sm-7">
                                                                 <div class="position-relative">
                                                                     <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_honeymoon->paquete->titulo)), $categoria_honeymoon->paquete->duracion])}}">
                                                                     <img src="{{asset('images/mapas/'.$categoria_honeymoon->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
@@ -760,7 +633,7 @@
                                                                     </a>
                                                                 </div>
                                                             </div>
-                                                            <div class="col text-center">
+                                                            <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                                 <div class="px-3">
                                                                     <h2 class="h6 font-weight-bold">{{$categoria_honeymoon->paquete->titulo}}</h2>
                                                                     <small class="text-muted font-weight-bold">{{$categoria_honeymoon->paquete->duracion}} days</small>
@@ -794,8 +667,8 @@
                 <div class="row">
                     <div class="col">
                         <div class="row">
-                            <div class="col-12">
-                                <div class="nav-category-goto-grey nav nav-pills flex-column flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <div class="col-12 nav-tabs-wrapper">
+                                <div class="nav-category-goto-grey nav nav-tabs dragscroll horizontal flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link active" id="cultural-tab" data-toggle="pill" href="#cultural" role="tab" aria-controls="cultural" aria-selected="true">Cultural</a>
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="single-traveler-tab" data-toggle="pill" href="#single-traveler" role="tab" aria-controls="single-traveler" aria-selected="false">Single Traveler</a>
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="long-duration-tab" data-toggle="pill" href="#long-duration" role="tab" aria-controls="long-duration" aria-selected="false">Long Duration</a>
@@ -820,10 +693,10 @@
                                         <div class="row slider-all mt-4">
                                             @foreach($categorias_cultural as $categoria_cultural)
 
-                                                    <div class="col text-decoration-none">
+                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
-                                                                <div class="col-7">
+                                                                <div class="-col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categoria_cultural->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
@@ -833,7 +706,7 @@
                                                                         </a>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col text-center">
+                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                                     <div class="px-3">
                                                                         <h2 class="h6 font-weight-bold">{{$categoria_cultural->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categoria_cultural->paquete->duracion}} days</small>
@@ -874,10 +747,10 @@
                                         <div class="row slider-all mt-4">
                                             @foreach($categorias_single as $categoria_single)
 
-                                                    <div class="col text-decoration-none">
+                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
-                                                                <div class="col-7">
+                                                                <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_single->paquete->titulo)), $categoria_single->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categoria_single->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
@@ -887,7 +760,7 @@
                                                                         </a>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col text-center">
+                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                                     <div class="px-3">
                                                                         <h2 class="h6 font-weight-bold">{{$categoria_single->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categoria_single->paquete->duracion}} days</small>
@@ -927,10 +800,10 @@
                                         </div>
                                         <div class="row slider-all mt-4">
                                             @foreach($categorias_long as $categoria_long)
-                                                    <div class="col-6 text-decoration-none">
+                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
-                                                                <div class="col-7">
+                                                                <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_long->paquete->titulo)), $categoria_long->paquete->duracion])}}">
                                                                         <img src="{{asset('images/mapas/'.$categoria_long->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
@@ -940,7 +813,7 @@
                                                                         </a>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col text-center">
+                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                                     <div class="px-3">
                                                                         <h2 class="h6 font-weight-bold">{{$categoria_long->paquete->titulo}}</h2>
                                                                         <small class="text-muted font-weight-bold">{{$categoria_long->paquete->duracion}} days</small>
@@ -1059,7 +932,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-12 mb-3 col-sm-12 mb-sm-3 col-md">
                         <div class="header-img-category rounded">
                             <div class="position-relative">
                                 <a href="{{route('category_show_path', 'for-families')}}">
@@ -1071,9 +944,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-sm-12 col-md">
                         <div class="row mb-3">
-                            <div class="col">
+                            <div class="col-12 mb-3 col-sm mb-sm-0 mb-md-0">
                                 <div class="header-img-category rounded">
                                     <div class="position-relative">
                                         <a href="{{route('category_show_path', 'recommended')}}">
@@ -1085,7 +958,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-12 mb-3 col-sm mb-sm-0 mb-md-0">
                                 <div class="header-img-category rounded">
                                     <div class="position-relative">
                                         <a href="{{route('category_show_path', 'cultural')}}">
@@ -1099,7 +972,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">
+                            <div class="col-12 mb-3 col-sm">
                                 <div class="header-img-category rounded">
                                     <div class="position-relative">
                                         <a href="{{route('category_show_path', 'active-treks')}}">
@@ -1111,7 +984,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-12 mb-3 col-sm">
                                 <div class="header-img-category rounded">
                                     <div class="position-relative">
                                         <a href="{{route('category_show_path', 'short-programs')}}">
@@ -1142,27 +1015,27 @@
                         <h2 class="h1 font-weight-bold text-white">Why <span class="text-g-yellow">Go</span>  With GotoPeru</h2>
                     </div>
                     <div class="row mt-5">
-                        <div class="col-2 text-center">
+                        <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-2 text-center">
                             <i data-feather="users" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
                             <span class="text-white small mt-3 d-block">Small Groupssd and Private tours.</span>
                         </div>
-                        <div class="col-2 text-center">
+                        <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-2 text-center">
                             <i data-feather="clock" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
                             <span class="text-white small mt-3 d-block">We live here, trully a 24/7 Assistance.</span>
                         </div>
-                        <div class="col-2 text-center">
+                        <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-2 text-center">
                             <i data-feather="pen-tool" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
                             <span class="text-white small mt-3 d-block">Book Now option or Customize a dream trip!</span>
                         </div>
-                        <div class="col-2 text-center">
+                        <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-2 text-center">
                             <i data-feather="map-pin" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
                             <span class="text-white small mt-3 d-block">Cutting the middlemen, headquarters at Peru.</span>
                         </div>
-                        <div class="col-2 text-center">
+                        <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-2 text-center">
                             <i data-feather="thumbs-up" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
                             <span class="text-white small mt-3 d-block">We take pride of our tripadvisor reviews!</span>
                         </div>
-                        <div class="col-2 text-center">
+                        <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-2 text-center">
                             <i data-feather="calendar" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
                             <span class="text-white small mt-3 d-block">We can adapt to any arrival and departure.</span>
                         </div>
@@ -1226,7 +1099,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-12 mb-3 col-sm-6 mb-md-0 col-md">
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
                                 <a href="{{route('destinations_country_show_path', ['peru-travel', 'cusco'])}}-tours">
@@ -1238,7 +1111,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-12 mb-3 col-sm-6 mb-md-0 col-md">
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
                                 <a href="{{route('destinations_country_show_path', ['peru-travel', 'lima'])}}-tours">
@@ -1250,7 +1123,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-12 mb-3 col-sm-6 mb-md-0 col-md">
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
                                 <a href="{{route('destinations_country_show_path', ['peru-travel', 'puno-and-lake-titicaca-tours'])}}-tours">
@@ -1262,7 +1135,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-12 mb-3 col-sm-6 mb-md-0 col-md">
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
                                 <a href="{{route('destinations_country_show_path', ['peru-travel', 'arequipa-and-colca-canyon-tours'])}}-tours">
@@ -1963,14 +1836,15 @@
                         breakpoint: 600,
                         settings: {
                             slidesToShow: 2,
-                            slidesToScroll: 2
+                            slidesToScroll: 2,
+                            arrows: false
                         }
                     },
                     {
                         breakpoint: 480,
                         settings: {
                             slidesToShow: 1,
-                            slidesToScroll: 1
+                            slidesToScroll: 1,
                         }
                     }
                     // You can unslick at a given breakpoint now by adding:
@@ -1978,6 +1852,99 @@
                     // instead of a settings object
                 ]
             });
+
+            // /**
+            //  * @fileoverview dragscroll - scroll area by dragging
+            //  * @version 0.0.8
+            //  *
+            //  * @license MIT, see http://github.com/asvd/dragscroll
+            //  * @copyright 2015 asvd <heliosframework@gmail.com>
+            //  */
+            //
+            //
+            // (function (root, factory) {
+            //     if (typeof define === 'function' && define.amd) {
+            //         define(['exports'], factory);
+            //     } else if (typeof exports !== 'undefined') {
+            //         factory(exports);
+            //     } else {
+            //         factory((root.dragscroll = {}));
+            //     }
+            // }(this, function (exports) {
+            //     var _window = window;
+            //     var _document = document;
+            //     var mousemove = 'mousemove';
+            //     var mouseup = 'mouseup';
+            //     var mousedown = 'mousedown';
+            //     var EventListener = 'EventListener';
+            //     var addEventListener = 'add'+EventListener;
+            //     var removeEventListener = 'remove'+EventListener;
+            //     var newScrollX, newScrollY;
+            //
+            //     var dragged = [];
+            //     var reset = function(i, el) {
+            //         for (i = 0; i < dragged.length;) {
+            //             el = dragged[i++];
+            //             el = el.container || el;
+            //             el[removeEventListener](mousedown, el.md, 0);
+            //             _window[removeEventListener](mouseup, el.mu, 0);
+            //             _window[removeEventListener](mousemove, el.mm, 0);
+            //         }
+            //
+            //         // cloning into array since HTMLCollection is updated dynamically
+            //         dragged = [].slice.call(_document.getElementsByClassName('dragscroll'));
+            //         for (i = 0; i < dragged.length;) {
+            //             (function(el, lastClientX, lastClientY, pushed, scroller, cont){
+            //                 (cont = el.container || el)[addEventListener](
+            //                     mousedown,
+            //                     cont.md = function(e) {
+            //                         if (!el.hasAttribute('nochilddrag') ||
+            //                             _document.elementFromPoint(
+            //                                 e.pageX, e.pageY
+            //                             ) == cont
+            //                         ) {
+            //                             pushed = 1;
+            //                             lastClientX = e.clientX;
+            //                             lastClientY = e.clientY;
+            //
+            //                             e.preventDefault();
+            //                         }
+            //                     }, 0
+            //                 );
+            //
+            //                 _window[addEventListener](
+            //                     mouseup, cont.mu = function() {pushed = 0;}, 0
+            //                 );
+            //
+            //                 _window[addEventListener](
+            //                     mousemove,
+            //                     cont.mm = function(e) {
+            //                         if (pushed) {
+            //                             (scroller = el.scroller||el).scrollLeft -=
+            //                                 newScrollX = (- lastClientX + (lastClientX=e.clientX));
+            //                             scroller.scrollTop -=
+            //                                 newScrollY = (- lastClientY + (lastClientY=e.clientY));
+            //                             if (el == _document.body) {
+            //                                 (scroller = _document.documentElement).scrollLeft -= newScrollX;
+            //                                 scroller.scrollTop -= newScrollY;
+            //                             }
+            //                         }
+            //                     }, 0
+            //                 );
+            //             })(dragged[i++]);
+            //         }
+            //     }
+            //
+            //
+            //     if (_document.readyState == 'complete') {
+            //         reset();
+            //     } else {
+            //         _window[addEventListener]('load', reset, 0);
+            //     }
+            //
+            //     exports.reset = reset;
+            // }));
+
         </script>
         <div id="fb-root"></div>
         <script async defer src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2&appId=1712869952328301&autoLogAppEvents=1"></script>

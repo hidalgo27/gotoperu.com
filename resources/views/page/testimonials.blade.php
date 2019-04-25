@@ -75,15 +75,6 @@
     </section>
 
     @include('layouts.page.menu')
-    <section class="d-md-none">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col">
-                    <img data-src="{{asset('images/testimonials.jpg')}}" data-srcset="{{asset('images/testimonials.jpg')}}" alt="testimonials gotoperu" class="img-fluid lazy has-webp">
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="bg-white m-0">
         <div class="container-fluid">

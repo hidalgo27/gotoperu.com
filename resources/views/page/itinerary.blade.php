@@ -1,21 +1,12 @@
 @extends('layouts.page.default')
 @section('content')
     @foreach($paquete_iti as $paquetes)
-    <section class="d-none">
-        <div class="jumbotron jumbotron-slider-1 rounded-0">
-            <div class="container">
-                    <h2 class="text-white my-5 h1"><strong>{{($paquetes->titulo)}} {{($paquetes->duracion)}} DAYS TOURS</strong></h2>
-                    <h2 class="text-white my-5 h1">Our excursions and packages depart 365 days a year</h2>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-            </div>
-        </div>
-    </section>
+
     <section class="header-video d-none d-md-block chat-mensajes">
         <div id="title" class="text-white">
             <div class="container-fluid">
                 <div class="row align-items-center justify-content-between my-2">
-                    <div class="col-3">
+                    <div class="col-3 col-md-4 col-lg-4 col-xl-3">
                         <a href="{{route('home_path')}}">
                             {{--<img src="{{asset('images/logos/logo-gotoperu-ave-w.webp')}}" alt="" class="img-fluid">--}}
                             <img class="w-100 lazy has-webp"
@@ -23,10 +14,10 @@
                                  data-srcset="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="logo gotoperu">
                         </a>
                     </div>
-                    <div class="col text-center">
+                    <div class="col d-md-none d-lg-inline col-lg col-xl text-center">
                         <h5 class="font-weight-light"><b class="font-weight-bold">GO</b> with the Peruvian experts</h5>
                     </div>
-                    <div class="col-3 text-right">
+                    <div class="col-3 col-md-6 col-lg-3 col-xl-3 text-right">
                         <a href="tel:+2029963000" class="mx-3 text-g-yellow font-weight-bold h5">(202) 996-3000</a>
                         <a href="#" class="text-white"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars fa-2x"></i></a>
                     </div>
@@ -34,81 +25,9 @@
             </div>
         </div>
         <div id="overlay" class="overlay-img">
-            {{--<video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>--}}
-                {{--<source src="{{asset('media/video6.mp4')}}" />--}}
-                {{--<source src="{{asset('media/video6.m4v')}}" type="video/mp4" />--}}
-                {{--<source src="{{asset('media/video6.webm')}}" type="video/webm" />--}}
-                {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
-            {{--</video>--}}
             @foreach($paquetes->imagen_paquetes->take(1) as $paquetes_imagen)
             <img src="{{asset('images/packages/slider/'.$paquetes_imagen->nombre.'')}}" alt="banner gotoperu" id="hero-vid" class="banner-itinerary">
             @endforeach
-            {{--<div id="state" class=""><span class="fa fa-pause"></span></div>--}}
-            {{--<img id="hero-pic" class="d-none" src="http://www.markhillard.com/sandbox/media/polina.jpg" alt="">--}}
-            {{----}}
-            {{--<div class="header-expedia-card col-md-4 col-lg-3 col-xl-2 text-white rounded bg-rgba-dark p-3 d-none">--}}
-                {{--<div class="row">--}}
-                    {{--<div class="col">--}}
-                        {{--<a href="packages/andes-escape/6-days-tours">--}}
-                            {{--<div class="row">--}}
-                                {{--<div class="col text-center">--}}
-                                    {{--<h3 class="text-g-yellow font-weight-bold m-0">Andes Escape</h3>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<div class="row no-gutters my-2 text-white">--}}
-                                {{--<div class="col">--}}
-                                    {{--<span class="h2">6</span> <small>days</small>--}}
-                                {{--</div>--}}
-                                {{--<div class="col">--}}
-                                    {{--<span class="h2 text-info"><sup>$</sup>985</span> <small>p.p</small>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<div class="row">--}}
-                                {{--<div class="col">--}}
-                                    {{--<div class="row no-gutters">--}}
-                                        {{--<div class="col">--}}
-                                            {{--<img src="{{asset('images/icons/include/assistances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Assistances">--}}
-                                            {{--<span>Assistances</span>--}}
-                                        {{--</div>--}}
-
-                                        {{--<div class="col">--}}
-                                            {{--<img src="{{asset('images/icons/include/entrances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Entrances">--}}
-                                            {{--<span>Entrances</span>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="col">--}}
-                                            {{--<img src="{{asset('images/icons/include/transfers.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Transfers">--}}
-                                            {{--<span>Transfers</span>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="row no-gutters">--}}
-                                        {{--<div class="col">--}}
-                                            {{--<img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">--}}
-                                            {{--<span>Hotels</span>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="col">--}}
-                                            {{--<img src="{{asset('images/icons/include/tours.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Tours">--}}
-                                            {{--<span>Tours</span>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="col">--}}
-                                            {{--<img src="{{asset('images/icons/include/trains.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Trains">--}}
-                                            {{--<span>Trains</span>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<div class="row mt-3">--}}
-                                {{--<div class="col text-white">--}}
-                                    {{--<small class="m-0 d-block"><i class="fa fa-angle-right"></i> MACHUPICCHU & CUSCO</small>--}}
-                                    {{--<small class="m-0 d-block"><i class="fa fa-angle-right"></i> LAKE TITICACA & PUNO</small>--}}
-                                    {{--<small class="m-0 d-block"><i class="fa fa-angle-right"></i> LIMA</small>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</a>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="header-expedia text-white p-3">As local travel operators our programs start daily</div>--}}
-{{--            @include('layouts.page.menu-custom')--}}
         </div>
         <div class="content-header">
             <div class="container">
@@ -142,16 +61,7 @@
         </div>
     </section>
 
-    @include('layouts.page.menu-2')
-    <section class="d-md-none">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col">
-                    <img src="{{asset('images/itinerary/banners/'.$paquetes->imagen.'')}}" alt="banner gotoperu" class="img-fluid">
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('layouts.page.menu')
     <section class="bg-white">
         <div class="container-fluid">
             <div class="row">
@@ -190,37 +100,104 @@
 
                                         {{--@endif--}}
                                     </div>
+
+                                    <div class="col-12">
+                                    <div class="card p-3 bg-light d-md-none">
+                                        <div class="row">
+                                            <div class="col">
+                                                <span class="font-weight-bold d-block h4">{{$paquetes->duracion}} days</span>
+                                                <div class="text-center">
+                                                    <small>from</small>
+                                                    @foreach($paquetes->precio_paquetes->where('estrellas', 2)->sortBy('estrellas') as $precio)
+                                                        @if($precio->precio_d > 0)
+                                                            <span class="h1 font-weight-bold text-danger"><sup>$</sup>{{$precio->precio_d}}</span>
+                                                        @else
+                                                            <span class="text-danger">
+                                                                Inquire
+                                                            </span>
+                                                        @endif
+                                                    @endforeach
+                                                    <small>USD</small>
+                                                </div>
+                                                <span class="text-secondary d-block font-weight-bold">Code: {{$paquetes->codigo}}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                @php $j = 0; $k = 0; @endphp
+                                                @foreach($comentario->where('idpaquetes', $paquetes->id) as $comment)
+                                                    @php
+                                                        $k = $k + $comment->valoracion;
+                                                        $j++;
+                                                    @endphp
+                                                @endforeach
+                                                @if($j > 0)
+                                                    <a href="#Reviews" class="h6 text-primary">
+                                                        Comments {{$j}}
+                                                        <span class="text-g-yellow">
+                                                            @for ($i = 0; $i < ($k/$j); $i++)
+                                                                <i class="fas fa-star small"></i>
+                                                            @endfor
+                                                        </span>
+                                                        <span class="badge badge-g-dark">
+                                                            {{round($k/$j, 2)}}
+                                                        </span>
+                                                    </a>
+
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <img src="{{asset('images/mapas/'.$paquetes->codigo.'.jpg')}}" alt="" class="w-100 rounded">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            {{--<div class="col">--}}
+                                            {{--<a href="" class="btn btn-g-yellow btn-block">Check Availability</a>--}}
+                                            {{--</div>--}}
+                                            <div class="col col-xl mb-xl-0 mb-2">
+                                                <a href="#Inquire" class="btn btn-g-yellow btn-block font-weight-bold">INQUIRE</a>
+                                            </div>
+                                            <div class="col col-xl mb-xl-0">
+                                                <a href="https://fareharbor.com/embeds/book/gotoperu/items/{{$paquetes->codigo_f}}/calendar/?flow=92114" class="btn btn-g-green btn-block font-weight-bold">BOOK NOW</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+
                                 </div>
+                                <div class="sticky-top d-none d-md-flex">
+                                <div class="nav-tabs-wrapper">
 
-                                <ul id="menu" class="nav nav-pills nav-fill bg-rgba-dark-5 d-sm-flex sticky-top nav-itinerary contenido2 rounded-left rounded-right shadow">
-                                    {{--<li class="nav-item d-none d-sm-block">--}}
-                                        {{--<a class="nav-link text-white font-weight-bold rounded-0" href="#overview">Overview</a>--}}
-                                    {{--</li>--}}
-                                    <li class="nav-item d-none d-sm-block">
-                                        <a class="nav-link text-white font-weight-bold rounded-0" href="#Itinerary">Itinerary</a>
-                                    </li>
-                                    <li class="nav-item d-sm-none">
-                                        <a class="nav-link text-white font-weight-bold rounded-0" href="#Itinerary">Itinerary</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white font-weight-bold rounded-0" href="#Included">Included and Not Included</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white font-weight-bold rounded-0" href="#Hotels">Hotels</a>
-                                    </li>
-                                    {{--<li class="nav-item d-none d-sm-block">--}}
-                                    {{--<a class="nav-link text-secondary rounded-0" href="#Inquire">Inquire</a>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="nav-item d-none d-sm-block">--}}
-                                        {{--<a class="nav-link text-white font-weight-bold rounded-0" href="#Reviews">Reviews</a>--}}
-                                    {{--</li>--}}
-                                </ul>
-
-                                <div id="" class="mt-4">
+                                    <ul id="menu" class="nav nav-pills nav-tabs dragscroll horizontal bg-rgba-dark-5 d-sm-flex nav-itinerary contenido2 rounded-left rounded-right shadow">
+                                        {{--<li class="nav-item d-none d-sm-block">--}}
+                                            {{--<a class="nav-link text-white font-weight-bold rounded-0" href="#overview">Overview</a>--}}
+                                        {{--</li>--}}
+                                        <li class="nav-item d-none d-sm-block">
+                                            <a class="nav-link text-white font-weight-bold rounded-0" href="#Itinerary">Itinerary</a>
+                                        </li>
+                                        <li class="nav-item d-sm-none">
+                                            <a class="nav-link text-white font-weight-bold rounded-0" href="#Itinerary">Itinerary</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-white font-weight-bold rounded-0" href="#Included">Included and Not Included</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-white font-weight-bold rounded-0" href="#Hotels">Hotels</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                </div>
+                                <div id="" class="mt-0 mt-md-0">
                                     {{--<h3 class="text-secondary pt-4 pb-2 h4"><strong>Overview</strong></h3>--}}
                                     @php echo $paquetes->descripcion; @endphp
                                     <div class="row py-3">
-                                        <div class="col d-flex">
+                                        <div class="col-12 mb-3 mb-lg-0 col-lg d-flex">
                                             @foreach($paquetes->paquetes_categoria as $categoria)
                                                 <div class="card p-3 w-100">
                                                     <h5 class="text-secondary font-weight-bold"><i class="fas fa-angle-right"></i> Category: <span class="text-primary">{{ucwords(strtolower($categoria->categoria->nombre))}}</span></h5>
@@ -228,7 +205,7 @@
                                                 </div>
                                             @endforeach
                                         </div>
-                                        <div class="col d-flex">
+                                        <div class="col-12 mb-3 mb-lg-0 col-lg d-flex">
                                             <div class="card p-3 w-100">
                                             @foreach($dificultad->where('idpaquetes', $paquetes->id) as $dificultades)
                                                 <h5 class="text-secondary font-weight-bold"><i class="fas fa-angle-right"></i> Physical demand: <span class="text-primary text-capitalize">{{$dificultades->dificultad->nombre}}</span></h5>
@@ -257,7 +234,7 @@
                                         <div class="tab-content" id="myTabContent">
                                             <div class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="resumen-tab">
                                                 <div class="row">
-                                                    <div class="col-12 col-sm-6 col-md-12">
+                                                    <div class="col-12 col-sm-12 col-md-12">
                                                         @php $day = 1; @endphp
                                                         @foreach($paquetes->paquete_itinerario as $itinerario)
                                                             <div class="row pt-4" id="section-{{$itinerario->itinerarios->id}}">
@@ -505,7 +482,7 @@
 
                                 <div id="Included" class="mt-4">
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col-12 mb-3 col-lg mb-lg-0">
                                             {{--<h3 class="text-secondary h4"><strong>Included</strong></h3>--}}
                                             <div class="card p-3 w-100">
                                                 <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> Included:</h5>
@@ -517,7 +494,7 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-12 mb-3 col-lg mb-lg-0">
                                             <div class="card p-3 w-100">
                                                 <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> Not Included:</h5>
                                                 <hr>
@@ -613,7 +590,7 @@
 
 
                             </div>
-                            <div class="col col-sm-12 col-md-5 col-lg-4 col-xl-4">
+                            <div class="col col-sm-12 col-md-5 col-lg-4 col-xl-4 d-none d-md-inline">
                                 <div class="sticky-top mt-4">
                                     <div class="card p-3 bg-light">
                                         <div class="row">
@@ -673,10 +650,10 @@
                                             {{--<div class="col">--}}
                                             {{--<a href="" class="btn btn-g-yellow btn-block">Check Availability</a>--}}
                                             {{--</div>--}}
-                                            <div class="col">
+                                            <div class="col-12 col-xl mb-xl-0 mb-2">
                                                 <a href="#Inquire" class="btn btn-g-yellow btn-block font-weight-bold">INQUIRE</a>
                                             </div>
-                                            <div class="col">
+                                            <div class="col-12 col-xl mb-xl-0">
                                                 <a href="https://fareharbor.com/embeds/book/gotoperu/items/{{$paquetes->codigo_f}}/calendar/?flow=92114" class="btn btn-g-green btn-block font-weight-bold">BOOK NOW</a>
                                             </div>
                                         </div>

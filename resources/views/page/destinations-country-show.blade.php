@@ -37,7 +37,7 @@
         </div>
     </section>
 
-    {{--@include('layouts.page.menu-2')--}}
+    @include('layouts.page.menu')
     <section class="d-md-none">
         <div class="container-fluid p-0">
             <div class="row no-gutters">
@@ -104,7 +104,7 @@
                         @foreach($paquetes_de as $paquetes_des)
                             @if(isset($paquetes_des->destinos))
                                 @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
-                                    <div class="col-6 text-decoration-none mb-5">
+                                    <div class="col-12 col-lg-6 text-decoration-none mb-5">
                                         <div class="bg-light shadow-sm rounded">
                                             <div class="row align-items-center no-gutters">
                                                 <div class="col-12">

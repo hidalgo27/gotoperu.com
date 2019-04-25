@@ -39,16 +39,8 @@
         </div>
     </section>
 
-    @include('layouts.page.menu-2')
-    <section class="d-md-none">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col">
-                    <img data-src="{{asset('images/banners/itinerary/GTP40.jpg')}}" data-srcset="{{asset('images/banners/itinerary/GTP40.jpg')}}" alt="machu picchu" class="img-fluid lazy has-webp">
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('layouts.page.menu')
+
 
     <section class="bg-white m-0">
         <div class="container-fluid">
@@ -80,18 +72,18 @@
     <section class="bg-white pb-5">
         <div class="container">
             <div class="row pt-5">
-                <div class="col-3">
+                <div class="col-3 d-none col-sm-12 d-md-flex col-md-4 col-lg-3">
                     <ul class="list-group list-group-flush">
                         @foreach($all_category as $all_categorys)
                             <li class="list-group-item font-weight-bold pl-0"><a href="{{route('category_show_path', str_replace(' ', '-', strtolower($all_categorys->nombre)))}}" class="text-secondary stretched-link"><i class="fas fa-chevron-right"></i> {{ucwords(strtolower($all_categorys->nombre))}}</a></li>
                         @endforeach
                     </ul>
                 </div>
-                <div class="col-9">
+                <div class="col-12 col-sm-12 col-md-8 col-lg-9">
                     <div class="row">
                         @foreach($categorias as $categorias)
                             @if (isset($categorias->categoria))
-                                <div class="col-6 mb-4 text-decoration-none">
+                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 col-lg-6">
                                     <div class="bg-light shadow-sm rounded">
                                         <div class="row align-items-center no-gutters">
                                             <div class="col-12">

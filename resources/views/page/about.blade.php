@@ -5,25 +5,12 @@
     <section class="header-video d-none d-md-block">
         @include('layouts.page.header')
         <div id="overlay" class="overlay-img">
-            {{--<video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>--}}
-            {{--<source src="{{asset('media/video6.mp4')}}" />--}}
-            {{--<source src="{{asset('media/video6.m4v')}}" type="video/mp4" />--}}
-            {{--<source src="{{asset('media/video6.webm')}}" type="video/webm" />--}}
-            {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
-            {{--</video>--}}
-
             <img src="{{asset('images/about.jpg')}}" alt="about us gotoperu" id="hero-vid" class="banner-itinerary">
-{{--            @include('layouts.page.menu-custom')--}}
         </div>
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row content-header-row align-items-center">
-
                     <div class="col">
-
-                        {{--<div class="row my-3 justify-content-center">--}}
-                            {{--<p class="text-white display-4 font-weight-light">GOTOPERU TEAM</p>--}}
-                        {{--</div>--}}
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
                                 <a href="#content-page" class="text-white">

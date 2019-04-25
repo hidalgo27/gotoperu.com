@@ -41,16 +41,7 @@
         </div>
     </section>
 
-    @include('layouts.page.menu-2')
-    <section class="d-md-none">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col">
-                    <img data-src="{{asset('images/banners/itinerary/GTP40.jpg')}}" data-srcset="{{asset('images/banners/itinerary/GTP40.jpg')}}" alt="machu picchu" class="img-fluid lazy has-webp">
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('layouts.page.menu')
 
     <section class="bg-white m-0">
         <div class="container-fluid">
@@ -84,7 +75,7 @@
 
     <section class="bg-white pb-5">
         <div class="container">
-            <div class="row sticky-top">
+            <div class="row sticky-top d-none d-sm-flex">
                 <div class="col">
                     <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['3', '5'])}}">3-5 <span class="text-g-yellow font-weight-bold">days</span></a>
                 </div>
@@ -104,10 +95,10 @@
                         <div class="row mt-4">
 
                             @foreach($paquetes->sortBy('duracion') as $paquete)
-                                <div class="col-6 text-decoration-none mb-5">
+                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                     <div class="bg-light shadow-sm rounded">
                                         <div class="row align-items-center no-gutters">
-                                            <div class="col-7">
+                                            <div class="col-12 col-sm-7">
                                                 <div class="position-relative">
                                                     <img src="{{asset('images/mapas/'.$paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
                                                     <div class="position-absolute-bottom p-2 text-center">
@@ -117,7 +108,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col text-center">
+                                            <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                 <div class="px-3">
                                                     <h2 class="h6 font-weight-bold">{{$paquete->titulo}}</h2>
                                                     <small class="text-muted font-weight-bold">{{$paquete->duracion}} days</small>
