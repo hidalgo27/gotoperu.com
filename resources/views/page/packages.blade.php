@@ -88,7 +88,7 @@
 
                         <div class="row mt-5">
                             @foreach($paquete_categoria->sortBy('duracion') as $paquete_categorias)
-                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
+                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 col-lg-6">
                                     <div class="bg-light shadow-sm rounded">
                                         <div class="row align-items-center no-gutters">
                                             <div class="col-12 col-sm-7">
