@@ -123,7 +123,7 @@
                                                         @endif
                                                     @endforeach
                                                     <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                    <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                    {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}
                                                 </div>
                                             </div>
                                         </div>
