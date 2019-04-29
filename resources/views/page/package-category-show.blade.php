@@ -111,13 +111,13 @@
                                                         @endif
                                                     @endforeach
 
-                                                    <div class="row my-3">
-                                                        <div class="col">
-                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias->paquete->titulo)), $categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                    <div class="row my-3 justify-content-center">
+                                                        <div class="col-6">
+                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias->paquete->titulo)), $categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire Now</a>
                                                         </div>
-                                                        <div class="col">
-                                                            <a href="" class="btn btn-g-green btn-block">Book Now</a>
-                                                        </div>
+                                                        {{--<div class="col">--}}
+                                                            {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}
+                                                        {{--</div>--}}
                                                     </div>
                                                 </div>
                                             </div>
