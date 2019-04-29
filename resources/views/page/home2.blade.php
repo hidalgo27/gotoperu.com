@@ -27,31 +27,31 @@
                                     <h2 class="font-weight-bolder">Top Recommended Travel Company to Machu Picchu & Peru</h2>
 
                                     <div class="row mt-5 justify-content-center">
-                                        <div class="col-6 col-md-12 col-lg-8 col-xl-6">
+                                        <div class="col-6 col-md-6 col-lg-5 col-xl-4">
                                             <div class="row ">
                                                 <div class="col d-flex">
-                                                    <div class="card bg-rgba-dark-3 w-100">
+                                                    <div class="card bg-rgba-white border-g-yellow w-100">
                                                         <div class="card-header bg-g-yellow">
-                                                            <h5 class="m-0">CUSTOMIZED TRIP</h5>
+                                                            <h5 class="m-0 font-weight-bold">INQUIRE NOW</h5>
                                                         </div>
                                                         <div class="card-body p-1">
-                                                            <a href="#Inquire" class="stretched-link text-white">Lets design together a Peru dream vacation!</a>
+                                                            <a href="#Inquire" class="stretched-link font-weight-bold text-g-dark">Customize Quote</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 {{--<div class="col-auto d-flex">--}}
                                                     {{--or--}}
                                                 {{--</div>--}}
-                                                <div class="col d-flex">
-                                                    <div class="card bg-rgba-dark-3 w-100">
-                                                        <div class="card-header bg-g-green">
-                                                            <h5 class="m-0">BOOK ONLINE</h5>
-                                                        </div>
-                                                        <div class="card-body p-1">
-                                                            <a href="{{route('peru_tours_path')}}" class="stretched-link text-white">Pre-design Programs</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                {{--<div class="col d-flex">--}}
+                                                    {{--<div class="card bg-rgba-dark-3 w-100">--}}
+                                                        {{--<div class="card-header bg-g-green">--}}
+                                                            {{--<h5 class="m-0">BOOK ONLINE</h5>--}}
+                                                        {{--</div>--}}
+                                                        {{--<div class="card-body p-1">--}}
+                                                            {{--<a href="{{route('peru_tours_path')}}" class="stretched-link text-white">Pre-design Programs</a>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
                                             </div>
                                         </div>
                                     </div>
@@ -203,10 +203,9 @@
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="luxury-tab" data-toggle="pill" href="#luxury" role="tab" aria-controls="luxury" aria-selected="false">Luxury</a>
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="cruise-tab" data-toggle="pill" href="#cruise" role="tab" aria-controls="cruise" aria-selected="false">Cruise Extension</a>
                                 </div>
-
                             </div>
                             <div class="col-12">
-                                <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-content border border-top-0 rounded-bottom shadow-sm" id="v-pills-tabContent">
                                     <div class="tab-pane fade show active" id="recommended" role="tabpanel" aria-labelledby="recommended-tab">
                                         <div class="row">
                                             <div class="col">
@@ -221,7 +220,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mt-4">
+                                        <div class="row my-3 mx-0">
                                             @foreach($cateoria_recommended as $cateorias_recommended)
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                     <div class="bg-light shadow-sm rounded">
@@ -250,8 +249,8 @@
                                                                             @endif
                                                                         @endif
                                                                     @endforeach
-                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($cateorias_recommended->paquete->titulo)), $cateorias_recommended->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
-                                                                    <a href="" class="btn btn-g-green font-weight-bold btn-block">Book Now</a>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($cateorias_recommended->paquete->titulo)), $cateorias_recommended->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
+                                                                    {{--<a href="" class="btn btn-g-green font-weight-bold btn-block">Book Now</a>--}}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -259,7 +258,6 @@
                                                 </div>
                                             @endforeach
                                         </div>
-
 
                                     </div>
                                     <div class="tab-pane fade" id="active-trek" role="tabpanel" aria-labelledby="active-trek-tab">
@@ -276,7 +274,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mt-4">
+                                        <div class="row my-3 mx-0">
                                             @foreach($categorias_active as $categorias_active)
                                                 @if (isset($categorias_active->categoria))
                                                     <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
@@ -306,8 +304,8 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_active->paquete->titulo)), $categorias_active->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
-                                                                        <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_active->paquete->titulo)), $categorias_active->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
+                                                                        {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -331,7 +329,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row slider-category-3 mt-4">
+                                        <div class="row my-3 mx-0">
                                             @foreach($categorias_luxury as $categorias_luxury)
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
@@ -360,8 +358,8 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_luxury->paquete->titulo)), $categorias_luxury->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
-                                                                        <a href="" class="btn btn-g-green font-weight-bold btn-block">Book Now</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_luxury->paquete->titulo)), $categorias_luxury->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
+                                                                        {{--<a href="" class="btn btn-g-green font-weight-bold btn-block">Book Now</a>--}}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -384,7 +382,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row slider-category-4 mt-4">
+                                        <div class="row my-3 mx-0">
                                             @foreach($categorias_cruise as $categoria_cruise)
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                     <div class="bg-light shadow-sm rounded">
@@ -413,8 +411,8 @@
                                                                             @endif
                                                                         @endif
                                                                     @endforeach
-                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cruise->paquete->titulo)), $categoria_cruise->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
-                                                                    <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cruise->paquete->titulo)), $categoria_cruise->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
+                                                                    {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -429,9 +427,9 @@
                     </div>
                 </div>
 
-                <hr class="my-5">
+                {{--<hr class="my-5">--}}
                 {{--short--}}
-                <div class="row">
+                <div class="row my-4">
                     <div class="col">
                         <div class="row">
                             <div class="col-12 nav-tabs-wrapper">
@@ -443,7 +441,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-content border border-top-0 rounded-bottom shadow-sm" id="v-pills-tabContent">
                                     <div class="tab-pane fade show active" id="short" role="tabpanel" aria-labelledby="short-tab">
 
                                         <div class="row">
@@ -458,7 +456,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row slider-short mt-4">
+                                        <div class="row my-3 mx-0">
                                             @foreach($categorias_short as $categoria_short)
 
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
@@ -488,8 +486,8 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_short->paquete->titulo)), $categoria_short->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
-                                                                        <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_short->paquete->titulo)), $categoria_short->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
+                                                                        {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -542,7 +540,7 @@
                                                                             @endif
                                                                         @endforeach
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_all->paquete->titulo)), $categoria_all->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                                        <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                        {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -595,7 +593,7 @@
                                                                             @endif
                                                                         @endforeach
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_family->paquete->titulo)), $categoria_family->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                                        <a href="" class="btn btn-g-green btn-block">Book Now</a>
+                                                                        {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -647,8 +645,8 @@
                                                                             @endif
                                                                         @endif
                                                                     @endforeach
-                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_honeymoon->paquete->titulo)), $categoria_honeymoon->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
-                                                                    <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
+                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_honeymoon->paquete->titulo)), $categoria_honeymoon->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
+                                                                    {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -662,7 +660,6 @@
                         </div>
                     </div>
                 </div>
-                <hr class="my-5">
                 {{--short--}}
                 <div class="row">
                     <div class="col">
@@ -676,7 +673,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-content border border-top-0 rounded-bottom shadow-sm" id="v-pills-tabContent">
                                     <div class="tab-pane fade show active" id="cultural" role="tabpanel" aria-labelledby="cultural-tab">
                                         <div class="row">
                                             <div class="col">
@@ -690,7 +687,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row slider-all mt-4">
+                                        <div class="row my-3 mx-0">
                                             @foreach($categorias_cultural as $categoria_cultural)
 
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
@@ -720,8 +717,8 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
-                                                                        <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
+                                                                        {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -744,7 +741,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row slider-all mt-4">
+                                        <div class="row my-3 mx-0">
                                             @foreach($categorias_single as $categoria_single)
 
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
@@ -774,8 +771,8 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_single->paquete->titulo)), $categoria_single->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
-                                                                        <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_single->paquete->titulo)), $categoria_single->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
+                                                                        {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -798,7 +795,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row slider-all mt-4">
+                                        <div class="row my-3 mx-0">
                                             @foreach($categorias_long as $categoria_long)
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
@@ -827,8 +824,8 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_long->paquete->titulo)), $categoria_long->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View</a>
-                                                                        <a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_long->paquete->titulo)), $categoria_long->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
+                                                                        {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -841,6 +838,12 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col text-center">
+                        <a href="{{route('category_path')}}" class="btn btn-primary btn-lg font-weight-bold">See More Categories</a>
                     </div>
                 </div>
             </div>
