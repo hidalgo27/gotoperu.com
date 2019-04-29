@@ -531,6 +531,7 @@
                                                                 <div class="col-auto d-none d-sm-block">
                                                                     <img src="{{$hoteles_destino->hotel->imagen}}" alt="" class=" rounded-circle" width="50" height="50">
                                                                 </div>
+                                                                
                                                                 <div class="col">
                                                                     <a href="{{$hoteles_destino->hotel->url}}" class="text-secondary font-weight-bold align-middle d-block"><i class="fas fa-h-square"></i> {{ucwords(strtolower($hoteles_destino->hotel->nombre))}}</a>
                                                                     @for($i=0; $i < $hoteles_destino->hotel->estrellas; $i++)
