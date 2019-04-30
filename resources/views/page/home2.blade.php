@@ -74,7 +74,7 @@
         <section class="bg-light py-3 d-none d-md-block contenido2">
             <div class="container-fluid">
                 <div class="col">
-                    <div class="row"><!--.row -->
+                    <div class="row pb-3"><!--.row -->
                         <div class="col">
                             <img data-src="{{asset('images/logos/apavit.png')}}" data-srcset="{{asset('images/logos/apavit.png')}}" alt="logo apavit" class="img-fluid lazy has-webp">
                         </div>
@@ -179,9 +179,96 @@
                                 </div>
                             </div>
                         </div>
-
             </div>
         </section>
+
+    <section class="d-none d-xl-block pt-4 bg-white">
+        <div class="rounded-0 m-0">
+            <div class="container">
+                {{--<div class="row">--}}
+                    {{--<div class="col text-center">--}}
+                        {{--<h2 class="h1 font-weight-bold text-white">Real <span class="text-g-yellow">Testimonials</span> our travellers</h2>--}}
+                            {{--<a href="" class="btn btn-outline-light btn-sm">TripAdvisor 1</a>--}}
+                            {{--<a href="" class="btn btn-outline-light btn-sm">TripAdvisor 2</a>--}}
+                            {{--<a href="" class="btn btn-outline-light btn-sm">TripAdvisor 3</a>--}}
+                            {{--<a href="" class="btn btn-outline-light btn-sm">TripAdvisor 4</a>--}}
+                            {{--<a href="" class="btn btn-outline-light btn-sm">TripAdvisor 5</a>--}}
+                            {{--<a href="" class="btn btn-outline-light btn-sm">TripAdvisor 6</a>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                <div class="row">
+                    <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-4 text-center">
+                        <div class="row justify-content-center">
+                            <div class="col-6">
+                                <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5867868-Has_anyone_booked_a_tour_with_GOTOPERU_www_gotoperu_org-Peru.html" target="_blank"><img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100"></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-truncate">
+                                <i class="fa fa-quote-left"></i>
+                                <span class="small">Our tour guide Franklin, was so knowledgeable, there was nothing we asked that he couldn't talk at length about!</span>
+                                <i class="fa fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <small class="text-g-yellow font-weight-bold">Jhon Doe X2 feb 2019, USA</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-4 text-center">
+                        <div class="row justify-content-center">
+                            <div class="col-6">
+                                <a href="https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com" target="_blank"><img src="{{asset('images/icons/yelp.png')}}" alt="" class="w-100"></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-truncate">
+                                <i class="fa fa-quote-left"></i>
+                                <span class="small">My experience with the agency is perfect. I would recommend to use them if you have plan to travel to Peru.</span>
+                                <i class="fa fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <small class="text-g-yellow font-weight-bold">Boon C. Jan 2019 Tampa, FL</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-4 text-center">
+                        <div class="row justify-content-center">
+                            <div class="col-6">
+                                <a href="https://www.trustpilot.com/review/gotoperu.com" target="_blank"><img src="{{asset('images/icons/trust.png')}}" alt="" class="w-100"></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-truncate">
+                                <i class="fa fa-quote-left"></i>
+                                <span class="small">No hesitation in recommending GoToPeru to help build your trip. Martin as the front line rep</span>
+                                <i class="fa fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <small class="text-g-yellow font-weight-bold">jeanette Pan feb 2019, USA</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col text-center">
+                        <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5867868-Has_anyone_booked_a_tour_with_GOTOPERU_www_gotoperu_org-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 1</a>
+                        <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k6509104-Gotoperu_Travel_Agency-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 2</a>
+                        <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5657518-GOTOPERU_online_tour_operator-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 3</a>
+                        <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k6934201-Trip_Report_Two_glorious_weeks_in_Peru_with_GOTOPERU_ORG-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 4</a>
+                        <a href="https://www.tripadvisor.co.za/ShowTopic-g294311-i818-k7362487-o10-GotoPeru_or_David_Expeditions-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 5</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
 
         <section class="bg-white py-5">
             <div class="container">

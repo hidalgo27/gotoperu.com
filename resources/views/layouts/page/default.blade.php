@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{mix("css/app.css")}}">
 
 </head>
-<body data-spy="scroll" data-target="#menu" class="position-relative">
+<body data-spy="scroll" data-target="#menu" class="position-relative bg-white">
 
 
 
