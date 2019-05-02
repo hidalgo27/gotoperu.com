@@ -1107,7 +1107,7 @@
                     <div class="row mt-5">
                         <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-2 text-center">
                             <i data-feather="users" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
-                            <span class="text-white small mt-3 d-block">Small Groupssd and Private tours.</span>
+                            <span class="text-white small mt-3 d-block">Small Groups and Private tours.</span>
                         </div>
                         <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-2 text-center">
                             <i data-feather="clock" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
