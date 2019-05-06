@@ -43,9 +43,10 @@
 
         <div class="row justify-content-center">
             <div class="col-12 col-sm-8">
-                <div class="alert bg-rgba-dark my-4 text-white text-center" role="alert">
+                <div class="alert bg-rgba-dark mt-4 text-white text-center" role="alert">
                     The <strong class="text-g-yellow">ONLY Peruvian Travel Operator</strong> with direct Sales Offices in the USA
                 </div>
+                <a href="{{asset('pdf/terms-conditions.pdf')}}" target="_blank" class="btn btn-link font-weight-bold text-white d-block">Services Terms & Conditions</a>
             </div>
         </div>
     </div>
@@ -125,27 +126,7 @@
                 </ul>
             </div>
         </div>
-        <div class="row bg-light align-items-center py-3">
-            <div class="col-12 col-sm">
-                <h6 class="mt-2">GOTOPERU GROUP:</h6>
-            </div>
-            <div class="col-6 col-sm">
-                <img data-src="{{asset('images/logos/logo-gotoperu-footer.png')}}" data-srcset="{{asset('images/logos/logo-gotoperu-footer.png')}}" alt="logo gotoperu" class="img-fluid lazy has-webp">
-            </div>
-            <div class="col-6 col-sm">
-                <img data-src="{{asset('images/logos/logo-andes-footer.png')}}" data-srcset="{{asset('images/logos/logo-andes-footer.png')}}" alt="logo andes viagens" class="img-fluid lazy has-webp">
-            </div>
-            <div class="col-6 col-sm">
-                <img data-src="{{asset('images/logos/logo-latinamerica-footer.png')}}" data-srcset="{{asset('images/logos/logo-latinamerica-footer.png')}}" alt="logo gotolatinamerica" class="img-fluid lazy has-webp">
-            </div>
-            <div class="col-6 col-sm">
-                <img data-src="{{asset('images/logos/logo-mapi-galapagos-footer.png')}}" data-srcset="{{asset('images/logos/logo-mapi-galapagos-footer.png')}}" alt="logo machupicchu galapagos" class="img-fluid lazy has-webp">
-            </div>
-            <div class="col-12 col-sm text-center">
-                {{--<b>PERU LOCAL TIME: 7:38PM</b>--}}
-                <a href="{{asset('pdf/terms-conditions.pdf')}}" target="_blank" class="btn btn-link d-block">Services Terms & Conditions</a>
-            </div>
-        </div>
+
         <div class="row">
             <div class="col text-center text-white">
                 <small><i><b>PERU:</b> Av. Collasuyo 986 Cusco-Peru | <b>USA:</b> 1440 G St NW, Washington DC, 20005</i></small>

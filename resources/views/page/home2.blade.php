@@ -200,7 +200,7 @@
                     <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-4 text-center">
                         <div class="row justify-content-center">
                             <div class="col-6">
-                                <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5867868-Has_anyone_booked_a_tour_with_GOTOPERU_www_gotoperu_org-Peru.html" target="_blank"><img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100"></a>
+                                <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d15202262-Reviews-Gotoperu-Cusco_Cusco_Region.html" target="_blank"><img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100"></a>
                             </div>
                         </div>
                         <div class="row">
@@ -1500,6 +1500,29 @@
 
             </div>
         </section>
+    <section class="bg-light">
+        <div class="container">
+            <div class="row pt-5 pb-2">
+                <div class="col">
+                    <h2 class="text-g-dark h4 font-weight-bold"><strong>GOTOPERU GROUP</strong></h2>
+                </div>
+            </div>
+            <div class="row align-items-center py-3">
+                <div class="col-6 col-md">
+                    <img data-src="{{asset('images/logos/logo-gotoperu-footer.png')}}" data-srcset="{{asset('images/logos/logo-gotoperu-footer.png')}}" alt="logo gotoperu" class="img-fluid lazy has-webp">
+                </div>
+                <div class="col-6 col-md">
+                    <a href="https://www.andesviagens.com/" target="_blank"><img data-src="{{asset('images/logos/logo-andes-footer.png')}}" data-srcset="{{asset('images/logos/logo-andes-footer.png')}}" alt="logo andes viagens" class="img-fluid lazy has-webp"></a>
+                </div>
+                <div class="col-6 col-md">
+                    <a href="http://www.gotolatinamerica.com/" target="_blank"><img data-src="{{asset('images/logos/logo-latinamerica-footer.png')}}" data-srcset="{{asset('images/logos/logo-latinamerica-footer.png')}}" alt="logo gotolatinamerica" class="img-fluid lazy has-webp"></a>
+                </div>
+                <div class="col-6 col-md">
+                    <a href="https://www.llama.tours/" target="_blank"><img data-src="{{asset('images/logos/logo-llama.png')}}" data-srcset="{{asset('images/logos/logo-llama.png')}}" alt="logo machupicchu galapagos" class="img-fluid lazy has-webp"></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     </div>
     @push('scripts')

@@ -32,7 +32,7 @@
         <div class="row py-5 justify-content-center">
             <div class="col">
                 <div class="row justify-content-center pb-2">
-                    <div class="col-3 mb-3">
+                    <div class="col-8 col-sm-6 col-md-4 col-lg-3 mb-3">
                         <img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="w-100">
                     </div>
                     <div class="col col-sm-12 text-center">
