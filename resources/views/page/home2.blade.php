@@ -24,20 +24,21 @@
                             <div class="">
                                 <div class="content-video-1 text-white">
                                     {{--<img src="images/travel/video-1.jpg" alt="video">--}}
-                                    <h2 class="font-weight-bolder">Top Recommended Travel Company to Machu Picchu & Peru</h2>
+                                    <h2 class="font-weight-light">Top Recommended Travel Company to Machu Picchu & Peru</h2>
 
                                     <div class="row mt-5 justify-content-center">
                                         <div class="col-6 col-md-6 col-lg-5 col-xl-4">
                                             <div class="row ">
-                                                <div class="col d-flex">
-                                                    <div class="card bg-rgba-white border-g-yellow w-100">
-                                                        <div class="card-header bg-g-yellow">
-                                                            <h5 class="m-0 font-weight-bold">INQUIRE NOW</h5>
-                                                        </div>
-                                                        <div class="card-body p-1">
-                                                            <a href="#Inquire" class="stretched-link font-weight-bold text-g-dark">Customize Quote</a>
-                                                        </div>
-                                                    </div>
+                                                <div class="col text-center">
+                                                    <a href="#Inquire" class="btn btn-lg btn-g-yellow font-weight-bold">Start Planning My Trip</a>
+                                                    {{--<div class="card bg-rgba-white border-g-yellow w-100">--}}
+                                                        {{--<div class="card-header bg-g-yellow">--}}
+                                                            {{--<h5 class="m-0 font-weight-bold">INQUIRE NOW</h5>--}}
+                                                        {{--</div>--}}
+                                                        {{--<div class="card-body p-1">--}}
+                                                            {{--<a href="#Inquire" class="stretched-link font-weight-bold text-g-dark">Customize Quote</a>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
                                                 </div>
                                                 {{--<div class="col-auto d-flex">--}}
                                                     {{--or--}}
@@ -144,7 +145,7 @@
                         <h2 class="display-4 font-weight-bold text-g-yellow">WE ARE <span class="text-g-green">GOTOPERU</span></h2>
                         {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                         {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                        <p class="lead font-weight-normal text-secondary m-0">Local travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 10 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized our efforts citing us a Top local Experts!</p>
+                        <p class="lead font-weight-normal text-secondary m-0"><span class="text-danger">Peru</span> Local Travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 10 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized <span class="text-danger">us as Top Peru Local Travel Operator</span>.</p>
                     </div>
                 </div>
             </div>

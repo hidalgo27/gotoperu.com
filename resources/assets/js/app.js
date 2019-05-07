@@ -9,7 +9,7 @@ require('./bootstrap');
 
 import $ from 'jquery';
 window.$ = window.jQuery = $;
-import 'slick-carousel/slick/slick.min'
+import 'slick-carousel/slick/slick.min';
 import 'jquery-ui/ui/widgets/datepicker.js';
 
 window.Vue = require('vue');
