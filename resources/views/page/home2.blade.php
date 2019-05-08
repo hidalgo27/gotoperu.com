@@ -549,7 +549,7 @@
                                                 @if (isset($categoria_family->categoria))
                                                     <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
-                                                            <div class="row">
+                                                            <div class="row align-items-center no-gutters">
                                                                 <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_family->paquete->titulo)), $categoria_family->paquete->duracion])}}">
@@ -657,7 +657,7 @@
 
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
-                                                            <div class="row">
+                                                            <div class="row align-items-center no-gutters">
                                                                 <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_all->paquete->titulo)), $categoria_all->paquete->duracion])}}">
@@ -709,7 +709,7 @@
                                             @foreach($categorias_honeymoon as $categoria_honeymoon)
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                     <div class="bg-light shadow-sm rounded">
-                                                        <div class="row">
+                                                        <div class="row align-items-center no-gutters">
                                                             <div class="col-12 col-sm-7">
                                                                 <div class="position-relative">
                                                                     <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_honeymoon->paquete->titulo)), $categoria_honeymoon->paquete->duracion])}}">
