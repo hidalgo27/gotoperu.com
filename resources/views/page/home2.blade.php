@@ -522,15 +522,70 @@
                         <div class="row">
                             <div class="col-12 nav-tabs-wrapper">
                                 <div class="nav-category-goto-green nav nav-tabs dragscroll horizontal flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="family-tab" data-toggle="pill" href="#family" role="tab" aria-controls="family" aria-selected="false">Family</a>
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link active" id="short-tab" data-toggle="pill" href="#short" role="tab" aria-controls="short" aria-selected="true">Short Programs</a>
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="all-tab" data-toggle="pill" href="#all" role="tab" aria-controls="all" aria-selected="false">All Included</a>
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="family-tab" data-toggle="pill" href="#family" role="tab" aria-controls="family" aria-selected="false">Family</a>
+                            
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="honeymoon-tab" data-toggle="pill" href="#honeymoon" role="tab" aria-controls="honeymoon" aria-selected="false">Honeymoon</a>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="tab-content border border-top-0 rounded-bottom shadow-sm" id="v-pills-tabContent">
-                                    <div class="tab-pane fade show active" id="short" role="tabpanel" aria-labelledby="short-tab">
+                                    <div class="tab-pane fade show active" id="family" role="tabpanel" aria-labelledby="family-tab">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="position-relative">
+                                                    <img src="{{asset('images/banners/category/family.jpg')}}" alt="" class="w-100">
+                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
+                                                        @foreach($c_family as $c_familys)
+                                                            <p class="m-0 font-weight-bold">{{$c_familys->descripcion}}</p>
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row slider-all mt-4">
+                                            @foreach($categorias_family as $categoria_family)
+                                                @if (isset($categoria_family->categoria))
+                                                    <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
+                                                        <div class="bg-light shadow-sm rounded">
+                                                            <div class="row align-items-center no-gutters">
+                                                                <div class="col-12 col-sm-7">
+                                                                    <div class="position-relative">
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_family->paquete->titulo)), $categoria_family->paquete->duracion])}}">
+                                                                        <img src="{{asset('images/mapas/'.$categoria_family->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                                        <div class="position-absolute-bottom p-2 text-center">
+                                                                            <span class="small font-weight-bold badge badge-g-green shadow">{{$categoria_family->categoria->nombre}}</span>
+                                                                        </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
+                                                                    <div class="px-3">
+                                                                        <h2 class="h6 font-weight-bold">{{$categoria_family->paquete->titulo}}</h2>
+                                                                        <small class="text-muted font-weight-bold">{{$categoria_family->paquete->duracion}} days</small>
+                                                                        @foreach($categoria_family->paquete->precio_paquetes as $precio)
+                                                                            @if($precio->estrellas == 2)
+                                                                                @if($precio->precio_d > 0)
+                                                                                    {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
+                                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
+                                                                                @else
+                                                                                    <span class="text-danger">Inquire</span>
+                                                                                @endif
+                                                                            @endif
+                                                                        @endforeach
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_family->paquete->titulo)), $categoria_family->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                                        {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="short" role="tabpanel" aria-labelledby="short-tab">
 
                                         <div class="row">
                                             <div class="col">
@@ -637,60 +692,6 @@
                                             @endforeach
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="family" role="tabpanel" aria-labelledby="family-tab">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="position-relative">
-                                                    <img src="{{asset('images/banners/category/family.jpg')}}" alt="" class="w-100">
-                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        @foreach($c_family as $c_familys)
-                                                            <p class="m-0 font-weight-bold">{{$c_familys->descripcion}}</p>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row slider-all mt-4">
-                                            @foreach($categorias_family as $categoria_family)
-                                                @if (isset($categoria_family->categoria))
-                                                    <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
-                                                        <div class="bg-light shadow-sm rounded">
-                                                            <div class="row align-items-center no-gutters">
-                                                                <div class="col-12 col-sm-7">
-                                                                    <div class="position-relative">
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_family->paquete->titulo)), $categoria_family->paquete->duracion])}}">
-                                                                        <img src="{{asset('images/mapas/'.$categoria_family->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
-                                                                        <div class="position-absolute-bottom p-2 text-center">
-                                                                            <span class="small font-weight-bold badge badge-g-green shadow">{{$categoria_family->categoria->nombre}}</span>
-                                                                        </div>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
-                                                                    <div class="px-3">
-                                                                        <h2 class="h6 font-weight-bold">{{$categoria_family->paquete->titulo}}</h2>
-                                                                        <small class="text-muted font-weight-bold">{{$categoria_family->paquete->duracion}} days</small>
-                                                                        @foreach($categoria_family->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 2)
-                                                                                @if($precio->precio_d > 0)
-                                                                                    {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                                                @else
-                                                                                    <span class="text-danger">Inquire</span>
-                                                                                @endif
-                                                                            @endif
-                                                                        @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_family->paquete->titulo)), $categoria_family->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                                        {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @endif
-                                            @endforeach
-                                        </div>
-                                    </div>
                                     <div class="tab-pane fade" id="honeymoon" role="tabpanel" aria-labelledby="honeymoon-tab">
                                         <div class="row">
                                             <div class="col">
@@ -754,69 +755,15 @@
                         <div class="row">
                             <div class="col-12 nav-tabs-wrapper">
                                 <div class="nav-category-goto-grey nav nav-tabs dragscroll horizontal flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link active" id="cultural-tab" data-toggle="pill" href="#cultural" role="tab" aria-controls="cultural" aria-selected="true">Cultural</a>
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="single-traveler-tab" data-toggle="pill" href="#single-traveler" role="tab" aria-controls="single-traveler" aria-selected="false">Single Traveler</a>
+                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link active" id="cultural-tab" data-toggle="pill" href="#cultural" role="tab" aria-controls="cultural" aria-selected="true">Cultural</a>
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="long-duration-tab" data-toggle="pill" href="#long-duration" role="tab" aria-controls="long-duration" aria-selected="false">Long Duration</a>
                                     {{--<a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="amazon-tab" data-toggle="pill" href="#amazon" role="tab" aria-controls="amazon" aria-selected="false">With Amazon</a>--}}
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="tab-content border border-top-0 rounded-bottom shadow-sm" id="v-pills-tabContent">
-                                    <div class="tab-pane fade show active" id="cultural" role="tabpanel" aria-labelledby="cultural-tab">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="position-relative">
-                                                    <img src="{{asset('images/banners/category/cultural.jpg')}}" alt="" class="w-100">
-                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        @foreach($c_cultural as $c_culturals)
-                                                            <p class="m-0 font-weight-bold">{{$c_culturals->descripcion}}</p>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row my-3 mx-0">
-                                            @foreach($categorias_cultural as $categoria_cultural)
-
-                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
-                                                        <div class="bg-light shadow-sm rounded">
-                                                            <div class="row align-items-center no-gutters">
-                                                                <div class="-col-12 col-sm-7">
-                                                                    <div class="position-relative">
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}">
-                                                                        <img src="{{asset('images/mapas/'.$categoria_cultural->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
-                                                                        <div class="position-absolute-bottom p-2 text-center">
-                                                                            <span class="small font-weight-bold badge badge-g-dark shadow">{{$categoria_cultural->categoria->nombre}}</span>
-                                                                        </div>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
-                                                                    <div class="px-3">
-                                                                        <h2 class="h6 font-weight-bold">{{$categoria_cultural->paquete->titulo}}</h2>
-                                                                        <small class="text-muted font-weight-bold">{{$categoria_cultural->paquete->duracion}} days</small>
-                                                                        @foreach($categoria_cultural->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 2)
-                                                                                @if($precio->precio_d > 0)
-                                                                                    {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                                                @else
-                                                                                    <span class="text-danger">Inquire</span>
-                                                                                @endif
-                                                                            @endif
-                                                                        @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
-                                                                        {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="single-traveler" role="tabpanel" aria-labelledby="single-traveler-tab">
+                                    <div class="tab-pane fade show active" id="single-traveler" role="tabpanel" aria-labelledby="single-traveler-tab">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="position-relative">
@@ -860,6 +807,60 @@
                                                                             @endif
                                                                         @endforeach
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_single->paquete->titulo)), $categoria_single->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
+                                                                        {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="cultural" role="tabpanel" aria-labelledby="cultural-tab">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="position-relative">
+                                                    <img src="{{asset('images/banners/category/cultural.jpg')}}" alt="" class="w-100">
+                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
+                                                        @foreach($c_cultural as $c_culturals)
+                                                            <p class="m-0 font-weight-bold">{{$c_culturals->descripcion}}</p>
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row my-3 mx-0">
+                                            @foreach($categorias_cultural as $categoria_cultural)
+
+                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
+                                                        <div class="bg-light shadow-sm rounded">
+                                                            <div class="row align-items-center no-gutters">
+                                                                <div class="-col-12 col-sm-7">
+                                                                    <div class="position-relative">
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}">
+                                                                        <img src="{{asset('images/mapas/'.$categoria_cultural->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                                        <div class="position-absolute-bottom p-2 text-center">
+                                                                            <span class="small font-weight-bold badge badge-g-dark shadow">{{$categoria_cultural->categoria->nombre}}</span>
+                                                                        </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
+                                                                    <div class="px-3">
+                                                                        <h2 class="h6 font-weight-bold">{{$categoria_cultural->paquete->titulo}}</h2>
+                                                                        <small class="text-muted font-weight-bold">{{$categoria_cultural->paquete->duracion}} days</small>
+                                                                        @foreach($categoria_cultural->paquete->precio_paquetes as $precio)
+                                                                            @if($precio->estrellas == 2)
+                                                                                @if($precio->precio_d > 0)
+                                                                                    {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
+                                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
+                                                                                @else
+                                                                                    <span class="text-danger">Inquire</span>
+                                                                                @endif
+                                                                            @endif
+                                                                        @endforeach
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
                                                                         {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
                                                                     </div>
                                                                 </div>
