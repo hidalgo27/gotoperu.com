@@ -522,8 +522,8 @@
                         <div class="row">
                             <div class="col-12 nav-tabs-wrapper">
                                 <div class="nav-category-goto-green nav nav-tabs dragscroll horizontal flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="family-tab" data-toggle="pill" href="#family" role="tab" aria-controls="family" aria-selected="false">Family</a>
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link active" id="short-tab" data-toggle="pill" href="#short" role="tab" aria-controls="short" aria-selected="true">Short Programs</a>
+                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link active" id="family-tab" data-toggle="pill" href="#family" role="tab" aria-controls="family" aria-selected="false">Family</a>
+                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="short-tab" data-toggle="pill" href="#short" role="tab" aria-controls="short" aria-selected="true">Short Programs</a>
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="all-tab" data-toggle="pill" href="#all" role="tab" aria-controls="all" aria-selected="false">All Included</a>
                             
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="honeymoon-tab" data-toggle="pill" href="#honeymoon" role="tab" aria-controls="honeymoon" aria-selected="false">Honeymoon</a>
@@ -755,8 +755,8 @@
                         <div class="row">
                             <div class="col-12 nav-tabs-wrapper">
                                 <div class="nav-category-goto-grey nav nav-tabs dragscroll horizontal flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="single-traveler-tab" data-toggle="pill" href="#single-traveler" role="tab" aria-controls="single-traveler" aria-selected="false">Single Traveler</a>
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link active" id="cultural-tab" data-toggle="pill" href="#cultural" role="tab" aria-controls="cultural" aria-selected="true">Cultural</a>
+                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link active" id="single-traveler-tab" data-toggle="pill" href="#single-traveler" role="tab" aria-controls="single-traveler" aria-selected="false">Single Traveler</a>
+                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="cultural-tab" data-toggle="pill" href="#cultural" role="tab" aria-controls="cultural" aria-selected="true">Cultural</a>
                                     <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="long-duration-tab" data-toggle="pill" href="#long-duration" role="tab" aria-controls="long-duration" aria-selected="false">Long Duration</a>
                                     {{--<a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="amazon-tab" data-toggle="pill" href="#amazon" role="tab" aria-controls="amazon" aria-selected="false">With Amazon</a>--}}
                                 </div>
