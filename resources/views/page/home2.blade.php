@@ -151,8 +151,6 @@
             </div>
         </section>
 
-
-
         <section class="bg-light pb-5">
             <div class="container-fluid">
 
@@ -160,22 +158,33 @@
                             <div class="col">
                                 <div class="row slider-top-home mx-4">
                                     <div class="col">
-                                        <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/21.jpg')}}"><img src="{{asset('images/slider-home/thumbnail/21.jpg')}}" class="w-100" /></a>
+                                        <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/21.jpg')}}">
+                                            <img data-lazy="{{asset('images/slider-home/thumbnail/21.jpg')}}" class="w-100" />
+                                            {{--<picture>--}}
+                                                {{--<source type="image/webp"--}}
+                                                        {{--data-srcset="{{asset('images/slider-home/thumbnail/21.jpg')}}"--}}
+                                                        {{--data-sizes="100w">--}}
+                                                {{--<img alt="gotoperu" class="lazy w-100"--}}
+                                                     {{--data-src="{{asset('images/slider-home/thumbnail/21.jpg')}}"--}}
+                                                     {{--data-srcset="{{asset('images/slider-home/thumbnail/21.jpg')}}"--}}
+                                                     {{--data-sizes="100w">--}}
+                                            {{--</picture>--}}
+                                        </a>
                                     </div>
                                     <div class="col">
-                                        <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/22.jpg')}}"><img src="{{asset('images/slider-home/thumbnail/22.jpg')}}" class="w-100" /></a>
+                                        <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/22.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/22.jpg')}}" class="w-100" /></a>
                                     </div>
                                     <div class="col">
-                                        <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/23.jpg')}}"><img src="{{asset('images/slider-home/thumbnail/23.jpg')}}" class="w-100" /></a>
+                                        <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/23.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/23.jpg')}}" class="w-100" /></a>
                                     </div>
                                     <div class="col">
-                                        <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/24.jpg')}}"><img src="{{asset('images/slider-home/thumbnail/24.jpg')}}" class="w-100" /></a>
+                                        <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/24.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/24.jpg')}}" class="w-100" /></a>
                                     </div>
                                     <div class="col">
-                                        <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/25.jpg')}}"><img src="{{asset('images/slider-home/thumbnail/25.jpg')}}" class="w-100" /></a>
+                                        <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/25.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/25.jpg')}}" class="w-100" /></a>
                                     </div>
                                     <div class="col">
-                                        <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/26.jpg')}}"><img src="{{asset('images/slider-home/thumbnail/26.jpg')}}" class="w-100" /></a>
+                                        <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/26.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/26.jpg')}}" class="w-100" /></a>
                                     </div>
                                 </div>
                             </div>
@@ -201,7 +210,23 @@
                     <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-4 text-center">
                         <div class="row justify-content-center">
                             <div class="col-6">
-                                <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d15202262-Reviews-Gotoperu-Cusco_Cusco_Region.html" target="_blank"><img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100"></a>
+                                <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d15202262-Reviews-Gotoperu-Cusco_Cusco_Region.html" target="_blank">
+
+                                    {{--<img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100">--}}
+
+                                    {{--<picture>--}}
+                                        {{--<source type="image/webp"--}}
+                                                {{--data-srcset="{{asset('images/icons/tripadvisor.webp')}}"--}}
+                                                {{--data-sizes="100w">--}}
+                                        {{--<img alt="gotoperu" class="lazy w-100"--}}
+                                             {{--data-src="{{asset('images/icons/tripadvisor.png')}}"--}}
+                                             {{--data-srcset="{{asset('images/icons/tripadvisor.png')}}"--}}
+                                             {{--data-sizes="100w">--}}
+                                    {{--</picture>--}}
+
+                                    <img data-src="{{asset('images/icons/tripadvisor.webp')}}" data-srcset="{{asset('images/icons/tripadvisor.png')}}" alt="certificate gotoperu" class="w-100 lazy has-webp" data-toggle="modal" data-target="#certificate-1">
+
+                                </a>
                             </div>
                         </div>
                         <div class="row">
@@ -1893,6 +1918,7 @@
             //slick
             $('.slider-top-home').slick({
                 // dots: true,
+                lazyLoad: 'ondemand',
                 infinite: true,
                 speed: 300,
                 slidesToShow: 5,
@@ -1903,6 +1929,7 @@
                     {
                         breakpoint: 1024,
                         settings: {
+                            lazyLoad: 'ondemand',
                             slidesToShow: 3,
                             slidesToScroll: 3,
                             infinite: true,
@@ -1912,6 +1939,7 @@
                     {
                         breakpoint: 600,
                         settings: {
+                            lazyLoad: 'ondemand',
                             slidesToShow: 2,
                             slidesToScroll: 2
                         }
@@ -1919,6 +1947,7 @@
                     {
                         breakpoint: 480,
                         settings: {
+                            lazyLoad: 'ondemand',
                             slidesToShow: 1,
                             slidesToScroll: 1
                         }
@@ -2050,7 +2079,6 @@
                     }
                 }
 
-
                 if (_document.readyState == 'complete') {
                     reset();
                 } else {
@@ -2060,9 +2088,16 @@
                 exports.reset = reset;
             }));
 
+            // $('.lazy').slick({
+            //     lazyLoad: 'ondemand',
+            //     slidesToShow: 3,
+            //     slidesToScroll: 1
+            // });
+
         </script>
         <div id="fb-root"></div>
         <script async defer src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2&appId=1712869952328301&autoLogAppEvents=1"></script>
+
 
     @endpush
 
