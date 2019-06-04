@@ -214,17 +214,17 @@
 
                                     {{--<img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100">--}}
 
-                                    {{--<picture>--}}
-                                        {{--<source type="image/webp"--}}
-                                                {{--data-srcset="{{asset('images/icons/tripadvisor.webp')}}"--}}
-                                                {{--data-sizes="100w">--}}
-                                        {{--<img alt="gotoperu" class="lazy w-100"--}}
-                                             {{--data-src="{{asset('images/icons/tripadvisor.png')}}"--}}
-                                             {{--data-srcset="{{asset('images/icons/tripadvisor.png')}}"--}}
-                                             {{--data-sizes="100w">--}}
-                                    {{--</picture>--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/icons/tripadvisor.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="gotoperu" class="lazy w-100"
+                                             data-src="{{asset('images/icons/tripadvisor.png')}}"
+                                             data-srcset="{{asset('images/icons/tripadvisor.png')}}"
+                                             data-sizes="100w">
+                                    </picture>
 
-                                    <img data-src="{{asset('images/icons/tripadvisor.webp')}}" data-srcset="{{asset('images/icons/tripadvisor.png')}}" alt="certificate gotoperu" class="w-100 lazy has-webp" data-toggle="modal" data-target="#certificate-1">
+{{--                                    <img data-src="{{asset('images/icons/tripadvisor.png')}}" data-srcset="{{asset('images/icons/tripadvisor.png')}}" alt="certificate gotoperu" class="w-100 lazy has-webp" data-toggle="modal" data-target="#certificate-1">--}}
 
                                 </a>
                             </div>
@@ -245,7 +245,18 @@
                     <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-4 text-center">
                         <div class="row justify-content-center">
                             <div class="col-6">
-                                <a href="https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com" target="_blank"><img src="{{asset('images/icons/yelp.png')}}" alt="" class="w-100"></a>
+                                <a href="https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com" target="_blank">
+                                    {{--<img src="{{asset('images/icons/yelp.png')}}" alt="" class="w-100">--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/icons/yelp.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="gotoperu" class="lazy w-100"
+                                             data-src="{{asset('images/icons/yelp.png')}}"
+                                             data-srcset="{{asset('images/icons/yelp.png')}}"
+                                             data-sizes="100w">
+                                    </picture>
+                                </a>
                             </div>
                         </div>
                         <div class="row">
@@ -264,7 +275,18 @@
                     <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-4 text-center">
                         <div class="row justify-content-center">
                             <div class="col-6">
-                                <a href="https://www.trustpilot.com/review/gotoperu.com" target="_blank"><img src="{{asset('images/icons/trust.png')}}" alt="" class="w-100"></a>
+                                <a href="https://www.trustpilot.com/review/gotoperu.com" target="_blank">
+                                    {{--<img src="{{asset('images/icons/trust.png')}}" alt="" class="w-100">--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/icons/trust.png')}}"
+                                                data-sizes="100w">
+                                        <img alt="gotoperu" class="lazy w-100"
+                                             data-src="{{asset('images/icons/trust.png')}}"
+                                             data-srcset="{{asset('images/icons/trust.png')}}"
+                                             data-sizes="100w">
+                                    </picture>
+                                </a>
                             </div>
                         </div>
                         <div class="row">
@@ -323,7 +345,16 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">
+                                                    {{--<img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">--}}
+                                                    <picture>
+                                                        <source type="image/webp"
+                                                                data-srcset="{{asset('images/banners/category/recommended.webp')}}"
+                                                                data-sizes="100w">
+                                                        <img alt="gotoperu" class="lazy w-100"
+                                                             data-src="{{asset('images/banners/category/recommended.jpg')}}"
+                                                             data-srcset="{{asset('images/banners/category/recommended.jpg')}}"
+                                                             data-sizes="100w">
+                                                    </picture>
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
                                                         @foreach($c_recommended as $c_recommendeds)
                                                             <p class="m-0 font-weight-bold">{{$c_recommendeds->descripcion}}</p>
@@ -335,13 +366,25 @@
 
                                         <div class="row my-3 mx-0">
                                             @foreach($cateoria_recommended as $cateorias_recommended)
+                                                @php
+                                                $img_webp = str_replace('jpg','webp', $cateorias_recommended->paquete->imagen);
+                                                @endphp
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                     <div class="bg-light shadow-sm rounded">
                                                         <div class="row align-items-center no-gutters">
                                                             <div class="col-12 col-sm-7">
                                                                 <div class="position-relative">
                                                                     <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($cateorias_recommended->paquete->titulo)), $cateorias_recommended->paquete->duracion])}}">
-                                                                    <img src="{{asset('images/mapas/'.$cateorias_recommended->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                                    {{--<img src="{{asset('images/mapas/'.$cateorias_recommended->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
+                                                                        <picture>
+                                                                            <source type="image/webp"
+                                                                                    data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                    data-sizes="100w">
+                                                                            <img alt="gotoperu" class="lazy w-100"
+                                                                                 data-src="{{asset('images/mapas/'.$cateorias_recommended->paquete->imagen.'')}}"
+                                                                                 data-srcset="{{asset('images/mapas/'.$cateorias_recommended->paquete->imagen.'')}}"
+                                                                                 data-sizes="100w">
+                                                                        </picture>
                                                                     <div class="position-absolute-bottom p-2 text-center">
                                                                         <span class="small font-weight-bold badge badge-g-yellow shadow">{{$cateorias_recommended->categoria->nombre}}</span>
                                                                     </div>
@@ -377,7 +420,17 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/banners/category/trek.jpg')}}" alt="" class="w-100">
+                                                    {{--<img src="{{asset('images/banners/category/trek.jpg')}}" alt="" class="w-100">--}}
+                                                    <picture>
+                                                        <source type="image/webp"
+                                                                data-srcset="{{asset('images/banners/category/trek.webp')}}"
+                                                                srcset="{{asset('images/banners/category/trek.webp')}}"
+                                                                data-sizes="100w">
+                                                        <img alt="gotoperu" class="lazy w-100"
+                                                             data-src="{{asset('images/banners/category/trek.jpg')}}"
+                                                             data-srcset="{{asset('images/banners/category/trek.jpg')}}"
+                                                             data-sizes="100w">
+                                                    </picture>
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
                                                         @foreach($c_active as $c_actives)
                                                             <p class="m-0 font-weight-bold">{{$c_actives->descripcion}}</p>
@@ -390,13 +443,26 @@
                                         <div class="row my-3 mx-0">
                                             @foreach($categorias_active as $categorias_active)
                                                 @if (isset($categorias_active->categoria))
+                                                    @php
+                                                        $img_webp = str_replace('jpg','webp', $categorias_active->paquete->imagen);
+                                                    @endphp
                                                     <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_active->paquete->titulo)), $categorias_active->paquete->duracion])}}">
-                                                                        <img src="{{asset('images/mapas/'.$categorias_active->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+{{--                                                                        <img src="{{asset('images/mapas/'.$categorias_active->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
+                                                                            <picture>
+                                                                                <source type="image/webp"
+                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        data-sizes="100w">
+                                                                                <img alt="gotoperu" class="lazy w-100"
+                                                                                     data-src="{{asset('images/mapas/'.$categorias_active->paquete->imagen.'')}}"
+                                                                                     data-srcset="{{asset('images/mapas/'.$categorias_active->paquete->imagen.'')}}"
+                                                                                     data-sizes="100w">
+                                                                            </picture>
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categorias_active->categoria->nombre}}</span>
                                                                         </div>
@@ -433,7 +499,17 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/banners/category/luxury.jpg')}}" alt="" class="w-100">
+{{--                                                    <img src="{{asset('images/banners/category/luxury.jpg')}}" alt="" class="w-100">--}}
+                                                    <picture>
+                                                        <source type="image/webp"
+                                                                data-srcset="{{asset('images/banners/category/luxury.webp')}}"
+                                                                srcset="{{asset('images/banners/category/luxury.webp')}}"
+                                                                data-sizes="100w">
+                                                        <img alt="gotoperu" class="lazy w-100"
+                                                             data-src="{{asset('images/banners/category/luxury.jpg')}}"
+                                                             data-srcset="{{asset('images/banners/category/luxury.jpg')}}"
+                                                             data-sizes="100w">
+                                                    </picture>
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
                                                         @foreach($c_luxury as $c_luxurys)
                                                             <p class="m-0 font-weight-bold">{{$c_luxurys->descripcion}}</p>
@@ -444,13 +520,28 @@
                                         </div>
                                         <div class="row my-3 mx-0">
                                             @foreach($categorias_luxury as $categorias_luxury)
+                                                @php
+                                                    $img_webp = str_replace('jpg','webp', $categorias_luxury->paquete->imagen);
+                                                @endphp
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_luxury->paquete->titulo)), $categorias_luxury->paquete->duracion])}}">
-                                                                        <img src="{{asset('images/mapas/'.$categorias_luxury->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+{{--                                                                        <img src="{{asset('images/mapas/'.$categorias_luxury->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
+
+                                                                            <picture>
+                                                                                <source type="image/webp"
+                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        data-sizes="100w">
+                                                                                <img alt="gotoperu" class="lazy w-100"
+                                                                                     data-src="{{asset('images/mapas/'.$categorias_luxury->paquete->imagen.'')}}"
+                                                                                     data-srcset="{{asset('images/mapas/'.$categorias_luxury->paquete->imagen.'')}}"
+                                                                                     data-sizes="100w">
+                                                                            </picture>
+
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categorias_luxury->categoria->nombre}}</span>
                                                                         </div>
@@ -486,7 +577,17 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/banners/category/cruise.jpg')}}" alt="" class="w-100">
+{{--                                                    <img src="{{asset('images/banners/category/cruise.jpg')}}" alt="" class="w-100">--}}
+                                                    <picture>
+                                                        <source type="image/webp"
+                                                                data-srcset="{{asset('images/banners/category/cruise.webp')}}"
+                                                                srcset="{{asset('images/banners/category/cruise.webp')}}"
+                                                                data-sizes="100w">
+                                                        <img alt="gotoperu" class="lazy w-100"
+                                                             data-src="{{asset('images/banners/category/cruise.jpg')}}"
+                                                             data-srcset="{{asset('images/banners/category/cruise.jpg')}}"
+                                                             data-sizes="100w">
+                                                    </picture>
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
                                                         @foreach($c_cruise as $c_cruises)
                                                             <p class="m-0 font-weight-bold">{{$c_cruises->descripcion}}</p>
@@ -497,13 +598,29 @@
                                         </div>
                                         <div class="row my-3 mx-0">
                                             @foreach($categorias_cruise as $categoria_cruise)
+                                                @php
+                                                    $img_webp = str_replace('jpg','webp', $categoria_cruise->paquete->imagen);
+                                                @endphp
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                     <div class="bg-light shadow-sm rounded">
                                                         <div class="row align-items-center no-gutters">
                                                             <div class="col-12 col-sm-7">
                                                                 <div class="position-relative">
                                                                     <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cruise->paquete->titulo)), $categoria_cruise->paquete->duracion])}}">
-                                                                    <img src="{{asset('images/mapas/'.$categoria_cruise->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+{{--                                                                    <img src="{{asset('images/mapas/'.$categoria_cruise->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
+
+                                                                        <picture>
+                                                                            <source type="image/webp"
+                                                                                    data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                    srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                    data-sizes="100w">
+                                                                            <img alt="gotoperu" class="lazy w-100"
+                                                                                 data-src="{{asset('images/mapas/'.$categoria_cruise->paquete->imagen.'')}}"
+                                                                                 data-srcset="{{asset('images/mapas/'.$categoria_cruise->paquete->imagen.'')}}"
+                                                                                 data-sizes="100w">
+                                                                        </picture>
+
+
                                                                     <div class="position-absolute-bottom p-2 text-center">
                                                                         <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categoria_cruise->categoria->nombre}}</span>
                                                                     </div>
@@ -560,7 +677,16 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/banners/category/family.jpg')}}" alt="" class="w-100">
+{{--                                                    <img src="{{asset('images/banners/category/family.jpg')}}" alt="" class="w-100">--}}
+                                                    <picture>
+                                                        <source type="image/webp"
+                                                                data-srcset="{{asset('images/banners/category/family.webp')}}"
+                                                                data-sizes="100w">
+                                                        <img alt="gotoperu" class="lazy w-100"
+                                                             data-src="{{asset('images/banners/category/family.jpg')}}"
+                                                             data-srcset="{{asset('images/banners/category/family.jpg')}}"
+                                                             data-sizes="100w">
+                                                    </picture>
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
                                                         @foreach($c_family as $c_familys)
                                                             <p class="m-0 font-weight-bold">{{$c_familys->descripcion}}</p>
@@ -572,13 +698,28 @@
                                         <div class="row my-3 mx-0">
                                             @foreach($categorias_family as $categoria_family)
                                                 @if (isset($categoria_family->categoria))
+                                                    @php
+                                                        $img_webp = str_replace('jpg','webp', $categoria_family->paquete->imagen);
+                                                    @endphp
                                                     <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_family->paquete->titulo)), $categoria_family->paquete->duracion])}}">
-                                                                        <img src="{{asset('images/mapas/'.$categoria_family->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+{{--                                                                        <img src="{{asset('images/mapas/'.$categoria_family->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
+
+                                                                            <picture>
+                                                                                <source type="image/webp"
+                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        data-sizes="100w">
+                                                                                <img alt="gotoperu" class="lazy w-100"
+                                                                                     data-src="{{asset('images/mapas/'.$categoria_family->paquete->imagen.'')}}"
+                                                                                     data-srcset="{{asset('images/mapas/'.$categoria_family->paquete->imagen.'')}}"
+                                                                                     data-sizes="100w">
+                                                                            </picture>
+
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-green shadow">{{$categoria_family->categoria->nombre}}</span>
                                                                         </div>
@@ -599,7 +740,7 @@
                                                                                 @endif
                                                                             @endif
                                                                         @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_family->paquete->titulo)), $categoria_family->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_family->paquete->titulo)), $categoria_family->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
                                                                         {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}
                                                                     </div>
                                                                 </div>
@@ -615,7 +756,17 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/banners/category/short.jpg')}}" alt="" class="w-100">
+{{--                                                    <img src="{{asset('images/banners/category/short.jpg')}}" alt="" class="w-100">--}}
+                                                    <picture>
+                                                        <source type="image/webp"
+                                                                data-srcset="{{asset('images/banners/category/short.webp')}}"
+                                                                srcset="{{asset('images/banners/category/short.webp')}}"
+                                                                data-sizes="100w">
+                                                        <img alt="gotoperu" class="lazy w-100"
+                                                             data-src="{{asset('images/banners/category/short.jpg')}}"
+                                                             data-srcset="{{asset('images/banners/category/short.jpg')}}"
+                                                             data-sizes="100w">
+                                                    </picture>
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
                                                         @foreach($c_short as $c_shorts)
                                                             <p class="m-0 font-weight-bold">{{$c_shorts->descripcion}}</p>
@@ -626,14 +777,28 @@
                                         </div>
                                         <div class="row my-3 mx-0">
                                             @foreach($categorias_short as $categoria_short)
-
+                                                @php
+                                                    $img_webp = str_replace('jpg','webp', $categoria_short->paquete->imagen);
+                                                @endphp
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_short->paquete->titulo)), $categoria_short->paquete->duracion])}}">
-                                                                        <img src="{{asset('images/mapas/'.$categoria_short->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+{{--                                                                        <img src="{{asset('images/mapas/'.$categoria_short->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
+
+                                                                            <picture>
+                                                                                <source type="image/webp"
+                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        data-sizes="100w">
+                                                                                <img alt="gotoperu" class="lazy w-100"
+                                                                                     data-src="{{asset('images/mapas/'.$categoria_short->paquete->imagen.'')}}"
+                                                                                     data-srcset="{{asset('images/mapas/'.$categoria_short->paquete->imagen.'')}}"
+                                                                                     data-sizes="100w">
+                                                                            </picture>
+
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-green shadow">{{$categoria_short->categoria->nombre}}</span>
                                                                         </div>
@@ -668,7 +833,17 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/banners/category/all.jpg')}}" alt="" class="w-100">
+                                                    {{--<img src="{{asset('images/banners/category/all.jpg')}}" alt="" class="w-100">--}}
+                                                    <picture>
+                                                        <source type="image/webp"
+                                                                data-srcset="{{asset('images/banners/category/all.webp')}}"
+                                                                srcset="{{asset('images/banners/category/all.webp')}}"
+                                                                data-sizes="100w">
+                                                        <img alt="gotoperu" class="lazy w-100"
+                                                             data-src="{{asset('images/banners/category/all.jpg')}}"
+                                                             data-srcset="{{asset('images/banners/category/all.jpg')}}"
+                                                             data-sizes="100w">
+                                                    </picture>
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
                                                         @foreach($c_all as $c_alls)
                                                             <p class="m-0 font-weight-bold">{{$c_alls->descripcion}}</p>
@@ -679,14 +854,28 @@
                                         </div>
                                         <div class="row my-3 mx-0">
                                             @foreach($categorias_all as $categoria_all)
-
+                                                @php
+                                                    $img_webp = str_replace('jpg','webp', $categoria_all->paquete->imagen);
+                                                @endphp
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_all->paquete->titulo)), $categoria_all->paquete->duracion])}}">
-                                                                        <img src="{{asset('images/mapas/'.$categoria_all->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+{{--                                                                        <img src="{{asset('images/mapas/'.$categoria_all->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
+
+                                                                            <picture>
+                                                                                <source type="image/webp"
+                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        data-sizes="100w">
+                                                                                <img alt="gotoperu" class="lazy w-100"
+                                                                                     data-src="{{asset('images/mapas/'.$categoria_all->paquete->imagen.'')}}"
+                                                                                     data-srcset="{{asset('images/mapas/'.$categoria_all->paquete->imagen.'')}}"
+                                                                                     data-sizes="100w">
+                                                                            </picture>
+
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-green shadow">{{$categoria_all->categoria->nombre}}</span>
                                                                         </div>
@@ -721,7 +910,17 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/banners/category/honeymoon.jpg')}}" alt="" class="w-100">
+                                                    {{--<img src="{{asset('images/banners/category/honeymoon.jpg')}}" alt="" class="w-100">--}}
+                                                    <picture>
+                                                        <source type="image/webp"
+                                                                data-srcset="{{asset('images/banners/category/honeymoon.webp')}}"
+                                                                srcset="{{asset('images/banners/category/honeymoon.webp')}}"
+                                                                data-sizes="100w">
+                                                        <img alt="gotoperu" class="lazy w-100"
+                                                             data-src="{{asset('images/banners/category/honeymoon.jpg')}}"
+                                                             data-srcset="{{asset('images/banners/category/honeymoon.jpg')}}"
+                                                             data-sizes="100w">
+                                                    </picture>
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
                                                         @foreach($c_honeymoon as $c_honeymoons)
                                                             <p class="m-0 font-weight-bold">{{$c_honeymoons->descripcion}}</p>
@@ -732,13 +931,28 @@
                                         </div>
                                         <div class="row my-3 mx-0">
                                             @foreach($categorias_honeymoon as $categoria_honeymoon)
+                                                @php
+                                                    $img_webp = str_replace('jpg','webp', $categoria_honeymoon->paquete->imagen);
+                                                @endphp
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                     <div class="bg-light shadow-sm rounded">
                                                         <div class="row align-items-center no-gutters">
                                                             <div class="col-12 col-sm-7">
                                                                 <div class="position-relative">
                                                                     <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_honeymoon->paquete->titulo)), $categoria_honeymoon->paquete->duracion])}}">
-                                                                    <img src="{{asset('images/mapas/'.$categoria_honeymoon->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+{{--                                                                    <img src="{{asset('images/mapas/'.$categoria_honeymoon->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
+
+                                                                        <picture>
+                                                                            <source type="image/webp"
+                                                                                    data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                    srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                    data-sizes="100w">
+                                                                            <img alt="gotoperu" class="lazy w-100"
+                                                                                 data-src="{{asset('images/mapas/'.$categoria_honeymoon->paquete->imagen.'')}}"
+                                                                                 data-srcset="{{asset('images/mapas/'.$categoria_honeymoon->paquete->imagen.'')}}"
+                                                                                 data-sizes="100w">
+                                                                        </picture>
+
                                                                     <div class="position-absolute-bottom p-2 text-center">
                                                                         <span class="small font-weight-bold badge badge-g-green shadow">{{$categoria_honeymoon->categoria->nombre}}</span>
                                                                     </div>
@@ -792,7 +1006,17 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/banners/category/single.jpg')}}" alt="" class="w-100">
+{{--                                                    <img src="{{asset('images/banners/category/single.jpg')}}" alt="" class="w-100">--}}
+                                                    <picture>
+                                                        <source type="image/webp"
+                                                                data-srcset="{{asset('images/banners/category/single.webp')}}"
+                                                                srcset="{{asset('images/banners/category/single.webp')}}"
+                                                                data-sizes="100w">
+                                                        <img alt="gotoperu" class="lazy w-100"
+                                                             data-src="{{asset('images/banners/category/single.jpg')}}"
+                                                             data-srcset="{{asset('images/banners/category/single.jpg')}}"
+                                                             data-sizes="100w">
+                                                    </picture>
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
                                                         @foreach($c_single as $c_singles)
                                                             <p class="m-0 font-weight-bold">{{$c_singles->descripcion}}</p>
@@ -803,14 +1027,28 @@
                                         </div>
                                         <div class="row my-3 mx-0">
                                             @foreach($categorias_single as $categoria_single)
-
+                                                @php
+                                                    $img_webp = str_replace('jpg','webp', $categoria_single->paquete->imagen);
+                                                @endphp
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_single->paquete->titulo)), $categoria_single->paquete->duracion])}}">
-                                                                        <img src="{{asset('images/mapas/'.$categoria_single->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+{{--                                                                        <img src="{{asset('images/mapas/'.$categoria_single->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
+
+                                                                            <picture>
+                                                                                <source type="image/webp"
+                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        data-sizes="100w">
+                                                                                <img alt="gotoperu" class="lazy w-100"
+                                                                                     data-src="{{asset('images/mapas/'.$categoria_single->paquete->imagen.'')}}"
+                                                                                     data-srcset="{{asset('images/mapas/'.$categoria_single->paquete->imagen.'')}}"
+                                                                                     data-sizes="100w">
+                                                                            </picture>
+
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-dark shadow">{{$categoria_single->categoria->nombre}}</span>
                                                                         </div>
@@ -846,7 +1084,17 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/banners/category/cultural.jpg')}}" alt="" class="w-100">
+{{--                                                    <img src="{{asset('images/banners/category/cultural.jpg')}}" alt="" class="w-100">--}}
+                                                    <picture>
+                                                        <source type="image/webp"
+                                                                data-srcset="{{asset('images/banners/category/cultural.webp')}}"
+                                                                srcset="{{asset('images/banners/category/cultural.webp')}}"
+                                                                data-sizes="100w">
+                                                        <img alt="gotoperu" class="lazy w-100"
+                                                             data-src="{{asset('images/banners/category/cultural.jpg')}}"
+                                                             data-srcset="{{asset('images/banners/category/cultural.jpg')}}"
+                                                             data-sizes="100w">
+                                                    </picture>
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
                                                         @foreach($c_cultural as $c_culturals)
                                                             <p class="m-0 font-weight-bold">{{$c_culturals->descripcion}}</p>
@@ -857,14 +1105,27 @@
                                         </div>
                                         <div class="row my-3 mx-0">
                                             @foreach($categorias_cultural as $categoria_cultural)
-
+                                                @php
+                                                    $img_webp = str_replace('jpg','webp', $categoria_cultural->paquete->imagen);
+                                                @endphp
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="-col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}">
-                                                                        <img src="{{asset('images/mapas/'.$categoria_cultural->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+{{--                                                                        <img src="{{asset('images/mapas/'.$categoria_cultural->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
+                                                                            <picture>
+                                                                                <source type="image/webp"
+                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        data-sizes="100w">
+                                                                                <img alt="gotoperu" class="lazy w-100"
+                                                                                     data-src="{{asset('images/mapas/'.$categoria_cultural->paquete->imagen.'')}}"
+                                                                                     data-srcset="{{asset('images/mapas/'.$categoria_cultural->paquete->imagen.'')}}"
+                                                                                     data-sizes="100w">
+                                                                            </picture>
+
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-dark shadow">{{$categoria_cultural->categoria->nombre}}</span>
                                                                         </div>
@@ -900,7 +1161,17 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/banners/category/long.jpg')}}" alt="" class="w-100">
+{{--                                                    <img src="{{asset('images/banners/category/long.jpg')}}" alt="" class="w-100">--}}
+                                                    <picture>
+                                                        <source type="image/webp"
+                                                                data-srcset="{{asset('images/banners/category/long.webp')}}"
+                                                                srcset="{{asset('images/banners/category/long.webp')}}"
+                                                                data-sizes="100w">
+                                                        <img alt="gotoperu" class="lazy w-100"
+                                                             data-src="{{asset('images/banners/category/long.jpg')}}"
+                                                             data-srcset="{{asset('images/banners/category/long.jpg')}}"
+                                                             data-sizes="100w">
+                                                    </picture>
                                                     <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
                                                         @foreach($c_long as $c_longs)
                                                             <p class="m-0 font-weight-bold">{{$c_longs->descripcion}}</p>
@@ -911,13 +1182,28 @@
                                         </div>
                                         <div class="row my-3 mx-0">
                                             @foreach($categorias_long as $categoria_long)
+                                                @php
+                                                    $img_webp = str_replace('jpg','webp', $categoria_long->paquete->imagen);
+                                                @endphp
                                                 <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                         <div class="bg-light shadow-sm rounded">
                                                             <div class="row align-items-center no-gutters">
                                                                 <div class="col-12 col-sm-7">
                                                                     <div class="position-relative">
                                                                         <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_long->paquete->titulo)), $categoria_long->paquete->duracion])}}">
-                                                                        <img src="{{asset('images/mapas/'.$categoria_long->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+{{--                                                                        <img src="{{asset('images/mapas/'.$categoria_long->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
+
+                                                                            <picture>
+                                                                                <source type="image/webp"
+                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
+                                                                                        data-sizes="100w">
+                                                                                <img alt="gotoperu" class="lazy w-100"
+                                                                                     data-src="{{asset('images/mapas/'.$categoria_long->paquete->imagen.'')}}"
+                                                                                     data-srcset="{{asset('images/mapas/'.$categoria_long->paquete->imagen.'')}}"
+                                                                                     data-sizes="100w">
+                                                                            </picture>
+
                                                                         <div class="position-absolute-bottom p-2 text-center">
                                                                             <span class="small font-weight-bold badge badge-g-dark shadow">{{$categoria_long->categoria->nombre}}</span>
                                                                         </div>
@@ -973,10 +1259,24 @@
                 </div>
                 <div class="row slider-video-testimonio mt-4">
                     @foreach($testimonio_video as $testimonio_videos)
+                        @php
+                            $img_webp = str_replace('jpg','webp', $testimonio_videos->imagen);
+                        @endphp
                         <div class="col">
                             <a class="venobox" data-autoplay="true" data-vbtype="video" href="{{$testimonio_videos->codigo}}">
                                 <div class="position-relative">
-                                    <img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">
+                                    {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
+
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/video-tertimonio/'.$img_webp.'')}}"
+                                                data-sizes="100w">
+                                        <img alt="gotoperu" class="lazy w-100 shadow-sm rounded"
+                                             data-src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}"
+                                             data-srcset="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}"
+                                             data-sizes="100w">
+                                    </picture>
+
                                     <div class="position-absolute-bottom text-white p-3 icon-play">
                                         <i class="fas fa-play fa-2x"></i>
                                     </div>
@@ -1000,32 +1300,95 @@
                         <div class="col-9 text-white text-center rounded">
                             <div class="row">
                                 <div class="col">
-                                    <img data-src="{{asset('images/icons/include/assistances.png')}}" data-srcset="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="w-100 lazy has-webp">
+                                    {{--<img data-src="{{asset('images/icons/include/assistances.png')}}" data-srcset="{{asset('images/icons/include/assistances.png')}}" alt="assistances" class="w-100 lazy has-webp">--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/icons/include/assistances.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="assistances" class="lazy w-100 shadow-sm rounded"
+                                             data-src="{{asset('images/icons/include/assistances.png')}}"
+                                             data-srcset="{{asset('images/icons/include/assistances.png')}}"
+                                             data-sizes="100w">
+                                    </picture>
                                     <small>Assistances</small>
                                 </div>
                                 <div class="col">
-                                    <img data-src="{{asset('images/icons/include/breakfast.png')}}" data-srcset="{{asset('images/icons/include/breakfast.png')}}" alt="breakfast" class="w-100 lazy has-webp">
+                                    {{--<img data-src="{{asset('images/icons/include/breakfast.png')}}" data-srcset="{{asset('images/icons/include/breakfast.png')}}" alt="breakfast" class="w-100 lazy has-webp">--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/icons/include/breakfast.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="breakfast" class="lazy w-100 shadow-sm rounded"
+                                             data-src="{{asset('images/icons/include/breakfast.png')}}"
+                                             data-srcset="{{asset('images/icons/include/breakfast.png')}}"
+                                             data-sizes="100w">
+                                    </picture>
                                     <small>Breakfast</small>
                                 </div>
                                 <div class="col">
-                                    <img data-src="{{asset('images/icons/include/entrances.png')}}" data-srcset="{{asset('images/icons/include/entrances.png')}}" alt="entrances" class="w-100 lazy has-webp">
+                                    {{--<img data-src="{{asset('images/icons/include/entrances.png')}}" data-srcset="{{asset('images/icons/include/entrances.png')}}" alt="entrances" class="w-100 lazy has-webp">--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/icons/include/entrances.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="entrances" class="lazy w-100 shadow-sm rounded"
+                                             data-src="{{asset('images/icons/include/entrances.png')}}"
+                                             data-srcset="{{asset('images/icons/include/entrances.png')}}"
+                                             data-sizes="100w">
+                                    </picture>
                                     <small>Entrances</small>
                                 </div>
                                 <div class="col">
-                                    <img data-src="{{asset('images/icons/include/flight.png')}}" data-srcset="{{asset('images/icons/include/flight.png')}}" alt="flight" class="w-100 lazy has-webp">
+{{--                                    <img data-src="{{asset('images/icons/include/flight.png')}}" data-srcset="{{asset('images/icons/include/flight.png')}}" alt="flight" class="w-100 lazy has-webp">--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/icons/include/flight.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="flight" class="lazy w-100 shadow-sm rounded"
+                                             data-src="{{asset('images/icons/include/flight.png')}}"
+                                             data-srcset="{{asset('images/icons/include/flight.png')}}"
+                                             data-sizes="100w">
+                                    </picture>
                                     <small>Flight</small>
                                 </div>
 
                                 <div class="col">
-                                    <img data-src="{{asset('images/icons/include/hotels.png')}}" data-srcset="{{asset('images/icons/include/hotels.png')}}" alt="hotels" class="w-100 lazy has-webp">
+                                    {{--<img data-src="{{asset('images/icons/include/hotels.png')}}" data-srcset="{{asset('images/icons/include/hotels.png')}}" alt="hotels" class="w-100 lazy has-webp">--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/icons/include/hotels.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="hotels" class="lazy w-100 shadow-sm rounded"
+                                             data-src="{{asset('images/icons/include/hotels.png')}}"
+                                             data-srcset="{{asset('images/icons/include/hotels.png')}}"
+                                             data-sizes="100w">
+                                    </picture>
                                     <small>Hotels</small>
                                 </div>
                                 <div class="col">
-                                    <img data-src="{{asset('images/icons/include/tours.png')}}" data-srcset="{{asset('images/icons/include/tours.png')}}" alt="tours" class="w-100 lazy has-webp">
+                                    {{--<img data-src="{{asset('images/icons/include/tours.png')}}" data-srcset="{{asset('images/icons/include/tours.png')}}" alt="tours" class="w-100 lazy has-webp">--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/icons/include/tours.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="tours" class="lazy w-100 shadow-sm rounded"
+                                             data-src="{{asset('images/icons/include/tours.png')}}"
+                                             data-srcset="{{asset('images/icons/include/tours.png')}}"
+                                             data-sizes="100w">
+                                    </picture>
                                     <small>Tours</small>
                                 </div>
                                 <div class="col">
-                                    <img data-src="{{asset('images/icons/include/trains.png')}}" data-srcset="{{asset('images/icons/include/trains.png')}}" alt="trains" class="w-100 lazy has-webp">
+                                    {{--<img data-src="{{asset('images/icons/include/trains.png')}}" data-srcset="{{asset('images/icons/include/trains.png')}}" alt="trains" class="w-100 lazy has-webp">--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/icons/include/trains.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="trains" class="lazy w-100 shadow-sm rounded"
+                                             data-src="{{asset('images/icons/include/trains.png')}}"
+                                             data-srcset="{{asset('images/icons/include/trains.png')}}"
+                                             data-sizes="100w">
+                                    </picture>
                                     <small>Trains</small>
                                 </div>
                                 <div class="col">
@@ -1053,7 +1416,16 @@
                         <div class="header-img-category rounded">
                             <div class="position-relative">
                                 <a href="{{route('category_show_path', 'for-families')}}">
-                                    <img src="{{asset('images/category/home.jpg')}}" alt="" class="w-100 shadow-sm">
+                                    {{--<img src="{{asset('images/category/home.jpg')}}" alt="" class="w-100 shadow-sm">--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/category/home.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="trains" class="lazy w-100 shadow-sm"
+                                             data-src="{{asset('images/category/home.jpg')}}"
+                                             data-srcset="{{asset('images/category/home.jpg')}}"
+                                             data-sizes="100w">
+                                    </picture>
                                     <div class="position-absolute-bottom text-white text-left">
                                         <h5 class="p-2 m-0 footer-title-category">Family</h5>
                                     </div>
@@ -1067,7 +1439,16 @@
                                 <div class="header-img-category rounded">
                                     <div class="position-relative">
                                         <a href="{{route('category_show_path', 'recommended')}}">
-                                            <img src="{{asset('images/category/recommended.jpg')}}" alt="" class="w-100 shadow-sm">
+                                            {{--<img src="{{asset('images/category/recommended.jpg')}}" alt="" class="w-100 shadow-sm">--}}
+                                            <picture>
+                                                <source type="image/webp"
+                                                        data-srcset="{{asset('images/category/recommended.webp')}}"
+                                                        data-sizes="100w">
+                                                <img alt="trains" class="lazy w-100 shadow-sm"
+                                                     data-src="{{asset('images/category/recommended.jpg')}}"
+                                                     data-srcset="{{asset('images/category/recommended.jpg')}}"
+                                                     data-sizes="100w">
+                                            </picture>
                                             <div class="position-absolute-bottom text-white text-left">
                                                 <h6 class="p-2 m-0 font-weight-normal footer-title-category">Recommended</h6>
                                             </div>
@@ -1079,7 +1460,16 @@
                                 <div class="header-img-category rounded">
                                     <div class="position-relative">
                                         <a href="{{route('category_show_path', 'cultural')}}">
-                                            <img src="{{asset('images/category/cultural.jpg')}}" alt="" class="w-100 shadow-sm">
+{{--                                            <img src="{{asset('images/category/cultural.jpg')}}" alt="" class="w-100 shadow-sm">--}}
+                                            <picture>
+                                                <source type="image/webp"
+                                                        data-srcset="{{asset('images/category/cultural.webp')}}"
+                                                        data-sizes="100w">
+                                                <img alt="trains" class="lazy w-100 shadow-sm"
+                                                     data-src="{{asset('images/category/cultural.jpg')}}"
+                                                     data-srcset="{{asset('images/category/cultural.jpg')}}"
+                                                     data-sizes="100w">
+                                            </picture>
                                             <div class="position-absolute-bottom text-white text-left">
                                                 <h6 class="p-2 m-0 font-weight-normal footer-title-category">Cultural</h6>
                                             </div>
@@ -1093,7 +1483,16 @@
                                 <div class="header-img-category rounded">
                                     <div class="position-relative">
                                         <a href="{{route('category_show_path', 'active-treks')}}">
-                                            <img src="{{asset('images/category/active.jpg')}}" alt="" class="w-100 shadow-sm">
+                                            {{--<img src="{{asset('images/category/active.jpg')}}" alt="" class="w-100 shadow-sm">--}}
+                                            <picture>
+                                                <source type="image/webp"
+                                                        data-srcset="{{asset('images/category/active.webp')}}"
+                                                        data-sizes="100w">
+                                                <img alt="trains" class="lazy w-100 shadow-sm"
+                                                     data-src="{{asset('images/category/active.jpg')}}"
+                                                     data-srcset="{{asset('images/category/active.jpg')}}"
+                                                     data-sizes="100w">
+                                            </picture>
                                             <div class="position-absolute-bottom text-white text-left">
                                                 <h6 class="p-2 m-0 font-weight-normal footer-title-category">Active / Trek</h6>
                                             </div>
@@ -1105,7 +1504,16 @@
                                 <div class="header-img-category rounded">
                                     <div class="position-relative">
                                         <a href="{{route('category_show_path', 'short-programs')}}">
-                                            <img src="{{asset('images/category/short.jpg')}}" alt="" class="w-100 shadow-sm">
+                                            {{--<img src="{{asset('images/category/short.jpg')}}" alt="" class="w-100 shadow-sm">--}}
+                                            <picture>
+                                                <source type="image/webp"
+                                                        data-srcset="{{asset('images/category/short.webp')}}"
+                                                        data-sizes="100w">
+                                                <img alt="trains" class="lazy w-100 shadow-sm"
+                                                     data-src="{{asset('images/category/short.jpg')}}"
+                                                     data-srcset="{{asset('images/category/short.jpg')}}"
+                                                     data-sizes="100w">
+                                            </picture>
                                             <div class="position-absolute-bottom text-white text-left">
                                                 <h6 class="p-2 m-0 font-weight-normal footer-title-category">Short Programs</h6>
                                             </div>
@@ -1178,16 +1586,38 @@
                     <div class="col col-sm-12 col-md">
                         <div class="row no-gutters">
                             <div class="col">
-                                <img class="w-100 rounded-bottom lazy has-webp"
-                                     data-src="{{asset('images/banner-home2.jpg')}}"
-                                     data-srcset="{{asset('images/banner-home2.jpg')}}">
+                                {{--<img class="w-100 rounded-bottom lazy has-webp"--}}
+                                     {{--data-src="{{asset('images/banner-home2.jpg')}}"--}}
+                                     {{--data-srcset="{{asset('images/banner-home2.jpg')}}">--}}
+
+                                <picture>
+                                    <source type="image/webp"
+                                            data-srcset="{{asset('images/banner-home2.webp')}}"
+                                            data-sizes="100w">
+                                    <img alt="trains" class="lazy w-100 shadow-sm"
+                                         data-src="{{asset('images/banner-home2.jpg')}}"
+                                         data-srcset="{{asset('images/banner-home2.jpg')}}"
+                                         data-sizes="100w">
+                                </picture>
+
                             </div>
                         </div>
                         <div class="row no-gutters">
                             <div class="col">
-                                <img class="w-100 rounded-bottom lazy has-webp"
-                                     data-src="{{asset('images/banner-home3.jpg')}}"
-                                     data-srcset="{{asset('images/banner-home3.jpg')}}">
+                                {{--<img class="w-100 rounded-bottom lazy has-webp"--}}
+                                     {{--data-src="{{asset('images/banner-home3.jpg')}}"--}}
+                                     {{--data-srcset="{{asset('images/banner-home3.jpg')}}">--}}
+                                <picture>
+                                    <source type="image/webp"
+                                            data-srcset="{{asset('images/banner-home3.webp')}}"
+                                            data-sizes="100w">
+                                    <img alt="trains" class="lazy w-100 shadow-sm"
+                                         data-src="{{asset('images/banner-home3.jpg')}}"
+                                         data-srcset="{{asset('images/banner-home3.jpg')}}"
+                                         data-sizes="100w">
+                                </picture>
+
+
                             </div>
                         </div>
                     </div>
@@ -1220,7 +1650,16 @@
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
                                 <a href="{{route('destinations_country_show_path', ['peru-travel', 'cusco'])}}-tours">
-                                    <img src="{{asset('images/destinations/destinations/machu-picchu.jpg')}}" alt="" class="w-100 shadow-sm">
+{{--                                    <img src="{{asset('images/destinations/destinations/machu-picchu.jpg')}}" alt="" class="w-100 shadow-sm">--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/destinations/destinations/machu-picchu.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="trains" class="lazy w-100 shadow-sm"
+                                             data-src="{{asset('images/destinations/destinations/machu-picchu.jpg')}}"
+                                             data-srcset="{{asset('images/destinations/destinations/machu-picchu.jpg')}}"
+                                             data-sizes="100w">
+                                    </picture>
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
                                         <h6 class="p-2 m-0 font-weight-bold footer-title-category">Cusco</h6>
                                     </div>
@@ -1232,7 +1671,15 @@
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
                                 <a href="{{route('destinations_country_show_path', ['peru-travel', 'lima'])}}-tours">
-                                    <img src="{{asset('images/destinations/destinations/lima.jpg')}}" alt="" class="w-100 shadow-sm">
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/destinations/destinations/lima.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="trains" class="lazy w-100 shadow-sm"
+                                             data-src="{{asset('images/destinations/destinations/lima.jpg')}}"
+                                             data-srcset="{{asset('images/destinations/destinations/lima.jpg')}}"
+                                             data-sizes="100w">
+                                    </picture>
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
                                         <h6 class="p-2 m-0 font-weight-bold footer-title-category">Lima</h6>
                                     </div>
@@ -1244,7 +1691,15 @@
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
                                 <a href="{{route('destinations_country_show_path', ['peru-travel', 'puno-and-lake-titicaca-tours'])}}-tours">
-                                    <img src="{{asset('images/destinations/destinations/puno-and-lake-titicaca.jpg')}}" alt="" class="w-100 shadow-sm">
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/destinations/destinations/puno-and-lake-titicaca.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="trains" class="lazy w-100 shadow-sm"
+                                             data-src="{{asset('images/destinations/destinations/puno-and-lake-titicaca.jpg')}}"
+                                             data-srcset="{{asset('images/destinations/destinations/puno-and-lake-titicaca.jpg')}}"
+                                             data-sizes="100w">
+                                    </picture>
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
                                         <h6 class="p-2 m-0 font-weight-bold footer-title-category">Puno</h6>
                                     </div>
@@ -1256,7 +1711,16 @@
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
                                 <a href="{{route('destinations_country_show_path', ['peru-travel', 'arequipa-and-colca-canyon-tours'])}}-tours">
-                                    <img src="{{asset('images/destinations/destinations/arequipa-and-colca-canyon.jpg')}}" alt="" class="w-100 shadow-sm">
+{{--                                    <img src="{{asset('images/destinations/destinations/arequipa-and-colca-canyon.jpg')}}" alt="" class="w-100 shadow-sm">--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/destinations/destinations/arequipa-and-colca-canyon.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="trains" class="lazy w-100 shadow-sm"
+                                             data-src="{{asset('images/destinations/destinations/arequipa-and-colca-canyon.jpg')}}"
+                                             data-srcset="{{asset('images/destinations/destinations/arequipa-and-colca-canyon.jpg')}}"
+                                             data-sizes="100w">
+                                    </picture>
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
                                         <h6 class="p-2 m-0 font-weight-bold footer-title-category">Arequipa</h6>
                                     </div>

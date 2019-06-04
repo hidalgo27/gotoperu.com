@@ -33,7 +33,16 @@
             <div class="col">
                 <div class="row justify-content-center pb-2">
                     <div class="col-8 col-sm-6 col-md-4 col-lg-3 mb-3">
-                        <img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="w-100">
+                        {{--<img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="w-100">--}}
+                        <picture>
+                            <source type="image/webp"
+                                    data-srcset="{{asset('images/logos/logo-gotoperu-ave.webp')}}"
+                                    data-sizes="100w">
+                            <img alt="trains" class="lazy w-100"
+                                 data-src="{{asset('images/logos/logo-gotoperu-ave.png')}}"
+                                 data-srcset="{{asset('images/logos/logo-gotoperu-ave.png')}}"
+                                 data-sizes="100w">
+                        </picture>
                     </div>
                     <div class="col col-sm-12 text-center">
                         <h2 class="h1 font-weight-bold text-g-dark mb-3">TRAVEL INQUIRE</h2>
