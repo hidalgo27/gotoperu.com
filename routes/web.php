@@ -408,3 +408,45 @@ Route::delete('admin/difficulty/edit/{id}', [
     'uses' => 'Admin\DifficultyController@destroy',
     'as' => 'admin_difficulty_delete_path',
 ]);
+//video
+
+Route::get('admin/video', [
+    'uses' => 'Admin\VideoController@index',
+    'as' => 'admin_video_index_path',
+]);
+Route::get('admin/video/create', [
+    'uses' => 'Admin\VideoController@create',
+    'as' => 'admin_video_create_path',
+]);
+Route::post('admin/video/store', [
+    'uses' => 'Admin\VideoController@store',
+    'as' => 'admin_video_store_path',
+]);
+Route::get('admin/video/edit/{id}', [
+    'uses' => 'Admin\VideoController@edit',
+    'as' => 'admin_video_edit_path',
+]);
+Route::post('admin/video/update/{id}', [
+    'uses' => 'Admin\VideoController@update',
+    'as' => 'admin_video_update_path',
+]);
+Route::delete('admin/video/edit/{id}', [
+    'uses' => 'Admin\VideoController@destroy',
+    'as' => 'admin_video_delete_path',
+]);
+Route::post('admin/video/image/image_store', [
+    'uses' => 'Admin\VideoController@image_store',
+    'as' => 'admin_video_image_store_path',
+]);
+Route::post('admin/video/image/image_delete', [
+    'uses' => 'Admin\VideoController@image_delete',
+    'as' => 'admin_video_image_delete_path',
+]);
+Route::post('admin/video/image/image_delete_form', [
+    'uses' => 'Admin\VideoController@image_delete_form',
+    'as' => 'admin_video_image_delete_form_path',
+]);
+Route::get('admin/video/image/image_list', [
+    'uses' => 'Admin\VideoController@image_list',
+    'as' => 'admin_video_list_path',
+]);
