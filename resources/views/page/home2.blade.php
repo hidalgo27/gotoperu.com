@@ -1259,9 +1259,6 @@
                 </div>
                 <div class="row slider-video-testimonio mt-4">
                     @foreach($testimonio_video as $testimonio_videos)
-                        @php
-                            $img_webp = str_replace('jpg','webp', $testimonio_videos->imagen);
-                        @endphp
                         <div class="col">
                             <a class="venobox" data-autoplay="true" data-vbtype="video" href="{{$testimonio_videos->codigo}}">
                                 <div class="position-relative">
@@ -1269,11 +1266,11 @@
 
                                     <picture>
                                         <source type="image/webp"
-                                                data-srcset="{{asset('images/video-tertimonio/'.$img_webp.'')}}"
+                                                data-srcset="{{asset('images/video-testimonio/'.$testimonio_videos->imagen.'')}}"
                                                 data-sizes="100w">
                                         <img alt="gotoperu" class="lazy w-100 shadow-sm rounded"
-                                             data-src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}"
-                                             data-srcset="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}"
+                                             data-src="{{asset('images/video-testimonio/'.$testimonio_videos->imagen.'')}}"
+                                             data-srcset="{{asset('images/video-testimonio/'.$testimonio_videos->imagen.'')}}"
                                              data-sizes="100w">
                                     </picture>
 
