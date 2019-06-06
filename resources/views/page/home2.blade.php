@@ -5,10 +5,10 @@
         @include('layouts.page.header')
         <div id="overlay" class="position-relative">
             <video class="hero-vid-home banner-itinerary" id="hero-vid" poster="{{asset('images/itinerary/banners/GTP1.jpg')}}" autoplay loop muted>
-                <source src="{{asset('media/final2.mp4')}}" type="video/mp4"/>
-                <source src="{{asset('media/final2.m4v')}}" type="video/mp4" />
-                <source src="{{asset('media/final2.webm')}}" type="video/webm" />
-                <source  src="{{asset('media/final2.ogv')}}" type="video/ogg" />
+                <source src="{{asset('media/gotoperu.mp4')}}" type="video/mp4"/>
+                {{--<source src="{{asset('media/gotoperu.m4v')}}" type="video/mp4" />--}}
+                <source src="{{asset('media/gotoperu.webm')}}" type="video/webm" />
+                <source  src="{{asset('media/gotoperu.ogv')}}" type="video/ogg" />
             </video>
             <div class="position-absolute-bottom p-3">
                 <img src="{{asset('images/logos/logo-expedia.png')}}" alt="" width="180">
