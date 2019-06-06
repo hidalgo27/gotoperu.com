@@ -142,6 +142,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col text-center">
+                        <h1 class="h6 font-weight-bold text-muted">Peru Travel Packages</h1>
                         <h2 class="display-4 font-weight-bold text-g-yellow">WE ARE <span class="text-g-green">GOTOPERU</span></h2>
                         {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                         {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
@@ -238,7 +239,7 @@
                         </div>
                         <div class="row">
                             <div class="col text-center">
-                                <small class="text-g-yellow font-weight-bold">Jhon Doe X2 feb 2019, USA</small>
+                                <small class="text-g-yellow font-weight-bold">Jhon X2 feb 2019, USA</small>
                             </div>
                         </div>
                     </div>
