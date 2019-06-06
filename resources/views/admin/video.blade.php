@@ -127,7 +127,6 @@
                 </thead>
                 <tbody>
                 @foreach($video as $videos)
-
                     <tr>
                         <td>
                             <span class="custom-checkbox">
@@ -135,7 +134,7 @@
                                 <label for="checkbox1"></label>
                             </span>
                         </td>
-                        <td>{{$videos->codigo}} </td>
+                        <td><a href="{{route('admin_video_edit_path', $videos->id)}}"><img src="{{asset('images/video-testimonio/'.$videos->imagen.'')}}" alt="" width="100" class="mr-4">{{$videos->titulo}}</a></td>
                         {{--<td>{{$videos->estado}}</td>--}}
                         {{--<td>(171) 555-2222</td>--}}
                         <td class="text-center">
