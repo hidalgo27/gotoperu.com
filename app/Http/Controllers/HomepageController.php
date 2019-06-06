@@ -36,13 +36,13 @@ class HomepageController extends Controller
     public function index()
     {
 
-        SEOMeta::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        SEOMeta::setTitle('Travel Packages to Peru | Machu Picchu Travel');
         SEOMeta::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
         SEOMeta::setCanonical('https://gotoperu.com/');
         SEOMeta::addKeyword(['peru travel packages', 'travel packages to peru', 'Go To Peru', 'machu picchu travel', 'peru vacations', 'peru vacation packages', 'machu picchu deals', 'peru travel offers', 'machu picchu travel offers', 'Machu Picchu packages', 'customize peru travel packages', 'tour packages to machu picchu']);
 
         OpenGraph::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
-        OpenGraph::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        OpenGraph::setTitle('Travel Packages to Peru | Machu Picchu Travel');
         OpenGraph::setUrl('https://gotoperu.com/');
         OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
@@ -50,7 +50,7 @@ class HomepageController extends Controller
         OpenGraph::addProperty('type', 'website');
 
         \Twitter::setType('summary');
-        \Twitter::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        \Twitter::setTitle('Travel Packages to Peru | Machu Picchu Travel');
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
@@ -72,13 +72,13 @@ class HomepageController extends Controller
     public function index2()
     {
 
-        SEOMeta::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        SEOMeta::setTitle('Travel Packages to Peru | Machu Picchu Travel');
         SEOMeta::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
         SEOMeta::setCanonical('https://gotoperu.com/');
         SEOMeta::addKeyword(['peru travel packages', 'travel packages to peru', 'Go To Peru', 'machu picchu travel', 'peru vacations', 'peru vacation packages', 'machu picchu deals', 'peru travel offers', 'machu picchu travel offers', 'Machu Picchu packages', 'customize peru travel packages', 'tour packages to machu picchu']);
 
         OpenGraph::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
-        OpenGraph::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        OpenGraph::setTitle('Travel Packages to Peru | Machu Picchu Travel');
         OpenGraph::setUrl('https://gotoperu.com/');
         OpenGraph::addImage('https://gotoperu.com/images/banners/cusco.jpg');
         OpenGraph::addImages(['url'=>'https://gotoperu.com/images/banners/cusco.jpg']);
@@ -86,7 +86,7 @@ class HomepageController extends Controller
         OpenGraph::addProperty('type', 'website');
 
         \Twitter::setType('summary');
-        \Twitter::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        \Twitter::setTitle('Travel Packages to Peru | Machu Picchu Travel');
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
@@ -326,7 +326,7 @@ class HomepageController extends Controller
         OpenGraph::addProperty('type', 'website');
 
         \Twitter::setType('summary');
-        \Twitter::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        \Twitter::setTitle('Travel Packages to Peru | Machu Picchu Travel');
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
@@ -392,7 +392,7 @@ class HomepageController extends Controller
         OpenGraph::addProperty('type', 'website');
 
         \Twitter::setType('summary');
-        \Twitter::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        \Twitter::setTitle('Travel Packages to Peru | Machu Picchu Travel');
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
@@ -491,7 +491,7 @@ class HomepageController extends Controller
         OpenGraph::addProperty('type', 'website');
 
         \Twitter::setType('summary');
-        \Twitter::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        \Twitter::setTitle('Travel Packages to Peru | Machu Picchu Travel');
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
@@ -524,7 +524,7 @@ class HomepageController extends Controller
         OpenGraph::addProperty('type', 'website');
 
         \Twitter::setType('summary');
-        \Twitter::setTitle('Travel Packages to Peru | Peru Vacations | Machu Picchu Travel');
+        \Twitter::setTitle('Travel Packages to Peru | Machu Picchu Travel');
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
