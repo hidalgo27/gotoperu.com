@@ -14462,7 +14462,6 @@ header {
 }
 
 #overlay {
-  background-color: rgba(0, 0, 0, 0.3);
   height: 100vh;
   left: 0;
   position: relative;

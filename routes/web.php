@@ -165,7 +165,11 @@ Route::post('/contact_s', [
     'uses' => 'HomepageController@contact_s',
     'as' => 'contact_s_path',
 ]);
-
+//yourtrip
+Route::get('/yourtrip/itinerary/{id}', [
+    'uses' => 'HomepageController@yourtrip',
+    'as' => 'yourtrip_us_path',
+]);
 //formularios
 Route::post('/inquire', [
     'uses' => 'HomepageController@inquire',
@@ -449,4 +453,25 @@ Route::post('admin/video/image/image_delete_form', [
 Route::get('admin/video/image/image_list', [
     'uses' => 'Admin\VideoController@image_list',
     'as' => 'admin_video_list_path',
+]);
+//inquire
+Route::get('admin/inquire', [
+    'uses' => 'Admin\InquireController@list',
+    'as' => 'admin_list_index_path',
+]);
+Route::get('admin/inquire/{id}', [
+    'uses' => 'Admin\InquireController@index',
+    'as' => 'admin_inquire_index_path',
+]);
+Route::post('admin/inquire/store', [
+    'uses' => 'Admin\InquireController@store',
+    'as' => 'admin_inquire_store_path',
+]);
+Route::get('admin/inquire/edit/{id}', [
+    'uses' => 'Admin\InquireController@edit',
+    'as' => 'admin_inquire_edit_index_path',
+]);
+Route::delete('admin/inquire/delete/{id}', [
+    'uses' => 'Admin\InquireController@destroy',
+    'as' => 'admin_inquire_delete_path',
 ]);

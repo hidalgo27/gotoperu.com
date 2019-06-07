@@ -1,6 +1,6 @@
 @extends('layouts.page.default')
 @section('content')
-    @foreach($paquete_iti as $paquetes)
+        @foreach($paquete_iti as $paquetes)
 
     <section class="header-video d-none d-md-block chat-mensajes">
         <div id="title" class="text-white">
@@ -512,12 +512,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <h3 class="text-secondary h4"><strong>Hotels</strong></h3>
-                                            {{--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at distinctio eos error minus, perspiciatis praesentium sint suscipit ullam voluptatum. Ab, aliquid architecto atque consequuntur expedita hic inventore non repudiandae!</p>--}}
-                                            {{--<div class="alert alert-primary text-center mt-3" role="alert">|--}}
-                                                {{--@foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)--}}
-                                                    {{--<a href="#{{$paquete_destino->destinos->id}}-hotel" class="font-weight-bold">{{$paquete_destino->destinos->nombre}} HOTEL</a> |--}}
-                                                {{--@endforeach--}}
-                                            {{--</div>--}}
+
                                         </div>
                                     </div>
                                     <div class="row">
