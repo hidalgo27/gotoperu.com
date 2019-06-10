@@ -335,7 +335,7 @@
                                 <div class="row">
                                     <div class="col-12 nav-tabs-wrapper">
                                         <div class="nav nav-tabs dragscroll horizontal flex-sm-row p-0 @if ($categoria_groups->grupo == 1) {{'nav-category-goto-yellow'}} @else {{'nav-category-goto-green'}} @endif" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                            @foreach($categorias->where('grupo', $categoria_groups->grupo) as $categoria)
+                                            @foreach($categorias->where('grupo', $categoria_groups->grupo)->sortByDesc('estado') as $categoria)
                                                 <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link @if ($categoria->estado == 1) {{'active'}} @endif" id="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}-tab" data-toggle="pill" href="#category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" role="tab" aria-controls="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" aria-selected="true">{{$categoria->nombre}}</a>
                                             @endforeach
                                         </div>
