@@ -328,920 +328,99 @@
                     </div>
                 </div>
                 {{--recom--}}
-                <div class="row">
-                    <div class="col">
-                        <div class="row">
-                            <div class="col-12 nav-tabs-wrapper">
+                @foreach($categoria_group as $categoria_groups)
 
-                                <div class="nav-category-goto-yellow nav nav-tabs dragscroll horizontal flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link active" id="recommended-tab" data-toggle="pill" href="#recommended" role="tab" aria-controls="recommended" aria-selected="true">Recommended</a>
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="active-trek-tab" data-toggle="pill" href="#active-trek" role="tab" aria-controls="active-trek" aria-selected="false">Active / Trek</a>
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="luxury-tab" data-toggle="pill" href="#luxury" role="tab" aria-controls="luxury" aria-selected="false">Luxury</a>
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="cruise-tab" data-toggle="pill" href="#cruise" role="tab" aria-controls="cruise" aria-selected="false">Cruise Extension</a>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="tab-content border border-top-0 rounded-bottom shadow-sm" id="v-pills-tabContent">
-                                    <div class="tab-pane fade show active" id="recommended" role="tabpanel" aria-labelledby="recommended-tab">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="position-relative">
-                                                    {{--<img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">--}}
-                                                    <picture>
-                                                        <source type="image/webp"
-                                                                data-srcset="{{asset('images/banners/category/recommended.webp')}}"
-                                                                data-sizes="100w">
-                                                        <img alt="gotoperu" class="lazy w-100"
-                                                             data-src="{{asset('images/banners/category/recommended.jpg')}}"
-                                                             data-srcset="{{asset('images/banners/category/recommended.jpg')}}"
-                                                             data-sizes="100w">
-                                                    </picture>
-                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        @foreach($c_recommended as $c_recommendeds)
-                                                            <p class="m-0 font-weight-bold">{{$c_recommendeds->descripcion}}</p>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
+                        <div class="row mb-4">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-12 nav-tabs-wrapper">
+                                        <div class="nav nav-tabs dragscroll horizontal flex-sm-row p-0 @if ($categoria_groups->grupo == 1) {{'nav-category-goto-yellow'}} @else {{'nav-category-goto-green'}} @endif" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                            @foreach($categorias->where('grupo', $categoria_groups->grupo) as $categoria)
+                                                <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link @if ($categoria->estado == 1) {{'active'}} @endif" id="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}-tab" data-toggle="pill" href="#category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" role="tab" aria-controls="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" aria-selected="true">{{$categoria->nombre}}</a>
+                                            @endforeach
                                         </div>
-
-                                        <div class="row my-3 mx-0">
-                                            @foreach($cateoria_recommended as $cateorias_recommended)
-                                                @php
-                                                $img_webp = str_replace('jpg','webp', $cateorias_recommended->paquete->imagen);
-                                                @endphp
-                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
-                                                    <div class="bg-light shadow-sm rounded">
-                                                        <div class="row align-items-center no-gutters">
-                                                            <div class="col-12 col-sm-7">
-                                                                <div class="position-relative">
-                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($cateorias_recommended->paquete->titulo)), $cateorias_recommended->paquete->duracion])}}">
-                                                                    {{--<img src="{{asset('images/mapas/'.$cateorias_recommended->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
-                                                                        <picture>
-                                                                            <source type="image/webp"
-                                                                                    data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                    data-sizes="100w">
-                                                                            <img alt="gotoperu" class="lazy w-100"
-                                                                                 data-src="{{asset('images/mapas/'.$cateorias_recommended->paquete->imagen.'')}}"
-                                                                                 data-srcset="{{asset('images/mapas/'.$cateorias_recommended->paquete->imagen.'')}}"
-                                                                                 data-sizes="100w">
-                                                                        </picture>
-                                                                    <div class="position-absolute-bottom p-2 text-center">
-                                                                        <span class="small font-weight-bold badge badge-g-yellow shadow">{{$cateorias_recommended->categoria->nombre}}</span>
-                                                                    </div>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
-                                                                <div class="px-3">
-                                                                    <h2 class="h6 font-weight-bold">{{$cateorias_recommended->paquete->titulo}}</h2>
-                                                                    <small class="text-muted font-weight-bold">{{$cateorias_recommended->paquete->duracion}} days</small>
-                                                                    @foreach($cateorias_recommended->paquete->precio_paquetes as $precio)
-                                                                        @if($precio->estrellas == 2)
-                                                                            @if($precio->precio_d > 0)
-                                                                                {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                                <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                                            @else
-                                                                                <span class="text-danger">Inquire</span>
-                                                                            @endif
-                                                                        @endif
-                                                                    @endforeach
-                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($cateorias_recommended->paquete->titulo)), $cateorias_recommended->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
-                                                                    {{--<a href="" class="btn btn-g-green font-weight-bold btn-block">Book Now</a>--}}
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="tab-content border border-top-0 rounded-bottom shadow-sm" id="v-pills-tabContent">
+                                            @foreach($categorias->where('grupo', $categoria_groups->grupo) as $categoria)
+                                            <div class="tab-pane fade show @if ($categoria->estado == 1) {{'active'}} @endif" id="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" role="tabpanel" aria-labelledby="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}-tab">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="position-relative">
+                                                                {{--<img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">--}}
+                                                                <picture>
+                                                                    <source type="image/webp"
+                                                                            data-srcset="{{asset('images/banners/category/recommended.webp')}}"
+                                                                            data-sizes="100w">
+                                                                    <img alt="gotoperu" class="lazy w-100"
+                                                                         data-src="{{asset('images/banners/category/recommended.jpg')}}"
+                                                                         data-srcset="{{asset('images/banners/category/recommended.jpg')}}"
+                                                                         data-sizes="100w">
+                                                                </picture>
+                                                                <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
+                                                                    <p class="m-0 font-weight-bold">asdsad</p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            @endforeach
-                                        </div>
-
-                                    </div>
-                                    <div class="tab-pane fade" id="active-trek" role="tabpanel" aria-labelledby="active-trek-tab">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="position-relative">
-                                                    {{--<img src="{{asset('images/banners/category/trek.jpg')}}" alt="" class="w-100">--}}
-                                                    <picture>
-                                                        <source type="image/webp"
-                                                                data-srcset="{{asset('images/banners/category/trek.webp')}}"
-                                                                srcset="{{asset('images/banners/category/trek.webp')}}"
-                                                                data-sizes="100w">
-                                                        <img alt="gotoperu" class="lazy w-100"
-                                                             data-src="{{asset('images/banners/category/trek.jpg')}}"
-                                                             data-srcset="{{asset('images/banners/category/trek.jpg')}}"
-                                                             data-sizes="100w">
-                                                    </picture>
-                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        @foreach($c_active as $c_actives)
-                                                            <p class="m-0 font-weight-bold">{{$c_actives->descripcion}}</p>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row my-3 mx-0">
-                                            @foreach($categorias_active as $categorias_active)
-                                                @if (isset($categorias_active->categoria))
-                                                    @php
-                                                        $img_webp = str_replace('jpg','webp', $categorias_active->paquete->imagen);
-                                                    @endphp
-                                                    <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
-                                                        <div class="bg-light shadow-sm rounded">
-                                                            <div class="row align-items-center no-gutters">
-                                                                <div class="col-12 col-sm-7">
-                                                                    <div class="position-relative">
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_active->paquete->titulo)), $categorias_active->paquete->duracion])}}">
-{{--                                                                        <img src="{{asset('images/mapas/'.$categorias_active->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
-                                                                            <picture>
-                                                                                <source type="image/webp"
-                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        data-sizes="100w">
-                                                                                <img alt="gotoperu" class="lazy w-100"
-                                                                                     data-src="{{asset('images/mapas/'.$categorias_active->paquete->imagen.'')}}"
-                                                                                     data-srcset="{{asset('images/mapas/'.$categorias_active->paquete->imagen.'')}}"
-                                                                                     data-sizes="100w">
-                                                                            </picture>
-                                                                        <div class="position-absolute-bottom p-2 text-center">
-                                                                            <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categorias_active->categoria->nombre}}</span>
+                                                <div class="row my-3 mx-0">
+                                                    @foreach($paquetes_categoria->where('idcategoria', $categoria->id) as $paquetes_categorias)
+                                                        <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
+                                                            <div class="bg-light shadow-sm rounded">
+                                                                <div class="row align-items-center no-gutters">
+                                                                    <div class="col-12 col-sm-7">
+                                                                        <div class="position-relative">
+                                                                            <a href="">
+                                                                                {{--<img src="{{asset('images/mapas/'.$cateorias_recommended->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
+                                                                                <picture>
+                                                                                    <source type="image/webp"
+                                                                                            data-srcset="{{asset('images/mapas/'.$paquetes_categorias->paquete->imagen.'')}}"
+                                                                                            data-sizes="100w">
+                                                                                    <img alt="gotoperu" class="lazy w-100"
+                                                                                         data-src="{{asset('images/mapas/'.$paquetes_categorias->paquete->imagen.'')}}"
+                                                                                         data-srcset="{{asset('images/mapas/'.$paquetes_categorias->paquete->imagen.'')}}"
+                                                                                         data-sizes="100w">
+                                                                                </picture>
+                                                                                <div class="position-absolute-bottom p-2 text-center">
+                                                                                    <span class="small font-weight-bold badge badge-g-yellow shadow">{{$paquetes_categorias->categoria->nombre}}</span>
+                                                                                </div>
+                                                                            </a>
                                                                         </div>
-                                                                        </a>
                                                                     </div>
-                                                                </div>
-                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
-                                                                    <div class="px-3">
-                                                                        <h2 class="h6 font-weight-bold">{{$categorias_active->paquete->titulo}}</h2>
-                                                                        <small class="text-muted font-weight-bold">{{$categorias_active->paquete->duracion}} days</small>
-                                                                        @foreach($categorias_active->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 2)
-                                                                                @if($precio->precio_d > 0)
-                                                                                    {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                                                @else
-                                                                                    <span class="text-danger">Inquire</span>
+                                                                    <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
+                                                                        <div class="px-3">
+                                                                            <h2 class="h6 font-weight-bold">{{$paquetes_categorias->paquete->titulo}}</h2>
+                                                                            <small class="text-muted font-weight-bold">{{$paquetes_categorias->paquete->duracion}} days</small>
+
+                                                                            @foreach($paquetes_categorias->paquete->precio_paquetes as $precio)
+                                                                                @if($precio->estrellas == 2)
+                                                                                    @if($precio->precio_d > 0)
+                                                                                        {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
+                                                                                        <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
+                                                                                    @else
+                                                                                        <span class="text-danger">Inquire</span>
+                                                                                    @endif
                                                                                 @endif
-                                                                            @endif
-                                                                        @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_active->paquete->titulo)), $categorias_active->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
-                                                                        {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                                            @endforeach
 
-                                                    </div>
-                                                @endif
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="luxury" role="tabpanel" aria-labelledby="luxury-tab">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="position-relative">
-{{--                                                    <img src="{{asset('images/banners/category/luxury.jpg')}}" alt="" class="w-100">--}}
-                                                    <picture>
-                                                        <source type="image/webp"
-                                                                data-srcset="{{asset('images/banners/category/luxury.webp')}}"
-                                                                srcset="{{asset('images/banners/category/luxury.webp')}}"
-                                                                data-sizes="100w">
-                                                        <img alt="gotoperu" class="lazy w-100"
-                                                             data-src="{{asset('images/banners/category/luxury.jpg')}}"
-                                                             data-srcset="{{asset('images/banners/category/luxury.jpg')}}"
-                                                             data-sizes="100w">
-                                                    </picture>
-                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        @foreach($c_luxury as $c_luxurys)
-                                                            <p class="m-0 font-weight-bold">{{$c_luxurys->descripcion}}</p>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row my-3 mx-0">
-                                            @foreach($categorias_luxury as $categorias_luxury)
-                                                @php
-                                                    $img_webp = str_replace('jpg','webp', $categorias_luxury->paquete->imagen);
-                                                @endphp
-                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
-                                                        <div class="bg-light shadow-sm rounded">
-                                                            <div class="row align-items-center no-gutters">
-                                                                <div class="col-12 col-sm-7">
-                                                                    <div class="position-relative">
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_luxury->paquete->titulo)), $categorias_luxury->paquete->duracion])}}">
-{{--                                                                        <img src="{{asset('images/mapas/'.$categorias_luxury->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
-
-                                                                            <picture>
-                                                                                <source type="image/webp"
-                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        data-sizes="100w">
-                                                                                <img alt="gotoperu" class="lazy w-100"
-                                                                                     data-src="{{asset('images/mapas/'.$categorias_luxury->paquete->imagen.'')}}"
-                                                                                     data-srcset="{{asset('images/mapas/'.$categorias_luxury->paquete->imagen.'')}}"
-                                                                                     data-sizes="100w">
-                                                                            </picture>
-
-                                                                        <div class="position-absolute-bottom p-2 text-center">
-                                                                            <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categorias_luxury->categoria->nombre}}</span>
+                                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes_categorias->paquete->titulo)), $paquetes_categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
+                                                                            {{--<a href="" class="btn btn-g-green font-weight-bold btn-block">Book Now</a>--}}
                                                                         </div>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
-                                                                    <div class="px-3">
-                                                                        <h2 class="h6 font-weight-bold">{{$categorias_luxury->paquete->titulo}}</h2>
-                                                                        <small class="text-muted font-weight-bold">{{$categorias_luxury->paquete->duracion}} days</small>
-                                                                        @foreach($categorias_luxury->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 2)
-                                                                                @if($precio->precio_d > 0)
-                                                                                    {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                                                @else
-                                                                                    <span class="text-danger">Inquire</span>
-                                                                                @endif
-                                                                            @endif
-                                                                        @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias_luxury->paquete->titulo)), $categorias_luxury->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
-                                                                        {{--<a href="" class="btn btn-g-green font-weight-bold btn-block">Book Now</a>--}}
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="cruise" role="tabpanel" aria-labelledby="cruise-tab">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="position-relative">
-{{--                                                    <img src="{{asset('images/banners/category/cruise.jpg')}}" alt="" class="w-100">--}}
-                                                    <picture>
-                                                        <source type="image/webp"
-                                                                data-srcset="{{asset('images/banners/category/cruise.webp')}}"
-                                                                srcset="{{asset('images/banners/category/cruise.webp')}}"
-                                                                data-sizes="100w">
-                                                        <img alt="gotoperu" class="lazy w-100"
-                                                             data-src="{{asset('images/banners/category/cruise.jpg')}}"
-                                                             data-srcset="{{asset('images/banners/category/cruise.jpg')}}"
-                                                             data-sizes="100w">
-                                                    </picture>
-                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        @foreach($c_cruise as $c_cruises)
-                                                            <p class="m-0 font-weight-bold">{{$c_cruises->descripcion}}</p>
-                                                        @endforeach
-                                                    </div>
+                                                    @endforeach
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row my-3 mx-0">
-                                            @foreach($categorias_cruise as $categoria_cruise)
-                                                @php
-                                                    $img_webp = str_replace('jpg','webp', $categoria_cruise->paquete->imagen);
-                                                @endphp
-                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
-                                                    <div class="bg-light shadow-sm rounded">
-                                                        <div class="row align-items-center no-gutters">
-                                                            <div class="col-12 col-sm-7">
-                                                                <div class="position-relative">
-                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cruise->paquete->titulo)), $categoria_cruise->paquete->duracion])}}">
-{{--                                                                    <img src="{{asset('images/mapas/'.$categoria_cruise->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
-
-                                                                        <picture>
-                                                                            <source type="image/webp"
-                                                                                    data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                    srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                    data-sizes="100w">
-                                                                            <img alt="gotoperu" class="lazy w-100"
-                                                                                 data-src="{{asset('images/mapas/'.$categoria_cruise->paquete->imagen.'')}}"
-                                                                                 data-srcset="{{asset('images/mapas/'.$categoria_cruise->paquete->imagen.'')}}"
-                                                                                 data-sizes="100w">
-                                                                        </picture>
-
-
-                                                                    <div class="position-absolute-bottom p-2 text-center">
-                                                                        <span class="small font-weight-bold badge badge-g-yellow shadow">{{$categoria_cruise->categoria->nombre}}</span>
-                                                                    </div>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
-                                                                <div class="px-3">
-                                                                    <h2 class="h6 font-weight-bold">{{$categoria_cruise->paquete->titulo}}</h2>
-                                                                    <small class="text-muted font-weight-bold">{{$categoria_cruise->paquete->duracion}} days</small>
-                                                                    @foreach($categoria_cruise->paquete->precio_paquetes as $precio)
-                                                                        @if($precio->estrellas == 2)
-                                                                            @if($precio->precio_d > 0)
-                                                                                {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                                <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                                            @else
-                                                                                <span class="text-danger">Inquire</span>
-                                                                            @endif
-                                                                        @endif
-                                                                    @endforeach
-                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cruise->paquete->titulo)), $categoria_cruise->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
-                                                                    {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                @endforeach
 
-                {{--<hr class="my-5">--}}
-                {{--short--}}
-                <div class="row my-4">
-                    <div class="col">
-                        <div class="row">
-                            <div class="col-12 nav-tabs-wrapper">
-                                <div class="nav-category-goto-green nav nav-tabs dragscroll horizontal flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link active" id="family-tab" data-toggle="pill" href="#family" role="tab" aria-controls="family" aria-selected="false">Family</a>
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="short-tab" data-toggle="pill" href="#short" role="tab" aria-controls="short" aria-selected="true">Short Programs</a>
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="all-tab" data-toggle="pill" href="#all" role="tab" aria-controls="all" aria-selected="false">All Included</a>
-                            
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="honeymoon-tab" data-toggle="pill" href="#honeymoon" role="tab" aria-controls="honeymoon" aria-selected="false">Honeymoon</a>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="tab-content border border-top-0 rounded-bottom shadow-sm" id="v-pills-tabContent">
-                                    <div class="tab-pane fade show active" id="family" role="tabpanel" aria-labelledby="family-tab">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="position-relative">
-{{--                                                    <img src="{{asset('images/banners/category/family.jpg')}}" alt="" class="w-100">--}}
-                                                    <picture>
-                                                        <source type="image/webp"
-                                                                data-srcset="{{asset('images/banners/category/family.webp')}}"
-                                                                data-sizes="100w">
-                                                        <img alt="gotoperu" class="lazy w-100"
-                                                             data-src="{{asset('images/banners/category/family.jpg')}}"
-                                                             data-srcset="{{asset('images/banners/category/family.jpg')}}"
-                                                             data-sizes="100w">
-                                                    </picture>
-                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        @foreach($c_family as $c_familys)
-                                                            <p class="m-0 font-weight-bold">{{$c_familys->descripcion}}</p>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row my-3 mx-0">
-                                            @foreach($categorias_family as $categoria_family)
-                                                @if (isset($categoria_family->categoria))
-                                                    @php
-                                                        $img_webp = str_replace('jpg','webp', $categoria_family->paquete->imagen);
-                                                    @endphp
-                                                    <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
-                                                        <div class="bg-light shadow-sm rounded">
-                                                            <div class="row align-items-center no-gutters">
-                                                                <div class="col-12 col-sm-7">
-                                                                    <div class="position-relative">
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_family->paquete->titulo)), $categoria_family->paquete->duracion])}}">
-{{--                                                                        <img src="{{asset('images/mapas/'.$categoria_family->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
-
-                                                                            <picture>
-                                                                                <source type="image/webp"
-                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        data-sizes="100w">
-                                                                                <img alt="gotoperu" class="lazy w-100"
-                                                                                     data-src="{{asset('images/mapas/'.$categoria_family->paquete->imagen.'')}}"
-                                                                                     data-srcset="{{asset('images/mapas/'.$categoria_family->paquete->imagen.'')}}"
-                                                                                     data-sizes="100w">
-                                                                            </picture>
-
-                                                                        <div class="position-absolute-bottom p-2 text-center">
-                                                                            <span class="small font-weight-bold badge badge-g-green shadow">{{$categoria_family->categoria->nombre}}</span>
-                                                                        </div>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
-                                                                    <div class="px-3">
-                                                                        <h2 class="h6 font-weight-bold">{{$categoria_family->paquete->titulo}}</h2>
-                                                                        <small class="text-muted font-weight-bold">{{$categoria_family->paquete->duracion}} days</small>
-                                                                        @foreach($categoria_family->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 2)
-                                                                                @if($precio->precio_d > 0)
-                                                                                    {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                                                @else
-                                                                                    <span class="text-danger">Inquire</span>
-                                                                                @endif
-                                                                            @endif
-                                                                        @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_family->paquete->titulo)), $categoria_family->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire</a>
-                                                                        {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @endif
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="short" role="tabpanel" aria-labelledby="short-tab">
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="position-relative">
-{{--                                                    <img src="{{asset('images/banners/category/short.jpg')}}" alt="" class="w-100">--}}
-                                                    <picture>
-                                                        <source type="image/webp"
-                                                                data-srcset="{{asset('images/banners/category/short.webp')}}"
-                                                                srcset="{{asset('images/banners/category/short.webp')}}"
-                                                                data-sizes="100w">
-                                                        <img alt="gotoperu" class="lazy w-100"
-                                                             data-src="{{asset('images/banners/category/short.jpg')}}"
-                                                             data-srcset="{{asset('images/banners/category/short.jpg')}}"
-                                                             data-sizes="100w">
-                                                    </picture>
-                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        @foreach($c_short as $c_shorts)
-                                                            <p class="m-0 font-weight-bold">{{$c_shorts->descripcion}}</p>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row my-3 mx-0">
-                                            @foreach($categorias_short as $categoria_short)
-                                                @php
-                                                    $img_webp = str_replace('jpg','webp', $categoria_short->paquete->imagen);
-                                                @endphp
-                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
-                                                        <div class="bg-light shadow-sm rounded">
-                                                            <div class="row align-items-center no-gutters">
-                                                                <div class="col-12 col-sm-7">
-                                                                    <div class="position-relative">
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_short->paquete->titulo)), $categoria_short->paquete->duracion])}}">
-{{--                                                                        <img src="{{asset('images/mapas/'.$categoria_short->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
-
-                                                                            <picture>
-                                                                                <source type="image/webp"
-                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        data-sizes="100w">
-                                                                                <img alt="gotoperu" class="lazy w-100"
-                                                                                     data-src="{{asset('images/mapas/'.$categoria_short->paquete->imagen.'')}}"
-                                                                                     data-srcset="{{asset('images/mapas/'.$categoria_short->paquete->imagen.'')}}"
-                                                                                     data-sizes="100w">
-                                                                            </picture>
-
-                                                                        <div class="position-absolute-bottom p-2 text-center">
-                                                                            <span class="small font-weight-bold badge badge-g-green shadow">{{$categoria_short->categoria->nombre}}</span>
-                                                                        </div>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
-                                                                    <div class="px-3">
-                                                                        <h2 class="h6 font-weight-bold">{{$categoria_short->paquete->titulo}}</h2>
-                                                                        <small class="text-muted font-weight-bold">{{$categoria_short->paquete->duracion}} days</small>
-                                                                        @foreach($categoria_short->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 2)
-                                                                                @if($precio->precio_d > 0)
-                                                                                    {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                                                @else
-                                                                                    <span class="text-danger">Inquire</span>
-                                                                                @endif
-                                                                            @endif
-                                                                        @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_short->paquete->titulo)), $categoria_short->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
-                                                                        {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="position-relative">
-                                                    {{--<img src="{{asset('images/banners/category/all.jpg')}}" alt="" class="w-100">--}}
-                                                    <picture>
-                                                        <source type="image/webp"
-                                                                data-srcset="{{asset('images/banners/category/all.webp')}}"
-                                                                srcset="{{asset('images/banners/category/all.webp')}}"
-                                                                data-sizes="100w">
-                                                        <img alt="gotoperu" class="lazy w-100"
-                                                             data-src="{{asset('images/banners/category/all.jpg')}}"
-                                                             data-srcset="{{asset('images/banners/category/all.jpg')}}"
-                                                             data-sizes="100w">
-                                                    </picture>
-                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        @foreach($c_all as $c_alls)
-                                                            <p class="m-0 font-weight-bold">{{$c_alls->descripcion}}</p>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row my-3 mx-0">
-                                            @foreach($categorias_all as $categoria_all)
-                                                @php
-                                                    $img_webp = str_replace('jpg','webp', $categoria_all->paquete->imagen);
-                                                @endphp
-                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
-                                                        <div class="bg-light shadow-sm rounded">
-                                                            <div class="row align-items-center no-gutters">
-                                                                <div class="col-12 col-sm-7">
-                                                                    <div class="position-relative">
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_all->paquete->titulo)), $categoria_all->paquete->duracion])}}">
-{{--                                                                        <img src="{{asset('images/mapas/'.$categoria_all->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
-
-                                                                            <picture>
-                                                                                <source type="image/webp"
-                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        data-sizes="100w">
-                                                                                <img alt="gotoperu" class="lazy w-100"
-                                                                                     data-src="{{asset('images/mapas/'.$categoria_all->paquete->imagen.'')}}"
-                                                                                     data-srcset="{{asset('images/mapas/'.$categoria_all->paquete->imagen.'')}}"
-                                                                                     data-sizes="100w">
-                                                                            </picture>
-
-                                                                        <div class="position-absolute-bottom p-2 text-center">
-                                                                            <span class="small font-weight-bold badge badge-g-green shadow">{{$categoria_all->categoria->nombre}}</span>
-                                                                        </div>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
-                                                                    <div class="px-3">
-                                                                        <h2 class="h6 font-weight-bold">{{$categoria_all->paquete->titulo}}</h2>
-                                                                        <small class="text-muted font-weight-bold">{{$categoria_all->paquete->duracion}} days</small>
-                                                                        @foreach($categoria_all->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 2)
-                                                                                @if($precio->precio_d > 0)
-                                                                                    {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                                                @else
-                                                                                    <span class="text-danger">Inquire</span>
-                                                                                @endif
-                                                                            @endif
-                                                                        @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_all->paquete->titulo)), $categoria_all->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
-                                                                        {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="honeymoon" role="tabpanel" aria-labelledby="honeymoon-tab">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="position-relative">
-                                                    {{--<img src="{{asset('images/banners/category/honeymoon.jpg')}}" alt="" class="w-100">--}}
-                                                    <picture>
-                                                        <source type="image/webp"
-                                                                data-srcset="{{asset('images/banners/category/honeymoon.webp')}}"
-                                                                srcset="{{asset('images/banners/category/honeymoon.webp')}}"
-                                                                data-sizes="100w">
-                                                        <img alt="gotoperu" class="lazy w-100"
-                                                             data-src="{{asset('images/banners/category/honeymoon.jpg')}}"
-                                                             data-srcset="{{asset('images/banners/category/honeymoon.jpg')}}"
-                                                             data-sizes="100w">
-                                                    </picture>
-                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        @foreach($c_honeymoon as $c_honeymoons)
-                                                            <p class="m-0 font-weight-bold">{{$c_honeymoons->descripcion}}</p>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row my-3 mx-0">
-                                            @foreach($categorias_honeymoon as $categoria_honeymoon)
-                                                @php
-                                                    $img_webp = str_replace('jpg','webp', $categoria_honeymoon->paquete->imagen);
-                                                @endphp
-                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
-                                                    <div class="bg-light shadow-sm rounded">
-                                                        <div class="row align-items-center no-gutters">
-                                                            <div class="col-12 col-sm-7">
-                                                                <div class="position-relative">
-                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_honeymoon->paquete->titulo)), $categoria_honeymoon->paquete->duracion])}}">
-{{--                                                                    <img src="{{asset('images/mapas/'.$categoria_honeymoon->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
-
-                                                                        <picture>
-                                                                            <source type="image/webp"
-                                                                                    data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                    srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                    data-sizes="100w">
-                                                                            <img alt="gotoperu" class="lazy w-100"
-                                                                                 data-src="{{asset('images/mapas/'.$categoria_honeymoon->paquete->imagen.'')}}"
-                                                                                 data-srcset="{{asset('images/mapas/'.$categoria_honeymoon->paquete->imagen.'')}}"
-                                                                                 data-sizes="100w">
-                                                                        </picture>
-
-                                                                    <div class="position-absolute-bottom p-2 text-center">
-                                                                        <span class="small font-weight-bold badge badge-g-green shadow">{{$categoria_honeymoon->categoria->nombre}}</span>
-                                                                    </div>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
-                                                                <div class="px-3">
-                                                                    <h2 class="h6 font-weight-bold">{{$categoria_honeymoon->paquete->titulo}}</h2>
-                                                                    <small class="text-muted font-weight-bold">{{$categoria_honeymoon->paquete->duracion}} days</small>
-                                                                    @foreach($categoria_honeymoon->paquete->precio_paquetes as $precio)
-                                                                        @if($precio->estrellas == 2)
-                                                                            @if($precio->precio_d > 0)
-                                                                                {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                                <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                                            @else
-                                                                                <span class="text-danger">Inquire</span>
-                                                                            @endif
-                                                                        @endif
-                                                                    @endforeach
-                                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_honeymoon->paquete->titulo)), $categoria_honeymoon->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
-                                                                    {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{--short--}}
-                <div class="row">
-                    <div class="col">
-                        <div class="row">
-                            <div class="col-12 nav-tabs-wrapper">
-                                <div class="nav-category-goto-grey nav nav-tabs dragscroll horizontal flex-sm-row p-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link active" id="single-traveler-tab" data-toggle="pill" href="#single-traveler" role="tab" aria-controls="single-traveler" aria-selected="false">Single Traveler</a>
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="cultural-tab" data-toggle="pill" href="#cultural" role="tab" aria-controls="cultural" aria-selected="true">Cultural</a>
-                                    <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link" id="long-duration-tab" data-toggle="pill" href="#long-duration" role="tab" aria-controls="long-duration" aria-selected="false">Long Duration</a>
-                                    {{--<a class="flex-sm-fill text-sm-center rounded-0 nav-link" id="amazon-tab" data-toggle="pill" href="#amazon" role="tab" aria-controls="amazon" aria-selected="false">With Amazon</a>--}}
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="tab-content border border-top-0 rounded-bottom shadow-sm" id="v-pills-tabContent">
-                                    <div class="tab-pane fade show active" id="single-traveler" role="tabpanel" aria-labelledby="single-traveler-tab">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="position-relative">
-{{--                                                    <img src="{{asset('images/banners/category/single.jpg')}}" alt="" class="w-100">--}}
-                                                    <picture>
-                                                        <source type="image/webp"
-                                                                data-srcset="{{asset('images/banners/category/single.webp')}}"
-                                                                srcset="{{asset('images/banners/category/single.webp')}}"
-                                                                data-sizes="100w">
-                                                        <img alt="gotoperu" class="lazy w-100"
-                                                             data-src="{{asset('images/banners/category/single.jpg')}}"
-                                                             data-srcset="{{asset('images/banners/category/single.jpg')}}"
-                                                             data-sizes="100w">
-                                                    </picture>
-                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        @foreach($c_single as $c_singles)
-                                                            <p class="m-0 font-weight-bold">{{$c_singles->descripcion}}</p>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row my-3 mx-0">
-                                            @foreach($categorias_single as $categoria_single)
-                                                @php
-                                                    $img_webp = str_replace('jpg','webp', $categoria_single->paquete->imagen);
-                                                @endphp
-                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
-                                                        <div class="bg-light shadow-sm rounded">
-                                                            <div class="row align-items-center no-gutters">
-                                                                <div class="col-12 col-sm-7">
-                                                                    <div class="position-relative">
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_single->paquete->titulo)), $categoria_single->paquete->duracion])}}">
-{{--                                                                        <img src="{{asset('images/mapas/'.$categoria_single->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
-
-                                                                            <picture>
-                                                                                <source type="image/webp"
-                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        data-sizes="100w">
-                                                                                <img alt="gotoperu" class="lazy w-100"
-                                                                                     data-src="{{asset('images/mapas/'.$categoria_single->paquete->imagen.'')}}"
-                                                                                     data-srcset="{{asset('images/mapas/'.$categoria_single->paquete->imagen.'')}}"
-                                                                                     data-sizes="100w">
-                                                                            </picture>
-
-                                                                        <div class="position-absolute-bottom p-2 text-center">
-                                                                            <span class="small font-weight-bold badge badge-g-dark shadow">{{$categoria_single->categoria->nombre}}</span>
-                                                                        </div>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
-                                                                    <div class="px-3">
-                                                                        <h2 class="h6 font-weight-bold">{{$categoria_single->paquete->titulo}}</h2>
-                                                                        <small class="text-muted font-weight-bold">{{$categoria_single->paquete->duracion}} days</small>
-                                                                        @foreach($categoria_single->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 2)
-                                                                                @if($precio->precio_d > 0)
-                                                                                    {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                                                @else
-                                                                                    <span class="text-danger">Inquire</span>
-                                                                                @endif
-                                                                            @endif
-                                                                        @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_single->paquete->titulo)), $categoria_single->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
-                                                                        {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="cultural" role="tabpanel" aria-labelledby="cultural-tab">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="position-relative">
-{{--                                                    <img src="{{asset('images/banners/category/cultural.jpg')}}" alt="" class="w-100">--}}
-                                                    <picture>
-                                                        <source type="image/webp"
-                                                                data-srcset="{{asset('images/banners/category/cultural.webp')}}"
-                                                                srcset="{{asset('images/banners/category/cultural.webp')}}"
-                                                                data-sizes="100w">
-                                                        <img alt="gotoperu" class="lazy w-100"
-                                                             data-src="{{asset('images/banners/category/cultural.jpg')}}"
-                                                             data-srcset="{{asset('images/banners/category/cultural.jpg')}}"
-                                                             data-sizes="100w">
-                                                    </picture>
-                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        @foreach($c_cultural as $c_culturals)
-                                                            <p class="m-0 font-weight-bold">{{$c_culturals->descripcion}}</p>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row my-3 mx-0">
-                                            @foreach($categorias_cultural as $categoria_cultural)
-                                                @php
-                                                    $img_webp = str_replace('jpg','webp', $categoria_cultural->paquete->imagen);
-                                                @endphp
-                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
-                                                        <div class="bg-light shadow-sm rounded">
-                                                            <div class="row align-items-center no-gutters">
-                                                                <div class="-col-12 col-sm-7">
-                                                                    <div class="position-relative">
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}">
-{{--                                                                        <img src="{{asset('images/mapas/'.$categoria_cultural->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
-                                                                            <picture>
-                                                                                <source type="image/webp"
-                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        data-sizes="100w">
-                                                                                <img alt="gotoperu" class="lazy w-100"
-                                                                                     data-src="{{asset('images/mapas/'.$categoria_cultural->paquete->imagen.'')}}"
-                                                                                     data-srcset="{{asset('images/mapas/'.$categoria_cultural->paquete->imagen.'')}}"
-                                                                                     data-sizes="100w">
-                                                                            </picture>
-
-                                                                        <div class="position-absolute-bottom p-2 text-center">
-                                                                            <span class="small font-weight-bold badge badge-g-dark shadow">{{$categoria_cultural->categoria->nombre}}</span>
-                                                                        </div>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
-                                                                    <div class="px-3">
-                                                                        <h2 class="h6 font-weight-bold">{{$categoria_cultural->paquete->titulo}}</h2>
-                                                                        <small class="text-muted font-weight-bold">{{$categoria_cultural->paquete->duracion}} days</small>
-                                                                        @foreach($categoria_cultural->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 2)
-                                                                                @if($precio->precio_d > 0)
-                                                                                    {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                                                @else
-                                                                                    <span class="text-danger">Inquire</span>
-                                                                                @endif
-                                                                            @endif
-                                                                        @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_cultural->paquete->titulo)), $categoria_cultural->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
-                                                                        {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="long-duration" role="tabpanel" aria-labelledby="long-duration-tab">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="position-relative">
-{{--                                                    <img src="{{asset('images/banners/category/long.jpg')}}" alt="" class="w-100">--}}
-                                                    <picture>
-                                                        <source type="image/webp"
-                                                                data-srcset="{{asset('images/banners/category/long.webp')}}"
-                                                                srcset="{{asset('images/banners/category/long.webp')}}"
-                                                                data-sizes="100w">
-                                                        <img alt="gotoperu" class="lazy w-100"
-                                                             data-src="{{asset('images/banners/category/long.jpg')}}"
-                                                             data-srcset="{{asset('images/banners/category/long.jpg')}}"
-                                                             data-sizes="100w">
-                                                    </picture>
-                                                    <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                        @foreach($c_long as $c_longs)
-                                                            <p class="m-0 font-weight-bold">{{$c_longs->descripcion}}</p>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row my-3 mx-0">
-                                            @foreach($categorias_long as $categoria_long)
-                                                @php
-                                                    $img_webp = str_replace('jpg','webp', $categoria_long->paquete->imagen);
-                                                @endphp
-                                                <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
-                                                        <div class="bg-light shadow-sm rounded">
-                                                            <div class="row align-items-center no-gutters">
-                                                                <div class="col-12 col-sm-7">
-                                                                    <div class="position-relative">
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_long->paquete->titulo)), $categoria_long->paquete->duracion])}}">
-{{--                                                                        <img src="{{asset('images/mapas/'.$categoria_long->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
-
-                                                                            <picture>
-                                                                                <source type="image/webp"
-                                                                                        data-srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        srcset="{{asset('images/mapas/'.$img_webp.'')}}"
-                                                                                        data-sizes="100w">
-                                                                                <img alt="gotoperu" class="lazy w-100"
-                                                                                     data-src="{{asset('images/mapas/'.$categoria_long->paquete->imagen.'')}}"
-                                                                                     data-srcset="{{asset('images/mapas/'.$categoria_long->paquete->imagen.'')}}"
-                                                                                     data-sizes="100w">
-                                                                            </picture>
-
-                                                                        <div class="position-absolute-bottom p-2 text-center">
-                                                                            <span class="small font-weight-bold badge badge-g-dark shadow">{{$categoria_long->categoria->nombre}}</span>
-                                                                        </div>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
-                                                                    <div class="px-3">
-                                                                        <h2 class="h6 font-weight-bold">{{$categoria_long->paquete->titulo}}</h2>
-                                                                        <small class="text-muted font-weight-bold">{{$categoria_long->paquete->duracion}} days</small>
-                                                                        @foreach($categoria_long->paquete->precio_paquetes as $precio)
-                                                                            @if($precio->estrellas == 2)
-                                                                                @if($precio->precio_d > 0)
-                                                                                    {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                                                @else
-                                                                                    <span class="text-danger">Inquire</span>
-                                                                                @endif
-                                                                            @endif
-                                                                        @endforeach
-                                                                        <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categoria_long->paquete->titulo)), $categoria_long->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
-                                                                        {{--<a href="" class="btn btn-g-green btn-block font-weight-bold">Book Now</a>--}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    {{--<div class="tab-pane fade" id="amazon" role="tabpanel" aria-labelledby="amazon-tab">...</div>--}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
                 <div class="row mt-5">
                     <div class="col text-center">
                         <a href="{{route('category_path')}}" class="btn btn-primary btn-lg font-weight-bold">See More Categories</a>

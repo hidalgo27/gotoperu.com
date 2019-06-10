@@ -104,104 +104,19 @@ class HomepageController extends Controller
         $airport = TAeropuerto::with('precio_aeropuerto')->get();
         $comentario = TComentario::with('itinerario')->get();
 
-        $categoria_short = "SHORT PROGRAMS";
-        $c_short = TCategoria::where('nombre', $categoria_short)->get();
-        foreach ($c_short as $c_s) {
-            $categorias_short = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_s->id)->take(2)->get();
-        }
-
-        $categoria_active = "ACTIVE TREKS";
-        $c_active = TCategoria::where('nombre', $categoria_active)->get();
-        foreach ($c_active as $c_at) {
-            $categorias_active = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_at->id)->take(2)->get();
-        }
-
-        $categoria_luxury = "LUXURY";
-        $c_luxury = TCategoria::where('nombre', $categoria_luxury)->get();
-        foreach ($c_luxury as $c_lu) {
-            $categorias_luxury = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_lu->id)->take(2)->get();
-        }
-
-        $categoria_recommended = "RECOMMENDED";
-        $c_recommended = TCategoria::where('nombre', $categoria_recommended)->get();
-        foreach ($c_recommended as $c_r) {
-            $cateoria_recommended = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_r->id)->take(2)->get();
-        }
-
-        $categoria_all = "ALL INCLUDED";
-        $c_all = TCategoria::where('nombre', $categoria_all)->get();
-        foreach ($c_all as $c_al) {
-            $categorias_all = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_al->id)->take(2)->get();
-        }
-
-        $categoria_family = "FOR FAMILIES";
-        $c_family = TCategoria::where('nombre', $categoria_family)->get();
-        foreach ($c_family as $c_fa) {
-            $categorias_family = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_fa->id)->take(2)->get();
-        }
-
-        $categoria_honeymoon = "HONEYMOON";
-        $c_honeymoon = TCategoria::where('nombre', $categoria_honeymoon)->get();
-        foreach ($c_honeymoon as $c_hon) {
-            $categorias_honeymoon = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_hon->id)->take(2)->get();
-        }
-
-        $categoria_cultural = "CULTURAL";
-        $c_cultural = TCategoria::where('nombre', $categoria_cultural)->get();
-        foreach ($c_cultural as $c_cul) {
-            $categorias_cultural = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_cul->id)->take(2)->get();
-        }
-
-        $categoria_single = "SINGLE TRAVELER";
-        $c_single = TCategoria::where('nombre', $categoria_single)->get();
-        foreach ($c_single as $c_sin) {
-            $categorias_single = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_sin->id)->take(2)->get();
-        }
-
-        $categoria_long = "LONG DURATION";
-        $c_long = TCategoria::where('nombre', $categoria_long)->get();
-        foreach ($c_long as $c_lon) {
-            $categorias_long = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_lon->id)->take(2)->get();
-        }
-
-        $categoria_long = "LONG DURATION";
-        $c_long = TCategoria::where('nombre', $categoria_long)->get();
-        foreach ($c_long as $c_lon) {
-            $categorias_long = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_lon->id)->take(2)->get();
-        }
-
-        $categoria_cruise = "CRUISE EXTENSION";
-        $c_cruise = TCategoria::where('nombre', $categoria_cruise)->get();
-        foreach ($c_cruise as $c_cru) {
-            $categorias_cruise = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_cru->id)->take(2)->get();
-        }
         $testimonio_video = TVideoTestimonio::all()->take(3);
 
+        $categoria_group = TCategoria::get()->unique('grupo');
+
+        $categorias = TCategoria::all();
+
+        $paquetes_categoria = TPaqueteCategoria::with('paquete', 'categoria')->get();
         return view('page.home2',
             compact(
-                'categorias_short',
-                'categorias_active',
-                'categorias_luxury',
-                'cateoria_recommended',
-                'categorias_all',
-                'categorias_family',
-                'categorias_honeymoon',
-                'categorias_cultural',
-                'categorias_single',
-                'categorias_long',
-                'categorias_cruise',
                 'testimonio_video',
-                'c_short',
-                'c_active',
-                'c_luxury',
-                'c_recommended',
-                'c_all',
-                'c_family',
-                'c_honeymoon',
-                'c_cultural',
-                'c_single',
-                'c_long',
-                'c_cruise'
+                    'categoria_group',
+                    'categorias',
+                'paquetes_categoria'
                 ), ['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'destinos'=>$destinos, 'testimonial'=>$testimonial, 'dificultad'=>$dificultad, 'airport'=>$airport, 'comentario'=>$comentario]);
     }
 
