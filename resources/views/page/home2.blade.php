@@ -348,17 +348,9 @@
                                                         <div class="col">
                                                             <div class="position-relative">
                                                                 {{--<img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">--}}
-                                                                <picture>
-                                                                    <source type="image/webp"
-                                                                            data-srcset="{{asset('images/banners/category/recommended.webp')}}"
-                                                                            data-sizes="100w">
-                                                                    <img alt="gotoperu" class="lazy w-100"
-                                                                         data-src="{{asset('images/banners/category/recommended.jpg')}}"
-                                                                         data-srcset="{{asset('images/banners/category/recommended.jpg')}}"
-                                                                         data-sizes="100w">
-                                                                </picture>
+                                                                    <img alt="gotoperu" class="lazy w-100" src="{{asset('images/banners/category/'.$categoria->imagen.'')}}">
                                                                 <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
-                                                                    <p class="m-0 font-weight-bold">asdsad</p>
+                                                                    <p class="m-0 font-weight-bold">{{$categoria->descripcion}}</p>
                                                                 </div>
                                                             </div>
                                                         </div>
