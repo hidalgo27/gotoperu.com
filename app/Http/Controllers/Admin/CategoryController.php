@@ -73,7 +73,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categoria = TCategoria::where('id', $id)->get();
+        return view('admin.category-edit', compact('categoria'));
     }
 
     /**
@@ -85,14 +86,22 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = $_POST["txt_category"];
-        $descripcion = $_POST["txta_descripcion"];
+//        $category = $_POST["txt_category"];
+//        $descripcion = $_POST["txta_descripcion"];
+//        $group = $_POST["slc_group"];
+//        $order = $_POST["chk_order"];
 
         if ($request->filled(['txt_category'])){
 
             $category2 = TCategoria::FindOrFail($id);
-            $category2->nombre = $category;
-            $category2->descripcion = $descripcion;
+            $category2->nombre = $request->input('txt_category');
+            $category2->descripcion = $request->input('txta_descripcion');
+            if ($request->has('chk_order')){
+                $category2->estado = $request->input('chk_order');
+            }else{
+                $category2->estado = 0;
+            }
+            $category2->grupo = $request->input('slc_group');
             $category2->save();
 
             return redirect(route('admin_category_index_path'))->with('status', 'Successfully updated category');

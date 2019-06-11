@@ -12,7 +12,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb small font-weight-bold p-0 m-0 bg-white">
                                 <li class="breadcrumb-item"><a href="#">1. Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">All Packages</li>
+                                <li class="breadcrumb-item active" aria-current="page">All Category</li>
                             </ol>
                         </nav>
                     </div>
@@ -158,7 +158,7 @@
                             {{--<td>{{$category1->estado}}</td>--}}
                             {{--<td>(171) 555-2222</td>--}}
                             <td class="text-center">
-                                <a href="#edit_category_{{$category1->id}}" class="edit" data-toggle="modal"><span data-feather="edit"></span></a>
+                                <a href="{{route('admin_category_edit_path', $category1->id)}}" class="edit"><span data-feather="edit"></span></a>
                                 <a href="#delete_category_{{$category1->id}}" class="delete" data-toggle="modal"><span data-feather="trash"></span></a>
                             </td>
                         </tr>

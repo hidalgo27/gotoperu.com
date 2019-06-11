@@ -383,6 +383,29 @@ Route::get('admin/category', [
     'uses' => 'Admin\CategoryController@index',
     'as' => 'admin_category_index_path',
 ]);
+Route::get('admin/category/edit/{id}', [
+    'uses' => 'Admin\CategoryController@edit',
+    'as' => 'admin_category_edit_path',
+]);
+
+
+Route::post('admin/category/image/image_category_store', [
+    'uses' => 'Admin\CategoryController@image_category_store',
+    'as' => 'admin_image_category_store_path',
+]);
+
+Route::post('admin/category/image/image_category_slider_store', [
+    'uses' => 'Admin\CategoryController@image_category_slider_store',
+    'as' => 'admin_image_category_slider_store_path',
+]);
+
+
+Route::post('admin/category/image/image_delete', [
+    'uses' => 'Admin\CategoryController@image_delete',
+    'as' => 'admin_image_delete_path',
+]);
+
+
 Route::post('admin/category/store', [
     'uses' => 'Admin\CategoryController@store',
     'as' => 'admin_category_store_path',
