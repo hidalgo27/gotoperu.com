@@ -93,7 +93,7 @@
                                         <div class="row align-items-center no-gutters">
                                             <div class="col-12 col-sm-7">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/mapas/'.$paquete_categorias->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                    <img src="{{asset('images/mapas/'.$paquete_categorias->paquete->imagen.'')}}" alt="" class="w-100 rounded-left">
                                                     <div class="position-absolute-bottom p-2 text-center">
                                                         <span class="small font-weight-bold badge badge-g-yellow shadow">{{$paquete_categorias->categoria->nombre}}</span>
                                                     </div>
