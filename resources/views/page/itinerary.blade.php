@@ -488,7 +488,7 @@
                                                 <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> Included:</h5>
                                                 <hr>
                                                 <ul class="pl-3">
-                                                    @foreach($paquetes->paquete_incluye->sortBy('created_at') as $paquetes_incluye)
+                                                    @foreach($paquetes->paquete_incluye->sortBy('updated_at') as $paquetes_incluye)
                                                         <li>{{$paquetes_incluye->incluye->incluye}}</li>
                                                     @endforeach
                                                 </ul>
@@ -499,7 +499,7 @@
                                                 <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> Not Included:</h5>
                                                 <hr>
                                                 <ul class="pl-3">
-                                                    @foreach($paquetes->paquete_no_incluye->sortBy('created_at') as $paquetes_no_incluye)
+                                                    @foreach($paquetes->paquete_no_incluye->sortBy('updated_at') as $paquetes_no_incluye)
                                                         <li>{{$paquetes_no_incluye->no_incluye->noincluye}}</li>
                                                     @endforeach
                                                 </ul>
