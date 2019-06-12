@@ -361,7 +361,7 @@
                                                                 <div class="row align-items-center no-gutters">
                                                                     <div class="col-12 col-sm-7">
                                                                         <div class="position-relative">
-                                                                            <a href="">
+                                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes_categorias->paquete->titulo)), $paquetes_categorias->paquete->duracion])}}">
                                                                                 {{--<img src="{{asset('images/mapas/'.$cateorias_recommended->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
                                                                                 <picture>
                                                                                     <source type="image/webp"
