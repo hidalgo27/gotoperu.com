@@ -664,7 +664,7 @@
                                                 </a>
                                             @endforeach
                                             <hr>
-                                            <img src="{{asset('images/mapas/'.$paquetes->imagen.'')}}" alt="">
+                                            <img src="{{asset('images/mapas/'.$paquetes->imagen.'')}}" alt="" class="w-100 rounded shadow-sm">
                                         </div>
                                     </div>
                                 </div>
