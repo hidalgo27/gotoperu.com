@@ -497,7 +497,7 @@
                                     @foreach($noincluye as $noincluded)
                                         @forelse  ($paquete_no_incluye->where('idnoincluye', $noincluded->id) as $paquete_noincluded)
                                             <span class="custom-checkbox d-block pr-3 text-ellipsis">
-                                                <input type="checkbox" id="no_incluye_{{$noincluded->id}}" name="no_incluye[]" value="{{$noincluded->id}}"
+                                                <input type="checkbox" id="no_incluye_{{$noincluded->id}}" name="no_incluye[]" value="{{$noincluded->id}} checked"
                                                 >
                                                 <label for="no_incluye_{{$noincluded->id}}" data-toggle="tooltip" data-placement="left" title="{{ucwords(strtolower($noincluded->noincluye))}}">{{ucwords(strtolower($noincluded->noincluye))}}</label>
                                             </span>
