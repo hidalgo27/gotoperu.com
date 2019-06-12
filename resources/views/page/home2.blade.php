@@ -23,13 +23,13 @@
                             <div class="">
                                 <div class="content-video-1 text-white">
                                     {{--<img src="images/travel/video-1.jpg" alt="video">--}}
-                                    <h2 class="font-weight-light">Top Recommended Travel Company to Machu Picchu & Peru</h2>
+                                    <h2 class="font-weight-light">@lang('home.header_title')</h2>
 
                                     <div class="row mt-5 justify-content-center">
                                         <div class="col-6 col-md-6 col-lg-5 col-xl-4">
                                             <div class="row ">
                                                 <div class="col text-center">
-                                                    <a href="#Inquire" class="btn btn-lg btn-g-yellow font-weight-bold">Start Planning My Trip</a>
+                                                    <a href="#Inquire" class="btn btn-lg btn-g-yellow font-weight-bold">@lang('home.header_button')</a>
                                                     {{--<div class="card bg-rgba-white border-g-yellow w-100">--}}
                                                         {{--<div class="card-header bg-g-yellow">--}}
                                                             {{--<h5 class="m-0 font-weight-bold">INQUIRE NOW</h5>--}}
@@ -123,10 +123,10 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12 text-center text-sm-left text-md-right col-sm-7 col-md-7 col-lg-auto">
-                        <h5 class="m-0"><strong>Customizable Peru Tours </strong> by Experts</h5>
+                        <h5 class="m-0">@lang('home.float_button_title')</h5>
                     </div>
                     <div class="col-12 text-center text-sm-left text-md-right col-sm-3 col-md-3 col-lg text-right">
-                        <a href="#Inquire" class="btn btn-sm btn-g-yellow font-weight-bold" onclick="ideal_trip()">My ideal trip will be</a>
+                        <a href="#Inquire" class="btn btn-sm btn-g-yellow font-weight-bold" onclick="ideal_trip()">@lang('home.float_button_button')</a>
                     </div>
                     <div class="col-12 text-left text-sm-left text-md-right col-sm-2 col-md-2 col-lg-auto">
                         <button type="button" class="close p-0 float-left float-md-right" data-dismiss="alert" aria-label="Close">
@@ -141,11 +141,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col text-center">
-                        <h1 class="h6 font-weight-bold text-muted">Peru Travel Packages</h1>
-                        <h2 class="display-4 font-weight-bold text-g-yellow">WE ARE <span class="text-g-green">GOTOPERU</span></h2>
+                        <h1 class="h6 font-weight-bold text-muted">@lang('home.h1')</h1>
+                        <h2 class="display-4 font-weight-bold text-g-yellow">@lang('home.we_are_gotoperu')</h2>
                         {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                         {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                        <p class="lead font-weight-normal text-secondary m-0"><span class="text-danger">Peru</span> Local Travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 10 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized <span class="text-danger">us as Top Peru Local Travel Operator</span>.</p>
+                        <p class="lead font-weight-normal text-secondary m-0">@lang('home.we_are_gotoperu_p')</p>
                     </div>
                 </div>
             </div>
@@ -232,7 +232,7 @@
                         <div class="row">
                             <div class="col text-truncate">
                                 <i class="fa fa-quote-left"></i>
-                                <span class="small">Our tour guide Franklin, was so knowledgeable, there was nothing we asked that he couldn't talk at length about!</span>
+                                <span class="small">@lang('home.testimonial_1')</span>
                                 <i class="fa fa-quote-right"></i>
                             </div>
                         </div>
@@ -262,7 +262,7 @@
                         <div class="row">
                             <div class="col text-truncate">
                                 <i class="fa fa-quote-left"></i>
-                                <span class="small">My experience with the agency is perfect. I would recommend to use them if you have plan to travel to Peru.</span>
+                                <span class="small">@lang('home.testimonial_2')</span>
                                 <i class="fa fa-quote-right"></i>
                             </div>
                         </div>
@@ -292,7 +292,7 @@
                         <div class="row">
                             <div class="col text-truncate">
                                 <i class="fa fa-quote-left"></i>
-                                <span class="small">No hesitation in recommending GoToPeru to help build your trip. Martin as the front line rep</span>
+                                <span class="small">@lang('home.testimonial_3')</span>
                                 <i class="fa fa-quote-right"></i>
                             </div>
                         </div>
@@ -322,8 +322,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col text-center">
-                        <h2 class="h1 font-weight-bold text-g-green mb-3">OUR BEST PROGRAMS</h2>
-                        <p class="lead font-weight-normal text-secondary mb-5">Crafting unforgettable trips to the land of the Incas since 2009!  Select a pre-designed travel package below or design an unforgettable vacation with our local travel advisors.</p>
+                        <h2 class="h1 font-weight-bold text-g-green mb-3">@lang('home.h2_programs')</h2>
+                        <p class="lead font-weight-normal text-secondary mb-5">@lang('home.h2_programs_p')</p>
                     </div>
                 </div>
                 {{--recom--}}
@@ -346,7 +346,7 @@
                                                     <div class="row">
                                                         <div class="col">
                                                             <div class="position-relative">
-                                                                {{--<img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">--}}
+                                                                    {{--<img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">--}}
                                                                     <img alt="gotoperu" class="lazy w-100" src="{{asset('images/banners/category/'.$categoria->imagen.'')}}">
                                                                 <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
                                                                     <p class="m-0 font-weight-bold">{{$categoria->descripcion}}</p>
@@ -381,7 +381,7 @@
                                                                     <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                                         <div class="px-3">
                                                                             <h2 class="h6 font-weight-bold">{{$paquetes_categorias->paquete->titulo}}</h2>
-                                                                            <small class="text-muted font-weight-bold">{{$paquetes_categorias->paquete->duracion}} days</small>
+                                                                            <small class="text-muted font-weight-bold">{{$paquetes_categorias->paquete->duracion}} @lang('home.days')</small>
 
                                                                             @foreach($paquetes_categorias->paquete->precio_paquetes as $precio)
                                                                                 @if($precio->estrellas == 2)
@@ -389,12 +389,12 @@
                                                                                         {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                                         <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
                                                                                     @else
-                                                                                        <span class="text-danger">Inquire</span>
+                                                                                        <span class="text-danger">@lang('home.inquire')</span>
                                                                                     @endif
                                                                                 @endif
                                                                             @endforeach
 
-                                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes_categorias->paquete->titulo)), $paquetes_categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
+                                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes_categorias->paquete->titulo)), $paquetes_categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold"></a>
                                                                             {{--<a href="" class="btn btn-g-green font-weight-bold btn-block">Book Now</a>--}}
                                                                         </div>
                                                                     </div>
@@ -414,7 +414,7 @@
 
                 <div class="row mt-5">
                     <div class="col text-center">
-                        <a href="{{route('category_path')}}" class="btn btn-primary btn-lg font-weight-bold">See More Categories</a>
+                        <a href="{{route('category_path')}}" class="btn btn-primary btn-lg font-weight-bold">@lang('home.see_more_categories')</a>
                     </div>
                 </div>
             </div>
@@ -424,8 +424,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col text-center">
-                        <h2 class="display-4 font-weight-bold text-g-yellow">Video <span class="text-g-green">Testimonials</span></h2>
-                        <p class="lead font-weight-normal text-muted">Our biggest rewards are to have satisfied clients share their experience with us. Below are a few testimonials that we would like to share with you!  would you like to be next...camera, action!</p>
+                        <h2 class="display-4 font-weight-bold text-g-yellow">@lang('home.video_testimonials')</h2>
+                        <p class="lead font-weight-normal text-muted">@lang('home.video_testimonials_p')</p>
                     </div>
                 </div>
                 <div class="row slider-video-testimonio mt-4">
@@ -455,7 +455,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col text-center">
-                        <a href="{{route('video_testimonials_path')}}" class="btn btn-primary btn-lg font-weight-bold">View all video testimonials</a>
+                        <a href="{{route('video_testimonials_path')}}" class="btn btn-primary btn-lg font-weight-bold">@lang('home.view_all_video_testimonials')</a>
                     </div>
                 </div>
             </div>
@@ -478,7 +478,7 @@
                                              data-srcset="{{asset('images/icons/include/assistances.png')}}"
                                              data-sizes="100w">
                                     </picture>
-                                    <small>Assistances</small>
+                                    <small>@lang('home.assistances')</small>
                                 </div>
                                 <div class="col">
                                     {{--<img data-src="{{asset('images/icons/include/breakfast.png')}}" data-srcset="{{asset('images/icons/include/breakfast.png')}}" alt="breakfast" class="w-100 lazy has-webp">--}}
@@ -491,7 +491,7 @@
                                              data-srcset="{{asset('images/icons/include/breakfast.png')}}"
                                              data-sizes="100w">
                                     </picture>
-                                    <small>Breakfast</small>
+                                    <small>@lang('home.breakfast')</small>
                                 </div>
                                 <div class="col">
                                     {{--<img data-src="{{asset('images/icons/include/entrances.png')}}" data-srcset="{{asset('images/icons/include/entrances.png')}}" alt="entrances" class="w-100 lazy has-webp">--}}
@@ -504,7 +504,7 @@
                                              data-srcset="{{asset('images/icons/include/entrances.png')}}"
                                              data-sizes="100w">
                                     </picture>
-                                    <small>Entrances</small>
+                                    <small>@lang('home.entrances')</small>
                                 </div>
                                 <div class="col">
 {{--                                    <img data-src="{{asset('images/icons/include/flight.png')}}" data-srcset="{{asset('images/icons/include/flight.png')}}" alt="flight" class="w-100 lazy has-webp">--}}
@@ -517,7 +517,7 @@
                                              data-srcset="{{asset('images/icons/include/flight.png')}}"
                                              data-sizes="100w">
                                     </picture>
-                                    <small>Flight</small>
+                                    <small>@lang('home.flight')</small>
                                 </div>
 
                                 <div class="col">
@@ -531,7 +531,7 @@
                                              data-srcset="{{asset('images/icons/include/hotels.png')}}"
                                              data-sizes="100w">
                                     </picture>
-                                    <small>Hotels</small>
+                                    <small>@lang('home.hotels')</small>
                                 </div>
                                 <div class="col">
                                     {{--<img data-src="{{asset('images/icons/include/tours.png')}}" data-srcset="{{asset('images/icons/include/tours.png')}}" alt="tours" class="w-100 lazy has-webp">--}}
@@ -544,7 +544,7 @@
                                              data-srcset="{{asset('images/icons/include/tours.png')}}"
                                              data-sizes="100w">
                                     </picture>
-                                    <small>Tours</small>
+                                    <small>@lang('home.tours')</small>
                                 </div>
                                 <div class="col">
                                     {{--<img data-src="{{asset('images/icons/include/trains.png')}}" data-srcset="{{asset('images/icons/include/trains.png')}}" alt="trains" class="w-100 lazy has-webp">--}}
@@ -557,11 +557,11 @@
                                              data-srcset="{{asset('images/icons/include/trains.png')}}"
                                              data-sizes="100w">
                                     </picture>
-                                    <small>Trains</small>
+                                    <small>@lang('home.trains')</small>
                                 </div>
                                 <div class="col">
                                     <img data-src="{{asset('images/icons/include/transfers.png')}}" data-srcset="{{asset('images/icons/include/transfers.png')}}" alt="transfers" class="w-100 lazy has-webp">
-                                    <small>Transfers</small>
+                                    <small>@lang('home.transfers')</small>
                                 </div>
                             </div>
                         </div>
@@ -575,8 +575,8 @@
             <div class="container">
                 <div class="row mb-3">
                     <div class="col text-center">
-                        <h2 class="h1 font-weight-bold text-g-dark">Looking for the best Travel Experience</h2>
-                        <p class="lead text-muted">No matter the type of adventure you are seeking, GOTOPERU has a trip for you. Hoping to see Llamas? Check! Want an active Inca Trail hiking trip? Check! , How about a Ceviche in Lima? Check!  , How about a trip for you, your kiddos, and Grandma and Grandpa?</p>
+                        <h2 class="h1 font-weight-bold text-g-dark">@lang('home.looking_travel_experience')</h2>
+                        <p class="lead text-muted">@lang('home.looking_travel_experience_p')</p>
                     </div>
                 </div>
                 <div class="row">
@@ -694,7 +694,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col text-center">
-                        <a href="{{route('category_path')}}" class="btn btn-g-yellow btn-lg font-weight-bold">View all Category</a>
+                        <a href="{{route('category_path')}}" class="btn btn-g-yellow btn-lg font-weight-bold">@lang('home.view_all_category')</a>
                     </div>
                 </div>
             </div>
@@ -705,42 +705,42 @@
             <div class="offer py-5">
                 <div class="container">
                     <div class="col text-center">
-                        <h2 class="h1 font-weight-bold text-white">Why <span class="text-g-yellow">Go</span>  With GotoPeru</h2>
+                        <h2 class="h1 font-weight-bold text-white">@lang('home.why_with_gotoperu')</h2>
                     </div>
                     <div class="row mt-5">
                         <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-2 text-center">
                             <i data-feather="users" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
-                            <span class="text-white small mt-3 d-block">Small Groups and Private tours.</span>
+                            <span class="text-white small mt-3 d-block">@lang('home.small_groups')</span>
                         </div>
                         <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-2 text-center">
                             <i data-feather="clock" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
-                            <span class="text-white small mt-3 d-block">We live here, trully a 24/7 Assistance.</span>
+                            <span class="text-white small mt-3 d-block">@lang('home.we_assistance')</span>
                         </div>
                         <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-2 text-center">
                             <i data-feather="pen-tool" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
-                            <span class="text-white small mt-3 d-block">Book Now option or Customize a dream trip!</span>
+                            <span class="text-white small mt-3 d-block">@lang('home.book_now_option')</span>
                         </div>
                         <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-2 text-center">
                             <i data-feather="map-pin" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
-                            <span class="text-white small mt-3 d-block">Cutting the middlemen, headquarters at Peru.</span>
+                            <span class="text-white small mt-3 d-block">@lang('home.cutting_middlemen')</span>
                         </div>
                         <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-2 text-center">
                             <i data-feather="thumbs-up" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
-                            <span class="text-white small mt-3 d-block">We take pride of our tripadvisor reviews!</span>
+                            <span class="text-white small mt-3 d-block">@lang('home.we_take_pride')</span>
                         </div>
                         <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-2 text-center">
                             <i data-feather="calendar" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i>
-                            <span class="text-white small mt-3 d-block">We can adapt to any arrival and departure.</span>
+                            <span class="text-white small mt-3 d-block">@lang('home.we_can_adapt')</span>
                         </div>
                     </div>
                     <div class="row mt-5">
                         <div class="col text-white text-white text-center">
-                            <p class="font-weight-light">Since 2009.</p>
+                            <p class="font-weight-light">@lang('home.since_2009')</p>
                         </div>
                     </div>
                     <div class="row mt-5">
                         <div class="col text-white text-white text-center">
-                            <a href="#" class="btn btn-lg btn-g-yellow font-weight-bold text-white">Inquire Now</a>
+                            <a href="#" class="btn btn-lg btn-g-yellow font-weight-bold text-white">@lang('home.inquire_now')</a>
                         </div>
                     </div>
                 </div>
@@ -790,15 +790,15 @@
                         </div>
                     </div>
                     <div class="col col-sm-12 col-md">
-                        <h2 class="text-secondary h1 font-weight-bold text-g-yellow"><strong>We are <img src="{{asset('images/logos/logo-gotoperu.webp')}}" alt="" width="250"></strong></h2>
+                        <h2 class="text-secondary h1 font-weight-bold text-g-yellow"><strong>@lang('home.we_are_gotoperu')</strong></h2>
                         {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                         {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                        <p class="text-dark">Local travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 10 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized our efforts citing us a Top local Experts!</p>
+                        <p class="text-dark">@lang('home.we_are_gotoperu_p')</p>
                         <ul class="list-unstyled">
-                            <li><i class="fa fa-check text-g-yellow"></i> Headquarters: Cusco, Peru</li>
-                            <li><i class="fa fa-check text-g-yellow"></i> Company: 25 members</li>
-                            <li><i class="fa fa-check text-g-yellow"></i> Founded: 2009</li>
-                            <li><i class="fa fa-check text-g-yellow"></i> Offices: Lima, Peru / New York, Usa</li>
+                            <li><i class="fa fa-check text-g-yellow"></i> @lang('home.headquarters')</li>
+                            <li><i class="fa fa-check text-g-yellow"></i> @lang('home.company_25_members')</li>
+                            <li><i class="fa fa-check text-g-yellow"></i> @lang('home.founded_2009')</li>
+                            <li><i class="fa fa-check text-g-yellow"></i> @lang('home.offices_lima')</li>
                         </ul>
                     </div>
                 </div>
@@ -809,8 +809,8 @@
             <div class="container">
                 <div class="row mb-3">
                     <div class="col text-center">
-                        <h2 class="h1 font-weight-bold text-g-dark">Destinations</h2>
-                        <p class="lead text-muted">from the Coast , to the Andes and to the Rainforest! Go with the peruvian experts, GO with GOTOPERU:</p>
+                        <h2 class="h1 font-weight-bold text-g-dark">@lang('home.destinations')</h2>
+                        <p class="lead text-muted">@lang('home.destination_s_p')</p>
                     </div>
                 </div>
                 <div class="row">
@@ -900,7 +900,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col text-center">
-                        <a href="" class="btn btn-g-yellow btn-lg font-weight-bold">View all destinations</a>
+                        <a href="" class="btn btn-g-yellow btn-lg font-weight-bold">@lang('home.view_all_destinations')</a>
                     </div>
                 </div>
             </div>
@@ -1098,10 +1098,10 @@
             <div class="container">
                 <div class="row pt-5 pb-2">
                     <div class="col">
-                        <h2 class="text-g-dark h4 font-weight-bold"><strong>Certificates</strong></h2>
+                        <h2 class="text-g-dark h4 font-weight-bold"><strong>@lang('home.certificates')</strong></h2>
                         {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                         {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                        <p class="font-weight-bold text-muted">GOTOPERU is fully certified by the Peruvian local government as an officially licensed tour operator on behalf of the "Ministerio de Turismo del Peru".</p>
+                        <p class="font-weight-bold text-muted">@lang('home.certificates_p')</p>
                     </div>
                 </div>
                 <div class="row">

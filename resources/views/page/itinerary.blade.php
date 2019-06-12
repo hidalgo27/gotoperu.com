@@ -663,6 +663,8 @@
                                                 <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($paquete_destino->destinos->nombre))])}}-tours"><img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($paquete_destino->destinos->nombre)).'')}}.jpg" alt="" width="50" height="50" class="rounded-circle" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($paquete_destino->destinos->nombre))}}">
                                                 </a>
                                             @endforeach
+                                            <hr>
+                                            <img src="{{asset('images/mapas/'.$paquetes->imagen.'')}}" alt="">
                                         </div>
                                     </div>
                                 </div>
