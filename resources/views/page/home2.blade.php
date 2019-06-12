@@ -19,7 +19,6 @@
                 <div class="row content-header-row align-items-center mt-5">
                     <div class="col text-center">
                         {{--<a href="" class="text-white"><i class="fa fa-play-circle fa-4x"></i></a>--}}
-
                         <div class="text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                             <div class="">
                                 <div class="content-video-1 text-white">
