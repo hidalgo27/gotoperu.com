@@ -110,13 +110,18 @@ class HomepageController extends Controller
 
         $categorias = TCategoria::all();
 
+        $categorias_block_1 = TCategoria::where('orden_block', 1)->get();
+        $categorias_random = TCategoria::where('orden_block', 0)->get()->random(4);
+
         $paquetes_categoria = TPaqueteCategoria::with('paquete', 'categoria')->get();
         return view('page.home2',
             compact(
                 'testimonio_video',
                     'categoria_group',
                     'categorias',
-                'paquetes_categoria'
+                'paquetes_categoria',
+                'categorias_block_1',
+                'categorias_random'
                 ), ['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'destinos'=>$destinos, 'testimonial'=>$testimonial, 'dificultad'=>$dificultad, 'airport'=>$airport, 'comentario'=>$comentario]);
     }
 

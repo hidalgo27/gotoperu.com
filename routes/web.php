@@ -389,21 +389,32 @@ Route::get('admin/category/edit/{id}', [
 ]);
 
 
-Route::post('admin/category/image/image_category_store', [
-    'uses' => 'Admin\CategoryController@image_category_store',
-    'as' => 'admin_image_category_store_path',
-]);
-
 Route::post('admin/category/image/image_category_slider_store', [
     'uses' => 'Admin\CategoryController@image_category_slider_store',
     'as' => 'admin_image_category_slider_store_path',
 ]);
-
-
-Route::post('admin/category/image/image_delete', [
-    'uses' => 'Admin\CategoryController@image_delete',
-    'as' => 'admin_image_delete_path',
+Route::post('admin/category/image/image_category_slider_delete', [
+    'uses' => 'Admin\CategoryController@image_category_slider_delete',
+    'as' => 'admin_category_slider_delete_path',
 ]);
+Route::post('admin/category/image/image_category_slider_form_delete', [
+    'uses' => 'Admin\CategoryController@image_category_slider_form_delete',
+    'as' => 'admin_category_slider_form_delete_path',
+]);
+
+Route::post('admin/category/image/image_category_image_store', [
+    'uses' => 'Admin\CategoryController@image_category_image_store',
+    'as' => 'admin_image_category_image_store_path',
+]);
+Route::post('admin/category/image/image_category_image_delete', [
+    'uses' => 'Admin\CategoryController@image_category_image_delete',
+    'as' => 'admin_category_image_delete_path',
+]);
+Route::post('admin/category/image/image_delete_form', [
+    'uses' => 'Admin\CategoryController@image_category_image_form_delete',
+    'as' => 'admin_category_image_form_delete_path',
+]);
+
 
 
 Route::post('admin/category/store', [

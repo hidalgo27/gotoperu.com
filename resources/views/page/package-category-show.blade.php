@@ -89,7 +89,7 @@
                                             <div class="col-12">
                                                 <div class="position-relative">
                                                     <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias->paquete->titulo)), $categorias->paquete->duracion])}}">
-                                                        <img src="{{asset('images/mapas/'.$categorias->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                        <img src="{{asset('images/mapas/'.$categorias->paquete->imagen.'')}}" alt="" class="w-100 rounded-left">
                                                         <div class="position-absolute-bottom p-2 text-center">
                                                             <span class="small font-weight-bold badge badge-g-green shadow">{{$categorias->categoria->nombre}}</span>
                                                         </div>

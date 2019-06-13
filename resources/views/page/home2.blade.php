@@ -3,7 +3,7 @@
 @section('content')
     <section class="header-video d-none d-md-block chat-mensajes">
         @include('layouts.page.header')
-        <div id="overlay" class="position-relative">
+        <div id="overlay" class="position-relative overlay-img">
             <video class="hero-vid-home banner-itinerary" id="hero-vid" poster="{{asset('images/itinerary/banners/GTP1.jpg')}}" autoplay loop muted>
                 <source src="{{asset('media/gotoperu.mp4')}}" type="video/mp4"/>
                 {{--<source src="{{asset('media/gotoperu.m4v')}}" type="video/mp4" />--}}
@@ -580,115 +580,54 @@
                     </div>
                 </div>
                 <div class="row">
+                    @foreach ($categorias_block_1 as $categorias_block)
                     <div class="col-12 mb-3 col-sm-12 mb-sm-3 col-md">
                         <div class="header-img-category rounded">
                             <div class="position-relative">
-                                <a href="{{route('category_show_path', 'for-families')}}">
+                                <a href="{{route('category_show_path', str_replace(' ', '-', strtolower($categorias_block->nombre)))}}">
                                     {{--<img src="{{asset('images/category/home.jpg')}}" alt="" class="w-100 shadow-sm">--}}
                                     <picture>
                                         <source type="image/webp"
-                                                data-srcset="{{asset('images/category/home.webp')}}"
+                                                data-srcset="{{asset('images/category/'.$categorias_block->imagen.'')}}"
                                                 data-sizes="100w">
                                         <img alt="trains" class="lazy w-100 shadow-sm"
-                                             data-src="{{asset('images/category/home.jpg')}}"
-                                             data-srcset="{{asset('images/category/home.jpg')}}"
+                                             data-src="{{asset('images/category/'.$categorias_block->imagen.'')}}"
+                                             data-srcset="{{asset('images/category/'.$categorias_block->imagen.'')}}"
                                              data-sizes="100w">
                                     </picture>
                                     <div class="position-absolute-bottom text-white text-left">
-                                        <h5 class="p-2 m-0 footer-title-category">Family</h5>
+                                        <h5 class="p-2 m-0 footer-title-category">{{ucwords(strtolower($categorias_block->nombre))}}</h5>
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                     <div class="col-12 col-sm-12 col-md">
                         <div class="row mb-3">
-                            <div class="col-12 mb-3 col-sm mb-sm-0 mb-md-0">
+                            @foreach ($categorias_random as $categorias_randoms)
+                            <div class="col-12 col-sm-6 mb-3 col-sm">
                                 <div class="header-img-category rounded">
                                     <div class="position-relative">
-                                        <a href="{{route('category_show_path', 'recommended')}}">
+                                        <a href="{{route('category_show_path', str_replace(' ', '-', strtolower($categorias_randoms->nombre)))}}">
                                             {{--<img src="{{asset('images/category/recommended.jpg')}}" alt="" class="w-100 shadow-sm">--}}
                                             <picture>
                                                 <source type="image/webp"
-                                                        data-srcset="{{asset('images/category/recommended.webp')}}"
+                                                        data-srcset="{{asset('images/category/'.$categorias_randoms->imagen.'')}}"
                                                         data-sizes="100w">
                                                 <img alt="trains" class="lazy w-100 shadow-sm"
-                                                     data-src="{{asset('images/category/recommended.jpg')}}"
-                                                     data-srcset="{{asset('images/category/recommended.jpg')}}"
+                                                     data-src="{{asset('images/category/'.$categorias_randoms->imagen.'')}}"
+                                                     data-srcset="{{asset('images/category/'.$categorias_randoms->imagen.'')}}"
                                                      data-sizes="100w">
                                             </picture>
                                             <div class="position-absolute-bottom text-white text-left">
-                                                <h6 class="p-2 m-0 font-weight-normal footer-title-category">Recommended</h6>
+                                                <h6 class="p-2 m-0 font-weight-normal footer-title-category">{{ucwords(strtolower($categorias_randoms->nombre))}}</h6>
                                             </div>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 mb-3 col-sm mb-sm-0 mb-md-0">
-                                <div class="header-img-category rounded">
-                                    <div class="position-relative">
-                                        <a href="{{route('category_show_path', 'cultural')}}">
-{{--                                            <img src="{{asset('images/category/cultural.jpg')}}" alt="" class="w-100 shadow-sm">--}}
-                                            <picture>
-                                                <source type="image/webp"
-                                                        data-srcset="{{asset('images/category/cultural.webp')}}"
-                                                        data-sizes="100w">
-                                                <img alt="trains" class="lazy w-100 shadow-sm"
-                                                     data-src="{{asset('images/category/cultural.jpg')}}"
-                                                     data-srcset="{{asset('images/category/cultural.jpg')}}"
-                                                     data-sizes="100w">
-                                            </picture>
-                                            <div class="position-absolute-bottom text-white text-left">
-                                                <h6 class="p-2 m-0 font-weight-normal footer-title-category">Cultural</h6>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 mb-3 col-sm">
-                                <div class="header-img-category rounded">
-                                    <div class="position-relative">
-                                        <a href="{{route('category_show_path', 'active-treks')}}">
-                                            {{--<img src="{{asset('images/category/active.jpg')}}" alt="" class="w-100 shadow-sm">--}}
-                                            <picture>
-                                                <source type="image/webp"
-                                                        data-srcset="{{asset('images/category/active.webp')}}"
-                                                        data-sizes="100w">
-                                                <img alt="trains" class="lazy w-100 shadow-sm"
-                                                     data-src="{{asset('images/category/active.jpg')}}"
-                                                     data-srcset="{{asset('images/category/active.jpg')}}"
-                                                     data-sizes="100w">
-                                            </picture>
-                                            <div class="position-absolute-bottom text-white text-left">
-                                                <h6 class="p-2 m-0 font-weight-normal footer-title-category">Active / Trek</h6>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 mb-3 col-sm">
-                                <div class="header-img-category rounded">
-                                    <div class="position-relative">
-                                        <a href="{{route('category_show_path', 'short-programs')}}">
-                                            {{--<img src="{{asset('images/category/short.jpg')}}" alt="" class="w-100 shadow-sm">--}}
-                                            <picture>
-                                                <source type="image/webp"
-                                                        data-srcset="{{asset('images/category/short.webp')}}"
-                                                        data-sizes="100w">
-                                                <img alt="trains" class="lazy w-100 shadow-sm"
-                                                     data-src="{{asset('images/category/short.jpg')}}"
-                                                     data-srcset="{{asset('images/category/short.jpg')}}"
-                                                     data-sizes="100w">
-                                            </picture>
-                                            <div class="position-absolute-bottom text-white text-left">
-                                                <h6 class="p-2 m-0 font-weight-normal footer-title-category">Short Programs</h6>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

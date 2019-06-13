@@ -78,6 +78,17 @@
                 </div>
             </div>
 
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label class="font-weight-bold text-secondary small" for="txt_destination">First Block</label>
+                        <input type="checkbox" data-toggle="toggle" data-size="xs" @if ($categorias->orden_block == 1) checked @endif name="chk_order_block" value="1">
+                    </div>
+                </div>
+            </div>
+
+
             <div class="row mb-3">
                 <div class="col text-center">
                     {{--<a href="" class="btn btn-primary font-weight-bold">Update Package</a>--}}
@@ -86,23 +97,57 @@
             </div>
 
         </form>
-@endforeach
+
     <div class="row my-5">
         <div class="col-9">
-            <form method="post" action="{{route('admin_image_category_slider_store_path')}}" enctype="multipart/form-data"
-                  class="dropzone" id="dropzone_category">
-                <input type="hidden" value="" name="id_package_file">
-                @csrf
-            </form>
+            @if ($categorias->imagen_banner)
+            <div class="row">
+                    <div class="col-3 text-center">
+                        <img src="{{asset('images/banners/category/'.$categorias->imagen_banner.'')}}" alt="" class="img-thumbnail w-100 mb-2">
+                        <form action="{{route('admin_category_slider_form_delete_path')}}" method="post">
+                            {{--@method('DELETE')--}}
+                            @csrf
+                            <input type="hidden" name="id_category" value="{{$categorias->id}}">
+                            <button type="submit" class="btn btn-xs btn-danger">Eliminar</button>
+                        </form>
+                    </div>
+            </div>
+        @endif
         </div>
-        <div class="col">
-            <form method="post" action="{{route('admin_image_category_store_path')}}" enctype="multipart/form-data"
-                  class="dropzone" id="dropzone_category_2">
-                <input type="hidden" value="" name="id_package_file">
-                @csrf
-            </form>
+        <div class="col-3 text-center">
+            @if ($categorias->imagen)
+                <img src="{{asset('images/category/'.$categorias->imagen.'')}}" alt="" class="img-thumbnail w-100 mb-2">
+                <form action="{{route('admin_category_image_form_delete_path')}}" method="post">
+    {{--                @method('DELETE')--}}
+                    @csrf
+                    <input type="hidden" name="id_category" value="{{$categorias->id}}">
+                    <button type="submit" class="btn btn-xs btn-danger">Eliminar</button>
+                </form>
+            @endif
         </div>
     </div>
+
+    <div class="row my-5">
+        <div class="col-9">
+            @if ($categorias->imagen_banner == NULL)
+            <form method="post" action="{{route('admin_image_category_slider_store_path')}}" enctype="multipart/form-data"
+                  class="dropzone" id="dropzone_category">
+                <input type="hidden" value="{{$categorias->id}}" name="id_category_file">
+                @csrf
+            </form>
+            @endif
+        </div>
+        <div class="col">
+            @if ($categorias->imagen == NULL)
+            <form method="post" action="{{route('admin_image_category_image_store_path')}}" enctype="multipart/form-data"
+                  class="dropzone" id="dropzone_category_2">
+                <input type="hidden" value="{{$categorias->id}}" name="id_category_file">
+                @csrf
+            </form>
+            @endif
+        </div>
+    </div>
+@endforeach
 @endsection
 @push('scripts')
     <script>
@@ -111,7 +156,7 @@
             $("#dropzone_category").dropzone({
 
                 maxFilesize: 12,
-                maxFiles: 3,
+                maxFiles: 1,
                 renameFile: function(file) {
                     var dt = new Date();
                     var time = dt.getTime();
@@ -128,7 +173,7 @@
                             'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                         },
                         type: 'POST',
-                        url: "{{ route('admin_image_slider_delete_path') }}",
+                        url: "{{ route('admin_category_slider_delete_path') }}",
                         data: {filename: name},
                         success: function (data) {
                             console.log("File has been successfully removed!!");
@@ -170,7 +215,7 @@
                             'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                         },
                         type: 'POST',
-                        url: "{{ route('admin_image_delete_path') }}",
+                        url: "{{ route('admin_category_image_delete_path') }}",
                         data: {filename: name},
                         success: function (data) {
                             console.log("File has been successfully removed!!");
