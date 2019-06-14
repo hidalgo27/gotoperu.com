@@ -12,7 +12,7 @@
             {{--</video>--}}
             @foreach ($destinos_id as $destinos_banner)
                 @foreach($destinos_banner->destino_imagen as $imagen_b)
-                    <img src="{{asset('images/destinations/'.str_replace(' ','-', $imagen_b->nombre).'')}}" alt="" id="hero-vid" class="banner-itinerary">
+                    <img src="{{asset('images/destinations/banners/'.str_replace(' ','-', $imagen_b->nombre).'')}}" alt="" id="hero-vid" class="banner-itinerary">
                 @endforeach
             @endforeach
             {{--@include('layouts.page.menu-custom')--}}
