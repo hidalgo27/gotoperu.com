@@ -104,7 +104,7 @@
                             </div>
                         </div>
                         @foreach($paquetes_de as $paquetes_des)
-                            @if(isset($paquetes_des->destinos2))
+                            @if(isset($paquetes_des->destinos))
                                 @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
                                     <div class="col-12 col-lg-6 text-decoration-none mb-5">
                                         <div class="bg-light shadow-sm rounded">
@@ -113,9 +113,11 @@
                                                     <div class="position-relative">
                                                         <img src="{{asset('images/mapas/'.$paquetes->imagen.'')}}" alt="" class="w-100 rounded-left">
                                                         <div class="position-absolute-bottom p-2 text-center">
-                                            <div class="row align-items-center no-gutters">                @foreach($paquetes->paquetes_categoria as $paquetes_categorias)
-                                                            <span class="small font-weight-bold badge badge-g-yellow shadow">{{$paquetes_categorias->categoria->nombre}}</span>
-                                                            @endforeach
+                                                            <div class="row align-items-center no-gutters">
+                                                                @foreach($paquetes->paquetes_categoria as $paquetes_categorias)
+                                                                <span class="small font-weight-bold badge badge-g-yellow shadow">{{$paquetes_categorias->categoria->nombre}}</span>
+                                                                @endforeach
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
