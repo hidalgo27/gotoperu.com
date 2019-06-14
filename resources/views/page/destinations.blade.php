@@ -87,7 +87,7 @@
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="grid-category position-relative shadow-sm">
                                         <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours" class="text-g-dark rounded">
-                                            <img data-src="{{asset('images/destinations/destinations/'.str_replace(' ', '-', strtolower($destino->nombre)).'.jpg')}}" data-srcset="{{asset('images/destinations/destinations/'.str_replace(' ', '-', strtolower($destino->nombre)).'.jpg')}}" alt="Machu Picchu" class="w-100 rounded lazy has-webp">
+                                            <img data-src="{{asset('images/destinations/'.str_replace(' ', '-', strtolower($destino->imagen)).'')}}" data-srcset="{{asset('images/destinations/destinations/'.str_replace(' ', '-', strtolower($destino->imagen)).'')}}" alt="Machu Picchu" class="w-100 rounded lazy has-webp">
                                             <div class="grid-box p-3 text-center">
                                                 <span class="no-margin text-20"><i>{{substr(ucfirst(strtolower($destino->nombre)), 0, strlen($destino->nombre)/2)}}</i><b>{{substr(ucfirst(strtolower($destino->nombre)), strlen($destino->nombre)/2, strlen($destino->nombre))}}</b></span>
                                                 <div class="line"></div>
