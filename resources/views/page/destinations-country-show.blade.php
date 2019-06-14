@@ -60,9 +60,9 @@
 
     <div class="bg-white py-2 pt-4"></div>
     <div class="sticky-top text-center py-2 bg-white">
-        @foreach($destinos->where('pais',$pais)->sortBy('nombre') as $destino)
+        @foreach($destinos->sortBy('nombre') as $destino)
             <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours">
-                <img data-src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" data-srcset="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="{{strtolower($destino->nombre)}}" width="60" height="60" class="rounded-circle lazy has-webp buble-destinations {{ Request::is( 'destinations/peru-travel/'.str_replace(' ', '-', strtolower($destino->nombre)).'-tours') ? 'active' : '' }}" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
+                <img src="{{asset('images/destinations/'.str_replace(' ','-', strtolower($destino->imagen)).'')}}" alt="{{strtolower($destino->nombre)}}" width="60" height="60" class="rounded-circle lazy buble-destinations {{ Request::is( 'destinations/peru-travel/'.str_replace(' ', '-', strtolower($destino->nombre)).'-tours') ? 'active' : '' }}" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
             </a>
         @endforeach
     </div>

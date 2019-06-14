@@ -364,6 +364,7 @@
                                                                             <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes_categorias->paquete->titulo)), $paquetes_categorias->paquete->duracion])}}">
                                                                                 {{--<img src="{{asset('images/mapas/'.$cateorias_recommended->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
                                                                                 <picture>
+
                                                                                     <source type="image/webp"
                                                                                             data-srcset="{{asset('images/mapas/'.$paquetes_categorias->paquete->imagen.'')}}"
                                                                                             data-sizes="100w">
