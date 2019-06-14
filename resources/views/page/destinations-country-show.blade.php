@@ -161,20 +161,23 @@
                         </div>
                     </div>
 
-                    @foreach($destinos->where('nombre', strtoupper($ciudad)) as $destino)
-                        @if($destino->historia == " " OR $destino->historia == NULL)
-                            @php $h_resumen = "d-none"; @endphp
-                        @else
-                            @php $h_resumen = " "; @endphp
-                        @endif
-                    @endforeach
+
+                            @foreach($destinos->where('nombre', ucwords(strtolower($ciudad))) as $destino2)
+
+                                @if($destino2->historia == " " OR $destino2->historia == NULL)
+                                    @php $h_resumen = "d-none"; @endphp
+                                @else
+                                    @php $h_resumen = " "; @endphp
+                                @endif
+                            @endforeach
+
 
                     <div class="row pt-4 {{$h_resumen}}" id="history">
                         <div class="col-12">
                             <h3 class="text-g-yellow font-weight-bold">History</h3>
                         </div>
                         <div class="col-12">
-                            @php echo $destino->historia @endphp
+                            @php echo $destino2->historia @endphp
                         </div>
                     </div>
 
@@ -184,7 +187,7 @@
                         </div>
                         <div class="col-12">
 
-                                @php echo $destino->geografia @endphp
+                                @php echo $destino2->geografia @endphp
 
                         </div>
                     </div>
@@ -252,8 +255,8 @@
                             <nav class="nav nav-pills flex-column w-100">
                                 <a class="nav-link active" href="#tours">{{ucwords($ciudad)}} Tours</a>
                                 <a class="nav-link" href="#location">Location</a>
-                                <a class="nav-link {{$h_resumen}}" href="#history">History</a>
-                                <a class="nav-link {{$h_resumen}}" href="#geography">Geography</a>
+{{--                                <a class="nav-link {{$h_resumen}}" href="#history">History</a>--}}
+{{--                                <a class="nav-link {{$h_resumen}}" href="#geography">Geography</a>--}}
                                 <a class="nav-link" href="#hotels">Hotels</a>
                                 <a class="nav-link" href="#current-weather">Current Weather</a>
                                 {{--<a class="nav-link" href="#photos">Photos</a>--}}
@@ -266,7 +269,7 @@
                                     <div class="card-body">
                                         <h3>QUICK FACTS</h3>
 
-                                            @php echo $destino->resumen @endphp
+                                            @php echo $destino2->resumen @endphp
 
                                     </div>
                                 </div>

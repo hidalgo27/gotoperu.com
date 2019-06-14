@@ -753,93 +753,33 @@
                     </div>
                 </div>
                 <div class="row">
+                    @foreach ($destinos->take(4) as $destino)
                     <div class="col-12 mb-3 col-sm-6 mb-md-0 col-md">
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
-                                <a href="{{route('destinations_country_show_path', ['peru-travel', 'cusco'])}}-tours">
+                                <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ','-', strtolower($destino->nombre))])}}-tours">
 {{--                                    <img src="{{asset('images/destinations/destinations/machu-picchu.jpg')}}" alt="" class="w-100 shadow-sm">--}}
                                     <picture>
                                         <source type="image/webp"
-                                                data-srcset="{{asset('images/destinations/destinations/machu-picchu.webp')}}"
+                                                data-srcset="{{asset('images/destinations/'.$destino->imagen.'')}}"
                                                 data-sizes="100w">
-                                        <img alt="trains" class="lazy w-100 shadow-sm"
-                                             data-src="{{asset('images/destinations/destinations/machu-picchu.jpg')}}"
-                                             data-srcset="{{asset('images/destinations/destinations/machu-picchu.jpg')}}"
+                                        <img alt="{{ucwords(strtolower($destino->nombre))}}" class="lazy w-100 shadow-sm"
+                                             data-src="{{asset('images/destinations/destinations/'.$destino->imagen.'')}}"
+                                             data-srcset="{{asset('images/destinations/destinations/'.$destino->imagen.'')}}"
                                              data-sizes="100w">
                                     </picture>
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
-                                        <h6 class="p-2 m-0 font-weight-bold footer-title-category">Cusco</h6>
+                                        <h6 class="p-2 m-0 font-weight-bold footer-title-category">{{ucwords(strtolower($destino->nombre))}}</h6>
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 mb-3 col-sm-6 mb-md-0 col-md">
-                        <div class="header-img-category header-img-destinations rounded">
-                            <div class="position-relative">
-                                <a href="{{route('destinations_country_show_path', ['peru-travel', 'lima'])}}-tours">
-                                    <picture>
-                                        <source type="image/webp"
-                                                data-srcset="{{asset('images/destinations/destinations/lima.webp')}}"
-                                                data-sizes="100w">
-                                        <img alt="trains" class="lazy w-100 shadow-sm"
-                                             data-src="{{asset('images/destinations/destinations/lima.jpg')}}"
-                                             data-srcset="{{asset('images/destinations/destinations/lima.jpg')}}"
-                                             data-sizes="100w">
-                                    </picture>
-                                    <div class="position-absolute-bottom text-white text-left mb-5 text-center">
-                                        <h6 class="p-2 m-0 font-weight-bold footer-title-category">Lima</h6>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mb-3 col-sm-6 mb-md-0 col-md">
-                        <div class="header-img-category header-img-destinations rounded">
-                            <div class="position-relative">
-                                <a href="{{route('destinations_country_show_path', ['peru-travel', 'puno-and-lake-titicaca-tours'])}}-tours">
-                                    <picture>
-                                        <source type="image/webp"
-                                                data-srcset="{{asset('images/destinations/destinations/puno-and-lake-titicaca.webp')}}"
-                                                data-sizes="100w">
-                                        <img alt="trains" class="lazy w-100 shadow-sm"
-                                             data-src="{{asset('images/destinations/destinations/puno-and-lake-titicaca.jpg')}}"
-                                             data-srcset="{{asset('images/destinations/destinations/puno-and-lake-titicaca.jpg')}}"
-                                             data-sizes="100w">
-                                    </picture>
-                                    <div class="position-absolute-bottom text-white text-left mb-5 text-center">
-                                        <h6 class="p-2 m-0 font-weight-bold footer-title-category">Puno</h6>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mb-3 col-sm-6 mb-md-0 col-md">
-                        <div class="header-img-category header-img-destinations rounded">
-                            <div class="position-relative">
-                                <a href="{{route('destinations_country_show_path', ['peru-travel', 'arequipa-and-colca-canyon-tours'])}}-tours">
-{{--                                    <img src="{{asset('images/destinations/destinations/arequipa-and-colca-canyon.jpg')}}" alt="" class="w-100 shadow-sm">--}}
-                                    <picture>
-                                        <source type="image/webp"
-                                                data-srcset="{{asset('images/destinations/destinations/arequipa-and-colca-canyon.webp')}}"
-                                                data-sizes="100w">
-                                        <img alt="trains" class="lazy w-100 shadow-sm"
-                                             data-src="{{asset('images/destinations/destinations/arequipa-and-colca-canyon.jpg')}}"
-                                             data-srcset="{{asset('images/destinations/destinations/arequipa-and-colca-canyon.jpg')}}"
-                                             data-sizes="100w">
-                                    </picture>
-                                    <div class="position-absolute-bottom text-white text-left mb-5 text-center">
-                                        <h6 class="p-2 m-0 font-weight-bold footer-title-category">Arequipa</h6>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
                 <div class="row mt-5">
                     <div class="col text-center">
-                        <a href="" class="btn btn-g-yellow btn-lg font-weight-bold">@lang('home.view_all_destinations')</a>
+                        <a href="{{route('destinations_path')}}" class="btn btn-g-yellow btn-lg font-weight-bold">@lang('home.view_all_destinations')</a>
                     </div>
                 </div>
             </div>

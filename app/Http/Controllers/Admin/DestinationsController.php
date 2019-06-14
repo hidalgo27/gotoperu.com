@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\TCategoria;
 use App\TDestino;
+use App\TDestinoImagen;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -132,5 +134,95 @@ class DestinationsController extends Controller
         $destinations=TDestino::find($id);
         $destinations->delete();
         return redirect(route('admin_destinations_index_path'))->with('delete', 'Destination successfully removed');
+    }
+
+
+    public function image_destinations_slider_store(Request $request)
+    {
+        $image = $request->file('file');
+        $id_destinations = $request->get('id_destinations_file');
+
+        $imageName = $image->getClientOriginalName();
+        $image->move(public_path('/images/destinations/banners/'), $imageName);
+
+        $imageUpload = new TDestinoImagen();
+        $imageUpload->nombre = $imageName;
+        $imageUpload->iddestinos = $id_destinations;
+        $imageUpload->save();
+        return response()->json(['success' => $imageName]);
+
+    }
+
+    public function image_destinations_slider_delete(Request $request)
+    {
+        $filename = $request->get('filename');
+        TDestinoImagen::where('nombre', $filename)->delete();
+        $path = public_path() . '/images/destinations/banners/' . $filename;
+        if (file_exists($path)) {
+            unlink($path);
+        }
+        return $filename;
+    }
+
+    public function image_destinations_slider_form_delete(Request $request)
+    {
+        $filename = $request->get('filename');
+        $id_destino = $request->get('id_destinos');
+        TDestinoImagen::where('nombre', $filename)->delete();
+        $path = public_path() . '/images/destinations/banners/' . $filename;
+        if (file_exists($path)) {
+            unlink($path);
+        }
+        return redirect(route('admin_destinations_edit_path', $id_destino))->with('delete', 'Image successfully removed');
+
+    }
+
+
+
+    public function image_destinations_image_store(Request $request)
+    {
+        $image = $request->file('file');
+        $id_destino = $request->get('id_destinations_file');
+
+        $imageName = $image->getClientOriginalName();
+        $image->move(public_path('images/destinations'), $imageName);
+
+        $imageUpload = TDestino::FindOrFail($id_destino);
+        $imageUpload->imagen = $imageName;
+        $imageUpload->save();
+
+        return response()->json(['success' => $imageName]);
+    }
+
+    public function image_destinations_image_delete(Request $request)
+    {
+        $filename = $request->get('filename');
+        $id_destino = TDestino::where('imagen', $filename)->first();
+
+        $category = TDestino::FindOrFail($id_destino->id);
+        $category->imagen = NULL;
+        $category->save();
+
+        $path = public_path() . '/images/destinations/' . $filename;
+        if (file_exists($path)) {
+            unlink($path);
+        }
+        return $filename;
+    }
+
+    public function image_destinations_image_form_delete(Request $request)
+    {
+        $id_destino = $request->get('id_destino');
+
+        $destino = TDestino::FindOrFail($id_destino);
+
+        $path = public_path() . '/images/destinations/' . $destino->imagen;
+        if (file_exists($path) and $destino->imagen <> NULL) {
+            unlink($path);
+        }
+        $destino->imagen = NULL;
+        $destino->save();
+
+        return redirect(route('admin_destinations_edit_path', $id_destino))->with('delete', 'Image successfully removed');
     }
 }
