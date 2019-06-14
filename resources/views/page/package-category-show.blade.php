@@ -20,7 +20,7 @@
 
                     <div class="col">
                         <div class="row my-3 justify-content-center text-white font-weight-bold">
-                            <small class="d-block">PERU TRAVEL PACKAGES BY CATEGORY</small>
+                            <small class="d-block">@lang('package.peru_travel_packages_category')</small>
                         </div>
                         <div class="row my-3 justify-content-center text-white font-weight-bold h2">
                             {{$category_t}}
@@ -57,7 +57,7 @@
             <div class="row pt-4">
                 <div class="col">
                     <h1 class="text-g-yellow font-weight-bold text-center">{{ucwords(strtolower($category_t))}}</h1>
-                    <p class="lead m-0">our most popular <b>Peru and South America itineraries</b>, these <strong>packages</strong> could be used as a reference to customize your own trip. At <strong>GOTOPERU</strong> we specialize in crafting personalize experiences based on your preferences; we invited to review these programs to have glimpse of the most important destinations for instance MachuPicchu, Lake Titicaca, Nazca and the Amazon and even multi countries travel adventures involving <strong>Brasil, Ecuador , Argentina.</strong></p>
+                    <p class="lead m-0">@lang('package.h1_p')</p>
                     {{--<div class="alert alert-g-yellow text-center m-0" role="alert">--}}
                     {{--<h4>And even multi countries travel adventures involving Brasil, Ecuador , Argentina.</h4>--}}
                     {{--</div>--}}
@@ -99,21 +99,21 @@
                                             <div class="col-12 text-center mt-2">
                                                 <div class="px-3">
                                                     <h2 class="h6 font-weight-bold">{{$categorias->paquete->titulo}}</h2>
-                                                    <small class="text-muted font-weight-bold">{{$categorias->paquete->duracion}} days</small>
+                                                    <small class="text-muted font-weight-bold">{{$categorias->paquete->duracion}} @lang('package.days')</small>
                                                     @foreach($categorias->paquete->precio_paquetes as $precio)
                                                         @if($precio->estrellas == 2)
                                                             @if($precio->precio_d > 0)
                                                                 {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                 <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
                                                             @else
-                                                                <span class="text-danger">Inquire</span>
+                                                                <span class="text-danger">@lang('package.inquire')</span>
                                                             @endif
                                                         @endif
                                                     @endforeach
 
                                                     <div class="row my-3 justify-content-center">
                                                         <div class="col-6">
-                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias->paquete->titulo)), $categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire Now</a>
+                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias->paquete->titulo)), $categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">@lang('package.inquire')</a>
                                                         </div>
                                                         {{--<div class="col">--}}
                                                             {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}

@@ -57,7 +57,7 @@
     <section class="bg-white m-0">
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="col small font-weight-bold">
                     {{Breadcrumbs::render('contact')}}
                 </div>
             </div>

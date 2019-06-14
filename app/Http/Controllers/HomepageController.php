@@ -720,9 +720,11 @@ class HomepageController extends Controller
         $categoria = TCategoria::get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         $destinos = TDestino::get();
+        $destinos2 = TDestino::get();
         $destinos_p = TDestino::where('pais', $pais)->get();
 
-        $destinos_id = TDestino::where('nombre', $ciudad)->get();
+
+        $destinos_id = TDestino::with('destino_imagen')->where('nombre', $ciudad)->get();
 
 
         $paquetes_de = TPaqueteDestino::with(['destinos'=>function($query) use ($ciudad) { $query->where('nombre', $ciudad);}])->get();
@@ -761,7 +763,7 @@ class HomepageController extends Controller
 
 //                dd($cusco2);
 
-        return view('page.destinations-country-show', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos, 'destinos_p'=>$destinos_p, 'pais'=>$pais, 'paquetes_de'=>$paquetes_de, 'ciudad'=>$ciudad, 'cusco'=>$cusco, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'destinos_id'=>$destinos_id, 'comentario'=>$comentario, 'dificultad'=>$dificultad]);
+        return view('page.destinations-country-show', ['destinos2'=>$destinos2, 'paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos, 'destinos_p'=>$destinos_p, 'pais'=>$pais, 'paquetes_de'=>$paquetes_de, 'ciudad'=>$ciudad, 'cusco'=>$cusco, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'destinos_id'=>$destinos_id, 'comentario'=>$comentario, 'dificultad'=>$dificultad]);
     }
 
     public function about()

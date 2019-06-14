@@ -19,7 +19,7 @@
                 <div class="row content-header-row align-items-center">
                     <div class="col">
                         <div class="row my-3 justify-content-center text-white font-weight-bold h2">
-                            {{strtoupper($pais)}} DESTINATIONS
+                            {{strtoupper($pais)}}
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">

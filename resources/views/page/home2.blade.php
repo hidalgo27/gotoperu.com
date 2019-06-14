@@ -758,7 +758,7 @@
                     <div class="col-12 mb-3 col-sm-6 mb-md-0 col-md">
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
-                                <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ','-', strtolower($destino->nombre))])}}-tours">
+                                <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ','-', mb_strtolower($destino->nombre))])}}-tours">
 {{--                                    <img src="{{asset('images/destinations/destinations/machu-picchu.jpg')}}" alt="" class="w-100 shadow-sm">--}}
                                     <picture>
                                         <source type="image/webp"

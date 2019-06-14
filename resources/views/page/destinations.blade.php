@@ -20,7 +20,7 @@
                 <div class="row content-header-row align-items-center">
                     <div class="col">
                         <div class="row my-3 justify-content-center text-white font-weight-bold h2">
-                            Peru Destinations
+                            @lang('package.peru_destinations')
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
@@ -61,11 +61,11 @@
         <div class="container">
             <div class="row pt-4">
                 <div class="col">
-                    <h1 class="font-weight-bold text-g-yellow text-center">PERU <span class="text-g-green">DESTINATIONS</span></h1>
+                    <h1 class="font-weight-bold text-g-yellow text-center">@lang('package.h1_destinations')</h1>
                     {{--<h1 class="text-secondary h4"><strong>SOUTH AMERICA TRAVEL DESTINATIONS</strong></h1>--}}
-                    <p class="lead text-center">Offering you an authentic and reliable travel experience in peru welcoming you to explore the many fully customized travel packages we have that suit every budget. let us plan your unforgettable trip to our majestic machu picchu and the rest of our homeland… peru!</p>
+                    <p class="lead text-center">@lang('package.h1_destinations_p')</p>
                     <div class="alert alert-primary text-center m-0" role="alert">
-                        <h4>We will work around your schedule and your travel interests to build together the most unique travel plans</h4>
+                        <h4>@lang('package.h1_destinations_alert')</h4>
                     </div>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
@@ -81,7 +81,7 @@
                 <div class="col">
                     <div class="row pt-4" id="destinations">
                         <div class="col-12">
-                            <h4 class="text-secondary"><strong>Destinations</strong></h4>
+                            <h4 class="text-secondary"><strong>@lang('package.destinations')</strong></h4>
                             <div class="row">
                                 @foreach($destinos->sortBy('nombre') as  $destino)
                                 <div class="col-md-4 col-sm-6 mb-4">

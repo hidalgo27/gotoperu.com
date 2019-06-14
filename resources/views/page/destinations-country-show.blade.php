@@ -1,7 +1,6 @@
 @extends('layouts.page.default')
 @section('content')
 
-
     <section class="header-video d-none d-md-block">
         @include('layouts.page.header')
         <div id="overlay" class="overlay-img">
@@ -11,8 +10,11 @@
             {{--<source src="{{asset('media/video6.webm')}}" type="video/webm" />--}}
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
-
-            <img src="{{asset('images/destinations/'.str_replace(' ','-', $ciudad).'.jpg')}}" alt="" id="hero-vid" class="banner-itinerary">
+            @foreach ($destinos_id as $destinos_banner)
+                @foreach($destinos_banner->destino_imagen as $imagen_b)
+                    <img src="{{asset('images/destinations/'.str_replace(' ','-', $imagen_b->nombre).'')}}" alt="" id="hero-vid" class="banner-itinerary">
+                @endforeach
+            @endforeach
             {{--@include('layouts.page.menu-custom')--}}
         </div>
         <div class="content-header">
@@ -20,8 +22,8 @@
                 <div class="row content-header-row align-items-center">
 
                     <div class="col">
-                        <div class="row my-3 justify-content-center text-white font-weight-bold h2">
-                            {{ucwords($ciudad)}} Tours
+                        <div class="row my-3 justify-content-center text-white font-weight-bold h2 text-capitalize">
+                            {{ucwords($ciudad)}} @lang('package.tours')
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
@@ -93,16 +95,16 @@
                     <div class="row pt-4" id="tours">
                         <div class="col-12 mb-4">
                             {{--<h3 class="text-g-yellow font-weight-bold">Tours</h3>--}}
-                            <h1 class="text-secondary text-g-yellow font-weight-bold">{{ucwords($ciudad)}} Tour</h1>
+                            <h1 class="text-secondary text-g-yellow font-weight-bold">{{ucwords($ciudad)}} @lang('package.tours')</h1>
                             @foreach($destinos->where('nombre', strtoupper($ciudad)) as $destino)
                                 @php echo $destino->descripcion @endphp
                             @endforeach
                             <div class="alert alert-g-green text-center" role="alert">
-                                <h5 class="font-weight-normal"> Peru Local operator : the best local guides,  charming hotels, unique tours, and friendly representatives. <span class="d-block font-weight-bold">#gotoperu #yourperuvianconnection</span></h5>
+                                <h5 class="font-weight-normal">@lang('package.h5_destinations_alert')</h5>
                             </div>
                         </div>
                         @foreach($paquetes_de as $paquetes_des)
-                            @if(isset($paquetes_des->destinos))
+                            @if(isset($paquetes_des->destinos2))
                                 @foreach($paquete->where('id',$paquetes_des->idpaquetes)->sortBy("duracion") as $paquetes)
                                     <div class="col-12 col-lg-6 text-decoration-none mb-5">
                                         <div class="bg-light shadow-sm rounded">
@@ -111,7 +113,7 @@
                                                     <div class="position-relative">
                                                         <img src="{{asset('images/mapas/'.$paquetes->imagen.'')}}" alt="" class="w-100 rounded-left">
                                                         <div class="position-absolute-bottom p-2 text-center">
-                                                            @foreach($paquetes->paquetes_categoria as $paquetes_categorias)
+                                            <div class="row align-items-center no-gutters">                @foreach($paquetes->paquetes_categoria as $paquetes_categorias)
                                                             <span class="small font-weight-bold badge badge-g-yellow shadow">{{$paquetes_categorias->categoria->nombre}}</span>
                                                             @endforeach
                                                         </div>
@@ -120,20 +122,20 @@
                                                 <div class="col-12 text-center mt-2">
                                                     <div class="px-3">
                                                         <h2 class="h6 font-weight-bold">{{$paquetes->titulo}}</h2>
-                                                        <small class="text-muted font-weight-bold">{{$paquetes->duracion}} days</small>
+                                                        <small class="text-muted font-weight-bold">{{$paquetes->duracion}} @lang('package.days')</small>
                                                         @foreach($paquetes->precio_paquetes as $precio)
                                                             @if($precio->estrellas == 2)
                                                                 @if($precio->precio_d > 0)
                                                                     {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                     <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
                                                                 @else
-                                                                    <span class="text-danger">Inquire</span>
+                                                                    <span class="text-danger">@lang('package.inquire')</span>
                                                                 @endif
                                                             @endif
                                                         @endforeach
                                                         <div class="row my-3 justify-content-center">
                                                             <div class="col-6">
-                                                                <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">Inquire now</a>
+                                                                <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">@lang('package.inquire')</a>
                                                             </div>
 
                                                         </div>
@@ -149,7 +151,7 @@
 
                     <div class="row pt-4" id="location">
                         <div class="col-12">
-                            <h3 class="text-g-yellow font-weight-bold">Location</h3>
+                            <h3 class="text-g-yellow font-weight-bold">@lang('package.location')</h3>
                         </div>
                         <div class="col-12">
                             @foreach($cusco->results as $cuscos)
@@ -161,20 +163,18 @@
                         </div>
                     </div>
 
-
-                            @foreach($destinos->where('nombre', ucwords(strtolower($ciudad))) as $destino2)
+                            @foreach($destinos2->where('nombre', $ciudad) as $destino2)
 
                                 @if($destino2->historia == " " OR $destino2->historia == NULL)
                                     @php $h_resumen = "d-none"; @endphp
                                 @else
                                     @php $h_resumen = " "; @endphp
                                 @endif
-                            @endforeach
 
 
                     <div class="row pt-4 {{$h_resumen}}" id="history">
                         <div class="col-12">
-                            <h3 class="text-g-yellow font-weight-bold">History</h3>
+                            <h3 class="text-g-yellow font-weight-bold">@lang('package.history')</h3>
                         </div>
                         <div class="col-12">
                             @php echo $destino2->historia @endphp
@@ -183,7 +183,7 @@
 
                     <div class="row pt-4 {{$h_resumen}}" id="geography">
                         <div class="col-12">
-                            <h3 class="text-g-yellow font-weight-bold">Geography</h3>
+                            <h3 class="text-g-yellow font-weight-bold">@lang('package.geography')</h3>
                         </div>
                         <div class="col-12">
 
@@ -191,11 +191,11 @@
 
                         </div>
                     </div>
-
+                                    @endforeach
                     <div class="row pt-5" id="hotels">
 
                         <div class="col-12">
-                            <h3 class="text-g-yellow font-weight-bold">Hotels </h3>
+                            <h3 class="text-g-yellow font-weight-bold">@lang('itinerary.hotels')</h3>
                             @foreach($destinos_id as $d)
 
                             @endforeach
@@ -217,7 +217,7 @@
                                                 @endfor
                                                 <small class="d-block text-secondary"><i class="fa fa-map-marker-alt"></i> {{$hoteles_destino->hotel->direccion}}</small>
                                                 @php $services = explode(',', $hoteles_destino->hotel->servicios); @endphp
-                                                <p class="pt-2"><b>Services:</b>
+                                                <p class="pt-2"><b>@lang('package.services'):</b>
                                                     @foreach($services as $service)
                                                         <i class="fa fa-check text-secondary"></i> {{$service}}
                                                     @endforeach
@@ -236,10 +236,10 @@
                     <div class="row pt-5" id="current-weather">
 
                             <div class="col-12">
-                                <h3 class="text-g-yellow font-weight-bold">Current Weather</h3>
+                                <h3 class="text-g-yellow font-weight-bold">@lang('package.current_weather')</h3>
                             </div>
                             <div class="col-12">
-                                <a class="weatherwidget-io" href="https://forecast7.com/en/n13d53n71d97/cusco/?unit=us" data-label_1="CUSCO" data-label_2="WEATHER" data-theme="original" >CUSCO WEATHER</a>
+                                <a class="weatherwidget-io" href="https://forecast7.com/en/n13d53n71d97/cusco/?unit=us" data-label_1="CUSCO" data-label_2="WEATHER" data-theme="original" >@lang('package.cusco_weather')</a>
                             </div>
 
                     </div>
@@ -253,12 +253,12 @@
                     <div class="sticky-top sticky-top-80 mt-5">
                         <nav id="menu" class="navbar navbar-light nav-goto-side w-100">
                             <nav class="nav nav-pills flex-column w-100">
-                                <a class="nav-link active" href="#tours">{{ucwords($ciudad)}} Tours</a>
-                                <a class="nav-link" href="#location">Location</a>
+                                <a class="nav-link active text-capitalize" href="#tours">{{ucwords($ciudad)}} @lang('package.tours')</a>
+                                <a class="nav-link" href="#location">@lang('package.location')</a>
 {{--                                <a class="nav-link {{$h_resumen}}" href="#history">History</a>--}}
 {{--                                <a class="nav-link {{$h_resumen}}" href="#geography">Geography</a>--}}
-                                <a class="nav-link" href="#hotels">Hotels</a>
-                                <a class="nav-link" href="#current-weather">Current Weather</a>
+                                <a class="nav-link" href="#hotels">@lang('package.hotels')</a>
+                                <a class="nav-link" href="#current-weather">@lang('package.current_weather')</a>
                                 {{--<a class="nav-link" href="#photos">Photos</a>--}}
                             </nav>
                         </nav>
@@ -267,9 +267,10 @@
                             <div class="col">
                                 <div class="card bg-light">
                                     <div class="card-body">
-                                        <h3>QUICK FACTS</h3>
-
+                                        <h3>@lang('package.quick_facts')</h3>
+                                        @foreach($destinos2->where('nombre', $ciudad) as $destino2)
                                             @php echo $destino2->resumen @endphp
+                                            @endforeach
 
                                     </div>
                                 </div>

@@ -3,27 +3,28 @@
         @foreach($paquete_iti as $paquetes)
 
     <section class="header-video d-none d-md-block chat-mensajes">
-        <div id="title" class="text-white">
-            <div class="container-fluid">
-                <div class="row align-items-center justify-content-between my-2">
-                    <div class="col-3 col-md-4 col-lg-4 col-xl-3">
-                        <a href="{{route('home_path')}}">
-                            {{--<img src="{{asset('images/logos/logo-gotoperu-ave-w.webp')}}" alt="" class="img-fluid">--}}
-                            <img class="w-100 lazy has-webp"
-                                 data-src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}"
-                                 data-srcset="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="logo gotoperu">
-                        </a>
-                    </div>
-                    <div class="col d-md-none d-lg-inline col-lg col-xl text-center">
-                        <h5 class="font-weight-light"><b class="font-weight-bold">GO</b> with the Peruvian experts</h5>
-                    </div>
-                    <div class="col-3 col-md-6 col-lg-3 col-xl-3 text-right">
-                        <a href="tel:+2029963000" class="mx-3 text-g-yellow font-weight-bold h5">(202) 996-3000</a>
-                        <a href="#" class="text-white"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars fa-2x"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--        <div id="title" class="text-white">--}}
+{{--            <div class="container-fluid">--}}
+{{--                <div class="row align-items-center justify-content-between my-2">--}}
+{{--                    <div class="col-3 col-md-4 col-lg-4 col-xl-3">--}}
+{{--                        <a href="{{route('home_path')}}">--}}
+{{--                            --}}{{--<img src="{{asset('images/logos/logo-gotoperu-ave-w.webp')}}" alt="" class="img-fluid">--}}
+{{--                            <img class="w-100 lazy has-webp"--}}
+{{--                                 data-src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}"--}}
+{{--                                 data-srcset="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="logo gotoperu">--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <div class="col d-md-none d-lg-inline col-lg col-xl text-center">--}}
+{{--                        <h5 class="font-weight-light"><b class="font-weight-bold">GO</b> with the Peruvian experts</h5>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-3 col-md-6 col-lg-3 col-xl-3 text-right">--}}
+{{--                        <a href="tel:+2029963000" class="mx-3 text-g-yellow font-weight-bold h5">(202) 996-3000</a>--}}
+{{--                        <a href="#" class="text-white"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars fa-2x"></i></a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+        @include('layouts.page.header')
         <div id="overlay" class="overlay-img">
             @foreach($paquetes->imagen_paquetes->take(1) as $paquetes_imagen)
             <img src="{{asset('images/packages/slider/'.$paquetes_imagen->nombre.'')}}" alt="banner gotoperu" id="hero-vid" class="banner-itinerary">
@@ -40,7 +41,7 @@
                                 <div class="content-video-1 text-white p-3 rounded">
                                     {{--<img src="images/travel/video-1.jpg" alt="video">--}}
                                     <h2 class="font-weight-bold">
-                                        {{($paquetes->titulo)}} <span class="text-white">{{($paquetes->duracion)}} DAYS TOURS</span>
+                                        {{($paquetes->titulo)}} <span class="text-white">{{($paquetes->duracion)}} @lang('itinerary.days_tours')</span>
                                     </h2>
                                 </div>
                                 <div class="row justify-content-center">
@@ -105,7 +106,7 @@
                                     <div class="card p-3 bg-light d-md-none">
                                         <div class="row">
                                             <div class="col">
-                                                <span class="font-weight-bold d-block h4">{{$paquetes->duracion}} days</span>
+                                                <span class="font-weight-bold d-block h4">{{$paquetes->duracion}} @lang('itinerary.days')</span>
                                                 <div class="text-center">
                                                     <small>from</small>
                                                     @foreach($paquetes->precio_paquetes->where('estrellas', 2)->sortBy('estrellas') as $precio)
@@ -113,13 +114,13 @@
                                                             <span class="h1 font-weight-bold text-danger"><sup>$</sup>{{$precio->precio_d}}</span>
                                                         @else
                                                             <span class="text-danger">
-                                                                Inquire
+                                                                @lang('itinerary.inquire')
                                                             </span>
                                                         @endif
                                                     @endforeach
                                                     <small>USD</small>
                                                 </div>
-                                                <span class="text-secondary d-block font-weight-bold">Code: {{$paquetes->codigo}}</span>
+                                                <span class="text-secondary d-block font-weight-bold">@lang('itinerary.code'): {{$paquetes->codigo}}</span>
                                             </div>
                                         </div>
 
@@ -134,7 +135,7 @@
                                                 @endforeach
                                                 @if($j > 0)
                                                     <a href="#Reviews" class="h6 text-primary">
-                                                        Comments {{$j}}
+                                                        @lang('itinerary.comments') {{$j}}
                                                         <span class="text-g-yellow">
                                                             @for ($i = 0; $i < ($k/$j); $i++)
                                                                 <i class="fas fa-star small"></i>
@@ -161,7 +162,7 @@
                                             {{--<a href="" class="btn btn-g-yellow btn-block">Check Availability</a>--}}
                                             {{--</div>--}}
                                             <div class="col col-xl mb-xl-0 mb-2">
-                                                <a href="#Inquire" class="btn btn-g-yellow btn-block font-weight-bold">INQUIRE</a>
+                                                <a href="#Inquire" class="btn btn-g-yellow btn-block font-weight-bold">@lang('itinerary.inquire')</a>
                                             </div>
                                             {{--<div class="col col-xl mb-xl-0">--}}
                                                 {{--<a href="https://fareharbor.com/embeds/book/gotoperu/items/{{$paquetes->codigo_f}}/calendar/?flow=92114" class="btn btn-g-green btn-block font-weight-bold">BOOK NOW</a>--}}
@@ -179,16 +180,16 @@
                                             {{--<a class="nav-link text-white font-weight-bold rounded-0" href="#overview">Overview</a>--}}
                                         {{--</li>--}}
                                         <li class="nav-item d-none d-sm-block">
-                                            <a class="nav-link text-white font-weight-bold rounded-0" href="#Itinerary">Itinerary</a>
+                                            <a class="nav-link text-white font-weight-bold rounded-0" href="#Itinerary">@lang('itinerary.inquire')</a>
                                         </li>
                                         <li class="nav-item d-sm-none">
-                                            <a class="nav-link text-white font-weight-bold rounded-0" href="#Itinerary">Itinerary</a>
+                                            <a class="nav-link text-white font-weight-bold rounded-0" href="#Itinerary">@lang('itinerary.inquire')</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link text-white font-weight-bold rounded-0" href="#Included">Included and Not Included</a>
+                                            <a class="nav-link text-white font-weight-bold rounded-0" href="#Included">@lang('itinerary.included_and_not_included')</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link text-white font-weight-bold rounded-0" href="#Hotels">Hotels</a>
+                                            <a class="nav-link text-white font-weight-bold rounded-0" href="#Hotels">@lang('itinerary.hotels')</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -200,7 +201,7 @@
                                         <div class="col-12 mb-3 mb-lg-0 col-lg d-flex">
                                             @foreach($paquetes->paquetes_categoria as $categoria)
                                                 <div class="card p-3 w-100">
-                                                    <h5 class="text-secondary font-weight-bold"><i class="fas fa-angle-right"></i> Category: <span class="text-primary">{{ucwords(strtolower($categoria->categoria->nombre))}}</span></h5>
+                                                    <h5 class="text-secondary font-weight-bold"><i class="fas fa-angle-right"></i> @lang('itinerary.category'): <span class="text-primary">{{ucwords(strtolower($categoria->categoria->nombre))}}</span></h5>
                                                     <p>{{$categoria->categoria->descripcion}}</p>
                                                 </div>
                                             @endforeach
@@ -208,7 +209,7 @@
                                         <div class="col-12 mb-3 mb-lg-0 col-lg d-flex">
                                             <div class="card p-3 w-100">
                                             @foreach($dificultad->where('idpaquetes', $paquetes->id) as $dificultades)
-                                                <h5 class="text-secondary font-weight-bold"><i class="fas fa-angle-right"></i> Physical demand: <span class="text-primary text-capitalize">{{$dificultades->dificultad->nombre}}</span></h5>
+                                                <h5 class="text-secondary font-weight-bold"><i class="fas fa-angle-right"></i> @lang('itinerary.physical_demand'): <span class="text-primary text-capitalize">{{$dificultades->dificultad->nombre}}</span></h5>
                                                 <p>{{$dificultades->dificultad->descripcion}}</p>
                                             @endforeach
                                             </div>
@@ -220,15 +221,15 @@
                                     <div class="col">
                                         <div class="row" id="">
                                             <div class="col">
-                                                <h3 class="text-secondary pt-3 pb-4 h4"><strong>Itinerary</strong></h3>
+                                                <h3 class="text-secondary pt-3 pb-4 h4"><strong>@lang('itinerary.itinerary')</strong></h3>
                                             </div>
                                         </div>
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active font-weight-bold" id="resumen-tab" data-toggle="tab" href="#resumen" role="tab" aria-controls="resumen" aria-selected="true">Summary Itinerary</a>
+                                                <a class="nav-link active font-weight-bold" id="resumen-tab" data-toggle="tab" href="#resumen" role="tab" aria-controls="resumen" aria-selected="true">@lang('itinerary.summary_itinerary')</a>
                                             </li>
                                             <li class="nav-item d-none d-sm-inline">
-                                                <a class="nav-link font-weight-bold" id="full-tab" data-toggle="tab" href="#full" role="tab" aria-controls="full" aria-selected="false">Extended Itinerary</a>
+                                                <a class="nav-link font-weight-bold" id="full-tab" data-toggle="tab" href="#full" role="tab" aria-controls="full" aria-selected="false">@lang('itinerary.extended_itinerary')</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content" id="myTabContent">
@@ -239,7 +240,7 @@
                                                         @foreach($paquetes->paquete_itinerario as $itinerario)
                                                             <div class="row pt-4" id="section-{{$itinerario->itinerarios->id}}">
                                                                 <div class="col-12 col-md-12 col-lg-8">
-                                                                    <h6 class="text-g-yellow font-weight-normal"><span class="badge badge-g-dark">Day {{$day}}:</span> <strong>{{ucwords(strtolower($itinerario->itinerarios->titulo))}}</strong>
+                                                                    <h6 class="text-g-yellow font-weight-normal"><span class="badge badge-g-dark">@lang('itinerary.day') {{$day}}:</span> <strong>{{ucwords(strtolower($itinerario->itinerarios->titulo))}}</strong>
                                                                     </h6>
                                                                     @php echo $itinerario->itinerarios->resumen; @endphp
                                                                 </div>
@@ -249,7 +250,7 @@
                                                                             <img src="{{asset('images/itinerario/'.$img->nombre.'')}}" alt="" class="rounded">
                                                                         @endforeach
                                                                         <div class="box-content text-center">
-                                                                            <h3 class="title">View Gallery</h3>
+                                                                            <h3 class="title">@lang('itinerary.view_gallery')</h3>
                                                                             <ul class="icon p-0">
                                                                                 <li><a href="#" data-toggle="modal" data-target="#modal-img-{{$itinerario->itinerarios->id}}"><i class="fas fa-camera"></i></a></li>
                                                                             </ul>
@@ -282,11 +283,11 @@
                                                                                         </div>
                                                                                         <a class="carousel-control-prev" href="#carouselExampleFade{{$itinerario->itinerarios->id}}" role="button" data-slide="prev">
                                                                                             <i class="fas fa-angle-left text-white fa-2x"></i>
-                                                                                            <span class="sr-only">Previous</span>
+                                                                                            <span class="sr-only">@lang('itinerary.previous')</span>
                                                                                         </a>
                                                                                         <a class="carousel-control-next" href="#carouselExampleFade{{$itinerario->itinerarios->id}}" role="button" data-slide="next">
                                                                                             <i class="fas fa-angle-right text-white fa-2x"></i>
-                                                                                            <span class="sr-only">Next</span>
+                                                                                            <span class="sr-only">@lang('itinerary.next')</span>
                                                                                         </a>
                                                                                     </div>
                                                                                 </div>
@@ -325,7 +326,7 @@
                                                                 @foreach($paquetes->paquete_itinerario as $itinerario)
                                                                 <div class="timeline @php if($i == $num_des) echo 'timeline-f' @endphp">
                                                                     <div class="timeline-title">
-                                                                        <span class="rounded-circle bg-g-green text-white py-4 font-weight-bold">DAY {{$i}}</span>
+                                                                        <span class="rounded-circle bg-g-green text-white py-4 font-weight-bold">@lang('itinerary.day') {{$i}}</span>
                                                                     </div>
                                                                     <div class="col">
                                                                         <div class="timeline-content position-relative">
@@ -353,7 +354,7 @@
                                                         </div>
 
                                                         <div id="Itinerary-2" class="d-sm-none">
-                                                            <h3 class="text-secondary pt-5 pb-4 h4"><strong>Itinerary</strong></h3>
+                                                            <h3 class="text-secondary pt-5 pb-4 h4"><strong>@lang('itinerary.itinerary')</strong></h3>
                                                             @php
                                                                 $i = 1;
                                                                 $num_des = count($paquetes->itinerario);
@@ -371,7 +372,7 @@
                                                     <div class="col">
                                                         <div class="sticky-top my-4 sticky-top-50">
                                                             <img src="{{asset('images/maps/'.$paquetes->codigo.'.jpg')}}" alt="" class="img-fluid rounded">
-                                                            <button class="btn btn-block btn-lg btn-g-yellow mt-2">Book Now</button>
+                                                            <button class="btn btn-block btn-lg btn-g-yellow mt-2">@lang('itinerary.book_now')</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -390,19 +391,19 @@
                                 <div class="row {{$hide_price}} d-none" id="Prices">
                                     <div class="col">
                                         {{--<h3 class="text-secondary h4"><strong>Hotels</strong></h3>--}}
-                                        <h3 class="text-secondary pt-5 pb-3 h4"><strong>Prices Per Person <small class="text-primary font-weight-bold">($USD)</small></strong></h3>
+                                        <h3 class="text-secondary pt-5 pb-3 h4"><strong>@lang('itinerary.prices_per_person') <small class="text-primary font-weight-bold">($USD)</small></strong></h3>
                                         <div class="row">
                                             <div class="col mb-md-2">
                                                 <div class="card border-secondary">
-                                                    <p class="card-header bg-dark text-g-yellow">Based on doble / triple occupancy </p>
+                                                    <p class="card-header bg-dark text-g-yellow">@lang('itinerary.based_doble_triple_occupancy')</p>
                                                     <div class="card-body p-0">
                                                         <table class="table m-0">
                                                             <thead class="title-header bg-light">
                                                             <tr>
-                                                                <th>2 Stars</th>
-                                                                <th>3 Stars</th>
-                                                                <th>4 Stars</th>
-                                                                <th>5 Stars</th>
+                                                                <th>2 @lang('itinerary.stars')</th>
+                                                                <th>3 @lang('itinerary.stars')</th>
+                                                                <th>4 @lang('itinerary.stars')</th>
+                                                                <th>5 @lang('itinerary.stars')</th>
                                                             </tr>
                                                             </thead>
                                                             <tbody>
@@ -414,7 +415,7 @@
                                                                         </td>
                                                                     @else
                                                                         <td class="text-danger">
-                                                                            Inquire
+                                                                            @lang('itinerary.inquire')
                                                                         </td>
                                                                     @endif
                                                                 @endforeach
@@ -427,15 +428,15 @@
                                             </div>
                                             <div class="col mb-md-2">
                                                 <div class="card border-secondary">
-                                                    <p class="card-header bg-secondary text-white">Based on single occupancy</p>
+                                                    <p class="card-header bg-secondary text-white">@lang('itinerary.based_single_occupancy')</p>
                                                     <div class="card-body p-0">
                                                         <table class="table m-0">
                                                             <thead class="title-header bg-light">
                                                             <tr>
-                                                                <th>2 Stars</th>
-                                                                <th>3 Stars</th>
-                                                                <th>4 Stars</th>
-                                                                <th>5 Stars</th>
+                                                                <th>2 @lang('itinerary.stars')</th>
+                                                                <th>3 @lang('itinerary.stars')</th>
+                                                                <th>4 @lang('itinerary.stars')</th>
+                                                                <th>5 @lang('itinerary.stars')</th>
                                                             </tr>
                                                             </thead>
                                                             <tbody>
@@ -447,7 +448,7 @@
                                                                         </td>
                                                                     @else
                                                                         <td class="text-danger">
-                                                                            Inquire
+                                                                            @lang('itinerary.inquire')
                                                                         </td>
                                                                     @endif
                                                                 @endforeach
@@ -462,18 +463,18 @@
                                         <div class="row my-3">
                                             <div class="col">
                                                 <div class="alert alert-success">
-                                                    <small>*If you have a preferred hotel in mind feel free to share it with us as we work with most hotels in Peru.</small>
+                                                    <small>@lang('itinerary.if_you_have')</small>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12 col-lg">
-                                                <h3 class="text-secondary h4"><strong>Included</strong></h3>
+                                                <h3 class="text-secondary h4"><strong>@lang('itinerary.included')</strong></h3>
                                                 @php echo $paquetes->incluye; @endphp
 
                                             </div>
                                             <div class="col-12 col-lg">
-                                                <h3 class="text-secondary h4"><strong>Not Included</strong></h3>
+                                                <h3 class="text-secondary h4"><strong>@lang('itinerary.not_included')</strong></h3>
                                                 @php echo $paquetes->noincluye; @endphp
                                             </div>
                                         </div>
@@ -485,7 +486,7 @@
                                         <div class="col-12 mb-3 col-lg mb-lg-0">
                                             {{--<h3 class="text-secondary h4"><strong>Included</strong></h3>--}}
                                             <div class="card p-3 w-100">
-                                                <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> Included:</h5>
+                                                <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> @lang('itinerary.included'):</h5>
                                                 <hr>
                                                 <ul class="pl-3">
                                                     @foreach($paquetes->paquete_incluye->sortBy('updated_at') as $paquetes_incluye)
@@ -496,7 +497,7 @@
                                         </div>
                                         <div class="col-12 mb-3 col-lg mb-lg-0">
                                             <div class="card p-3 w-100">
-                                                <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> Not Included:</h5>
+                                                <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> @lang('itinerary.not_included'):</h5>
                                                 <hr>
                                                 <ul class="pl-3">
                                                     @foreach($paquetes->paquete_no_incluye->sortBy('updated_at') as $paquetes_no_incluye)
@@ -511,7 +512,7 @@
                                 <div id="Hotels" class="pt-5">
                                     <div class="row">
                                         <div class="col">
-                                            <h3 class="text-secondary h4"><strong>Hotels</strong></h3>
+                                            <h3 class="text-secondary h4"><strong>@lang('itinerary.hotels')</strong></h3>
 
                                         </div>
                                     </div>
@@ -591,21 +592,21 @@
                                     <div class="card p-3 bg-light">
                                         <div class="row">
                                             <div class="col">
-                                                <span class="font-weight-bold d-block h4">{{$paquetes->duracion}} days</span>
+                                                <span class="font-weight-bold d-block h4">{{$paquetes->duracion}} @lang('itinerary.days')</span>
                                                 <div class="text-center">
-                                                    <small>from</small>
+                                                    <small>@lang('itinerary.from')</small>
                                                     @foreach($paquetes->precio_paquetes->where('estrellas', 2)->sortBy('estrellas') as $precio)
                                                         @if($precio->precio_d > 0)
                                                             <span class="h1 font-weight-bold text-danger"><sup>$</sup>{{$precio->precio_d}}</span>
                                                         @else
                                                             <span class="text-danger">
-                                                                Inquire
+                                                                @lang('itinerary.inquire')
                                                             </span>
                                                         @endif
                                                     @endforeach
                                                     <small>USD</small>
                                                 </div>
-                                                <span class="text-secondary d-block font-weight-bold">Code: {{$paquetes->codigo}}</span>
+                                                <span class="text-secondary d-block font-weight-bold">@lang('itinerary.code'): {{$paquetes->codigo}}</span>
                                             </div>
                                         </div>
 
@@ -620,7 +621,7 @@
                                                 @endforeach
                                                 @if($j > 0)
                                                     <a href="#Reviews" class="h6 text-primary">
-                                                        Comments {{$j}}
+                                                        @lang('itinerary.comments') {{$j}}
                                                         <span class="text-g-yellow">
                                                             @for ($i = 0; $i < ($k/$j); $i++)
                                                                         <i class="fas fa-star small"></i>
@@ -647,7 +648,7 @@
                                             {{--<a href="" class="btn btn-g-yellow btn-block">Check Availability</a>--}}
                                             {{--</div>--}}
                                             <div class="col-12 col-xl mb-xl-0 mb-2">
-                                                <a href="#Inquire" class="btn btn-g-yellow btn-block font-weight-bold">INQUIRE</a>
+                                                <a href="#Inquire" class="btn btn-g-yellow btn-block font-weight-bold">@lang('home.inquire')</a>
                                             </div>
                                             {{--<div class="col-12 col-xl mb-xl-0">--}}
                                                 {{--<a href="https://fareharbor.com/embeds/book/gotoperu/items/{{$paquetes->codigo_f}}/calendar/?flow=92114" class="btn btn-g-green btn-block font-weight-bold">BOOK NOW</a>--}}
@@ -657,7 +658,7 @@
                                     <hr>
                                     <div class="card bg-light">
                                         <div class="card-body">
-                                            <h4>Destinations</h4>
+                                            <h4>@lang('itinerary.Destinations')</h4>
                                             <hr>
                                             @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
                                                 <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($paquete_destino->destinos->nombre))])}}-tours"><img src="{{asset('images/destinations/'.str_replace(' ','-', strtolower($paquete_destino->destinos->imagen)).'')}}" alt="" width="50" height="50" class="rounded-circle" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($paquete_destino->destinos->nombre))}}">
@@ -1068,13 +1069,13 @@
 
                         <div class="row justify-content-center mt-4">
                             <div class="col-3 mb-3 d-block text-center">
-                                <h3 class="text-secondary h4"><strong>Inquire</strong></h3>
+                                <h3 class="text-secondary h4"><strong>@lang('itinerary.inquire')</strong></h3>
                                 <img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="w-100">
                             </div>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-12 col-md-10 col-lg-8 text-center">
-                                <h2 class="text-secondary h1 font-weight-bold text-g-green">{{$paquetes->titulo}} {{$paquetes->duracion}} DAYS</h2>
+                                <h2 class="text-secondary h1 font-weight-bold text-g-green">{{$paquetes->titulo}} {{$paquetes->duracion}} @lang(ucwords('itinerary.days'))</h2>
                                 {{--<h5 class="text-secondary">{{$paquetes->duracion}} Days</h5>--}}
                             </div>
                         </div>
@@ -1085,7 +1086,7 @@
                                     {{csrf_field()}}
                                     <div class="row pb-2">
                                         <div class="col">
-                                            <h2 class="text-secondary h5"><strong>HOTEL CATEGORY</strong></h2>
+                                            <h2 class="text-secondary h5"><strong>@lang('itinerary.hotel_category')</strong></h2>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -1093,7 +1094,7 @@
                                             <div class="btn-group-toggle" data-toggle="buttons">
                                                 <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">
                                                     {{--<i class="fa fa-home d-block fa-2x"></i>--}}
-                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> Budget
+                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> @lang('itinerary.budget')
                                                     <div class="d-block small">
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
@@ -1105,7 +1106,7 @@
                                             <div class="btn-group-toggle" data-toggle="buttons">
                                                 <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">
                                                     {{--<i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>--}}
-                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Turista"> Best Value
+                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Turista"> @lang('itinerary.best_value')
                                                     <div class="d-block small">
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
@@ -1118,7 +1119,7 @@
                                             <div class="btn-group-toggle" data-toggle="buttons">
                                                 <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">
                                                     {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
-                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Superior"> Superior
+                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Superior"> @lang('itinerary.superior')
                                                     <div class="d-block small">
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
@@ -1132,7 +1133,7 @@
                                             <div class="btn-group-toggle" data-toggle="buttons">
                                                 <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">
                                                     {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
-                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Luxo"> Luxury
+                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Luxo"> @lang('itinerary.luxury')
                                                     <div class="d-block small">
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
@@ -1148,7 +1149,7 @@
 
                                     <div class="row mt-4 pb-2">
                                         <div class="col">
-                                            <h2 class="text-secondary h5"><strong>NUMBER OF TRAVELERS</strong></h2>
+                                            <h2 class="text-secondary h5"><strong>@lang('itinerary.number_travelers')</strong></h2>
                                         </div>
                                     </div>
 
@@ -1169,7 +1170,7 @@
                                             <input type="radio" name="number" class="number" autocomplete="off" value="5+"> 5+ <i class="fa fa-male"></i>
                                         </label>
                                         <label class="btn col ml-2 btn-outline-secondary number-hover font-weight-bold bg-light shadow">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="Undecided"><small>Undecided</small>
+                                            <input type="radio" name="number" class="number" autocomplete="off" value="Undecided"><small>@lang('itinerary.undecided')</small>
                                         </label>
                                     </div>
 
@@ -1177,7 +1178,7 @@
                                         <div class="col-12 col-sm">
                                             <div class="row pb-2">
                                                 <div class="col">
-                                                    <h2 class="text-secondary h5"><strong>TRAVEL DATE <span class="text-primary">*</span></strong></h2>
+                                                    <h2 class="text-secondary h5"><strong>@lang('itinerary.travel_date') <span class="text-primary">*</span></strong></h2>
                                                 </div>
                                             </div>
 
@@ -1196,7 +1197,7 @@
                                         <div class="col-12 col-sm mt-4 mt-sm-0">
                                             <div class="row pb-2">
                                                 <div class="col">
-                                                    <h2 class="text-secondary h5"><strong>PHONE NUMBER</strong></h2>
+                                                    <h2 class="text-secondary h5"><strong>@lang('itinerary.phone_number')</strong></h2>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -1216,7 +1217,7 @@
                                         <div class="col-12 col-sm">
                                             <div class="row mt-4 pb-2">
                                                 <div class="col">
-                                                    <h2 class="text-secondary h5"><strong>NAME <span class="text-primary">*</span></strong></h2>
+                                                    <h2 class="text-secondary h5"><strong>@lang('itinerary.name') <span class="text-primary">*</span></strong></h2>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -1233,7 +1234,7 @@
                                         <div class="col-12 col-sm">
                                             <div class="row mt-4 pb-2">
                                                 <div class="col">
-                                                    <h2 class="text-secondary h5"><strong>EMAIL <span class="text-primary">*</span></strong></h2>
+                                                    <h2 class="text-secondary h5"><strong>@lang('itinerary.email') <span class="text-primary">*</span></strong></h2>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -1251,7 +1252,7 @@
 
                                     <div class="row mt-4 pb-2">
                                         <div class="col">
-                                            <h2 class="text-secondary h5"><strong>COMMENTS?</strong></h2>
+                                            <h2 class="text-secondary h5"><strong>@lang('itinerary.comments')?</strong></h2>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -1267,7 +1268,7 @@
 
                                     <div class="row justify-content-center mt-2">
                                         <div class="col-4 my-3 text-center">
-                                            <button class="btn btn-primary btn-lg btn-next font-weight-bold btn-block" id="d_send" type="button" onclick="inquire()">Send</button>
+                                            <button class="btn btn-primary btn-lg btn-next font-weight-bold btn-block" id="d_send" type="button" onclick="inquire()">@lang('itinerary.send')</button>
                                             <i class="fas fa-spinner fa-pulse fa-2x text-primary d-none" id="loader2"></i>
                                         </div>
                                     </div>
@@ -1277,7 +1278,7 @@
                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
-                                                <b><strong>THANK YOU FOR CONTACT US</strong>, YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS. :)</b>
+                                                <b>@lang('itinerary.thank_you_for_contact')</b>
                                             </div>
                                         </div>
                                     </div>
@@ -1301,7 +1302,7 @@
             <div class="row mb-4">
                 <div class="col">
                     <div id="Reviews" class="pt-5">
-                        <h3 class="text-secondary h4"><strong>Reviews</strong></h3>
+                        <h3 class="text-secondary h4"><strong>@lang('itinerary.reviews')</strong></h3>
                         <div class="row">
                             <div class="col-12 col-md-6 col-lg-7 col-xl-8">
 
@@ -1310,8 +1311,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="alert alert-primary mb-3">
-                                            <h4 class="">{{ucwords(strtolower($paquetes->titulo))}} {{$paquetes->duracion}} Days</h4>
-                                            <small>Leave your comment too.</small>
+                                            <h4 class="">{{ucwords(strtolower($paquetes->titulo))}} {{$paquetes->duracion}} @lang('itinerary.days')</h4>
+                                            <small>@lang('itinerary.leave_your_comment').</small>
                                         </div>
                                     </div>
                                 </div>
@@ -1338,7 +1339,7 @@
 
                                 <div class="row mb-3">
                                     <div class="col text-right">
-                                        <a href="" class="btn btn-link" data-toggle="modal" data-target="#review-modal">Add Comment <i class="fa fa-plus"></i></a>
+                                        <a href="" class="btn btn-link" data-toggle="modal" data-target="#review-modal">@lang('itinerary.add_comment') <i class="fa fa-plus"></i></a>
 
                                         <!-- Modal -->
                                         <div class="modal fade" id="review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1354,35 +1355,35 @@
                                                         <div class="row">
                                                             <div class="col">
                                                                 <div class="alert alert-primary">
-                                                                    <strong>Share your experience with us.</strong>
+                                                                    <strong>@lang('itinerary.share_your_experience').</strong>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">Name <span class="text-primary">*</span></label>
+                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">@lang('itinerary.name') <span class="text-primary">*</span></label>
                                                                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">Email address <span class="text-primary">*</span></label>
+                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">@lang('itinerary.email') <span class="text-primary">*</span></label>
                                                                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">Travel Date</label>
+                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">@lang('itinerary.travel_date')</label>
                                                                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleFormControlTextarea1" class="font-weight-bold">Comment</label>
+                                                                    <label for="exampleFormControlTextarea1" class="font-weight-bold">@lang('itinerary.comments')</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col text-right">
-                                                                <a href="" class="btn btn-info"> Add Comment <i class="fa fa-plus"></i></a>
+                                                                <a href="" class="btn btn-info"> @lang('itinerary.add_comment') <i class="fa fa-plus"></i></a>
                                                             </div>
                                                         </div>
                                                         <div class="row d-none" id="alert-comment">
                                                             <div class="col">
                                                                 <div class="alert alert-success">
-                                                                    <span><strong>Thanks</strong>, your review is very important for us, it will be posted soon.</span>
+                                                                    <span>@lang('itinerary.thanks_your_review')</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1454,14 +1455,14 @@
                                 {{$precio->precio_d}}
                             @else
                                 <span class="text-danger">
-                                                                Inquire
+                                                                @lang('itinerary.inquire')
                                                             </span>
                             @endif
                         @endforeach
                         <small>USD</small></h5>
                 </div>
                 <div class="col-12 text-center text-sm-left text-md-right col-sm-3 col-md-3 col-lg text-right">
-                    <a href="#Inquire" class="btn btn-sm btn-g-yellow font-weight-bold" onclick="ideal_trip()">INQUIRE NOW</a>
+                    <a href="#Inquire" class="btn btn-sm btn-g-yellow font-weight-bold" onclick="ideal_trip()">@lang('itinerary.inquire_now')</a>
                 </div>
                 <div class="col-12 text-left text-sm-left text-md-right col-sm-2 col-md-2 col-lg-auto">
                     <button type="button" class="close p-0 float-left float-md-right" data-dismiss="alert" aria-label="Close">
