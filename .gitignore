@@ -6,6 +6,7 @@
 /vendor
 /.idea
 /.vagrant
+/config
 vendor.zip
 vendor2.zip
 node_modules2.zip
