@@ -32,7 +32,7 @@
                 </a>
             </div>
             <div class="col d-md-none d-lg-inline col-lg col-xl text-center">
-                <h5 class="font-weight-light">@lang('home.header_slogan')</h5>
+                <h5 class="font-weight-light"><img src="{{asset('images/icons/brasil.png')}}" width="30"  alt="brazil"> <img src="{{asset('images/icons/peru.png')}}" width="30"  alt="peru"> @lang('home.header_slogan')</h5>
             </div>
             <div class="col-3 col-md-6 col-lg-3 col-xl-3 text-right">
                 <a href="tel:+2029963000" class="mx-3 text-g-yellow font-weight-bold h5">+55 (11) 31982239</a>

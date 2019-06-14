@@ -1,6 +1,6 @@
 <?php
 return [
-    'header_slogan' => '<b class="font-weight-bold">GO</b> com especialistas peruanos',
+    'header_slogan' => 'Especialistas Peruanos',
     'travel_packages' => 'Travel Packages',
     'destinations' => 'Destinos',
     'testimonials' => 'Depoimentos',
