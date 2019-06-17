@@ -23,6 +23,7 @@ use App\TVuelo;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Mail;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsManager;
@@ -73,7 +74,6 @@ class HomepageController extends Controller
 
     public function index2()
     {
-
         SEOMeta::setTitle('Travel Packages to Peru | Machu Picchu Travel');
         SEOMeta::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
         SEOMeta::setCanonical('https://gotoperu.com/');
@@ -936,8 +936,18 @@ class HomepageController extends Controller
 
     public function inquire()
     {
-        $from = 'info@gotoperu.com';
-        $from2 = 'doriam@gotoperu.com';
+        if (App::isLocale('en')) {
+            $from = 'info@gotoperu.com';
+        }
+
+        if (App::isLocale('es')) {
+            $from = 'info@gotoperu.com.pe';
+        }
+
+        if (App::isLocale('pt')) {
+            $from = 'contato@gotoperu.com.br';
+        }
+//        $from2 = 'doriam@gotoperu.com';
 
         $accommodation = $_POST['txt_accommodation'];
         $number = $_POST['txt_number'];
@@ -970,10 +980,10 @@ class HomepageController extends Controller
                 'email' => $email,
                 'package' => $package,
                 'comment' => $comment
-            ], function ($messaje) use ($from, $from2) {
+            ], function ($messaje) use ($from) {
                 $messaje->to($from, 'GotoPeru')
                     ->subject('GOTOPERU')
-                    ->cc($from2, 'GotoPeru')
+//                    ->cc($from2, 'GotoPeru')
                     /*->attach('ruta')*/
                     ->from('info@gotoperu.com', 'GotoPeru');
             });
@@ -1009,8 +1019,18 @@ class HomepageController extends Controller
 
     public function contact()
     {
-        $from = 'info@gotoperu.com';
-        $from2 = 'doriam@gotoperu.com';
+        if (App::isLocale('en')) {
+            $from = 'info@gotoperu.com';
+        }
+
+        if (App::isLocale('es')) {
+            $from = 'info@gotoperu.com.pe';
+        }
+
+        if (App::isLocale('pt')) {
+            $from = 'contato@gotoperu.com.br';
+        }
+//        $from2 = 'doriam@gotoperu.com';
 
         $name = $_POST['txt_name'];
         $email = $_POST['txt_email'];
@@ -1032,10 +1052,10 @@ class HomepageController extends Controller
                 'email' => $email,
                 'phone' => $phone,
                 'comment' => $comment
-            ], function ($messaje) use ($from, $from2) {
+            ], function ($messaje) use ($from) {
                 $messaje->to($from, 'GotoPeru ES')
                     ->subject('GotoPeru')
-                    ->cc($from2, 'GotoPeru')
+//                    ->cc($from2, 'GotoPeru')
                     /*->attach('ruta')*/
                     ->from('info@gotoperu.com', 'GotoPeru');
             });
@@ -1066,8 +1086,18 @@ class HomepageController extends Controller
 
     public function design()
     {
-        $from = 'info@gotoperu.com';
-        $from2 = 'doriam@gotoperu.com';
+        if (App::isLocale('en')) {
+            $from = 'info@gotoperu.com';
+        }
+
+        if (App::isLocale('es')) {
+            $from = 'info@gotoperu.com.pe';
+        }
+
+        if (App::isLocale('pt')) {
+            $from = 'contato@gotoperu.com.br';
+        }
+//        $from2 = 'doriam@gotoperu.com';
 
         $accommodation = $_POST['txt_accommodation'];
         $destinations = $_POST['txt_destinations'];
@@ -1106,10 +1136,10 @@ class HomepageController extends Controller
                 'comment' => $comment,
                 'countryData' => $countryData,
                 'codeData' => $codeData
-            ], function ($messaje) use ($from, $from2) {
+            ], function ($messaje) use ($from) {
                 $messaje->to($from, 'GotoPeru')
                     ->subject('GotoPeru')
-                    ->cc($from2, 'GotoPeru')
+//                    ->cc($from2, 'GotoPeru')
                     /*->attach('ruta')*/
                     ->from('info@gotoperu.com', 'GotoPeru');
             });
@@ -1146,8 +1176,18 @@ class HomepageController extends Controller
 
     public function contact_s()
     {
-        $from = 'info@gotoperu.com';
-        $from2 = 'doriam@gotoperu.com';
+        if (App::isLocale('en')) {
+            $from = 'info@gotoperu.com';
+        }
+
+        if (App::isLocale('es')) {
+            $from = 'info@gotoperu.com.pe';
+        }
+
+        if (App::isLocale('pt')) {
+            $from = 'contato@gotoperu.com.br';
+        }
+//        $from2 = 'doriam@gotoperu.com';
 
         $name = $_POST['txt_name'];
         $email = $_POST['txt_email'];
@@ -1173,10 +1213,10 @@ class HomepageController extends Controller
                 'city' => $city,
                 'about' => $about,
                 'comment' => $comment
-            ], function ($messaje) use ($from, $from2) {
+            ], function ($messaje) use ($from) {
                 $messaje->to($from, 'GotoPeru')
                     ->subject('GotoPeru')
-                    ->cc($from2, 'GotoPeru')
+//                    ->cc($from2, 'GotoPeru')
                     /*->attach('ruta')*/
                     ->from('info@gotoperu.com', 'GotoPeru');
             });
