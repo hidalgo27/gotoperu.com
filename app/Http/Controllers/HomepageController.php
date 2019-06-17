@@ -1250,7 +1250,6 @@ class HomepageController extends Controller
 //        return view('page.itinerary', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos]);
     }
 
-
     public function pagenotfound()
     {
         SEOMeta::setTitle('404');
