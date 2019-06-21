@@ -8,13 +8,13 @@
                             <a href="https://www.facebook.com/GOTOPERUcom/" target="_blank"><i data-feather="facebook" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i></a>
                         </div>
                         <div class="col">
-                            <a href="https://twitter.com/GOTOPERUCOM"><i data-feather="twitter" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i></a>
+                            <a href="https://twitter.com/GOTOPERUCOM" target="_blank"><i data-feather="twitter" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i></a>
                         </div>
                         <div class="col">
-                            <a href="https://www.instagram.com/gotoperucom/"><i data-feather="instagram" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i></a>
+                            <a href="https://www.instagram.com/gotoperucom/" target="_blank"><i data-feather="instagram" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i></a>
                         </div>
                         <div class="col">
-                            <a href="https://www.youtube.com/channel/UCWjJ10j-_BfNTDnmjBug8Ng"><i data-feather="youtube" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i></a>
+                            <a href="https://www.youtube.com/channel/UCWjJ10j-_BfNTDnmjBug8Ng" target="_blank"><i data-feather="youtube" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i></a>
                         </div>
                         <div class="col">
                             <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d15202262-Reviews-Gotoperu-Cusco_Cusco_Region.html" target="_blank" class="text-white"><i class="fab fa-tripadvisor" style="font-size: 45px"></i></a>

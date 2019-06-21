@@ -20,8 +20,8 @@ return [
     'prices_per_person' => 'Precios por persona',
     'based_doble_triple_occupancy' => 'Basado en doble o triple acomodación',
     'stars' => 'Stars',
-    'based_single_occupancy' => 'Basedo en acomodación single (1 persona)',
-    'if_you_have' => '*Si tiene un hotel de preferencia en mente, sientase libre de compartirlo con nosotros. Trabajamos con la mayoría de hoteles en todo el Perú.',
+    'based_single_occupancy' => 'Basado en acomodación sinple (1 persona)',
+    'if_you_have' => '*Si tiene un hotel de preferencia, sientase libre de compartirlo con nosotros. Trabajamos con la mayoría de hoteles en todo el Perú.',
     'included' => 'Incluye',
     'not_included' => 'No Incluye',
     'from' => 'Desde',
@@ -45,6 +45,6 @@ return [
     'add_comment' => 'Añadir comentario',
     'share_your_experience' => 'Comparte tu experiencia con nosotros',
     'add_comment' => 'Añadir comentario',
-    'thanks_your_review' => '<strong>Thanks</strong>, tu reseña es super importante para nosotros, sera posteado pronto.',
+    'thanks_your_review' => '<strong>Gracias</strong>, tu reseña es super importante para nosotros, sera posteado pronto.',
     'inquire_now' => 'COTIZAR AHORA'
 ];

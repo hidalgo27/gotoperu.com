@@ -26,7 +26,9 @@
 @include('layouts.page.menu-right')
 
 
-
+@php
+    $locale = App::getLocale();
+@endphp
 <footer class="bg-g-dark">
     <img data-src="{{asset('images/footer.jpg')}}" data-srcset="{{asset('images/footer.jpg')}}" alt="footer gotoperu" class="w-100 lazy has-webp">
     <div class="container footer-logo">
@@ -134,7 +136,6 @@
         </div>
     </div>
 </footer>
-
 <script src="{{asset("js/app.js")}}"></script>
 <script src="{{asset("js/plugins.js")}}"></script>
 
@@ -491,6 +492,12 @@
         ]
     });
     feather.replace();
+
+    if ($locale == "en"){
+        alert($locale);
+    }
+
+
 </script>
 {{--<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0027/9680.js" async="async"></script>--}}
 <script async defer
