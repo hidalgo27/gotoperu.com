@@ -29,7 +29,7 @@
             <div class="col">
                 <div class="row justify-content-center">
                     <div class="col-auto">
-                        <div class="nav-tabs-wrapper sticky-top">
+                        <div class="nav-tabs-wrapper sticky-top bg-rgba-dark rounded-bottom">
                             <ul id="menu" class="nav nav-pills nav-tabs dragscroll horizontal d-sm-flex nav-itinerary">
                                 <li class="nav-item">
                                     <a class="nav-link text-white font-weight-bold rounded-0" href="tel:+56225814909"><img src="{{asset('images/icons/chile.png')}}" alt="" width="22" data-toggle="tooltip" data-placement="top" title="Chile"> +56 225814909</a>
