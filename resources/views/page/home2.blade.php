@@ -790,8 +790,8 @@
             <div class="container-fluid">
                 <div class="row mb-3">
                     <div class="col text-center">
-                        <h2 class="h1 font-weight-bold text-g-dark">Peru Authentic Experiences</h2>
-                        <a href="{{route('gallery_path')}}" class="font-weight-bold">See our publications</a>
+                        <h2 class="h1 font-weight-bold text-g-dark">@lang('home.peru_authentic_experiences')</h2>
+                        <a href="{{route('gallery_path')}}" class="font-weight-bold">@lang('home.see_our_publications')</a>
                     </div>
                 </div>
                 <div class="row">
