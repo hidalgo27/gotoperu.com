@@ -44,9 +44,6 @@
                                     <a class="nav-link text-white font-weight-bold rounded-0" href="tel:+541151990581"><img src="{{asset('images/icons/argentina.png')}}" alt="" width="22" data-toggle="tooltip" data-placement="top" title="Argentina"> +54 11 5199-0581</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white font-weight-bold rounded-0" href="tel:+5184206931"><img src="{{asset('images/icons/peru.png')}}" alt="" width="22" data-toggle="tooltip" data-placement="top" title="Perú"> +51 84 206931</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link text-white font-weight-bold rounded-0" href="tel:+5078365248"><img src="{{asset('images/icons/panama.png')}}" alt="" width="22" data-toggle="tooltip" data-placement="top" title="Panamá"> +507 836-5248</a>
                                 </li>
                             </ul>
