@@ -67,10 +67,12 @@
                 </a>
             </div>
             <div class="col d-md-none d-lg-inline col-lg col-xl text-center">
+                @if (App::getLocale() == "pt")
                 <h5 class="font-weight-light"><img src="{{asset('images/icons/brasil.png')}}" width="30"  alt="brazil"> <img src="{{asset('images/icons/peru.png')}}" width="30"  alt="peru"> @lang('home.header_slogan')</h5>
+                @endif
             </div>
             <div class="col-3 col-md-6 col-lg-3 col-xl-3 text-right">
-                <a href="tel:+2029963000" class="mx-3 text-g-yellow font-weight-bold h5">+55 (11) 31982239</a>
+                <a href="tel:+2029963000" class="mx-3 text-g-yellow font-weight-bold h5"><img src="{{asset('images/icons/peru.png')}}" alt="" width="25" data-toggle="tooltip" data-placement="top" title="Perú"> +55 (11) 31982239</a>
                 <a href="#" class="text-white"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars fa-2x"></i></a>
             </div>
         </div>
