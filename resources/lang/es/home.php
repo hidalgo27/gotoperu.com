@@ -38,7 +38,7 @@ return [
     'tours' => 'Tours',
     'trains' => 'Trenes',
     'transfers' => 'Traslados',
-    'looking_travel_experience' => 'Buscando',
+    'looking_travel_experience' => 'Buscando la mejor experiencia de viaje',
     'looking_travel_experience_p' => 'No matter the type of adventure you are seeking, GOTOPERU has a trip for you. Hoping to see Llamas? Check! Want an active Inca Trail hiking trip? Check! , How about a Ceviche in Lima? Check!  , How about a trip for you, your kiddos, and Grandma and Grandpa?',
     'view_all_category' => 'Ver todas las categorias',
     'why_with_gotoperu' => 'Porque <span class="text-g-yellow">Go</span>  escoger Gotoperu',
