@@ -14696,6 +14696,43 @@ header {
   background-color: #7F8429;
 }
 
+.nav-tabs-wrapper {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -1px;
+}
+
+.nav-tabs-wrapper .nav-tabs {
+  overflow-x: auto;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  border-bottom: 0;
+}
+
+.nav-tabs-wrapper .nav-item {
+  margin-bottom: 0;
+}
+
+.nav-tabs-wrapper .nav-item:first-child {
+  padding-left: 15px;
+}
+
+.nav-tabs-wrapper .nav-item:last-child {
+  padding-right: 15px;
+}
+
+.nav-tabs-wrapper .nav-link {
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.nav-tabs-wrapper .dragscroll:active,
+.nav-tabs-wrapper .dragscroll:active a {
+  cursor: -webkit-grabbing;
+}
+
 .modal.left .modal-dialog,
 .modal.right .modal-dialog {
   position: fixed;

@@ -1,6 +1,6 @@
 <?php
 return [
-    'header_slogan' => '<b class="font-weight-bold">Expertos</b>Operadores locales (Peruanos)',
+    'header_slogan' => '<b class="font-weight-bold">Expertos</b> Operadores locales (Peruanos)',
     'travel_packages' => 'Paquetes de Viaje',
     'destinations' => 'Destinos',
     'testimonials' => 'Testimonios',

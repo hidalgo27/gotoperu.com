@@ -20,8 +20,43 @@
     {{--</div>--}}
 {{--</div>--}}
 
+
 <div id="title" class="text-white">
     <div class="container-fluid">
+
+        @if (App::getLocale() == "es")
+        <div class="row align-items-center text-center small">
+            <div class="col">
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <div class="nav-tabs-wrapper sticky-top">
+                            <ul id="menu" class="nav nav-pills nav-tabs dragscroll horizontal d-sm-flex nav-itinerary">
+                                <li class="nav-item">
+                                    <a class="nav-link text-white font-weight-bold rounded-0" href="tel:+56225814909"><img src="{{asset('images/icons/chile.png')}}" alt="" width="22" data-toggle="tooltip" data-placement="top" title="Chile"> +56 225814909</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white font-weight-bold rounded-0" href="tel:+523341625836"><img src="{{asset('images/icons/mexico.png')}}" alt="" width="22" data-toggle="tooltip" data-placement="top" title="México"> +52 3341625836</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white font-weight-bold rounded-0" href="tel:+5713819310"><img src="{{asset('images/icons/colombia.png')}}" alt="" width="22" data-toggle="tooltip" data-placement="top" title="Colombia"> +57 1 3819310</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white font-weight-bold rounded-0" href="tel:+541151990581"><img src="{{asset('images/icons/argentina.png')}}" alt="" width="22" data-toggle="tooltip" data-placement="top" title="Argentina"> +54 11 5199-0581</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white font-weight-bold rounded-0" href="tel:+5184206931"><img src="{{asset('images/icons/peru.png')}}" alt="" width="22" data-toggle="tooltip" data-placement="top" title="Perú"> +51 84 206931</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white font-weight-bold rounded-0" href="tel:+5078365248"><img src="{{asset('images/icons/panama.png')}}" alt="" width="22" data-toggle="tooltip" data-placement="top" title="Panamá"> +507 836-5248</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+
         <div class="row align-items-center justify-content-between my-2">
             <div class="col-3 col-md-4 col-lg-4 col-xl-3">
                 <a href="{{route('home_path')}}">
