@@ -14725,7 +14725,6 @@ header {
 
 .nav-tabs-wrapper .nav-link {
   white-space: nowrap;
-  background: rgba(0, 0, 0, 0.5);
 }
 
 .nav-tabs-wrapper .dragscroll:active,
