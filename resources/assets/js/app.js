@@ -26,5 +26,5 @@ window.Vue = require('vue');
 //     el: '#app'
 // });
 
-$('#datepicker').datepicker();
-$('#h_date').datepicker();
+// $('#datepicker').datepicker();
+// $('#h_date').datepicker();

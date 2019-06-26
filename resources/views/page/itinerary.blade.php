@@ -1188,7 +1188,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
                                                         </div>
-                                                        <input type="text" class="form-control" id="d_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
+                                                        <input type="text" class="form-control datepicker" id="d_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
                                                     </div>
                                                 </div>
                                             </div>
@@ -1569,11 +1569,11 @@
                 }
             }
 
-            $('#d_date').datepicker({
-                dateFormat: 'mm-dd-y',
-                changeMonth: true,
-                changeYear: true
-            });
+            // $('#d_date').datepicker({
+            //     dateFormat: 'mm-dd-y',
+            //     changeMonth: true,
+            //     changeYear: true
+            // });
 
 
             $(document).ready(function() {

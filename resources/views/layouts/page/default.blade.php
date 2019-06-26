@@ -418,8 +418,8 @@
         // $('#de_alert').removeClass('d-none');
     }
 
-    $('#h_date').datepicker({
-        dateFormat: 'mm-dd-y',
+    $('.datepicker').datepicker({
+        dateFormat: 'dd-mm-yy',
         changeMonth: true,
         changeYear: true
     });

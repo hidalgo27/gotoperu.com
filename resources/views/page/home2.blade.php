@@ -1369,11 +1369,11 @@
                 }
             }
 
-            $('#d_date').datepicker({
-                dateFormat: 'mm-dd-y',
-                changeMonth: true,
-                changeYear: true
-            });
+            // $('#d_date').datepicker({
+            //     dateFormat: 'mm-dd-y',
+            //     changeMonth: true,
+            //     changeYear: true
+            // });
 
         </script>
 

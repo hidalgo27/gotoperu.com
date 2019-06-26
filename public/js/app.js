@@ -13985,8 +13985,8 @@ window.Vue = __webpack_require__(40);
 //     el: '#app'
 // });
 
-__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#datepicker').datepicker();
-__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#h_date').datepicker();
+// $('#datepicker').datepicker();
+// $('#h_date').datepicker();
 
 /***/ }),
 /* 14 */

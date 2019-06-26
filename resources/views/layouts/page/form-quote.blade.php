@@ -285,7 +285,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
                                                         </div>
-                                                        <input type="text" class="form-control" id="h_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
+                                                        <input type="text" class="form-control datepicker" id="h_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
                                                     </div>
                                                 </div>
                                             </div>
