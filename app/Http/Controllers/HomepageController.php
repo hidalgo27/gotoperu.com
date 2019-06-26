@@ -964,7 +964,7 @@ class HomepageController extends Controller
 
         $mi_fecha = str_replace("/", "-", $date_txt);
         $Nueva_Fecha = date("d-m-Y", strtotime($mi_fecha));
-        $date = strftime("%A, %d de %B de %Y", strtotime($Nueva_Fecha));
+        $date = strftime("%d %B %Y", strtotime($Nueva_Fecha));
 
 
         try {
@@ -1123,7 +1123,7 @@ class HomepageController extends Controller
 
         $mi_fecha = str_replace("/", "-", $date_txt);
         $Nueva_Fecha = date("d-m-Y", strtotime($mi_fecha));
-        $date = strftime("%A, %d de %B de %Y", strtotime($Nueva_Fecha));
+        $date = strftime("%d %B %Y", strtotime($Nueva_Fecha));
         //devuelve: lunes, 16 de abril de 2018
 
         try {
