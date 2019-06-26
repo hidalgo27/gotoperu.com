@@ -960,6 +960,12 @@ class HomepageController extends Controller
 
         $comment = $_POST['txt_comment'];
 
+        setlocale(LC_TIME,"es_PE");
+        $mi_fecha = $date;
+        $mi_fecha = str_replace("/", "-", $mi_fecha);
+        $Nueva_Fecha = date("d-m-Y", strtotime($mi_fecha));
+        $date = strftime("%A, %d de %B de %Y", strtotime($Nueva_Fecha));
+
 
         try {
             Mail::send(['html' => 'notifications.page.client-form-design'], ['name' => $name], function ($messaje) use ($email, $name) {
@@ -1112,6 +1118,14 @@ class HomepageController extends Controller
         $comment = $_POST['txt_comment'];
         $countryData = $_POST['txt_countryData'];
         $codeData = $_POST['txt_codeData'];
+
+        setlocale(LC_TIME,"es_PE");
+        $mi_fecha = $date;
+        $mi_fecha = str_replace("/", "-", $mi_fecha);
+        $Nueva_Fecha = date("d-m-Y", strtotime($mi_fecha));
+        $date = strftime("%A, %d de %B de %Y", strtotime($Nueva_Fecha));
+        //devuelve: lunes, 16 de abril de 2018
+//        echo $Mes_Anyo;
 
         try {
             Mail::send(['html' => 'notifications.page.client-form-design'], ['name' => $name], function ($messaje) use ($email, $name) {
