@@ -936,7 +936,6 @@ class HomepageController extends Controller
 
     public function inquire()
     {
-        setlocale(LC_TIME,"es_PE");
         if (App::isLocale('en')) {
             $from = 'info@gotoperu.com';
         }
@@ -950,6 +949,8 @@ class HomepageController extends Controller
         }
 //        $from2 = 'doriam@gotoperu.com';
 
+        setlocale(LC_TIME,"es_PE");
+
         $accommodation = $_POST['txt_accommodation'];
         $number = $_POST['txt_number'];
 
@@ -961,7 +962,6 @@ class HomepageController extends Controller
 
         $comment = $_POST['txt_comment'];
 
-        setlocale(LC_TIME,"es_PE");
         $mi_fecha = str_replace("/", "-", $date);
         $Nueva_Fecha = date("d-m-Y", strtotime($mi_fecha));
         $date = strftime("%A, %d de %B de %Y", strtotime($Nueva_Fecha));
