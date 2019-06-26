@@ -954,7 +954,7 @@ class HomepageController extends Controller
         $accommodation = $_POST['txt_accommodation'];
         $number = $_POST['txt_number'];
 
-        $date = $_POST['txt_date'];
+        $date_txt = $_POST['txt_date'];
         $tel = $_POST['txt_tel'];
         $name = $_POST['txt_name'];
         $email = $_POST['txt_email'];
@@ -962,7 +962,7 @@ class HomepageController extends Controller
 
         $comment = $_POST['txt_comment'];
 
-        $mi_fecha = str_replace("/", "-", $date);
+        $mi_fecha = str_replace("/", "-", $date_txt);
         $Nueva_Fecha = date("d-m-Y", strtotime($mi_fecha));
         $date = strftime("%A, %d de %B de %Y", strtotime($Nueva_Fecha));
 
@@ -1113,7 +1113,7 @@ class HomepageController extends Controller
         $number_t = $_POST['txt_number_t'];
         $duration = $_POST['txt_duration'];
         $duration_t = $_POST['txt_duration_t'];
-        $date = $_POST['txt_date'];
+        $date_txt = $_POST['txt_date'];
         $tel = $_POST['txt_tel'];
         $name = $_POST['txt_name'];
         $email = $_POST['txt_email'];
@@ -1121,7 +1121,7 @@ class HomepageController extends Controller
         $countryData = $_POST['txt_countryData'];
         $codeData = $_POST['txt_codeData'];
 
-        $mi_fecha = str_replace("/", "-", $date);
+        $mi_fecha = str_replace("/", "-", $date_txt);
         $Nueva_Fecha = date("d-m-Y", strtotime($mi_fecha));
         $date = strftime("%A, %d de %B de %Y", strtotime($Nueva_Fecha));
         //devuelve: lunes, 16 de abril de 2018
