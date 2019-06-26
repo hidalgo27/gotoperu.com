@@ -14483,11 +14483,12 @@ header {
   background: #fff;
   background-size: cover;
   bottom: 0;
-  height: auto;
+  height: 100vh;
   -webkit-perspective: 1000;
           perspective: 1000;
   position: fixed;
   right: 0;
+  min-width: 100%;
   z-index: -1;
 }
 
@@ -14693,6 +14694,42 @@ header {
   border-bottom: 3px solid #000000;
   color: #FFFFFF !important;
   background-color: #7F8429;
+}
+
+.nav-tabs-wrapper {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -1px;
+}
+
+.nav-tabs-wrapper .nav-tabs {
+  overflow-x: auto;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  border-bottom: 0;
+}
+
+.nav-tabs-wrapper .nav-item {
+  margin-bottom: 0;
+}
+
+.nav-tabs-wrapper .nav-item:first-child {
+  padding-left: 15px;
+}
+
+.nav-tabs-wrapper .nav-item:last-child {
+  padding-right: 15px;
+}
+
+.nav-tabs-wrapper .nav-link {
+  white-space: nowrap;
+}
+
+.nav-tabs-wrapper .dragscroll:active,
+.nav-tabs-wrapper .dragscroll:active a {
+  cursor: -webkit-grabbing;
 }
 
 .modal.left .modal-dialog,

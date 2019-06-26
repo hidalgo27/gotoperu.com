@@ -53,8 +53,8 @@
         <div class="container">
             <div class="row py-4">
                 <div class="col">
-                    <h1 class="text-g-yellow font-weight-bold text-center">PERU TRAVEL <span class="text-g-green">FEATURED PACKAGES</span></h1>
-                    <p class="lead m-0">our most popular <b>Peru and South America itineraries</b>, these <strong>packages</strong> could be used as a reference to customize your own trip. At <strong>GOTOPERU</strong> we specialize in crafting personalize experiences based on your preferences; we invited to review these programs to have glimpse of the most important destinations for instance MachuPicchu, Lake Titicaca, Nazca and the Amazon and even multi countries travel adventures involving <strong>Brasil, Ecuador , Argentina.</strong></p>
+                    <h1 class="text-g-yellow font-weight-bold text-center">@lang('package.h1')</h1>
+                    <p class="lead m-0">@lang('package.h1_p')</p>
                     {{--<div class="alert alert-g-yellow text-center m-0" role="alert">--}}
                         {{--<h4>And even multi countries travel adventures involving Brasil, Ecuador , Argentina.</h4>--}}
                     {{--</div>--}}
@@ -70,19 +70,19 @@
         <div class="container">
             <div class="row sticky-top d-none d-sm-flex">
                 <div class="col">
-                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['3', '5'])}}">3-5 <span class="text-g-yellow font-weight-bold">days</span></a>
+                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['3', '5'])}}">3-5 <span class="text-g-yellow font-weight-bold">@lang('package.days')</span></a>
                 </div>
                 <div class="col">
-                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['6', '8'])}}">6-8 <span class="text-g-yellow font-weight-bold">days</span></a>
+                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['6', '8'])}}">6-8 <span class="text-g-yellow font-weight-bold">@lang('package.days')</span></a>
                 </div>
                 <div class="col">
-                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['9', '11'])}}">9-11 <span class="text-g-yellow font-weight-bold">days</span></a>
+                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['9', '11'])}}">9-11 <span class="text-g-yellow font-weight-bold">@lang('package.days')</span></a>
                 </div>
                 <div class="col">
-                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['12', '15'])}}">12-15 <span class="text-g-yellow font-weight-bold">days</span></a>
+                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['12', '15'])}}">12-15 <span class="text-g-yellow font-weight-bold">@lang('package.days')</span></a>
                 </div>
                 <div class="col">
-                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['16', '30'])}}">16+ <span class="text-g-yellow font-weight-bold">days</span></a>
+                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['16', '30'])}}">16+ <span class="text-g-yellow font-weight-bold">@lang('package.days')</span></a>
                 </div>
             </div>
 
@@ -93,7 +93,7 @@
                                         <div class="row align-items-center no-gutters">
                                             <div class="col-12 col-sm-7">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/mapas/'.$paquete_categorias->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                    <img src="{{asset('images/mapas/'.$paquete_categorias->paquete->imagen.'')}}" alt="" class="w-100 rounded-left">
                                                     <div class="position-absolute-bottom p-2 text-center">
                                                         <span class="small font-weight-bold badge badge-g-yellow shadow">{{$paquete_categorias->categoria->nombre}}</span>
                                                     </div>
@@ -102,18 +102,18 @@
                                             <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                 <div class="px-3">
                                                     <h2 class="h6 font-weight-bold">{{$paquete_categorias->paquete->titulo}}</h2>
-                                                    <small class="text-muted font-weight-bold">{{$paquete_categorias->paquete->duracion}} days</small>
+                                                    <small class="text-muted font-weight-bold">{{$paquete_categorias->paquete->duracion}} @lang('package.days')</small>
                                                     @foreach($paquete_categorias->paquete->precio_paquetes as $precio)
                                                         @if($precio->estrellas == 2)
                                                             @if($precio->precio_d > 0)
 {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                 <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
                                                             @else
-                                                                <span class="text-danger">Inquire</span>
+                                                                <span class="text-danger">@lang('package.inquire')</span>
                                                             @endif
                                                         @endif
                                                     @endforeach
-                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete_categorias->paquete->titulo)), $paquete_categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete_categorias->paquete->titulo)), $paquete_categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block">@lang('package.inquire')</a>
                                                     {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}
                                                 </div>
                                             </div>

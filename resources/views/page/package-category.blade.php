@@ -21,7 +21,7 @@
                     <div class="col">
 
                         <div class="row my-3 justify-content-center text-white font-weight-bold h2">
-                            PERU TRAVEL PACKAGES BY CATEGORY
+                            @lang('package.peru_travel_packages_category')
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
@@ -53,8 +53,8 @@
         <div class="container">
             <div class="row py-4">
                 <div class="col">
-                    <h1 class="text-g-yellow font-weight-bold text-center">PERU TRAVEL <span class="text-g-green">PACKAGES BY CATEGORY</span></h1>
-                    <p class="lead m-0">our most popular <b>Peru and South America itineraries</b>, these <strong>packages</strong> could be used as a reference to customize your own trip. At <strong>GOTOPERU</strong> we specialize in crafting personalize experiences based on your preferences; we invited to review these programs to have glimpse of the most important destinations for instance MachuPicchu, Lake Titicaca, Nazca and the Amazon and even multi countries travel adventures involving <strong>Brasil, Ecuador , Argentina.</strong></p>
+                    <h1 class="text-g-yellow font-weight-bold text-center">@lang('package.peru_travel_packages_category')</h1>
+                    <p class="lead m-0">@lang('package.h1_p')</p>
                     {{--<div class="alert alert-g-yellow text-center m-0" role="alert">--}}
                     {{--<h4>And even multi countries travel adventures involving Brasil, Ecuador , Argentina.</h4>--}}
                     {{--</div>--}}

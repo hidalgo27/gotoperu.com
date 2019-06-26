@@ -8,13 +8,13 @@
                             <a href="https://www.facebook.com/GOTOPERUcom/" target="_blank"><i data-feather="facebook" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i></a>
                         </div>
                         <div class="col">
-                            <a href="https://twitter.com/GOTOPERUCOM"><i data-feather="twitter" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i></a>
+                            <a href="https://twitter.com/GOTOPERUCOM" target="_blank"><i data-feather="twitter" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i></a>
                         </div>
                         <div class="col">
-                            <a href="https://www.instagram.com/gotoperucom/"><i data-feather="instagram" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i></a>
+                            <a href="https://www.instagram.com/gotoperucom/" target="_blank"><i data-feather="instagram" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i></a>
                         </div>
                         <div class="col">
-                            <a href="https://www.youtube.com/channel/UCWjJ10j-_BfNTDnmjBug8Ng"><i data-feather="youtube" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i></a>
+                            <a href="https://www.youtube.com/channel/UCWjJ10j-_BfNTDnmjBug8Ng" target="_blank"><i data-feather="youtube" class="text-white d-block mx-auto" width="45" height="45" stroke-width="1"></i></a>
                         </div>
                         <div class="col">
                             <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d15202262-Reviews-Gotoperu-Cusco_Cusco_Region.html" target="_blank" class="text-white"><i class="fab fa-tripadvisor" style="font-size: 45px"></i></a>
@@ -45,8 +45,8 @@
                         </picture>
                     </div>
                     <div class="col col-sm-12 text-center">
-                        <h2 class="h1 font-weight-bold text-g-dark mb-3">TRAVEL INQUIRE</h2>
-                        <p class="lead text-muted font-weight-bold text-center">Help us design your perfect Peru vacation & Receive in 24hrs the first itineraries & quotes.</p>
+                        <h2 class="h1 font-weight-bold text-g-dark mb-3">@lang('home.travel_inquire')</h2>
+                        <p class="lead text-muted font-weight-bold text-center">@lang('home.travel_inquire_p')</p>
                     </div>
                 </div>
                 <form id="h_form" role="form">
@@ -55,14 +55,14 @@
                         <div class="col-12 col-md">
                             <div class="row pb-2">
                                 <div class="col">
-                                    <h2 class="text-secondary h5"><strong>HOTEL CATEGORY</strong></h2>
+                                    <h2 class="text-secondary h5"><strong>@lang('home.hotel_category')</strong></h2>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-6 col-sm-3 col-md-6 col-sm col-xl mb-2 mb-sm-0 mb-md-2">
                                     <div class="btn-group-toggle" data-toggle="buttons">
                                         <label class="col btn btn-outline-secondary bg-light shadow font-weight-bold text-secondary number-hover">
-                                            <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> Budget
+                                            <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> @lang('home.budget')
                                             <div class="d-block small">
                                                 <i class="fa fa-star text-g-yellow small"></i>
                                                 <i class="fa fa-star text-g-yellow small"></i>
@@ -75,7 +75,7 @@
                                         {{--<label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">--}}
                                         {{--<i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>--}}
                                         <label class="col btn btn-outline-secondary bg-light shadow font-weight-bold text-secondary number-hover">
-                                            <input type="checkbox" autocomplete="off" name="accommodation[]" value="Turista"> Best Value
+                                            <input type="checkbox" autocomplete="off" name="accommodation[]" value="Turista"> @lang('home.best_value')
                                             <div class="d-block small">
                                                 <i class="fa fa-star text-g-yellow small"></i>
                                                 <i class="fa fa-star text-g-yellow small"></i>
@@ -95,7 +95,7 @@
                                         {{--<label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">--}}
                                         {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
                                         <label class="col btn btn-outline-secondary bg-light shadow font-weight-bold text-secondary number-hover">
-                                            <input type="checkbox" autocomplete="off" name="accommodation[]" value="Superior"> Superior
+                                            <input type="checkbox" autocomplete="off" name="accommodation[]" value="Superior"> @lang('home.superior')
                                             <div class="d-block small">
                                                 <i class="fa fa-star text-g-yellow small"></i>
                                                 <i class="fa fa-star text-g-yellow small"></i>
@@ -110,7 +110,7 @@
                                         {{--<label class="btn btn-outline-secondary btn-block rounded-circle py-3 popover-hover position-relative">--}}
                                         {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
                                         <label class="col btn btn-outline-secondary bg-light shadow font-weight-bold text-secondary number-hover">
-                                            <input type="checkbox" autocomplete="off" name="accommodation[]" value="Luxo"> Luxury
+                                            <input type="checkbox" autocomplete="off" name="accommodation[]" value="Luxo"> @lang('home.luxury')
                                             <div class="d-block small">
                                                 <i class="fa fa-star text-g-yellow small"></i>
                                                 <i class="fa fa-star text-g-yellow small"></i>
@@ -125,7 +125,7 @@
 
                             <div class="row mt-4 pb-2">
                                 <div class="col">
-                                    <h2 class="text-secondary h5"><strong>DESTINATIONS</strong></h2>
+                                    <h2 class="text-secondary h5"><strong>@lang('home.destinations')</strong></h2>
                                 </div>
                             </div>
 
@@ -180,7 +180,7 @@
 
                             <div class="row mt-4 pb-2">
                                 <div class="col">
-                                    <h2 class="text-secondary h5"><strong>NUMBER OF TRAVELERS</strong></h2>
+                                    <h2 class="text-secondary h5"><strong>@lang('home.number_travelers')</strong></h2>
                                 </div>
                             </div>
 
@@ -208,25 +208,25 @@
 
                             <div class="row mt-4 pb-2">
                                 <div class="col">
-                                    <h2 class="text-secondary h5"><strong>TRIP LENGTH</strong></h2>
+                                    <h2 class="text-secondary h5"><strong>@lang('home.trip_length')</strong></h2>
                                 </div>
                             </div>
 
                             <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
                                 <label class="btn col-4 col-sm col-md-4 col-xl mb-2 mb-sm-0  mb-md-2 btn-outline-secondary duration_ch number-hover font-weight-bold bg-light">
-                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="3-5" checked> 3-5 <span class="text-g-yellow small font-weight-bold">Days</span>
+                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="3-5" checked> 3-5 <span class="text-g-yellow small font-weight-bold">@lang('home.days')</span>
                                 </label>
                                 <label class="btn col-4 col-sm col-md-4 col-xl mx-sm-2 mx-xl-2 mx-md-0 mb-2 mb-sm-0 mb-md-2  btn-outline-secondary duration_ch number-hover font-weight-bold bg-light">
-                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="6-8"> 6-8 <span class="text-g-yellow font-weight-bold small">Days</span>
+                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="6-8"> 6-8 <span class="text-g-yellow font-weight-bold small">@lang('home.days')</span>
                                 </label>
                                 <label class="btn col-4 col-sm col-md-4 col-xl mb-2 mb-sm-0 mb-md-2  btn-outline-secondary duration_ch number-hover font-weight-bold bg-light">
-                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="9-11"> 9-11 <span class="text-g-yellow font-weight-bold small">Days</span>
+                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="9-11"> 9-11 <span class="text-g-yellow font-weight-bold small">@lang('home.days')</span>
                                 </label>
                                 <label class="btn col-4 col-sm col-md-4 col-xl mb-2 mb-sm-0 mb-md-2  btn-outline-secondary mx-xl-2 duration_ch number-hover font-weight-bold bg-light">
-                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="12-15"> 12-15 <span class="text-g-yellow font-weight-bold small">Days</span>
+                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="12-15"> 12-15 <span class="text-g-yellow font-weight-bold small">@lang('home.days')</span>
                                 </label>
                                 <label class="btn col-4 col-sm col-md-4 col-xl mb-2 mb-sm-0 mb-md-2  btn-outline-secondary duration_ch number-hover font-weight-bold bg-light">
-                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="16+"> 16+ <span class="text-g-yellow font-weight-bold small">Days</span>
+                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="16+"> 16+ <span class="text-g-yellow font-weight-bold small">@lang('home.days')</span>
                                 </label>
                                 <div class="col-4 col-sm col-md-4 col-xl input-group ml-sm-2 ml-md-0 ml-xl-2">
                                     <input type="text" class="form-control duration number_place font-weight-bold" name="duration" id="h_duration" placeholder="Specify" aria-label="Full Name" aria-describedby="basic-addon1" onfocus="estado()">
@@ -239,7 +239,7 @@
 
                                     <div class="row pb-2">
                                         <div class="col">
-                                            <h2 class="text-secondary h5"><strong>NAME <span class="text-primary">*</span></strong></h2>
+                                            <h2 class="text-secondary h5"><strong>@lang('home.name') <span class="text-primary">*</span></strong></h2>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -255,7 +255,7 @@
 
                                     <div class="row pb-2 mt-4">
                                         <div class="col">
-                                            <h2 class="text-secondary h5"><strong>EMAIL <span class="text-primary">*</span></strong></h2>
+                                            <h2 class="text-secondary h5"><strong>@lang('home.email') <span class="text-primary">*</span></strong></h2>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -275,7 +275,7 @@
                                         <div class="col-12 col-sm col-md-12 col-lg-6">
                                             <div class="row">
                                                 <div class="col">
-                                                    <h2 class="text-secondary h5"><strong>TRAVEL DATE</strong></h2>
+                                                    <h2 class="text-secondary h5"><strong>@lang('home.travel_date')</strong></h2>
                                                 </div>
                                             </div>
 
@@ -293,7 +293,7 @@
                                         <div class="col-12 mt-4 mt-sm-0 col-sm col-md-12 mt-md-4 col-lg-6 mt-lg-0">
                                             <div class="row">
                                                 <div class="col">
-                                                    <h2 class="text-secondary h5"><strong>PHONE NUMBER</strong></h2>
+                                                    <h2 class="text-secondary h5"><strong>@lang('home.phone_number')</strong></h2>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -307,7 +307,7 @@
                                     </div>
                                     <div class="row mt-4 pb-2">
                                         <div class="col">
-                                            <h2 class="text-secondary h5"><strong>COMMENTS?</strong></h2>
+                                            <h2 class="text-secondary h5"><strong>@lang('home.comments')</strong></h2>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -330,7 +330,7 @@
                         <div class="col-4 text-center">
                             {{--<input type='button' class='btn btn-lg button-previous' name='previous' value='Previous' id="previus_tip" onclick="dnext(0)"/>--}}
                             {{--<input type='button' class='btn btn-lg btn-g-green button-next' name='next' value='Next' id="next_tip" onclick="dnext(1)"/>--}}
-                            <button type="button" class="btn btn-lg btn-g-green btn-block font-weight-bold" id="submit_tip" onclick="design()">Submit</button>
+                            <button type="button" class="btn btn-lg btn-g-green btn-block font-weight-bold" id="submit_tip" onclick="design()">@lang('home.submit')</button>
                             <i class="fas fa-spinner fa-pulse fa-2x text-primary d-none" id="h_load"></i>
                         </div>
                     </div>
@@ -347,7 +347,7 @@
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <b><strong>THANK YOU FOR CONTACT US</strong>, YOU WILL RECEIVE A REPLY IN LESS THAN 24 HOURS. :)</b>
+                                <b>@lang('home.thank_you_for_contact_us')</b>
                             </div>
                         </div>
                     </div>

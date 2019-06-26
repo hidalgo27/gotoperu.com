@@ -8,7 +8,7 @@
         <div class="toast bg-primary fixed-top" role="alert" aria-live="polite" aria-atomic="true" data-delay="10000" style="left: auto; top: 55px; right: 10px;">
             <div class="toast-header">
                 <span data-feather="alert-circle" class="text-success mr-2"></span>
-                <strong class="mr-auto">Destination</strong>
+                <strong class="mr-auto">Category</strong>
                 <small>
                     @php
                         date_default_timezone_set('America/Lima');
@@ -24,26 +24,6 @@
             </div>
         </div>
     @endif
-    @if (session('delete'))
-        <div class="toast bg-danger fixed-top" role="alert" aria-live="polite" aria-atomic="true" data-delay="10000" style="left: auto; top: 55px; right: 10px;">
-            <div class="toast-header">
-                <span data-feather="alert-circle" class="text-success mr-2"></span>
-                <strong class="mr-auto">Video</strong>
-                <small>
-                    @php
-                        date_default_timezone_set('America/Lima');
-                        echo date ("l m Y");
-                    @endphp
-                </small>
-                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="toast-body font-weight-bold text-white">
-                {{ session('delete') }}
-            </div>
-        </div>
-    @endif
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <section>
             <div class="container">
@@ -52,7 +32,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb small font-weight-bold p-0 m-0 bg-white">
                                 <li class="breadcrumb-item"><a href="#">1. Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">All Packages</li>
+                                <li class="breadcrumb-item active" aria-current="page">Category Edit</li>
                             </ol>
                         </nav>
                     </div>
@@ -60,125 +40,123 @@
             </div>
         </section>
     </div>
-    @foreach($destinations as $destination)
-        <form action="{{route('admin_destinations_update_path', $destination->id)}}" method="post">
+@foreach($categoria as $categorias)
+        <form action="{{route('admin_category_update_path', $categorias->id)}}" method="post">
             @csrf
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <label class="font-weight-bold text-secondary small" for="txt_destination">Destination</label>
-                        <input type="text" name="txt_destination" class="form-control font-weight-bold" id="txt_destination" placeholder="" value="{{$destination->nombre}}">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label class="font-weight-bold text-secondary small" for="txt_country">Country</label>
-                        <input type="text" name="txt_country" class="form-control font-weight-bold" id="txt_country" value="{{$destination->pais}}">
+                        <label class="font-weight-bold text-secondary small" for="txt_category">Name</label>
+                        <input type="text" name="txt_category" class="form-control font-weight-bold" id="txt_category" placeholder="" value="{{$categorias->nombre}}">
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <h3 class="font-weight-bold text-secondary small">Short</h3>
+                    <h3 class="font-weight-bold text-secondary small">Description</h3>
                     <div class="form-group">
-                        <textarea class="textarea-package" name="txta_short">{{$destination->resumen}}</textarea>
+                        <textarea class="textarea-package" name="txta_descripcion">{{$categorias->descripcion}}</textarea>
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col">
-                    <h3 class="font-weight-bold text-secondary small">Extended</h3>
                     <div class="form-group">
-                        <textarea class="textarea-package" name="txta_extended">{{$destination->descripcion}}</textarea>
+                        <label for="slc_group" class="font-weight-bold text-secondary small">Select Group</label>
+                        <select class="form-control" id="slc_group" name="slc_group">
+                            <option value="1" class="text-g-yellow font-weight-bold" @if ($categorias->grupo == 1) selected @endif>Yellow</option>
+                            <option value="2" class="text-g-green font-weight-bold" @if ($categorias->grupo == 2) selected @endif>Green</option>
+                            {{--<option value="3">Grey</option>--}}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold text-secondary small" for="txt_destination">First Panel</label>
+                        <input type="checkbox" data-toggle="toggle" data-size="xs" @if ($categorias->estado == 1) checked @endif name="chk_order" value="1">
                     </div>
                 </div>
             </div>
+
+
             <div class="row">
                 <div class="col">
-                    <h3 class="font-weight-bold text-secondary small">History</h3>
                     <div class="form-group">
-                        <textarea class="textarea-package" name="txta_history">{{$destination->historia}}</textarea>
+                        <label class="font-weight-bold text-secondary small" for="txt_destination">First Block</label>
+                        <input type="checkbox" data-toggle="toggle" data-size="xs" @if ($categorias->orden_block == 1) checked @endif name="chk_order_block" value="1">
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <h3 class="font-weight-bold text-secondary small">Geography</h3>
-                    <div class="form-group">
-                        <textarea class="textarea-package" name="txta_geography">{{$destination->geografia}}</textarea>
-                    </div>
-                </div>
-            </div>
-            <hr>
+
+
             <div class="row mb-3">
                 <div class="col text-center">
                     {{--<a href="" class="btn btn-primary font-weight-bold">Update Package</a>--}}
                     <button type="submit" class="btn btn-primary font-weight-bold">Update destination</button>
                 </div>
             </div>
+
         </form>
 
-
-        <div class="row my-5">
-            <div class="col-9">
-                <div class="row">
-                    @foreach($destination->destino_imagen as $imagen)
-                        <div class="col-3 text-center">
-                            <img src="{{asset('/images/destinations/banners/'.$imagen->nombre.'')}}" alt="" class="img-thumbnail w-100 mb-2">
-                            <form action="{{route('admin_destinations_slider_form_delete_path')}}" method="post">
-{{--                                @method('DELETE')--}}
-                                @csrf
-                                <input type="hidden" name="id_destinos" value="{{$destination->id}}">
-                                <input type="hidden" name="filename" value="{{$imagen->nombre}}">
-                                <button type="submit" class="btn btn-xs btn-danger">Eliminar</button>
-                            </form>
-                        </div>
-                    @endforeach
-                </div>
+    <div class="row my-5">
+        <div class="col-9">
+            @if ($categorias->imagen_banner)
+            <div class="row">
+                    <div class="col-3 text-center">
+                        <img src="{{asset('images/banners/category/'.$categorias->imagen_banner.'')}}" alt="" class="img-thumbnail w-100 mb-2">
+                        <form action="{{route('admin_category_slider_form_delete_path')}}" method="post">
+                            {{--@method('DELETE')--}}
+                            @csrf
+                            <input type="hidden" name="id_category" value="{{$categorias->id}}">
+                            <button type="submit" class="btn btn-xs btn-danger">Eliminar</button>
+                        </form>
+                    </div>
             </div>
-            <div class="col text-center">
-                @if ($destination->imagen)
-                    <img src="{{asset('/images/destinations/'.$destination->imagen.'')}}" alt="" class="img-thumbnail w-100 mb-2">
-                    <form action="{{route('admin_destinations_image_form_delete_path')}}" method="post">
-{{--                        @method('DELETE')--}}
-                        @csrf
-                        <input type="hidden" name="id_destino" value="{{$destination->id}}">
-                        <button type="submit" class="btn btn-xs btn-danger">Eliminar</button>
-                    </form>
-                @endif
-            </div>
+        @endif
         </div>
-        <div class="row my-5">
-            <div class="col-9">
-                <form method="post" action="{{route('admin_image_destinations_slider_store_path')}}" enctype="multipart/form-data"
-                      class="dropzone" id="dropzone_destinations">
-                    <input type="hidden" value="{{$destination->id}}" name="id_destinations_file">
+        <div class="col-3 text-center">
+            @if ($categorias->imagen)
+                <img src="{{asset('images/category/'.$categorias->imagen.'')}}" alt="" class="img-thumbnail w-100 mb-2">
+                <form action="{{route('admin_category_image_form_delete_path')}}" method="post">
+    {{--                @method('DELETE')--}}
                     @csrf
+                    <input type="hidden" name="id_category" value="{{$categorias->id}}">
+                    <button type="submit" class="btn btn-xs btn-danger">Eliminar</button>
                 </form>
-            </div>
-            <div class="col">
-                @if ($destination->imagen ==NULL)
-                <form method="post" action="{{route('admin_image_destinations_image_store_path')}}" enctype="multipart/form-data"
-                      class="dropzone" id="dropzone_imagen">
-                    <input type="hidden" value="{{$destination->id}}" name="id_destinations_file">
-                    @csrf
-                </form>
-                @endif
-            </div>
+            @endif
         </div>
+    </div>
 
-
-    @endforeach
+    <div class="row my-5">
+        <div class="col-9">
+            @if ($categorias->imagen_banner == NULL)
+            <form method="post" action="{{route('admin_image_category_slider_store_path')}}" enctype="multipart/form-data"
+                  class="dropzone" id="dropzone_category">
+                <input type="hidden" value="{{$categorias->id}}" name="id_category_file">
+                @csrf
+            </form>
+            @endif
+        </div>
+        <div class="col">
+            @if ($categorias->imagen == NULL)
+            <form method="post" action="{{route('admin_image_category_image_store_path')}}" enctype="multipart/form-data"
+                  class="dropzone" id="dropzone_category_2">
+                <input type="hidden" value="{{$categorias->id}}" name="id_category_file">
+                @csrf
+            </form>
+            @endif
+        </div>
+    </div>
+@endforeach
 @endsection
 @push('scripts')
     <script>
         Dropzone.autoDiscover = false;
         jQuery(document).ready(function() {
-            $("#dropzone_destinations").dropzone({
+            $("#dropzone_category").dropzone({
 
                 maxFilesize: 12,
-                maxFiles: 3,
+                maxFiles: 1,
                 renameFile: function(file) {
                     var dt = new Date();
                     var time = dt.getTime();
@@ -195,7 +173,7 @@
                             'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                         },
                         type: 'POST',
-                        url: "{{ route('admin_destinations_slider_delete_path') }}",
+                        url: "{{ route('admin_category_slider_delete_path') }}",
                         data: {filename: name},
                         success: function (data) {
                             console.log("File has been successfully removed!!");
@@ -217,7 +195,7 @@
                 // },
 
             });
-            $("#dropzone_imagen").dropzone({
+            $("#dropzone_category_2").dropzone({
 
                 maxFilesize: 12,
                 maxFiles: 1,
@@ -237,7 +215,7 @@
                             'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                         },
                         type: 'POST',
-                        url: "{{ route('admin_destinations_image_delete_path') }}",
+                        url: "{{ route('admin_category_image_delete_path') }}",
                         data: {filename: name},
                         success: function (data) {
                             console.log("File has been successfully removed!!");
@@ -261,7 +239,6 @@
             });
         });
     </script>
-
     <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=m4amx6h3rsnmj9whskr1vn3m6mpv7bi6qwwscvtbam4h0uic "></script>
     <script type="text/javascript">
         tinymce.init({

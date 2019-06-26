@@ -22,7 +22,7 @@
                     <div class="col">
 
                         <div class="row my-3 justify-content-center text-white font-weight-bold h2">
-                            {{$duration}} Days Tours
+                            {{$duration}} @lang('package.days_tours')
                         </div>
 
                         <div class="row justify-content-center">
@@ -60,10 +60,10 @@
         <div class="container">
             <div class="row py-4">
                 <div class="col">
-                    <h1 class="text-g-yellow font-weight-bold text-center">PERU TRAVEL <span class="text-g-green">FEATURED PACKAGES</span></h1>
-                    <p class="lead">our most popular <strong>Peru and South America itineraries</strong>, these <strong>packages</strong> could be used as a reference to customize your own trip. At <strong>GOTOPERU</strong> we specialize in crafting personalize experiences based on your preferences; we invited to review these programs to have glimpse of the most important destinations for instance MachuPicchu, Lake Titicaca, Nazca and the Amazon.</p>
+                    <h1 class="text-g-yellow font-weight-bold text-center">@lang('package.h1')</h1>
+                    <p class="lead">@lang('package.h1_p')</p>
                     <div class="alert alert-primary text-center m-0" role="alert">
-                        <h4>And even multi countries travel adventures involving Brasil, Ecuador , Argentina.</h4>
+                        <h4>@lang('package.h1_p_alert')</h4>
                     </div>
                     {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
@@ -77,19 +77,19 @@
         <div class="container">
             <div class="row sticky-top d-none d-sm-flex">
                 <div class="col">
-                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['3', '5'])}}">3-5 <span class="text-g-yellow font-weight-bold">days</span></a>
+                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['3', '5'])}}">3-5 <span class="text-g-yellow font-weight-bold">@lang('package.days')</span></a>
                 </div>
                 <div class="col">
-                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['6', '8'])}}">6-8 <span class="text-g-yellow font-weight-bold">days</span></a>
+                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['6', '8'])}}">6-8 <span class="text-g-yellow font-weight-bold">@lang('package.days')</span></a>
                 </div>
                 <div class="col">
-                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['9', '11'])}}">9-11 <span class="text-g-yellow font-weight-bold">days</span></a>
+                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['9', '11'])}}">9-11 <span class="text-g-yellow font-weight-bold">@lang('package.days')</span></a>
                 </div>
                 <div class="col">
-                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['12', '15'])}}">12-15 <span class="text-g-yellow font-weight-bold">days</span></a>
+                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['12', '15'])}}">12-15 <span class="text-g-yellow font-weight-bold">@lang('package.days')</span></a>
                 </div>
                 <div class="col">
-                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['16', '30'])}}">16+ <span class="text-g-yellow font-weight-bold">days</span></a>
+                    <a class="btn btn-g-dark btn-block text-white font-weight-bold" href="{{route('packages_durations_path', ['16', '30'])}}">16+ <span class="text-g-yellow font-weight-bold">@lang('package.days')</span></a>
                 </div>
             </div>
                         <div class="row mt-4">
@@ -100,7 +100,7 @@
                                         <div class="row align-items-center no-gutters">
                                             <div class="col-12 col-sm-7">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/mapas/'.$paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">
+                                                    <img src="{{asset('images/mapas/'.$paquete->imagen.'')}}" alt="" class="w-100 rounded-left">
                                                     <div class="position-absolute-bottom p-2 text-center">
                                                         @foreach($paquete->paquetes_categoria as $paquetes_categorias)
                                                         <span class="small font-weight-bold badge badge-g-yellow shadow">{{$paquetes_categorias->categoria->nombre}}</span>
@@ -111,18 +111,18 @@
                                             <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                 <div class="px-3">
                                                     <h2 class="h6 font-weight-bold">{{$paquete->titulo}}</h2>
-                                                    <small class="text-muted font-weight-bold">{{$paquete->duracion}} days</small>
+                                                    <small class="text-muted font-weight-bold">{{$paquete->duracion}} @lang('package.days')</small>
                                                     @foreach($paquete->precio_paquetes as $precio)
                                                         @if($precio->estrellas == 2)
                                                             @if($precio->precio_d > 0)
                                                                 {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
                                                                 <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
                                                             @else
-                                                                <span class="text-danger">Inquire</span>
+                                                                <span class="text-danger">@lang('package.inquire')</span>
                                                             @endif
                                                         @endif
                                                     @endforeach
-                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="btn btn-g-yellow btn-block">Inquire</a>
+                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="btn btn-g-yellow btn-block">@lang('package.inquire')</a>
                                                     {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}
                                                 </div>
                                             </div>

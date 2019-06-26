@@ -40,7 +40,7 @@ class DifficultyController extends Controller
         $difficulty = $_POST["txt_difficulty"];
         $descripcion = $_POST["txta_descripcion"];
 
-        if ($request->filled(['txt_difficulty', 'txta_descripcion'])){
+        if ($request->filled(['txt_difficulty'])){
 
             $difficulty2 = new TDificultad();
             $difficulty2->nombre = $difficulty;
