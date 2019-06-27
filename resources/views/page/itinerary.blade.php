@@ -1075,7 +1075,7 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-12 col-md-10 col-lg-8 text-center">
-                                <h2 class="text-secondary h1 font-weight-bold text-g-green">{{$paquetes->titulo}} {{$paquetes->duracion}} @lang(ucwords('itinerary.days'))</h2>
+                                <h2 class="text-secondary h1 font-weight-bold text-g-green">{{$paquetes->titulo}} {{$paquetes->duracion}} @lang('itinerary.days')</h2>
                                 {{--<h5 class="text-secondary">{{$paquetes->duracion}} Days</h5>--}}
                             </div>
                         </div>
