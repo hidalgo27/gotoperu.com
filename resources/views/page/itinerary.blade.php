@@ -485,7 +485,8 @@
                                     <div class="row">
                                         <div class="col-12 mb-3 col-lg mb-lg-0">
                                             {{--<h3 class="text-secondary h4"><strong>Included</strong></h3>--}}
-                                            @if (count($paquetes->paquete_incluye) > 0)
+                                            @php echo count($paquetes->paquete_incluye) @endphp
+                                            @if (isset($paquetes->paquete_incluye))
                                             <div class="card p-3 w-100">
                                                 <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> @lang('itinerary.included'):</h5>
                                                 <hr>
@@ -498,7 +499,7 @@
                                             @endif
                                         </div>
                                         <div class="col-12 mb-3 col-lg mb-lg-0">
-                                            @if (count($paquetes->paquete_no_incluye)>0)
+                                            @if (isset($paquetes->paquete_no_incluye))
                                             <div class="card p-3 w-100">
                                                 <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> @lang('itinerary.not_included'):</h5>
                                                 <hr>
