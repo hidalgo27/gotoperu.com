@@ -489,9 +489,11 @@
                                                 <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> @lang('itinerary.included'):</h5>
                                                 <hr>
                                                 <ul class="pl-3">
-                                                    @foreach($paquetes->paquete_incluye->sortBy('updated_at') as $paquetes_incluye)
-                                                        <li>{{$paquetes_incluye->incluye->incluye}}</li>
-                                                    @endforeach
+                                                    @if ($paquetes->paquete_incluye)
+                                                        @foreach($paquetes->paquete_incluye->sortBy('updated_at') as $paquetes_incluye)
+                                                            <li>{{$paquetes_incluye->incluye->incluye}}</li>
+                                                        @endforeach
+                                                    @endif
                                                 </ul>
                                             </div>
                                         </div>
@@ -500,9 +502,11 @@
                                                 <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> @lang('itinerary.not_included'):</h5>
                                                 <hr>
                                                 <ul class="pl-3">
-                                                    @foreach($paquetes->paquete_no_incluye->sortBy('updated_at') as $paquetes_no_incluye)
-                                                        <li>{{$paquetes_no_incluye->no_incluye->noincluye}}</li>
-                                                    @endforeach
+                                                    @if ($paquetes->paquete_no_incluye)
+                                                        @foreach($paquetes->paquete_no_incluye->sortBy('updated_at') as $paquetes_no_incluye)
+                                                            <li>{{$paquetes_no_incluye->no_incluye->noincluye}}</li>
+                                                        @endforeach
+                                                    @endif
                                                 </ul>
                                             </div>
                                         </div>
