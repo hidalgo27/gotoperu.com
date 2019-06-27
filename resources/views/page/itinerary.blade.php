@@ -486,30 +486,30 @@
                                         <div class="col-12 mb-3 col-lg mb-lg-0">
                                             {{--<h3 class="text-secondary h4"><strong>Included</strong></h3>--}}
                                             @php echo count($paquetes->paquete_incluye) @endphp
-                                            @if (isset($paquetes->paquete_incluye))
-                                            <div class="card p-3 w-100">
-                                                <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> @lang('itinerary.included'):</h5>
-                                                <hr>
-                                                <ul class="pl-3">
-                                                    @foreach($paquetes->paquete_incluye->sortBy('updated_at') as $paquetes_incluye)
-                                                        <li>{{$paquetes_incluye->incluye->incluye}}</li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                            @endif
+{{--                                            @if (isset($paquetes->paquete_incluye))--}}
+{{--                                            <div class="card p-3 w-100">--}}
+{{--                                                <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> @lang('itinerary.included'):</h5>--}}
+{{--                                                <hr>--}}
+{{--                                                <ul class="pl-3">--}}
+{{--                                                    @foreach($paquetes->paquete_incluye->sortBy('updated_at') as $paquetes_incluye)--}}
+{{--                                                        <li>{{$paquetes_incluye->incluye->incluye}}</li>--}}
+{{--                                                    @endforeach--}}
+{{--                                                </ul>--}}
+{{--                                            </div>--}}
+{{--                                            @endif--}}
                                         </div>
                                         <div class="col-12 mb-3 col-lg mb-lg-0">
-                                            @if (isset($paquetes->paquete_no_incluye))
-                                            <div class="card p-3 w-100">
-                                                <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> @lang('itinerary.not_included'):</h5>
-                                                <hr>
-                                                <ul class="pl-3">
-                                                    @foreach($paquetes->paquete_no_incluye->sortBy('updated_at') as $paquetes_no_incluye)
-                                                        <li>{{$paquetes_no_incluye->no_incluye->noincluye}}</li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                            @endif
+{{--                                            @if (isset($paquetes->paquete_no_incluye))--}}
+{{--                                            <div class="card p-3 w-100">--}}
+{{--                                                <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> @lang('itinerary.not_included'):</h5>--}}
+{{--                                                <hr>--}}
+{{--                                                <ul class="pl-3">--}}
+{{--                                                    @foreach($paquetes->paquete_no_incluye->sortBy('updated_at') as $paquetes_no_incluye)--}}
+{{--                                                        <li>{{$paquetes_no_incluye->no_incluye->noincluye}}</li>--}}
+{{--                                                    @endforeach--}}
+{{--                                                </ul>--}}
+{{--                                            </div>--}}
+{{--                                            @endif--}}
                                         </div>
                                     </div>
                                 </div>
