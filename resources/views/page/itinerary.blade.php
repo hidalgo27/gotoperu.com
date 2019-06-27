@@ -1523,6 +1523,10 @@
                     $('#d_name').css("border-bottom", "2px solid #FF0000");
                     var sendMail = "false";
                 }
+                if (s_date.length == 0 ){
+                    $('#d_date').css("border-bottom", "2px solid #FF0000");
+                    var sendMail = "false";
+                }
 
                 if(sendMail == "true"){
                     var datos = {
