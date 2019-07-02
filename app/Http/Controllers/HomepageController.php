@@ -106,7 +106,7 @@ class HomepageController extends Controller
 
         $testimonio_video = TVideoTestimonio::all()->take(3);
 
-        $categoria_group = TCategoria::get()->unique('grupo');
+        $categoria_group = TCategoria::get()->unique('grupo')->sortBy('grupo');
 
         $categorias = TCategoria::all();
 

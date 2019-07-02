@@ -64,14 +64,19 @@
                 </a>
             </div>
             <div class="col d-md-none d-lg-inline col-lg col-xl text-center">
+                @if (App::getLocale() == "en")
+                    <h5 class="font-weight-light">@lang('home.header_slogan')</h5>
+                @endif
                 @if (App::getLocale() == "pt")
                 <h5 class="font-weight-light"><img src="{{asset('images/icons/brasil.png')}}" width="30"  alt="brazil"> <img src="{{asset('images/icons/peru.png')}}" width="30"  alt="peru"> @lang('home.header_slogan')</h5>
                 @endif
             </div>
             <div class="col-3 col-md-6 col-lg-3 col-xl-3 text-right">
-                @if (App::getLocale() == "pt")
+                @if (App::getLocale() == "en")
+                    <a href="tel:+2029963000" class="mx-3 text-g-yellow font-weight-bold h5"><img src="{{asset('images/icons/peru.png')}}" alt="" width="25" data-toggle="tooltip" data-placement="top" title="Perú"> (202) 996-3000</a>
+                @elseif (App::getLocale() == "pt")
                     <a href="tel:+551131982239" class="mx-3 text-g-yellow font-weight-bold h5"><img src="{{asset('images/icons/peru.png')}}" alt="" width="25" data-toggle="tooltip" data-placement="top" title="Perú"> +55 (11) 31982239</a>
-                @else
+                @elseif (App::getLocale() == "es")
                     <a href="tel:+5184206931" class="mx-3 text-g-yellow font-weight-bold h5"><img src="{{asset('images/icons/peru.png')}}" alt="" width="25" data-toggle="tooltip" data-placement="top" title="Perú"> +51 84 206931</a>
                 @endif
                 <a href="#" class="text-white"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars fa-2x"></i></a>
