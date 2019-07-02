@@ -485,6 +485,8 @@
                                     <div class="row">
                                         <div class="col-12 mb-3 col-lg mb-lg-0">
                                             {{--<h3 class="text-secondary h4"><strong>Included</strong></h3>--}}
+{{--                                            @php $incluye_p = count($paquetes->paquete_incluye) @endphp--}}
+{{--                                            @if ($incluye_p > 0)--}}
                                             <div class="card p-3 w-100">
                                                 <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> @lang('itinerary.included'):</h5>
                                                 <hr>
@@ -494,8 +496,10 @@
                                                     @endforeach
                                                 </ul>
                                             </div>
+{{--                                            @endif--}}
                                         </div>
                                         <div class="col-12 mb-3 col-lg mb-lg-0">
+                                            @if (isset($paquetes->paquete_no_incluye))
                                             <div class="card p-3 w-100">
                                                 <h5 class="text-primary font-weight-bold p-0 m-0"><i class="fas fa-angle-right"></i> @lang('itinerary.not_included'):</h5>
                                                 <hr>
@@ -505,6 +509,7 @@
                                                     @endforeach
                                                 </ul>
                                             </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -1075,7 +1080,7 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-12 col-md-10 col-lg-8 text-center">
-                                <h2 class="text-secondary h1 font-weight-bold text-g-green">{{$paquetes->titulo}} {{$paquetes->duracion}} @lang(ucwords('itinerary.days'))</h2>
+                                <h2 class="text-secondary h1 font-weight-bold text-g-green">{{$paquetes->titulo}} {{$paquetes->duracion}} @lang('itinerary.days')</h2>
                                 {{--<h5 class="text-secondary">{{$paquetes->duracion}} Days</h5>--}}
                             </div>
                         </div>
@@ -1188,7 +1193,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
                                                         </div>
-                                                        <input type="text" class="form-control" id="d_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
+                                                        <input type="text" class="form-control datepicker" id="d_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
                                                     </div>
                                                 </div>
                                             </div>
@@ -1523,6 +1528,10 @@
                     $('#d_name').css("border-bottom", "2px solid #FF0000");
                     var sendMail = "false";
                 }
+                if (s_date.length == 0 ){
+                    $('#d_date').css("border-bottom", "2px solid #FF0000");
+                    var sendMail = "false";
+                }
 
                 if(sendMail == "true"){
                     var datos = {
@@ -1569,11 +1578,11 @@
                 }
             }
 
-            $('#d_date').datepicker({
-                dateFormat: 'mm-dd-y',
-                changeMonth: true,
-                changeYear: true
-            });
+            // $('#d_date').datepicker({
+            //     dateFormat: 'mm-dd-y',
+            //     changeMonth: true,
+            //     changeYear: true
+            // });
 
 
             $(document).ready(function() {

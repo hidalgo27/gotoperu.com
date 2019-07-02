@@ -370,7 +370,7 @@ class HomeController extends Controller
 
                 $package_included = new TPaqueteIncluye();
                 $package_included->idpaquetes = $id;
-                $package_included->idincluye = $request->input('include')[$i];
+                $package_included->idincluye = $request->input('incluye')[$i];
                 $package_included->save();
 
             }

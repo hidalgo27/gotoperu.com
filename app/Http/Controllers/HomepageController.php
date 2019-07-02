@@ -949,16 +949,22 @@ class HomepageController extends Controller
         }
 //        $from2 = 'doriam@gotoperu.com';
 
+        setlocale(LC_TIME,"es_PE");
+
         $accommodation = $_POST['txt_accommodation'];
         $number = $_POST['txt_number'];
 
-        $date = $_POST['txt_date'];
+        $date_txt = $_POST['txt_date'];
         $tel = $_POST['txt_tel'];
         $name = $_POST['txt_name'];
         $email = $_POST['txt_email'];
         $package = $_POST['txt_package'];
 
         $comment = $_POST['txt_comment'];
+
+        $mi_fecha = str_replace("/", "-", $date_txt);
+        $Nueva_Fecha = date("d-m-Y", strtotime($mi_fecha));
+        $date = strftime("%d %B %Y", strtotime($Nueva_Fecha));
 
 
         try {
@@ -1099,19 +1105,26 @@ class HomepageController extends Controller
         }
 //        $from2 = 'doriam@gotoperu.com';
 
+        setlocale(LC_TIME,"es_PE");
+
         $accommodation = $_POST['txt_accommodation'];
         $destinations = $_POST['txt_destinations'];
         $number = $_POST['txt_number'];
         $number_t = $_POST['txt_number_t'];
         $duration = $_POST['txt_duration'];
         $duration_t = $_POST['txt_duration_t'];
-        $date = $_POST['txt_date'];
+        $date_txt = $_POST['txt_date'];
         $tel = $_POST['txt_tel'];
         $name = $_POST['txt_name'];
         $email = $_POST['txt_email'];
         $comment = $_POST['txt_comment'];
         $countryData = $_POST['txt_countryData'];
         $codeData = $_POST['txt_codeData'];
+
+        $mi_fecha = str_replace("/", "-", $date_txt);
+        $Nueva_Fecha = date("d-m-Y", strtotime($mi_fecha));
+        $date = strftime("%d %B %Y", strtotime($Nueva_Fecha));
+        //devuelve: lunes, 16 de abril de 2018
 
         try {
             Mail::send(['html' => 'notifications.page.client-form-design'], ['name' => $name], function ($messaje) use ($email, $name) {

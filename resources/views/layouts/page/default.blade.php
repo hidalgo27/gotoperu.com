@@ -288,6 +288,10 @@
             $('#h_name').css("border-bottom", "2px solid #FF0000");
             var sendMail = "false";
         }
+        if (s_date.length == 0 ){
+            $('#h_date').css("border-bottom", "2px solid #FF0000");
+            var sendMail = "false";
+        }
 
         if(sendMail == "true"){
             var datos = {
@@ -418,8 +422,8 @@
         // $('#de_alert').removeClass('d-none');
     }
 
-    $('#h_date').datepicker({
-        dateFormat: 'mm-dd-y',
+    $('.datepicker').datepicker({
+        dateFormat: 'dd-mm-yy',
         changeMonth: true,
         changeYear: true
     });

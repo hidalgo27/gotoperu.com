@@ -214,7 +214,7 @@
 
                             <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
                                 <label class="btn col-4 col-sm col-md-4 col-xl mb-2 mb-sm-0  mb-md-2 btn-outline-secondary duration_ch number-hover font-weight-bold bg-light">
-                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="3-5" checked> 3-5 <span class="text-g-yellow small font-weight-bold">@lang('home.days')</span>
+                                    <input type="radio" name="duration" class="duration" autocomplete="off" value="3-5"> 3-5 <span class="text-g-yellow small font-weight-bold">@lang('home.days')</span>
                                 </label>
                                 <label class="btn col-4 col-sm col-md-4 col-xl mx-sm-2 mx-xl-2 mx-md-0 mb-2 mb-sm-0 mb-md-2  btn-outline-secondary duration_ch number-hover font-weight-bold bg-light">
                                     <input type="radio" name="duration" class="duration" autocomplete="off" value="6-8"> 6-8 <span class="text-g-yellow font-weight-bold small">@lang('home.days')</span>
@@ -285,7 +285,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
                                                         </div>
-                                                        <input type="text" class="form-control" id="h_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
+                                                        <input type="text" class="form-control datepicker" id="h_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
                                                     </div>
                                                 </div>
                                             </div>
