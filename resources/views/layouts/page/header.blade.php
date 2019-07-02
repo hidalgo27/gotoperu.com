@@ -74,10 +74,10 @@
             <div class="col-3 d-md-none d-lg-inline col-lg-auto col-xl-auto text-right">
                 @if (App::getLocale() == "en")
                     <a href="tel:+2029963000" class="mx-3 text-g-yellow font-weight-bold h5"><img src="{{asset('images/icons/peru.png')}}" alt="" width="25" data-toggle="tooltip" data-placement="top" title="Perú"> (202) 996-3000</a>
-                @elseif (App::getLocale() == "pt")
-                    <a href="tel:+551131982239" class="mx-3 text-g-yellow font-weight-bold h5"> +55 (11) 31982239</a>
-                @elseif (App::getLocale() == "es")
-                    <a href="tel:+5184206931" class="mx-3 text-g-yellow font-weight-bold h5"><img src="{{asset('images/icons/peru.png')}}" alt="" width="25" data-toggle="tooltip" data-placement="top" title="Perú"> +51 84 206931</a>
+{{--                @elseif (App::getLocale() == "pt")--}}
+{{--                    <a href="tel:+551131982239" class="mx-3 text-g-yellow font-weight-bold h5"> +55 (11) 31982239</a>--}}
+{{--                @elseif (App::getLocale() == "es")--}}
+{{--                    <a href="tel:+5184206931" class="mx-3 text-g-yellow font-weight-bold h5"><img src="{{asset('images/icons/peru.png')}}" alt="" width="25" data-toggle="tooltip" data-placement="top" title="Perú"> +51 84 206931</a>--}}
                 @endif
             </div>
             @if (App::getLocale() == "pt")
@@ -85,7 +85,7 @@
                 <div class="bg-dark rounded px-3 shadow clearfix float-right">
                     <a href="https://api.whatsapp.com/send?phone=551131982239" target="_blank" class="font-weight-bold text-white stretched-link">
                         <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
-                        Whatsapp
+                        +55 (11) 31982239
                     </a>
                 </div>
             </div>
@@ -95,7 +95,7 @@
                     <div class="bg-dark rounded px-3 shadow clearfix float-right">
                         <a href="https://api.whatsapp.com/send?phone=5117059774" target="_blank" class="font-weight-bold text-white stretched-link">
                             <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
-                            Whatsapp
+                            +51 (1) 705-9774
                         </a>
                     </div>
                 </div>
