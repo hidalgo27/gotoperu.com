@@ -542,3 +542,8 @@ Route::delete('admin/inquire/delete/{id}', [
     'uses' => 'Admin\InquireController@destroy',
     'as' => 'admin_inquire_delete_path',
 ]);
+//testimonials
+Route::get('admin/testimonial', [
+    'uses' => 'Admin\TestimonialController@index',
+    'as' => 'admin_testimonial_index_path',
+]);
