@@ -136,7 +136,7 @@
                 </div>
             </div>
         </div>
-
+    @if (App::getLocale() == "pt")
     <div id="redes">
         <div class="container-fluid">
             <div class="row justify-content-end">
@@ -151,6 +151,7 @@
             </div>
         </div>
     </div>
+    @endif
 
 
         <section class="bg-light pb-5">
