@@ -117,7 +117,7 @@
         </section>
 
 
-        {{--<div id="aviso"><h2>Estás haciendo scroll sobre el contenido 2</h2></div>--}}
+{{--        <div id="aviso"><h2>Estás haciendo scroll sobre el contenido 2</h2></div>--}}
 
         <div class="alert alert-primary alert-dismissible show m-0 elemento rounded-0 p-1" role="alert" id="aviso">
             <div class="container">
@@ -136,6 +136,22 @@
                 </div>
             </div>
         </div>
+
+    <div id="redes">
+        <div class="container-fluid">
+            <div class="row justify-content-end">
+                <div class="col-auto">
+                    <div class="bg-dark rounded px-3 mx-3 shadow clearfix float-right">
+                    <a href="https://api.whatsapp.com/send?phone=551131982239" target="_blank" class="font-weight-bold text-white stretched-link">
+                        +55 (11) 31982239
+                        <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
         <section class="bg-light pb-5">
             <div class="container">
