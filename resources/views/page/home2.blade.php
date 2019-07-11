@@ -119,7 +119,7 @@
 
 {{--        <div id="aviso"><h2>Estás haciendo scroll sobre el contenido 2</h2></div>--}}
 
-        <div class="alert alert-primary alert-dismissible show m-0 elemento rounded-0 p-1" role="alert" id="aviso">
+        <div class="d-none d-sm-inline alert alert-primary alert-dismissible show m-0 elemento rounded-0 p-1" role="alert" id="aviso">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12 text-center text-sm-left text-md-right col-sm-7 col-md-7 col-lg-auto">
