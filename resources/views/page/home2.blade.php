@@ -152,6 +152,22 @@
         </div>
     </div>
     @endif
+    @if (App::getLocale() == "es")
+        <div id="redes">
+            <div class="container-fluid">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <div class="bg-dark rounded px-3 mx-3 shadow clearfix float-right">
+                            <a href="https://api.whatsapp.com/send?phone=5117059774" target="_blank" class="font-weight-bold text-white stretched-link">
+                                +51 (1) 705-9774
+                                <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
 
 
         <section class="bg-light pb-5">
