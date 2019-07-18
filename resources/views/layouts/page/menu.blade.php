@@ -17,7 +17,19 @@
                 <a href="#Inquire" class="btn btn-block btn-g-yellow">INQUIRE NOW</a>
             </div>
             <div class="col">
-                <a href="tel:+2029963000" class="mx-3 h4"><i class="fa fa-phone text-white"></i></a>
+                @if (App::getLocale() == "en")
+                    <a href="tel:+2029963000" class="mx-3 h4"><i class="fa fa-phone text-white"></i></a>
+                @endif
+                    @if (App::getLocale() == "pt")
+                        <a href="https://api.whatsapp.com/send?phone=551131982239" target="_blank" class="stretched-link">
+                            <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
+                        </a>
+                    @endif
+                    @if (App::getLocale() == "es")
+                        <a href="https://api.whatsapp.com/send?phone=5117059774" target="_blank" class="stretched-link">
+                            <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
+                        </a>
+                    @endif
             </div>
             <div class="col">
                 <a href="#" class="mx-3 h2"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars text-white"></i></a>
