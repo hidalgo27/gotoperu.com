@@ -370,6 +370,34 @@
         window.location.href="#inquire";
     }
 
+    $(document).ready(function() {
+        $('#redes').hide(0);
+
+
+        $(window).scroll(function(){
+
+
+            var windowHeight = $(window).scrollTop();
+            var contenido2 = $(".contenido2").offset();
+
+            contenido2 = contenido2.top;
+
+
+            if(windowHeight >= contenido2  ){
+
+                $('#redes').fadeIn(500);
+
+            }else{
+                $('#redes').fadeOut(500);
+
+            }
+
+
+        });
+
+    });
+
+
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     });

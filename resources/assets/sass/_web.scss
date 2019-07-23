@@ -917,7 +917,7 @@ $slide-overlay-opacity: 0.6;
 .nav-tabs-complete .nav-link{
   color: #8e8e8e;
 }
-#aviso{
+#aviso, #redes{
   //margin: 0 auto;
   bottom: 0px;
   position: fixed;
@@ -928,7 +928,10 @@ $slide-overlay-opacity: 0.6;
   //text-align: center;
   z-index: 1021;
 }
-
+#redes{
+  bottom: 10% !important;
+  right: -9px;
+}
 .alert-dismissible .close{
   position: relative !important;
 

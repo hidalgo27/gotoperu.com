@@ -156,7 +156,7 @@
 
         {{--<div id="aviso"><h2>Estás haciendo scroll sobre el contenido 2</h2></div>--}}
 
-        <div class="alert alert-primary alert-dismissible show m-0 elemento rounded-0 p-1" role="alert" id="aviso">
+        <div class="d-none d-sm-inline alert alert-primary alert-dismissible show m-0 elemento rounded-0 p-1" role="alert" id="aviso">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12 text-center text-sm-left text-md-right col-sm-7 col-md-7 col-lg-auto">
@@ -173,6 +173,39 @@
                 </div>
             </div>
         </div>
+    @if (App::getLocale() == "pt")
+    <div id="redes">
+        <div class="container-fluid">
+            <div class="row justify-content-end">
+                <div class="col-auto">
+                    <div class="bg-dark rounded px-3 mx-3 shadow clearfix float-right">
+                    <a href="https://api.whatsapp.com/send?phone=551131982239" target="_blank" class="font-weight-bold text-white stretched-link">
+                        +55 (11) 31982239
+                        <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+    @if (App::getLocale() == "es")
+        <div id="redes">
+            <div class="container-fluid">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <div class="bg-dark rounded px-3 mx-3 shadow clearfix float-right">
+                            <a href="https://api.whatsapp.com/send?phone=5117059774" target="_blank" class="font-weight-bold text-white stretched-link">
+                                +51 (1) 705-9774
+                                <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
 
         <section class="bg-light pb-5">
             <div class="container">
@@ -370,7 +403,7 @@
                             <div class="col">
                                 <div class="row">
                                     <div class="col-12 nav-tabs-wrapper">
-                                        <div class="nav nav-tabs dragscroll horizontal flex-sm-row p-0 @if ($categoria_groups->grupo == 1) {{'nav-category-goto-yellow'}} @else {{'nav-category-goto-green'}} @endif" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                        <div class="nav nav-tabs dragscroll horizontal flex-sm-row p-0 @if ($categoria_groups->grupo == 1) {{'nav-category-goto-yellow'}} @elseif ($categoria_groups->grupo == 2) {{'nav-category-goto-green'}} @elseif ($categoria_groups->grupo == 3) {{'nav-category-goto-grey'}} @endif" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                             @foreach($categorias->where('grupo', $categoria_groups->grupo)->sortByDesc('estado') as $categoria)
                                                 <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link @if ($categoria->estado == 1) {{'active'}} @endif" id="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}-tab" data-toggle="pill" href="#category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" role="tab" aria-controls="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" aria-selected="true">{{$categoria->nombre}}</a>
                                             @endforeach
@@ -392,7 +425,7 @@
                                                         </div>
                                                     </div>
                                                 <div class="row my-3 mx-0">
-                                                    @foreach($paquetes_categoria->where('idcategoria', $categoria->id) as $paquetes_categorias)
+                                                    @foreach($paquetes_categoria->where('idcategoria', $categoria->id)->take(2) as $paquetes_categorias)
                                                         <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
                                                             <div class="bg-light shadow-sm rounded">
                                                                 <div class="row align-items-center no-gutters">
