@@ -158,12 +158,12 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close position-absolute-top" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <div class="row">
-                            <div class="col-auto">
-                                <img src="{{asset('images/logos/escarapela.png')}}" alt="logo escarapela">
+                            <div class="col-auto d-none d-sm-inline-block">
+                                <img src="{{asset('images/logos/escarapela.png')}}" alt="logo escarapela" class="w-100">
                             </div>
                             <div class="col text-center">
                                 <span class="display-2 font-weight-bold text-danger">20%</span>
