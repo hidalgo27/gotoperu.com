@@ -117,6 +117,43 @@
         </section>
 
 
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row">
+                        <div class="col-auto">
+                            <img src="{{asset('images/logos/escarapela.png')}}" alt="logo escarapela">
+                        </div>
+                        <div class="col text-center">
+                            <span class="display-2 font-weight-bold text-danger">20%</span>
+                            <p class="font-weight-bold h3">Descuento en todos nuestros paquetes <mark class="d-block"> por fiestas patrias</mark></p>
+                            <div class="alert alert-success">
+                                <small>Pregunte por el <b>"descuento por fiestas patrias"</b> a nuestros asesores de ventas".</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="bg-danger text-center">
+                                <p class="text-white m-0 font-weight-bold">!Felices Fiestas Patrias!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <small>El descuento aplica desde el 23 hasta 31 de julio</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
         {{--<div id="aviso"><h2>Estás haciendo scroll sobre el contenido 2</h2></div>--}}
 
         <div class="alert alert-primary alert-dismissible show m-0 elemento rounded-0 p-1" role="alert" id="aviso">
@@ -1606,6 +1643,9 @@
             //     slidesToScroll: 1
             // });
 
+            setTimeout(function() {
+                $('#myModal').modal();
+            }, 5000);
         </script>
         <div id="fb-root"></div>
         <script async defer src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2&appId=1712869952328301&autoLogAppEvents=1"></script>
