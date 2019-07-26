@@ -166,8 +166,8 @@
                                 <img src="{{asset('images/logos/escarapela.png')}}" alt="logo escarapela" class="w-100">
                             </div>
                             <div class="col text-center">
-                                <span class="display-2 font-weight-bold text-danger">20%</span>
-                                <p class="font-weight-bold h3">Descuento en todos nuestros paquetes <mark class="d-block"> por fiestas patrias</mark></p>
+                                <span class="display-4 font-weight-bold text-danger">Descuento</span>
+                                <p class="font-weight-bold h3">En todos nuestros paquetes <mark class="d-block"> por fiestas patrias</mark></p>
                                 <div class="alert alert-success">
                                     <small>Pregunte por el <b>"descuento por fiestas patrias"</b> a nuestros asesores de ventas".</small>
                                 </div>
