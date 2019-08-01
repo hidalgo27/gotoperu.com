@@ -59,8 +59,8 @@
                 <a href="{{route('home_path')}}">
                     {{--<img src="{{asset('images/logos/logo-gotoperu-ave-w.webp')}}" alt="" class="img-fluid">--}}
                     <img class="w-100 lazy has-webp"
-                         data-src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}"
-                         data-srcset="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="logo gotoperu">
+                         data-src="{{asset('images/logos/logo-gotoperu-ave-w-peru3.png')}}"
+                         data-srcset="{{asset('images/logos/logo-gotoperu-ave-w-peru3.png')}}" alt="logo gotoperu">
                 </a>
             </div>
             <div class="col d-md-none d-xl-inline col-xl text-center">

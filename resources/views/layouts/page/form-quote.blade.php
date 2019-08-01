@@ -337,7 +337,17 @@
 
                     <div class="row">
                         <div class="col text-right">
-                            <p class="font-weight-bold text-muted">info@gotoperu.com</p>
+                            @if (App::getLocale() == "en")
+                                <p class="font-weight-bold text-muted">info@gotoperu.com</p>
+                            @endif
+
+                                @if (App::getLocale() == "es")
+                                    <p class="font-weight-bold text-muted">info@gotoperu.com.pe</p>
+                                @endif
+
+                                @if (App::getLocale() == "pt")
+                                    <p class="font-weight-bold text-muted">contato@gotoperu.com.br</p>
+                                @endif
                         </div>
                     </div>
 

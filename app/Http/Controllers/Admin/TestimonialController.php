@@ -10,7 +10,7 @@ class TestimonialController extends Controller
 {
     public function index()
     {
-        $testimonio = TTestimonio::all();
-        return view('admin.testimonial', compact('testimonio'));
+        $testimonial = TTestimonio::all();
+        return view('admin.testimonial', compact('testimonial'));
     }
 }

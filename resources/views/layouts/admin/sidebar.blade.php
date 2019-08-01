@@ -78,6 +78,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{route('admin_testimonial_index_path')}}">
+                    <span data-feather="message-circle"></span>
+                    Testimonials
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{route('admin_video_index_path')}}">
                     <span data-feather="video"></span>
                     Video Testimonials
