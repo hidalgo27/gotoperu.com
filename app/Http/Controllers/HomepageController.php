@@ -946,13 +946,20 @@ class HomepageController extends Controller
 
         if (App::isLocale('pt')) {
             $from = 'contato@gotoperu.com.br';
+            $ddd = $_POST['txt_ddd'];
         }
 //        $from2 = 'doriam@gotoperu.com';
 
         setlocale(LC_TIME,"es_PE");
 
         $accommodation = $_POST['txt_accommodation'];
-        $number = $_POST['txt_number'];
+
+        if (isset($_POST['txt_number'])){
+            $number = $_POST['txt_number'];
+        }else{
+            $number = " ";
+        }
+
 
         $date_txt = $_POST['txt_date'];
         $tel = $_POST['txt_tel'];
@@ -975,24 +982,44 @@ class HomepageController extends Controller
                     ->from('info@gotoperu.com', 'GotoPeru');
             });
 
+            if (App::isLocale('pt')) {
+                Mail::send(['html' => 'notifications.page.admin-form-inquire'], [
+                    'accommodation' => $accommodation,
+                    'number' => $number,
 
-            Mail::send(['html' => 'notifications.page.admin-form-inquire'], [
-                'accommodation' => $accommodation,
-                'number' => $number,
-
-                'date' => $date,
-                'tel' => $tel,
-                'name' => $name,
-                'email' => $email,
-                'package' => $package,
-                'comment' => $comment
-            ], function ($messaje) use ($from) {
-                $messaje->to($from, 'GotoPeru')
-                    ->subject('GOTOPERU')
+                    'date' => $date,
+                    'tel' => $tel,
+                    'ddd' => $ddd,
+                    'name' => $name,
+                    'email' => $email,
+                    'package' => $package,
+                    'comment' => $comment
+                ], function ($messaje) use ($from) {
+                    $messaje->to($from, 'GotoPeru')
+                        ->subject('GOTOPERU')
 //                    ->cc($from2, 'GotoPeru')
-                    /*->attach('ruta')*/
-                    ->from('info@gotoperu.com', 'GotoPeru');
-            });
+                        /*->attach('ruta')*/
+                        ->from('info@gotoperu.com', 'GotoPeru');
+                });
+            }else{
+                Mail::send(['html' => 'notifications.page.admin-form-inquire'], [
+                    'accommodation' => $accommodation,
+                    'number' => $number,
+
+                    'date' => $date,
+                    'tel' => $tel,
+                    'name' => $name,
+                    'email' => $email,
+                    'package' => $package,
+                    'comment' => $comment
+                ], function ($messaje) use ($from) {
+                    $messaje->to($from, 'GotoPeru')
+                        ->subject('GOTOPERU')
+//                    ->cc($from2, 'GotoPeru')
+                        /*->attach('ruta')*/
+                        ->from('info@gotoperu.com', 'GotoPeru');
+                });
+            }
 
 
 //            Mail::send(['html' => 'notifications.page.admin-form-inquire'], [
@@ -1102,6 +1129,7 @@ class HomepageController extends Controller
 
         if (App::isLocale('pt')) {
             $from = 'contato@gotoperu.com.br';
+            $ddd = $_POST['txt_ddd'];
         }
 //        $from2 = 'doriam@gotoperu.com';
 
@@ -1109,11 +1137,21 @@ class HomepageController extends Controller
 
         $accommodation = $_POST['txt_accommodation'];
         $destinations = $_POST['txt_destinations'];
-        $number = $_POST['txt_number'];
+        if (isset($_POST['txt_number'])){
+            $number = $_POST['txt_number'];
+        }else{
+            $number = " ";
+        }
         $number_t = $_POST['txt_number_t'];
-        $duration = $_POST['txt_duration'];
+        if (isset($_POST['txt_duration'])){
+            $duration = $_POST['txt_duration'];
+        }else{
+            $duration = " ";
+        }
         $duration_t = $_POST['txt_duration_t'];
         $date_txt = $_POST['txt_date'];
+
+
         $tel = $_POST['txt_tel'];
         $name = $_POST['txt_name'];
         $email = $_POST['txt_email'];
@@ -1134,29 +1172,52 @@ class HomepageController extends Controller
                     ->from('info@gotoperu.com', 'GotoPeru');
             });
 
-
-            Mail::send(['html' => 'notifications.page.admin-form-design'], [
-                'accommodation' => $accommodation,
-                'destinations' => $destinations,
-                'number' => $number,
-                'number_t' => $number_t,
-                'duration' => $duration,
-                'duration_t' => $duration_t,
-                'date' => $date,
-                'tel' => $tel,
-                'name' => $name,
-                'email' => $email,
-                'comment' => $comment,
-                'countryData' => $countryData,
-                'codeData' => $codeData
-            ], function ($messaje) use ($from) {
-                $messaje->to($from, 'GotoPeru')
-                    ->subject('GotoPeru')
+            if (App::isLocale('pt')) {
+                Mail::send(['html' => 'notifications.page.admin-form-design'], [
+                    'accommodation' => $accommodation,
+                    'destinations' => $destinations,
+                    'number' => $number,
+                    'number_t' => $number_t,
+                    'duration' => $duration,
+                    'duration_t' => $duration_t,
+                    'date' => $date,
+                    'ddd' => $ddd,
+                    'tel' => $tel,
+                    'name' => $name,
+                    'email' => $email,
+                    'comment' => $comment,
+                    'countryData' => $countryData,
+                    'codeData' => $codeData
+                ], function ($messaje) use ($from) {
+                    $messaje->to($from, 'GotoPeru')
+                        ->subject('GotoPeru')
 //                    ->cc($from2, 'GotoPeru')
-                    /*->attach('ruta')*/
-                    ->from('info@gotoperu.com', 'GotoPeru');
-            });
-
+                        /*->attach('ruta')*/
+                        ->from('info@gotoperu.com', 'GotoPeru');
+                });
+            }else{
+                Mail::send(['html' => 'notifications.page.admin-form-design'], [
+                    'accommodation' => $accommodation,
+                    'destinations' => $destinations,
+                    'number' => $number,
+                    'number_t' => $number_t,
+                    'duration' => $duration,
+                    'duration_t' => $duration_t,
+                    'date' => $date,
+                    'tel' => $tel,
+                    'name' => $name,
+                    'email' => $email,
+                    'comment' => $comment,
+                    'countryData' => $countryData,
+                    'codeData' => $codeData
+                ], function ($messaje) use ($from) {
+                    $messaje->to($from, 'GotoPeru')
+                        ->subject('GotoPeru')
+//                    ->cc($from2, 'GotoPeru')
+                        /*->attach('ruta')*/
+                        ->from('info@gotoperu.com', 'GotoPeru');
+                });
+            }
 
 //            Mail::send(['html' => 'notifications.page.admin-form-design'], [
 //                'destinations' => $destinations,

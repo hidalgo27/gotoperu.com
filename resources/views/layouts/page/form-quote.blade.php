@@ -272,14 +272,14 @@
 
 
                                     <div class="row mt-4 pb-1">
-                                        <div class="col-12 col-sm col-md-12 col-lg-6">
+                                        <div class="col-12 col-sm col-md-12 col-lg-12">
                                             <div class="row">
                                                 <div class="col">
                                                     <h2 class="text-secondary h5"><strong>@lang('home.travel_date')</strong></h2>
                                                 </div>
                                             </div>
 
-                                            <div class="row">
+                                            <div class="row mb-4">
                                                 <div class="col">
                                                     <div class="input-group input-group-lg">
                                                         <div class="input-group-prepend">
@@ -290,19 +290,41 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-12 mt-4 mt-sm-0 col-sm col-md-12 mt-md-4 col-lg-6 mt-lg-0">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <h2 class="text-secondary h5"><strong>@lang('home.phone_number')</strong></h2>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col">
+                                        <div class="col-12 mt-4 mt-sm-0 col-sm col-md-12 mt-md-4 col-lg-12 mt-lg-0">
 
-                                                    <input type="tel" class="form-control form-control-lg" id="h_tel" placeholder="Phone number" aria-label="Phone" aria-describedby="basic-addon1">
-
+                                            @if (App::getLocale() == "pt")
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h2 class="text-secondary h5"><strong>NÚMERO DE TELEFONE</strong></h2>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="basic-addon1">DDD</span>
+                                                            </div>
+                                                            <input type="number" class="form-control" id="h_ddd" aria-label="Phone" aria-describedby="basic-addon1">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="input-group">
+                                                            <input type="tel" class="form-control w-100" id="h_tel" placeholder="Número de telefone" aria-label="Phone" aria-describedby="basic-addon1">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @else
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h2 class="text-secondary h5"><strong>@lang('home.phone_number')</strong></h2>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input type="tel" class="form-control form-control-lg" id="h_tel" placeholder="Phone number" aria-label="Phone" aria-describedby="basic-addon1">
+                                                    </div>
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="row mt-4 pb-2">

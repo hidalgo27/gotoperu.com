@@ -269,6 +269,9 @@
         var s_duration = $(".duration:checked").val();
         var s_duration_t = $("#h_duration").val();
         var s_date = $('#h_date').val();
+
+        var s_ddd = $('#h_ddd').val();
+
         var s_tel = $('#h_tel').val();
         var s_name = $('#h_name').val();
         var s_email = $('#h_email').val();
@@ -304,6 +307,7 @@
                 "txt_duration_t" : s_duration_t,
                 "txt_date" : s_date,
                 "txt_tel" : s_tel,
+                "txt_ddd" : s_ddd,
                 "txt_name" : s_name,
                 "txt_email" : s_email,
                 "txt_comment" : s_comment,
@@ -421,7 +425,7 @@
                 video.play();
                 icons.removeClass('fa-play').addClass('fa-pause');
             } else {
-                video.pause();
+                 video.pause();
                 icons.removeClass('fa-pause').addClass('fa-play');
             }
         });
@@ -453,7 +457,9 @@
     $('.datepicker').datepicker({
         dateFormat: 'dd-mm-yy',
         changeMonth: true,
-        changeYear: true
+        changeYear: true,
+        minDate: 0
+
     });
 
     (function () {

@@ -15,6 +15,10 @@
                             <p><strong>Travellers: {{$number}} {{$number_t}}</strong></p>
                             <p><strong>Duration: {{$duration}} {{$duration_t}}</strong></p>
                             <p><strong>Date: {{$date}}</strong></p>
+
+                            @if (App::getLocale() == "pt")
+                                <p><strong>DDD: {{ $ddd }}</strong></p>
+                            @endif
                             <p><strong>Phone: {{$tel }}</strong></p>
                             <p><strong>Phone: {{$countryData}} {{$codeData}}</strong></p>
                             <p><strong>Email: {{$email}}</strong></p>

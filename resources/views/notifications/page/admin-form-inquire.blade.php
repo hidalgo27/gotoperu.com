@@ -13,6 +13,9 @@
                             <p><strong>Package: {{$package}}</strong></p>
                             <p><strong>Travellers: {{$number}}</strong></p>
                             <p><strong>Email: {{$email}}</strong></p>
+                            @if (App::getLocale() == "pt")
+                                <p><strong>DDD: {{ $ddd }}</strong></p>
+                            @endif
                             <p><strong>Phone: {{$tel}}</strong></p>
                             <p><strong>Date: {{$date}}</strong></p>
                             <p><strong>Accommodation: {{$accommodation}}</strong></p>

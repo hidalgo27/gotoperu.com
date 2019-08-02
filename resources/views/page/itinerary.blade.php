@@ -320,7 +320,7 @@
 
                                                             @php
                                                                 $i = 1;
-                                                                $num_des = count($paquetes->itinerario);
+                                                                $num_des = count($paquetes->paquete_itinerario);
                                                             @endphp
 
                                                                 @foreach($paquetes->paquete_itinerario as $itinerario)
@@ -357,7 +357,7 @@
                                                             <h3 class="text-secondary pt-5 pb-4 h4"><strong>@lang('itinerary.itinerary')</strong></h3>
                                                             @php
                                                                 $i = 1;
-                                                                $num_des = count($paquetes->itinerario);
+                                                                $num_des = count($paquetes->paquete_itinerario);
                                                             @endphp
                                                             @foreach($paquete_iti as $paquete_itin)
                                                                 @foreach($paquete_itin->paquete_itinerario as $itinerario)
@@ -1160,7 +1160,7 @@
 
                                     <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
                                         <label class="btn col btn-outline-secondary number-hover font-weight-bold bg-light shadow">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="1" checked> 1 <i class="fa fa-male"></i>
+                                            <input type="radio" name="number" class="number" autocomplete="off" value="1"> 1 <i class="fa fa-male"></i>
                                         </label>
                                         <label class="btn col mx-2 btn-outline-secondary number-hover font-weight-bold bg-light shadow">
                                             <input type="radio" name="number" class="number" autocomplete="off" value="2"> 2 <i class="fa fa-male"></i>
@@ -1199,13 +1199,23 @@
                                             </div>
                                             <input type="hidden" id="d_package" value="{{$paquetes->codigo}}: {{$paquetes->titulo}} {{$paquetes->duracion}} DAYS">
                                         </div>
-                                        <div class="col-12 col-sm mt-4 mt-sm-0">
-                                            <div class="row pb-2">
+                                        <div class="col-12 col-sm-12 mt-4 mt-sm-0">
+                                            <div class="row pb-2 mt-4">
                                                 <div class="col">
                                                     <h2 class="text-secondary h5"><strong>@lang('itinerary.phone_number')</strong></h2>
                                                 </div>
                                             </div>
                                             <div class="row">
+                                                @if (App::getLocale() == "pt")
+                                                <div class="col">
+                                                    <div class="input-group input-group-lg">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text font-weight-bold" id="basic-addon1">DDD</span>
+                                                        </div>
+                                                        <input type="tel" class="form-control" id="i_ddd" placeholder="" aria-label="Phone" aria-describedby="basic-addon1">
+                                                    </div>
+                                                </div>
+                                                @endif
                                                 <div class="col">
                                                     <div class="input-group input-group-lg">
                                                         <div class="input-group-prepend">
@@ -1293,7 +1303,17 @@
 
                         <div class="row">
                             <div class="col text-right">
-                                <p class="font-weight-bold text-muted">info@gotoperu.com</p>
+                                @if (App::getLocale() == "en")
+                                    <p class="font-weight-bold text-muted">info@gotoperu.com</p>
+                                @endif
+
+                                @if (App::getLocale() == "es")
+                                    <p class="font-weight-bold text-muted">info@gotoperu.com.pe</p>
+                                @endif
+
+                                @if (App::getLocale() == "pt")
+                                    <p class="font-weight-bold text-muted">contato@gotoperu.com.br</p>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -1509,6 +1529,9 @@
                 var s_number = $(".number:checked").val();
 
                 var s_date = $('#d_date').val();
+
+                var s_ddd = $('#i_ddd').val();
+
                 var s_tel = $('#d_tel').val();
                 var s_name = $('#d_name').val();
                 var s_email = $('#d_email').val();
@@ -1541,6 +1564,7 @@
 
                         "txt_date" : s_date,
                         "txt_tel" : s_tel,
+                        "txt_ddd" : s_ddd,
                         "txt_name" : s_name,
                         "txt_email" : s_email,
                         "txt_package" : s_package,
