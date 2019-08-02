@@ -153,48 +153,48 @@
                 </div>
             </div>
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close position-absolute-top" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <div class="row">
-                            <div class="col-auto d-none d-sm-inline-block">
-                                <img src="{{asset('images/logos/escarapela.png')}}" alt="logo escarapela" class="w-100">
-                            </div>
-                            <div class="col text-center">
-                                <span class="display-4 font-weight-bold text-danger">Descuento</span>
-                                <p class="font-weight-bold h3">En todos nuestros paquetes <mark class="d-block"> por fiestas patrias</mark></p>
-                                <div class="alert alert-success">
-                                    <small>Pregunte por el <b>"descuento por fiestas patrias"</b> a nuestros asesores de ventas".</small>
-                                </div>
-                                <div class="bg-dark rounded shadow mb-3">
-                                    <a href="https://api.whatsapp.com/send?phone=5117059774" target="_blank" class="font-weight-bold text-white stretched-link">
-                                        <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
-                                        +51 (1) 705-9774
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="bg-danger text-center rounded">
-                                    <p class="text-white m-0 font-weight-bold">!Felices Fiestas Patrias!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col text-center">
-                                <small>El descuento aplica desde el 23 hasta 31 de julio</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--        <!-- Modal -->--}}
+{{--        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
+{{--            <div class="modal-dialog" role="document">--}}
+{{--                <div class="modal-content">--}}
+{{--                    <div class="modal-body">--}}
+{{--                        <button type="button" class="close position-absolute-top" data-dismiss="modal" aria-label="Close">--}}
+{{--                            <span aria-hidden="true">&times;</span>--}}
+{{--                        </button>--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-auto d-none d-sm-inline-block">--}}
+{{--                                <img src="{{asset('images/logos/escarapela.png')}}" alt="logo escarapela" class="w-100">--}}
+{{--                            </div>--}}
+{{--                            <div class="col text-center">--}}
+{{--                                <span class="display-4 font-weight-bold text-danger">Descuento</span>--}}
+{{--                                <p class="font-weight-bold h3">En todos nuestros paquetes <mark class="d-block"> por fiestas patrias</mark></p>--}}
+{{--                                <div class="alert alert-success">--}}
+{{--                                    <small>Pregunte por el <b>"descuento por fiestas patrias"</b> a nuestros asesores de ventas".</small>--}}
+{{--                                </div>--}}
+{{--                                <div class="bg-dark rounded shadow mb-3">--}}
+{{--                                    <a href="https://api.whatsapp.com/send?phone=5117059774" target="_blank" class="font-weight-bold text-white stretched-link">--}}
+{{--                                        <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">--}}
+{{--                                        +51 (1) 705-9774--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col">--}}
+{{--                                <div class="bg-danger text-center rounded">--}}
+{{--                                    <p class="text-white m-0 font-weight-bold">!Felices Fiestas Patrias!</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col text-center">--}}
+{{--                                <small>El descuento aplica desde el 23 hasta 31 de julio</small>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     @endif
 {{--    <div class="d-none d-sm-inline alert alert-primary alert-dismissible show m-0 elemento rounded-0 p-1" role="alert" id="aviso">--}}
 {{--        <div class="container">--}}
@@ -1678,9 +1678,9 @@
             //     slidesToScroll: 1
             // });
 
-            setTimeout(function() {
-                $('#myModal').modal();
-            }, 5000);
+            // setTimeout(function() {
+            //     $('#myModal').modal();
+            // }, 5000);
         </script>
         <div id="fb-root"></div>
         <script async defer src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2&appId=1712869952328301&autoLogAppEvents=1"></script>
