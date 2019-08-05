@@ -10,7 +10,7 @@
                 <source src="{{asset('media/gotoperu.webm')}}" type="video/webm" />
                 <source  src="{{asset('media/gotoperu.ogv')}}" type="video/ogg" />
             </video>
-            <div class="position-absolute-bottom p-3">
+            <div class="position-absolute-bottom">
                 <img src="{{asset('images/logos/logo-expedia.png')}}" alt="" width="180">
             </div>
         </div>
@@ -20,16 +20,16 @@
                     <div class="col text-center">
                         {{--<a href="" class="text-white"><i class="fa fa-play-circle fa-4x"></i></a>--}}
                         <div class="text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
-                            <div class="">
+                            <div class="mt-4">
                                 <div class="content-video-1 text-white">
                                     {{--<img src="images/travel/video-1.jpg" alt="video">--}}
                                     <h2 class="font-weight-light">@lang('home.header_title')</h2>
 
-                                    <div class="row mt-5 justify-content-center">
-                                        <div class="col-6 col-md-6 col-lg-5 col-xl-4">
+                                    <div class="row mt-2 justify-content-center">
+                                        <div class="col-12">
                                             <div class="row ">
                                                 <div class="col text-center">
-                                                    <a href="#Inquire" class="btn btn-lg btn-g-yellow font-weight-bold">@lang('home.header_button')</a>
+                                                    <a href="#Inquire" class="btn btn-lg btn-g-yellow font-weight-bold mt-3">@lang('home.header_button')</a>
                                                     {{--<div class="card bg-rgba-white border-g-yellow w-100">--}}
                                                         {{--<div class="card-header bg-g-yellow">--}}
                                                             {{--<h5 class="m-0 font-weight-bold">INQUIRE NOW</h5>--}}
@@ -55,6 +55,36 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @if (App::getLocale() == "pt")
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-7 col-lg-5 mt-5">
+                                            <div class="bg-rgba-white-5 rounded shadow p-3">
+                                                <h5 class="m-0 text-dark font-weight-bold">PARCELE SUA COMPRA <span class="text-primary">EM ATÉ</span></h5>
+                                                <p class="display-2 font-weight-bold m-0 font-weight-bold text-primary">12x</p>
+                                                <div class="row no-gutters">
+                                                    <div class="col">
+                                                        <img src="{{asset('images/logos/visa.png')}}" alt="logo visa" class="w-100 p-1">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="{{asset('images/logos/mastercard.png')}}" alt="logo mastercard" class="w-100 p-1">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="{{asset('images/logos/american_express.png')}}" alt="logo american express" class="w-100 p-1">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="{{asset('images/logos/hipercard.png')}}" alt="logo hipercard" class="w-100 p-1">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="{{asset('images/logos/elo.png')}}" alt="logo elo" class="w-100 p-1">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="{{asset('images/logos/diners_club.png')}}" alt="logo diner club" class="w-100 p-1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endif
 
                                 </div>
                             </div>
