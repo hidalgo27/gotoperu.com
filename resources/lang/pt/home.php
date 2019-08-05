@@ -18,6 +18,7 @@ return [
     'h1' => 'Pacotes de Viagens',
     'we_are_gotoperu' => 'NÓS SOMOS <span class="text-g-green">GOTOPERU</span>',
     'we_are_gotoperu_p' => '<span class="text-danger">Peru</span> Especialistas em viagens ao Peru! Nossos guias locais, motoristas e representantes vão adorar mostrar o melhor de nosso país. Com mais de 10 anos de experiência em viagens inesquecíveis para a terra dos Incas! Temos ótima avaliação com parceiros globais como Tripadvisor, Expedia, Travelocity. Somos reconhecidos <span class="text-danger">como melhor operador de viagens no Peru</span>.',
+    'we_are_gotoperu_p_2' => 'El compromiso de GOTOPERU es ofrecer una experiencia personalizada y de calidad que cumpla las expectativas de nuestros clientes . El modelo de Gestión de GOTOPERU está basado en la mejora continua y sus principales actuaciones son: Difundir las riquezas de nuestro país el Peru, sus costumbres, gastronomía, su patrimonio natural y cultural, ayudando a fomentar un turismo sostenible.',
     'testimonial_1' => 'O nosso guia de turismo Franklin tinha muito conhecimento. Todas nossas perguntas eram respondidas com uma longa resposta a repeito!',
     'testimonial_2' => 'Minha experiência com a agência foi perfeita. Recomendo contratá-los se você planeja viajar para o Peru.',
     'testimonial_3' => 'Não hesito em recomendar GoToPeru para ajudar a planejar sua viagem. Martin como o conselheiro da linha de frente',

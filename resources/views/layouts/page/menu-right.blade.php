@@ -23,7 +23,7 @@
                                 {{--</ul>--}}
                                 {{--"><strong>Destinations</strong></a></li>--}}
                             <li><a href="{{route('destinations_path')}}" class="text-secondary h5"><strong>@lang('home.destinations')</strong></a></li>
-                            <li><a href="{{route('testimonials_path')}}" class="text-secondary h5"><strong>@lang('home.testimonials')</strong></a></li>
+                            <li><a href="{{route('video_testimonials_path')}}" class="text-secondary h5"><strong>@lang('home.testimonials')</strong></a></li>
                             <li><a href="{{route('hotels_path')}}" class="text-secondary h5"><strong>@lang('home.hotels')</strong></a></li>
                             <li><a href="{{route('faq_path')}}" class="text-secondary h5"><strong>@lang('home.faq')</strong></a></li>
                             <li><a href="{{route('about_path')}}" class="text-secondary h5"><strong>@lang('home.about_us')</strong></a></li>

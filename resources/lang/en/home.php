@@ -18,6 +18,7 @@ return [
     'h1' => 'Peru Travel Packages',
     'we_are_gotoperu' => 'WE ARE <span class="text-g-green">GOTOPERU</span>',
     'we_are_gotoperu_p' => '<span class="text-danger">Peru</span> Local Travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 10 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized <span class="text-danger">us as Top Peru Local Travel Operator</span>.',
+    'we_are_gotoperu_p_2' => '<span class="text-danger">Peru</span> Local Travel experts! our local guides, drivers, representatives will love to share you the best of our country and our 10 + years of experience crafting unforgettable trips to the land of the Incas!  We have a high reputation including global partners as Expedia, Travelocity, Tripadvisor that have also recognized <span class="text-danger">us as Top Peru Local Travel Operator</span>.',
     'testimonial_1' => 'Our tour guide Franklin, was so knowledgeable, there was nothing we asked that he couldn\'t talk at length about!',
     'testimonial_2' => 'My experience with the agency is perfect. I would recommend to use them if you have plan to travel to Peru.',
     'testimonial_3' => 'No hesitation in recommending GoToPeru to help build your trip. Martin as the front line rep',

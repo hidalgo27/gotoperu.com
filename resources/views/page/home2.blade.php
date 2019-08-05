@@ -840,7 +840,7 @@
                         <h2 class="text-secondary h1 font-weight-bold text-g-yellow"><strong>@lang('home.we_are_gotoperu')</strong></h2>
                         {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                         {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                        <p class="text-dark">@lang('home.we_are_gotoperu_p')</p>
+                        <p class="text-dark">@lang('home.we_are_gotoperu_p_2')</p>
                         <ul class="list-unstyled">
                             <li><i class="fa fa-check text-g-yellow"></i> @lang('home.headquarters')</li>
                             <li><i class="fa fa-check text-g-yellow"></i> @lang('home.company_25_members')</li>

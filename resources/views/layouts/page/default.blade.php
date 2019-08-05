@@ -131,7 +131,7 @@
 
         <div class="row">
             <div class="col text-center text-white">
-                <small><i><b>PERU:</b> Av. Collasuyo 986 Cusco-Peru | <b>USA:</b> 1440 G St NW, Washington DC, 20005</i></small>
+                <a href="https://www.google.com/maps/place/GOTOPERU/@-13.5226792,-71.9748372,15z/data=!4m2!3m1!1s0x0:0xad9b34583ce776a0?sa=X&ved=2ahUKEwjZ86PazerjAhXuuFkKHb1dAaAQ_BIwE3oECAoQCA" target="_blank" class="text-white"><i class="fas fa-map-marker-alt"></i> Av. El Sol 948, 2do y 3er piso | Centro comercial Cusco Sol Plaza | Cusco - Cusco - Perú</a>
             </div>
         </div>
     </div>

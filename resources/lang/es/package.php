@@ -2,7 +2,7 @@
 return [
     'tours_packages' => 'PAQUETES TURISTICOS',
     'h1' => 'Viajes a Perú <span class="text-g-green">PAQUETES DESTACADOS</span>',
-    'h1_p' => 'Nuestros paquetes más populares <b>En Perú y América del Sur</b>, Estos <strong>paquetes</strong> pueden ser usados como referencia para personalizar tu viaje. At <strong>GOTOPERU</strong> Nos especializamos en la elaboración de experiencias personalizadas basadas en sus preferencias; invitamos a revisar estos programas para tener una idea de los destinos más importantes, por ejemplo, Machu Picchu, Lake Titicaca, Nazca y el Amazonas e incluso viajes y aventuras en distintos países de la región <strong>Brasil, Ecuador , Argentina.</strong>',
+    'h1_p' => 'Nuestros paquetes más populares <b>En Perú</b>, Estos <strong>paquetes</strong> pueden ser usados como referencia para personalizar tu viaje. En <strong>GOTOPERU</strong> Nos especializamos en la elaboración de experiencias personalizadas basadas en sus preferencias; invitamos a revisar estos programas para tener una idea de los destinos más importantes, por ejemplo, Machu Picchu, Lake Titicaca, Nazca y el Amazonas.',
     'days' => 'días',
     'inquire' => 'Pedir cotización',
 
