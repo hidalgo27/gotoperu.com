@@ -47,4 +47,5 @@
         <hr>
 
     </div>
+    <img src="{{asset('images/guia-gotoperu.jpg')}}" alt="" class="w-100">
 </section>

@@ -244,21 +244,21 @@
 {{--        </div>--}}
 {{--    </div>--}}
 
-        <section class="bg-light pb-5">
+        <section class="bg-light pb-sm-5 pb-0">
             <div class="container">
                 <div class="row">
                     <div class="col text-center">
                         <h1 class="h6 font-weight-bold text-muted">@lang('home.h1')</h1>
-                        <h2 class="display-4 font-weight-bold text-g-yellow">@lang('home.we_are_gotoperu')</h2>
+                        <h2 class="display-4 d-none d-sm-block font-weight-bold text-g-yellow">@lang('home.we_are_gotoperu')</h2>
                         {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                         {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                        <p class="lead font-weight-normal text-secondary m-0">@lang('home.we_are_gotoperu_p')</p>
+                        <p class="lead font-weight-normal text-secondary m-0 d-none d-sm-block">@lang('home.we_are_gotoperu_p')</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-light pb-5">
+        <section class="bg-light pb-5 d-none d-sm-block">
             <div class="container-fluid">
 
                         <div class="row">
@@ -450,7 +450,7 @@
                                         <div class="tab-content border border-top-0 rounded-bottom shadow-sm" id="v-pills-tabContent">
                                             @foreach($categorias->where('grupo', $categoria_groups->grupo) as $categoria)
                                             <div class="tab-pane fade show @if ($categoria->estado == 1) {{'active'}} @endif" id="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" role="tabpanel" aria-labelledby="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}-tab">
-                                                    <div class="row">
+                                                    <div class="row d-none d-md-block">
                                                         <div class="col">
                                                             <div class="position-relative">
                                                                     {{--<img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">--}}
@@ -532,7 +532,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col text-center">
-                        <h2 class="display-4 font-weight-bold text-g-yellow">@lang('home.video_testimonials')</h2>
+                        <h2 class="h1 font-weight-bold text-g-yellow">@lang('home.video_testimonials')</h2>
                         <p class="lead font-weight-normal text-muted">@lang('home.video_testimonials_p')</p>
                     </div>
                 </div>
@@ -1192,7 +1192,7 @@
         @include('layouts.page.form-quote')
 
 
-        <section class="bg-light pb-5">
+        <section class="bg-light pb-5 ">
             <div class="container">
                 <div class="row pt-5 pb-2">
                     <div class="col">
@@ -1203,7 +1203,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col-1 d-none d-md-block">
                         <img data-src="{{asset('images/cuadro-01.png')}}" data-srcset="{{asset('images/cuadro-01.png')}}" alt="border" class="w-100 lazy has-webp">
                     </div>
                 </div>
@@ -1250,7 +1250,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-end">
-                    <div class="col-1">
+                    <div class="col-1 d-none d-md-block">
                         <img data-src="{{asset('images/cuadro-02.png')}}" data-srcset="{{asset('images/cuadro-02.png')}}" alt="border" class="w-100 lazy has-webp">
                     </div>
                 </div>
@@ -1696,6 +1696,8 @@
                 slidesToScroll: 1,
                 autoplay: true,
                 autoplaySpeed: 10000,
+                arrows: false,
+                dots: false,
                 responsive: [
                     {
                         breakpoint: 1024,
@@ -1703,7 +1705,6 @@
                             slidesToShow: 3,
                             slidesToScroll: 3,
                             infinite: true,
-                            dots: true
                         }
                     },
                     {
@@ -1719,6 +1720,7 @@
                         settings: {
                             slidesToShow: 1,
                             slidesToScroll: 1,
+                            arrows: false,
                         }
                     }
                     // You can unslick at a given breakpoint now by adding:
