@@ -42,7 +42,7 @@ return [
     'looking_travel_experience' => 'Procurando a melhor experiência de viagem',
     'looking_travel_experience_p' => 'Não importa o tipo de aventura que você está procurando, GOTOPERU tem uma viagem pra você. Deseja ver lhamas? Veja! Quer fazer uma trilha no Caminho Inca? Faça! Que tal um ceviche em Lima? Prove! Que tal uma viagem para você, sozinho, conhecendo pessoas do mundo inteiro? Venha!',
     'view_all_category' => '+ categorias',
-    'why_with_gotoperu' => 'Por que <span class="text-g-yellow">Go</span>  GotoPeru',
+    'why_with_gotoperu' => 'Por que <span class="text-g-yellow">GotoPeru</span>',
     'small_groups' => 'Grupos pequenos ou tours privados.',
     'we_assistance' => 'Vivemos no Peru, somos do Peru, assistência 24/7 de verdade.',
     'book_now_option' => 'Reserve agora ou crie sua viagem dos sonhos!',

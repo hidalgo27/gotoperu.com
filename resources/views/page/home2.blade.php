@@ -569,6 +569,117 @@
             </div>
         </section>
 
+
+    <section class="bg-white py-5 inquire">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h4 class="h1 font-weight-bold">Conozca a nuestros especialistas de viajes</h4>
+                    <p class="lead font-weight-normal text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores autem beatae deleniti ea iste obcaecati pariatur sapiente sed velit? Aperiam culpa cupiditate debitis hic ipsum modi nemo nostrum quam.</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=BpaXxDE2c1M">
+                        <div class="position-relative">
+                            {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
+
+                            <picture class="team-circle">
+                                <img alt="gotoperu" class="lazy w-100 rounded-circle"
+                                     data-src="{{asset('images/team/pabel.jpg')}}"
+                                     data-srcset="{{asset('images/team/pabel.jpg')}}"
+                                     data-sizes="100w">
+                                <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
+                                    <i class="fas fa-play fa-5x"></i>
+                                </div>
+                            </picture>
+
+                            <div class="text-center mt-3">
+                                <h5 class="font-weight-bold text-muted m-0">Pabel Paucar</h5>
+                                <p><small class="text-muted font-weight-bold">Jefe Comercial</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=66IOeeFkgi8">
+                        <div class="position-relative">
+                            {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
+
+                            <picture class="team-circle">
+                                <img alt="gotoperu" class="lazy w-100 rounded-circle"
+                                     data-src="{{asset('images/team/freddy.jpg')}}"
+                                     data-srcset="{{asset('images/team/freddy.jpg')}}"
+                                     data-sizes="100w">
+                                <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
+                                    <i class="fas fa-play fa-5x"></i>
+                                </div>
+                            </picture>
+
+                            <div class="text-center mt-3">
+                                <h5 class="font-weight-bold text-muted m-0">Freddy Silva</h5>
+                                <p><small class="text-muted font-weight-bold">Jefe de Sistemas</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=cUWsovwPDpY">
+                        <div class="position-relative">
+                            {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
+
+                            <picture class="team-circle">
+                                <img alt="gotoperu" class="lazy w-100 rounded-circle"
+                                     data-src="{{asset('images/team/daniel.jpg')}}"
+                                     data-srcset="{{asset('images/team/daniel.jpg')}}"
+                                     data-sizes="100w">
+                                <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
+                                    <i class="fas fa-play fa-5x"></i>
+                                </div>
+                            </picture>
+
+                            <div class="text-center mt-3">
+                                <h5 class="font-weight-bold text-muted m-0">Daniel Escalona</h5>
+                                <p><small class="text-muted font-weight-bold">Travel Advisor</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=APgTEiOERHs">
+                        <div class="position-relative">
+                            {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
+
+                            <picture class="team-circle">
+                                <img alt="gotoperu" class="lazy w-100 rounded-circle"
+                                     data-src="{{asset('images/team/marina.jpg')}}"
+                                     data-srcset="{{asset('images/team/marina.jpg')}}"
+                                     data-sizes="100w">
+                                <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
+                                    <i class="fas fa-play fa-5x"></i>
+                                </div>
+                            </picture>
+
+                            <div class="text-center mt-3">
+                                <h5 class="font-weight-bold text-muted m-0">Marina Melo</h5>
+                                <p><small class="text-muted font-weight-bold">Contadora Junior</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <a href="{{route('about_path')}}" class="btn btn-dark btn-lg font-weight-bold">Vea más sobre nosotros</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
         <section class="d-none d-xl-block">
             <div class="jumbotron jumbotron-slider-1 rounded-0 m-0">
                 <div class="container">
