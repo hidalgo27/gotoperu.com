@@ -575,7 +575,7 @@
             <div class="row">
                 <div class="col text-center">
                     <h4 class="h1 font-weight-bold">Conozca a nuestros especialistas de viajes</h4>
-                    <p class="lead font-weight-normal text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores autem beatae deleniti ea iste obcaecati pariatur sapiente sed velit? Aperiam culpa cupiditate debitis hic ipsum modi nemo nostrum quam.</p>
+                    <p class="lead font-weight-normal text-muted">Nuestro equipo está integrado por expertos profesionales en cada área, desde un experto team de consejeros de viajes hasta los mejores guías locales en cada destino que operamos, lo que garantiza un conocimiento total de los destinos que conforman nuestra programación; deseando transmitir esos conocimientos a todos aquellos posibles viajeros, que confían en nosotros esos importantes momentos de sus vidas: como son sus viajes.    ¡Bienvenidos al mágico e histórico Perú!</p>
                 </div>
             </div>
             <div class="row mt-4">

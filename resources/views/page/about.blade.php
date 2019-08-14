@@ -53,7 +53,7 @@
             <div class="row pt-4">
                 <div class="col">
                     <h1 class="text-g-green text-center font-weight-bold">CONOZCA AL EQUIPO <span class="text-g-yellow">GOTOPERU</span></h1>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi eius inventore ipsa magni molestiae, officiis quidem temporibus totam vel vitae? Accusantium consequatur dolores est itaque magni optio, provident quo voluptate.</p>
+                    <p class="lead">Nuestro equipo está integrado por expertos profesionales en cada área, desde un experto team de consejeros de viajes hasta los mejores guías locales en cada destino que operamos, lo que garantiza un conocimiento total de los destinos que conforman nuestra programación; deseando transmitir esos conocimientos a todos aquellos posibles viajeros, que confían en nosotros esos importantes momentos de sus vidas: como son sus viajes.    ¡Bienvenidos al mágico e histórico Perú!</p>
 {{--                    <p class="lead">GotoPeru has become a family for all of us. The best thing about working in GotoPeru is that it requires me to be permanently connected to the world of art, culture, archaeology, geography, wildlife conservation, and cuisine. For this reason, it helps me to understand more of the travel world and formulate new methods that ensure our customers’ memorable travel experience. It is also enriching to interact with different yet all amazing people from all over the globe daily as it teaches me more of their culture.</p>--}}
 {{--                    <div class="alert alert-g-yellow text-center m-0" role="alert">--}}
 {{--                        <h4>9 Reasons To Let Our Guides Take You On An Unforgettable Adventure!</h4>--}}
