@@ -603,14 +603,14 @@
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-3">
-                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=66IOeeFkgi8">
+                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=kAHrfcy20bI">
                         <div class="position-relative">
                             {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
 
                             <picture class="team-circle">
                                 <img alt="gotoperu" class="lazy w-100 rounded-circle"
-                                     data-src="{{asset('images/team/freddy.jpg')}}"
-                                     data-srcset="{{asset('images/team/freddy.jpg')}}"
+                                     data-src="{{asset('images/team/franklin.jpg')}}"
+                                     data-srcset="{{asset('images/team/franklin.jpg')}}"
                                      data-sizes="100w">
                                 <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
                                     <i class="fas fa-play fa-5x"></i>
@@ -618,8 +618,8 @@
                             </picture>
 
                             <div class="text-center mt-3">
-                                <h5 class="font-weight-bold text-muted m-0">Freddy Silva</h5>
-                                <p><small class="text-muted font-weight-bold">Jefe de Sistemas</small></p>
+                                <h5 class="font-weight-bold text-muted m-0">Franklin Perez</h5>
+                                <p><small class="text-muted font-weight-bold">Guia Senior</small></p>
                             </div>
                         </div>
                     </a>
@@ -649,14 +649,14 @@
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-3">
-                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=APgTEiOERHs">
+                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=586i_znr4VQ">
                         <div class="position-relative">
                             {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
 
                             <picture class="team-circle">
                                 <img alt="gotoperu" class="lazy w-100 rounded-circle"
-                                     data-src="{{asset('images/team/marina.jpg')}}"
-                                     data-srcset="{{asset('images/team/marina.jpg')}}"
+                                     data-src="{{asset('images/team/katy.jpg')}}"
+                                     data-srcset="{{asset('images/team/katy.jpg')}}"
                                      data-sizes="100w">
                                 <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
                                     <i class="fas fa-play fa-5x"></i>
@@ -664,8 +664,8 @@
                             </picture>
 
                             <div class="text-center mt-3">
-                                <h5 class="font-weight-bold text-muted m-0">Marina Melo</h5>
-                                <p><small class="text-muted font-weight-bold">Contadora Junior</small></p>
+                                <h5 class="font-weight-bold text-muted m-0">Kati</h5>
+                                <p><small class="text-muted font-weight-bold">Guia</small></p>
                             </div>
                         </div>
                     </a>

@@ -74,7 +74,7 @@
 {{--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, accusamus aperiam cumque debitis deleniti dolor eos exercitationem minus molestiae officia quod rerum soluta ut! Culpa ea excepturi officia rem ut.</p>--}}
 {{--                </div>--}}
 {{--            </div>--}}
-            <div class="row py-5">
+            <div class="row justify-content-center py-5">
 
                 <div class="col-12 col-sm-6 col-md-3">
                     <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=BpaXxDE2c1M">
@@ -163,6 +163,76 @@
                             <div class="text-center mt-3">
                                 <h5 class="font-weight-bold text-muted m-0">Marina Melo</h5>
                                 <p><small class="text-muted font-weight-bold">Contadora Junior</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=586i_znr4VQ">
+                        <div class="position-relative">
+                            {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
+
+                            <picture class="">
+                                <img alt="gotoperu" class="lazy w-100 rounded-circle"
+                                     data-src="{{asset('images/team/katy.jpg')}}"
+                                     data-srcset="{{asset('images/team/katy.jpg')}}"
+                                     data-sizes="100w">
+                                <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
+                                    <i class="fas fa-play fa-5x"></i>
+                                </div>
+                            </picture>
+
+                            <div class="text-center mt-3">
+                                <h5 class="font-weight-bold text-muted m-0">Katy</h5>
+                                <p><small class="text-muted font-weight-bold">Guia</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=kAHrfcy20bI">
+                        <div class="position-relative">
+                            {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
+
+                            <picture class="">
+                                <img alt="gotoperu" class="lazy w-100 rounded-circle"
+                                     data-src="{{asset('images/team/franklin.jpg')}}"
+                                     data-srcset="{{asset('images/team/franklin.jpg')}}"
+                                     data-sizes="100w">
+                                <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
+                                    <i class="fas fa-play fa-5x"></i>
+                                </div>
+                            </picture>
+
+                            <div class="text-center mt-3">
+                                <h5 class="font-weight-bold text-muted m-0">Franklin Perez</h5>
+                                <p><small class="text-muted font-weight-bold">Guia Senior</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=f0V5sohLEJs">
+                        <div class="position-relative">
+                            {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
+
+                            <picture class="">
+                                <img alt="gotoperu" class="lazy w-100 rounded-circle"
+                                     data-src="{{asset('images/team/americo.jpg')}}"
+                                     data-srcset="{{asset('images/team/americo.jpg')}}"
+                                     data-sizes="100w">
+                                <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
+                                    <i class="fas fa-play fa-5x"></i>
+                                </div>
+                            </picture>
+
+                            <div class="text-center mt-3">
+                                <h5 class="font-weight-bold text-muted m-0">Americo</h5>
+                                <p><small class="text-muted font-weight-bold">Guia</small></p>
                             </div>
                         </div>
                     </a>
