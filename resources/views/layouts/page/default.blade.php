@@ -46,19 +46,19 @@
         <div class="row justify-content-center">
             <div class="col-12 col-sm-8">
                 <div class="alert bg-rgba-dark mt-4 text-white text-center" role="alert">
-                    The <strong class="text-g-yellow">ONLY Peruvian Travel Operator</strong> with direct Sales Offices in the USA
+                    @lang('home.header_title')
                 </div>
-                <a href="{{asset('pdf/terms-conditions.pdf')}}" target="_blank" class="btn btn-link font-weight-bold text-white d-block">Services Terms & Conditions</a>
+{{--                <a href="{{asset('pdf/terms-conditions.pdf')}}" target="_blank" class="btn btn-link font-weight-bold text-white d-block">Services Terms & Conditions</a>--}}
             </div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row py-4">
             <div class="col-6 col-sm mb-3 text-white">
-                <h3 class="h6 text-g-yellow">Tour Packages</h3>
+                <h3 class="h6 text-g-yellow">@lang('home.travel_packages')</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
                     {{--<li><a href="{{route('deals_path')}}" class="text-white">Travel Deals</a></li>--}}
-                    <li><a href="{{route('packages_path')}}" class="text-white">Travel Packages</a></li>
+                    <li><a href="{{route('packages_path')}}" class="text-white">@lang('home.travel_packages')</a></li>
                 </ul>
             </div>
             {{--<div class="col-6 col-sm mb-3 text-white">--}}
@@ -69,12 +69,9 @@
                 {{--</ul>--}}
             {{--</div>--}}
             <div class="col-6 col-sm mb-3 text-white">
-                <h3 class="h6 text-g-yellow">Destinations</h3>
+                <h3 class="h6 text-g-yellow">@lang('home.destinations')</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="https://gotoperu.com/destinations/peru-travel" class="text-white">Peru</a></li>
-                    <li><a href="https://gotoperu.com/destinations/ecuador-travel" class="text-white">Ecuador</a></li>
-                    <li><a href="https://gotoperu.com/destinations/bolivia-travel" class="text-white">Bolivia</a></li>
-                    <li><a href="https://gotoperu.com/destinations/brasil-travel" class="text-white">Brasil</a></li>
+                    <li><a href="{{route('destinations_path')}}" class="text-white">@lang('home.destinations')</a></li>
                 </ul>
             </div>
             {{--<div class="col-6 col-sm mb-3 text-white">--}}
@@ -89,7 +86,7 @@
             <div class="col-6 col-sm mb-3 text-white">
                 <h3 class="h6 text-g-yellow">About Us</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="{{route('about_path')}}" class="text-white">Social Responsibility</a></li>
+                    <li><a href="{{route('about_path')}}" class="text-white">@lang('home.about_us')</a></li>
                 </ul>
             </div>
             {{--<div class="col-6 col-sm mb-3 text-white">--}}
@@ -100,31 +97,31 @@
                 {{--</ul>--}}
             {{--</div>--}}
             <div class="col-6 col-sm mb-3 text-white">
-                <h3 class="h6 text-g-yellow">FAQ</h3>
+                <h3 class="h6 text-g-yellow">@lang('home.faq')</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="{{route('getting_path')}}" class="text-white">Getting To Peru</a></li>
-                    <li><a href="{{route('faq_path')}}" class="text-white">Frequently Asked Questions</a></li>
+{{--                    <li><a href="{{route('getting_path')}}" class="text-white">@lang('home.ge')</a></li>--}}
+                    <li><a href="{{route('faq_path')}}" class="text-white">@lang('home.faq')</a></li>
                 </ul>
             </div>
             <div class="col-6 col-sm mb-3 text-white">
-                <h3 class="h6 text-g-yellow">Testimonials</h3>
+                <h3 class="h6 text-g-yellow">@lang('home.testimonials')</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
                     {{--<li><a href="#" class="text-white"></a></li>--}}
-                    <li><a href="{{route('testimonials_path')}}" class="text-white">Reviews & Testmonials</a></li>
+                    <li><a href="{{route('testimonials_path')}}" class="text-white">@lang('home.testimonials')</a></li>
                 </ul>
             </div>
             <div class="col-6 col-sm mb-3 text-white">
-                <h3 class="h6 text-g-yellow">Contact Us</h3>
+                <h3 class="h6 text-g-yellow">@lang('home.contact_us')</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="" class="text-white" data-toggle="modal" data-target="#modal-contact">Email</a></li>
+                    <li><a href="" class="text-white" data-toggle="modal" data-target="#modal-contact">@lang('home.email')</a></li>
                     <li><a href="tel:+2029963000">(202) 996-3000</a></li>
                     {{--<li><a href="" class="text-white">Address</a></li>--}}
                 </ul>
             </div>
             <div class="col-6 col-sm mb-3 text-white">
-                <h3 class="h6 text-g-yellow">Hotels</h3>
+                <h3 class="h6 text-g-yellow">@lang('home.hotels')</h3>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="{{route('hotels_path')}}" class="text-white">Hotels</a></li>
+                    <li><a href="{{route('hotels_path')}}" class="text-white">@lang('home.hotels')</a></li>
                 </ul>
             </div>
         </div>
