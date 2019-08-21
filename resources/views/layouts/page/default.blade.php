@@ -167,46 +167,10 @@
     }
     if (locale == "pt"){
         <!-- begin olark code -->
-        // (function(o,l,a,r,k,y){if(o.olark)return; r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0]; y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r); y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)}; y.extend=function(i,j){y("extend",i,j)}; y.identify=function(i){y("identify",k.i=i)}; y.configure=function(i,j){y("configure",i,j);k.c[i]=j}; k=y._={s:[],t:[+new Date],c:{},l:a}; })(window,document,"static.olark.com/jsclient/loader.js");
-        // /* custom configuration goes here (www.olark.com/documentation) */
-        // olark.identify('6575-497-10-7384');
+        (function(o,l,a,r,k,y){if(o.olark)return; r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0]; y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r); y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)}; y.extend=function(i,j){y("extend",i,j)}; y.identify=function(i){y("identify",k.i=i)}; y.configure=function(i,j){y("configure",i,j);k.c[i]=j}; k=y._={s:[],t:[+new Date],c:{},l:a}; })(window,document,"static.olark.com/jsclient/loader.js");
+        /* custom configuration goes here (www.olark.com/documentation) */
+        olark.identify('6575-497-10-7384');
         <!-- end olark code -->
-
-
-
-
-        <!-- Start of Async Drift Code -->
-
-        "use strict";
-
-        !function() {
-            var t = window.driftt = window.drift = window.driftt || [];
-            if (!t.init) {
-                if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
-                t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
-                    t.factory = function(e) {
-                        return function() {
-                            var n = Array.prototype.slice.call(arguments);
-                            return n.unshift(e), t.push(n), t;
-                        };
-                    }, t.methods.forEach(function(e) {
-                    t[e] = t.factory(e);
-                }), t.load = function(t) {
-                    var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
-                    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
-                    var i = document.getElementsByTagName("script")[0];
-                    i.parentNode.insertBefore(o, i);
-                };
-            }
-        }();
-        drift.SNIPPET_VERSION = '0.3.1';
-        drift.load('nd46tn9xuphe');
-
-<!-- End of Async Drift Code -->
-
-
-
-
     }
     function startOlark() {
         olark('api.box.expand');
@@ -682,7 +646,34 @@
 
 </script>
 <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0088/4755.js" async="async"></script>
+<!-- Start of Async Drift Code -->
+{{--<script>--}}
+{{--    "use strict";--}}
 
+{{--    !function() {--}}
+{{--        var t = window.driftt = window.drift = window.driftt || [];--}}
+{{--        if (!t.init) {--}}
+{{--            if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));--}}
+{{--            t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],--}}
+{{--                t.factory = function(e) {--}}
+{{--                    return function() {--}}
+{{--                        var n = Array.prototype.slice.call(arguments);--}}
+{{--                        return n.unshift(e), t.push(n), t;--}}
+{{--                    };--}}
+{{--                }, t.methods.forEach(function(e) {--}}
+{{--                t[e] = t.factory(e);--}}
+{{--            }), t.load = function(t) {--}}
+{{--                var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");--}}
+{{--                o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";--}}
+{{--                var i = document.getElementsByTagName("script")[0];--}}
+{{--                i.parentNode.insertBefore(o, i);--}}
+{{--            };--}}
+{{--        }--}}
+{{--    }();--}}
+{{--    drift.SNIPPET_VERSION = '0.3.1';--}}
+{{--    drift.load('nd46tn9xuphe');--}}
+{{--</script>--}}
+<!-- End of Async Drift Code -->
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf1RN8KKGNdS-iEarIgXpaqa-khw7EmZI&callback=initMap">
 </script>
