@@ -440,7 +440,7 @@
                             <div class="col">
                                 <div class="row">
                                     <div class="col-12 nav-tabs-wrapper">
-                                        <div class="nav nav-tabs dragscroll horizontal flex-sm-row p-0 @if ($categoria_groups->grupo == 1) {{'nav-category-goto-yellow'}} @elseif ($categoria_groups->grupo == 2) {{'nav-category-goto-green'}} @elseif ($categoria_groups->grupo == 3) {{'nav-category-goto-grey'}} @endif" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                        <div class="nav nav-tabs dragscroll horizontal flex-sm-row p-0 @if ($categoria_groups->grupo == 1) {{'nav-category-goto-grey'}} @elseif ($categoria_groups->grupo == 2) {{'nav-category-goto-green'}} @elseif ($categoria_groups->grupo == 3) {{'nav-category-goto-yellow'}} @endif" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                             @foreach($categorias->where('grupo', $categoria_groups->grupo)->sortByDesc('estado') as $categoria)
                                                 <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link @if ($categoria->estado == 1) {{'active'}} @endif" id="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}-tab" data-toggle="pill" href="#category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" role="tab" aria-controls="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" aria-selected="true">{{$categoria->nombre}}</a>
                                             @endforeach
