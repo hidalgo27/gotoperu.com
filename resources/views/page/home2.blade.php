@@ -299,7 +299,7 @@
             </div>
         </section>
 
-    <section class="d-none d-xl-block pt-4 bg-white">
+        <section class="d-none d-xl-block pt-4 bg-white">
         <div class="rounded-0 m-0">
             <div class="container">
                 {{--<div class="row">--}}
@@ -525,6 +525,7 @@
                         <a href="{{route('category_path')}}" class="btn btn-primary btn-lg font-weight-bold">@lang('home.see_more_categories')</a>
                     </div>
                 </div>
+
             </div>
         </section>
 
