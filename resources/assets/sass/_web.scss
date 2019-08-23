@@ -1063,8 +1063,8 @@ $slide-overlay-opacity: 0.6;
 .nav-category-goto-green .nav-link.active, .nav-pills .show > .nav-link{
   background-color: #7F8429;
   border: none !important;
-  text-shadow: 1px 1px 1px #879037;
-  color: #444918 !important;
+  text-shadow: 1px 1px 1px #080808;
+  color: #ffffff !important;
   border-radius: 10px 0 !important;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #babf41), color-stop(100%, #444918));
   padding: 6px;
@@ -1108,8 +1108,8 @@ $slide-overlay-opacity: 0.6;
 
   background-color: #333333;
   border: none !important;
-  text-shadow: 1px 1px 1px #656565;
-  color: #dadada !important;
+  text-shadow: 1px 1px 1px #000000;
+  color: #ffffff !important;
   border-radius: 10px 0 !important;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c5c5c5), color-stop(100%, #4c4c4c));
   padding: 6px;
