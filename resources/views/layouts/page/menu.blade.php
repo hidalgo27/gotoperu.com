@@ -21,7 +21,7 @@
                     <a href="tel:+2029963000" class="mx-3 h4"><i class="fa fa-phone text-white"></i></a>
                 @endif
                     @if (App::getLocale() == "pt")
-                        <a href="https://api.whatsapp.com/send?phone=551131982239" target="_blank" class="stretched-link">
+                        <a href="https://api.whatsapp.com/send?phone=+551141302800" target="_blank" class="stretched-link">
                             <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
                         </a>
                     @endif
