@@ -41,7 +41,7 @@
                                 <div class="content-video-1 text-white p-3 rounded">
                                     {{--<img src="images/travel/video-1.jpg" alt="video">--}}
                                     <h2 class="font-weight-bold">
-                                        {{($paquetes->titulo)}} <span class="text-white">{{($paquetes->duracion)}} @lang('itinerary.days_tours')</span>
+                                        {{($paquetes->titulo)}}
                                     </h2>
                                 </div>
                                 <div class="row justify-content-center">
