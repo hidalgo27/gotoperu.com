@@ -165,7 +165,7 @@
             olark.identify('1630-501-10-9116');
         <!-- end olark code -->
         
-        <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/d1b447b4-892c-4562-a6dc-536d0eb23944-loader.js" ></script>
+        <script src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/d1b447b4-892c-4562-a6dc-536d0eb23944-loader.js" ></script>
 
     }
     if (locale == "pt"){
