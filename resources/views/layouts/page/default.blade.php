@@ -135,6 +135,9 @@
 </footer>
 <script src="{{asset("js/app.js")}}"></script>
 <script src="{{asset("js/plugins.js")}}"></script>
+@if ($locale == "es")
+    <script src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/d1b447b4-892c-4562-a6dc-536d0eb23944-loader.js" ></script>
+@endif
 <script>
     var locale = "{{$locale}}";
     if (locale == "en"){
