@@ -288,7 +288,7 @@
                                                     <div class="row d-none d-md-block">
                                                         <div class="col">
                                                             <div class="position-relative">
-                                                                    <img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">
+{{--                                                                    <img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">--}}
                                                                     <img alt="gotoperu" class="lazy w-100" src="{{asset('images/banners/category/'.$categoria->imagen_banner.'')}}">
                                                                 <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
                                                                     <p class="m-0 font-weight-bold">@php echo $categoria->descripcion; @endphp</p>
