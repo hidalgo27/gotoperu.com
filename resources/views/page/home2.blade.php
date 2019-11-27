@@ -285,17 +285,17 @@
                                         <div class="tab-content border border-top-0 rounded-bottom shadow-sm" id="v-pills-tabContent">
                                             @foreach($categorias->where('grupo', $categoria_groups->grupo) as $categoria)
                                             <div class="tab-pane fade show @if ($categoria->estado == 1) {{'active'}} @endif" id="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" role="tabpanel" aria-labelledby="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}-tab">
-{{--                                                    <div class="row d-none d-md-block">--}}
-{{--                                                        <div class="col">--}}
-{{--                                                            <div class="position-relative">--}}
-{{--                                                                    --}}{{--<img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">--}}
-{{--                                                                    <img alt="gotoperu" class="lazy w-100" src="{{asset('images/banners/category/'.$categoria->imagen_banner.'')}}">--}}
-{{--                                                                <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">--}}
-{{--                                                                    <p class="m-0 font-weight-bold">@php echo $categoria->descripcion; @endphp</p>--}}
-{{--                                                                </div>--}}
-{{--                                                            </div>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
+                                                    <div class="row d-none d-md-block">
+                                                        <div class="col">
+                                                            <div class="position-relative">
+                                                                    <img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">
+                                                                    <img alt="gotoperu" class="lazy w-100" src="{{asset('images/banners/category/'.$categoria->imagen_banner.'')}}">
+                                                                <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
+                                                                    <p class="m-0 font-weight-bold">@php echo $categoria->descripcion; @endphp</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 <div class="row my-3 mx-0">
                                                     @foreach($paquetes_categoria->where('idcategoria', $categoria->id)->take(2) as $paquetes_categorias)
                                                         <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
