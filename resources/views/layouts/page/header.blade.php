@@ -83,7 +83,7 @@
             @if (App::getLocale() == "pt")
             <div class="col-5 col-lg-auto">
                 <div class="bg-dark rounded px-3 shadow clearfix float-right">
-                    <a href="https://api.whatsapp.com/send?phone=999200914" target="_blank" class="font-weight-bold text-white stretched-link">
+                    <a href="https://api.whatsapp.com/send?phone=51999200914" target="_blank" class="font-weight-bold text-white stretched-link">
                         <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
                         +51 999200914
                     </a>
