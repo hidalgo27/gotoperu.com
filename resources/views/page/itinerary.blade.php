@@ -641,13 +641,13 @@
                                             </div>
                                         </div>
 
-                                        <hr>
+{{--                                        <hr>--}}
 
-                                        <div class="row">
-                                            <div class="col">
-                                                <img src="{{asset('images/mapas/'.$paquetes->codigo.'.jpg')}}" alt="" class="w-100 rounded">
-                                            </div>
-                                        </div>
+{{--                                        <div class="row">--}}
+{{--                                            <div class="col">--}}
+{{--                                                <img src="{{asset('images/mapas/'.$paquetes->codigo.'.jpg')}}" alt="" class="w-100 rounded">--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                         <div class="row mt-2">
                                             {{--<div class="col">--}}
                                             {{--<a href="" class="btn btn-g-yellow btn-block">Check Availability</a>--}}
