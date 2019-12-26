@@ -816,15 +816,16 @@
                             <div class="position-relative">
                                 <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ','-', mb_strtolower($destino->nombre))])}}-tours">
 {{--                                    <img src="{{asset('images/destinations/destinations/machu-picchu.jpg')}}" alt="" class="w-100 shadow-sm">--}}
-                                    <picture>
-                                        <source type="image/webp"
-                                                data-srcset="{{asset('images/destinations/'.$destino->imagen.'')}}"
-                                                data-sizes="100w">
-                                        <img alt="{{ucwords(strtolower($destino->nombre))}}" class="lazy w-100 shadow-sm"
-                                             data-src="{{asset('images/destinations/destinations/'.$destino->imagen.'')}}"
-                                             data-srcset="{{asset('images/destinations/destinations/'.$destino->imagen.'')}}"
-                                             data-sizes="100w">
-                                    </picture>
+{{--                                    <picture>--}}
+{{--                                        <source type="image/webp"--}}
+{{--                                                data-srcset="{{asset('images/destinations/'.$destino->imagen.'')}}"--}}
+{{--                                                data-sizes="100w">--}}
+{{--                                        <img alt="{{ucwords(strtolower($destino->nombre))}}" class="lazy w-100 shadow-sm"--}}
+{{--                                             data-src="{{asset('images/destinations/'.$destino->imagen.'')}}"--}}
+{{--                                             data-srcset="{{asset('images/destinations/'.$destino->imagen.'')}}"--}}
+{{--                                             data-sizes="100w">--}}
+{{--                                    </picture>--}}
+                                    <img src="{{asset('images/destinations/'.$destino->imagen.'')}}" class="w-100 shadow-sm" alt="{{ucwords(strtolower($destino->nombre))}}">
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
                                         <h6 class="p-2 m-0 font-weight-bold footer-title-category">{{ucwords(strtolower($destino->nombre))}}</h6>
                                     </div>
