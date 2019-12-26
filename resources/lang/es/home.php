@@ -76,6 +76,7 @@ return [
     'thank_you_for_contact_us' => 'GRACIAS POR CONTACTARNOS </strong>, UN EXPERTO DE VIAJES PERUANO LO CONTACTARA EN MENOS DE 24HRS. :)',
     'certificates' => 'Certificados',
     'certificates_p' => 'GOTOPERU somos una agencia certificada por el gobierno peruano con todas las licencias del "Ministerio de Turismo del Perú".',
-    'gotoperu_group' => 'GOTOPERU GROUP'
+    'gotoperu_group' => 'GOTOPERU GROUP',
+    'about_h1_p' => 'Nuestro equipo está integrado por expertos profesionales en cada área, desde un experto team de consejeros de viajes hasta los mejores guías locales en cada destino que operamos, lo que garantiza un conocimiento total de los destinos que conforman nuestra programación; deseando transmitir esos conocimientos a todos aquellos posibles viajeros, que confían en nosotros esos importantes momentos de sus vidas: como son sus viajes.    ¡Bienvenidos al mágico e histórico Perú!'
 ];
 
