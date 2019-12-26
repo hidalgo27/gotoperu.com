@@ -77,5 +77,6 @@ return [
     'certificates' => 'Certificates',
     'certificates_p' => 'GOTOPERU is fully certified by the Peruvian local government as an officially licensed tour operator on behalf of the "Ministerio de Turismo del Peru".',
     'gotoperu_group' => 'GOTOPERU GROUP',
+    'about_h1' => 'MEET THE GOTOPERU TEAM',
     'about_h1_p' => 'GotoPeru travel agency was founded to fulfill a personal dream: “Provide first class travel experience for the international community while generating job opportunities locally”. It is extremely gratifying to employ and reward individuals who extend effort, enthusiasm and commitment to sharing the best of Peru and South America with the rest of the world.'
 ];
