@@ -11,7 +11,7 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/banners/itinerary/GTP40.webp')}}" alt="" id="hero-vid" class="banner-itinerary">
+            <img src="{{asset('images/banners/itinerary/GTP40.jpg')}}" alt="" id="hero-vid" class="banner-itinerary">
             {{--            @include('layouts.page.menu-custom')--}}
         </div>
         <div class="content-header">
