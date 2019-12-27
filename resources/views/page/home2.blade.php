@@ -1,7 +1,7 @@
 @extends('layouts.page.default')
 
 @section('content')
-    <header>
+    <header class="d-none d-md-block">
         <div class="overlay"></div>
         {{--            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">--}}
         {{--                <source src="{{asset('media/Secuencia 06.mp4')}}" type="video/mp4">--}}
