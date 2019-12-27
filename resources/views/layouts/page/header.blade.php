@@ -71,15 +71,23 @@
                 <h5 class="font-weight-light"><img src="{{asset('images/icons/brasil.png')}}" width="30"  alt="brazil"> <img src="{{asset('images/icons/peru.png')}}" width="30"  alt="peru"> @lang('home.header_slogan')</h5>
                 @endif
             </div>
-            <div class="col-3 d-md-none d-lg-inline col-lg-auto col-xl-auto text-right">
+{{--            <div class="col-3 d-md-none d-lg-inline col-lg-auto col-xl-auto text-right">--}}
                 @if (App::getLocale() == "en")
-                    <a href="tel:+2029963000" class="mx-3 text-g-yellow font-weight-bold h5"><img src="{{asset('images/icons/peru.png')}}" alt="" width="25" data-toggle="tooltip" data-placement="top" title="Perú"> (202) 996-3000</a>
+{{--                    <a href="tel:+2029963000" class="mx-3 text-g-yellow font-weight-bold h5"><img src="{{asset('images/icons/peru.png')}}" alt="" width="25" data-toggle="tooltip" data-placement="top" title="Perú"> (202) 996-3000</a>--}}
 {{--                @elseif (App::getLocale() == "pt")--}}
 {{--                    <a href="tel:+551131982239" class="mx-3 text-g-yellow font-weight-bold h5"> +55 (11) 31982239</a>--}}
 {{--                @elseif (App::getLocale() == "es")--}}
 {{--                    <a href="tel:+5184206931" class="mx-3 text-g-yellow font-weight-bold h5"><img src="{{asset('images/icons/peru.png')}}" alt="" width="25" data-toggle="tooltip" data-placement="top" title="Perú"> +51 84 206931</a>--}}
+                    <div class="col-3 d-md-none d-lg-inline col-lg-auto col-xl-auto text-right">
+                        <div class="bg-dark rounded px-3 shadow clearfix float-right">
+                            <a href="https://api.whatsapp.com/send?phone=12024911478" target="_blank" class="font-weight-bold text-white stretched-link">
+                                <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
+                                +1 (202) 491-1478
+                            </a>
+                        </div>
+                    </div>
                 @endif
-            </div>
+{{--            </div>--}}
             @if (App::getLocale() == "pt")
             <div class="col-5 col-lg-auto">
                 <div class="bg-dark rounded px-3 shadow clearfix float-right">

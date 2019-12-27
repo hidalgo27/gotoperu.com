@@ -73,7 +73,7 @@
         </div>
     </section>
 
-    <section class="bg-white">
+    <section class="bg-white mb-5">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -593,8 +593,8 @@
 
                             </div>
                             <div class="col col-sm-12 col-md-5 col-lg-4 col-xl-4 d-none d-md-inline">
-                                <div class="sticky-top mt-4">
-                                    <div class="card p-3 bg-light">
+
+                                    <div class="card p-3 alert-g-yellow mb-4">
                                         <div class="row">
                                             <div class="col">
                                                 <span class="font-weight-bold d-block h4">{{$paquetes->duracion}} @lang('itinerary.days')</span>
@@ -615,154 +615,216 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="col">
-                                                @php $j = 0; $k = 0; @endphp
-                                                @foreach($comentario->where('idpaquetes', $paquetes->id) as $comment)
-                                                    @php
-                                                        $k = $k + $comment->valoracion;
-                                                        $j++;
-                                                    @endphp
-                                                @endforeach
-                                                @if($j > 0)
-                                                    <a href="#Reviews" class="h6 text-primary">
-                                                        @lang('itinerary.comments') {{$j}}
-                                                        <span class="text-g-yellow">
-                                                            @for ($i = 0; $i < ($k/$j); $i++)
-                                                                        <i class="fas fa-star small"></i>
-                                                                    @endfor
-                                                        </span>
-                                                        <span class="badge badge-g-dark">
-                                                            {{round($k/$j, 2)}}
-                                                        </span>
-                                                    </a>
+                                    </div>
 
-                                                @endif
-                                            </div>
-                                        </div>
+                                <div class="card p-3 alert-dark sticky-top sticky-top-50">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="h4 font-weight-bold text-dark text-center mb-4 text-uppercase">@lang('home.inquire')</p>
+                                            <form id="d_form" role="form">
+                                                {{csrf_field()}}
+                                                <div class="row">
+                                                    <div class="col-12 mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="basic-addon1"><i data-feather="user"stroke-width="1"></i></span>
+                                                            </div>
+                                                            <input type="text" class="form-control" id="d_name" placeholder="Full Name" aria-label="Full Name" aria-describedby="basic-addon1">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="basic-addon1"><i data-feather="mail" stroke-width="1"></i></span>
+                                                            </div>
+                                                            <input type="email" class="form-control" id="d_email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-2">
+                                                    <div class="col">
+                                                        <p class="font-weight-bold"><strong>@lang('itinerary.hotel_category')</strong></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6 text-center">
+                                                        <div class="btn-group-toggle" data-toggle="buttons">
+                                                            <label class="col btn btn-outline-secondary text-secondary number-hover bg-light shadow-sm mb-2">
+                                                                {{--<i class="fa fa-home d-block fa-2x"></i>--}}
+                                                                <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> <small class="font-weight-bold">@lang('itinerary.budget')</small>
+                                                                <div class="d-block small">
+                                                                    2 <i data-feather="star" stroke-width="1"></i>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="btn-group-toggle" data-toggle="buttons">
+                                                            <label class="col btn btn-outline-secondary text-secondary number-hover bg-light shadow-sm mb-2">
+                                                                {{--<i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>--}}
+                                                                <input type="checkbox" autocomplete="off" name="accommodation[]" value="Turista"> <small class="font-weight-bold">@lang('itinerary.best_value')</small>
+                                                                <div class="d-block small">
+                                                                    3 <i data-feather="star" stroke-width="1"></i>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="btn-group-toggle" data-toggle="buttons">
+                                                            <label class="col btn btn-outline-secondary text-secondary number-hover bg-light shadow-sm mb-2">
+                                                                {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
+                                                                <input type="checkbox" autocomplete="off" name="accommodation[]" value="Superior"> <small class="font-weight-bold">@lang('itinerary.superior')</small>
+                                                                <div class="d-block small">
+                                                                    4 <i data-feather="star" stroke-width="1"></i>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="btn-group-toggle" data-toggle="buttons">
+                                                            <label class="col btn btn-outline-secondary text-secondary number-hover bg-light shadow-sm mb-2">
+                                                                {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
+                                                                <input type="checkbox" autocomplete="off" name="accommodation[]" value="Luxo"> <small class="font-weight-bold">@lang('itinerary.luxury')</small>
+                                                                <div class="d-block">
+                                                                    5 <i data-feather="star" stroke-width="1"></i>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-{{--                                        <hr>--}}
 
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col">--}}
-{{--                                                <img src="{{asset('images/mapas/'.$paquetes->codigo.'.jpg')}}" alt="" class="w-100 rounded">--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-                                        <div class="row mt-2">
-                                            {{--<div class="col">--}}
-                                            {{--<a href="" class="btn btn-g-yellow btn-block">Check Availability</a>--}}
-                                            {{--</div>--}}
-                                            <div class="col-12 col-xl mb-xl-0 mb-2">
-                                                <a href="#Inquire" class="btn btn-g-yellow btn-block font-weight-bold">@lang('home.inquire')</a>
-                                            </div>
-                                            {{--<div class="col-12 col-xl mb-xl-0">--}}
-                                                {{--<a href="https://fareharbor.com/embeds/book/gotoperu/items/{{$paquetes->codigo_f}}/calendar/?flow=92114" class="btn btn-g-green btn-block font-weight-bold">BOOK NOW</a>--}}
-                                            {{--</div>--}}
+                                                <div class="row mt-4 pb-2 d-none">
+                                                    <div class="col">
+                                                        <h2 class="text-secondary h5"><strong>@lang('itinerary.number_travelers')</strong></h2>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row no-gutters btn-group-toggle d-none" data-toggle="buttons">
+                                                    <label class="btn col btn-outline-secondary number-hover font-weight-bold bg-light shadow">
+                                                        <input type="radio" name="number" class="number" autocomplete="off" value="1"> 1 <i class="fa fa-male"></i>
+                                                    </label>
+                                                    <label class="btn col mx-2 btn-outline-secondary number-hover font-weight-bold bg-light shadow">
+                                                        <input type="radio" name="number" class="number" autocomplete="off" value="2"> 2 <i class="fa fa-male"></i>
+                                                    </label>
+                                                    <label class="btn col btn-outline-secondary number-hover font-weight-bold bg-light shadow">
+                                                        <input type="radio" name="number" class="number" autocomplete="off" value="3"> 3 <i class="fa fa-male"></i>
+                                                    </label>
+                                                    <label class="btn col mx-2 btn-outline-secondary number-hover font-weight-bold bg-light shadow">
+                                                        <input type="radio" name="number" class="number" autocomplete="off" value="4"> 4 <i class="fa fa-male"></i>
+                                                    </label>
+                                                    <label class="btn col btn-outline-secondary number-hover font-weight-bold bg-light shadow">
+                                                        <input type="radio" name="number" class="number" autocomplete="off" value="5+"> 5+ <i class="fa fa-male"></i>
+                                                    </label>
+                                                    <label class="btn col ml-2 btn-outline-secondary number-hover font-weight-bold bg-light shadow">
+                                                        <input type="radio" name="number" class="number" autocomplete="off" value="Undecided"><small>@lang('itinerary.undecided')</small>
+                                                    </label>
+                                                </div>
+
+                                                <div class="row mt-2">
+                                                    <div class="col-12 col-sm">
+                                                        {{--                                                        <div class="row pb-2">--}}
+                                                        {{--                                                            <div class="col">--}}
+                                                        {{--                                                                <h2 class="text-secondary h5"><strong>@lang('itinerary.travel_date') <span class="text-primary">*</span></strong></h2>--}}
+                                                        {{--                                                            </div>--}}
+                                                        {{--                                                        </div>--}}
+
+                                                        <div class="row mb-2">
+                                                            <div class="col">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text" id="basic-addon1"><i data-feather="calendar" stroke-width="1"></i></span>
+                                                                    </div>
+                                                                    <input type="text" class="form-control datepicker" id="d_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <input type="hidden" id="d_package" value="{{$paquetes->codigo}}: {{$paquetes->titulo}} {{$paquetes->duracion}} DAYS">
+                                                    </div>
+                                                    <div class="col-12 col-sm-12 mt-4 mt-sm-0">
+                                                        <div class="row pb-2 mt-4 d-none">
+                                                            <div class="col">
+                                                                <h2 class="text-secondary h5"><strong>@lang('itinerary.phone_number')</strong></h2>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            @if (App::getLocale() == "pt")
+                                                                <div class="col d-none">
+                                                                    <div class="input-group input-group-lg">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text font-weight-bold" id="basic-addon1">DDD</span>
+                                                                        </div>
+                                                                        <input type="tel" class="form-control" id="i_ddd" placeholder="" aria-label="Phone" aria-describedby="basic-addon1">
+                                                                    </div>
+                                                                </div>
+                                                            @endif
+                                                            <div class="col d-none">
+                                                                <div class="input-group input-group-lg">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone"></i></span>
+                                                                    </div>
+                                                                    <input type="tel" class="form-control" id="d_tel" placeholder="Phone number" aria-label="Phone" aria-describedby="basic-addon1">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                                {{--                                                <div class="row mt-4 pb-2">--}}
+                                                {{--                                                    <div class="col">--}}
+                                                {{--                                                        <h2 class="text-secondary h5"><strong>@lang('itinerary.comments')?</strong></h2>--}}
+                                                {{--                                                    </div>--}}
+                                                {{--                                                </div>--}}
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i data-feather="message-circle" stroke-width="1"></i></span>
+                                                            </div>
+                                                            <textarea class="form-control" id="d_comment" aria-label="With textarea" placeholder="How do you imagine a perfect trip to Peru, Special Requests, Questions, Comments"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mt-2">
+                                                    <div class="col my-3 text-center">
+                                                        <button class="btn btn-primary btn-lg btn-next btn-block font-weight-bold btn-block" id="d_send" type="button" onclick="inquire()">@lang('itinerary.send')</button>
+                                                        <i class="fas fa-spinner fa-pulse fa-2x text-primary d-none" id="loader2"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="alert alert-success alert-dismissible fade d-none" id="d_alert" role="alert">
+                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                            <b>@lang('itinerary.thank_you_for_contact')</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
-                                    <hr>
-                                    <div class="card bg-light">
-                                        <div class="card-body">
-                                            <h4>@lang('itinerary.Destinations')</h4>
-                                            <hr>
-                                            @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
-                                                <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($paquete_destino->destinos->nombre))])}}-tours"><img src="{{asset('images/destinations/'.str_replace(' ','-', strtolower($paquete_destino->destinos->imagen)).'')}}" alt="" width="50" height="50" class="rounded-circle" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($paquete_destino->destinos->nombre))}}">
-                                                </a>
-                                            @endforeach
-                                            <hr>
-                                            <img src="{{asset('images/mapas/'.$paquetes->imagen.'')}}" alt="" class="w-100 rounded shadow-sm">
+                                    <div class="row">
+                                        <div class="col text-right">
+                                            @if (App::getLocale() == "en")
+                                                <p class="font-weight-bold text-muted">info@gotoperu.com</p>
+                                            @endif
+
+                                            @if (App::getLocale() == "es")
+                                                <p class="font-weight-bold text-muted">info@gotoperu.com.pe</p>
+                                            @endif
+
+                                            @if (App::getLocale() == "pt")
+                                                <p class="font-weight-bold text-muted">contato@gotoperu.com.br</p>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
 
-                                {{--<div class="">--}}
-                                    {{--<div class="row mt-3">--}}
-                                        {{--<div class="col">--}}
-                                            {{--<div class="card">--}}
 
-                                            {{--<!-- FareHarbor calendar of item #106623 -->--}}
-{{--                                                <script src="https://fareharbor.com/embeds/script/calendar/gotoperu/items/{{$paquetes->codigo_f}}/?fallback=simple&flow=92114"></script>--}}
-
-                                                {{--<!-- FareHarbor book button for item #106632 -->--}}
-                                                {{--<a href="https://fareharbor.com/embeds/book/gotoperu/items/{{$paquetes->codigo_f}}/calendar/?flow=92114">Book Now</a>--}}
-                                                {{--<!-- FareHarbor item grid of flow #92114 -->--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-
-                                {{--<div class="card bg-light my-4">--}}
-                                    {{--<img class="card-img-top" src="..." alt="Card image cap">--}}
-                                    {{--<div class="content-video-1 card-img-top">--}}
-                                        {{--<div class="content-area-3">--}}
-                                            {{--<div class="position-relative">--}}
-                                                {{--<img src="{{asset('images/video/prom-peru.jpg')}}" alt="video promperu" class="img-fluid">--}}
-                                                {{--<div class="video-btn-1">--}}
-                                                    {{--<a href="https://www.youtube.com/embed/gGq_U1DYUCs" title=""><i class="fa fa-play-circle text-g-dark"></i></a>--}}
-                                                {{--</div>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                    {{--<img src="{{asset('images/prom-peru-4.jpg')}}" alt="video" class="img-fluid card-img-top" >--}}
-                                    {{--<div class="card-body">--}}
-                                        {{--<h4 class="card-title">Destinations</h4>--}}
-                                        {{--<div class="box-route-ininerary p-0">--}}
-                                            {{--@foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)--}}
-                                                {{--<p class="font-weight-bold text-secondary"><i class="fa fa-check"></i> {{ucwords(strtolower($paquete_destino->destinos->nombre))}}</p>--}}
-                                            {{--@endforeach--}}
-
-                                            {{--@foreach($vuelo as $vuelos)--}}
-                                                {{--{{$vuelos->origen}}--}}
-                                                {{--@endforeach--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                                {{--@php--}}
-                                    {{--$k=0;--}}
-                                {{--@endphp--}}
-                                {{--@foreach($paquete_vuelo->where('idpaquetes',$paquetes->id) as $paquete_vuelo1)--}}
-                                    {{--@php--}}
-                                        {{--$k++;--}}
-                                    {{--@endphp--}}
-                                {{--@endforeach--}}
-
-                                {{--@if($k == 0)--}}
-                                    {{--@php $vue = 'd-none'; @endphp--}}
-                                {{--@else--}}
-                                    {{--@php $vue = ''; @endphp--}}
-                                {{--@endif--}}
-                                {{--<div class="my-4 {{$vue}}">--}}
-                                    {{--<h3 class="text-secondary h4"><strong>Add Internal Flights</strong></h3>--}}
-                                    {{--<div class="row">--}}
-                                        {{--<div class="col d-flex">--}}
-                                            {{--<table class="table">--}}
-                                                {{--<thead class="title-header bg-light">--}}
-                                                {{--<tr>--}}
-                                                    {{--<th></th>--}}
-                                                    {{--<th>3 Stars</th>--}}
-                                                {{--</tr>--}}
-                                                {{--</thead>--}}
-                                                {{--<tbody>--}}
-                                                {{--@foreach($paquete_vuelo->where('idpaquetes',$paquetes->id) as $paquete_vuelos)--}}
-                                                    {{--<tr>--}}
-                                                        {{--<td><small>{{$paquete_vuelos->vuelos->origen}} - {{$paquete_vuelos->vuelos->destino}}</small></td>--}}
-                                                        {{--<td class="font-weight-bold"><sup>$</sup>{{$paquete_vuelos->vuelos->precio}}</td>--}}
-                                                    {{--</tr>--}}
-                                                {{--@endforeach--}}
-                                                {{--</tbody>--}}
-                                            {{--</table>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="col d-flex align-items-center">--}}
-                                            {{--<div class="card w-100 bg-light">--}}
-                                                {{--<div class="card-body text-center p-2">--}}
-                                                    {{--<h5 class="card-title m-0 text-secondary">International Flights</h5>--}}
-                                                    {{--<h4 class="card-text m-0 font-weight-bold text-secondary mt-1">NOT INCLUDED</h4>--}}
-                                                    {{--<small class="m-0">Contact us for a quote</small>--}}
-                                                {{--</div>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
 
                             </div>
                             </div>
@@ -1065,443 +1127,441 @@
         </div>
     </section>
 
-    <section id="Inquire" class="my-5 py-5">
-        <div class="container">
-            <div class="row mb-3">
-                <div class="col">
+{{--    <section id="Inquire" class="my-5 py-5">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row mb-3">--}}
+{{--                <div class="col">--}}
 
-                    <div>
+{{--                    <div>--}}
 
-                        <div class="row justify-content-center mt-4">
-                            <div class="col-3 mb-3 d-block text-center">
-                                <h3 class="text-secondary h4"><strong>@lang('itinerary.inquire')</strong></h3>
-                                <img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="w-100">
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-md-10 col-lg-8 text-center">
-                                <h2 class="text-secondary h1 font-weight-bold text-g-green">{{$paquetes->titulo}} {{$paquetes->duracion}} @lang('itinerary.days')</h2>
-                                {{--<h5 class="text-secondary">{{$paquetes->duracion}} Days</h5>--}}
-                            </div>
-                        </div>
+{{--                        <div class="row justify-content-center mt-4">--}}
+{{--                            <div class="col-3 mb-3 d-block text-center">--}}
+{{--                                <h3 class="text-secondary h4"><strong>@lang('itinerary.inquire')</strong></h3>--}}
+{{--                                <img src="{{asset('images/logos/logo-gotoperu-ave.png')}}" alt="" class="w-100">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="row justify-content-center">--}}
+{{--                            <div class="col-12 col-md-10 col-lg-8 text-center">--}}
+{{--                                <h2 class="text-secondary h1 font-weight-bold text-g-green">{{$paquetes->titulo}} {{$paquetes->duracion}} @lang('itinerary.days')</h2>--}}
+{{--                                --}}{{--<h5 class="text-secondary">{{$paquetes->duracion}} Days</h5>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="row justify-content-center pt-4 ">
-                            <div class="col-12 col-ms-9 col-md-8">
-                                <form id="d_form" role="form">
-                                    {{csrf_field()}}
-                                    <div class="row pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>@lang('itinerary.hotel_category')</strong></h2>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6 col-sm text-center">
-                                            <div class="btn-group-toggle" data-toggle="buttons">
-                                                <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">
-                                                    {{--<i class="fa fa-home d-block fa-2x"></i>--}}
-                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> @lang('itinerary.budget')
-                                                    <div class="d-block small">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-sm">
-                                            <div class="btn-group-toggle" data-toggle="buttons">
-                                                <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">
-                                                    {{--<i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>--}}
-                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Turista"> @lang('itinerary.best_value')
-                                                    <div class="d-block small">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-sm">
-                                            <div class="btn-group-toggle" data-toggle="buttons">
-                                                <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">
-                                                    {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
-                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Superior"> @lang('itinerary.superior')
-                                                    <div class="d-block small">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-sm">
-                                            <div class="btn-group-toggle" data-toggle="buttons">
-                                                <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">
-                                                    {{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
-                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Luxo"> @lang('itinerary.luxury')
-                                                    <div class="d-block small">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="row mt-4 pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>@lang('itinerary.number_travelers')</strong></h2>
-                                        </div>
-                                    </div>
-
-                                    <div class="row no-gutters btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn col btn-outline-secondary number-hover font-weight-bold bg-light shadow">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="1"> 1 <i class="fa fa-male"></i>
-                                        </label>
-                                        <label class="btn col mx-2 btn-outline-secondary number-hover font-weight-bold bg-light shadow">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="2"> 2 <i class="fa fa-male"></i>
-                                        </label>
-                                        <label class="btn col btn-outline-secondary number-hover font-weight-bold bg-light shadow">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="3"> 3 <i class="fa fa-male"></i>
-                                        </label>
-                                        <label class="btn col mx-2 btn-outline-secondary number-hover font-weight-bold bg-light shadow">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="4"> 4 <i class="fa fa-male"></i>
-                                        </label>
-                                        <label class="btn col btn-outline-secondary number-hover font-weight-bold bg-light shadow">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="5+"> 5+ <i class="fa fa-male"></i>
-                                        </label>
-                                        <label class="btn col ml-2 btn-outline-secondary number-hover font-weight-bold bg-light shadow">
-                                            <input type="radio" name="number" class="number" autocomplete="off" value="Undecided"><small>@lang('itinerary.undecided')</small>
-                                        </label>
-                                    </div>
-
-                                    <div class="row mt-4">
-                                        <div class="col-12 col-sm">
-                                            <div class="row pb-2">
-                                                <div class="col">
-                                                    <h2 class="text-secondary h5"><strong>@lang('itinerary.travel_date') <span class="text-primary">*</span></strong></h2>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="input-group input-group-lg">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
-                                                        </div>
-                                                        <input type="text" class="form-control datepicker" id="d_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <input type="hidden" id="d_package" value="{{$paquetes->codigo}}: {{$paquetes->titulo}} {{$paquetes->duracion}} DAYS">
-                                        </div>
-                                        <div class="col-12 col-sm-12 mt-4 mt-sm-0">
-                                            <div class="row pb-2 mt-4">
-                                                <div class="col">
-                                                    <h2 class="text-secondary h5"><strong>@lang('itinerary.phone_number')</strong></h2>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                @if (App::getLocale() == "pt")
-                                                <div class="col">
-                                                    <div class="input-group input-group-lg">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text font-weight-bold" id="basic-addon1">DDD</span>
-                                                        </div>
-                                                        <input type="tel" class="form-control" id="i_ddd" placeholder="" aria-label="Phone" aria-describedby="basic-addon1">
-                                                    </div>
-                                                </div>
-                                                @endif
-                                                <div class="col">
-                                                    <div class="input-group input-group-lg">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone"></i></span>
-                                                        </div>
-                                                        <input type="tel" class="form-control" id="d_tel" placeholder="Phone number" aria-label="Phone" aria-describedby="basic-addon1">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-12 col-sm">
-                                            <div class="row mt-4 pb-2">
-                                                <div class="col">
-                                                    <h2 class="text-secondary h5"><strong>@lang('itinerary.name') <span class="text-primary">*</span></strong></h2>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="input-group input-group-lg">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                                        </div>
-                                                        <input type="text" class="form-control" id="d_name" placeholder="Full Name" aria-label="Full Name" aria-describedby="basic-addon1">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm">
-                                            <div class="row mt-4 pb-2">
-                                                <div class="col">
-                                                    <h2 class="text-secondary h5"><strong>@lang('itinerary.email') <span class="text-primary">*</span></strong></h2>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="input-group input-group-lg">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
-                                                        </div>
-                                                        <input type="email" class="form-control" id="d_email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-4 pb-2">
-                                        <div class="col">
-                                            <h2 class="text-secondary h5"><strong>@lang('itinerary.comments')?</strong></h2>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="input-group input-group-lg">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i class="fa fa-comment"></i></span>
-                                                </div>
-                                                <textarea class="form-control" id="d_comment" aria-label="With textarea" placeholder="How do you imagine a perfect trip to Peru, Special Requests, Questions, Comments"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row justify-content-center mt-2">
-                                        <div class="col-4 my-3 text-center">
-                                            <button class="btn btn-primary btn-lg btn-next font-weight-bold btn-block" id="d_send" type="button" onclick="inquire()">@lang('itinerary.send')</button>
-                                            <i class="fas fa-spinner fa-pulse fa-2x text-primary d-none" id="loader2"></i>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="alert alert-success alert-dismissible fade d-none" id="d_alert" role="alert">
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                                <b>@lang('itinerary.thank_you_for_contact')</b>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col text-right">
-                                @if (App::getLocale() == "en")
-                                    <p class="font-weight-bold text-muted">info@gotoperu.com</p>
-                                @endif
-
-                                @if (App::getLocale() == "es")
-                                    <p class="font-weight-bold text-muted">info@gotoperu.com.pe</p>
-                                @endif
-
-                                @if (App::getLocale() == "pt")
-                                    <p class="font-weight-bold text-muted">contato@gotoperu.com.br</p>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col">
-                    <div id="Reviews" class="pt-5">
-                        <h3 class="text-secondary h4"><strong>@lang('itinerary.reviews')</strong></h3>
-                        <div class="row">
-                            <div class="col-12 col-md-6 col-lg-7 col-xl-8">
+{{--                        <div class="row justify-content-center pt-4 ">--}}
+{{--                            <div class="col-12 col-ms-9 col-md-8">--}}
+{{--                                <form id="d_form" role="form">--}}
+{{--                                    {{csrf_field()}}--}}
+{{--                                    <div class="row pb-2">--}}
+{{--                                        <div class="col">--}}
+{{--                                            <h2 class="text-secondary h5"><strong>@lang('itinerary.hotel_category')</strong></h2>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="row">--}}
+{{--                                        <div class="col-6 col-sm text-center">--}}
+{{--                                            <div class="btn-group-toggle" data-toggle="buttons">--}}
+{{--                                                <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">--}}
+{{--                                                    --}}{{--<i class="fa fa-home d-block fa-2x"></i>--}}
+{{--                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> @lang('itinerary.budget')--}}
+{{--                                                    <div class="d-block small">--}}
+{{--                                                        <i class="fa fa-star"></i>--}}
+{{--                                                        <i class="fa fa-star"></i>--}}
+{{--                                                    </div>--}}
+{{--                                                </label>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-6 col-sm">--}}
+{{--                                            <div class="btn-group-toggle" data-toggle="buttons">--}}
+{{--                                                <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">--}}
+{{--                                                    --}}{{--<i class="fa fa-home d-block fa-2x" aria-hidden="true"></i>--}}
+{{--                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Turista"> @lang('itinerary.best_value')--}}
+{{--                                                    <div class="d-block small">--}}
+{{--                                                        <i class="fa fa-star"></i>--}}
+{{--                                                        <i class="fa fa-star"></i>--}}
+{{--                                                        <i class="fa fa-star"></i>--}}
+{{--                                                    </div>--}}
+{{--                                                </label>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-6 col-sm">--}}
+{{--                                            <div class="btn-group-toggle" data-toggle="buttons">--}}
+{{--                                                <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">--}}
+{{--                                                    --}}{{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
+{{--                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Superior"> @lang('itinerary.superior')--}}
+{{--                                                    <div class="d-block small">--}}
+{{--                                                        <i class="fa fa-star"></i>--}}
+{{--                                                        <i class="fa fa-star"></i>--}}
+{{--                                                        <i class="fa fa-star"></i>--}}
+{{--                                                        <i class="fa fa-star"></i>--}}
+{{--                                                    </div>--}}
+{{--                                                </label>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-6 col-sm">--}}
+{{--                                            <div class="btn-group-toggle" data-toggle="buttons">--}}
+{{--                                                <label class="col btn btn-outline-secondary text-secondary number-hover font-weight-bold bg-light shadow">--}}
+{{--                                                    --}}{{--<i class="fa fa-building d-block fa-2x" aria-hidden="true"></i>--}}
+{{--                                                    <input type="checkbox" autocomplete="off" name="accommodation[]" value="Luxo"> @lang('itinerary.luxury')--}}
+{{--                                                    <div class="d-block small">--}}
+{{--                                                        <i class="fa fa-star"></i>--}}
+{{--                                                        <i class="fa fa-star"></i>--}}
+{{--                                                        <i class="fa fa-star"></i>--}}
+{{--                                                        <i class="fa fa-star"></i>--}}
+{{--                                                        <i class="fa fa-star"></i>--}}
+{{--                                                    </div>--}}
+{{--                                                </label>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
 
 
+{{--                                    <div class="row mt-4 pb-2">--}}
+{{--                                        <div class="col">--}}
+{{--                                            <h2 class="text-secondary h5"><strong>@lang('itinerary.number_travelers')</strong></h2>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
 
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="alert alert-primary mb-3">
-                                            <h4 class="">{{ucwords(strtolower($paquetes->titulo))}} {{$paquetes->duracion}} @lang('itinerary.days')</h4>
-                                            <small>@lang('itinerary.leave_your_comment').</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                @foreach($comentario->where('idpaquetes', $paquetes->id) as $comentarios)
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <small class="font-italic"><i class="fas fa-user-circle"></i> {{$comentarios->usuario}} | <span class="font-weight-bold">{{$comentarios->ciudad}}</span></small>
-                                            <span class="d-block text-g-yellow">
-                                                                                @for ($i = 0; $i < $comentarios->valoracion; $i++)
-                                                    <i class="fas fa-star"></i>
-                                                @endfor
-                                                                            </span>
-                                        </div>
-                                        <div class="col">
-                                            <i class="fa fa-quote-left float-left mr-3"></i>
-                                            @php echo $comentarios->comentario; @endphp
-                                            <i class="fa fa-quote-right float-left"></i>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                @endforeach
+{{--                                    <div class="row no-gutters btn-group-toggle" data-toggle="buttons">--}}
+{{--                                        <label class="btn col btn-outline-secondary number-hover font-weight-bold bg-light shadow">--}}
+{{--                                            <input type="radio" name="number" class="number" autocomplete="off" value="1"> 1 <i class="fa fa-male"></i>--}}
+{{--                                        </label>--}}
+{{--                                        <label class="btn col mx-2 btn-outline-secondary number-hover font-weight-bold bg-light shadow">--}}
+{{--                                            <input type="radio" name="number" class="number" autocomplete="off" value="2"> 2 <i class="fa fa-male"></i>--}}
+{{--                                        </label>--}}
+{{--                                        <label class="btn col btn-outline-secondary number-hover font-weight-bold bg-light shadow">--}}
+{{--                                            <input type="radio" name="number" class="number" autocomplete="off" value="3"> 3 <i class="fa fa-male"></i>--}}
+{{--                                        </label>--}}
+{{--                                        <label class="btn col mx-2 btn-outline-secondary number-hover font-weight-bold bg-light shadow">--}}
+{{--                                            <input type="radio" name="number" class="number" autocomplete="off" value="4"> 4 <i class="fa fa-male"></i>--}}
+{{--                                        </label>--}}
+{{--                                        <label class="btn col btn-outline-secondary number-hover font-weight-bold bg-light shadow">--}}
+{{--                                            <input type="radio" name="number" class="number" autocomplete="off" value="5+"> 5+ <i class="fa fa-male"></i>--}}
+{{--                                        </label>--}}
+{{--                                        <label class="btn col ml-2 btn-outline-secondary number-hover font-weight-bold bg-light shadow">--}}
+{{--                                            <input type="radio" name="number" class="number" autocomplete="off" value="Undecided"><small>@lang('itinerary.undecided')</small>--}}
+{{--                                        </label>--}}
+{{--                                    </div>--}}
+
+{{--                                    <div class="row mt-4">--}}
+{{--                                        <div class="col-12 col-sm">--}}
+{{--                                            <div class="row pb-2">--}}
+{{--                                                <div class="col">--}}
+{{--                                                    <h2 class="text-secondary h5"><strong>@lang('itinerary.travel_date') <span class="text-primary">*</span></strong></h2>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+
+{{--                                            <div class="row">--}}
+{{--                                                <div class="col">--}}
+{{--                                                    <div class="input-group input-group-lg">--}}
+{{--                                                        <div class="input-group-prepend">--}}
+{{--                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>--}}
+{{--                                                        </div>--}}
+{{--                                                        <input type="text" class="form-control datepicker" id="d_date" placeholder="Fecha de Viaje" aria-label="Username" aria-describedby="basic-addon1">--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                            <input type="hidden" id="d_package" value="{{$paquetes->codigo}}: {{$paquetes->titulo}} {{$paquetes->duracion}} DAYS">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-12 col-sm-12 mt-4 mt-sm-0">--}}
+{{--                                            <div class="row pb-2 mt-4">--}}
+{{--                                                <div class="col">--}}
+{{--                                                    <h2 class="text-secondary h5"><strong>@lang('itinerary.phone_number')</strong></h2>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="row">--}}
+{{--                                                @if (App::getLocale() == "pt")--}}
+{{--                                                <div class="col">--}}
+{{--                                                    <div class="input-group input-group-lg">--}}
+{{--                                                        <div class="input-group-prepend">--}}
+{{--                                                            <span class="input-group-text font-weight-bold" id="basic-addon1">DDD</span>--}}
+{{--                                                        </div>--}}
+{{--                                                        <input type="tel" class="form-control" id="i_ddd" placeholder="" aria-label="Phone" aria-describedby="basic-addon1">--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                @endif--}}
+{{--                                                <div class="col">--}}
+{{--                                                    <div class="input-group input-group-lg">--}}
+{{--                                                        <div class="input-group-prepend">--}}
+{{--                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone"></i></span>--}}
+{{--                                                        </div>--}}
+{{--                                                        <input type="tel" class="form-control" id="d_tel" placeholder="Phone number" aria-label="Phone" aria-describedby="basic-addon1">--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+
+{{--                                    <div class="row">--}}
+{{--                                        <div class="col-12 col-sm">--}}
+{{--                                            <div class="row mt-4 pb-2">--}}
+{{--                                                <div class="col">--}}
+{{--                                                    <h2 class="text-secondary h5"><strong>@lang('itinerary.name') <span class="text-primary">*</span></strong></h2>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="row">--}}
+{{--                                                <div class="col">--}}
+{{--                                                    <div class="input-group input-group-lg">--}}
+{{--                                                        <div class="input-group-prepend">--}}
+{{--                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>--}}
+{{--                                                        </div>--}}
+{{--                                                        <input type="text" class="form-control" id="d_name" placeholder="Full Name" aria-label="Full Name" aria-describedby="basic-addon1">--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-12 col-sm">--}}
+{{--                                            <div class="row mt-4 pb-2">--}}
+{{--                                                <div class="col">--}}
+{{--                                                    <h2 class="text-secondary h5"><strong>@lang('itinerary.email') <span class="text-primary">*</span></strong></h2>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="row">--}}
+{{--                                                <div class="col">--}}
+{{--                                                    <div class="input-group input-group-lg">--}}
+{{--                                                        <div class="input-group-prepend">--}}
+{{--                                                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>--}}
+{{--                                                        </div>--}}
+{{--                                                        <input type="email" class="form-control" id="d_email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+
+{{--                                    <div class="row mt-4 pb-2">--}}
+{{--                                        <div class="col">--}}
+{{--                                            <h2 class="text-secondary h5"><strong>@lang('itinerary.comments')?</strong></h2>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="row">--}}
+{{--                                        <div class="col">--}}
+{{--                                            <div class="input-group input-group-lg">--}}
+{{--                                                <div class="input-group-prepend">--}}
+{{--                                                    <span class="input-group-text"><i class="fa fa-comment"></i></span>--}}
+{{--                                                </div>--}}
+{{--                                                <textarea class="form-control" id="d_comment" aria-label="With textarea" placeholder="How do you imagine a perfect trip to Peru, Special Requests, Questions, Comments"></textarea>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+
+{{--                                    <div class="row justify-content-center mt-2">--}}
+{{--                                        <div class="col-4 my-3 text-center">--}}
+{{--                                            <button class="btn btn-primary btn-lg btn-next font-weight-bold btn-block" id="d_send" type="button" onclick="inquire()">@lang('itinerary.send')</button>--}}
+{{--                                            <i class="fas fa-spinner fa-pulse fa-2x text-primary d-none" id="loader2"></i>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="row">--}}
+{{--                                        <div class="col">--}}
+{{--                                            <div class="alert alert-success alert-dismissible fade d-none" id="d_alert" role="alert">--}}
+{{--                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">--}}
+{{--                                                    <span aria-hidden="true">&times;</span>--}}
+{{--                                                </button>--}}
+{{--                                                <b>@lang('itinerary.thank_you_for_contact')</b>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </form>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="row">--}}
+{{--                            <div class="col text-right">--}}
+{{--                                @if (App::getLocale() == "en")--}}
+{{--                                    <p class="font-weight-bold text-muted">info@gotoperu.com</p>--}}
+{{--                                @endif--}}
+
+{{--                                @if (App::getLocale() == "es")--}}
+{{--                                    <p class="font-weight-bold text-muted">info@gotoperu.com.pe</p>--}}
+{{--                                @endif--}}
+
+{{--                                @if (App::getLocale() == "pt")--}}
+{{--                                    <p class="font-weight-bold text-muted">contato@gotoperu.com.br</p>--}}
+{{--                                @endif--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+
+{{--    <section>--}}
+{{--        <div class="container">--}}
+{{--            <div class="row mb-4">--}}
+{{--                <div class="col">--}}
+{{--                    <div id="Reviews" class="pt-5">--}}
+{{--                        <h3 class="text-secondary h4"><strong>@lang('itinerary.reviews')</strong></h3>--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-12 col-md-6 col-lg-7 col-xl-8">--}}
 
 
 
-                                <div class="row mb-3">
-                                    <div class="col text-right">
-                                        <a href="" class="btn btn-link" data-toggle="modal" data-target="#review-modal">@lang('itinerary.add_comment') <i class="fa fa-plus"></i></a>
-
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    {{--<div class="modal-header">--}}
-                                                    {{--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
-                                                    {{--<button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
-                                                    {{--<span aria-hidden="true">&times;</span>--}}
-                                                    {{--</button>--}}
-                                                    {{--</div>--}}
-                                                    <div class="modal-body text-left">
-                                                        <div class="row">
-                                                            <div class="col">
-                                                                <div class="alert alert-primary">
-                                                                    <strong>@lang('itinerary.share_your_experience').</strong>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">@lang('itinerary.name') <span class="text-primary">*</span></label>
-                                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">@lang('itinerary.email') <span class="text-primary">*</span></label>
-                                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">@lang('itinerary.travel_date')</label>
-                                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="exampleFormControlTextarea1" class="font-weight-bold">@lang('itinerary.comments')</label>
-                                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col text-right">
-                                                                <a href="" class="btn btn-info"> @lang('itinerary.add_comment') <i class="fa fa-plus"></i></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row d-none" id="alert-comment">
-                                                            <div class="col">
-                                                                <div class="alert alert-success">
-                                                                    <span>@lang('itinerary.thanks_your_review')</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    {{--<div class="modal-footer">--}}
-                                                    {{--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
-                                                    {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
-                                                    {{--</div>--}}
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="row justify-content-end">
-                                    <div class="col-12 col-sm-7 col-md-12 col-lg-6">
-                                        <div class="row no-gutters">
-                                            <div class="col">
-                                                <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">
-                                                    <i class="fab fa-facebook text-primary fa-2x"></i>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">
-                                                    <i class="fab fa-twitter text-info fa-2x"></i>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">
-                                                    <i class="fab fa-instagram text-g-dark fa-2x"></i>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">
-                                                    <i class="fab fa-youtube text-danger fa-2x"></i>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">
-                                                    <i class="fab fa-google-plus text-danger fa-2x"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+{{--                                <div class="row">--}}
+{{--                                    <div class="col">--}}
+{{--                                        <div class="alert alert-primary mb-3">--}}
+{{--                                            <h4 class="">{{ucwords(strtolower($paquetes->titulo))}} {{$paquetes->duracion}} @lang('itinerary.days')</h4>--}}
+{{--                                            <small>@lang('itinerary.leave_your_comment').</small>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                @foreach($comentario->where('idpaquetes', $paquetes->id) as $comentarios)--}}
+{{--                                    <div class="row">--}}
+{{--                                        <div class="col-3">--}}
+{{--                                            <small class="font-italic"><i class="fas fa-user-circle"></i> {{$comentarios->usuario}} | <span class="font-weight-bold">{{$comentarios->ciudad}}</span></small>--}}
+{{--                                            <span class="d-block text-g-yellow">--}}
+{{--                                                                                @for ($i = 0; $i < $comentarios->valoracion; $i++)--}}
+{{--                                                    <i class="fas fa-star"></i>--}}
+{{--                                                @endfor--}}
+{{--                                                                            </span>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col">--}}
+{{--                                            <i class="fa fa-quote-left float-left mr-3"></i>--}}
+{{--                                            @php echo $comentarios->comentario; @endphp--}}
+{{--                                            <i class="fa fa-quote-right float-left"></i>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <hr>--}}
+{{--                                @endforeach--}}
 
 
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-5 col-xl-4 mt-4 mt-md-0">
-                                <div class="sticky-top sticky-top-50">
-                                    <div class="fb-page" data-href="https://www.facebook.com/GOTOPERUcom" data-tabs="timeline" data-width="500" data-height="550" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/GOTOPERUcom" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GOTOPERUcom">GOTOPERUcom</a></blockquote></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <div class="alert alert-secondary alert-dismissible show m-0 elemento rounded-0 p-1" role="alert" id="aviso">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 text-center text-sm-left text-md-right col-sm-7 col-md-7 col-lg-auto">
-                    <h5 class="m-0"><strong>{{($paquetes->titulo)}} </strong> {{($paquetes->duracion)}} DAYS TOURS | <sup>from $</sup>
-                        @foreach($paquetes->precio_paquetes->where('estrellas', 2)->sortBy('estrellas') as $precio)
-                            @if($precio->precio_d > 0)
-                                {{$precio->precio_d}}
-                            @else
-                                <span class="text-danger">
-                                                                @lang('itinerary.inquire')
-                                                            </span>
-                            @endif
-                        @endforeach
-                        <small>USD</small></h5>
-                </div>
-                <div class="col-12 text-center text-sm-left text-md-right col-sm-3 col-md-3 col-lg text-right">
-                    <a href="#Inquire" class="btn btn-sm btn-g-yellow font-weight-bold" onclick="ideal_trip()">@lang('itinerary.inquire_now')</a>
-                </div>
-                <div class="col-12 text-left text-sm-left text-md-right col-sm-2 col-md-2 col-lg-auto">
-                    <button type="button" class="close p-0 float-left float-md-right" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--                                <div class="row mb-3">--}}
+{{--                                    <div class="col text-right">--}}
+{{--                                        <a href="" class="btn btn-link" data-toggle="modal" data-target="#review-modal">@lang('itinerary.add_comment') <i class="fa fa-plus"></i></a>--}}
+
+{{--                                        <!-- Modal -->--}}
+{{--                                        <div class="modal fade" id="review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
+{{--                                            <div class="modal-dialog" role="document">--}}
+{{--                                                <div class="modal-content">--}}
+{{--                                                    --}}{{--<div class="modal-header">--}}
+{{--                                                    --}}{{--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
+{{--                                                    --}}{{--<button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+{{--                                                    --}}{{--<span aria-hidden="true">&times;</span>--}}
+{{--                                                    --}}{{--</button>--}}
+{{--                                                    --}}{{--</div>--}}
+{{--                                                    <div class="modal-body text-left">--}}
+{{--                                                        <div class="row">--}}
+{{--                                                            <div class="col">--}}
+{{--                                                                <div class="alert alert-primary">--}}
+{{--                                                                    <strong>@lang('itinerary.share_your_experience').</strong>--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="form-group">--}}
+{{--                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">@lang('itinerary.name') <span class="text-primary">*</span></label>--}}
+{{--                                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="form-group">--}}
+{{--                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">@lang('itinerary.email') <span class="text-primary">*</span></label>--}}
+{{--                                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="form-group">--}}
+{{--                                                                    <label for="exampleFormControlInput1" class="font-weight-bold">@lang('itinerary.travel_date')</label>--}}
+{{--                                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="form-group">--}}
+{{--                                                                    <label for="exampleFormControlTextarea1" class="font-weight-bold">@lang('itinerary.comments')</label>--}}
+{{--                                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                        <div class="row">--}}
+{{--                                                            <div class="col text-right">--}}
+{{--                                                                <a href="" class="btn btn-info"> @lang('itinerary.add_comment') <i class="fa fa-plus"></i></a>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                        <div class="row d-none" id="alert-comment">--}}
+{{--                                                            <div class="col">--}}
+{{--                                                                <div class="alert alert-success">--}}
+{{--                                                                    <span>@lang('itinerary.thanks_your_review')</span>--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                    --}}{{--<div class="modal-footer">--}}
+{{--                                                    --}}{{--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
+{{--                                                    --}}{{--<button type="button" class="btn btn-primary">Save changes</button>--}}
+{{--                                                    --}}{{--</div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
+{{--                                <div class="row justify-content-end">--}}
+{{--                                    <div class="col-12 col-sm-7 col-md-12 col-lg-6">--}}
+{{--                                        <div class="row no-gutters">--}}
+{{--                                            <div class="col">--}}
+{{--                                                <a href="https://www.facebook.com/GOTOPERUcom/" class="d-inline mx-1" target="_blank">--}}
+{{--                                                    <i class="fab fa-facebook text-primary fa-2x"></i>--}}
+{{--                                                </a>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="col">--}}
+{{--                                                <a href="https://twitter.com/GOTOPERUCOM" class="d-inline mx-1" target="_blank">--}}
+{{--                                                    <i class="fab fa-twitter text-info fa-2x"></i>--}}
+{{--                                                </a>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="col">--}}
+{{--                                                <a href="https://www.instagram.com/gotoperucom/" class="d-inline mx-1" target="_blank">--}}
+{{--                                                    <i class="fab fa-instagram text-g-dark fa-2x"></i>--}}
+{{--                                                </a>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="col">--}}
+{{--                                                <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="d-inline mx-1" target="_blank">--}}
+{{--                                                    <i class="fab fa-youtube text-danger fa-2x"></i>--}}
+{{--                                                </a>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="col">--}}
+{{--                                                <a href="https://plus.google.com/+Gotoperu" class="d-inline mx-1" target="_blank">--}}
+{{--                                                    <i class="fab fa-google-plus text-danger fa-2x"></i>--}}
+{{--                                                </a>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
+
+{{--                            </div>--}}
+{{--                            <div class="col-12 col-md-6 col-lg-5 col-xl-4 mt-4 mt-md-0">--}}
+{{--                                <div class="sticky-top sticky-top-50">--}}
+{{--                                    <div class="fb-page" data-href="https://www.facebook.com/GOTOPERUcom" data-tabs="timeline" data-width="500" data-height="550" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/GOTOPERUcom" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GOTOPERUcom">GOTOPERUcom</a></blockquote></div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+
+{{--    <div class="alert alert-secondary alert-dismissible show m-0 elemento rounded-0 p-1" role="alert" id="aviso">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row align-items-center">--}}
+{{--                <div class="col-12 text-center text-sm-left text-md-right col-sm-7 col-md-7 col-lg-auto">--}}
+{{--                    <h5 class="m-0"><strong>{{($paquetes->titulo)}} </strong> {{($paquetes->duracion)}} DAYS TOURS | <sup>from $</sup>--}}
+{{--                        @foreach($paquetes->precio_paquetes->where('estrellas', 2)->sortBy('estrellas') as $precio)--}}
+{{--                            @if($precio->precio_d > 0)--}}
+{{--                                {{$precio->precio_d}}--}}
+{{--                            @else--}}
+{{--                                <span class="text-danger">--}}
+{{--                                                                @lang('itinerary.inquire')--}}
+{{--                                                            </span>--}}
+{{--                            @endif--}}
+{{--                        @endforeach--}}
+{{--                        <small>USD</small></h5>--}}
+{{--                </div>--}}
+{{--                <div class="col-12 text-center text-sm-left text-md-right col-sm-3 col-md-3 col-lg text-right">--}}
+{{--                    <a href="#Inquire" class="btn btn-sm btn-g-yellow font-weight-bold" onclick="ideal_trip()">@lang('itinerary.inquire_now')</a>--}}
+{{--                </div>--}}
+{{--                <div class="col-12 text-left text-sm-left text-md-right col-sm-2 col-md-2 col-lg-auto">--}}
+{{--                    <button type="button" class="close p-0 float-left float-md-right" data-dismiss="alert" aria-label="Close">--}}
+{{--                        <span aria-hidden="true">&times;</span>--}}
+{{--                    </button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     @endforeach
     @include('layouts.page.included')
     @push('scripts')
-
-
         <script>
             function inquire(){
                 $.ajaxSetup({
@@ -1602,11 +1662,6 @@
                 }
             }
 
-            // $('#d_date').datepicker({
-            //     dateFormat: 'mm-dd-y',
-            //     changeMonth: true,
-            //     changeYear: true
-            // });
 
 
             $(document).ready(function() {
@@ -1656,11 +1711,7 @@
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf1RN8KKGNdS-iEarIgXpaqa-khw7EmZI&callback=initMap">
         </script>
-
-        <!-- FareHarbor Lightframe API - do not remove - see: https://fareharbor.com/help/website/resources/lightframe-api/ -->
         <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
-
-
     @endpush
 
 @stop

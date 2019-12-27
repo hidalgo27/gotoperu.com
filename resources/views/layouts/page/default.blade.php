@@ -135,6 +135,8 @@
 </footer>
 <script src="{{asset("js/app.js")}}"></script>
 <script src="{{asset("js/plugins.js")}}"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/d1b447b4-892c-4562-a6dc-536d0eb23944-loader.js" ></script>
 @if ($locale == "es")
     <script type="text/javascript">
         adroll_adv_id = "EQ7PNURSN5GQXIR4E3NPZ7";
@@ -225,6 +227,16 @@
 </script>
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 <script>
+    $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if( target.length ) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top
+            }, 1000);
+        }
+    });
+
     $("#h_tel").intlTelInput({
         allowDropdown: true,
         autoHideDialCode: false,
@@ -671,7 +683,7 @@
     }));
 
 </script>
-<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0088/4755.js" async="async"></script>
+{{--<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0088/4755.js" async="async"></script>--}}
 <!-- Start of Async Drift Code -->
 {{--<script>--}}
 {{--    "use strict";--}}

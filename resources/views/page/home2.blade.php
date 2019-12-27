@@ -1,102 +1,174 @@
 @extends('layouts.page.default')
 
 @section('content')
-    <section class="header-video d-none d-md-block chat-mensajes">
-        @include('layouts.page.header')
-        <div id="overlay" class="position-relative overlay-img">
-            <video class="hero-vid-home banner-itinerary" id="hero-vid" poster="{{asset('images/itinerary/banners/GTP1.jpg')}}" autoplay loop muted>
-                <source src="{{asset('media/gotoperu.mp4')}}" type="video/mp4"/>
-                {{--<source src="{{asset('media/gotoperu.m4v')}}" type="video/mp4" />--}}
-                <source src="{{asset('media/gotoperu.webm')}}" type="video/webm" />
-                <source  src="{{asset('media/gotoperu.ogv')}}" type="video/ogg" />
-            </video>
-            <div class="position-absolute-bottom">
-                <img src="{{asset('images/logos/logo-expedia.png')}}" alt="" width="180">
-            </div>
+    <header>
+        <div class="overlay"></div>
+        {{--            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">--}}
+        {{--                <source src="{{asset('media/Secuencia 06.mp4')}}" type="video/mp4">--}}
+        {{--            </video>--}}
+        <div class="homepage-video">
+            {{--                <iframe title="GotoPeru background video" src="https://player.vimeo.com/video/361847703?background=1" width="100%" height="100" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>--}}
+            <iframe src="https://player.vimeo.com/video/381676880?background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1"  frameborder="0" allow="autoplay; fullscreen"></iframe>
         </div>
-        <div class="content-header">
-            <div class="container">
-                <div class="row content-header-row align-items-center mt-5">
-                    <div class="col text-center">
-                        {{--<a href="" class="text-white"><i class="fa fa-play-circle fa-4x"></i></a>--}}
-                        <div class="text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
-                            <div class="mt-4">
-                                <div class="content-video-1 text-white">
-                                    {{--<img src="images/travel/video-1.jpg" alt="video">--}}
-                                    <h2 class="font-weight-light">@lang('home.header_title')</h2>
+        @include('layouts.page.header')
+        <div class="container h-100">
+            <div class="row d-flex h-100 text-center align-items-center">
+                <div class="col w-100 text-white mt-5">
+                    <h1 class="font-weight-lighter h2 mt-5">@lang('home.header_title')</h1>
+                    <a href="#Inquire" class="btn btn-outline-g-yellow btn-lg h2 font-weight-normal mt-3">@lang('home.float_button_button')</a>
+                    {{--                        <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>--}}
 
-                                    <div class="row mt-2 justify-content-center">
-                                        <div class="col-12">
-                                            <div class="row ">
-                                                <div class="col text-center">
-                                                    <a href="#Inquire" class="btn btn-lg btn-g-yellow font-weight-bold mt-3">@lang('home.header_button')</a>
-                                                    {{--<div class="card bg-rgba-white border-g-yellow w-100">--}}
-                                                        {{--<div class="card-header bg-g-yellow">--}}
-                                                            {{--<h5 class="m-0 font-weight-bold">INQUIRE NOW</h5>--}}
-                                                        {{--</div>--}}
-                                                        {{--<div class="card-body p-1">--}}
-                                                            {{--<a href="#Inquire" class="stretched-link font-weight-bold text-g-dark">Customize Quote</a>--}}
-                                                        {{--</div>--}}
-                                                    {{--</div>--}}
-                                                </div>
-                                                {{--<div class="col-auto d-flex">--}}
-                                                    {{--or--}}
-                                                {{--</div>--}}
-                                                {{--<div class="col d-flex">--}}
-                                                    {{--<div class="card bg-rgba-dark-3 w-100">--}}
-                                                        {{--<div class="card-header bg-g-green">--}}
-                                                            {{--<h5 class="m-0">BOOK ONLINE</h5>--}}
-                                                        {{--</div>--}}
-                                                        {{--<div class="card-body p-1">--}}
-                                                            {{--<a href="{{route('peru_tours_path')}}" class="stretched-link text-white">Pre-design Programs</a>--}}
-                                                        {{--</div>--}}
-                                                    {{--</div>--}}
-                                                {{--</div>--}}
-                                            </div>
+                    @if (App::getLocale() == "pt")
+                        <div class="row justify-content-center">
+                            <div class="col-md-7 col-lg-5 mt-5">
+                                <div class="bg-rgba-white-5 rounded shadow p-3">
+                                    <h5 class="m-0 text-dark font-weight-bold">PARCELE SUA COMPRA <span class="text-primary">EM ATÉ</span></h5>
+                                    <p class="display-2 font-weight-bold m-0 font-weight-bold text-primary">12x</p>
+                                    <div class="row no-gutters">
+                                        <div class="col">
+                                            <img src="{{asset('images/logos/visa.png')}}" alt="logo visa" class="w-100 p-1">
+                                        </div>
+                                        <div class="col">
+                                            <img src="{{asset('images/logos/mastercard.png')}}" alt="logo mastercard" class="w-100 p-1">
+                                        </div>
+                                        <div class="col">
+                                            <img src="{{asset('images/logos/american_express.png')}}" alt="logo american express" class="w-100 p-1">
+                                        </div>
+                                        <div class="col">
+                                            <img src="{{asset('images/logos/hipercard.png')}}" alt="logo hipercard" class="w-100 p-1">
+                                        </div>
+                                        <div class="col">
+                                            <img src="{{asset('images/logos/elo.png')}}" alt="logo elo" class="w-100 p-1">
+                                        </div>
+                                        <div class="col">
+                                            <img src="{{asset('images/logos/diners_club.png')}}" alt="logo diner club" class="w-100 p-1">
                                         </div>
                                     </div>
-                                    @if (App::getLocale() == "pt")
-                                    <div class="row justify-content-center">
-                                        <div class="col-md-7 col-lg-5 mt-5">
-                                            <div class="bg-rgba-white-5 rounded shadow p-3">
-                                                <h5 class="m-0 text-dark font-weight-bold">PARCELE SUA COMPRA <span class="text-primary">EM ATÉ</span></h5>
-                                                <p class="display-2 font-weight-bold m-0 font-weight-bold text-primary">12x</p>
-                                                <div class="row no-gutters">
-                                                    <div class="col">
-                                                        <img src="{{asset('images/logos/visa.png')}}" alt="logo visa" class="w-100 p-1">
-                                                    </div>
-                                                    <div class="col">
-                                                        <img src="{{asset('images/logos/mastercard.png')}}" alt="logo mastercard" class="w-100 p-1">
-                                                    </div>
-                                                    <div class="col">
-                                                        <img src="{{asset('images/logos/american_express.png')}}" alt="logo american express" class="w-100 p-1">
-                                                    </div>
-                                                    <div class="col">
-                                                        <img src="{{asset('images/logos/hipercard.png')}}" alt="logo hipercard" class="w-100 p-1">
-                                                    </div>
-                                                    <div class="col">
-                                                        <img src="{{asset('images/logos/elo.png')}}" alt="logo elo" class="w-100 p-1">
-                                                    </div>
-                                                    <div class="col">
-                                                        <img src="{{asset('images/logos/diners_club.png')}}" alt="logo diner club" class="w-100 p-1">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @endif
-
                                 </div>
                             </div>
                         </div>
-
-                    </div>
-
+                    @endif
                 </div>
-
             </div>
         </div>
-    </section>
+        <div class="position-absolute-bottom p-2">
+            <div class="row justify-content-center">
+                <div class="col-auto text-center">
+                    <a href="https://www.facebook.com/GOTOPERUcom/" target="_blank" class="mx-2">
+                        <i data-feather="facebook" class="text-white" stroke-width="1"></i>
+                    </a>
+                    <a href="https://twitter.com/GOTOPERUCOM" target="_blank" class="mx-2">
+                        <i data-feather="twitter" class="text-white" stroke-width="1"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCWjJ10j-_BfNTDnmjBug8Ng" target="_blank" class="mx-2">
+                        <i data-feather="youtube" class="text-white" stroke-width="1"></i>
+                    </a>
+                    <a href="https://www.instagram.com/go.to.peru/" target="_blank" class="mx-2">
+                        <i data-feather="instagram" class="text-white" stroke-width="1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="position-absolute-bottom">
+            <img src="{{asset('images/logos/logo-expedia.png')}}" alt="" width="180">
+        </div>
+    </header>
+{{--    <section class="header-video d-none d-md-block chat-mensajes">--}}
+{{--        @include('layouts.page.header')--}}
+{{--        <div id="overlay" class="position-relative overlay-img">--}}
+{{--            <video class="hero-vid-home banner-itinerary" id="hero-vid" poster="{{asset('images/itinerary/banners/GTP1.jpg')}}" autoplay loop muted>--}}
+{{--                <source src="{{asset('media/gotoperu.mp4')}}" type="video/mp4"/>--}}
+{{--                <source src="{{asset('media/gotoperu.m4v')}}" type="video/mp4" />--}}
+{{--                <source src="{{asset('media/gotoperu.webm')}}" type="video/webm" />--}}
+{{--                <source  src="{{asset('media/gotoperu.ogv')}}" type="video/ogg" />--}}
+{{--            </video>--}}
+{{--            <div class="position-absolute-bottom">--}}
+{{--                <img src="{{asset('images/logos/logo-expedia.png')}}" alt="" width="180">--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="content-header">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row content-header-row align-items-center mt-5">--}}
+{{--                    <div class="col text-center">--}}
+{{--                        <a href="" class="text-white"><i class="fa fa-play-circle fa-4x"></i></a>--}}
+{{--                        <div class="text-center os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">--}}
+{{--                            <div class="mt-4">--}}
+{{--                                <div class="content-video-1 text-white">--}}
+{{--                                    <img src="images/travel/video-1.jpg" alt="video">--}}
+{{--                                    <h2 class="font-weight-light">@lang('home.header_title')</h2>--}}
+
+{{--                                    <div class="row mt-2 justify-content-center">--}}
+{{--                                        <div class="col-12">--}}
+{{--                                            <div class="row ">--}}
+{{--                                                <div class="col text-center">--}}
+{{--                                                    <a href="#Inquire" class="btn btn-lg btn-g-yellow font-weight-bold mt-3">@lang('home.header_button')</a>--}}
+{{--                                                    <div class="card bg-rgba-white border-g-yellow w-100">--}}
+{{--                                                        <div class="card-header bg-g-yellow">--}}
+{{--                                                            <h5 class="m-0 font-weight-bold">INQUIRE NOW</h5>--}}
+{{--                                                        </div>--}}
+{{--                                                        <div class="card-body p-1">--}}
+{{--                                                            <a href="#Inquire" class="stretched-link font-weight-bold text-g-dark">Customize Quote</a>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col-auto d-flex">--}}
+{{--                                                    or--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col d-flex">--}}
+{{--                                                    <div class="card bg-rgba-dark-3 w-100">--}}
+{{--                                                        <div class="card-header bg-g-green">--}}
+{{--                                                            <h5 class="m-0">BOOK ONLINE</h5>--}}
+{{--                                                        </div>--}}
+{{--                                                        <div class="card-body p-1">--}}
+{{--                                                            <a href="{{route('peru_tours_path')}}" class="stretched-link text-white">Pre-design Programs</a>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    @if (App::getLocale() == "pt")--}}
+{{--                                    <div class="row justify-content-center">--}}
+{{--                                        <div class="col-md-7 col-lg-5 mt-5">--}}
+{{--                                            <div class="bg-rgba-white-5 rounded shadow p-3">--}}
+{{--                                                <h5 class="m-0 text-dark font-weight-bold">PARCELE SUA COMPRA <span class="text-primary">EM ATÉ</span></h5>--}}
+{{--                                                <p class="display-2 font-weight-bold m-0 font-weight-bold text-primary">12x</p>--}}
+{{--                                                <div class="row no-gutters">--}}
+{{--                                                    <div class="col">--}}
+{{--                                                        <img src="{{asset('images/logos/visa.png')}}" alt="logo visa" class="w-100 p-1">--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="col">--}}
+{{--                                                        <img src="{{asset('images/logos/mastercard.png')}}" alt="logo mastercard" class="w-100 p-1">--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="col">--}}
+{{--                                                        <img src="{{asset('images/logos/american_express.png')}}" alt="logo american express" class="w-100 p-1">--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="col">--}}
+{{--                                                        <img src="{{asset('images/logos/hipercard.png')}}" alt="logo hipercard" class="w-100 p-1">--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="col">--}}
+{{--                                                        <img src="{{asset('images/logos/elo.png')}}" alt="logo elo" class="w-100 p-1">--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="col">--}}
+{{--                                                        <img src="{{asset('images/logos/diners_club.png')}}" alt="logo diner club" class="w-100 p-1">--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    @endif--}}
+
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                    </div>--}}
+
+{{--                </div>--}}
+
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
     @include('layouts.page.menu')
 
