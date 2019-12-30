@@ -17,6 +17,7 @@ use App\TpaqueteItinerario;
 use App\TPaqueteVuelo;
 use App\TPasajero;
 use App\TPrecioAeropuerto;
+use App\TTeam;
 use App\TTestimonio;
 use App\TVideoTestimonio;
 use App\TVuelo;
@@ -69,7 +70,9 @@ class HomepageController extends Controller
         $airport = TAeropuerto::with('precio_aeropuerto')->get();
         $comentario = TComentario::with('itinerario')->get();
 
-        return view('page.home',['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'destinos'=>$destinos, 'testimonial'=>$testimonial, 'dificultad'=>$dificultad, 'airport'=>$airport, 'comentario'=>$comentario]);
+        $team = TTeam::all();
+
+        return view('page.home',compact('team'),['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'destinos'=>$destinos, 'testimonial'=>$testimonial, 'dificultad'=>$dificultad, 'airport'=>$airport, 'comentario'=>$comentario]);
     }
 
     public function index2()
@@ -114,12 +117,14 @@ class HomepageController extends Controller
         $categorias_random = TCategoria::where('orden_block', 0)->get()->random(4);
 
         $paquetes_categoria = TPaqueteCategoria::with('paquete', 'categoria')->get();
+        $team = TTeam::all();
         return view('page.home2',
             compact(
                 'testimonio_video',
                     'categoria_group',
                     'categorias',
                 'paquetes_categoria',
+                'team',
                 'categorias_block_1',
                 'categorias_random'
                 ), ['paquetes'=>$paquetes, 'paquete_destinos'=>$paquete_destinos, 'paquetes_r'=>$paquetes_r, 'destinos'=>$destinos, 'testimonial'=>$testimonial, 'dificultad'=>$dificultad, 'airport'=>$airport, 'comentario'=>$comentario]);
@@ -787,8 +792,8 @@ class HomepageController extends Controller
         \Twitter::setTitle('About Us | GotoPeru');
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
-
-        return view('page.about');
+        $team = TTeam::all();
+        return view('page.about', compact('team'));
     }
 
     public function getting()
@@ -842,6 +847,7 @@ class HomepageController extends Controller
 //        return view('user.index', ['users' => $users]);
         return view('page.testimonials', ['testimonials' => $testimonials]);
     }
+
 
     public function faq()
     {

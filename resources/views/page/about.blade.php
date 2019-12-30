@@ -51,9 +51,12 @@
     <section class="bg-white">
         <div class="container">
             <div class="row pt-4">
-                <div class="col">
-                    <h1 class="text-g-green text-center font-weight-bold">CONOZCA AL EQUIPO <span class="text-g-yellow">GOTOPERU</span></h1>
-                    <p class="lead">@lang('home.about_h1_p')</p>
+                <div class="col text-center">
+                    <h1 class="text-g-green text-center font-weight-bold">@lang('home.out_team_h1')</h1>
+                    <p class="lead">@lang('home.our_team_p1')</p>
+                    <p class="">@lang('home.our_team_p2')</p>
+                    <p class="">@lang('home.our_team_p3')</p>
+                    <div class="font-weight-bold alert alert-primary">@lang('home.our_team_p1')</div>
 {{--                    <p class="lead">GotoPeru has become a family for all of us. The best thing about working in GotoPeru is that it requires me to be permanently connected to the world of art, culture, archaeology, geography, wildlife conservation, and cuisine. For this reason, it helps me to understand more of the travel world and formulate new methods that ensure our customers’ memorable travel experience. It is also enriching to interact with different yet all amazing people from all over the globe daily as it teaches me more of their culture.</p>--}}
 {{--                    <div class="alert alert-g-yellow text-center m-0" role="alert">--}}
 {{--                        <h4>9 Reasons To Let Our Guides Take You On An Unforgettable Adventure!</h4>--}}
@@ -62,11 +65,12 @@
                     {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
                     {{--<p class="h4 font-weight-light">Offering you an authentic and reliable <strong>travel experience</strong> in peru welcoming you to explore the many fully <strong>Customized Travel Packages</strong> we have that suit every budget. let us plan your unforgettable <strong>trip</strong> to our majestic <strong>Machu Picchu</strong> and the rest of our  homeland… Peru!</p>--}}
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section class="bg-white">
+    <section class="bg-white py-4">
         <div class="container">
 {{--            <div class="row">--}}
 {{--                <div class="col">--}}
@@ -74,170 +78,32 @@
 {{--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, accusamus aperiam cumque debitis deleniti dolor eos exercitationem minus molestiae officia quod rerum soluta ut! Culpa ea excepturi officia rem ut.</p>--}}
 {{--                </div>--}}
 {{--            </div>--}}
-            <div class="row justify-content-center py-5">
-
-                <div class="col-12 col-sm-6 col-md-3">
-                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=BpaXxDE2c1M">
-                        <div class="position-relative">
-                            {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
-
-                            <picture class="">
-                                <img alt="gotoperu" class="lazy w-100 rounded-circle"
-                                     data-src="{{asset('images/team/pabel.jpg')}}"
-                                     data-srcset="{{asset('images/team/pabel.jpg')}}"
-                                     data-sizes="100w">
-                                <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
-                                    <i class="fas fa-play fa-5x"></i>
-                                </div>
-                            </picture>
-
-                            <div class="text-center mt-3">
-                                <h5 class="font-weight-bold text-muted m-0">Pabel Paucar</h5>
-                                <p><small class="text-muted font-weight-bold">Jefe Comercial</small></p>
+            <div class="row justify-content-center">
+                @foreach($team as $teams)
+                    <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-5">
+                        <div class="card">
+                            <a class="venobox position-relative" data-gall="myGallery" href="{{$teams->imagen_portada}}">
+                                <img src="{{$teams->imagen_portada}}" alt="image alt" class="card-img-top">
+                                <span class="position-absolute-top text-white">
+                                    <i data-feather="image" stroke-width="1"></i>
+                                </span>
+                            </a>
+                            <div class="card-body text-center">
+                                <a class="venobox position-relative" href="{{$teams->imagen_perfil}}">
+                                    <img src="{{$teams->imagen_perfil}}" alt="image alt" class="avatar rounded-circle">
+                                    <span class="position-absolute-bottom text-white">
+                                        <i data-feather="image" stroke-width="2"></i>
+                                    </span>
+                                </a>
+                                <h4 class="card-title">{{$teams->nombre}}</h4>
+                                <h6 class="card-subtitle mb-2 text-g-yellow font-weight-bold">{{$teams->cargo}}</h6>
+                                <p class="small">{{$teams->frase}}</p>
+                                <p class="font-weight-bold small text-secondary"><i data-feather="thumbs-up" stroke-width="2"></i> <b>Actividad Favorita:</b> {{$teams->actividad}}</p>
+                                <p class="small m-0"><i data-feather="mail" stroke-width="1"></i> {{$teams->email}}</p>
                             </div>
                         </div>
-                    </a>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-3">
-                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=66IOeeFkgi8">
-                        <div class="position-relative">
-                            {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
-
-                            <picture class="">
-                                <img alt="gotoperu" class="lazy w-100 rounded-circle"
-                                     data-src="{{asset('images/team/freddy.jpg')}}"
-                                     data-srcset="{{asset('images/team/freddy.jpg')}}"
-                                     data-sizes="100w">
-                                <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
-                                    <i class="fas fa-play fa-5x"></i>
-                                </div>
-                            </picture>
-
-                            <div class="text-center mt-3">
-                                <h5 class="font-weight-bold text-muted m-0">Freddy Silva</h5>
-                                <p><small class="text-muted font-weight-bold">Jefe de Sistemas</small></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-3">
-                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=cUWsovwPDpY">
-                        <div class="position-relative">
-                            {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
-
-                            <picture class="">
-                                <img alt="gotoperu" class="lazy w-100 rounded-circle"
-                                     data-src="{{asset('images/team/daniel.jpg')}}"
-                                     data-srcset="{{asset('images/team/daniel.jpg')}}"
-                                     data-sizes="100w">
-                                <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
-                                    <i class="fas fa-play fa-5x"></i>
-                                </div>
-                            </picture>
-
-                            <div class="text-center mt-3">
-                                <h5 class="font-weight-bold text-muted m-0">Daniel Escalona</h5>
-                                <p><small class="text-muted font-weight-bold">Travel Advisor</small></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-3">
-                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=APgTEiOERHs">
-                        <div class="position-relative">
-                            {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
-
-                            <picture class="">
-                                <img alt="gotoperu" class="lazy w-100 rounded-circle"
-                                     data-src="{{asset('images/team/marina.jpg')}}"
-                                     data-srcset="{{asset('images/team/marina.jpg')}}"
-                                     data-sizes="100w">
-                                <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
-                                    <i class="fas fa-play fa-5x"></i>
-                                </div>
-                            </picture>
-
-                            <div class="text-center mt-3">
-                                <h5 class="font-weight-bold text-muted m-0">Marina Melo</h5>
-                                <p><small class="text-muted font-weight-bold">Contadora Junior</small></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-3">
-                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=586i_znr4VQ">
-                        <div class="position-relative">
-                            {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
-
-                            <picture class="">
-                                <img alt="gotoperu" class="lazy w-100 rounded-circle"
-                                     data-src="{{asset('images/team/katy.jpg')}}"
-                                     data-srcset="{{asset('images/team/katy.jpg')}}"
-                                     data-sizes="100w">
-                                <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
-                                    <i class="fas fa-play fa-5x"></i>
-                                </div>
-                            </picture>
-
-                            <div class="text-center mt-3">
-                                <h5 class="font-weight-bold text-muted m-0">Katy</h5>
-                                <p><small class="text-muted font-weight-bold">Guia</small></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-3">
-                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=kAHrfcy20bI">
-                        <div class="position-relative">
-                            {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
-
-                            <picture class="">
-                                <img alt="gotoperu" class="lazy w-100 rounded-circle"
-                                     data-src="{{asset('images/team/franklin.jpg')}}"
-                                     data-srcset="{{asset('images/team/franklin.jpg')}}"
-                                     data-sizes="100w">
-                                <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
-                                    <i class="fas fa-play fa-5x"></i>
-                                </div>
-                            </picture>
-
-                            <div class="text-center mt-3">
-                                <h5 class="font-weight-bold text-muted m-0">Franklin Perez</h5>
-                                <p><small class="text-muted font-weight-bold">Guia Senior</small></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-
-                <div class="col-12 col-sm-6 col-md-3">
-                    <a class="venobox text-decoration-none" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=f0V5sohLEJs">
-                        <div class="position-relative">
-                            {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
-
-                            <picture class="">
-                                <img alt="gotoperu" class="lazy w-100 rounded-circle"
-                                     data-src="{{asset('images/team/americo.jpg')}}"
-                                     data-srcset="{{asset('images/team/americo.jpg')}}"
-                                     data-sizes="100w">
-                                <div class="position-absolute-bottom mb-5 text-g-yellow p-3 icon-play">
-                                    <i class="fas fa-play fa-5x"></i>
-                                </div>
-                            </picture>
-
-                            <div class="text-center mt-3">
-                                <h5 class="font-weight-bold text-muted m-0">Americo</h5>
-                                <p><small class="text-muted font-weight-bold">Guia</small></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
+                    </div>
+                @endforeach
 
             </div>
         </div>
