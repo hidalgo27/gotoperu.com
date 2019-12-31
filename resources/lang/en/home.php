@@ -22,7 +22,7 @@ return [
     'testimonial_1' => 'Our tour guide Franklin, was so knowledgeable, there was nothing we asked that he couldn\'t talk at length about!',
     'testimonial_2' => 'My experience with the agency is perfect. I would recommend to use them if you have plan to travel to Peru.',
     'testimonial_3' => 'No hesitation in recommending GoToPeru to help build your trip. Martin as the front line rep',
-    'h2_programs' => 'OUR BEST PROGRAMS',
+    'h2_programs' => 'PERU BEST-<span class="text-g-green">SELLING ITINERARIES</span>',
     'h2_programs_p' => 'Crafting unforgettable trips to the land of the Incas since 2009!  Select a pre-designed travel package below or design an unforgettable vacation with our local travel advisors.',
     'days' => 'days',
     'inquire' => 'Inquire',

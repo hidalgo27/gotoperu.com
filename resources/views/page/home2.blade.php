@@ -168,10 +168,10 @@
                 <div class="row">
                     <div class="col text-center">
                         <h1 class="h6 font-weight-bold text-muted">@lang('home.h1')</h1>
-                        <h2 class="display-4 d-none d-sm-block font-weight-bold text-g-yellow">@lang('home.we_are_gotoperu')</h2>
+                        <h2 class="display-4 d-none d-sm-block font-weight-bold text-g-yellow">@lang('home.h2_programs')</h2>
                         {{--<h2 class="text-g-green">GREAT ADVENTURE <strong>PACKAGES</strong> FOR EVERYONE WITH GOTOPERU</h2>--}}
                         {{--<h2 class="text-g-green h3 font-weight-light">THE BEST <strong>PERU VACATIONS</strong> AND <strong>MACHU PICCHU TOURS</strong></h2>--}}
-                        <p class="lead font-weight-normal text-secondary m-0 d-none d-sm-block">@lang('home.we_are_gotoperu_p')</p>
+                        <p class="lead font-weight-normal text-secondary m-0 d-none d-sm-block">@lang('home.h2_programs_p')</p>
                     </div>
                 </div>
             </div>
@@ -181,12 +181,12 @@
 
         <section class="bg-white py-5">
             <div class="container">
-                <div class="row">
-                    <div class="col text-left">
-                        <h2 class="h2 font-weight-bold text-dark mb-3">@lang('home.h2_programs')</h2>
-                        <p class="lead font-weight-normal text-secondary mb-5">@lang('home.h2_programs_p')</p>
-                    </div>
-                </div>
+{{--                <div class="row">--}}
+{{--                    <div class="col text-left">--}}
+{{--                        <h2 class="h2 font-weight-bold text-dark mb-3">@lang('home.h2_programs')</h2>--}}
+{{--                        <p class="lead font-weight-normal text-secondary mb-5">@lang('home.h2_programs_p')</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 {{--recom--}}
                 @foreach($categoria_group as $categoria_groups)
 
