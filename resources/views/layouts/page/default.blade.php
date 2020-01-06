@@ -125,6 +125,9 @@
                     <li><a href="#" class="text-light font-weight-bold small">@lang('home.gotoperu_blog')</a></li>
                     <li><a href="{{route('video_testimonials_path')}}" class="text-light font-weight-bold small">@lang('home.video_testimonial')</a></li>
                     <li><a href="{{route('testimonials_path')}}" class="text-light font-weight-bold small">@lang('home.reviews')</a></li>
+                    <li><a href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d15202262-Reviews-Gotoperu-Cusco_Cusco_Region.html" class="text-light font-weight-bold small" target="_blank">Tripadvisor</a></li>
+                    <li><a href="https://www.trustpilot.com/review/gotoperu.com" class="text-light font-weight-bold small" target="_blank">Trustpilot</a></li>
+                    <li><a href="https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com" class="text-light font-weight-bold small" target="_blank">Yelp</a></li>
                 </ul>
             </div>
 
