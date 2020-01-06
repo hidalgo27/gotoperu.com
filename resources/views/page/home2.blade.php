@@ -196,7 +196,7 @@
                                     <div class="col-12 nav-tabs-wrapper">
                                         <div class="nav nav-tabs dragscroll horizontal flex-sm-row p-0 @if ($categoria_groups->grupo == 1) {{'nav-category-goto-grey'}} @elseif ($categoria_groups->grupo == 2) {{'nav-category-goto-green'}} @elseif ($categoria_groups->grupo == 3) {{'nav-category-goto-yellow'}} @endif" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                             @foreach($categorias->where('grupo', $categoria_groups->grupo)->sortByDesc('estado') as $categoria)
-                                                <a class="flex-sm-fill font-weight-bold text-sm-center rounded-0 nav-link @if ($categoria->estado == 1) {{'active'}} @endif" id="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}-tab" data-toggle="pill" href="#category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" role="tab" aria-controls="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" aria-selected="true">{{$categoria->nombre}}</a>
+                                                <span class="flex-sm-fill cursor-pinter font-weight-bold text-sm-center rounded-0 nav-link @if ($categoria->estado == 1) {{'active'}} @endif" id="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}-tab" data-toggle="pill" href="#category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" role="tab" aria-controls="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" aria-selected="true">{{$categoria->nombre}}</span>
                                             @endforeach
                                         </div>
                                     </div>
@@ -325,6 +325,123 @@
                 </div>
             </div>
         </section>
+
+    <section class="d-none d-xl-block pb-5 bg-light">
+        <div class="rounded-0 m-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-4 text-center">
+                        <div class="row justify-content-center">
+                            <div class="col-6">
+                                <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d15202262-Reviews-Gotoperu-Cusco_Cusco_Region.html" target="_blank">
+
+                                    {{--<img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100">--}}
+
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/icons/tripadvisor.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="gotoperu" class="lazy w-100"
+                                             data-src="{{asset('images/icons/tripadvisor.png')}}"
+                                             data-srcset="{{asset('images/icons/tripadvisor.png')}}"
+                                             data-sizes="100w">
+                                    </picture>
+
+                                    {{--                                    <img data-src="{{asset('images/icons/tripadvisor.png')}}" data-srcset="{{asset('images/icons/tripadvisor.png')}}" alt="certificate gotoperu" class="w-100 lazy has-webp" data-toggle="modal" data-target="#certificate-1">--}}
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-truncate">
+                                <i class="fa fa-quote-left"></i>
+                                <span class="small">@lang('home.testimonial_1')</span>
+                                <i class="fa fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <small class="text-g-yellow font-weight-bold">Jhon X2 feb 2019, USA</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-4 text-center">
+                        <div class="row justify-content-center">
+                            <div class="col-6">
+                                <a href="https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com" target="_blank">
+                                    {{--<img src="{{asset('images/icons/yelp.png')}}" alt="" class="w-100">--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/icons/yelp.webp')}}"
+                                                data-sizes="100w">
+                                        <img alt="gotoperu" class="lazy w-100"
+                                             data-src="{{asset('images/icons/yelp.png')}}"
+                                             data-srcset="{{asset('images/icons/yelp.png')}}"
+                                             data-sizes="100w">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-truncate">
+                                <i class="fa fa-quote-left"></i>
+                                <span class="small">@lang('home.testimonial_2')</span>
+                                <i class="fa fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <small class="text-g-yellow font-weight-bold">Boon C. Jan 2019 Tampa, FL</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-4 text-center">
+                        <div class="row justify-content-center">
+                            <div class="col-6">
+                                <a href="https://www.trustpilot.com/review/gotoperu.com" target="_blank">
+                                    {{--<img src="{{asset('images/icons/trust.png')}}" alt="" class="w-100">--}}
+                                    <picture>
+                                        <source type="image/webp"
+                                                data-srcset="{{asset('images/icons/trust.png')}}"
+                                                data-sizes="100w">
+                                        <img alt="gotoperu" class="lazy w-100"
+                                             data-src="{{asset('images/icons/trust.png')}}"
+                                             data-srcset="{{asset('images/icons/trust.png')}}"
+                                             data-sizes="100w">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-truncate">
+                                <i class="fa fa-quote-left"></i>
+                                <span class="small">@lang('home.testimonial_3')</span>
+                                <i class="fa fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <small class="text-g-yellow font-weight-bold">jeanette Pan feb 2019, USA</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col text-center">
+                        <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5867868-Has_anyone_booked_a_tour_with_GOTOPERU_www_gotoperu_org-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 1</a>
+                        <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k6509104-Gotoperu_Travel_Agency-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 2</a>
+                        <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5657518-GOTOPERU_online_tour_operator-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 3</a>
+                        <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k6934201-Trip_Report_Two_glorious_weeks_in_Peru_with_GOTOPERU_ORG-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 4</a>
+                        <a href="https://www.tripadvisor.co.za/ShowTopic-g294311-i818-k7362487-o10-GotoPeru_or_David_Expeditions-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 5</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
 
 
     <section class="bg-white py-5 inquire">
@@ -678,7 +795,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    @foreach ($destinos->take(4) as $destino)
+                    @foreach ($destinos->take(3) as $destino)
                     <div class="col-12 mb-3 col-sm-6 mb-md-0 col-md">
                         <div class="header-img-category header-img-destinations rounded">
                             <div class="position-relative">
@@ -713,172 +830,46 @@
 
 
 
-    <section class="bg-light pb-5 d-none d-sm-block">
-        <div class="container-fluid">
+{{--    <section class="bg-light pb-5 d-none d-sm-block">--}}
+{{--        <div class="container-fluid">--}}
 
-            <div class="row">
-                <div class="col">
-                    <div class="row slider-top-home mx-4">
-                        <div class="col">
-                            <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/21.jpg')}}">
-                                <img data-lazy="{{asset('images/slider-home/thumbnail/21.jpg')}}" class="w-100" />
-                                {{--<picture>--}}
-                                {{--<source type="image/webp"--}}
-                                {{--data-srcset="{{asset('images/slider-home/thumbnail/21.jpg')}}"--}}
-                                {{--data-sizes="100w">--}}
-                                {{--<img alt="gotoperu" class="lazy w-100"--}}
-                                {{--data-src="{{asset('images/slider-home/thumbnail/21.jpg')}}"--}}
-                                {{--data-srcset="{{asset('images/slider-home/thumbnail/21.jpg')}}"--}}
-                                {{--data-sizes="100w">--}}
-                                {{--</picture>--}}
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/22.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/22.jpg')}}" class="w-100" /></a>
-                        </div>
-                        <div class="col">
-                            <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/23.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/23.jpg')}}" class="w-100" /></a>
-                        </div>
-                        <div class="col">
-                            <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/24.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/24.jpg')}}" class="w-100" /></a>
-                        </div>
-                        <div class="col">
-                            <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/25.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/25.jpg')}}" class="w-100" /></a>
-                        </div>
-                        <div class="col">
-                            <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/26.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/26.jpg')}}" class="w-100" /></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="d-none d-xl-block py-4 bg-white">
-        <div class="rounded-0 m-0">
-            <div class="container">
-                {{--<div class="row">--}}
-                {{--<div class="col text-center">--}}
-                {{--<h2 class="h1 font-weight-bold text-white">Real <span class="text-g-yellow">Testimonials</span> our travellers</h2>--}}
-                {{--<a href="" class="btn btn-outline-light btn-sm">TripAdvisor 1</a>--}}
-                {{--<a href="" class="btn btn-outline-light btn-sm">TripAdvisor 2</a>--}}
-                {{--<a href="" class="btn btn-outline-light btn-sm">TripAdvisor 3</a>--}}
-                {{--<a href="" class="btn btn-outline-light btn-sm">TripAdvisor 4</a>--}}
-                {{--<a href="" class="btn btn-outline-light btn-sm">TripAdvisor 5</a>--}}
-                {{--<a href="" class="btn btn-outline-light btn-sm">TripAdvisor 6</a>--}}
-                {{--</div>--}}
-                {{--</div>--}}
-                <div class="row">
-                    <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-4 text-center">
-                        <div class="row justify-content-center">
-                            <div class="col-6">
-                                <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d15202262-Reviews-Gotoperu-Cusco_Cusco_Region.html" target="_blank">
-
-                                    {{--<img src="{{asset('images/icons/tripadvisor.png')}}" alt="" class="w-100">--}}
-
-                                    <picture>
-                                        <source type="image/webp"
-                                                data-srcset="{{asset('images/icons/tripadvisor.webp')}}"
-                                                data-sizes="100w">
-                                        <img alt="gotoperu" class="lazy w-100"
-                                             data-src="{{asset('images/icons/tripadvisor.png')}}"
-                                             data-srcset="{{asset('images/icons/tripadvisor.png')}}"
-                                             data-sizes="100w">
-                                    </picture>
-
-                                    {{--                                    <img data-src="{{asset('images/icons/tripadvisor.png')}}" data-srcset="{{asset('images/icons/tripadvisor.png')}}" alt="certificate gotoperu" class="w-100 lazy has-webp" data-toggle="modal" data-target="#certificate-1">--}}
-
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col text-truncate">
-                                <i class="fa fa-quote-left"></i>
-                                <span class="small">@lang('home.testimonial_1')</span>
-                                <i class="fa fa-quote-right"></i>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col text-center">
-                                <small class="text-g-yellow font-weight-bold">Jhon X2 feb 2019, USA</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-4 text-center">
-                        <div class="row justify-content-center">
-                            <div class="col-6">
-                                <a href="https://www.yelp.com/biz/gotoperu-washington?osq=gotoperu.com" target="_blank">
-                                    {{--<img src="{{asset('images/icons/yelp.png')}}" alt="" class="w-100">--}}
-                                    <picture>
-                                        <source type="image/webp"
-                                                data-srcset="{{asset('images/icons/yelp.webp')}}"
-                                                data-sizes="100w">
-                                        <img alt="gotoperu" class="lazy w-100"
-                                             data-src="{{asset('images/icons/yelp.png')}}"
-                                             data-srcset="{{asset('images/icons/yelp.png')}}"
-                                             data-sizes="100w">
-                                    </picture>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col text-truncate">
-                                <i class="fa fa-quote-left"></i>
-                                <span class="small">@lang('home.testimonial_2')</span>
-                                <i class="fa fa-quote-right"></i>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col text-center">
-                                <small class="text-g-yellow font-weight-bold">Boon C. Jan 2019 Tampa, FL</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 mb-3 col-sm-4 mb-md-0 col-md-4 text-center">
-                        <div class="row justify-content-center">
-                            <div class="col-6">
-                                <a href="https://www.trustpilot.com/review/gotoperu.com" target="_blank">
-                                    {{--<img src="{{asset('images/icons/trust.png')}}" alt="" class="w-100">--}}
-                                    <picture>
-                                        <source type="image/webp"
-                                                data-srcset="{{asset('images/icons/trust.png')}}"
-                                                data-sizes="100w">
-                                        <img alt="gotoperu" class="lazy w-100"
-                                             data-src="{{asset('images/icons/trust.png')}}"
-                                             data-srcset="{{asset('images/icons/trust.png')}}"
-                                             data-sizes="100w">
-                                    </picture>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col text-truncate">
-                                <i class="fa fa-quote-left"></i>
-                                <span class="small">@lang('home.testimonial_3')</span>
-                                <i class="fa fa-quote-right"></i>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col text-center">
-                                <small class="text-g-yellow font-weight-bold">jeanette Pan feb 2019, USA</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col text-center">
-                        <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5867868-Has_anyone_booked_a_tour_with_GOTOPERU_www_gotoperu_org-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 1</a>
-                        <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k6509104-Gotoperu_Travel_Agency-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 2</a>
-                        <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k5657518-GOTOPERU_online_tour_operator-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 3</a>
-                        <a href="https://www.tripadvisor.com/ShowTopic-g294311-i818-k6934201-Trip_Report_Two_glorious_weeks_in_Peru_with_GOTOPERU_ORG-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 4</a>
-                        <a href="https://www.tripadvisor.co.za/ShowTopic-g294311-i818-k7362487-o10-GotoPeru_or_David_Expeditions-Peru.html" target="_blank" class="btn btn-outline-g-green font-weight-bold btn-sm">TripAdvisor 5</a>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
+{{--            <div class="row">--}}
+{{--                <div class="col">--}}
+{{--                    <div class="row slider-top-home mx-4">--}}
+{{--                        <div class="col">--}}
+{{--                            <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/21.jpg')}}">--}}
+{{--                                <img data-lazy="{{asset('images/slider-home/thumbnail/21.jpg')}}" class="w-100" />--}}
+{{--                                --}}{{--<picture>--}}
+{{--                                --}}{{--<source type="image/webp"--}}
+{{--                                --}}{{--data-srcset="{{asset('images/slider-home/thumbnail/21.jpg')}}"--}}
+{{--                                --}}{{--data-sizes="100w">--}}
+{{--                                --}}{{--<img alt="gotoperu" class="lazy w-100"--}}
+{{--                                --}}{{--data-src="{{asset('images/slider-home/thumbnail/21.jpg')}}"--}}
+{{--                                --}}{{--data-srcset="{{asset('images/slider-home/thumbnail/21.jpg')}}"--}}
+{{--                                --}}{{--data-sizes="100w">--}}
+{{--                                --}}{{--</picture>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <div class="col">--}}
+{{--                            <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/22.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/22.jpg')}}" class="w-100" /></a>--}}
+{{--                        </div>--}}
+{{--                        <div class="col">--}}
+{{--                            <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/23.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/23.jpg')}}" class="w-100" /></a>--}}
+{{--                        </div>--}}
+{{--                        <div class="col">--}}
+{{--                            <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/24.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/24.jpg')}}" class="w-100" /></a>--}}
+{{--                        </div>--}}
+{{--                        <div class="col">--}}
+{{--                            <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/25.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/25.jpg')}}" class="w-100" /></a>--}}
+{{--                        </div>--}}
+{{--                        <div class="col">--}}
+{{--                            <a class="venobox w-100" data-gall="myGallery" href="{{asset('images/slider-home/26.jpg')}}"><img data-lazy="{{asset('images/slider-home/thumbnail/26.jpg')}}" class="w-100" /></a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
 
 

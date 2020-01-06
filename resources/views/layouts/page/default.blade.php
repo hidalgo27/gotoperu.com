@@ -32,33 +32,57 @@
 <footer class="bg-g-dark">
     <img data-src="{{asset('images/footer.jpg')}}" data-srcset="{{asset('images/footer.jpg')}}" alt="footer gotoperu" class="w-100 lazy has-webp">
     <div class="container footer-logo">
-        <div class="row justify-content-center">
-            <div class="col-6">
-                <div class="row">
-                    <div class="col">
+        <div class="row my-5 justify-content-center">
+            <div class="col">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-4">
                         <img data-src="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" data-srcset="{{asset('images/logos/logo-gotoperu-ave-w.png')}}" alt="logo gotoperu" class="w-100 lazy has-webp">
+                    </div>
+                    <div class="col-4">
+                        <div class="row mt-5">
+                            <div class="col text-right">
+                                <p class="font-weight-bold text-white">Follow  Us:</p>
+                            </div>
+                            <div class="col">
+                                <a href="https://www.facebook.com/GOTOPERUcom/" target="_blank" class="mx-2">
+                                    <i data-feather="facebook" class="text-white" stroke-width="1"></i>
+                                </a>
+                                <a href="https://twitter.com/GOTOPERUCOM" target="_blank" class="mx-2">
+                                    <i data-feather="twitter" class="text-white" stroke-width="1"></i>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCWjJ10j-_BfNTDnmjBug8Ng" target="_blank" class="mx-2">
+                                    <i data-feather="youtube" class="text-white" stroke-width="1"></i>
+                                </a>
+                                <a href="https://www.instagram.com/go.to.peru/" target="_blank" class="mx-2">
+                                    <i data-feather="instagram" class="text-white" stroke-width="1"></i>
+                                </a>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-8">
-                <div class="alert bg-rgba-dark mt-4 text-white text-center" role="alert">
-                    @lang('home.header_title')
-                </div>
+{{--        <div class="row justify-content-center">--}}
+{{--            <div class="col-12 col-sm-8">--}}
+{{--                <div class="alert bg-rgba-dark mt-4 text-white text-center" role="alert">--}}
+{{--                    @lang('home.header_title')--}}
+{{--                </div>--}}
 {{--                <a href="{{asset('pdf/terms-conditions.pdf')}}" target="_blank" class="btn btn-link font-weight-bold text-white d-block">Services Terms & Conditions</a>--}}
-            </div>
-        </div>
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
-    <div class="container-fluid">
-        <div class="row py-4">
+    <div class="container">
+        <div class="row pt-4">
             <div class="col-6 col-sm mb-3 text-white">
-                <h3 class="h6 text-g-yellow">@lang('home.travel_packages')</h3>
+                <p class="h5 text-secondary font-weight-bold">@lang('home.general')</p>
                 <ul class="m-0 text-g-yellow list-unstyled">
                     {{--<li><a href="{{route('deals_path')}}" class="text-white">Travel Deals</a></li>--}}
-                    <li><a href="{{route('packages_path')}}" class="text-white">@lang('home.travel_packages')</a></li>
+                    <li><a href="{{route('home_path')}}" class="text-light font-weight-bold small">@lang('home.home')</a></li>
+                    <li><a href="#" class="text-light font-weight-bold small">@lang('home.request_brochure')</a></li>
+                    <li><a href="{{route('contact_us_path')}}" class="text-light font-weight-bold small">@lang('home.contact_us')</a></li>
                 </ul>
             </div>
             {{--<div class="col-6 col-sm mb-3 text-white">--}}
@@ -69,9 +93,12 @@
                 {{--</ul>--}}
             {{--</div>--}}
             <div class="col-6 col-sm mb-3 text-white">
-                <h3 class="h6 text-g-yellow">@lang('home.destinations')</h3>
+                <p class="h5 text-secondary font-weight-bold">@lang('home.about_us')</p>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="{{route('destinations_path')}}" class="text-white">@lang('home.destinations')</a></li>
+                    <li><a href="{{route('about_path')}}" class="text-light font-weight-bold small">@lang('home.our_history')</a></li>
+                    <li><a href="#" class="text-light font-weight-bold small">@lang('home.social_responsability')</a></li>
+                    <li><a href="https://www.google.com/maps/place/GOTOPERU/@-13.5226792,-71.9748372,15z/data=!4m2!3m1!1s0x0:0xad9b34583ce776a0?sa=X&ved=2ahUKEwjZ86PazerjAhXuuFkKHb1dAaAQ_BIwE3oECAoQCA" target="_blank" class="text-light font-weight-bold small">@lang('home.offices')</a></li>
+                    <li><a href="{{route('join_path')}}" class="text-light font-weight-bold small">@lang('home.join_our_team')</a></li>
                 </ul>
             </div>
             {{--<div class="col-6 col-sm mb-3 text-white">--}}
@@ -84,10 +111,29 @@
                 {{--</ul>--}}
             {{--</div>--}}
             <div class="col-6 col-sm mb-3 text-white">
-                <h3 class="h6 text-g-yellow">About Us</h3>
+                <p class="h5 text-secondary font-weight-bold">@lang('home.resources')</p>
                 <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="{{route('about_path')}}" class="text-white">@lang('home.about_us')</a></li>
+                    <li><a href="{{route('faq_path')}}" class="text-light font-weight-bold small">@lang('home.faq')</a></li>
+                    <li><a href="{{route('category_path')}}" class="text-light font-weight-bold small">@lang('home.travel_categories')</a></li>
+                    <li><a href="{{route('destinations_path')}}" class="text-light font-weight-bold small">@lang('home.destinations')</a></li>
                 </ul>
+            </div>
+
+            <div class="col-6 col-sm mb-3 text-white">
+                <p class="h5 text-secondary font-weight-bold">@lang('home.community')</p>
+                <ul class="m-0 text-g-yellow list-unstyled">
+                    <li><a href="#" class="text-light font-weight-bold small">@lang('home.gotoperu_blog')</a></li>
+                    <li><a href="{{route('video_testimonials_path')}}" class="text-light font-weight-bold small">@lang('home.video_testimonial')</a></li>
+                    <li><a href="{{route('testimonials_path')}}" class="text-light font-weight-bold small">@lang('home.reviews')</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-sm mb-3 text-white">
+                <p class="h5 text-secondary font-weight-bold">@lang('home.travel_agents')</p>
+                <div class="bg-rgba-dark-5 p-4">
+                    <p class="small text-light">@lang('home.agent_of_change')</p>
+                    <a href="{{route('contact_us_path')}}" class="btn btn-g-green font-weight-bold btn-block rounded-0">@lang('home.contact_us')</a>
+                </div>
             </div>
             {{--<div class="col-6 col-sm mb-3 text-white">--}}
                 {{--<h3 class="h6 text-g-yellow">Offices</h3>--}}
@@ -96,39 +142,60 @@
                     {{--<li>USA: 1440 G St NW, Washington DC, 20005</li>--}}
                 {{--</ul>--}}
             {{--</div>--}}
-            <div class="col-6 col-sm mb-3 text-white">
-                <h3 class="h6 text-g-yellow">@lang('home.faq')</h3>
-                <ul class="m-0 text-g-yellow list-unstyled">
+{{--            <div class="col-6 col-sm mb-3 text-white">--}}
+{{--                <h3 class="h6 text-g-yellow">@lang('home.faq')</h3>--}}
+{{--                <ul class="m-0 text-g-yellow list-unstyled">--}}
 {{--                    <li><a href="{{route('getting_path')}}" class="text-white">@lang('home.ge')</a></li>--}}
-                    <li><a href="{{route('faq_path')}}" class="text-white">@lang('home.faq')</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-sm mb-3 text-white">
-                <h3 class="h6 text-g-yellow">@lang('home.testimonials')</h3>
-                <ul class="m-0 text-g-yellow list-unstyled">
-                    {{--<li><a href="#" class="text-white"></a></li>--}}
-                    <li><a href="{{route('testimonials_path')}}" class="text-white">@lang('home.testimonials')</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-sm mb-3 text-white">
-                <h3 class="h6 text-g-yellow">@lang('home.contact_us')</h3>
-                <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="" class="text-white" data-toggle="modal" data-target="#modal-contact">@lang('home.email')</a></li>
-                    <li><a href="tel:+2029963000">(202) 996-3000</a></li>
-                    {{--<li><a href="" class="text-white">Address</a></li>--}}
-                </ul>
-            </div>
-            <div class="col-6 col-sm mb-3 text-white">
-                <h3 class="h6 text-g-yellow">@lang('home.hotels')</h3>
-                <ul class="m-0 text-g-yellow list-unstyled">
-                    <li><a href="{{route('hotels_path')}}" class="text-white">@lang('home.hotels')</a></li>
-                </ul>
-            </div>
+{{--                    <li><a href="{{route('faq_path')}}" class="text-white">@lang('home.faq')</a></li>--}}
+{{--                </ul>--}}
+{{--            </div>--}}
+{{--            <div class="col-6 col-sm mb-3 text-white">--}}
+{{--                <h3 class="h6 text-g-yellow">@lang('home.testimonials')</h3>--}}
+{{--                <ul class="m-0 text-g-yellow list-unstyled">--}}
+{{--                    --}}{{--<li><a href="#" class="text-white"></a></li>--}}
+{{--                    <li><a href="{{route('testimonials_path')}}" class="text-white">@lang('home.testimonials')</a></li>--}}
+{{--                </ul>--}}
+{{--            </div>--}}
+{{--            <div class="col-6 col-sm mb-3 text-white">--}}
+{{--                <h3 class="h6 text-g-yellow">@lang('home.contact_us')</h3>--}}
+{{--                <ul class="m-0 text-g-yellow list-unstyled">--}}
+{{--                    <li><a href="" class="text-white" data-toggle="modal" data-target="#modal-contact">@lang('home.email')</a></li>--}}
+{{--                    <li><a href="tel:+2029963000">(202) 996-3000</a></li>--}}
+{{--                    --}}{{--<li><a href="" class="text-white">Address</a></li>--}}
+{{--                </ul>--}}
+{{--            </div>--}}
+{{--            <div class="col-6 col-sm mb-3 text-white">--}}
+{{--                <h3 class="h6 text-g-yellow">@lang('home.hotels')</h3>--}}
+{{--                <ul class="m-0 text-g-yellow list-unstyled">--}}
+{{--                    <li><a href="{{route('hotels_path')}}" class="text-white">@lang('home.hotels')</a></li>--}}
+{{--                </ul>--}}
+{{--            </div>--}}
         </div>
 
         <div class="row">
             <div class="col text-center text-white">
-                <a href="https://www.google.com/maps/place/GOTOPERU/@-13.5226792,-71.9748372,15z/data=!4m2!3m1!1s0x0:0xad9b34583ce776a0?sa=X&ved=2ahUKEwjZ86PazerjAhXuuFkKHb1dAaAQ_BIwE3oECAoQCA" target="_blank" class="text-white"><i class="fas fa-map-marker-alt"></i> Av. El Sol 948, 2do y 3er piso | Centro comercial Cusco Sol Plaza | Cusco - Cusco - Perú</a>
+                <p class="pb-3 h5 font-weight-bold">Call us, we're open 24/7</p>
+                <div class="row justify-content-center">
+                    <div class="col-5">
+                        <div class="row">
+                            <div class="col">
+                                <a href="https://api.whatsapp.com/send?phone=12024911478" target="_blank" class="font-weight-bold text-white stretched-link">
+                                    <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="30" data-toggle="tooltip" data-placement="top" title="Perú">
+                                    +1 (202) 491-1478
+                                </a>
+                            </div>
+                            <div class="col">
+                                <p class="font-weight-bold text-white"><i data-feather="phone" class="text-white" stroke-width="1"></i> (202) 996-3000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col text-center text-white">
+                <a href="https://www.google.com/maps/place/GOTOPERU/@-13.5226792,-71.9748372,15z/data=!4m2!3m1!1s0x0:0xad9b34583ce776a0?sa=X&ved=2ahUKEwjZ86PazerjAhXuuFkKHb1dAaAQ_BIwE3oECAoQCA" target="_blank" class="text-light small"><i class="fas fa-map-marker-alt"></i> Av. El Sol 449, Oficina 301. | Cusco - Cusco - Perú</a>
             </div>
         </div>
     </div>
@@ -189,8 +256,8 @@
             /* custom configuration goes here (www.olark.com/documentation) */
             olark.identify('1630-501-10-9116');
         <!-- end olark code -->
-        
-    
+
+
 
     }
     if (locale == "pt"){

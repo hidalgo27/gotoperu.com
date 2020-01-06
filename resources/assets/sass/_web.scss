@@ -412,7 +412,7 @@ header .overlay {
 }
 //footer
 .footer-logo{
-  margin-top: -15%;
+  margin-top: -10%;
 }
 .p-medalla{
   margin-left: auto;
@@ -1276,6 +1276,10 @@ $slide-overlay-opacity: 0.6;
 .header-img-category {
   position: relative;
   overflow: hidden;
+}
+
+.cursor-pinter {
+  cursor: pointer;
 }
 
 .header-img-category a img {
