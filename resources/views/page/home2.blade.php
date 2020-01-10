@@ -15,7 +15,7 @@
             <div class="row d-flex h-100 text-center align-items-center">
                 <div class="col w-100 text-white mt-5">
                     <h1 class="font-weight-lighter h2 mt-5">@lang('home.header_title')</h1>
-                    <a href="#Inquire" class="btn btn-outline-g-yellow btn-lg h2 font-weight-normal mt-3">@lang('home.float_button_button')</a>
+                    <a href="#Inquire" class="btn btn-g-yellow btn-lg h2 font-weight-bold mt-3">@lang('home.float_button_button')</a>
                     {{--                        <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>--}}
 
                     @if (App::getLocale() == "pt")
