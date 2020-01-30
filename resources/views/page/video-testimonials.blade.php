@@ -84,7 +84,7 @@
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                         <a class="venobox" data-autoplay="true" data-vbtype="video" href="{{$testimonio_videos->codigo}}">
                             <div class="position-relative">
-                                <img src="{{asset('images/video-testimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">
+                                <img src="{{$testimonio_videos->imagen}}" alt="" class="w-100 shadow-sm rounded">
                                 <div class="position-absolute-bottom text-white p-3 icon-play">
                                     <i class="fas fa-play fa-2x"></i>
                                 </div>

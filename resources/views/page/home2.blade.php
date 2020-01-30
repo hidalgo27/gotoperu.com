@@ -18,36 +18,6 @@
                     <a href="#Inquire" class="btn btn-g-yellow btn-lg h2 font-weight-bold mt-3">@lang('home.float_button_button')</a>
                     {{--                        <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>--}}
 
-                    @if (App::getLocale() == "pt")
-                        <div class="row justify-content-center">
-                            <div class="col-md-7 col-lg-5 mt-5">
-                                <div class="bg-rgba-white-5 rounded shadow p-3">
-                                    <h5 class="m-0 text-dark font-weight-bold">PARCELE SUA COMPRA <span class="text-primary">EM ATÉ</span></h5>
-                                    <p class="display-2 font-weight-bold m-0 font-weight-bold text-primary">12x</p>
-                                    <div class="row no-gutters">
-                                        <div class="col">
-                                            <img src="{{asset('images/logos/visa.png')}}" alt="logo visa" class="w-100 p-1">
-                                        </div>
-                                        <div class="col">
-                                            <img src="{{asset('images/logos/mastercard.png')}}" alt="logo mastercard" class="w-100 p-1">
-                                        </div>
-                                        <div class="col">
-                                            <img src="{{asset('images/logos/american_express.png')}}" alt="logo american express" class="w-100 p-1">
-                                        </div>
-                                        <div class="col">
-                                            <img src="{{asset('images/logos/hipercard.png')}}" alt="logo hipercard" class="w-100 p-1">
-                                        </div>
-                                        <div class="col">
-                                            <img src="{{asset('images/logos/elo.png')}}" alt="logo elo" class="w-100 p-1">
-                                        </div>
-                                        <div class="col">
-                                            <img src="{{asset('images/logos/diners_club.png')}}" alt="logo diner club" class="w-100 p-1">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
                 </div>
             </div>
         </div>
@@ -128,14 +98,14 @@
         {{--<div id="aviso"><h2>Estás haciendo scroll sobre el contenido 2</h2></div>--}}
 
 
-    @if (App::getLocale() == "pt")
+
         <div id="redes">
             <div class="container-fluid">
                 <div class="row justify-content-end">
                     <div class="col-auto">
                         <div class="bg-dark rounded px-3 mx-3 shadow clearfix float-right">
-                        <a href="https://api.whatsapp.com/send?phone=51999200914" target="_blank" class="font-weight-bold text-white stretched-link">
-                            +51 999200914
+                        <a href="https://api.whatsapp.com/send?phone=12024911478" target="_blank" class="font-weight-bold text-white stretched-link">
+                            +1 202-491-1478
                             <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
                         </a>
                         </div>
@@ -143,24 +113,7 @@
                 </div>
             </div>
         </div>
-    @endif
-    @if (App::getLocale() == "es")
-        <div id="redes">
-            <div class="container-fluid">
-                <div class="row justify-content-end">
-                    <div class="col-auto">
-                        <div class="bg-dark rounded px-3 mx-3 shadow clearfix float-right">
-                            <a href="https://api.whatsapp.com/send?phone=5117059774" target="_blank" class="font-weight-bold text-white stretched-link">
-                                +51 (1) 705-9774
-                                <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-    @endif
 
 
         <section class="bg-light pb-sm-5 pb-0">
@@ -201,41 +154,31 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="tab-content border border-top-0 rounded-bottom shadow-sm" id="v-pills-tabContent">
+                                        <div class="tab-content border border-top-0 rounded-bottom shadow-sm position-relative" id="v-pills-tabContent">
                                             @foreach($categorias->where('grupo', $categoria_groups->grupo) as $categoria)
                                             <div class="tab-pane fade show @if ($categoria->estado == 1) {{'active'}} @endif" id="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" role="tabpanel" aria-labelledby="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}-tab">
+                                                <div class="category-banners-box">
                                                     <div class="row d-none d-md-block">
                                                         <div class="col">
                                                             <div class="position-relative">
 {{--                                                                    <img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">--}}
-                                                                    <img alt="gotoperu" class="lazy w-100" src="{{asset('images/banners/category/'.$categoria->imagen_banner.'')}}">
-                                                                <div class="position-absolute-bottom bg-rgba-dark-3 text-white p-2">
+                                                                <img alt="gotoperu" class="w-100" src="{{$categoria->imagen_banner}}">
+                                                                <div class="position-absolute-bottom category-p bg-rgba-dark-3 text-white p-2">
                                                                     <p class="m-0 font-weight-bold">{!! $categoria->descripcion !!}</p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
                                                 <div class="row my-3 mx-0">
                                                     @foreach($paquetes_categoria->where('idcategoria', $categoria->id)->take(2) as $paquetes_categorias)
                                                         <div class="col-12 mb-4 col-sm-12 mb-sm-4 col-md-12 mb-md-4 mb-lg-0 col-lg-6">
-                                                            <div class="bg-light shadow-sm rounded">
+                                                            <div class="bg-light shadow-sm rounded-right">
                                                                 <div class="row align-items-center no-gutters">
                                                                     <div class="col-12 col-sm-7">
                                                                         <div class="position-relative">
                                                                             <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes_categorias->paquete->titulo)), $paquetes_categorias->paquete->duracion])}}">
-                                                                                {{--<img src="{{asset('images/mapas/'.$cateorias_recommended->paquete->codigo.'.jpg')}}" alt="" class="w-100 rounded-left">--}}
-{{--                                                                                <picture>--}}
-
-{{--                                                                                    <source type="image/webp"--}}
-{{--                                                                                            data-srcset="{{asset('images/mapas/'.$paquetes_categorias->paquete->imagen.'')}}"--}}
-{{--                                                                                            data-sizes="100w">--}}
-{{--                                                                                    <img alt="gotoperu" class="lazy w-100"--}}
-{{--                                                                                         data-src="{{asset('images/mapas/'.$paquetes_categorias->paquete->imagen.'')}}"--}}
-{{--                                                                                         data-srcset="{{asset('images/mapas/'.$paquetes_categorias->paquete->imagen.'')}}"--}}
-{{--                                                                                         data-sizes="100w">--}}
-{{--                                                                                </picture>--}}
-
-                                                                                <img src="{{asset('images/mapas/'.$paquetes_categorias->paquete->imagen.'')}}" alt="" class="w-100">
+                                                                                <img src="{{$paquetes_categorias->paquete->imagen}}" alt="" class="w-100">
                                                                                 <div class="position-absolute-bottom p-2 text-center">
                                                                                     <span class="small font-weight-bold badge badge-g-yellow shadow">{{$paquetes_categorias->categoria->nombre}}</span>
                                                                                 </div>
@@ -244,22 +187,66 @@
                                                                     </div>
                                                                     <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                                         <div class="px-3">
-                                                                            <h2 class="h6 font-weight-bold">{{$paquetes_categorias->paquete->titulo}}</h2>
-                                                                            <small class="text-muted font-weight-bold">{{$paquetes_categorias->paquete->duracion}} @lang('home.days')</small>
+                                                                            <h2 class="h6 mb-3 font-weight-bold">{{$paquetes_categorias->paquete->titulo}}</h2>
+{{--                                                                            <small class="text-muted font-weight-bold">{{$paquetes_categorias->paquete->duracion}} @lang('home.days')</small>--}}
+                                                                            <div class="bg-white p-2 rounded shadow-sm">
+                                                                                <p class="small text-left m-0"><i data-feather="trending-up" class="text-info" stroke-width="1" width="15"></i> <span class="font-weight-bold text-secondary">Highest Altitude:</span> {{$paquetes_categorias->paquete->altitud}}</p>
+                                                                                <p class="small text-left m-0"><i data-feather="users" class="text-danger" stroke-width="1" width="15"></i> <span class="font-weight-bold text-secondary">Group Size:</span> {{$paquetes_categorias->paquete->group_size}}</p>
+                                                                                <p class="small text-left m-0"><i data-feather="bar-chart-2" class="text-success" stroke-width="1" width="15"></i> <span class="font-weight-bold text-secondary">Activity Level:</span>
+                                                                                    @foreach($paquetes_categorias->paquete->paquetes_dificultad as $paquetes_dificultad)
+                                                                                        {{ucwords($paquetes_dificultad->dificultad->nombre)}}
+                                                                                    @endforeach
+                                                                                </p>
+                                                                            </div>
 
-                                                                            @foreach($paquetes_categorias->paquete->precio_paquetes as $precio)
-                                                                                @if($precio->estrellas == 2)
-                                                                                    @if($precio->precio_d > 0)
-                                                                                        {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                                        <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
-                                                                                    @else
-                                                                                        <span class="text-danger">@lang('home.inquire')</span>
-                                                                                    @endif
-                                                                                @endif
-                                                                            @endforeach
+                                                                            <div class="row mt-3">
+                                                                                {{--                                                        <div class="col">--}}
+                                                                                {{--                                                            <p class="text-g-green h5 font-weight-bold"></p>--}}
+                                                                                {{--                                                        </div>--}}
+                                                                                <div class="col">
+                                                                                    @foreach($paquetes_categorias->paquete->precio_paquetes as $precio)
+                                                                                        @if($precio->estrellas == 2)
+                                                                                            @if($precio->precio_d > 0)
+                                                                                                {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
+                                                                                                <div class="mb-2 font-weight-bold">
+                                                                                                    {{$paquetes_categorias->paquete->duracion}} @lang('package.days')
+                                                                                                    <i data-feather="arrow-right" class="text-primary" stroke-width="1"></i>
+                                                                                                    <sup class="text-primary">$</sup><span class="h4 text-primary font-weight-bold">{{$precio->precio_d}}</span>
+                                                                                                </div>
+                                                                                            @else
+                                                                                                <div class="mb-2 font-weight-bold">
+                                                                                                    {{$paquetes_categorias->paquete->duracion}} @lang('package.days')
+                                                                                                    <i data-feather="arrow-right" class="text-primary" stroke-width="1"></i>
+                                                                                                    <span class="text-danger font-weight-bold">@lang('package.inquire')</span>
+                                                                                                </div>
+
+                                                                                            @endif
+                                                                                        @endif
+                                                                                    @endforeach
+                                                                                </div>
+                                                                            </div>
 
                                                                             <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes_categorias->paquete->titulo)), $paquetes_categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">@lang('home.inquire_now')</a>
                                                                             {{--<a href="" class="btn btn-g-green font-weight-bold btn-block">Book Now</a>--}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="alert-g-green rounded-bottom p-1">
+                                                                            <p class="small font-weight-bold m-0 text-g-green"><i data-feather="map-pin" class="text-g-yellow" stroke-width="1" width="18"></i>
+{{--                                                                                Lima, Cusco, Machu Picchu.--}}
+                                                                                @php
+                                                                                    $m = 1;
+                                                                                    $num_des = count($paquete_destinos->where('idpaquetes',$paquetes_categorias->paquete->id));
+                                                                                @endphp
+                                                                                @foreach($paquete_destinos->where('idpaquetes',$paquetes_categorias->paquete->id) as $paquete_destino)
+                                                                                    @if(isset($paquete_destino->destinos->nombre))
+                                                                                        {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($m < $num_des),@else.@endif
+                                                                                        @php $m++; @endphp
+                                                                                    @endif
+                                                                                @endforeach
+                                                                            </p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -300,15 +287,17 @@
                                 <div class="position-relative">
                                     {{--<img src="{{asset('images/video-tertimonio/'.$testimonio_videos->imagen.'')}}" alt="" class="w-100 shadow-sm rounded">--}}
 
-                                    <picture>
-                                        <source type="image/webp"
-                                                data-srcset="{{asset('images/video-testimonio/'.$testimonio_videos->imagen.'')}}"
-                                                data-sizes="100w">
-                                        <img alt="gotoperu" class="lazy w-100 shadow-sm rounded"
-                                             data-src="{{asset('images/video-testimonio/'.$testimonio_videos->imagen.'')}}"
-                                             data-srcset="{{asset('images/video-testimonio/'.$testimonio_videos->imagen.'')}}"
-                                             data-sizes="100w">
-                                    </picture>
+{{--                                    <picture>--}}
+{{--                                        <source type="image/webp"--}}
+{{--                                                data-srcset="{{asset('images/video-testimonio/'.$testimonio_videos->imagen.'')}}"--}}
+{{--                                                data-sizes="100w">--}}
+{{--                                        <img alt="gotoperu" class="lazy w-100 shadow-sm rounded"--}}
+{{--                                             data-src="{{asset('images/video-testimonio/'.$testimonio_videos->imagen.'')}}"--}}
+{{--                                             data-srcset="{{asset('images/video-testimonio/'.$testimonio_videos->imagen.'')}}"--}}
+{{--                                             data-sizes="100w">--}}
+{{--                                    </picture>--}}
+
+                                    <img src="{{$testimonio_videos->imagen}}" alt="" class="w-100 shadow-sm rounded">
 
                                     <div class="position-absolute-bottom text-white p-3 icon-play">
                                         <i class="fas fa-play fa-2x"></i>
@@ -627,16 +616,16 @@
                         <div class="header-img-category rounded">
                             <div class="position-relative">
                                 <a href="{{route('category_show_path', str_replace(' ', '-', strtolower($categorias_block->nombre)))}}">
-                                    {{--<img src="{{asset('images/category/home.jpg')}}" alt="" class="w-100 shadow-sm">--}}
-                                    <picture>
-                                        <source type="image/webp"
-                                                data-srcset="{{asset('images/category/'.$categorias_block->imagen.'')}}"
-                                                data-sizes="100w">
-                                        <img alt="trains" class="lazy w-100 shadow-sm"
-                                             data-src="{{asset('images/category/'.$categorias_block->imagen.'')}}"
-                                             data-srcset="{{asset('images/category/'.$categorias_block->imagen.'')}}"
-                                             data-sizes="100w">
-                                    </picture>
+                                    <img src="{{$categorias_block->imagen}}" alt="" class="w-100 shadow-sm">
+{{--                                    <picture>--}}
+{{--                                        <source type="image/webp"--}}
+{{--                                                data-srcset="{{asset('images/category/'.$categorias_block->imagen.'')}}"--}}
+{{--                                                data-sizes="100w">--}}
+{{--                                        <img alt="trains" class="lazy w-100 shadow-sm"--}}
+{{--                                             data-src="{{asset('images/category/'.$categorias_block->imagen.'')}}"--}}
+{{--                                             data-srcset="{{asset('images/category/'.$categorias_block->imagen.'')}}"--}}
+{{--                                             data-sizes="100w">--}}
+{{--                                    </picture>--}}
                                     <div class="position-absolute-bottom text-white text-left">
                                         <h5 class="p-2 m-0 footer-title-category">{{ucwords(strtolower($categorias_block->nombre))}}</h5>
                                     </div>
@@ -652,16 +641,16 @@
                                 <div class="header-img-category rounded">
                                     <div class="position-relative">
                                         <a href="{{route('category_show_path', str_replace(' ', '-', strtolower($categorias_randoms->nombre)))}}">
-                                            {{--<img src="{{asset('images/category/recommended.jpg')}}" alt="" class="w-100 shadow-sm">--}}
-                                            <picture>
-                                                <source type="image/webp"
-                                                        data-srcset="{{asset('images/category/'.$categorias_randoms->imagen.'')}}"
-                                                        data-sizes="100w">
-                                                <img alt="trains" class="lazy w-100 shadow-sm"
-                                                     data-src="{{asset('images/category/'.$categorias_randoms->imagen.'')}}"
-                                                     data-srcset="{{asset('images/category/'.$categorias_randoms->imagen.'')}}"
-                                                     data-sizes="100w">
-                                            </picture>
+                                            <img src="{{$categorias_randoms->imagen}}" alt="" class="w-100 shadow-sm">
+{{--                                            <picture>--}}
+{{--                                                <source type="image/webp"--}}
+{{--                                                        data-srcset="{{asset('images/category/'.$categorias_randoms->imagen.'')}}"--}}
+{{--                                                        data-sizes="100w">--}}
+{{--                                                <img alt="trains" class="lazy w-100 shadow-sm"--}}
+{{--                                                     data-src="{{asset('images/category/'.$categorias_randoms->imagen.'')}}"--}}
+{{--                                                     data-srcset="{{asset('images/category/'.$categorias_randoms->imagen.'')}}"--}}
+{{--                                                     data-sizes="100w">--}}
+{{--                                            </picture>--}}
                                             <div class="position-absolute-bottom text-white text-left">
                                                 <h6 class="p-2 m-0 font-weight-normal footer-title-category">{{ucwords(strtolower($categorias_randoms->nombre))}}</h6>
                                             </div>
@@ -810,7 +799,7 @@
 {{--                                             data-srcset="{{asset('images/destinations/'.$destino->imagen.'')}}"--}}
 {{--                                             data-sizes="100w">--}}
 {{--                                    </picture>--}}
-                                    <img src="{{asset('images/destinations/'.$destino->imagen.'')}}" class="w-100 shadow-sm" alt="{{ucwords(strtolower($destino->nombre))}}">
+                                    <img src="{{$destino->imagen}}" class="w-100 shadow-sm" alt="{{ucwords(strtolower($destino->nombre))}}">
                                     <div class="position-absolute-bottom text-white text-left mb-5 text-center">
                                         <h6 class="p-2 m-0 font-weight-bold footer-title-category">{{ucwords(strtolower($destino->nombre))}}</h6>
                                     </div>

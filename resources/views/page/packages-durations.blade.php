@@ -100,7 +100,9 @@
                                         <div class="row align-items-center no-gutters">
                                             <div class="col-12 col-sm-7">
                                                 <div class="position-relative">
-                                                    <img src="{{asset('images/mapas/'.$paquete->imagen.'')}}" alt="" class="w-100 rounded-left">
+                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}">
+                                                        <img src="{{$paquete->imagen}}" alt="{{$paquete->titulo}}" class="w-100">
+                                                    </a>
                                                     <div class="position-absolute-bottom p-2 text-center">
                                                         @foreach($paquete->paquetes_categoria as $paquetes_categorias)
                                                         <span class="small font-weight-bold badge badge-g-yellow shadow">{{$paquetes_categorias->categoria->nombre}}</span>
@@ -111,14 +113,31 @@
                                             <div class="col-12 mt-3 mt-sm-0 col-sm-5 text-center">
                                                 <div class="px-3">
                                                     <h2 class="h6 font-weight-bold">{{$paquete->titulo}}</h2>
-                                                    <small class="text-muted font-weight-bold">{{$paquete->duracion}} @lang('package.days')</small>
+                                                    <div class="bg-white p-2 mb-3 rounded shadow-sm">
+                                                        <p class="small text-left m-0"><i data-feather="trending-up" class="text-info" stroke-width="1" width="15"></i> <span class="font-weight-bold text-secondary">Highest Altitude:</span> {{$paquete->altitud}}</p>
+                                                        <p class="small text-left m-0"><i data-feather="users" class="text-danger" stroke-width="1" width="15"></i> <span class="font-weight-bold text-secondary">Group Size:</span> {{$paquete->group_size}}</p>
+                                                        <p class="small text-left m-0"><i data-feather="bar-chart-2" class="text-success" stroke-width="1" width="15"></i> <span class="font-weight-bold text-secondary">Activity Level:</span>
+                                                            @foreach($paquete->paquetes_dificultad as $paquetes_dificultad)
+                                                                {{ucwords($paquetes_dificultad->dificultad->nombre)}}
+                                                            @endforeach
+                                                        </p>
+                                                    </div>
                                                     @foreach($paquete->precio_paquetes as $precio)
                                                         @if($precio->estrellas == 2)
                                                             @if($precio->precio_d > 0)
                                                                 {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
+                                                                <div class="mb-3 font-weight-bold">
+                                                                    {{$paquete->duracion}} @lang('package.days')
+                                                                    <i data-feather="arrow-right" class="text-primary" stroke-width="1"></i>
+                                                                    <sup class="text-primary">$</sup><span class="h4 text-primary font-weight-bold">{{$precio->precio_d}}</span>
+                                                                </div>
                                                             @else
-                                                                <span class="text-danger">@lang('package.inquire')</span>
+                                                                <div class="mb-3 font-weight-bold">
+                                                                    {{$paquete->duracion}} @lang('package.days')
+                                                                    <i data-feather="arrow-right" class="text-primary" stroke-width="1"></i>
+                                                                    <span class="text-danger font-weight-bold">@lang('package.inquire')</span>
+                                                                </div>
+
                                                             @endif
                                                         @endif
                                                     @endforeach
@@ -127,6 +146,26 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="alert-g-green rounded-bottom p-1">
+                                                    <p class="small font-weight-bold m-0 text-g-green"><i data-feather="map-pin" class="text-g-yellow" stroke-width="1" width="18"></i>
+                                                        @php
+                                                            $m = 1;
+                                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquete->id));
+                                                        @endphp
+                                                        @foreach($paquete_destinos->where('idpaquetes',$paquete->id) as $paquete_destino)
+                                                            @if(isset($paquete_destino->destinos->nombre))
+                                                                {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($m < $num_des),@else.@endif
+                                                                @php $m++; @endphp
+                                                            @endif
+                                                        @endforeach
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             @endforeach

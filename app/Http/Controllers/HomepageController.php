@@ -141,62 +141,6 @@ class HomepageController extends Controller
         return view('page.hotels', ['hoteles'=>$hoteles]);
 
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
     public function yourtrip($id)
     {
 //        dd(Crypt::encrypt($id));
@@ -357,11 +301,10 @@ class HomepageController extends Controller
     {
         $title = str_replace('-', ' ', strtoupper($titulo));
 //        dd($title);
-        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes', 'imagen_paquetes', 'paquete_incluye', 'paquete_no_incluye')->where('estado', 0)->get();
+//        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes', 'imagen_paquetes', 'paquete_incluye', 'paquete_no_incluye')->where('estado', 0)->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
 //        $paquete_categoria =
-        $paquete_iti = TPaquete::with('paquete_itinerario','paquetes_destinos', 'precio_paquetes', 'paquetes_categoria')->where('titulo', $title)->get();
-
+        $paquete_iti = TPaquete::with('paquete_itinerario','paquetes_destinos', 'precio_paquetes', 'paquetes_categoria')->where('url', $titulo)->get();
 //        $imagen_itinerario = TItinerarioImagen::all();
 
         $hoteles = THotel::all();
@@ -414,7 +357,7 @@ class HomepageController extends Controller
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
-        return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'vuelo'=>$vuelo, 'paquete_vuelo'=>$paquete_vuelo, 'dificultad'=>$dificultad, 'comentario'=>$comentario, 'imagen'=>$imagen]);
+        return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'vuelo'=>$vuelo, 'paquete_vuelo'=>$paquete_vuelo, 'dificultad'=>$dificultad, 'comentario'=>$comentario, 'imagen'=>$imagen]);
 
     }
 
@@ -446,12 +389,13 @@ class HomepageController extends Controller
     {
         $category_t = str_replace('-', ' ', $title);
 
-        $category = TCategoria::where('nombre', $category_t)->get();
-        foreach ($category as $c_s) {
-            $categorias = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $c_s->id)->get();
-        }
+        $category = TCategoria::where('url', $title)->first();
+        $categorias = TPaqueteCategoria::with('paquete', 'categoria')->where('idcategoria', $category->id)->get();
+
 
         $all_category = TCategoria::all();
+
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
 
         SEOMeta::setTitle('Machu Picchu Tour Packages | Machu Picchu Vacation Packages | Machu Picchu Deals | Peru Honeymoon Travel Packages');
         SEOMeta::setDescription('Want to travel to Peru? GoToPeru offers a variety travel packages all over Peru. Call one of our offices today to start planning your Machu Picchu trip!');
@@ -471,9 +415,8 @@ class HomepageController extends Controller
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('https://gotoperu.com/images/banners/cusco.jpg');
 
-        $categoria = TCategoria::all();
+        return view('page.package-category-show',compact('categorias','all_category','category_t','category','paquete_destinos'));
 
-        return view('page.package-category-show',compact('categorias','all_category','category_t'),['categoria'=>$categoria]);
     }
 
     public function complete()

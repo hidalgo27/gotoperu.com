@@ -73,7 +73,7 @@
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
                     <div class="position-relative category-box">
                         <a href="{{route('category_show_path', str_replace(' ', '-', strtolower($categorias->nombre)))}}">
-                            <img src="{{asset('images/category/'.$categorias->imagen.'')}}" alt="" class="w-100 rounded shadow-sm img-thumbnail">
+                            <img src="{{$categorias->imagen}}" alt="" class="w-100 rounded shadow-sm img-thumbnail">
                             <div class="position-absolute-bottom text-center p-3 category-tape">
                                 <div class="category-circle rounded-circle mx-auto">
                                     <h6 class="text-white font-weight-bold text-g-dark">

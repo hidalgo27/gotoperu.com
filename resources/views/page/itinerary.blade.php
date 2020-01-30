@@ -2,7 +2,7 @@
 @section('content')
         @foreach($paquete_iti as $paquetes)
 
-    <section class="header-video d-none d-md-block chat-mensajes">
+    <header class="d-none d-md-block chat-mensajes">
 {{--        <div id="title" class="text-white">--}}
 {{--            <div class="container-fluid">--}}
 {{--                <div class="row align-items-center justify-content-between my-2">--}}
@@ -25,9 +25,9 @@
 {{--            </div>--}}
 {{--        </div>--}}
         @include('layouts.page.header')
-        <div id="overlay" class="overlay-img">
+        <div id="" class="overlay-img">
             @foreach($paquetes->imagen_paquetes->take(1) as $paquetes_imagen)
-            <img src="{{asset('images/packages/slider/'.$paquetes_imagen->nombre.'')}}" alt="banner gotoperu" id="hero-vid" class="banner-itinerary">
+            <img src="{{$paquetes_imagen->nombre}}" alt="banner gotoperu" id="hero-vid" class="banner-itinerary">
             @endforeach
         </div>
         <div class="content-header">
@@ -60,7 +60,7 @@
 
             </div>
         </div>
-    </section>
+    </header>
 
     @include('layouts.page.menu')
     <section class="bg-white">
@@ -196,13 +196,17 @@
                                 </div>
                                 <div id="" class="mt-0 mt-md-0">
                                     {{--<h3 class="text-secondary pt-4 pb-2 h4"><strong>Overview</strong></h3>--}}
-                                    @php echo $paquetes->descripcion; @endphp
+                                    <div class="row my-3">
+                                        <div class="col">
+                                            {!! $paquetes->descripcion; !!}
+                                        </div>
+                                    </div>
                                     <div class="row py-3">
                                         <div class="col-12 mb-3 mb-lg-0 col-lg d-flex">
                                             @foreach($paquetes->paquetes_categoria as $categoria)
                                                 <div class="card p-3 w-100">
                                                     <h5 class="text-secondary font-weight-bold"><i class="fas fa-angle-right"></i> @lang('itinerary.category'): <span class="text-primary">{{ucwords(strtolower($categoria->categoria->nombre))}}</span></h5>
-                                                    <p>{{$categoria->categoria->descripcion}}</p>
+                                                    <p>{!! $categoria->categoria->descripcion !!}</p>
                                                 </div>
                                             @endforeach
                                         </div>
@@ -210,7 +214,7 @@
                                             <div class="card p-3 w-100">
                                             @foreach($dificultad->where('idpaquetes', $paquetes->id) as $dificultades)
                                                 <h5 class="text-secondary font-weight-bold"><i class="fas fa-angle-right"></i> @lang('itinerary.physical_demand'): <span class="text-primary text-capitalize">{{$dificultades->dificultad->nombre}}</span></h5>
-                                                <p>{{$dificultades->dificultad->descripcion}}</p>
+                                                <p>{!! $dificultades->dificultad->descripcion !!}</p>
                                             @endforeach
                                             </div>
                                         </div>
@@ -594,7 +598,7 @@
                             </div>
                             <div class="col col-sm-12 col-md-5 col-lg-4 col-xl-4 d-none d-md-inline">
 
-                                    <div class="card p-3 alert-g-yellow mb-4">
+                                    <div class="card p-3 alert-primary mb-4">
                                         <div class="row">
                                             <div class="col">
                                                 <span class="font-weight-bold d-block h4">{{$paquetes->duracion}} @lang('itinerary.days')</span>
@@ -611,7 +615,17 @@
                                                     @endforeach
                                                     <small>USD</small>
                                                 </div>
-                                                <span class="text-secondary d-block font-weight-bold">@lang('itinerary.code'): {{$paquetes->codigo}}</span>
+                                                <hr>
+                                                <p class="text-left m-0"><i data-feather="trending-up" class="text-info" stroke-width="1" width="15"></i> <span class="font-weight-bold text-dark">Highest Altitude:</span> {{$paquetes->altitud}}</p>
+                                                <p class="text-left m-0"><i data-feather="users" class="text-danger" stroke-width="1" width="15"></i> <span class="font-weight-bold text-dark">Group Size:</span> {{$paquetes->group_size}}</p>
+                                                <p class="text-left m-0"><i data-feather="code" class="text-primary" stroke-width="1" width="15"></i> <span class="font-weight-bold text-dark">@lang('itinerary.code'):</span> {{$paquetes->codigo}}</p>
+                                                <p class="text-left m-0"><i data-feather="map-pin" class="text-success" stroke-width="1" width="15"></i> <span class="font-weight-bold text-dark">Destinations:</span></p>
+
+                                                <ul class="m-0">
+                                                    @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destinos)
+                                                        <li class="font-weight-bold">{{ucwords(strtolower($paquete_destinos->destinos->nombre))}}</li>
+                                                    @endforeach
+                                                </ul>
                                             </div>
                                         </div>
 
@@ -809,17 +823,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col text-right">
-                                            @if (App::getLocale() == "en")
-                                                <p class="font-weight-bold text-muted">info@gotoperu.com</p>
-                                            @endif
-
-                                            @if (App::getLocale() == "es")
-                                                <p class="font-weight-bold text-muted">info@gotoperu.com.pe</p>
-                                            @endif
-
-                                            @if (App::getLocale() == "pt")
-                                                <p class="font-weight-bold text-muted">contato@gotoperu.com.br</p>
-                                            @endif
+                                            <p class="font-weight-bold text-muted">info@gotoperu.com</p>
                                         </div>
                                     </div>
                                 </div>

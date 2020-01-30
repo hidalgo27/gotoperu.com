@@ -11,7 +11,7 @@
             {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
             {{--</video>--}}
 
-            <img src="{{asset('images/banners/itinerary/GTP40.webp')}}" alt="" id="hero-vid" class="banner-itinerary">
+            <img src="{{$category->imagen_banner}}" alt="" id="hero-vid" class="banner-itinerary">
             {{--            @include('layouts.page.menu-custom')--}}
         </div>
         <div class="content-header">
@@ -75,7 +75,11 @@
                 <div class="col-3 d-none col-sm-12 d-md-flex col-md-4 col-lg-3">
                     <ul class="list-group list-group-flush">
                         @foreach($all_category as $all_categorys)
-                            <li class="list-group-item font-weight-bold pl-0"><a href="{{route('category_show_path', str_replace(' ', '-', strtolower($all_categorys->nombre)))}}" class="text-secondary stretched-link"><i class="fas fa-chevron-right"></i> {{ucwords(strtolower($all_categorys->nombre))}}</a></li>
+                            <li class="list-group-item font-weight-bold pl-0">
+                                <a href="{{route('category_show_path', str_replace(' ', '-', strtolower($all_categorys->nombre)))}}" class="text-secondary stretched-link">
+                                    <img src="{{$all_categorys->imagen}}" width="35" height="35" class="rounded-circle shadow" alt=""> {{ucwords(strtolower($all_categorys->nombre))}}
+                                </a>
+                            </li>
                         @endforeach
                     </ul>
                 </div>
@@ -89,7 +93,7 @@
                                             <div class="col-12">
                                                 <div class="position-relative">
                                                     <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($categorias->paquete->titulo)), $categorias->paquete->duracion])}}">
-                                                        <img src="{{asset('images/mapas/'.$categorias->paquete->imagen.'')}}" alt="" class="w-100 rounded-left">
+                                                        <img src="{{$categorias->paquete->imagen}}" alt="" class="w-100 rounded-left">
                                                         <div class="position-absolute-bottom p-2 text-center">
                                                             <span class="small font-weight-bold badge badge-g-green shadow">{{$categorias->categoria->nombre}}</span>
                                                         </div>
@@ -99,14 +103,44 @@
                                             <div class="col-12 text-center mt-2">
                                                 <div class="px-3">
                                                     <h2 class="h6 font-weight-bold">{{$categorias->paquete->titulo}}</h2>
-                                                    <small class="text-muted font-weight-bold">{{$categorias->paquete->duracion}} @lang('package.days')</small>
+                                                    <div class="bg-white p-2 rounded shadow-sm mb-4">
+                                                        <p class="small text-left m-0"><i data-feather="trending-up" class="text-info" stroke-width="1" width="15"></i> <span class="font-weight-bold text-secondary">Highest Altitude:</span> {{$categorias->paquete->altitud}}</p>
+                                                        <p class="small text-left m-0"><i data-feather="users" class="text-danger" stroke-width="1" width="15"></i> <span class="font-weight-bold text-secondary">Group Size:</span> {{$categorias->paquete->group_size}}</p>
+                                                        <p class="small text-left m-0"><i data-feather="bar-chart-2" class="text-success" stroke-width="1" width="15"></i> <span class="font-weight-bold text-secondary">Activity Level:</span>
+                                                            @foreach($categorias->paquete->paquetes_dificultad as $paquetes_dificultad)
+                                                                {{ucwords($paquetes_dificultad->dificultad->nombre)}}
+                                                            @endforeach
+                                                        </p>
+
+                                                    </div>
+{{--                                                    <small class="text-muted font-weight-bold">{{$categorias->paquete->duracion}} @lang('package.days')</small>--}}
+{{--                                                    @foreach($categorias->paquete->precio_paquetes as $precio)--}}
+{{--                                                        @if($precio->estrellas == 2)--}}
+{{--                                                            @if($precio->precio_d > 0)--}}
+{{--                                                                --}}{{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
+{{--                                                                <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>--}}
+{{--                                                            @else--}}
+{{--                                                                <span class="text-danger">@lang('package.inquire')</span>--}}
+{{--                                                            @endif--}}
+{{--                                                        @endif--}}
+{{--                                                    @endforeach--}}
+
                                                     @foreach($categorias->paquete->precio_paquetes as $precio)
                                                         @if($precio->estrellas == 2)
                                                             @if($precio->precio_d > 0)
                                                                 {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
+                                                                <div class="mb-2 font-weight-bold">
+                                                                    {{$categorias->paquete->duracion}} @lang('package.days')
+                                                                    <i data-feather="arrow-right" class="text-primary" stroke-width="1"></i>
+                                                                    <sup class="text-primary">$</sup><span class="h4 text-primary font-weight-bold">{{$precio->precio_d}}</span>
+                                                                </div>
                                                             @else
-                                                                <span class="text-danger">@lang('package.inquire')</span>
+                                                                <div class="mb-2 font-weight-bold">
+                                                                    {{$categorias->paquete->duracion}} @lang('package.days')
+                                                                    <i data-feather="arrow-right" class="text-primary" stroke-width="1"></i>
+                                                                    <span class="text-danger font-weight-bold">@lang('package.inquire')</span>
+                                                                </div>
+
                                                             @endif
                                                         @endif
                                                     @endforeach
@@ -122,6 +156,24 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="alert-g-green rounded-bottom p-1">
+                                                    <p class="small font-weight-bold m-0 text-g-green"><i data-feather="map-pin" class="text-g-yellow" stroke-width="1" width="18"></i>
+                                                        @php
+                                                            $m = 1;
+                                                            $num_des = count($paquete_destinos->where('idpaquetes',$categorias->paquete->id));
+                                                        @endphp
+                                                        @foreach($paquete_destinos->where('idpaquetes',$categorias->paquete->id) as $paquete_destino)
+                                                            @if(isset($paquete_destino->destinos->nombre))
+                                                                {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($m < $num_des),@else.@endif
+                                                    @php $m++; @endphp
+                                                    @endif
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             @endif

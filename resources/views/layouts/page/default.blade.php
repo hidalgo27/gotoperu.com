@@ -207,32 +207,9 @@
 <script src="{{asset("js/plugins.js")}}"></script>
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/d1b447b4-892c-4562-a6dc-536d0eb23944-loader.js" ></script>
-@if ($locale == "es")
-    <script type="text/javascript">
-        adroll_adv_id = "EQ7PNURSN5GQXIR4E3NPZ7";
-        adroll_pix_id = "ZL44EX2JPFDJVGYRVMILCQ";
-
-        (function () {
-            var _onload = function(){
-                if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
-                if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
-                var scr = document.createElement("script");
-                var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
-                scr.setAttribute('async', 'true');
-                scr.type = "text/javascript";
-                scr.src = host + "/j/roundtrip.js";
-                ((document.getElementsByTagName('head') || [null])[0] ||
-                    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
-            };
-            if (window.addEventListener) {window.addEventListener('load', _onload, false);}
-            else {window.attachEvent('onload', _onload)}
-        }());
-    </script>
-    <script src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/d1b447b4-892c-4562-a6dc-536d0eb23944-loader.js" ></script>
-@endif
 <script>
     var locale = "{{$locale}}";
-    if (locale == "en"){
+
         //olark
         /*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
             f[z]=function(){
@@ -252,24 +229,7 @@
             loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
         /* custom configuration goes here (www.olark.com/documentation) */
         olark.identify('8407-174-10-8084');/*]]>*/
-    }
-    if (locale == "es"){
-        <!-- begin olark code -->
-        (function(o,l,a,r,k,y){if(o.olark)return; r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0]; y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r); y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)}; y.extend=function(i,j){y("extend",i,j)}; y.identify=function(i){y("identify",k.i=i)}; y.configure=function(i,j){y("configure",i,j);k.c[i]=j}; k=y._={s:[],t:[+new Date],c:{},l:a}; })(window,document,"static.olark.com/jsclient/loader.js");
-            /* custom configuration goes here (www.olark.com/documentation) */
-            olark.identify('1630-501-10-9116');
-        <!-- end olark code -->
 
-
-
-    }
-    if (locale == "pt"){
-        <!-- begin olark code -->
-        (function(o,l,a,r,k,y){if(o.olark)return; r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0]; y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r); y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)}; y.extend=function(i,j){y("extend",i,j)}; y.identify=function(i){y("identify",k.i=i)}; y.configure=function(i,j){y("configure",i,j);k.c[i]=j}; k=y._={s:[],t:[+new Date],c:{},l:a}; })(window,document,"static.olark.com/jsclient/loader.js");
-        /* custom configuration goes here (www.olark.com/documentation) */
-        olark.identify('6575-497-10-7384');
-        <!-- end olark code -->
-    }
     function startOlark() {
         olark('api.box.expand');
     }

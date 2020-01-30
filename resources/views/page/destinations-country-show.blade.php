@@ -12,7 +12,7 @@
             {{--</video>--}}
             @foreach ($destinos_id as $destinos_banner)
                 @foreach($destinos_banner->destino_imagen as $imagen_b)
-                    <img src="{{asset('images/destinations/banners/'.str_replace(' ','-', $imagen_b->nombre).'')}}" alt="" id="hero-vid" class="banner-itinerary">
+                    <img src="{{$imagen_b->nombre}}" alt="" id="hero-vid" class="banner-itinerary">
                 @endforeach
             @endforeach
             {{--@include('layouts.page.menu-custom')--}}
@@ -64,7 +64,7 @@
     <div class="sticky-top text-center py-2 bg-white">
         @foreach($destinos->sortBy('nombre') as $destino)
             <a href="{{route('destinations_country_show_path', ['peru-travel', str_replace(' ', '-', strtolower($destino->nombre))])}}-tours">
-                <img src="{{asset('images/destinations/'.str_replace(' ','-', strtolower($destino->imagen)).'')}}" alt="{{strtolower($destino->nombre)}}" width="60" height="60" class="rounded-circle lazy buble-destinations {{ Request::is( 'destinations/peru-travel/'.str_replace(' ', '-', strtolower($destino->nombre)).'-tours') ? 'active' : '' }}" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
+                <img src="{{$destino->imagen}}" alt="{{strtolower($destino->nombre)}}" width="60" height="60" class="rounded-circle lazy buble-destinations {{ Request::is( 'destinations/peru-travel/'.str_replace(' ', '-', strtolower($destino->nombre)).'-tours') ? 'active' : '' }}" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}">
             </a>
         @endforeach
     </div>
@@ -111,7 +111,7 @@
                                             <div class="row align-items-center no-gutters">
                                                 <div class="col-12">
                                                     <div class="position-relative">
-                                                        <img src="{{asset('images/mapas/'.$paquetes->imagen.'')}}" alt="" class="w-100 rounded-left">
+                                                        <img src="{{$paquetes->imagen}}" alt="" class="w-100 rounded-left">
                                                         <div class="position-absolute-bottom p-2 text-center">
                                                             <div class="row align-items-center no-gutters">
                                                                 @foreach($paquetes->paquetes_categoria as $paquetes_categorias)
@@ -124,14 +124,31 @@
                                                 <div class="col-12 text-center mt-2">
                                                     <div class="px-3">
                                                         <h2 class="h6 font-weight-bold">{{$paquetes->titulo}}</h2>
-                                                        <small class="text-muted font-weight-bold">{{$paquetes->duracion}} @lang('package.days')</small>
+                                                        <div class="bg-white p-2 rounded shadow-sm mb-4">
+                                                            <p class="small text-left m-0"><i data-feather="trending-up" class="text-info" stroke-width="1" width="15"></i> <span class="font-weight-bold text-secondary">Highest Altitude:</span> {{$paquetes->altitud}}</p>
+                                                            <p class="small text-left m-0"><i data-feather="users" class="text-danger" stroke-width="1" width="15"></i> <span class="font-weight-bold text-secondary">Group Size:</span> {{$paquetes->group_size}}</p>
+                                                            <p class="small text-left m-0"><i data-feather="bar-chart-2" class="text-success" stroke-width="1" width="15"></i> <span class="font-weight-bold text-secondary">Activity Level:</span>
+                                                                @foreach($paquetes->paquetes_dificultad as $paquetes_dificultad)
+                                                                    {{ucwords($paquetes_dificultad->dificultad->nombre)}}
+                                                                @endforeach
+                                                            </p>
+                                                        </div>
                                                         @foreach($paquetes->precio_paquetes as $precio)
                                                             @if($precio->estrellas == 2)
                                                                 @if($precio->precio_d > 0)
                                                                     {{--                                                                <p class="text-info font-weight-bold m-0 h5"><small><sup>form $</sup></small>{{$precio->precio_d}}<small>USD</small></p>--}}
-                                                                    <div class="display-4 font-weight-bold"><sup>$</sup>{{$precio->precio_d}}</div>
+                                                                    <div class="mb-2 font-weight-bold">
+                                                                        {{$paquetes->duracion}} @lang('package.days')
+                                                                        <i data-feather="arrow-right" class="text-primary" stroke-width="1"></i>
+                                                                        <sup class="text-primary">$</sup><span class="h4 text-primary font-weight-bold">{{$precio->precio_d}}</span>
+                                                                    </div>
                                                                 @else
-                                                                    <span class="text-danger">@lang('package.inquire')</span>
+                                                                    <div class="mb-2 font-weight-bold">
+                                                                        {{$paquetes->duracion}} @lang('package.days')
+                                                                        <i data-feather="arrow-right" class="text-primary" stroke-width="1"></i>
+                                                                        <span class="text-danger font-weight-bold">@lang('package.inquire')</span>
+                                                                    </div>
+
                                                                 @endif
                                                             @endif
                                                         @endforeach
@@ -141,6 +158,23 @@
                                                             </div>
 
                                                         </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="alert-g-green rounded-bottom p-1">
+                                                        <p class="small font-weight-bold m-0 text-g-green"><i data-feather="map-pin" class="text-g-yellow" stroke-width="1" width="18"></i>
+                                                            @php
+                                                                $m = 1;
+                                                                $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
+                                                            @endphp
+                                                            @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
+                                                                @if(isset($paquete_destino->destinos->nombre))
+                                                                    {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($m < $num_des),@else.@endif
+                                                        @php $m++; @endphp
+                                                        @endif
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
