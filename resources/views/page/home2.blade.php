@@ -22,8 +22,11 @@
             </div>
         </div>
         <div class="position-absolute-bottom p-2">
-            <div class="row justify-content-center">
-                <div class="col-auto text-center">
+            <div class="row justify-content-start">
+                <div class="col-4">
+                    <img src="{{asset('images/logos/logo-expedia.png')}}" alt="" width="180">
+                </div>
+                <div class="col-4 text-center">
                     <a href="https://www.facebook.com/GOTOPERUcom/" target="_blank" class="mx-2">
                         <i data-feather="facebook" class="text-white" stroke-width="1"></i>
                     </a>
@@ -39,9 +42,9 @@
                 </div>
             </div>
         </div>
-        <div class="position-absolute-bottom">
-            <img src="{{asset('images/logos/logo-expedia.png')}}" alt="" width="180">
-        </div>
+{{--        <div class="position-absolute-bottom">--}}
+{{--            <img src="{{asset('images/logos/logo-expedia.png')}}" alt="" width="180">--}}
+{{--        </div>--}}
     </header>
 
     @include('layouts.page.menu')
@@ -226,7 +229,7 @@
                                                                                 </div>
                                                                             </div>
 
-                                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes_categorias->paquete->titulo)), $paquetes_categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">@lang('home.inquire_now')</a>
+                                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes_categorias->paquete->titulo)), $paquetes_categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View Trip</a>
                                                                             {{--<a href="" class="btn btn-g-green font-weight-bold btn-block">Book Now</a>--}}
                                                                         </div>
                                                                     </div>

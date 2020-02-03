@@ -2,7 +2,7 @@
 @section('content')
         @foreach($paquete_iti as $paquetes)
 
-    <header class="d-none d-md-block chat-mensajes">
+        <header class="d-none d-md-block chat-mensajes">
 {{--        <div id="title" class="text-white">--}}
 {{--            <div class="container-fluid">--}}
 {{--                <div class="row align-items-center justify-content-between my-2">--}}
@@ -25,9 +25,10 @@
 {{--            </div>--}}
 {{--        </div>--}}
         @include('layouts.page.header')
-        <div id="" class="overlay-img">
+        <div class="overlay"></div>
+        <div class="homepage-video">
             @foreach($paquetes->imagen_paquetes->take(1) as $paquetes_imagen)
-            <img src="{{$paquetes_imagen->nombre}}" alt="banner gotoperu" id="hero-vid" class="banner-itinerary">
+            <img src="{{$paquetes_imagen->nombre}}" alt="banner gotoperu" class="banner-itinerary">
             @endforeach
         </div>
         <div class="content-header">
@@ -230,10 +231,10 @@
                                         </div>
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active font-weight-bold" id="resumen-tab" data-toggle="tab" href="#resumen" role="tab" aria-controls="resumen" aria-selected="true">@lang('itinerary.summary_itinerary')</a>
+                                                <span class="nav-link cursor-pinter active font-weight-bold" id="resumen-tab" data-toggle="tab" href="#resumen" role="tab" aria-controls="resumen" aria-selected="true">@lang('itinerary.summary_itinerary')</span>
                                             </li>
                                             <li class="nav-item d-none d-sm-inline">
-                                                <a class="nav-link font-weight-bold" id="full-tab" data-toggle="tab" href="#full" role="tab" aria-controls="full" aria-selected="false">@lang('itinerary.extended_itinerary')</a>
+                                                <span class="nav-link cursor-pinter font-weight-bold" id="full-tab" data-toggle="tab" href="#full" role="tab" aria-controls="full" aria-selected="false">@lang('itinerary.extended_itinerary')</span>
                                             </li>
                                         </ul>
                                         <div class="tab-content" id="myTabContent">

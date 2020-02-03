@@ -1,13 +1,24 @@
-.homepage-video iframe,.homepage-video img {
+.homepage-video iframe {
   box-sizing: border-box;
   height: 56.25vw;
   left: 50%;
-  min-height: 100%;
+  min-height: 110%;
   min-width: 100%;
   transform: translate(-50%,-50%);
   position: absolute;
   top: 50%;
   width: 177.77777778vh;
+}
+.homepage-video img {
+    box-sizing: border-box;
+    height: 56.25vw;
+    left: 50%;
+    height: auto;
+    min-width: 100%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    width: 177.77777778vh;
 }
 .homepage-video .homepage-video-bg-16x9 {
   width: 100%;
@@ -1272,7 +1283,7 @@ $slide-overlay-opacity: 0.6;
 }
 .banner-itinerary{
   top: 0;
-  height: 100vh !important;
+  //height: 100vh !important;
 }
 .header-img-category {
   position: relative;

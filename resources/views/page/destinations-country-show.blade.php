@@ -154,7 +154,7 @@
                                                         @endforeach
                                                         <div class="row my-3 justify-content-center">
                                                             <div class="col-6">
-                                                                <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">@lang('package.inquire')</a>
+                                                                <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes->titulo)), $paquetes->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View Trip</a>
                                                             </div>
 
                                                         </div>

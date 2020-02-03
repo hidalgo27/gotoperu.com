@@ -141,7 +141,7 @@
                                                             @endif
                                                         @endif
                                                     @endforeach
-                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="btn btn-g-yellow btn-block">@lang('package.inquire')</a>
+                                                    <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquete->titulo)), $paquete->duracion])}}" class="btn btn-g-yellow btn-block">View Trip</a>
                                                     {{--<a href="" class="btn btn-g-green btn-block">Book Now</a>--}}
                                                 </div>
                                             </div>
