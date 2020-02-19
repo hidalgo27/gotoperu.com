@@ -160,8 +160,8 @@
                                         <div class="tab-content border border-top-0 rounded-bottom shadow-sm position-relative" id="v-pills-tabContent">
                                             @foreach($categorias->where('grupo', $categoria_groups->grupo) as $categoria)
                                             <div class="tab-pane fade show @if ($categoria->estado == 1) {{'active'}} @endif" id="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}" role="tabpanel" aria-labelledby="category-{{str_replace(' ', '-', strtolower($categoria->nombre))}}-tab">
-                                                <div class="category-banners-box">
-                                                    <div class="row d-none d-md-block">
+                                                <div class="category-banners-box d-none d-md-block">
+                                                    <div class="row">
                                                         <div class="col">
                                                             <div class="position-relative">
 {{--                                                                    <img src="{{asset('images/banners/category/recommended.jpg')}}" alt="" class="w-100">--}}
@@ -229,15 +229,15 @@
                                                                                 </div>
                                                                             </div>
 
-                                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes_categorias->paquete->titulo)), $paquetes_categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block font-weight-bold">View Trip</a>
+                                                                            <a href="{{route('itinerary_path', [str_replace(' ','-',strtolower($paquetes_categorias->paquete->titulo)), $paquetes_categorias->paquete->duracion])}}" class="btn btn-g-yellow btn-block text-white mb-3 mb-sm-0 font-weight-bold">View Trip</a>
                                                                             {{--<a href="" class="btn btn-g-green font-weight-bold btn-block">Book Now</a>--}}
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col">
-                                                                        <div class="alert-g-green rounded-bottom p-1">
-                                                                            <p class="small font-weight-bold m-0 text-g-green"><i data-feather="map-pin" class="text-g-yellow" stroke-width="1" width="18"></i>
+                                                                        <div class="alert-light rounded-bottom p-1">
+                                                                            <small class="small font-weight-normal m-0 mt-1 text-dark"><i data-feather="map-pin" class="text-g-yellow" stroke-width="1" width="18"></i>
 {{--                                                                                Lima, Cusco, Machu Picchu.--}}
                                                                                 @php
                                                                                     $m = 1;
@@ -249,7 +249,7 @@
                                                                                         @php $m++; @endphp
                                                                                     @endif
                                                                                 @endforeach
-                                                                            </p>
+                                                                            </small>
                                                                         </div>
                                                                     </div>
                                                                 </div>
