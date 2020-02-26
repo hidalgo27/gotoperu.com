@@ -191,6 +191,11 @@
                                 <p class="font-weight-bold text-white"><i data-feather="phone" class="text-white" stroke-width="1"></i> (202) 996-3000</p>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col">
+                                <a href="{{asset('pdf/terms-conditions.pdf')}}" target="_blank" class="text-g-yellow small font-weight-bold">Terms & Conditions</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
