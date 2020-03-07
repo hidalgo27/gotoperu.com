@@ -84,6 +84,7 @@
                                 <img src="{{asset('images/icons/whatsapp-i.png')}}" class="py-1" alt="logo whatsapp" width="50" data-toggle="tooltip" data-placement="top" title="Perú">
                                 +1 (202) 491-1478
                             </a>
+                            <a href="{{asset('pdf/coronavirus-gotoperu.pdf')}}" target="_blank" class="btn btn-link mt-5 text-g-yellow badge badge-pill badge-dark font-weight-bold">#covid19</a>
                         </div>
                     </div>
                 @endif
