@@ -14,8 +14,8 @@
         <div class="container h-100">
             <div class="row d-flex h-100 text-center align-items-center">
                 <div class="col w-100 text-white mt-5">
-                <a href="{{asset('pdf/coronavirus-gotoperu.pdf')}}" target="_blank" class="btn btn-link text-danger font-weight-bold">#covid19</a>
-                    <h1 class="font-weight-lighter h2 mt-5">@lang('home.header_title')</h1>
+                <a href="{{asset('pdf/coronavirus-gotoperu.pdf')}}" target="_blank" class="btn btn-link mt-5 text-g-yellow badge badge-pill badge-dark font-weight-bold">#covid19</a>
+                    <h1 class="font-weight-lighter h2">@lang('home.header_title')</h1>
                     <a href="#Inquire" class="btn btn-g-yellow btn-lg h2 font-weight-bold mt-3">@lang('home.float_button_button')</a>
                     {{--                        <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>--}}
 
