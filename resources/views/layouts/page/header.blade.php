@@ -85,7 +85,6 @@
                                 +1 (202) 491-1478
                             </a>
                         </div>
-                                                   <a href="{{asset('pdf/coronavirus-gotoperu.pdf')}}" target="_blank" class="btn btn-link mt-5 text-g-yellow badge badge-pill badge-dark font-weight-bold">#covid19</a>
                     </div>
                 @endif
 {{--            </div>--}}
@@ -114,5 +113,10 @@
                 <a href="#" class="text-white"  data-toggle="modal" data-target="#modal-menu"><i class="fa fa-bars fa-2x"></i></a>
             </div>
         </div>
+                    <div class="row">
+                                <div class="col text-right">
+                                                           <a href="{{asset('pdf/coronavirus-gotoperu.pdf')}}" target="_blank" class="btn btn-sm font-weight-bold">#covid19</a>
+                                                                   </div>
+                                                                           </div>
     </div>
 </div>
